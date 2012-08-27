@@ -76,6 +76,26 @@ export HISTTIMEFORMAT='%F %T '
 
 export EDITOR=vim
 
+if [`hostname` == "adc-stationary"]; then
+  # Sort out OS X top
+  alias top="top -o cpu"
+  # Use GNU time
+  alias time="gtime"
+  # Homebrew
+  export PATH=/usr/local/bin:$PATH
+  export PATH=/usr/local/sbin:$PATH
+  # Python
+  export PATH=/usr/local/share/python:$PATH
+  export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+  # CUDA 
+  export PATH=/usr/local/cuda/bin:$PATH
+  export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+  # Julia
+  export PATH=/Users/adc/install/julia:$PATH
+  # Growl
+  growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
+fi
+
 # Transparent xterm background
 [ -n "$WINDOWID" ] && transset-df -i $WINDOWID >/dev/null
 
