@@ -62,7 +62,7 @@ alias ls='ls $LS_OPTIONS -hF'
 alias c="clear"
 
 # Set bash title for certain terminals
-echo -n -e "\033]0;`hostname`\007"
+#echo -n -e "\033]0;`hostname`\007"
 
 # Dircolors
 export CLICOLOR=1
@@ -76,7 +76,7 @@ export HISTTIMEFORMAT='%F %T '
 
 export EDITOR=vim
 
-if [`hostname` == "adc-stationary"]; then
+if [ `hostname` == "adc-stationary" ]; then
   # Sort out OS X top
   alias top="top -o cpu"
   # Use GNU time
