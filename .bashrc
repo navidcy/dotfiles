@@ -58,9 +58,8 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls='ls $LS_OPTIONS -hF'
-alias c="clear"
-
+#alias ls='ls $LS_OPTIONS -hF'
+alias play='mpg123 --title -C'
 # Set bash title for certain terminals
 #echo -n -e "\033]0;`hostname`\007"
 
