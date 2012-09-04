@@ -100,10 +100,13 @@ fi
 
 complete -cf sudo
 
-# Locales
 export LANG=en_DK.UTF-8
+if [ `hostname` != "adc-stationary" ]; then
+  # Locales
+  export LANG=en_DK.UTF-8
 
-# The ls command will sort dotfiles first, followed by uppercase and lowercase filenames
-export LC_ALL=
-export LC_COLLATE="C"
+  # The ls command will sort dotfiles first, followed by uppercase and lowercase filenames
+  export LC_ALL=
+  export LC_COLLATE="C"
+fi
 
