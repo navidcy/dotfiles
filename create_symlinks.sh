@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for F in .bashrc .vimrc; do
+for F in .bashrc .vimrc .tmux.conf; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
