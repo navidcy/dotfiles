@@ -96,7 +96,7 @@ if [ `hostname` == "adc-stationary" ]; then
 fi
 
 # Transparent xterm background
-[ -n "$WINDOWID" ] && transset-df -i $WINDOWID >/dev/null
+#[ -n "$WINDOWID" ] && transset-df -i $WINDOWID >/dev/null
 
 complete -cf sudo
 
