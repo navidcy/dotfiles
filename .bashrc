@@ -49,11 +49,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-if [ "$TERM" != "dumb" ]; then
-    export LS_OPTIONS='--color=auto'
-    eval `dircolors ~/.dir_colors`
-fi
-
 # Useful aliases
 alias ll='ls -alF'
 alias la='ls -A'
