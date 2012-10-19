@@ -43,7 +43,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -71,21 +71,11 @@ export HISTTIMEFORMAT='%F %T '
 export EDITOR=vim
 
 if [ `hostname` == "adc-stationary" ]; then
-  # Sort out OS X top
-  alias top="top -o cpu"
-  # Use GNU time
-  alias time="gtime"
-  # Homebrew
-  export PATH=/usr/local/bin:$PATH
-  export PATH=/usr/local/sbin:$PATH
-  # Python
-  export PATH=/usr/local/share/python:$PATH
-  export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
   # CUDA 
-  export PATH=/usr/local/cuda/bin:$PATH
-  export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+  export PATH=/usr/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
   # Julia
-  export PATH=/Users/adc/install/julia:$PATH
+  #export PATH=/Users/adc/install/julia:$PATH
   # Growl
   growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 fi
@@ -95,13 +85,13 @@ fi
 
 complete -cf sudo
 
-export LANG=en_DK.UTF-8
-if [ `hostname` != "adc-stationary" ]; then
+#export LANG=en_DK.UTF-8
+#if [ `hostname` != "adc-stationary" ]; then
   # Locales
-  export LANG=en_DK.UTF-8
+  #export LANG=en_DK.UTF-8
 
   # The ls command will sort dotfiles first, followed by uppercase and lowercase filenames
-  export LC_ALL=
-  export LC_COLLATE="C"
-fi
+  #export LC_ALL=
+  #export LC_COLLATE="C"
+#fi
 
