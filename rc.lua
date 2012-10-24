@@ -282,7 +282,7 @@ globalkeys = awful.util.table.join(
     -- Custom application launchers
     awful.key({ modkey, }, "b", function () awful.util.spawn("firefox") end),
     awful.key({ modkey, }, "t", function () awful.util.spawn("tor-browser") end),
-    awful.key({ modkey, }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey, }, "z", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- Prompt
     awful.key({ modkey },            "space", function () mypromptbox[mouse.screen]:run() end),
