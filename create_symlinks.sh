@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Home folder dotfiles
-for F in .bashrc .vimrc .tmux.conf .xpdfrc; do
+for F in bashrc vimrc tmux.conf xpdfrc; do
   SOURCE=$PWD/$F
   TARGET=~/.$F
 
