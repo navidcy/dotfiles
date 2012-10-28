@@ -52,7 +52,7 @@ account-hook imaps://imap.gmail.com:993/ 'set \
    imap_pass = $my_gmail_pass\
    smtp_url = "smtp://$my_gmail_user@smtp.gmail.com:587"\
    smtp_pass = $my_gmail_pass'
-folder-hook imaps://imap.au.dk:993/ 'set \
+folder-hook imaps://imap.gmail.com:993/ 'set \
    spoolfile = "+INBOX"\
    record = "+[Gmail]/Sent Mail"\
    postponed = "+[Gmail]/Drafts"\
