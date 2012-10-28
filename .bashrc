@@ -57,6 +57,7 @@ alias l='ls -CF'
 alias play='mpg123 --title -C'
 # Set bash title for certain terminals
 #echo -n -e "\033]0;`hostname`\007"
+alias open='xdg-open'
 
 # Dircolors
 export CLICOLOR=1
@@ -64,7 +65,7 @@ export CLICOLOR=1
 # Add path to my own custom executables:
 export PATH=$HOME/bin:$PATH
 
-export GNUTERM='X11'
+#export GNUTERM='X11'
 
 export HISTTIMEFORMAT='%F %T '
 
