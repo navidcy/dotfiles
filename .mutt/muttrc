@@ -16,6 +16,7 @@ set my_nfit_pass = `awk '/NFIT/ {print $2}' ~/.sec/.tmp`
 set my_nfit_email = "adc@geo.au.dk"
 
 # Gmail credentials
+set my_gmail_user = "andersdc"
 set my_gmail_email = "andersdc@gmail.com"
 set my_gmail_pass = `awk '/Gmail/ {print $2}' ~/.sec/.tmp`
 
@@ -40,6 +41,7 @@ account-hook imaps://imap.au.dk:993/ 'set \
    smtp_url = "smtp://$my_nfit_user@asmtp.au.dk:587"\
    smtp_pass = $my_nfit_pass'
 folder-hook imaps://imap.au.dk:993/ 'set \
+   folder = imaps://imap.au.dk:993/\
    spoolfile = "+INBOX"\
    record = "+Sent"\
    postponed = "+Drafts"\
@@ -50,9 +52,10 @@ folder-hook imaps://imap.au.dk:993/ 'set \
 account-hook imaps://imap.gmail.com:993/ 'set \
    imap_user = $my_gmail_email\
    imap_pass = $my_gmail_pass\
-   smtp_url = "smtp://$my_gmail_user@smtp.gmail.com:587"\
+   smtp_url = "smtps://$my_gmail_user@smtp.gmail.com/"\
    smtp_pass = $my_gmail_pass'
 folder-hook imaps://imap.gmail.com:993/ 'set \
+   folder = imaps://imap.gmail.com:993/\
    spoolfile = "+INBOX"\
    record = "+[Gmail]/Sent Mail"\
    postponed = "+[Gmail]/Drafts"\
