@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Home folder dotfiles
+for F in .bashrc .vimrc .tmux.conf .xpdfrc .signature; do
+  SOURCE=$PWD/$F
+  TARGET=~/$F
+
+  # Check if file exists, rename if so
+  [ -f $TARGET ] && mv $TARGET ${TARGET}_bck
+  rm $TARGET
+
+  echo "Symlink: $SOURCE -> $TARGET"
+  ln -s $SOURCE $TARGET
+done
+
+# Home folder dotfolders
+for F in .config .i3 .mutt .vim; do
+  SOURCE=$PWD/$F
+  TARGET=~/$F
+
+  # Check if file exists, rename if so
+  [ -f $TARGET ] && mv $TARGET ${TARGET}_bck
+  rm -rf $TARGET
+
+  echo "Symlink: $SOURCE -> $TARGET"
+  ln -s $SOURCE $TARGET
+done
+
+
