@@ -250,7 +250,7 @@ set ebind     = @mode_bind global,-insert
 @cbind  <End>        = scroll vertical end
 @cbind  ^            = scroll horizontal begin
 @cbind  $            = scroll horizontal end
-@cbind  <Space>      = scroll vertical end
+@cbind  <Space>      = scroll vertical 50%
 @cbind  :<Go To:>_   = scroll vertical %r!
 @cbind  _:<Go To:>_  = scroll horizontal %r!
 
