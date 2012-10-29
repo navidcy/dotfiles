@@ -261,6 +261,10 @@ set ebind     = @mode_bind global,-insert
 @cbind  r   = reload
 @cbind  R   = reload_ign_cache
 
+# Mouse bindings
+@cbind  <Button8>   = back
+@cbind  <Button9>   = forward
+
 # Zoom binds
 @cbind  +   = zoom_in
 @cbind  -   = zoom_out
