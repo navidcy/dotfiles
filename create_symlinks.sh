@@ -14,7 +14,7 @@ for F in .bashrc .vimrc .tmux.conf .xpdfrc .signature; do
 done
 
 # Home folder dotfolders
-for F in .config .i3 .mutt .vim; do
+for F in .config/uzbl .config/awesome .i3 .mutt .vim; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
