@@ -126,7 +126,7 @@ set to_chars=" +TCF "   # Drop the "L".
 # Display download progress every 5K
 set net_inc=5
 
-source ~/.mutt/gpg.rc   # Use GPG
+source ~/.sec/gpg.rc   # Use GPG
 source ~/.mutt/aliases  # Load in my aliases.
 source ~/.mutt/colours  # Define colours.
 
