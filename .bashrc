@@ -95,4 +95,18 @@ complete -cf sudo
   #export LC_ALL=
   #export LC_COLLATE="C"
 #fi
+if [ `hostname` == "master" ] || [ `hostname` == "node*" ]; then
 
+  # PGI compiler
+  PGI=/opt/pgi; export PG
+  PATH=/opt/pgi/linux86-64/11.9/bin:$PATH; export PATH
+  MANPATH=$MANPATH:/opt/pgi/linux86-64/11.9/man; export MANPATH
+  LM_LICENSE_FILE=$LM_LICENSE_FILE:/opt/pgi/license.dat;export LM_LICENSE_FILE
+  
+  # Maui scheduler
+  export PATH=$PATH:/usr/local/maui/bin:/usr/local/maui/sbin
+
+  # CUDA environment variables
+  export PATH=/usr/local/cuda/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH 
+fi
