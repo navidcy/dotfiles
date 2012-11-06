@@ -31,7 +31,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+b exec uzbl-browser
 bindsym $mod+t exec tor-browser
 bindsym $mod+m exec thunderbird
-bindsym $mod+z exec xscreensaver-command lock
+#bindsym $mod+z exec xscreensaver-command lock
+
+# screen lock
+bindsym $mod+z exec i3-msg workspace 1: www && i3lock -c 111111 -d
 
 # kill focused window
 bindsym $mod+Shift+q kill
