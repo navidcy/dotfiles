@@ -95,7 +95,11 @@ complete -cf sudo
   #export LC_ALL=
   #export LC_COLLATE="C"
 #fi
-if [ `hostname` == "master" ] || [ `hostname` == "node*" ]; then
+if [ `hostname` == "master" ] || 
+   [ `hostname` == "node02" ] ||
+   [ `hostname` == "node03" ] ||
+   [ `hostname` == "node04" ] ||
+   [ `hostname` == "node05" ] ; then
 
   # PGI compiler
   PGI=/opt/pgi; export PG
