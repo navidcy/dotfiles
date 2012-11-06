@@ -75,26 +75,17 @@ if [ `hostname` == "adc-stationary" ]; then
   # CUDA 
   export PATH=/usr/bin:$PATH
   export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
+
+  # ESyS-Particle
+  export PATH=/usr/local/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+  export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+  export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:$PYTHONPATH
+
   # Julia
   #export PATH=/Users/adc/install/julia:$PATH
-  # Growl
-  growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 fi
 
-# Transparent xterm background
-#[ -n "$WINDOWID" ] && transset-df -i $WINDOWID >/dev/null
-
-complete -cf sudo
-
-#export LANG=en_DK.UTF-8
-#if [ `hostname` != "adc-stationary" ]; then
-  # Locales
-  #export LANG=en_DK.UTF-8
-
-  # The ls command will sort dotfiles first, followed by uppercase and lowercase filenames
-  #export LC_ALL=
-  #export LC_COLLATE="C"
-#fi
 if [ `hostname` == "master" ] || 
    [ `hostname` == "node02" ] ||
    [ `hostname` == "node03" ] ||
