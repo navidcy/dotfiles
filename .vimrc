@@ -13,9 +13,6 @@ filetype plugin on
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
 
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
-
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
@@ -46,6 +43,9 @@ map <F8> :tabe
 
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 colorscheme desert
+
+" adjust colors for better contrast
+set background=dark
 
 set backspace=indent,eol,start
 " note that the following rval is made by hitting ctrl-v and then backspace...
@@ -78,3 +78,9 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
 
+" Google Python style guide
+set tabstop=8      " a tab is 4 characters wide
+set expandtab      " convert tab char to spaces
+set softtabstop=4  " makes the tab key indent by four spaces 
+set shiftwidth=4   " width for autoindents
+filetype indent on " automatic indent
