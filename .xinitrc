@@ -20,20 +20,20 @@ xcalib ~/doc/colorprofile.icc
 
 # Make sure this is before the 'exec' command or it won't be executed.
 [ -f ~/.xprofile ] && . ~/.xprofile
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+[[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
 
 # screen powersave
 xset +dpms # Energy Star features on
 xset dpms 300 600 900 # standby -> suspend -> off (seconds)
 
 # Set dim LCD brightness
-xbacklight -set 30 &
+#xbacklight -set 30 &
 
 # Notification deamon
 dunst &
 
 # Automatically suspend system after 20 mins of inactivity
-xautolock -time 20 -locker "sudo pm-suspend" &
+#xautolock -time 20 -locker "sudo pm-suspend" &
 
 #DEFAULT_SESSION=awesome
 DEFAULT_SESSION=i3
