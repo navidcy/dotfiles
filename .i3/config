@@ -28,7 +28,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # other application launchers
-bindsym $mod+b exec uzbl-browser
+#bindsym $mod+b exec uzbl-browser
+bindsym $mod+b exec firefox
 bindsym $mod+t exec tor-browser
 bindsym $mod+m exec thunderbird
 #bindsym $mod+z exec xscreensaver-command lock
