@@ -7,37 +7,36 @@ xterm*background: black
 xterm*foreground: white
 
 ! xterm ----------------------------------------------------------------------
-xterm*geometry:           80x25
-xterm*faceName:           terminus:bold:pixelsize=11
-!!xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
-xterm*dynamicColors:      true
-!xterm*utf8:               1
-
+xterm*termName: xterm-256color
+xterm*geometry: 80x25
+!xterm*faceName: terminus:bold:pixelsize=11
+!!xterm*font: -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+!xterm*dynamicColors: true
 xterm*utf8: 1
 !!xterm*metaSendsEscape: true
 !!xterm*eightBitInput: false
 !!xterm*eightBitControl: false
 !!xterm*eightBitOutput: true
 
-!xterm*utf8:               2
-xterm*eightBitInput:      true
+!xterm*utf8: 2
+xterm*eightBitInput: true
 
-xterm*saveLines:          512
-xterm*scrollKey:          true
-xterm*scrollTtyOutput:    false
-!xterm*scrollBar:          true
-mxterm*rightScrollBar:     true
-xterm*jumpScroll:         true
-xterm*multiScroll:        true
-xterm*toolBar:            false
+xterm*saveLines: 512
+xterm*scrollKey: true
+xterm*scrollTtyOutput: false
+!xterm*scrollBar: true
+mxterm*rightScrollBar: true
+xterm*jumpScroll: true
+xterm*multiScroll: true
+xterm*toolBar: false
 
 ! xpdf -----------------------------------------------------------------------
-xpdf*enableFreetype:    yes
-xpdf*antialias:         yes
-xpdf*foreground:        black
-xpdf*background:        white
-xpdf*matteColor:	gray
-xpdf*urlCommand:        /usr/bin/uzbl-browser %s
+xpdf*enableFreetype: yes
+xpdf*antialias: yes
+xpdf*foreground: black
+xpdf*background: white
+xpdf*matteColor: gray
+xpdf*urlCommand: /usr/bin/firefox %s
 
 ! rxvt-unicode ---------------------------------------------------------------
 URxvt.transparent: true
@@ -48,24 +47,23 @@ URxvt.shading: 20
 URxvt.internalBorder:   1
 !URxvt.loginShell: true
 URxvt.scrollBar: off
-!URxvt.font: 7x13euro
-URxvt.font: 7x13
+URxvt.font: 7x13euro
 ! tabs and clickable URLs
 !URxvt.perl-ext-common:  default,tabbed,matcher
-URxvt.urlLauncher:      /usr/bin/uzbl-browser
+URxvt.perl-ext-common:  matcher
+URxvt.urlLauncher:      /usr/bin/urxvt-browser
 URxvt.matcher.button:   1
 ! tab colors
-URxvt.tabbed.tabbar-fg: 2
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg:    3
-URxvt.tabbed.tab-bg:    0
+!URxvt.tabbed.tabbar-fg: 2
+!URxvt.tabbed.tabbar-bg: 0
+!URxvt.tabbed.tab-fg:    3
+!URxvt.tabbed.tab-bg:    0
 ! colors
 URxvt.foreground: White
 URxvt.background: Black
 URxvt.saveLines: 1024
 URxvt.meta8: True
-URxvt.modifier: alt
-urxvt*termName: rxvt
+urxvt*termName:    rxvt
 
 ! xscreensaver ---------------------------------------------------------------
 !font settings

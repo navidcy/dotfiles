@@ -84,3 +84,7 @@ set expandtab      " convert tab char to spaces
 set softtabstop=4  " makes the tab key indent by four spaces 
 set shiftwidth=4   " width for autoindents
 filetype indent on " automatic indent
+
+" Dictionary word completion using Ctrl-x Ctrl-k
+" File from wordlist- (debian) or word- (arch) package
+set dictionary+=/usr/share/dict/words
