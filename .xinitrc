@@ -7,7 +7,8 @@ xsetroot -solid '#101010' &
 xset -b
 
 # Keyboard layout
-setxkbmap dk
+#setxkbmap dk
+setxkbmap us
 
 # Read .xbindkeysrc for special key-bindings
 xbindkeys
@@ -37,7 +38,8 @@ dunst &
 
 #DEFAULT_SESSION=awesome
 DEFAULT_SESSION=i3
+#DEFAULT_SESSION=enlightenment_start
 case $1 in
-  awesome|i3|xmonad) exec $1 ;;
+  awesome|i3|enlightenment_start) exec $1 ;;
   *) exec $DEFAULT_SESSION ;;
 esac
