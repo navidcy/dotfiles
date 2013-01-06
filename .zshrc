@@ -1,10 +1,11 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Set vi-like movement on cmd lines
-bindkey -v
+#bindkey -v
+bindkey -e
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -28,3 +29,6 @@ alias l='ls -CF'
 
 # path
 export PATH=~/bin:$PATH
+export PATH=~/code/metasploit:$PATH
+export PATH=~/.gem/ruby/1.9.1/bin:$PATH
+
