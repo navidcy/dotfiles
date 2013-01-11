@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000
+SAVEHIST=2000
 
 # Set vi-like movement on cmd lines
 #bindkey -v
@@ -32,3 +32,4 @@ export PATH=~/bin:$PATH
 export PATH=~/code/metasploit:$PATH
 export PATH=~/.gem/ruby/1.9.1/bin:$PATH
 
+export EDITOR=vim
