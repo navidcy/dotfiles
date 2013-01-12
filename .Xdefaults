@@ -3,32 +3,63 @@ Xcursor.theme: Vanilla-DMZ-AA
 Xcursor.size:  22
 
 ! terminal colors ------------------------------------------------------------
-xterm*background: black
-xterm*foreground: white
+
+! tangoesque scheme
+*background: #111111
+*foreground: #babdb6
+! Black (not tango) + DarkGrey
+*color0:  #000000
+*color8:  #555753
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #204a87
+*color12: #3465a4
+! DarkMangenta + Mangenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #cccccc
+*color15: #ffffff
+
 
 ! xterm ----------------------------------------------------------------------
-xterm*termName: xterm-256color
-xterm*geometry: 80x25
-!xterm*faceName: terminus:bold:pixelsize=11
-!!xterm*font: -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
-!xterm*dynamicColors: true
-!!xterm*metaSendsEscape: true
-!!xterm*eightBitInput: false
-!!xterm*eightBitControl: false
-!!xterm*eightBitOutput: true
+!xterm*background: black
+!xterm*background: black
+!xterm*foreground: white
+!xterm*termName: xterm-256color
+!xterm*geometry: 80x25
+!!xterm*faceName: terminus:bold:pixelsize=11
+!!!xterm*font: -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+!xterm*font: 8x15
+!!xterm*dynamicColors: true
+!!!xterm*metaSendsEscape: true
+!!!xterm*eightBitInput: false
+!!!xterm*eightBitControl: false
+!!!xterm*eightBitOutput: true
 
-!xterm*utf8: 1
-xterm*utf8: 2
-xterm*eightBitInput: true
+!!xterm*utf8: 1
+!xterm*utf8: 2
+!xterm*eightBitInput: true
 
-xterm*saveLines: 512
-xterm*scrollKey: true
-xterm*scrollTtyOutput: false
-!xterm*scrollBar: true
-mxterm*rightScrollBar: true
-xterm*jumpScroll: true
-xterm*multiScroll: true
-xterm*toolBar: false
+!xterm*saveLines: 512
+!xterm*scrollKey: true
+!xterm*scrollTtyOutput: false
+!!xterm*scrollBar: true
+!xterm*rightScrollBar: true
+!xterm*jumpScroll: true
+!xterm*multiScroll: true
+!xterm*toolBar: false
 
 ! xpdf -----------------------------------------------------------------------
 xpdf*enableFreetype: yes

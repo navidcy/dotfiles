@@ -7,7 +7,7 @@ set my_realname = "Anders Damsgaard Christensen"
 #   NFIT password
 #   Gmail password
 # Encrypt it using `gpg -o ~/.sec/pass.gpg -e pass.txt`.
-# Delete the plaintext pass.txt afterwards.
+# Delete the plaintext pass.txt afterwards, e.g. `shred pass.txt && rm pass.txt`.
 set my_tmp_secret = `gpg -o ~/.sec/.tmp -d ~/.sec/pass.gpg`
 
 # NFIT credentials
@@ -143,3 +143,4 @@ macro index M "T.*\n;WN" "Mark all messages as read"
 # Last, but not least, get mutt to display its version on startup.
 push <show-version>
 
+alias mfullumc Marissa Fullum-Campbell <mfullumc@ucsc.edu>

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set background color
-xsetroot -solid '#101010' &
+xsetroot -solid '#000000' &
 
 # Disable beeps
 xset -b
@@ -17,7 +17,7 @@ xbindkeys
 xmodmap ~/.Xmodmap
 
 # Set display color profile
-xcalib ~/doc/colorprofile.icc
+[ -f ~/doc/colorprofile.icc ] && xcalib ~/doc/colorprofile.icc 
 
 # Make sure this is before the 'exec' command or it won't be executed.
 [ -f ~/.xprofile ] && . ~/.xprofile
@@ -35,6 +35,8 @@ dunst &
 
 # Automatically suspend system after 20 mins of inactivity
 #xautolock -time 20 -locker "sudo pm-suspend" &
+# Automatically lock the screen after 10 mins of inactivity
+xautolock -time 10 -locker "i3lock -c 000000" &
 
 #DEFAULT_SESSION=awesome
 DEFAULT_SESSION=i3
