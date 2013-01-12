@@ -39,4 +39,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Add local bin folder to path
 export PATH=$HOME/bin:$PATH
+export PATH=~/bin:$PATH
+export PATH=~/code/metasploit:$PATH
+export PATH=~/.gem/ruby/1.9.1/bin:$PATH
 
+export EDITOR=vim
