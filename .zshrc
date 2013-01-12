@@ -37,4 +37,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# Add local bin folder to path
+export PATH=$HOME/bin:$PATH
+

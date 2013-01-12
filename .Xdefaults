@@ -37,7 +37,7 @@ Xcursor.size:  22
 !xterm*background: black
 !xterm*background: black
 !xterm*foreground: white
-!xterm*termName: xterm-256color
+xterm*termName: xterm-256color
 !xterm*geometry: 80x25
 !!xterm*faceName: terminus:bold:pixelsize=11
 !!!xterm*font: -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
