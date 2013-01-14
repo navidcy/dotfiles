@@ -36,7 +36,7 @@ dunst &
 # Automatically suspend system after 20 mins of inactivity
 #xautolock -time 20 -locker "sudo pm-suspend" &
 # Automatically lock the screen after 10 mins of inactivity
-xautolock -time 10 -locker "i3lock -c 000000" &
+xautolock -time 10 -locker "i3lock -c 1d1f21" &
 
 #DEFAULT_SESSION=awesome
 DEFAULT_SESSION=i3

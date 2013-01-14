@@ -5,7 +5,10 @@ Xcursor.size:  22
 ! terminal colors ------------------------------------------------------------
 
 ! tangoesque scheme
-*background: #111111
+!*background: #111111
+!*background: #0b2b36
+*background: #041621
+!*background: #1d1f21
 *foreground: #babdb6
 ! Black (not tango) + DarkGrey
 *color0:  #000000

@@ -82,6 +82,8 @@ if [ `hostname` == "adc-stationary" ]; then
   export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
   export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:$PYTHONPATH
 
+  #source $HOME/OpenFOAM/OpenFOAM-2.1.x/etc/bashrc
+
   # Julia
   #export PATH=/Users/adc/install/julia:$PATH
 fi
@@ -105,3 +107,5 @@ if [ `hostname` == "master" ] ||
   export PATH=/usr/local/cuda/bin:$PATH
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH 
 fi
+
+
