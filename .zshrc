@@ -42,5 +42,6 @@ export PATH=$HOME/bin:$PATH
 export PATH=~/bin:$PATH
 export PATH=~/code/metasploit:$PATH
 export PATH=~/.gem/ruby/1.9.1/bin:$PATH
+export PATH=~/code/julia:$PATH
 
 export EDITOR=vim
