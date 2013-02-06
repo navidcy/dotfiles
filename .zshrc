@@ -37,6 +37,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# set vi-like movement
+set -o vi
+
 # Add local bin folder to path
 export PATH=$HOME/bin:$PATH
 export PATH=~/bin:$PATH
