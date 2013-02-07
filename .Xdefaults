@@ -86,7 +86,7 @@ URxvt.scrollBar: off
 !URxvf.font: 8x13
 ! tabs and clickable URLs
 !URxvt.perl-ext-common:  default,tabbed,matcher
-URxvt.perl-ext-common:  matcher
+URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.matcher.button:   1
 ! tab colors
