@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/adc/code/simple_DEM/output'
 let g:netrw_dirhist_2='/home/adc/.config/awesome'
 let g:netrw_dirhist_3='/home/adc/.config/chromium'
 let g:netrw_dirhist_4='/home/adc/code/dotfiles'
 let g:netrw_dirhist_5='/home/adc'
 let g:netrw_dirhist_6='/home/adc/.config'
+let g:netrw_dirhist_7='/home/adc'
+let g:netrw_dirhist_8='/home/adc/downloads'
+let g:netrw_dirhist_9='/home/adc/code/cppfem/src'

@@ -1,5 +1,5 @@
 " Include pathogen plugin manager
-"call pathogen#infect()
+execute pathogen#infect()
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -68,9 +68,14 @@ set pastetoggle=<F2>
 "match OverLength /\%81v.\+/
 
 " Vim Powerline
-"set nocompatible   " Disable vi-compatibility
-"set laststatus=2   " Always show the statusline
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
+"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
+
+" NERD Tree short cut
+map <F3> :NERDTreeToggle<CR>
 
 :autocmd FileType mail :nmap <F6> :w<CR>:!aspell -e -c %<CR>:e<CR>
 
