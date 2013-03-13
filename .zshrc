@@ -39,6 +39,7 @@ source $ZSH/oh-my-zsh.sh
 
 # set vi-like movement
 set -o vi
+export EDITOR=vim
 
 # Add local bin folder to path
 export PATH=$HOME/bin:$PATH
@@ -48,7 +49,9 @@ export PATH=~/.gem/ruby/1.9.1/bin:$PATH
 export PATH=~/code/julia:$PATH
 export PATH=~/code/elmerfem/fem/src:$PATH
 
-export EDITOR=vim
+# CUDA 5.0 (installed with `sudo sh cuda_5.0.35_linux_64_ubuntu11.10-1.run -override`)
+export PATH=/usr/local/cuda-5.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/usr/local/cuda-5.0/lib:$LD_LIBRARY_PATH
 
 alias ll='ls -lh'
 
