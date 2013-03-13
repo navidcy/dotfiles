@@ -112,6 +112,4 @@ if [ `hostname` == "master" ] ||
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH 
 fi
 
-
- 
-source /home/adc/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
+#source /home/adc/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
