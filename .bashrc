@@ -72,9 +72,13 @@ export HISTTIMEFORMAT='%F %T '
 export EDITOR=vim
 
 if [ `hostname` == "adc-stationary" ]; then
-  # CUDA 
-  export PATH=/usr/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
+  # CUDA 4.2 (installed with apt-get)
+  #export PATH=/usr/bin:$PATH
+  #export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
+
+  # CUDA 5.0 (installed with `sudo sh cuda_5.0.35_linux_64_ubuntu11.10-1.run -override`)
+  export PATH=/usr/local/cuda-5.0/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/usr/local/cuda-5.0/lib:$LD_LIBRARY_PATH
 
   # ESyS-Particle
   export PATH=/usr/local/bin:$PATH
@@ -108,4 +112,4 @@ if [ `hostname` == "master" ] ||
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH 
 fi
 
-
+#source /home/adc/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
