@@ -95,4 +95,6 @@ filetype indent on " automatic indent
 set dictionary+=/usr/share/dict/words
 
 " hilight column 80
-set textwidth=80 set colorcolumn=+1 hi ColorColumn guibg=#2e2e2e ctermbg=236
+set textwidth=80
+set colorcolumn=+1
+hi ColorColumn guibg=#2e2e2e ctermbg=236
