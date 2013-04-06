@@ -33,6 +33,9 @@ xset dpms 300 600 900 # standby -> suspend -> off (seconds)
 # Notification deamon
 dunst &
 
+# Disable touchpad when typing
+syndaemon -t -k -i 2 -d &
+
 # Automatically suspend system after 20 mins of inactivity
 #xautolock -time 20 -locker "sudo pm-suspend" &
 # Automatically lock the screen after 10 mins of inactivity
@@ -45,3 +48,4 @@ case $1 in
   awesome|i3|enlightenment_start) exec $1 ;;
   *) exec $DEFAULT_SESSION ;;
 esac
+

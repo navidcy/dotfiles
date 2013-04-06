@@ -144,3 +144,7 @@ macro index M "T.*\n;WN" "Mark all messages as read"
 push <show-version>
 
 alias mfullumc Marissa Fullum-Campbell <mfullumc@ucsc.edu>
+alias slawek Slawek Tulaczyk <tulaczyk@pmc.ucsc.edu>
+alias pgboise Peter Goodwin <pgboise@gmail.com>
+alias nicolaj.krog Nicolaj Krog Larsen <nicolaj.krog@geo.au.dk>
+alias saffia Saffia Hossainzadeh <shossainzadeh@gmail.com>

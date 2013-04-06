@@ -93,3 +93,6 @@ filetype indent on " automatic indent
 " Dictionary word completion using Ctrl-x Ctrl-k
 " File from wordlist- (debian) or word- (arch) package
 set dictionary+=/usr/share/dict/words
+
+" hilight column 80
+set textwidth=80 set colorcolumn=+1 hi ColorColumn guibg=#2e2e2e ctermbg=236
