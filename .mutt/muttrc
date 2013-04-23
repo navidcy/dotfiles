@@ -1,6 +1,6 @@
 ### Users and passwords
 
-set my_realname = "Anders Damsgaard Christensen"
+set my_realname = "Anders Damsgaard"
 
 # Use GPG signature to decode pass file
 # Password file (e.g. pass.txt) should be in the form:
@@ -148,3 +148,4 @@ alias slawek Slawek Tulaczyk <tulaczyk@pmc.ucsc.edu>
 alias pgboise Peter Goodwin <pgboise@gmail.com>
 alias nicolaj.krog Nicolaj Krog Larsen <nicolaj.krog@geo.au.dk>
 alias saffia Saffia Hossainzadeh <shossainzadeh@gmail.com>
+alias lingli Lingli Zhou <lingli.zhou@geo.au.dk>
