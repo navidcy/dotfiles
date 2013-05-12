@@ -43,8 +43,8 @@ soup.ssl_strict = false
 
 -- Set cookie acceptance policy
 cookie_policy = { always = 0, never = 1, no_third_party = 2 }
---soup.accept_policy = cookie_policy.always
-soup.accept_policy = cookie_policy.no_third_party
+soup.accept_policy = cookie_policy.always
+--soup.accept_policy = cookie_policy.no_third_party
 
 -- List of search engines. Each item must contain a single %s which is
 -- replaced by URI encoded search terms. All other occurances of the percent
