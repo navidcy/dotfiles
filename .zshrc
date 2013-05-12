@@ -53,7 +53,7 @@ export PATH=~/code/elmerfem/fem/src:$PATH
 export PATH=/usr/local/cuda-5.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/usr/local/cuda-5.0/lib:$LD_LIBRARY_PATH
 
-alias ll='ls -lh'
+alias l='ls -lh'
 
 # speech synth command
 say() { if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
