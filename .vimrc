@@ -36,18 +36,15 @@ set number
 " Enable syntax highligting
 syntax on
 
-" Map F7 and F9 to switch between tabs
-map <F7> :tabp<CR>
-map <F9> :tabn<CR>
-map <F8> :tabe 
-
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 colorscheme desert
 
 " adjust colors for better contrast
 set background=dark
 
+" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
 " note that the following rval is made by hitting ctrl-v and then backspace...
 " " this remaps backspace to actualy BACKSPACE - not delete.
 " set t_kb=ctrl-vBACKSPACE
@@ -57,7 +54,25 @@ set cindent
 set smartindent
 set autoindent
 
-set pastetoggle=<F2>
+" toggle paste mode
+set pastetoggle=<F2> 
+
+" NERD Tree short cut
+map <F3> :NERDTreeToggle<CR>
+
+" Spell check in mutt
+:autocmd FileType mail :nmap <F6> :w<CR>:!aspell -e -c %<CR>:e<CR>
+
+" Map F7 and F9 to switch between tabs, F8 for new tab
+map <F7> :tabp<CR>
+map <F9> :tabn<CR>
+map <F8> :tabe 
+
+" toggle spelling
+noremap <silent><F10> :set spell!<CR>
+
+" toggle line numbering
+nnoremap <silent><F11> :set number!<CR>
 
 " Latex suite configuration
 "let g:Tex_DefaultTargetFormat = 'pdf' 
@@ -74,11 +89,7 @@ set encoding=utf-8 " Necessary to show unicode glyphs
 "let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols = 'unicode'
 
-" NERD Tree short cut
-map <F3> :NERDTreeToggle<CR>
-
-:autocmd FileType mail :nmap <F6> :w<CR>:!aspell -e -c %<CR>:e<CR>
-
+" Define other file types
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
@@ -98,3 +109,14 @@ set dictionary+=/usr/share/dict/words
 set textwidth=80
 set colorcolumn=+1
 hi ColorColumn guibg=#2e2e2e ctermbg=236
+
+" Disable arrow keys
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+" Enable mouse if the terminal emulator allows it
+if has('mouse')
+    set mouse=a
+endif
