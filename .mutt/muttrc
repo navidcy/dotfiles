@@ -143,9 +143,3 @@ macro index M "T.*\n;WN" "Mark all messages as read"
 # Last, but not least, get mutt to display its version on startup.
 push <show-version>
 
-alias mfullumc Marissa Fullum-Campbell <mfullumc@ucsc.edu>
-alias slawek Slawek Tulaczyk <tulaczyk@pmc.ucsc.edu>
-alias pgboise Peter Goodwin <pgboise@gmail.com>
-alias nicolaj.krog Nicolaj Krog Larsen <nicolaj.krog@geo.au.dk>
-alias saffia Saffia Hossainzadeh <shossainzadeh@gmail.com>
-alias lingli Lingli Zhou <lingli.zhou@geo.au.dk>
