@@ -4,6 +4,9 @@ execute pathogen#infect()
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
+" Shortcut to reload .vimrc, leader is '\'
+nmap <leader>r :source $MYVIMRC<CR>
+
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
 "set shellslash
@@ -120,8 +123,8 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 "Invisible character colors
-highlight NonText ctermfg=8 guifg=gray
-highlight SpecialKey ctermfg=8 guifg=gray
+highlight NonText ctermfg=8 guifg=DarkGray
+highlight SpecialKey ctermfg=8 guifg=DarkGray
 
 " Disable arrow keys
 map <Left> <Nop>
