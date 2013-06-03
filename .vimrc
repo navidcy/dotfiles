@@ -110,13 +110,21 @@ set textwidth=80
 set colorcolumn=+1
 hi ColorColumn guibg=#2e2e2e ctermbg=236
 
+" Enable rendering of invisible characters
+set list
+
+" Shortcut to rapidly toggle `set list`, leader is '\'
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+"Invisible character colors
+highlight NonText ctermfg=8 guifg=gray
+highlight SpecialKey ctermfg=8 guifg=gray
+
 " Disable arrow keys
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
-
-" Enable mouse if the terminal emulator allows it
-if has('mouse')
-    set mouse=a
-endif
