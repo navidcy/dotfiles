@@ -131,8 +131,3 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
-
-" Remap insert key sequence to escape key
-imap ii <Esc>
-vmap ii <Esc>
-omap ii <Esc>
