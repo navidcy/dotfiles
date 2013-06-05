@@ -126,6 +126,9 @@ set to_chars=" +TCF "   # Drop the "L".
 # Display download progress every 5K
 set net_inc=5
 
+# When viewing a message, show the pager in # lines above
+set pager_index_lines=10
+
 set alias_file=~/.mutt/aliases  # Save aliases here
 source ~/.mutt/aliases  # Load in my aliases.
 source ~/.sec/gpg.rc   # Use GPG
