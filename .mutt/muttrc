@@ -32,8 +32,8 @@ set my_del=`rm -f ~/.sec/.tmp`
 # List of mail folders
 mailboxes ~/Mail \
 	  'imaps://imap.au.dk:993/'\
-	  'imaps://imap.gmail.com:993/'\
-	  'imaps://umail.silentcircle.com:993/'
+	  'imaps://umail.silentcircle.com:993/'\
+	  'imaps://imap.gmail.com:993/'
 
  # Base hook to reset account variables to known state before activating new ones
 #account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ssl_starttls=ask-yes'
