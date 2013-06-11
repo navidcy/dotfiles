@@ -20,6 +20,11 @@ set my_gmail_user = "andersdc"
 set my_gmail_email = "andersdc@gmail.com"
 set my_gmail_pass = `awk '/Gmail/ {print $2}' ~/.sec/.tmp`
 
+# Silent Circle credentials
+set my_sc_user = "anders@silentcirlce.com"
+set my_sc_email = "anders@silentcircle.com"
+set my_sc_pass = `awk '/SilentCircle/ {print $2}' ~/.sec/.tmp`
+
 # Remove temporary password file
 set my_del=`rm -f ~/.sec/.tmp`
 
@@ -27,6 +32,7 @@ set my_del=`rm -f ~/.sec/.tmp`
 # List of mail folders
 mailboxes ~/Mail \
 	  'imaps://imap.au.dk:993/'\
+	  'imaps://umail.silentcircle.com:993/'\
 	  'imaps://imap.gmail.com:993/'
 
  # Base hook to reset account variables to known state before activating new ones
@@ -62,9 +68,26 @@ folder-hook imaps://imap.gmail.com:993/ 'set \
    from = $my_gmail_email\
    realname = $my_realname'
 
+# Silent Circle
+account-hook imaps://umail.silentcircle.com:993/ 'set \
+   imap_user = $my_sc_email\
+   imap_pass = $my_sc_pass\
+   smtp_url = "smtps://$my_sc_user@umail.silentcircle.com/"\
+   smtp_pass = $my_sc_pass'
+folder-hook imaps://umail.silentcircle.com:993/ 'set \
+   folder = imaps://umail.silentcircle.com:993/\
+   spoolfile = "+INBOX"\
+   record = "+Sent"\
+   postponed = "+Drafts"\
+   from = $my_sc_email\
+   realname = $my_realname'
+
+
+
 # Macros to change between inboxes
 macro index <f2> '<change-folder>imaps://imap.au.dk:993/<enter>'
 macro index <f3> '<change-folder>imaps://imap.gmail.com:993/<enter>'
+macro index <f4> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
