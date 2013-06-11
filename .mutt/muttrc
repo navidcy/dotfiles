@@ -32,11 +32,12 @@ set my_del=`rm -f ~/.sec/.tmp`
 # List of mail folders
 mailboxes ~/Mail \
 	  'imaps://imap.au.dk:993/'\
-	  'imaps://umail.silentcircle.com:993/'\
-	  'imaps://imap.gmail.com:993/'
+	  'imaps://imap.gmail.com:993/'\
+	  'imaps://umail.silentcircle.com:993/'
 
  # Base hook to reset account variables to known state before activating new ones
-account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ssl_starttls=ask-yes'
+#account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ssl_starttls=ask-yes'
+account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ssl_starttls=yes'
 
 # NFIT mail
 account-hook imaps://imap.au.dk:993/ 'set \
@@ -54,6 +55,21 @@ folder-hook imaps://imap.au.dk:993/ 'set \
    from = $my_nfit_email\
    realname = $my_realname'
 
+# Silent Circle
+account-hook imaps://umail.silentcircle.com:993/ 'set \
+   imap_user = $my_sc_email\
+   imap_pass = $my_sc_pass\
+   smtp_authenticators = "digest-md5:cram-md5:login:plain"\
+   smtp_url = "smtps://$my_sc_user@umail.silentcircle.com:465/"\
+   smtp_pass = $my_sc_pass'
+folder-hook imaps://umail.silentcircle.com:993/ 'set \
+   folder = imaps://umail.silentcircle.com:993/\
+   spoolfile = "+INBOX"\
+   record = "+Sent"\
+   postponed = "+Drafts"\
+   from = $my_sc_email\
+   realname = $my_realname'
+
 # Gmail
 account-hook imaps://imap.gmail.com:993/ 'set \
    imap_user = $my_gmail_email\
@@ -68,26 +84,11 @@ folder-hook imaps://imap.gmail.com:993/ 'set \
    from = $my_gmail_email\
    realname = $my_realname'
 
-# Silent Circle
-account-hook imaps://umail.silentcircle.com:993/ 'set \
-   imap_user = $my_sc_email\
-   imap_pass = $my_sc_pass\
-   smtp_url = "smtps://$my_sc_user@umail.silentcircle.com/"\
-   smtp_pass = $my_sc_pass'
-folder-hook imaps://umail.silentcircle.com:993/ 'set \
-   folder = imaps://umail.silentcircle.com:993/\
-   spoolfile = "+INBOX"\
-   record = "+Sent"\
-   postponed = "+Drafts"\
-   from = $my_sc_email\
-   realname = $my_realname'
-
-
 
 # Macros to change between inboxes
 macro index <f2> '<change-folder>imaps://imap.au.dk:993/<enter>'
-macro index <f3> '<change-folder>imaps://imap.gmail.com:993/<enter>'
-macro index <f4> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
+macro index <f3> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
+macro index <f4> '<change-folder>imaps://imap.gmail.com:993/<enter>'
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
