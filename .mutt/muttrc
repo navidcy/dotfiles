@@ -21,7 +21,7 @@ set my_gmail_email = "andersdc@gmail.com"
 set my_gmail_pass = `awk '/Gmail/ {print $2}' ~/.sec/.tmp`
 
 # Silent Circle credentials
-set my_sc_user = "anders@silentcirlce.com"
+set my_sc_user = "anders@silentcircle.com"
 set my_sc_email = "anders@silentcircle.com"
 set my_sc_pass = `awk '/SilentCircle/ {print $2}' ~/.sec/.tmp`
 
@@ -59,7 +59,7 @@ folder-hook imaps://imap.au.dk:993/ 'set \
 account-hook imaps://umail.silentcircle.com:993/ 'set \
    imap_user = $my_sc_email\
    imap_pass = $my_sc_pass\
-   smtp_authenticators = "digest-md5:cram-md5:login:plain"\
+   smtp_authenticators = "login:plain"\
    smtp_url = "smtps://$my_sc_user@umail.silentcircle.com:465/"\
    smtp_pass = $my_sc_pass'
 folder-hook imaps://umail.silentcircle.com:993/ 'set \
