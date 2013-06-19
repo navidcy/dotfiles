@@ -945,6 +945,9 @@
 
   # end of the example
 -->
+    <application name="urxvt">
+      <decor>no</decor>
+    </application>
     <application name="gmessage">
       <decor>no</decor>
       <shade>no</shade>
