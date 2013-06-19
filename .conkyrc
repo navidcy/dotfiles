@@ -39,19 +39,23 @@ Uptime:$alignr$uptime
 #File System: $alignr${fs_type}
 Battery: $alignr ${exec acpi| awk '{print $4 ", " $5}'}
 
+
 ${font sans-serif:bold:size=8}PROCESSORS ${hr 2}
 ${font sans-serif:normal:size=8}${cpugraph cpu1}
 CPU: ${cpu cpu1}% ${cpubar cpu1}
 
+
 ${font sans-serif:bold:size=8}MEMORY ${hr 2}
 ${font sans-serif:normal:size=8}RAM $alignc $mem / $memmax $alignr $memperc%
 $membar
+
 
 ${font sans-serif:bold:size=8}DISKS ${hr 2}
 ${font sans-serif:normal:size=8}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
 ${fs_bar /}
 #SWAP $alignc ${swap} / ${swapmax} $alignr ${swapperc}%
 #${swapbar}
+
 
 ${font sans-serif:bold:size=8}TOP PROCESSES - CPU ${hr 2}
 ${font sans-serif:normal:size=8}${top name 1}${alignr}${top cpu 1} %
@@ -63,14 +67,13 @@ ${font sans-serif:normal:size=8}${top_mem name 1}${alignr}${top mem 1} %
 ${font sans-serif:normal:size=8}${top_mem name 2}${alignr}${top mem 2} %
 ${font sans-serif:normal:size=8}${top_mem name 3}${alignr}${top mem 3} %
 
+
 ${font sans-serif:bold:size=8}NETWORK ${hr 2}
 ${font sans-serif:normal:size=8}IP address: $alignr ${addr wlan0}
 ESSID: $alignr ${wireless_essid wlan0}
 #Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
-${downspeedgraph wlan0}
-D:${downspeed wlan0} $alignr total: ${totaldown wlan0}
-${upspeedgraph wlan0}
-U:${upspeed wlan0} $alignr total: ${totalup wlan0}
+D: ${downspeed wlan0} $alignr total: ${totaldown wlan0}
+U: ${upspeed wlan0} $alignr total: ${totalup wlan0}
 
 ${font sans-serif:bold:size=8}MPD ${hr 2}
 ${font sans-serif:normal:size=8}${exec mpc status|tail -n 2|sed 's/\t/ /; s/   / /; s/volume/v/; s/repeat: off//; s/repeat: on/repeat/; s/random: off//; s/random: on/random/; s/single: off//; s/single: on/single/; s/consume: off//; s/consume: on/consume/;' }
