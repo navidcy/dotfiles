@@ -36,8 +36,8 @@ set my_del=`rm -f ~/.sec/.tmp`
 # List of mail folders
 mailboxes ~/Mail \
     'imaps://imap.au.dk:993/'\
-    'imaps://umail.silentcircle.com:993/'\
-    'imaps://mail.riseup.net:993/'
+    'imaps://mail.riseup.net:993/'\
+    'imaps://umail.silentcircle.com:993/'
 #	  'imaps://imap.gmail.com:993/'
 
  # Base hook to reset account variables to known state before activating new ones
@@ -49,8 +49,8 @@ account-hook umail.silentcircle.com 'set imap_user=$my_sc_email imap_pass=$my_sc
 
 # Macros to change between inboxes
 macro index <f2> '<change-folder>imaps://imap.au.dk<enter>'
-macro index <f3> '<change-folder>imaps://umail.silentcircle.com<enter>'
-macro index <f4> '<change-folder>imaps://mail.riseup.net<enter>'
+macro index <f3> '<change-folder>imaps://mail.riseup.net<enter>'
+macro index <f4> '<change-folder>imaps://umail.silentcircle.com<enter>'
 
 
 ## NFIT mail
