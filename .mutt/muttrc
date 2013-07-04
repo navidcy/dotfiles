@@ -20,6 +20,11 @@ set my_nfit_email = "adc@geo.au.dk"
 #set my_gmail_email = "andersdc@gmail.com"
 #set my_gmail_pass = `awk '/Gmail/ {print $2}' ~/.sec/.tmp`
 
+# Riseup credentials
+set my_riseup_user = "andersd"
+set my_riseup_email = "andersd@riseup.net"
+set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
+
 # Silent Circle credentials
 set my_sc_email = "anders@silentcircle.com"
 set my_sc_pass = `awk '/SilentCircle/ {print $2}' ~/.sec/.tmp`
@@ -31,6 +36,7 @@ set my_del=`rm -f ~/.sec/.tmp`
 # List of mail folders
 mailboxes ~/Mail \
 	  'imaps://imap.au.dk:993/'\
+	  'imaps://mail.riseup.net:993/'\
 	  'imaps://umail.silentcircle.com:993/'
 #	  'imaps://imap.gmail.com:993/'
 
@@ -52,6 +58,20 @@ folder-hook imaps://imap.au.dk:993/ 'set \
    record = "+Sent"\
    postponed = "+Drafts"\
    from = $my_nfit_email\
+   realname = $my_realname'
+
+# Riseup mail
+account-hook imaps://mail.riseup.net:993/ 'set \
+   imap_user = $my_riseup_user\
+   imap_pass = $my_riseup_pass\
+   smtp_url = "smtp://$my_riseup_user@mail.riseup.net:587"\
+   smtp_pass = $my_riseup_pass'
+folder-hook imaps://mail.riseup.net:993/ 'set \
+   folder = imaps://mail.riseup.net:993/\
+   spoolfile = "+INBOX"\
+   record = "+Sent"\
+   postponed = "+Drafts"\
+   from = $my_riseup_email\
    realname = $my_realname'
 
 # Silent Circle
