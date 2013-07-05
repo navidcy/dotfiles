@@ -106,7 +106,8 @@ folder-hook imaps://umail.silentcircle.com:993/ 'set \
 
 # Macros to change between inboxes
 macro index <f2> '<change-folder>imaps://imap.au.dk:993/<enter>'
-macro index <f3> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
+macro index <f3> '<change-folder>imaps://mail.riseup.net:993/<enter>'
+macro index <f4> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
 #macro index <f4> '<change-folder>imaps://imap.gmail.com:993/<enter>'
 
 # Cache files
