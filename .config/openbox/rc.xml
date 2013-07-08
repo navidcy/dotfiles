@@ -374,6 +374,15 @@
         <command>x-www-browser</command>
       </action>
     </keybind>
+    <keybind key="W-q">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Tor browser</name>
+        </startupnotify>
+        <command>tor-browser.sh</command>
+      </action>
+    </keybind>
     <keybind key="W-i">
       <action name="Execute">
         <startupnotify>
