@@ -25,6 +25,11 @@ set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
 #set my_gmail_email = "andersdc@gmail.com"
 #set my_gmail_pass = `awk '/Gmail/ {print $2}' ~/.sec/.tmp`
 
+# Riseup credentials
+set my_riseup_user = "andersd"
+set my_riseup_email = "andersd@riseup.net"
+set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
+
 # Silent Circle credentials
 set my_sc_email = "anders@silentcircle.com"
 set my_sc_pass = `awk '/SilentCircle/ {print $2}' ~/.sec/.tmp`
@@ -67,6 +72,20 @@ folder-hook imap.au.dk 'set \
    record = "+Sent"\
    postponed = "+Drafts"\
    from = $my_nfit_email\
+   realname = $my_realname'
+
+# Riseup mail
+account-hook imaps://mail.riseup.net:993/ 'set \
+   imap_user = $my_riseup_user\
+   imap_pass = $my_riseup_pass\
+   smtp_url = "smtp://$my_riseup_user@mail.riseup.net:587"\
+   smtp_pass = $my_riseup_pass'
+folder-hook imaps://mail.riseup.net:993/ 'set \
+   folder = imaps://mail.riseup.net:993/\
+   spoolfile = "+INBOX"\
+   record = "+Sent"\
+   postponed = "+Drafts"\
+   from = $my_riseup_email\
    realname = $my_realname'
 
 # Silent Circle
@@ -112,6 +131,11 @@ folder-hook mail.riseup.net 'set \
 ##   from = $my_gmail_email\
 ##   realname = $my_realname'
 
+# Macros to change between inboxes
+macro index <f2> '<change-folder>imaps://imap.au.dk:993/<enter>'
+macro index <f3> '<change-folder>imaps://mail.riseup.net:993/<enter>'
+macro index <f4> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
+#macro index <f4> '<change-folder>imaps://imap.gmail.com:993/<enter>'
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
