@@ -26,4 +26,17 @@ for F in .config/uzbl .config/awesome .config/luakit .config/openbox .i3 .mutt .
   ln -s $SOURCE $TARGET
 done
 
+# Home folder bin directory
+for F in bin/*; do
+  SOURCE=$PWD/$F
+  TARGET=~/$F
+
+  # Check if file exists, rename if so
+  [ -f $TARGET ] && mv $TARGET ${TARGET}_bck
+  rm -rf $TARGET
+
+  echo "Symlink: $SOURCE -> $TARGET"
+  ln -s $SOURCE $TARGET
+done
+
 
