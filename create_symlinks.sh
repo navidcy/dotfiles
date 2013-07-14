@@ -27,9 +27,9 @@ for F in .config/uzbl .config/awesome .config/luakit .config/openbox .i3 .mutt .
 done
 
 # Home folder bin directory
-for F in bin/*; do
-  SOURCE=$PWD/$F
-  TARGET=~/$F
+for F in `ls bin/`; do
+  SOURCE=$PWD/bin/$F
+  TARGET=~/bin/$F
 
   # Check if file exists, rename if so
   [ -f $TARGET ] && mv $TARGET ${TARGET}_bck
