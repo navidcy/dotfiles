@@ -1,4 +1,4 @@
-#!/bin/sh
+/!/bin/sh
 SESSION=utility
 echo "starting $SESSION tmux session"
 
@@ -15,8 +15,8 @@ then
     tmux send-keys -t $SESSION 'ncmpc' C-m  # process in second pane
     tmux split-window -v -p 50 -t $SESSION  # create a pane below second pane
     tmux send-keys -t $SESSION 'irssi.sh' C-m  # process in third pane
-    tmux select-pane -t $SESSION:1.4        # select fourth pane
-    tmux split-window -v -p 15 -t $SESSION  # split right pane into two
+    #tmux select-pane -t $SESSION:1.4        # select fourth pane
+    #tmux split-window -v -p 15 -t $SESSION  # split right pane into two
     #tmux send-keys -t $SESSION 'uu' C-m     # start update
     tmux select-pane -t $SESSION:1.1        # select first pane
 fi
