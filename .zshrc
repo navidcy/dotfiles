@@ -37,6 +37,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# disable autocorrect
+unsetopt correctall
+
 # set vi-like movement
 set -o vi
 export EDITOR=vim
