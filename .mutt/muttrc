@@ -20,20 +20,6 @@ set my_riseup_user = "andersd"
 set my_riseup_email = "andersd@riseup.net"
 set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
 
-# Gmail credentials
-#set my_gmail_user = "andersdc"
-#set my_gmail_email = "andersdc@gmail.com"
-#set my_gmail_pass = `awk '/Gmail/ {print $2}' ~/.sec/.tmp`
-
-# Riseup credentials
-set my_riseup_user = "andersd"
-set my_riseup_email = "andersd@riseup.net"
-set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
-
-# Silent Circle credentials
-set my_sc_email = "anders@silentcircle.com"
-set my_sc_pass = `awk '/SilentCircle/ {print $2}' ~/.sec/.tmp`
-
 # Remove temporary password file
 set my_del=`rm -f ~/.sec/.tmp`
 
@@ -41,8 +27,7 @@ set my_del=`rm -f ~/.sec/.tmp`
 # List of mail folders
 mailboxes ~/Mail \
     'imaps://imap.au.dk:993/'\
-    'imaps://mail.riseup.net:993/'\
-    'imaps://umail.silentcircle.com:993/'
+    'imaps://mail.riseup.net:993/'
 #	  'imaps://imap.gmail.com:993/'
 
  # Base hook to reset account variables to known state before activating new ones
@@ -50,13 +35,10 @@ account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ss
 
 account-hook imap.au.dk 'set imap_user=$my_nfit_user imap_pass=$my_nfit_pass'
 account-hook mail.riseup.net 'set imap_user=$my_riseup_user imap_pass=$my_riseup_pass'
-account-hook umail.silentcircle.com 'set imap_user=$my_sc_email imap_pass=$my_sc_pass'
 
 # Macros to change between inboxes
 macro index <f2> '<change-folder>imaps://imap.au.dk<enter>'
 macro index <f3> '<change-folder>imaps://mail.riseup.net<enter>'
-macro index <f4> '<change-folder>imaps://umail.silentcircle.com<enter>'
-
 
 ## NFIT mail
 account-hook imaps://imap.au.dk:993/ 'set \
@@ -88,53 +70,9 @@ folder-hook imaps://mail.riseup.net:993/ 'set \
    from = $my_riseup_email\
    realname = $my_realname'
 
-# Silent Circle
-account-hook imaps://umail.silentcircle.com:993/ 'set \
-   imap_user = $my_sc_email\
-   imap_pass = $my_sc_pass\
-   smtp_authenticators = "login:plain"\
-   smtp_url = "smtps://$my_sc_email@umail.silentcircle.com:465/"\
-   smtp_pass = $my_sc_pass'
-folder-hook umail.silentcircle.com 'set \
-   folder = imaps://umail.silentcircle.com:993/\
-   spoolfile = "+INBOX"\
-   record = "+Sent"\
-   postponed = "+Drafts"\
-   from = $my_sc_email\
-   realname = $my_realname'
-
-# Riseup mail
-account-hook imaps://mail.riseup.net:993/ 'set \
-   imap_user = $my_riseup_user\
-   imap_pass = $my_riseup_pass\
-   smtp_url = "smtps://$my_riseup_user@mail.riseup.net:465/"\
-   smtp_pass = "$my_riseup_pass"'
-folder-hook mail.riseup.net 'set \
-   folder = imaps://mail.riseup.net:993/\
-   spoolfile = "+INBOX"\
-   record = "+Sent"\
-   postponed = "+Drafts"\
-   from = $my_riseup_email\
-   realname = "$my_realname"'
-
-## Gmail
-##account-hook imaps://imap.gmail.com:993/ 'set \
-##   imap_user = $my_gmail_email\
-##   imap_pass = $my_gmail_pass\
-##   smtp_url = "smtps://$my_gmail_user@smtp.gmail.com/"\
-##   smtp_pass = $my_gmail_pass'
-##folder-hook imaps://imap.gmail.com:993/ 'set \
-##   folder = imaps://imap.gmail.com:993/\
-##   spoolfile = "+INBOX"\
-##   record = "+[Gmail]/Sent Mail"\
-##   postponed = "+[Gmail]/Drafts"\
-##   from = $my_gmail_email\
-##   realname = $my_realname'
-
 # Macros to change between inboxes
 macro index <f2> '<change-folder>imaps://imap.au.dk:993/<enter>'
 macro index <f3> '<change-folder>imaps://mail.riseup.net:993/<enter>'
-macro index <f4> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
 #macro index <f4> '<change-folder>imaps://imap.gmail.com:993/<enter>'
 
 # Cache files
