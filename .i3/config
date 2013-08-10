@@ -29,8 +29,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # other application launchers
 #bindsym $mod+b exec uzbl-browser
-#bindsym $mod+f exec firefox
-bindsym $mod+b exec luakit
+bindsym $mod+b exec firefox
+bindsym $mod+i exec icedove
+#bindsym $mod+b exec luakit
 bindsym $mod+t exec tor-browser
 bindsym $mod+v exec vidalia
 #bindsym $mod+z exec xscreensaver-command lock

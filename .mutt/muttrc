@@ -15,14 +15,10 @@ set my_nfit_user = "ad\\adc"
 set my_nfit_pass = `awk '/NFIT/ {print $2}' ~/.sec/.tmp`
 set my_nfit_email = "adc@geo.au.dk"
 
-# Gmail credentials
-#set my_gmail_user = "andersdc"
-#set my_gmail_email = "andersdc@gmail.com"
-#set my_gmail_pass = `awk '/Gmail/ {print $2}' ~/.sec/.tmp`
-
-# Silent Circle credentials
-set my_sc_email = "anders@silentcircle.com"
-set my_sc_pass = `awk '/SilentCircle/ {print $2}' ~/.sec/.tmp`
+# Riseup credentials
+set my_riseup_user = "andersd"
+set my_riseup_email = "andersd@riseup.net"
+set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
 
 # Remove temporary password file
 set my_del=`rm -f ~/.sec/.tmp`
@@ -30,15 +26,21 @@ set my_del=`rm -f ~/.sec/.tmp`
 
 # List of mail folders
 mailboxes ~/Mail \
-	  'imaps://imap.au.dk:993/'\
-	  'imaps://umail.silentcircle.com:993/'
+    'imaps://imap.au.dk:993/'\
+    'imaps://mail.riseup.net:993/'
 #	  'imaps://imap.gmail.com:993/'
 
  # Base hook to reset account variables to known state before activating new ones
-#account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ssl_starttls=ask-yes'
 account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ssl_starttls=yes'
 
-# NFIT mail
+account-hook imap.au.dk 'set imap_user=$my_nfit_user imap_pass=$my_nfit_pass'
+account-hook mail.riseup.net 'set imap_user=$my_riseup_user imap_pass=$my_riseup_pass'
+
+# Macros to change between inboxes
+macro index <f2> '<change-folder>imaps://imap.au.dk<enter>'
+macro index <f3> '<change-folder>imaps://mail.riseup.net<enter>'
+
+## NFIT mail
 account-hook imaps://imap.au.dk:993/ 'set \
    imap_user = $my_nfit_user\
    imap_pass = $my_nfit_pass\
@@ -46,7 +48,7 @@ account-hook imaps://imap.au.dk:993/ 'set \
    smtp_authenticators = "login"\
    smtp_url = "smtp://$my_nfit_user@asmtp.au.dk:587"\
    smtp_pass = $my_nfit_pass'
-folder-hook imaps://imap.au.dk:993/ 'set \
+folder-hook imap.au.dk 'set \
    folder = imaps://imap.au.dk:993/\
    spoolfile = "+INBOX"\
    record = "+Sent"\
@@ -54,39 +56,23 @@ folder-hook imaps://imap.au.dk:993/ 'set \
    from = $my_nfit_email\
    realname = $my_realname'
 
-# Silent Circle
-account-hook imaps://umail.silentcircle.com:993/ 'set \
-   imap_user = $my_sc_email\
-   imap_pass = $my_sc_pass\
-   smtp_authenticators = "login:plain"\
-   smtp_url = "smtps://$my_sc_email@umail.silentcircle.com:465/"\
-   smtp_pass = $my_sc_pass'
-folder-hook imaps://umail.silentcircle.com:993/ 'set \
-   folder = imaps://umail.silentcircle.com:993/\
+# Riseup mail
+account-hook imaps://mail.riseup.net:993/ 'set \
+   imap_user = $my_riseup_user\
+   imap_pass = $my_riseup_pass\
+   smtp_url = "smtp://$my_riseup_user@mail.riseup.net:587"\
+   smtp_pass = $my_riseup_pass'
+folder-hook imaps://mail.riseup.net:993/ 'set \
+   folder = imaps://mail.riseup.net:993/\
    spoolfile = "+INBOX"\
    record = "+Sent"\
    postponed = "+Drafts"\
-   from = $my_sc_email\
+   from = $my_riseup_email\
    realname = $my_realname'
-
-# Gmail
-#account-hook imaps://imap.gmail.com:993/ 'set \
-#   imap_user = $my_gmail_email\
-#   imap_pass = $my_gmail_pass\
-#   smtp_url = "smtps://$my_gmail_user@smtp.gmail.com/"\
-#   smtp_pass = $my_gmail_pass'
-#folder-hook imaps://imap.gmail.com:993/ 'set \
-#   folder = imaps://imap.gmail.com:993/\
-#   spoolfile = "+INBOX"\
-#   record = "+[Gmail]/Sent Mail"\
-#   postponed = "+[Gmail]/Drafts"\
-#   from = $my_gmail_email\
-#   realname = $my_realname'
-
 
 # Macros to change between inboxes
 macro index <f2> '<change-folder>imaps://imap.au.dk:993/<enter>'
-macro index <f3> '<change-folder>imaps://umail.silentcircle.com:993/<enter>'
+macro index <f3> '<change-folder>imaps://mail.riseup.net:993/<enter>'
 #macro index <f4> '<change-folder>imaps://imap.gmail.com:993/<enter>'
 
 # Cache files
@@ -103,16 +89,19 @@ set imap_check_subscribed
 unset imap_passive
 
 # keep imap connection alive by polling intermittently (time in seconds)
-set imap_keepalive = 300
+set imap_keepalive=300
 
 # how often to check for new mail (time in seconds)
-set mail_check = 120
+#set mail_check=120
+set mail_check=5
 
 set signature=~/.signature
 set charset=utf-8
 
-set sort = threads    # and sort threads by date
+# sort threads by date
+set sort=threads
 set sort_aux = reverse-last-date-received
+
 set signature=~/.signature
 set charset=utf-8
 set config_charset=utf-8
@@ -147,6 +136,7 @@ set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 set to_chars=" +TCF "   # Drop the "L".
 
 # Display download progress every 5K
+#
 set net_inc=5
 
 # When viewing a message, show the pager in # lines above
@@ -155,7 +145,7 @@ set pager_index_lines=10
 set alias_file=~/.mutt/aliases  # Save aliases here
 source ~/.mutt/aliases  # Load in my aliases.
 source ~/.sec/gpg.rc   # Use GPG
-source ~/.mutt/colours  # Define colours.
+source ~/.mutt/colors  # Define colours.
 
 auto_view text/html
 # HTML is the last option.
