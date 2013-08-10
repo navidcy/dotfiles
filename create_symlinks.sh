@@ -25,5 +25,3 @@ for F in .config/uzbl .config/awesome .config/luakit .config/openbox .i3 .mutt .
   echo "Symlink: $SOURCE -> $TARGET"
   ln -s $SOURCE $TARGET
 done
-
-
