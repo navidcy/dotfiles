@@ -60,6 +60,7 @@ alias l='ls -lh'
 alias ll='ls -lha'
 alias m='make'
 alias mc='make clean'
+alias zshreload='source ~/.zshrc'
 
 # mark functionality
 export MARKPATH=$HOME/.marks
