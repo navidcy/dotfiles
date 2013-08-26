@@ -78,3 +78,13 @@ function marks {
 
 # speech synth command
 say() { if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
+
+# LPP (liggghts post-processing)
+CFDEM_pizzaPath=/home/adc/code/liggghts/lpp-git
+alias pizza='python -i $CFDEM_pizzaPath/src/pizza.py'
+
+# ESYS-Particle
+export PATH=/usr/local/bin/:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/usr/local/lib/:$LIBRARY_PATH
+export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:$PYTHONPATH
