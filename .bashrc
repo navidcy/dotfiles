@@ -110,6 +110,13 @@ if [ `hostname` == "master" ] ||
   # CUDA environment variables
   export PATH=/usr/local/cuda/bin:$PATH
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH 
+
+  # ESyS-Particle
+  export PATH=/usr/local/bin/:$PATH
+  export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
+  export LIBRARY_PATH=/usr/local/lib/:$LIBRARY_PATH
+  export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:$PYTHONPATH
 fi
 
 #source /home/adc/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
+
