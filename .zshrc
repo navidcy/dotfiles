@@ -89,6 +89,7 @@ export PATH=/usr/local/bin/:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/usr/local/lib/:$LIBRARY_PATH
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:$PYTHONPATH
+export PYTHONPATH=/home/adc/code/esys-particle/own-modules/:$PYTHONPATH
 
 # LMGC90v2
 if [ -z ${PYTHONPATH} ]; then
