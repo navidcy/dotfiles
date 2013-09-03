@@ -1,6 +1,7 @@
 " Include pathogen plugin manager
 filetype on
 filetype off
+set t_Co=16 " for solarized theme
 execute pathogen#infect()
 filetype plugin indent on
 
@@ -11,8 +12,11 @@ set nocompatible
 syntax on
 
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
-colorscheme desert
 set background=dark " adjust colors for better contrast
+"colorscheme desert
+colorscheme solarized
+
+
 
 " hilight column 80
 set textwidth=80

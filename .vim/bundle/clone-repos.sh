@@ -4,3 +4,4 @@ git clone git://github.com/scrooloose/nerdtree.git
 git clone git://github.com/scrooloose/syntastic.git
 git clone git://github.com/kien/ctrlp.vim.git
 #git clone git://github.com/klen/python-mode.git
+git clone https://github.com/altercation/vim-colors-solarized.git
