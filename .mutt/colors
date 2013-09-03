@@ -16,7 +16,7 @@ color quoted5		default		default
 color indicator		white		default
 #color message		yellow		black
 color message		yellow		default
-color status		blue		default
+color status		white		black
 color error		yellow		red
 color attachment	magenta		default
 color signature		red		default
