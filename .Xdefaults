@@ -134,9 +134,9 @@ xpdf*urlCommand: /usr/bin/firefox %s
 ! rxvt-unicode ---------------------------------------------------------------
 !URxvt.termName:screen-256color
 URxvt.termName:rxvt-256color
-URxvt.transparent: true
+!URxvt.transparent: true
 ! URxvt.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt.shading: 20
+!URxvt.shading: 20
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 !URxvt.scrollstyle: rxvt
 URxvt.internalBorder:   1
