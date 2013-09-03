@@ -1,4 +1,4 @@
-/!/bin/sh
+#!/bin/sh
 SESSION=utility
 echo "starting $SESSION tmux session"
 
@@ -12,7 +12,7 @@ then
     tmux split-window -h -p 60 -t $SESSION  # horizontal split
     tmux select-pane -t $SESSION:1.1        # select first pane
     tmux split-window -v -p 50 -t $SESSION  # create a pane below first pane
-    tmux send-keys -t $SESSION 'ncmpc' C-m  # process in second pane
+    tmux send-keys -t $SESSION 'ncmpcpp' C-m  # process in second pane
     tmux split-window -v -p 50 -t $SESSION  # create a pane below second pane
     tmux send-keys -t $SESSION 'irssi.sh' C-m  # process in third pane
     #tmux select-pane -t $SESSION:1.4        # select fourth pane
