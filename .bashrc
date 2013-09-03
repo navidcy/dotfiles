@@ -120,3 +120,13 @@ fi
 
 #source /home/adc/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
 
+
+# LMGC90
+if [ -z ${PYTHONPATH} ]; then
+  export PYTHONPATH=/home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
+  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2/lib
+else
+  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
+  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2/lib
+fi
+export PATH=${PATH}:/home/adc/code/lmgc90/LMGC90v2/src/LMGC90v2_dev/addons

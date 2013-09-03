@@ -91,3 +91,13 @@ export LIBRARY_PATH=/usr/local/lib/:$LIBRARY_PATH
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:$PYTHONPATH
 export PYTHONPATH=/home/adc/code/esys-particle/own-modules/:$PYTHONPATH
 
+
+# LMGC90
+if [ -z ${PYTHONPATH} ]; then
+  export PYTHONPATH=/home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
+  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2/lib
+else
+  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
+  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2/lib
+fi
+export PATH=${PATH}:/home/adc/code/lmgc90/LMGC90v2/src/LMGC90v2_dev/addons
