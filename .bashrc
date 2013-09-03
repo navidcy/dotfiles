@@ -120,7 +120,6 @@ fi
 
 #source /home/adc/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
 
-
 # LMGC90
 if [ -z ${PYTHONPATH} ]; then
   export PYTHONPATH=/home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
