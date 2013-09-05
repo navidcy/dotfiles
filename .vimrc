@@ -2,7 +2,8 @@
 filetype on
 filetype off
 set t_Co=16 " for solarized theme
-execute pathogen#infect()
+set rtp+=~/.vim/bundle/vundle " use Vundle plugin manager
+call vundle#rc()
 filetype plugin indent on
 
 " Disable vi-compatibility
@@ -58,6 +59,19 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+
+""" Vundle plugins
+" install and update with :BundleInstall, see :h vundle
+
+" original repos on Github
+Bundle 'gmarik/vundle'              " let Vundle manage Vundle. Required!
+Bundle 'Lokaltog/vim-powerline'     " more functional statusline
+"Bundle 'Lokaltog/powerline'         " successor to vim-powerline
+Bundle 'scrooloose/nerdtree'        " file system browser
+Bundle 'scrooloose/syntastic'       " syntax checking plugin
+Bundle 'kien/ctrlp.vim'             " fuzzy file, buffer, and tag finder
+Bundle 'altercation/vim-colors-solarized' " solarized colorscheme
 
 
 """ Keyboard shortcuts
