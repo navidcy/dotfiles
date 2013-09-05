@@ -1,13 +1,37 @@
-" Include pathogen plugin manager
-filetype on
+set nocompatible    " Disable vi-compatibility
 filetype off
-set t_Co=16 " for solarized theme
+
 set rtp+=~/.vim/bundle/vundle " use Vundle plugin manager
 call vundle#rc()
+
+""" Vundle plugins
+" install and update with :BundleInstall(!), see :h vundle
+
+" let Vundle manage Vundle. Required!
+Bundle 'gmarik/vundle'
+
+" more functional statusline
+Bundle 'Lokaltog/vim-powerline'
+
+" successor to vim-powerline
+"Bundle 'Lokaltog/powerline'
+
+" file system browser
+Bundle 'scrooloose/nerdtree'
+
+" syntax checking plugin
+Bundle 'scrooloose/syntastic'
+
+" fuzzy file, buffer, and tag finder
+Bundle 'kien/ctrlp.vim'
+
+" solarized colorscheme
+Bundle 'altercation/vim-colors-solarized'
+
+
 filetype plugin indent on
 
-" Disable vi-compatibility
-set nocompatible
+set t_Co=16         " for solarized theme
 
 " Enable syntax highligting
 syntax on
@@ -59,19 +83,6 @@ else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-
-
-""" Vundle plugins
-" install and update with :BundleInstall, see :h vundle
-
-" original repos on Github
-Bundle 'gmarik/vundle'              " let Vundle manage Vundle. Required!
-Bundle 'Lokaltog/vim-powerline'     " more functional statusline
-"Bundle 'Lokaltog/powerline'         " successor to vim-powerline
-Bundle 'scrooloose/nerdtree'        " file system browser
-Bundle 'scrooloose/syntastic'       " syntax checking plugin
-Bundle 'kien/ctrlp.vim'             " fuzzy file, buffer, and tag finder
-Bundle 'altercation/vim-colors-solarized' " solarized colorscheme
 
 
 """ Keyboard shortcuts
