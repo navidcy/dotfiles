@@ -63,7 +63,7 @@ set ruler           " Enable bottom ruler
 set scrolloff=3     " show context above-below cursorline
 set shiftwidth=4    " width for autoindents
 set showcmd
-set smartcase       " case0sensitive search if any caps
+set smartcase       " case-sensitive search if any caps
 set softtabstop=4   " makes the tab key indent by four spaces 
 set tabstop=8       " a tab is 4 characters wide
 set wildmenu        " show a navigable menu for tab completion
