@@ -4,8 +4,9 @@ filetype off
 set rtp+=~/.vim/bundle/vundle " use Vundle plugin manager
 call vundle#rc()
 
-""" Vundle plugins
-" install and update with :BundleInstall(!), see :h vundle
+""" Vundle plugins 
+" By default fom github.
+" Install and update with :BundleInstall(!), see :h vundle
 
 " let Vundle manage Vundle. Required!
 Bundle 'gmarik/vundle'
@@ -28,6 +29,9 @@ Bundle 'kien/ctrlp.vim'
 " solarized colorscheme
 Bundle 'altercation/vim-colors-solarized'
 
+" Vim-LaTeX suite
+Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+
 
 filetype plugin indent on
 
@@ -49,7 +53,7 @@ set autoindent
 set autoread        " reload files when changed on disk
 set backspace=2     " fix broken backspace in some setups
 set backupcopy=yes  " see :help crontab
-"set clipboard=unnamed " yank and paste with the system clipboard
+set clipboard=unnamed " yank and paste with the system clipboard
 set encoding=utf-8  " Necessary to show unicode glyphs
 set expandtab       " convert tab char to spaces
 set ignorecase      " case-insensitive search
