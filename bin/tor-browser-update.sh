@@ -1,30 +1,34 @@
 #!/bin/bash
 
-# Optionally specify filename as command line argument
+# Gets latest Tor Browser Bundle development version for Linux x86_64, downloads
+# it, verifies it, and extracts it.
 
-# To import the signing key to Debian with:
+# To import the signing key to Debian run:
 # $ gpg --keyserver keys.gnupg.net --recv 886DDD89
 # $ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 # $ sudo apt-get update
 # $ sudo apt-get install deb.torproject.org-keyring
 
-DOWNLOADCMD=torify wget
+DOWNLOADCMD="torify wget"
 TORFOLDER=~/tor
 DIR="https://www.torproject.org/dist/torbrowser/linux/"
 
-if [[ -z "$1" ]]; then
-    FILENAME="tor-browser-gnu-linux-x86_64-2.4.17-beta-1-dev-en-US"
-else 
-    FILENAME=$1
-fi
+echo "Determining latest Tor Browser Bundle development version"
+TMPFILENAME=.tordownloadpage.html
+$DOWNLOADCMD https://www.torproject.org/projects/torbrowser.html.en#downloads -O $TMPFILENAME && \
+LATESTTBB=`grep 'dev-en-US.tar.gz">64-bit' $TMPFILENAME | tail -n 1 | sed 's/.*tor-browser/tor-browser/' | sed 's/tar.gz.*/tar.gz/'` && \
+echo "Latest Tor Browser Bundle dev. version is $LATESTTBB"
+rm $TMPFILENAME
 
+mkdir -p $TORFOLDER
 cd $TORFOLDER &&\
 echo "Attempting to download Tor Browser Bundle and signature"
-TARGET=$DIR$FILENAME.tar.gz.asc
+TARGET=$DIR$LATESTTBB.asc
 echo $TARGET
 $DOWNLOADCMD $TARGET &&\
-TARGET=$DIR$FILENAME.tar.gz
+TARGET=$DIR$LATESTTBB
 echo $TARGET
 $DOWNLOADCMD $TARGET &&\
-gpg --verify $FILENAME.tar.gz{.asc,} &&\
-tar xvfz $FILENAME.tar.gz
+gpg --verify $LATESTTBB{.asc,} &&\
+tar xvfz $LATESTTBB &&\
+echo "Installation complete. Start with $TORFOLDER"
