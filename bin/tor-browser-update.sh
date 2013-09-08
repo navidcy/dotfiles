@@ -14,7 +14,7 @@ TORFOLDER=~/tor
 DIR="https://www.torproject.org/dist/torbrowser/linux/"
 
 # Check if torify is installed
-if hash torify 2>/dev/null; then
+if command -v torify 2>/dev/null; then
     DOWNLOADCMD="torify wget"
 else
     DOWNLOADCMD="wget"
