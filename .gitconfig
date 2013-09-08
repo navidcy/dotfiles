@@ -3,3 +3,5 @@
 	name = Anders Damsgaard
 [color]
 	ui = auto
+[push]
+	default = simple
