@@ -2,6 +2,7 @@
 
 # Gets latest Tor Browser Bundle development version for Linux x86_64, downloads
 # it, verifies it, and extracts it.
+# The scripts downloads the files using "torify", if available.
 
 # To import the signing key to Debian run:
 # $ gpg --keyserver keys.gnupg.net --recv 886DDD89
@@ -9,9 +10,15 @@
 # $ sudo apt-get update
 # $ sudo apt-get install deb.torproject.org-keyring
 
-DOWNLOADCMD="torify wget"
 TORFOLDER=~/tor
 DIR="https://www.torproject.org/dist/torbrowser/linux/"
+
+# Check if torify is installed
+if hash torify 2>/dev/null; then
+    DOWNLOADCMD="torify wget"
+else
+    DOWNLOADCMD="wget"
+fi
 
 # Find latest TBB version
 echo "Determining latest Tor Browser Bundle development version"
@@ -23,7 +30,7 @@ rm $TMPFILENAME
 
 # Check if the TBB version is already downloaded
 if [ -e $TORFOLDER/$LATESTTBB ]; then
-    echo "You are up to date"
+    echo "The installed TBB version is up to date."
     exit
 fi
 
