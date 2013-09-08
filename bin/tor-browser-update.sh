@@ -6,7 +6,7 @@
 # $ gpg --keyserver keys.gnupg.net --recv 886DDD89
 # $ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 # $ sudo apt-get update
-# $ sudo apt-get isntall deb.torproject.org-keyring
+# $ sudo apt-get install deb.torproject.org-keyring
 
 DOWNLOADCMD=torify wget
 TORFOLDER=~/tor
