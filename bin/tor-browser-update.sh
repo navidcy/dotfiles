@@ -13,12 +13,19 @@ DOWNLOADCMD="torify wget"
 TORFOLDER=~/tor
 DIR="https://www.torproject.org/dist/torbrowser/linux/"
 
+# Find latest TBB version
 echo "Determining latest Tor Browser Bundle development version"
 TMPFILENAME=.tordownloadpage.html
 $DOWNLOADCMD https://www.torproject.org/projects/torbrowser.html.en#downloads -O $TMPFILENAME && \
 LATESTTBB=`grep 'dev-en-US.tar.gz">64-bit' $TMPFILENAME | tail -n 1 | sed 's/.*tor-browser/tor-browser/' | sed 's/tar.gz.*/tar.gz/'` && \
 echo "Latest Tor Browser Bundle dev. version is $LATESTTBB"
 rm $TMPFILENAME
+
+# Check if the TBB version is already downloaded
+if [ -e $TORFOLDER/$LATESTTBB ]; then
+    echo "You are up to date"
+    exit
+fi
 
 mkdir -p $TORFOLDER
 cd $TORFOLDER &&\
