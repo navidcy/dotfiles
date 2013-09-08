@@ -38,4 +38,4 @@ echo $TARGET
 $DOWNLOADCMD $TARGET &&\
 gpg --verify $LATESTTBB{.asc,} &&\
 tar xvfz $LATESTTBB &&\
-echo "Installation complete. Start with $TORFOLDER"
+echo "Installation complete. Start with $TORFOLDER/tor-browser_en-US/start-tor-browser"
