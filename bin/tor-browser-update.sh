@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Gets latest Tor Browser Bundle development version for Linux x86_64, downloads
-# it, verifies it, and extracts it.
+# Gets latest Tor Browser Bundle (TBB) development version for Linux x86_64,
+# downloads it, verifies it, and extracts it.
 # The scripts downloads the files using "torify", if available.
 
 # To import the signing key to Debian run:
@@ -10,7 +10,10 @@
 # $ sudo apt-get update
 # $ sudo apt-get install deb.torproject.org-keyring
 
+# Folder where to download and extract the archives
 TORFOLDER=~/tor
+
+# Remote folder containing the TBB archives
 DIR="https://www.torproject.org/dist/torbrowser/linux/"
 
 # Check if torify is installed
@@ -34,6 +37,7 @@ if [ -e $TORFOLDER/$LATESTTBB ]; then
     exit
 fi
 
+# Download compressed file and signature, verify, and unpack the TBB.
 mkdir -p $TORFOLDER
 cd $TORFOLDER &&\
 echo "Attempting to download Tor Browser Bundle and signature"
