@@ -29,6 +29,15 @@ Bundle 'kien/ctrlp.vim'
 " solarized colorscheme
 Bundle 'altercation/vim-colors-solarized'
 
+" modify surrounding characters in pairs
+Bundle 'tpope/vim-surround'
+
+" autocompletes often typed words with <Tab>
+Bundle 'msanders/snipmate.vim'
+
+" browse buffers (vim.org/scripts), \be, \bs, \bv
+Bundle 'bufexplorer.zip'
+
 " Vim-LaTeX suite
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
