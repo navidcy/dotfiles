@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # the language is written to ./.kbd-layout
-LAYOUTFILE="./.kbd-layout"
+LAYOUTFILE="$HOME/.kbd-layout"
 
 # define two languages
 LANG1="us"
@@ -9,6 +9,7 @@ LANG2="dk"
 
 # write the file if it doesn't exist
 if [ ! -f $LAYOUTFILE ]; then
+    echo 'echo "us" > $LAYOUTFILE'
     echo "us" > $LAYOUTFILE
     setxkbmap $LANG1
     exit
