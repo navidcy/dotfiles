@@ -32,6 +32,9 @@ Bundle 'altercation/vim-colors-solarized'
 " modify surrounding characters in pairs
 Bundle 'tpope/vim-surround'
 
+" git wrapper
+Bundle 'tpope/vim-fugitive'
+
 " autocompletes often typed words with <Tab>
 Bundle 'msanders/snipmate.vim'
 
