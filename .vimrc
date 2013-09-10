@@ -92,6 +92,7 @@ endif
 """ Keyboard shortcuts
 
 " Resize with <C-h>, <C-j>, <C-k> and <C-l>
+unmap <C-j>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
