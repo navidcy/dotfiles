@@ -89,14 +89,27 @@ else
 endif
 
 
-""" Keyboard shortcuts
+" Dictionary word completion using Ctrl-x Ctrl-k
+" File from wordlist- (debian) or word- (arch) package
+set dictionary+=/usr/share/dict/words
 
-" Resize with <C-h>, <C-j>, <C-k> and <C-l>
-unmap <C-j>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Vim Powerline
+"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
+
+" Define other file types
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
+
+" Invisible character colors
+" chose ctermfg=10 if Tab and EOL characters should be brighter
+" chose ctermfg=0 if Tab and EOL characters should be darker
+highlight NonText ctermfg=10 guifg=DarkGray
+highlight SpecialKey ctermfg=10 guifg=DarkGray
+
+
+""" Keyboard shortcuts
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
@@ -113,42 +126,11 @@ nmap <leader>d :NERDTreeToggle<CR>
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
 
-""" Latex-Suite
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-
-" TIP: if you write your \label's as \label{fig:something}, then if you
-" type in \ref{fig: and press <C-n> you will automatically cycle through
-" all the figure labels. Very useful!
-set iskeyword+=:
-""" Latex-Suite end
-
-" Spell check in mutt
-:autocmd FileType mail :nmap <F6> :w<CR>:!aspell -e -c %<CR>:e<CR>
-
-" Dictionary word completion using Ctrl-x Ctrl-k
-" File from wordlist- (debian) or word- (arch) package
-set dictionary+=/usr/share/dict/words
-
-" Vim Powerline
-"let g:Powerline_symbols = 'fancy'
-let g:Powerline_symbols = 'unicode'
-
-" Define other file types
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
-
-"Invisible character colors
-highlight NonText ctermfg=8 guifg=DarkGray
-highlight SpecialKey ctermfg=8 guifg=DarkGray
+" Resize with <C-h>, <C-j>, <C-k> and <C-l>
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Disable arrow keys
 map <Left> <Nop>
