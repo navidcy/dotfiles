@@ -17,10 +17,12 @@ TORFOLDER=~/tor
 DIR="https://www.torproject.org/dist/torbrowser/linux/"
 
 # Check if torify is installed
+GETCMD="wget --no-verbose"
 if command -v torify 2>/dev/null; then
-    DOWNLOADCMD="torify wget"
+    TORIFY="yes"
+    DOWNLOADCMD="torify $GETCMD"
 else
-    DOWNLOADCMD="wget"
+    DOWNLOADCMD=$GETCMD
 fi
 
 # Find latest TBB version
@@ -44,9 +46,15 @@ echo "Attempting to download Tor Browser Bundle and signature"
 TARGET=$DIR$LATESTTBB.asc
 echo $TARGET
 $DOWNLOADCMD $TARGET &&\
+if [[ -z "$TORIFY" ]]; then
+    $GETCMD $TARGET -O $TARGET.notor
+fi
 TARGET=$DIR$LATESTTBB
 echo $TARGET
 $DOWNLOADCMD $TARGET &&\
 gpg --verify $LATESTTBB{.asc,} &&\
+if [[ -z "$TORIFY" ]]; then
+    gpg --verify $LATESTTBB{.asc.notor,}
+fi
 tar xvfz $LATESTTBB &&\
 echo "Installation complete. Start with $TORFOLDER/tor-browser_en-US/start-tor-browser"
