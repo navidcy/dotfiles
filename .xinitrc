@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Set background color
-xsetroot -solid '#000000' &
+xsetroot -solid '#222222' &
 
 # Disable beeps
 xset -b
@@ -21,7 +21,7 @@ xmodmap ~/.Xmodmap
 
 # Make sure this is before the 'exec' command or it won't be executed.
 [ -f ~/.xprofile ] && . ~/.xprofile
-[[ -f ~/.Xdefaults ]] && xrdb -merge ~/.Xdefaults
+xrdb ~/.Xdefaults
 
 # screen powersave
 xset +dpms # Energy Star features on
@@ -33,19 +33,23 @@ xset dpms 300 600 900 # standby -> suspend -> off (seconds)
 # Notification deamon
 dunst &
 
+# Bluetooth applet
+#blueman-applet &
+
+gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
+nm-applet &                  # assuming you're using Network Manager
+#pidgin &                     # if you're using pidgin. You can really put any programs here.
+gnome-power-manager &        # for laptops and stuff
+gnome-volume-manager &       # for mounting CDs, USB sticks, and such
+eval `gnome-keyring-daemon`  # SSH/GPG agent
+
+
 # Disable touchpad when typing
-syndaemon -t -k -i 2 -d &
+#syndaemon -t -k -i 2 -d &
 
 # Automatically suspend system after 20 mins of inactivity
 #xautolock -time 20 -locker "sudo pm-suspend" &
 # Automatically lock the screen after 10 mins of inactivity
 xautolock -time 10 -locker "i3lock -c 1d1f21" &
 
-#DEFAULT_SESSION=awesome
-DEFAULT_SESSION=i3
-#DEFAULT_SESSION=enlightenment_start
-case $1 in
-  awesome|i3|enlightenment_start) exec $1 ;;
-  *) exec $DEFAULT_SESSION ;;
-esac
-
+exec i3
