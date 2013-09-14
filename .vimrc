@@ -65,7 +65,7 @@ set autoindent
 set autoread        " reload files when changed on disk
 set backspace=2     " fix broken backspace in some setups
 set backupcopy=yes  " see :help crontab
-set clipboard=unnamed " yank and paste with the system clipboard
+"set clipboard=unnamed " yank and paste with the system clipboard
 set encoding=utf-8  " Necessary to show unicode glyphs
 set expandtab       " convert tab char to spaces
 set ignorecase      " case-insensitive search
