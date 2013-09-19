@@ -21,6 +21,12 @@ font -misc-fixed-medium-r-normal--12-120-75-75-C-70-iso10646-1
 # chose an xft font, such as:
 # font xft:DejaVu Sans Mono 10
 
+# Window style
+# normal: default border, window title
+# 1pixel: 1 pixel border, no window title
+# none: no border, no window title
+new_window 1pixel
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -30,14 +36,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # other application launchers
 #bindsym $mod+b exec uzbl-browser
 bindsym $mod+b exec firefox
-bindsym $mod+i exec icedove
-#bindsym $mod+b exec luakit
-bindsym $mod+t exec tor-browser
-bindsym $mod+v exec vidalia
-#bindsym $mod+z exec xscreensaver-command lock
+bindsym $mod+t exec tor-browser.sh
 
 # screen lock
-bindsym $mod+z exec i3-msg workspace 1: www && i3lock -c 111111 -d
+bindsym $mod+z exec i3lock -c 111111 -d
 
 # kill focused window
 bindsym $mod+Shift+q kill
