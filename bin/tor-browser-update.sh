@@ -14,7 +14,15 @@
 TORFOLDER=~/tor
 
 # Remote folder containing the TBB archives
-DIR="https://www.torproject.org/dist/torbrowser/linux/"
+UNAMESTR=`uname`
+if [[ "$UNAMESTR" == 'Linux' ]]; then
+    DIR="https://www.torproject.org/dist/torbrowser/linux/"
+elif [[ "$UNAMESTR" == 'Darwin' ]]; then
+    DIR="https://www.torproject.org/dist/torbrowser/osx/"
+else
+    echo "Platform not supported"
+    exit 1
+fi
 
 # Check if torify is installed
 GETCMD="wget --no-verbose"
