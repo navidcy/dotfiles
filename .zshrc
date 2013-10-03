@@ -8,7 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="gnzh"
 #ZSH_THEME="agnoster"
-ZSH_THEME="ys"
+#ZSH_THEME="ys"
+ZSH_THEME="ys-mod"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
