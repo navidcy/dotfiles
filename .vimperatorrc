@@ -1,0 +1,34 @@
+""" VIMPERATOR Firefox plugin configuration
+" see https://github.com/mashiro/dot-files/blob/master/.vimperatorrc
+
+""" What characters to use for labeling hints (f)
+" Numbers only
+"set hintchars=0123456789
+" Home row
+"set hintchars=hjklasdf
+" Smart row
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+""" Default search engine
+" Manage search engines with `:dialog searchengine`
+set defsearch=startpage
+
+""" General options
+set popups=tab
+set nohlsearch
+set ignorecase
+set incsearch
+set smartcase
+set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
+
+""" about:config
+set! general.autoScroll=false
+set! browser.tabs.closeButtons=2
+set! mousewheel.withnokey.numlines=6
+
+""" Scrolling
+nnoremap j 3j
+nnoremap k 3k
+
+
+" vim: ts=2 sw=2 sts=2 fdm=marker ft=vimperator
