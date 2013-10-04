@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 UNAMESTR=`uname`
 if [[ "$UNAMESTR" == 'Linux' ]]; then
     sudo apt-get update && \
