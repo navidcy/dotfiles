@@ -106,8 +106,8 @@ endif
 set dictionary+=/usr/share/dict/words
 
 " Vim Powerline
-"let g:Powerline_symbols = 'fancy'
-let g:Powerline_symbols = 'unicode'
+let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'unicode'
 
 " Define other file types
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
@@ -131,6 +131,9 @@ nmap <leader>s :set spell!<CR>
 
 " toggle line numbering
 nmap <leader>n :set number!<CR>
+
+" toggle relative line numbering
+nmap <leader>m :set relativenumber<CR>
 
 " NERD Tree short cut
 nmap <leader>d :NERDTreeToggle<CR>
