@@ -133,7 +133,7 @@ nmap <leader>s :set spell!<CR>
 nmap <leader>n :set number!<CR>
 
 " toggle relative line numbering
-nmap <leader>m :set relativenumber<CR>
+nmap <leader>m :set relativenumber!<CR>
 
 " NERD Tree short cut
 nmap <leader>d :NERDTreeToggle<CR>
