@@ -13,9 +13,6 @@ setxkbmap us
 # Read .xbindkeysrc for special key-bindings
 xbindkeys
 
-# Read .Xmodmap for modified keys
-xmodmap ~/.Xmodmap
-
 # Set display color profile
 [ -f ~/doc/colorprofile.icc ] && xcalib ~/doc/colorprofile.icc 
 
@@ -27,6 +24,10 @@ xrdb ~/.Xdefaults
 xset +dpms # Energy Star features on
 xset dpms 300 600 900 # standby -> suspend -> off (seconds)
 
+# mouse acceleration (xset m <acceleration> <threshold>)
+#xset m 3/2 4
+xset m 2/1 4
+
 # Set dim LCD brightness
 #xbacklight -set 30 &
 
@@ -36,12 +37,12 @@ dunst &
 # Bluetooth applet
 #blueman-applet &
 
-gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
-nm-applet &                  # assuming you're using Network Manager
+#gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
+#nm-applet &                  # assuming you're using Network Manager
 #pidgin &                     # if you're using pidgin. You can really put any programs here.
-gnome-power-manager &        # for laptops and stuff
-gnome-volume-manager &       # for mounting CDs, USB sticks, and such
-eval `gnome-keyring-daemon`  # SSH/GPG agent
+#gnome-power-manager &        # for laptops and stuff
+#gnome-volume-manager &       # for mounting CDs, USB sticks, and such
+#eval `gnome-keyring-daemon`  # SSH/GPG agent
 
 
 # Disable touchpad when typing
@@ -51,5 +52,9 @@ eval `gnome-keyring-daemon`  # SSH/GPG agent
 #xautolock -time 20 -locker "sudo pm-suspend" &
 # Automatically lock the screen after 10 mins of inactivity
 xautolock -time 10 -locker "i3lock -c 1d1f21" &
+
+# Read .Xmodmap for modified keys
+xmodmap ~/.Xmodmap
+
 
 exec i3
