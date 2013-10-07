@@ -72,7 +72,8 @@ Xcursor.size:  22
 *foreground: S_base0
 !*fading: 40
 *fadeColor: S_base03
-*cursorColor: S_base1
+!*cursorColor: S_base1
+*cursorColor: $DCDCCC
 *pointerColorBackground: S_base01
 *pointerColorForeground: S_base1
 
