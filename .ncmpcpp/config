@@ -2,9 +2,8 @@
 # ~/.ncmpcpp/config - My ncmpcpp preferences
 # 
 
-#mpd_host                   = "localhost"
-#mpd_port                   = "6600"
-mpd_host                   = "etlangtkodeord@192.168.2.7"
+mpd_host                   = "localhost"
+#mpd_host                   = "etlangtkodeord@192.168.2.7"
 mpd_port                   = "6600"
 mpd_music_dir              = "/home/music"
 mpd_crossfade_time         = "1"
