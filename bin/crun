@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# CRUN compiles C/C++ code to a temporary file, and executes it.
+# Author: Anders Damsgaard, andersd@risup.net
+# License: GNU Public License, v. 3+
+
+# Define compilers and the common compiler flags
+CC=gcc
+CXX=g++
+CFLAGS="-g -O2 -Wall"
+
+fullfilename=$(basename $1)
+extension="${fullfilename##*.}"
+filename="${fullfilename%.*}"
+tmpname=/tmp/$filename
+
+# Check if the corresponding file is older than the source
+# and recompile it if that's the case.
+# arg 1: compiler, arg 2: source code file
+function compile {
+    if [ -e $tmpname ]; then
+        if [[ $2 -nt $tmpname ]]; then
+            #echo $1 $2 -o $tmpname $CFLAGS
+            $1 $2 -o $tmpname $CFLAGS
+        fi
+    else
+        $1 $2 -o $tmpname $CFLAGS
+    fi
+}
+
+# Compile source to file in /tmp
+if [ "$extension" == "c" ]; then
+    compile $CC $1
+fi
+
+if [ "$extension" == "cpp" ]; then
+    compile $CXX $1
+fi
+
+$tmpname
