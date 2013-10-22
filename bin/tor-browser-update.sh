@@ -79,6 +79,6 @@ echo "Installation complete. Start with $TORFOLDER/tor-browser_en-US/start-tor-b
 
 # Copy the old Data folder to the new TBB
 if [ $BACKUPDATA == 1 ]; then
-    mv $TORFOLDER/Tor $TORFOLDER/tor-browser_en-US/Data/
+    cp $TORFOLDER/Tor/* $DATAFOLDER
 fi
 cd -
