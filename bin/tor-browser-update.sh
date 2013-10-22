@@ -47,7 +47,7 @@ if [ -e $TORFOLDER/$LATESTTBB ]; then
     exit
 fi
 
-# Download compressed file and signature, verify, and unpack the TBB.
+# Download compressed file and signature, and verify
 mkdir -p $TORFOLDER
 cd $TORFOLDER &&\
 echo "Attempting to download Tor Browser Bundle and signature"
@@ -64,5 +64,21 @@ gpg --verify $LATESTTBB{.asc,} &&\
 if [[ -z "$TORIFY" ]]; then
     gpg --verify $LATESTTBB{.asc.notor,}
 fi
+
+# Save the Tor data directory, if it exists
+BACKUPDATA=0
+DATAFOLDER=$TORFOLDER/tor-browser_en-US/Data/Tor
+if [ -e $DATAFOLDER ]; then
+    cp -r $DATAFOLDER $TORFOLDER/
+    BACKUPDATA=1
+fi
+
+# Unpack the TBB
 tar xvfz $LATESTTBB &&\
 echo "Installation complete. Start with $TORFOLDER/tor-browser_en-US/start-tor-browser"
+
+# Copy the old Data folder to the new TBB
+if [ $BACKUPDATA == 1 ]; then
+    mv $TORFOLDER/Tor $TORFOLDER/tor-browser_en-US/Data/
+fi
+cd -
