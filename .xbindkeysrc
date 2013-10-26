@@ -1,48 +1,46 @@
-#"xbacklight -dec 10"
-#    XF86MonBrightnessDown
+"xbacklight -dec 10"
+    XF86MonBrightnessDown
 
-#"xbacklight -inc 10"
-#    XF86MonBrightnessUp
+"xbacklight -inc 10"
+    XF86MonBrightnessUp
 
-#"/home/adc/bin/display-switcher.sh"
-#    XF86LaunchA
+"/home/adc/bin/display-switcher.sh"
+    XF86LaunchA
 
-#"/home/adc/bin/display-ext.sh"
-#    XF86LaunchB
+"/home/adc/bin/display-ext.sh"
+    XF86LaunchB
 
-#"/home/adc/bin/keyboard_backlight.sh down"
-    #m:0x0 + c:237
-    #XF86KbdBrightnessDown
+"/home/adc/bin/kbd_backlight.sh down"
+    XF86KbdBrightnessDown
 
-#"/home/adc/bin/keyboard_backlight.sh up"
-    #m:0x0 + c:238
-    #XF86KbdBrightnessUp
+"/home/adc/bin/kbd_backlight.sh up"
+    XF86KbdBrightnessUp
 
-#"mpc -h etlangtkodeord@localhost prev"
-    #XF86AudioPrev
+"mpc prev"
+    XF86AudioPrev
 
-#"mpc -h etlangtkodeord@localhost toggle"
-    #XF86AudioPlay
+"mpc toggle"
+    XF86AudioPlay
 
-#"mpc -h etlangtkodeord@localhost next"
-    #XF86AudioNext
+"mpc next"
+    XF86AudioNext
     
 "keyboard-layout-switch.sh"
     Mod1+Mod4 + l
 
-#"amixer set Master toggle"
-    #m:0x0 + c:121
-    #XF86AudioMute
+"amixer set Master toggle"
+    XF86AudioMute
 
+#"pactl set-sink-volume 0 -- -5%"
 #"amixer set Master playback 2-"
-"pactl set-sink-volume 0 -- -5%"
-    m:0x0 + c:122
+"amixer set Master 5%-"
     XF86AudioLowerVolume
 
+#"pactl set-sink-volume 0 -- +5%"
 #"amixer set Master playback 2+"
-"pactl set-sink-volume 0 -- +5%"
-    m:0x0 + c:123
+"amixer set Master 5%+"
     XF86AudioRaiseVolume
+    #m:0x0 + c:123
 
 ## Mouse Buttons
 #"xvkbd -xsendevent -text "\[XF86Back]""

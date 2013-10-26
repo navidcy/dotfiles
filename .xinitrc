@@ -56,5 +56,4 @@ xautolock -time 10 -locker "i3lock -c 1d1f21" &
 # Read .Xmodmap for modified keys
 xmodmap ~/.Xmodmap
 
-
 exec i3
