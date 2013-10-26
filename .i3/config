@@ -52,7 +52,7 @@ bindsym $mod+z exec i3lock -c 111111 -d
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec dmenu_run -nb \#222222 -nf \#888888 -sb \#285577 -sf \#ffffff
 
 # change focus
 bindsym $mod+h focus left
@@ -183,3 +183,6 @@ bar {
         urgent_workspace   #ffffff #900000
     }
 }
+
+# auto-start programs
+exec --no-startup-id urxvt -e tmux-utility.sh
