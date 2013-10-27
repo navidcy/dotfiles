@@ -174,7 +174,8 @@ bar {
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
     colors {
-        background #000000
+        #background #000000
+        background #111111
         statusline #ffffff
 
         focused_workspace  #ffffff #285577
