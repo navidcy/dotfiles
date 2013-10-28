@@ -38,7 +38,7 @@ dunst &
 #blueman-applet &
 
 #gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
-#nm-applet &                  # assuming you're using Network Manager
+nm-applet &                  # assuming you're using Network Manager
 #pidgin &                     # if you're using pidgin. You can really put any programs here.
 #gnome-power-manager &        # for laptops and stuff
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
@@ -47,6 +47,9 @@ dunst &
 
 # Disable touchpad when typing
 #syndaemon -t -k -i 2 -d &
+
+# Enable tap-to-click on touchpad
+synclient TapButton1=1 TapButton2=2 TapButton3=3
 
 # Automatically suspend system after 20 mins of inactivity
 #xautolock -time 20 -locker "sudo pm-suspend" &
