@@ -1,11 +1,9 @@
-### Users and passwords
-
 set my_realname = "Anders Damsgaard"
 
 # Use GPG signature to decode pass file
 # Password file (e.g. pass.txt) should be in the form:
-#   NFIT password
-#   Gmail password
+# NFIT password
+# Gmail password
 # Encrypt it using `gpg -o ~/.sec/pass.gpg -e pass.txt`.
 # Delete the plaintext pass.txt afterwards, e.g. `shred pass.txt && rm pass.txt`.
 set my_tmp_secret = `gpg -o ~/.sec/.tmp -d ~/.sec/pass.gpg`
@@ -23,57 +21,26 @@ set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
 # Remove temporary password file
 set my_del=`rm -f ~/.sec/.tmp`
 
+# IMAP: offlineimap
+set folder = "~/Mail"
+source ~/.mutt/mailboxes
+set spoolfile = "+riseup/INBOX"
+set record = "+riseup/Sent\ Items"
+set postponed = "+riseup/Drafts"
+set mbox_type=Maildir
 
-# List of mail folders
-mailboxes ~/Mail \
-    'imaps://imap.au.dk:993/'\
-    'imaps://mail.riseup.net:993/'
-#	  'imaps://imap.gmail.com:993/'
+# Send mail settings
+folder-hook riseup 'set \
+        from=andersd@riseup.net\
+        smtp_authenticators = "login"\
+        smtp_url = "smtp://$my_riseup_user@mail.riseup.net:587"\
+        smtp_pass = $my_riseup_pass'
 
- # Base hook to reset account variables to known state before activating new ones
-account-hook . 'unset preconnect imap_user imap_pass imap_authenticators; set ssl_starttls=yes'
-
-account-hook imap.au.dk 'set imap_user=$my_nfit_user imap_pass=$my_nfit_pass'
-account-hook mail.riseup.net 'set imap_user=$my_riseup_user imap_pass=$my_riseup_pass'
-
-# Macros to change between inboxes
-macro index <f2> '<change-folder>imaps://imap.au.dk<enter>'
-macro index <f3> '<change-folder>imaps://mail.riseup.net<enter>'
-
-## NFIT mail
-account-hook imaps://imap.au.dk:993/ 'set \
-   imap_user = $my_nfit_user\
-   imap_pass = $my_nfit_pass\
-   imap_authenticators = "login"\
-   smtp_authenticators = "login"\
-   smtp_url = "smtp://$my_nfit_user@asmtp.au.dk:587"\
-   smtp_pass = $my_nfit_pass'
-folder-hook imap.au.dk 'set \
-   folder = imaps://imap.au.dk:993/\
-   spoolfile = "+INBOX"\
-   record = "+Sent"\
-   postponed = "+Drafts"\
-   from = $my_nfit_email\
-   realname = $my_realname'
-
-# Riseup mail
-account-hook imaps://mail.riseup.net:993/ 'set \
-   imap_user = $my_riseup_user\
-   imap_pass = $my_riseup_pass\
-   smtp_url = "smtp://$my_riseup_user@mail.riseup.net:587"\
-   smtp_pass = $my_riseup_pass'
-folder-hook imaps://mail.riseup.net:993/ 'set \
-   folder = imaps://mail.riseup.net:993/\
-   spoolfile = "+INBOX"\
-   record = "+Sent"\
-   postponed = "+Drafts"\
-   from = $my_riseup_email\
-   realname = $my_realname'
-
-# Macros to change between inboxes
-macro index <f2> '<change-folder>imaps://imap.au.dk:993/<enter>'
-macro index <f3> '<change-folder>imaps://mail.riseup.net:993/<enter>'
-#macro index <f4> '<change-folder>imaps://imap.gmail.com:993/<enter>'
+folder-hook geomail 'set \
+        from=anders.damsgaard@geo.au.dk\
+        smtp_authenticators = "login"\
+        smtp_url = "smtp://$my_nfit_user@asmtp.au.dk:587"\
+        smtp_pass = $my_nfit_pass'
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
@@ -81,22 +48,6 @@ set message_cachedir=~/.mutt/cache/bodies
 
 # Custom certificates
 set certificate_file=~/.mutt/certificates
-
-# Enable to automatically add all IMAP folders as mailboxes
-set imap_check_subscribed
-
-# allow Mutt to open new imap connections automatically
-unset imap_passive
-
-# keep imap connection alive by polling intermittently (time in seconds)
-set imap_keepalive=300
-
-# how often to check for new mail (time in seconds)
-#set mail_check=120
-set mail_check=5
-
-set signature=~/.signature
-set charset=utf-8
 
 # sort threads by date
 set sort=threads
@@ -142,6 +93,10 @@ set net_inc=5
 # When viewing a message, show the pager in # lines above
 set pager_index_lines=10
 
+# Mail check interval
+set timeout = 15
+set mail_check = 3    # how often (in seconds) mutt should look for new mail (default = 5 sec)
+
 set alias_file=~/.mutt/aliases  # Save aliases here
 source ~/.mutt/aliases  # Load in my aliases.
 source ~/.sec/gpg.rc   # Use GPG
@@ -155,8 +110,23 @@ alternative_order text/enriched text/plain text/html
 set query_command= "abook --mutt-query '%s'"
 macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
 
+bind index gg       first-entry
+bind index G        last-entry
+
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+
 macro index M "T.*\n;WN" "Mark all messages as read"
 
-# Last, but not least, get mutt to display its version on startup.
+# Macros to change between inboxes
+macro index \1 "<change-folder>=riseup/INBOX/<enter>"
+macro index \2 "<change-folder>=geomail/INBOX/<enter>"
+
+# Sync email
+macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+
+# Get mutt to display its version on startup.
 push <show-version>
 

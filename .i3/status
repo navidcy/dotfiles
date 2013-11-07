@@ -15,6 +15,11 @@ order += "load"
 order += "cpu_usage"
 order += "time"
 
+wireless wlan1 {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
 wireless wlan0 {
         format_up = "W: (%quality at %essid) %ip"
         format_down = "W: down"

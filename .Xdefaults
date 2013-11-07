@@ -142,7 +142,7 @@ URxvt.termName:screen-256color
 !URxvt.shading: 20
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 !URxvt.scrollstyle: rxvt
-URxvt.internalBorder:   1
+URxvt.internalBorder: 1
 !URxvt.loginShell: true
 URxvt.scrollBar: off
 !URxvt.font: 7x13euro
