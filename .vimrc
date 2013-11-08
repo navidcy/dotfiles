@@ -56,7 +56,6 @@ syntax on
 set background=dark " adjust colors for better contrast
 "colorscheme desert
 colorscheme solarized
-call togglebg#map("<F3>")
 
 " hilight column 80
 set textwidth=80
@@ -126,6 +125,9 @@ highlight SpecialKey ctermfg=10 guifg=DarkGray
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
+
+" Shortcut to switch background color
+nmap <leader>b :ToggleBG<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
