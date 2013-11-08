@@ -56,6 +56,7 @@ syntax on
 set background=dark " adjust colors for better contrast
 "colorscheme desert
 colorscheme solarized
+call togglebg#map("<F3>")
 
 " hilight column 80
 set textwidth=80
