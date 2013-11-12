@@ -48,6 +48,15 @@ unsetopt correctall
 set -o vi
 export EDITOR=vim
 
+# vi mode status
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
 # Add local bin folder to path
 export PATH=$HOME/bin:$PATH
 export PATH=~/bin:$PATH
@@ -82,7 +91,7 @@ function marks {
 }
 
 # speech synth command
-say() { if [[ "${1}" =~ -[a-z]{2} ]]; then local lang=${1#-}; local text="${*#$1}"; else local lang=${LANG%_*}; local text="$*";fi; mplayer "http://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&q=${text}" &> /dev/null ; }
+function say { echo $* | festival --tts }
 
 # LPP (liggghts post-processing)
 CFDEM_pizzaPath=/home/adc/code/liggghts/lpp-git
