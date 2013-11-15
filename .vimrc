@@ -35,14 +35,18 @@ Bundle 'tpope/vim-surround'
 " git wrapper
 Bundle 'tpope/vim-fugitive'
 
-" autocompletes often typed words with <Tab>
-Bundle 'msanders/snipmate.vim'
-
 " browse buffers (vim.org/scripts), \be, \bs, \bv
 Bundle 'bufexplorer.zip'
 
 " Vim-LaTeX suite
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+
+" Use <Tab> to autocomplete in insert mode
+Bundle 'ervandew/supertab'
+
+" Ack is a grep replacement. Debian pkg: ack-grep. Run from Vim:
+" usage: :Ack [options] {pattern} [{directory}]
+Bundle 'mileszs/ack.vim'
 
 
 filetype plugin indent on
