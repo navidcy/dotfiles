@@ -74,6 +74,9 @@ alias ll='ls -lha'
 alias m='make'
 alias mc='make clean'
 alias zshreload='source ~/.zshrc'
+alias gs='git status'
+alias gcgp='git commit && git push'
+alias gcagp='git commit -a && git push'
 
 # mark functionality
 export MARKPATH=$HOME/.marks
