@@ -158,6 +158,7 @@ map <C-l> <C-w>l
 
 " Use home row keys as Esc
 inoremap jk <Esc>
+inoremap kj <Esc>
 
 " Disable arrow keys
 map <Left> <Nop>
