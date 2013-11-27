@@ -69,7 +69,8 @@ fi
 BACKUPDATA=0
 DATAFOLDER=$TORFOLDER/tor-browser_en-US/Data/Tor
 if [ -e $DATAFOLDER ]; then
-    cp -r $DATAFOLDER $TORFOLDER/
+    rm -r $TORFOLDER/Tor
+    cp -r $DATAFOLDER $TORFOLDER
     BACKUPDATA=1
 fi
 
