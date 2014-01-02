@@ -46,7 +46,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+t exec tor-browser.sh
 
 # screen lock
-bindsym $mod+z exec i3lock -c 111111 -d
+bindsym $mod+z exec /home/adc/bin/zzz-i3
 
 # kill focused window
 bindsym $mod+Shift+q kill

@@ -91,16 +91,17 @@ set to_chars=" +TCF "   # Drop the "L".
 set net_inc=5
 
 # When viewing a message, show the pager in # lines above
-set pager_index_lines=10
+set pager_index_lines=5
 
 # Mail check interval
 set timeout = 15
-set mail_check = 3    # how often (in seconds) mutt should look for new mail (default = 5 sec)
+set mail_check = 5    # how often (in seconds) mutt should look for new mail (default = 5 sec)
 
 set alias_file=~/.mutt/aliases  # Save aliases here
 source ~/.mutt/aliases  # Load in my aliases.
 source ~/.sec/gpg.rc   # Use GPG
 source ~/.mutt/colors  # Define colours.
+#source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
 
 auto_view text/html
 # HTML is the last option.

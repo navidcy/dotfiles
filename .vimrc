@@ -77,7 +77,7 @@ set expandtab       " convert tab char to spaces
 set ignorecase      " case-insensitive search
 set incsearch       " search as you type
 set laststatus=2    " always show the statusline
-set list            " enable rendering of invisible characters
+"set list            " enable rendering of invisible characters
 set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
 set number          " set linenumbering ON as default
 set pastetoggle=<F2> " toggle paste mode
@@ -158,7 +158,6 @@ map <C-l> <C-w>l
 
 " Use home row keys as Esc
 inoremap jk <Esc>
-inoremap kj <Esc>
 
 " Disable arrow keys
 map <Left> <Nop>
