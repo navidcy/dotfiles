@@ -1,4 +1,4 @@
-source /home/adc/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ./code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 autoload -U compinit promptinit colors
 compinit
@@ -20,8 +20,6 @@ export HISTFILE="${HOME}"/.zsh-history
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 
-plugins=(git)
-
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors 'reply=( "=(#b)(*$VAR)(?)*=00=$color[green]=$color[bg-green]" )'
 zstyle ':completion:*:*:*:*:hosts' list-colors '=*=30;41'
@@ -40,6 +38,7 @@ function fname() { find . -iname "*$@*"; }
 
 alias svim='sudoedit'
 alias gs='git status'
+alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 alias gcgp='git commit && git push'
@@ -69,9 +68,10 @@ alias lla='ls -lA'
 alias l='ls -CF'
 
 # enable color support of ls and also add handy aliases
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
+#alias ls='ls --color=auto'
+alias ls='ls -G'
+#alias dir='dir --color=auto'
+#alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -95,4 +95,4 @@ export EDITOR="vim"
 export XDG_CONFIG_HOME="/home/adc/.config"
 
 # Environment variables
-export PATH=/home/adc/bin:$PATH
+export PATH=$HOME/bin:$PATH
