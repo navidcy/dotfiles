@@ -12,7 +12,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " more functional statusline
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 
 " successor to vim-powerline
 "Bundle 'Lokaltog/powerline'
@@ -27,7 +28,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 
 " solarized colorscheme
-Bundle 'altercation/vim-colors-solarized'
+"Bundle 'altercation/vim-colors-solarized'
 
 " modify surrounding characters in pairs
 Bundle 'tpope/vim-surround'
@@ -59,9 +60,9 @@ syntax on
 
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 set background=dark " adjust colors for better contrast
-"colorscheme desert
-colorscheme solarized
-call togglebg#map("<F3>")
+colorscheme desert
+"colorscheme solarized
+"call togglebg#map("<F3>")
 
 " hilight column 80
 set textwidth=80
@@ -106,6 +107,24 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" vim-airline
+let g:airline_symbols = {}
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+
+
+" Fancy powerline symbols, needs a patched/edited font
+let g:Powerline_symbols = 'fancy'
+"
+" " Use ∓ to indicate branches
+"let g:Powerline_symbols_override = {
+"     \ 'BRANCH': [0x2213],
+                                 \ }
 
 " Dictionary word completion using Ctrl-x Ctrl-k
 " File from wordlist- (debian) or word- (arch) package
@@ -126,6 +145,48 @@ autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
 highlight NonText ctermfg=10 guifg=DarkGray
 highlight SpecialKey ctermfg=10 guifg=DarkGray
 
+" COLORS {
+    " syntax highlighting groups
+hi Comment      ctermfg=12
+hi Constant     ctermfg=15 
+hi Identifier   ctermfg=4
+hi Statement    ctermfg=2
+hi PreProc      ctermfg=6
+hi Type         ctermfg=1
+hi Special      ctermfg=3
+hi Underlined   ctermfg=7
+hi Ignore       ctermfg=9
+hi Error        ctermfg=11
+hi Todo         ctermfg=1
+hi Normal ctermfg=none ctermbg=none
+hi NonText ctermfg=0 ctermbg=none
+hi Directory	ctermfg=12
+
+hi VertSplit	ctermfg=black
+hi StatusLine	ctermfg=green
+hi StatusLineNC	ctermfg=0 
+
+hi Folded ctermbg=0 ctermfg=8
+
+hi Pmenu ctermfg=10 ctermbg=0
+hi PmenuSel ctermfg=0 ctermbg=14
+hi LineNr ctermfg=0 ctermbg=none
+hi CursorLine ctermfg=none ctermbg=none cterm=none
+hi CursorLineNr ctermfg=none ctermbg=0 
+hi CursorColumn ctermfg=none ctermbg=0
+
+" Syntax checker colors
+highlight SignColumn ctermbg=none
+hi SyntasticErrorSign ctermfg=1 ctermbg=none
+hi SyntasticWarningSign ctermfg=3 ctermbg=none
+hi SyntasticStyleErrorSign ctermfg=1 ctermbg=none
+hi SyntasticStyleWarningSign ctermfg=3 ctermbg=none
+hi SyntasticErrorLine ctermfg=none ctermbg=none
+hi SyntasticWarningLine ctermfg=none ctermbg=none
+hi SyntasticStyleErrorLine ctermfg=none ctermbg=none
+hi SyntasticStyleWarningLine ctermfg=none ctermbg=none
+hi SpellBad ctermfg=0 ctermbg=3
+hi SpellCap ctermfg=0 ctermbg=1
 
 """ Keyboard shortcuts
 
