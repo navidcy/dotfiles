@@ -78,7 +78,7 @@ set expandtab       " convert tab char to spaces
 set ignorecase      " case-insensitive search
 set incsearch       " search as you type
 set laststatus=2    " always show the statusline
-"set list            " enable rendering of invisible characters
+set list            " enable rendering of invisible characters
 set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
 set number          " set linenumbering ON as default
 set pastetoggle=<F2> " toggle paste mode
@@ -117,22 +117,13 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
-
-" Fancy powerline symbols, needs a patched/edited font
+" Powerline symbols, fancy needs a patched/edited font
+"let g:Powerline_symbols = 'unicode'
 let g:Powerline_symbols = 'fancy'
-"
-" " Use ∓ to indicate branches
-"let g:Powerline_symbols_override = {
-"     \ 'BRANCH': [0x2213],
-                                 \ }
 
 " Dictionary word completion using Ctrl-x Ctrl-k
 " File from wordlist- (debian) or word- (arch) package
 set dictionary+=/usr/share/dict/words
-
-" Vim Powerline
-"let g:Powerline_symbols = 'fancy'
-let g:Powerline_symbols = 'unicode'
 
 " Define other file types
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
@@ -142,11 +133,12 @@ autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
 " Invisible character colors
 " chose ctermfg=10 if Tab and EOL characters should be brighter
 " chose ctermfg=0 if Tab and EOL characters should be darker
-highlight NonText ctermfg=10 guifg=DarkGray
-highlight SpecialKey ctermfg=10 guifg=DarkGray
+"highlight NonText ctermfg=10 guifg=DarkGray
+"highlight SpecialKey ctermfg=10 guifg=DarkGray
+highlight NonText ctermfg=0 guifg=DarkGray
+highlight SpecialKey ctermfg=0 guifg=DarkGray
 
-" COLORS {
-    " syntax highlighting groups
+" Colors
 hi Comment      ctermfg=12
 hi Constant     ctermfg=15 
 hi Identifier   ctermfg=4
@@ -176,7 +168,7 @@ hi CursorLineNr ctermfg=none ctermbg=0
 hi CursorColumn ctermfg=none ctermbg=0
 
 " Syntax checker colors
-highlight SignColumn ctermbg=none
+hi SignColumn ctermbg=none
 hi SyntasticErrorSign ctermfg=1 ctermbg=none
 hi SyntasticWarningSign ctermfg=3 ctermbg=none
 hi SyntasticStyleErrorSign ctermfg=1 ctermbg=none
@@ -187,6 +179,9 @@ hi SyntasticStyleErrorLine ctermfg=none ctermbg=none
 hi SyntasticStyleWarningLine ctermfg=none ctermbg=none
 hi SpellBad ctermfg=0 ctermbg=3
 hi SpellCap ctermfg=0 ctermbg=1
+
+hi ColorColumn ctermbg=0
+
 
 """ Keyboard shortcuts
 
