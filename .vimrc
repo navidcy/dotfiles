@@ -53,7 +53,8 @@ Bundle 'mileszs/ack.vim'
 filetype plugin indent on
 
 " terminal colors
-set t_Co=16
+"set t_Co=16
+set t_Co=256
 
 " Enable syntax highligting
 syntax on
