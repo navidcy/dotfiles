@@ -31,6 +31,12 @@ xset m 2/1 4
 # Set dim LCD brightness
 #xbacklight -set 30 &
 
+# Load local fonts
+xset +fp ~/.fonts
+xset fp rehash
+fc-cache
+fc-cache -fv
+
 # Notification deamon
 dunst &
 

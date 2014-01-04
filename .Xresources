@@ -3,7 +3,8 @@ Xcursor.theme: Vanilla-DMZ-AA
 Xcursor.size:  22
 
 ! terminal colors ------------------------------------------------------------
-#include "/home/adc/.colors/solarized"
+!#include "/home/adc/.colors/solarized"
+#include "/home/adc/.colors/erosionedit"
 
 ! urxvt ----------------------------------------------------------------------
 urxvt*perl-lib:			/usr/lib/urxvt/perl
