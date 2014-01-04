@@ -119,8 +119,8 @@ let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
 " Powerline symbols, fancy needs a patched/edited font
-"let g:Powerline_symbols = 'unicode'
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
+"let g:Powerline_symbols = 'fancy'
 
 " Dictionary word completion using Ctrl-x Ctrl-k
 " File from wordlist- (debian) or word- (arch) package

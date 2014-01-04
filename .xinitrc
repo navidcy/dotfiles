@@ -18,7 +18,7 @@ xbindkeys
 
 # Make sure this is before the 'exec' command or it won't be executed.
 [ -f ~/.xprofile ] && . ~/.xprofile
-xrdb ~/.Xdefaults
+xrdb ~/.Xresources
 
 # screen powersave
 xset +dpms # Energy Star features on
