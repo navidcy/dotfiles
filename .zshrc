@@ -41,6 +41,7 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias gpu='git pull'
 alias gcgp='git commit && git push'
 alias gcagp='git commit -a && git push'
 
