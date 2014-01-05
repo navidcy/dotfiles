@@ -13,10 +13,12 @@ color quoted3		yellow		default
 color quoted4		green		default
 color quoted5		default		default
 
-color indicator		white		default
+#color indicator		white		default
+color indicator		brightdefault		default
 #color message		yellow		black
 color message		yellow		default
-color status		white		black
+#color status		white		black
+color status		white		default
 color error		yellow		red
 color attachment	magenta		default
 color signature		red		default
