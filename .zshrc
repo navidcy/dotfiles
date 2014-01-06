@@ -7,7 +7,7 @@ colors
 
 PROMPT="
 %{$fg[red]%} »  %{$reset_color%}"
-RPROMPT="%B%{$fg[cyan]%}%~%{$reset_color%}"
+RPROMPT="%B%{$fg[cyan]%}%~%{$reset_color%} %m"
 
 setopt AUTO_CD
 setopt CORRECT
