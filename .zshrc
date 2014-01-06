@@ -50,6 +50,9 @@ alias equalizer="alsamixer -D equal"
 
 alias zshreload="source ~/.zshrc"
 
+alias m="make"
+alias mc="make clean"
+
 #alias rm='rm -i'
 alias rmi='rm -i'
 #alias mv='mv -i'
