@@ -1,9 +1,10 @@
 #!/bin/bash
 
-USER=ircuser
+#USER=ircuser
+USER=adc
 HOST=susanoganders.dk
 PORT=12344
-POSTCMD=\'bin/tmux-irssi.sh\'
+POSTCMD=\'bin/tmux-irc.sh\'
 
 UNAMESTR=`uname`
 if [[ "$UNAMESTR" == 'Linux' ]]; then
