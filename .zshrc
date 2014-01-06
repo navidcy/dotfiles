@@ -45,9 +45,6 @@ alias gpu='git pull'
 alias gcgp='git commit && git push'
 alias gcagp='git commit -a && git push'
 
-alias alsamixer="alsamixer -g"
-alias equalizer="alsamixer -D equal"
-
 alias zshreload="source ~/.zshrc"
 
 alias m="make"
