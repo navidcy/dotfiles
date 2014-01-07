@@ -16,7 +16,7 @@ TORFOLDER=~/tor
 # Remote folder containing the TBB archives
 UNAMESTR=`uname`
 if [[ "$UNAMESTR" == 'Linux' ]]; then
-    DIR="https://www.torproject.org/dist/torbrowser/linux/"
+    DIR="https://www.torproject.org/dist/torbrowser/3.5/"
 elif [[ "$UNAMESTR" == 'Darwin' ]]; then
     DIR="https://www.torproject.org/dist/torbrowser/osx/"
 else
@@ -35,9 +35,9 @@ fi
 
 # Find latest TBB version
 echo "Determining latest Tor Browser Bundle development version"
-TMPFILENAME=.tordownloadpage.html
+TMPFILENAME=/tmp/tordownloadpage.html
 $DOWNLOADCMD https://www.torproject.org/projects/torbrowser.html.en#downloads -O $TMPFILENAME && \
-LATESTTBB=`grep 'dev-en-US.tar.gz">64-bit' $TMPFILENAME | tail -n 1 | sed 's/.*tor-browser/tor-browser/' | sed 's/tar.gz.*/tar.gz/'` && \
+LATESTTBB=`grep '_en-US.tar.xz">64-bit' $TMPFILENAME | sed 's/.*tor-browser/tor-browser/' | sed 's/tar.xz.*/tar.xz/'` && \
 echo "Latest Tor Browser Bundle dev. version is $LATESTTBB"
 rm $TMPFILENAME
 
@@ -75,7 +75,7 @@ if [ -e $DATAFOLDER ]; then
 fi
 
 # Unpack the TBB
-tar xvfz $LATESTTBB &&\
+tar -xJf $LATESTTBB &&\
 echo "Installation complete. Start with $TORFOLDER/tor-browser_en-US/start-tor-browser"
 
 # Copy the old Data folder to the new TBB
