@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Create symlinks
+mkdir -p ./.vim/bundle
 ./create_symlinks.sh
 
 # Clone zsh syntax highlighting

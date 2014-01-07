@@ -68,6 +68,7 @@ set background=dark " adjust colors for better contrast
 colorscheme desert
 "colorscheme solarized
 "call togglebg#map("<F3>")
+let g:airline_theme = 'ubaryd'
 
 " hilight column 80
 set textwidth=80
