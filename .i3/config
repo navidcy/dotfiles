@@ -201,8 +201,8 @@ bar {
         #urgent_workspace   #2f343a #900000 #ffffff
 
         # erosionedit
-        focused_workspace  #bea492 #817267 #000000
-        active_workspace   #333333 #5f676a #ffffff
+        focused_workspace  #9a875f #9a875f #000000
+        active_workspace   #817267 #504339 #bea492
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #2f343a #900000 #ffffff
 
