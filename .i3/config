@@ -28,15 +28,25 @@ font -misc-fixed-medium-r-normal--12-120-75-75-C-70-iso10646-1
 new_window 1pixel
 
 # color class           border  backgr. text    indicator
+
+# default
 #client.focused          #4c7899 #285577 #ffffff #2e9ef4
 ##client.focused_inactive #333333 #5f676a #ffffff #484e50
 #client.focused_inactive #333333 #222222 #888888 #292d2e
 #client.unfocused        #333333 #222222 #888888 #292d2e
 #client.urgent           #2f343a #900000 #ffffff #900000
-client.focused          #666666 #333333 #ffffff #555555
+
+# gray
+#client.focused          #666666 #333333 #ffffff #555555
+#client.focused_inactive #333333 #222222 #888888 #333333
+#client.unfocused        #333333 #222222 #888888 #222222
+#client.urgent           #2f343a #900000 #ffffff #900000
+
+# erosionedit
+client.focused          #bea492 #bea492 #332d29 #93a1a1
 client.focused_inactive #333333 #222222 #888888 #333333
 client.unfocused        #333333 #222222 #888888 #222222
-client.urgent           #2f343a #900000 #ffffff #900000
+client.urgent           #181512 #900000 #ffffff #900000
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -171,7 +181,7 @@ bar {
     status_command    i3status --config ~/.i3/status
     #position          top
     position          bottom
-    mode              hide
+    mode              dock
     workspace_buttons yes
     tray_output       none
     
@@ -180,11 +190,22 @@ bar {
     colors {
         background #111111
         statusline #ffffff
+        separator  #333333
+    
+        # colorclass <border> <backgr.> <text>
 
-        focused_workspace  #ffffff #444444
-        active_workspace   #ffffff #333333
-        inactive_workspace #888888 #222222
-        urgent_workspace   #ffffff #900000
+        # default
+        #focused_workspace  #4c7899 #285577 #ffffff
+        #active_workspace   #333333 #5f676a #ffffff
+        #inactive_workspace #333333 #222222 #888888
+        #urgent_workspace   #2f343a #900000 #ffffff
+
+        # erosionedit
+        focused_workspace  #bea492 #817267 #000000
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+
     }
 }
 
