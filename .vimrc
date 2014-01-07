@@ -49,6 +49,10 @@ Bundle 'ervandew/supertab'
 " usage: :Ack [options] {pattern} [{directory}]
 Bundle 'mileszs/ack.vim'
 
+" Calendar
+Bundle 'itchyny/calendar.vim'
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 
 filetype plugin indent on
 
