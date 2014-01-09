@@ -191,6 +191,9 @@ hi ColorColumn ctermbg=0
 
 """ Keyboard shortcuts
 
+" Save with ZX
+nmap ZX :w<CR>
+
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
 
