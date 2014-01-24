@@ -6,9 +6,9 @@ xsetroot -solid '#222222' &
 # Disable beeps
 xset -b
 
-# Keyboard layout
+# Keyboard layout with caps as ctrl
 #setxkbmap dk
-setxkbmap us
+setxkbmap us -option ctrl:nocaps
 
 # Read .xbindkeysrc for special key-bindings
 xbindkeys
@@ -25,8 +25,8 @@ xset +dpms # Energy Star features on
 xset dpms 300 600 900 # standby -> suspend -> off (seconds)
 
 # mouse acceleration (xset m <acceleration> <threshold>)
-#xset m 3/2 4
-xset m 2/1 4
+xset m 3/2 4
+#xset m 2/1 4
 
 # Set dim LCD brightness
 #xbacklight -set 30 &

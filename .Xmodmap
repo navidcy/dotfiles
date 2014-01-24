@@ -1,2 +1,9 @@
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
+! Map caps lock to escape
+!keysym Caps_Lock = Escape
+
+remove mod1 = Alt_L
+remove mod1 = Alt_R
+remove mod4 = Super_L
+add mod1 = Super_L
+add mod4 = Alt_L
+add mod4 = Alt_R
