@@ -8,8 +8,8 @@ xset -b
 
 # Keyboard layout with caps as ctrl
 #setxkbmap dk
-#setxkbmap us -option ctrl:nocaps
-setxkbmap dvorak -option ctrl:nocaps
+setxkbmap us -option ctrl:nocaps
+#setxkbmap dvorak -option ctrl:nocaps
 
 # Read .xbindkeysrc for special key-bindings
 xbindkeys

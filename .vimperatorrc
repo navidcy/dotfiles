@@ -9,8 +9,8 @@ highlight Bell display: none;
 " Home row
 "set hintchars=hjklasdf
 " Smart row
-"set hintchars=hjklasdfgyuiopqwertnmzxcvb
-set hintchars=hutenosa
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+"set hintchars=hutenosa
 
 " Define appearance of hints (CSS)
 highlight Hint font-size:100%;color:white;background-color:red;padding:2px;
