@@ -8,7 +8,8 @@ xset -b
 
 # Keyboard layout with caps as ctrl
 #setxkbmap dk
-setxkbmap us -option ctrl:nocaps
+#setxkbmap us -option ctrl:nocaps
+setxkbmap dvorak -option ctrl:nocaps
 
 # Read .xbindkeysrc for special key-bindings
 xbindkeys
@@ -50,6 +51,9 @@ dunst &
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
 #eval `gnome-keyring-daemon`  # SSH/GPG agent
 
+owncloud &
+dropbox start &
+
 
 # Disable touchpad when typing
 #syndaemon -t -k -i 2 -d &
@@ -63,6 +67,7 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3
 xautolock -time 10 -locker "i3lock -c 1d1f21" &
 
 # Read .Xmodmap for modified keys
+setxkbmap -option ctrl:nocaps
 xmodmap ~/.Xmodmap
 
 exec i3

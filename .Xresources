@@ -14,7 +14,9 @@ urxvt*matcher-button: 		1
 urxvt*urlLauncher:		/usr/bin/iceweasel
 !URxvt*matcher.button: 1
 !URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-urxvt*cursorUnderline: 1
+!urxvt*cursorUnderline: 1
+urxvt*cursorUnderline:  0
+urxvt*cursorColor:      #FF00FF
 urxvt*letterspace: -5
 !urxvt*fading: 			10
 !urxvt*fadeColor: 		#000000	
