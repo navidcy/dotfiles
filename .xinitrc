@@ -35,8 +35,8 @@ xset m 3/2 4
 # Load local fonts
 xset +fp ~/.fonts
 xset fp rehash
-fc-cache
-fc-cache -fv
+#fc-cache
+#fc-cache -fv
 
 # Notification deamon
 dunst &
@@ -51,8 +51,8 @@ dunst &
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
 #eval `gnome-keyring-daemon`  # SSH/GPG agent
 
-owncloud &
-dropbox start &
+#owncloud &
+#dropbox start &
 
 
 # Disable touchpad when typing
