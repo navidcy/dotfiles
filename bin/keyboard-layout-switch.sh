@@ -8,7 +8,7 @@ LANG1="us"
 LANG2="dk"
 
 # make the caps lock key a ctrl key
-OPTS="-option ctrl:nocaps"
+OPTS="-option ctrl:nocaps,altwin:swap_lalt_lwin"
 
 # write the file if it doesn't exist
 if [ ! -f $LAYOUTFILE ]; then

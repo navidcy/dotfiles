@@ -8,7 +8,6 @@ xset -b
 
 # Keyboard layout with caps as ctrl
 #setxkbmap dk
-setxkbmap us -option ctrl:nocaps
 #setxkbmap dvorak -option ctrl:nocaps
 
 # Read .xbindkeysrc for special key-bindings
@@ -67,7 +66,7 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3
 xautolock -time 10 -locker "i3lock -c 1d1f21" &
 
 # Read .Xmodmap for modified keys
-setxkbmap -option ctrl:nocaps
+setxkbmap -option "ctrl:nocaps,altwin:swap_lalt_lwin"
 xmodmap ~/.Xmodmap
 
 exec i3
