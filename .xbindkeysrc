@@ -27,8 +27,8 @@
 "mpc next"
     XF86AudioNext
     
-"keyboard-layout-switch.sh"
-    Mod1+Mod4 + l
+#"keyboard-layout-switch.sh"
+#    Mod1+Mod4 + l
 
 "amixer set Master toggle"
     XF86AudioMute

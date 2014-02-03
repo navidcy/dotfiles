@@ -8,7 +8,8 @@ xset -b
 
 # Keyboard layout with caps as ctrl
 #setxkbmap dk
-setxkbmap us -option ctrl:nocaps
+#setxkbmap us -option ctrl:nocaps
+setxkbmap us
 #setxkbmap dvorak -option ctrl:nocaps
 
 # Read .xbindkeysrc for special key-bindings
@@ -67,7 +68,14 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3
 xautolock -time 10 -locker "i3lock -c 1d1f21" &
 
 # Read .Xmodmap for modified keys
-setxkbmap -option ctrl:nocaps
-xmodmap ~/.Xmodmap
+#setxkbmap -option ctrl:nocaps
+#xmodmap ~/.Xmodmap
 
-exec i3
+#exec i3
+
+# Setup two monitors at iddqd
+xrandr --output DVI-D-0 --primary
+xrandr --output DP-1 --auto --left-of DVI-D-0
+
+sxhkd &
+exec bspwm
