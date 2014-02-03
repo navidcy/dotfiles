@@ -6,7 +6,7 @@ xsetroot -solid '#222222' &
 # Disable beeps
 xset -b
 
-# Keyboard layout with caps as ctrl
+# Keyboard layout
 #setxkbmap dk
 #setxkbmap us -option ctrl:nocaps
 setxkbmap us
@@ -55,7 +55,6 @@ dunst &
 #owncloud &
 #dropbox start &
 
-
 # Disable touchpad when typing
 #syndaemon -t -k -i 2 -d &
 
@@ -68,8 +67,8 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3
 xautolock -time 10 -locker "i3lock -c 1d1f21" &
 
 # Read .Xmodmap for modified keys
-#setxkbmap -option ctrl:nocaps
-xmodmap ~/.Xmodmap
+setxkbmap -option ctrl:nocaps
+#xmodmap ~/.Xmodmap
 
 # Setup two monitors at iddqd
 #xrandr --output DVI-D-0 --primary

@@ -10,22 +10,25 @@ FIRST_DESK_SECONDARY=v
 REMAINING_DESKS_SECONDARY="vi vii viii ix x"
 
 #MONITORS_ASSOCIATED=`bspc query -M | wc -l` 
-if [[ -z `xrandr | grep " connected" | grep 'VGA\|DP-1'` ]]; then
-	#No monitor connected
-	bspc desktop ^1 -n $FIRST_DESK_MAIN
-	bspc monitor -a $REMAINING_DESKS_MAIN
-	bspc config top_padding 14
-else
-	bspc desktop ^1 -n $FIRST_DESK_SECONDARY
-        bspc config -m ^1 top_padding 14
-	bspc monitor -a $REMAINING_DESKS_SECONDARY
-
-	bspc monitor -f next
-
-	bspc desktop Desktop2 -n $FIRST_DESK_MAIN
-	bspc monitor -a $REMAINING_DESKS_MAIN
-	bspc config -m ^2 top_padding 14
-fi
+#if [[ -z `xrandr | grep " connected" | grep 'VGA\|DP-1'` ]]; then
+#	#No monitor connected
+#	bspc desktop ^1 -n $FIRST_DESK_MAIN
+#	bspc monitor -a $REMAINING_DESKS_MAIN
+#	bspc config top_padding 14
+#else
+#	bspc desktop ^1 -n $FIRST_DESK_SECONDARY
+#        bspc config -m ^1 top_padding 14
+#	bspc monitor -a $REMAINING_DESKS_SECONDARY
+#
+#	bspc monitor -f next
+#
+#	bspc desktop Desktop2 -n $FIRST_DESK_MAIN
+#	bspc monitor -a $REMAINING_DESKS_MAIN
+#	bspc config -m ^2 top_padding 14
+#fi
+bspc desktop ^1 -n $FIRST_DESK_MAIN
+bspc monitor -a $REMAINING_DESKS_MAIN
+bspc config top_padding 14
 
 # Visual options
 bspc config border_width        2
