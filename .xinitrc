@@ -72,8 +72,8 @@ xautolock -time 10 -locker "i3lock -c 1d1f21" &
 xmodmap ~/.Xmodmap
 
 # Setup two monitors at iddqd
-xrandr --output DVI-D-0 --primary
-xrandr --output DP-1 --auto --left-of DVI-D-0
+#xrandr --output DVI-D-0 --primary
+#xrandr --output DP-1 --auto --left-of DVI-D-0
 
 #exec i3
 
