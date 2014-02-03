@@ -48,5 +48,6 @@ bspc config focus_follows_pointer true
 # Move focus to the primary monitor
 bspc monitor -f primary
 
-/home/adc/bin/panel > ~/.panel.log 2> ~/.panel.err &
+#/home/adc/bin/panel > ~/.panel.log 2> ~/.panel.err &
 #/home/adc/bin/panel dzen2 > ~/.panel.log 2> ~/.panel.err &
+/home/adc/.config/bspwm/panel/panel &
