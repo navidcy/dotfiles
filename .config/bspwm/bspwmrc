@@ -6,8 +6,8 @@
 
 FIRST_DESK_MAIN=i
 REMAINING_DESKS_MAIN="ii iii iv"
-FIRST_DESK_SECONDARY=I
-REMAINING_DESKS_SECONDARY="II III IV"
+FIRST_DESK_SECONDARY=v
+REMAINING_DESKS_SECONDARY="vi vii viii ix x"
 
 #MONITORS_ASSOCIATED=`bspc query -M | wc -l` 
 if [[ -z `xrandr | grep " connected" | grep 'VGA\|DP-1'` ]]; then

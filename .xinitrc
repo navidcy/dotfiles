@@ -52,8 +52,8 @@ dunst &
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
 #eval `gnome-keyring-daemon`  # SSH/GPG agent
 
-owncloud &
-dropbox start &
+#owncloud &
+#dropbox start &
 
 
 # Disable touchpad when typing
