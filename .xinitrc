@@ -36,8 +36,8 @@ xset m 3/2 4
 # Load local fonts
 xset +fp ~/.fonts
 xset fp rehash
-fc-cache
-fc-cache -fv
+#fc-cache
+#fc-cache -fv
 
 # Notification deamon
 dunst &
