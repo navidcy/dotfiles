@@ -59,4 +59,4 @@ esac
 
 # Create Bar
 
-echo "$icon \f9$bar"
+echo "$icon $BAT \f9$bar"
