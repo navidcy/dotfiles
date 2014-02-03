@@ -12,9 +12,6 @@ xset -b
 setxkbmap us
 #setxkbmap dvorak -option ctrl:nocaps
 
-# Read .xbindkeysrc for special key-bindings
-xbindkeys
-
 # Set display color profile
 [ -f ~/doc/colorprofile.icc ] && xcalib ~/doc/colorprofile.icc 
 
@@ -69,6 +66,9 @@ xautolock -time 10 -locker "i3lock -c 1d1f21" &
 # Read .Xmodmap for modified keys
 setxkbmap -option ctrl:nocaps
 #xmodmap ~/.Xmodmap
+
+# Read .xbindkeysrc for special key-bindings
+xbindkeys
 
 # Setup two monitors at iddqd
 #xrandr --output DVI-D-0 --primary
