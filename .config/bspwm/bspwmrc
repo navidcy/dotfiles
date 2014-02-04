@@ -57,5 +57,4 @@ bspc config rule_command "$(which rule_command)"
 # Move focus to the primary monitor
 bspc monitor -f primary
 
-/home/adc/bin/panel &
-#/home/adc/.config/bspwm/panel/panel &
+/home/adc/.config/bspwm/panel/panel &

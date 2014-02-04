@@ -6,7 +6,14 @@
 # Debian dependencies
 sudo apt-get install xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev \
     libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev xfonts-terminus \
-    hsetroot compton unclutter
+    xfonts-artwiz hsetroot compton unclutter
+
+# Fonts: search for artwiz-aleczapka fonts, download from sourceforce.
+# Extract fonts to /home/adc/.fonts
+# Run `sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
+# Clear the font cache:
+# sudo fc-cache -f -v
+# fc-cache -f -v
 
 # Core folder
 FOLDER=~/code

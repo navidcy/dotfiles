@@ -18,11 +18,12 @@ bspc control --put-status
 
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'S%Y-%m-%d %H:%M' > "$PANEL_FIFO" &
+#clock -sf 'S%Y-%m-%d %H:%M' > "$PANEL_FIFO" &
+conky -c ~/.config/bspwm/panel/panel_conky > "$PANEL_FIFO" &
 
 case "$flavor" in
 	bar)
-		cat "$PANEL_FIFO" | panel_bar | bar &
+		cat "$PANEL_FIFO" | ~/.config/bspwm/panel/panel_bar | bar &
 		;;
 	dzen2)
 		. panel_colors
