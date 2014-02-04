@@ -8,7 +8,7 @@ xsetroot -cursor_name left_ptr &
 
 # Set background color
 #xsetroot -solid '#222222' &
-hsetroot -cover ~/Pictures/city.jpg
+hsetroot -cover ~/wallpapers/blue-gradient.jpg
 
 # Hide mouse on inactivity
 unclutter -grab -noevents -root &
