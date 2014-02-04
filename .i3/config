@@ -188,7 +188,7 @@ bar {
     #position          top
     position          bottom
     #mode              dock
-    mode              hide
+    #mode              hide
     workspace_buttons yes
     #tray_output       none
     tray_output       primary

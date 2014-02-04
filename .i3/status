@@ -43,7 +43,8 @@ run_watch DHCP {
 }
 
 run_watch VPN {
-        pidfile = "/var/run/vpnc/pid"
+        #pidfile = "/var/run/vpnc/pid"
+        pidfile = "/var/run/vpnc/defaultroute"
 }
 
 time {
