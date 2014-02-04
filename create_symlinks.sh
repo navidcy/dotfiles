@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Home folder dotfiles
-for F in .bashrc .vimrc .inputrc .tmux.conf .xpdfrc .signature .Xresources .Xmodmap .xinitrc .xprofile .zshrc .conkyrc .xbindkeysrc .gitconfig .vimperatorrc; do
+for F in .bashrc .vimrc .inputrc .tmux.conf .xpdfrc .signature .Xresources .Xmodmap .xinitrc .xprofile .zshrc .conkyrc .xbindkeysrc .gitconfig .vimperatorrc .compton.conf; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
