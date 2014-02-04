@@ -1,10 +1,20 @@
 #!/bin/sh
 
-# Set background color
-xsetroot -solid '#222222' &
-
 # Disable beeps
 xset -b
+
+# Normal cursor
+xsetroot -cursor_name left_ptr &
+
+# Set background color
+#xsetroot -solid '#222222' &
+hsetroot -cover ~/Pictures/city.jpg
+
+# Hide mouse on inactivity
+unclutter -grab -noevents -root &
+
+# Add shadows
+compton &
 
 # Keyboard layout
 #setxkbmap dk
@@ -13,10 +23,12 @@ setxkbmap us
 #setxkbmap dvorak -option ctrl:nocaps
 
 # Set display color profile
-[ -f ~/doc/colorprofile.icc ] && xcalib ~/doc/colorprofile.icc 
+#[ -f ~/doc/colorprofile.icc ] && xcalib ~/doc/colorprofile.icc 
 
-# Make sure this is before the 'exec' command or it won't be executed.
+# Load environment variable definitions
 [ -f ~/.xprofile ] && . ~/.xprofile
+
+# X settings
 xrdb ~/.Xresources
 
 # screen powersave
@@ -51,9 +63,6 @@ dunst &
 
 #owncloud &
 #dropbox start &
-
-# Disable touchpad when typing
-#syndaemon -t -k -i 2 -d &
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3

@@ -6,7 +6,7 @@
 # Debian dependencies
 sudo apt-get install xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev \
     libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev xfonts-terminus \
-    dzen2
+    hsetroot compton unclutter
 
 # Core folder
 FOLDER=~/code

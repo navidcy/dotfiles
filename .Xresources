@@ -27,16 +27,7 @@ urxvt*internalBorder: 		1
 
 URxvt.meta8: True
 URxvt.intensityStyles: false
-!Xft.dpi: 81
-!Xft.dpi: 100
-!URxvt.font: xft:SourceCodePro-Light:pixelsize=11
 
-!URxvt.keysym.C-7: command:\033]710;-*-uushi-medium-r-normal-*-*-*-*-*-*-*-*-*\007\033]711;-*-uushi-medium-r-normal-*-*-*-*-*-*-*-*-*\007
-!URxvt.keysym.C-8: command:\033]710;-*-gohufontmod11-medium-r-normal-*-*-*-*-*-*-*-*-*\007\033]711;-*-gohufontmod-medium-r-normal-*-*-*-*-*-*-*-*-*\007
-!URxvt.keysym.C-9: command:\033]710;-*-limey-*-*-*-*-*-*-*-*-*-*-*-*\007\033]711;-*-limey-*-*-*-*-*-*-*-*-*-*-*-*\007
-!URxvt.keysym.C-0: command:\033]710;-*-lemon-*-*-*-*-*-*-*-*-*-*-*-*\007\033]711;-*-lemon-*-*-*-*-*-*-*-*-*-*-*-*\007
-!URxvt.keysym.C-minus: command:\033]710;-*-tewi-medium-r-normal-*-*-*-*-*-*-*-*-*\007\033]711;-*-tewi-medium-r-normal-*-*-*-*-*-*-*-*-*\007
-!URxvt.keysym.C-equal: command:\033]710;xft:inconsolata:size=8\007\033]711;xft:inconsolata:size=8\007
 URxvt.keysym.C-1: command:\033]710;xft:inconsolata:size=7\007\033]711;xft:inconsolata:size=7\007
 URxvt.keysym.C-2: command:\033]710;xft:inconsolata:size=8\007\033]711;xft:inconsolata:size=8\007
 URxvt.keysym.C-3: command:\033]710;xft:inconsolata:size=10\007\033]711;xft:Monaco for Powerline:size=10\007
@@ -57,6 +48,10 @@ urxvt*font: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
 urxvt*boldFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
 urxvt*italicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
 urxvt*bolditalicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
+
+urxvt*transparent: true
+! 0-99 darkens, 101-200 lightens
+urxvt*shading: 10
 
 ! xterm ----------------------------------------------------------------------
 xterm*background: black

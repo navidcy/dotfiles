@@ -3,9 +3,9 @@
 #
 # See `man bspwm` for details
 
-# Quit Bspwm
+# Kill panel and quit Bspwm
 super + alt + Escape
-	bspc quit
+	pkill -x panel; bspc quit
 
 # Close the selected window
 super + w
