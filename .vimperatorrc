@@ -1,6 +1,8 @@
 """ VIMPERATOR Firefox plugin configuration
 " see https://github.com/mashiro/dot-files/blob/master/.vimperatorrc
 
+colors phallus
+
 highlight Bell display: none;
 
 """ What characters to use for labeling hints (f)
