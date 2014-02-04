@@ -119,6 +119,9 @@ super + shift + f
 super + shift + t
 	tor-browser.sh
 
+super + z
+	zzz
+
 # mpd control
 super + shift + p
 	mpc toggle
