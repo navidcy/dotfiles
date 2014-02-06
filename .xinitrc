@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Disable beeps
 xset -b
@@ -8,7 +8,8 @@ xsetroot -cursor_name left_ptr &
 
 # Set background color
 #xsetroot -solid '#222222' &
-hsetroot -cover ~/wallpapers/blue-gradient.jpg
+#hsetroot -cover ~/wallpapers/blue-gradient.jpg
+hsetroot -fill ~/wallpapers/blue-gradient.jpg
 
 # Hide mouse on inactivity
 unclutter -grab -noevents -root &
@@ -80,8 +81,11 @@ setxkbmap -option ctrl:nocaps
 xbindkeys
 
 # Setup two monitors at iddqd
-#xrandr --output DVI-D-0 --primary
-#xrandr --output DP-1 --auto --left-of DVI-D-0
+HOSTNAME=`hostname`
+if [[ "$HOSTNAME" == 'iddqd' ]]; then
+    xrandr --output DVI-D-0 --primary
+    xrandr --output DP-1 --auto --left-of DVI-D-0
+fi
 
 #exec i3
 
