@@ -129,3 +129,8 @@ else
   export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2/lib
 fi
 export PATH=${PATH}:/home/adc/code/lmgc90/LMGC90v2/src/LMGC90v2_dev/addons
+
+# OpenFOAM from unofficial Ubuntu repositories
+if [ -f /opt/openfoam222/etc/bashrc ]; then
+    . /opt/openfoam222/etc/bashrc
+fi

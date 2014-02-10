@@ -97,3 +97,8 @@ export XDG_CONFIG_HOME="/home/adc/.config"
 
 # Environment variables
 export PATH=$HOME/bin:$PATH
+
+# OpenFOAM from unofficial Ubuntu repositories
+if [ -f /opt/openfoam222/etc/bashrc ]; then
+    . /opt/openfoam222/etc/bashrc
+fi
