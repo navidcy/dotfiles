@@ -120,7 +120,7 @@ super + shift + t
 	tor-browser.sh
 
 super + z
-	zzz
+	/home/adc/bin/zzz-i3
 
 # mpd control
 super + shift + p
