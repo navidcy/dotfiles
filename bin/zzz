@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Screen locking and power suspending script.
+# The laptop should be locked and suspended, while the desktop should only be
+# locked.
+
+HOSTNAME=`hostname`
+
+if [[ "$HOSTNAME" == 'flaptop' ]]; then
+    killall ssh
+fi
+mpc stop
+xscreensaver-command --lock
+
+if [[ "$HOSTNAME" == 'flaptop' ]]; then
+    pm-suspend
+fi
