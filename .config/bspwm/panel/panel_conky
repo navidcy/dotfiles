@@ -7,4 +7,4 @@ update_interval 3
 update_interval_on_battery 3
 
 TEXT
-S \f8${execi 1 ~/.config/bspwm/panel/panel_wifi} \f9${wireless_essid wlan0}   \f8${execi 20 ~/.config/bspwm/panel/panel_battery}   \fr${time %Y-%m-%d %H:%M }
+S  \f8${downspeed wlan0}/${upspeed wlan0}   \f8${execi 5 ~/.config/bspwm/panel/panel_wifi}   \f9${wireless_essid wlan0}   \f8${execi 10 ~/.config/bspwm/panel/panel_battery}   ${cpu}%   \fr${time %Y-%m-%d %H:%M }

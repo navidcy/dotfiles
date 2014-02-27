@@ -62,4 +62,4 @@ esac
 # Create Bar
 
 #echo "$icon \f9$bar"
-echo "$REMAINING \f9$bar"
+echo "$REMAINING   \f9$bar"
