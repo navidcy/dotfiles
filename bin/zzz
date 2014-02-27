@@ -13,5 +13,5 @@ mpc stop
 xscreensaver-command --lock
 
 if [[ "$HOSTNAME" == 'flaptop' ]]; then
-    pm-suspend
+    pm-suspend-hybrid
 fi
