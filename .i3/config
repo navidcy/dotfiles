@@ -14,12 +14,17 @@ set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--12-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--12-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose an xft font, such as:
-# font xft:DejaVu Sans Mono 10
+#font xft:DejaVu Sans Mono 10
+#font xft:LucidaTypewriter 7
+font -*-termsynu-medium-r-*-*-11-*-*-*-*-*-*-*
+#font -*-termsynu-medium-r-*-*-14-*-*-*-*-*-*-*
+#font -*-nu-*-*-*-*-*-*-*-*-*-*-*-*
+#font -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
 # Window style
 # normal: default border, window title
@@ -43,10 +48,15 @@ new_window 1pixel
 #client.urgent           #2f343a #900000 #ffffff #900000
 
 # erosionedit
-client.focused          #bea492 #bea492 #332d29 #93a1a1
-client.focused_inactive #333333 #222222 #888888 #333333
-client.unfocused        #333333 #222222 #888888 #222222
-client.urgent           #181512 #900000 #ffffff #900000
+#client.focused          #bea492 #bea492 #332d29 #93a1a1
+#client.focused_inactive #333333 #222222 #888888 #333333
+#client.unfocused        #333333 #222222 #888888 #222222
+#client.urgent           #181512 #900000 #ffffff #900000
+
+client.focused           #002b36 #586e75 #fdf6e3 #268bd2
+client.focused_inactive  #002b36 #073642 #839496 #073642
+client.unfocused         #002b36 #073642 #839496 #073642
+client.urgent            #002b36 #dc322f #fdf6e3 #002b36
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -66,7 +76,7 @@ bindsym $mod+Shift+b exec mpc prev
 bindsym $mod+Shift+s exec mpc stop
 
 # screen lock
-bindsym $mod+z exec /home/adc/bin/zzz-i3
+bindsym $mod+z exec /home/adc/bin/zzz
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -185,37 +195,40 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command    i3status --config ~/.i3/status
+    #status_command    conky -c ~/.i3/conkyrc
     #position          top
     position          bottom
-    #mode              dock
+    mode              dock
     #mode              hide
     workspace_buttons yes
     #tray_output       none
     tray_output       primary
     
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    #font pango:Droid Sans 8
 
     colors {
-        background #111111
-        statusline #ffffff
-        separator  #333333
     
         # colorclass <border> <backgr.> <text>
 
         # default
+        #background #111111
+        #statusline #ffffff
+        #separator  #333333
         #focused_workspace  #4c7899 #285577 #ffffff
         #active_workspace   #333333 #5f676a #ffffff
         #inactive_workspace #333333 #222222 #888888
         #urgent_workspace   #2f343a #900000 #ffffff
-
-        # erosionedit
-        focused_workspace  #9a875f #9a875f #000000
-        active_workspace   #817267 #504339 #bea492
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-
+        
+        background #002b36
+        statusline #657b83
+        separator  #586e75
+        focused_workspace   #b58900 #b58900 #002b36
+        active_workspace    #586e75 #586e75 #002b36
+        inactive_workspace  #073642 #002b36 #839496
+        urgent_workspace    #dc322f #dc322f #fdf6e3
     }
 }
 
 # auto-start programs
-exec --no-startup-id urxvt -e tmux-utility.sh
+#exec --no-startup-id urxvt -e tmux-utility.sh

@@ -28,7 +28,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 
 " solarized colorscheme
-"Bundle 'altercation/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
 
 " modify surrounding characters in pairs
 Bundle 'tpope/vim-surround'
@@ -65,10 +65,11 @@ syntax on
 
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 set background=dark " adjust colors for better contrast
-colorscheme desert
-"colorscheme solarized
-"call togglebg#map("<F3>")
-let g:airline_theme = 'ubaryd'
+"colorscheme desert
+colorscheme solarized
+call togglebg#map("<F3>")
+"let g:airline_theme = 'ubaryd'
+let g:airline_theme = 'solarized'
 
 " hilight column 80
 set textwidth=80
@@ -115,14 +116,14 @@ else
 endif
 
 " vim-airline
-let g:airline_symbols = {}
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
+"let g:airline_symbols = {}
+"let g:airline_left_sep = '⮀'
+"let g:airline_left_alt_sep = '⮁'
+"let g:airline_right_sep = '⮂'
+"let g:airline_right_alt_sep = '⮃'
+"let g:airline_symbols.branch = '⭠'
+"let g:airline_symbols.readonly = '⭤'
+"let g:airline_symbols.linenr = '⭡'
 
 " Powerline symbols, fancy needs a patched/edited font
 let g:Powerline_symbols = 'unicode'

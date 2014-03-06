@@ -45,6 +45,7 @@ xset m 3/2 4
 
 # Load local fonts
 xset +fp ~/.fonts
+xset +fp /usr/share/fonts/local
 xset fp rehash
 #fc-cache
 #fc-cache -fv
@@ -90,7 +91,8 @@ fi
 # Start screensaver daemon
 /usr/bin/xscreensaver -no-splash &
 
-#exec i3
+exec i3
+#exec herbstluftwm --locked
 
-sxhkd &
-exec bspwm
+#sxhkd &
+#exec bspwm

@@ -1,7 +1,10 @@
 general {
         output_format = "i3bar"
         colors = true
-        interval = 5
+        interval = 2
+        color_good = "#859900"
+        color_bad = "#dc322f"
+        color_degraded = "#cb4b16"
 }
 
 #order += "ipv6"
@@ -28,10 +31,10 @@ ethernet eth0 {
 }
 
 volume master {
-  	format = "♪: %volume"
-	device = "default"
-	mixer = "Master"
-	mixer_idx = 0
+        format = "V: %volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
 
 battery 0 {
@@ -56,8 +59,8 @@ load {
 }
 
 cpu_usage {
-#color = "#00FF00"
-  	format = "%usage"
+        #color = "#00FF00"
+        format= "%usage"
 }
 
 disk "/" {
