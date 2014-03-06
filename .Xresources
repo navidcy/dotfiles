@@ -23,7 +23,7 @@ urxvt*urlLauncher:		/usr/bin/iceweasel
 urxvt*cursorUnderline:  0
 urxvt*cursorColor:      #FF00FF
 urxvt*letterspace: -5
-!urxvt*fading: 			10
+urxvt*fading: 			0
 !urxvt*fadeColor: 		#000000	
 urxvt*cursorBlink:		true
 urxvt*scrollBar:		false

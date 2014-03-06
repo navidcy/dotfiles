@@ -14,3 +14,12 @@ git clone https://github.com/phallus/fonts ~/code/phallus-fonts &&
 
 # Install Vundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+# Install font
+cd /tmp &&\
+    wget http://susanoganders.dk/termsyn-1.8.7.tar.gz &&\
+    tar xvfz termsyn-*.tar.gz &&\
+    sudo cp termsyn-*/*.pcf /usr/share/fonts/ &&\
+    sudo fc-cache -f &&\
+    sudo mkfontscale /usr/share/fonts/
+    sudo mkfontdir /usr/share/fonts/
