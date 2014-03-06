@@ -4,6 +4,7 @@ Xcursor.size:  22
 
 ! terminal colors ------------------------------------------------------------
 #include "/home/adc/.colors/solarized"
+!#include "/home/adc/.colors/solarized_light"
 !#include "/home/adc/.colors/erosionedit"
 
 ! fonts ----------------------------------------------------------------------

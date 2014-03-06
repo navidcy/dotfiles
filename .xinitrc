@@ -15,7 +15,7 @@ hsetroot -fill ~/wallpapers/blue-gradient.jpg
 unclutter -grab -noevents -root &
 
 # Add shadows
-compton &
+#compton &
 
 # Keyboard layout
 #setxkbmap dk
