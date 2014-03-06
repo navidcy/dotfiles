@@ -141,10 +141,10 @@ autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
 " Invisible character colors
 " chose ctermfg=10 if Tab and EOL characters should be brighter
 " chose ctermfg=0 if Tab and EOL characters should be darker
-"highlight NonText ctermfg=10 guifg=DarkGray
-"highlight SpecialKey ctermfg=10 guifg=DarkGray
-highlight NonText ctermfg=0 guifg=DarkGray
-highlight SpecialKey ctermfg=0 guifg=DarkGray
+highlight NonText ctermfg=10 guifg=DarkGray
+highlight SpecialKey ctermfg=10 guifg=DarkGray
+"highlight NonText ctermfg=0 guifg=DarkGray
+"highlight SpecialKey ctermfg=0 guifg=DarkGray
 
 " Colors
 hi Comment      ctermfg=12

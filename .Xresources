@@ -12,26 +12,26 @@ Xft*antialias:  true
 Xft*hinting:    full
 
 ! urxvt ----------------------------------------------------------------------
-urxvt*perl-lib:			/usr/lib/urxvt/perl
-urxvt*perl-ext-common:		default,matcher
-urxvt*perl-matcher: 		1
-urxvt*matcher-button: 		1
-urxvt*urlLauncher:		/usr/bin/iceweasel
+urxvt*perl-lib:         /usr/lib/urxvt/perl
+urxvt*perl-ext-common:  default,matcher
+urxvt*perl-matcher:     1
+urxvt*matcher-button:   1
+urxvt*urlLauncher:      /usr/bin/firefox
 !URxvt*matcher.button: 1
 !URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 !urxvt*cursorUnderline: 1
 urxvt*cursorUnderline:  0
 urxvt*cursorColor:      #FF00FF
-urxvt*letterspace: -5
-urxvt*fading: 			0
-!urxvt*fadeColor: 		#000000	
-urxvt*cursorBlink:		true
-urxvt*scrollBar:		false
-urxvt*depth:			24
-urxvt*internalBorder: 		1
+urxvt*letterspace:      -5
+urxvt*fading:           0
+!urxvt*fadeColor:        #000000
+urxvt*cursorBlink:      true
+urxvt*scrollBar:        false
+urxvt*depth:            24
+urxvt*internalBorder:   2
 
-URxvt.meta8: True
-URxvt.intensityStyles: false
+URxvt.meta8:            true
+URxvt.intensityStyles:  false
 
 URxvt.keysym.C-1: command:\033]710;xft:inconsolata:size=7\007\033]711;xft:inconsolata:size=7\007
 URxvt.keysym.C-2: command:\033]710;xft:inconsolata:size=8\007\033]711;xft:inconsolata:size=8\007
@@ -58,8 +58,8 @@ urxvt*font: -*-termsynu-medium-r-*-*-13-*-*-*-*-*-*-*
 urxvt*boldfont: -*-termsynu-bold-r-*-*-13-*-*-*-*-*-*-*
 !urxvt*font: xft:SourceCodePro-Light:size=7.3
 
+! shading: 0-99 darkens, 101-200 lightens
 !urxvt*transparent: true
-! 0-99 darkens, 101-200 lightens
 !urxvt*shading: 10
 
 ! xterm ----------------------------------------------------------------------
@@ -67,35 +67,17 @@ xterm*background: black
 !xterm*background: black
 xterm*foreground: white
 xterm*termName: xterm-256color
-!xterm*geometry: 80x25
-!!xterm*faceName: terminus:bold:pixelsize=11
-!!!xterm*font: -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
-!xterm*faceName: SourceCodePro-Regular
-!xterm*faceSize: 11
-!xterm*font: 7x13
-!xterm*font: 8x15
-!!xterm*dynamicColors: true
-!!!xterm*metaSendsEscape: true
-!!!xterm*eightBitInput: false
-!!!xterm*eightBitControl: false
-!!!xterm*eightBitOutput: true
 
-!xterm*utf8: 1
 xterm*utf8: 2
 xterm*eightBitInput: true
 
 xterm*saveLines: 1024
-!xterm*scrollKey: true
-!xterm*scrollTtyOutput: false
-!!xterm*scrollBar: true
-!xterm*rightScrollBar: true
-!xterm*jumpScroll: true
-!xterm*multiScroll: true
-!xterm*toolBar: false
+xterm*scrollBar: false
+xterm*toolBar:   false
 
 ! xpdf -----------------------------------------------------------------------
 xpdf*enableFreetype: yes
-xpdf*antialias: yes
+xpdf*antialias:  yes
 xpdf*foreground: black
 xpdf*background: white
 xpdf*matteColor: gray
@@ -129,10 +111,3 @@ xscreensaver.passwd.thermometer.background:  #000000
 xscreensaver.passwd.thermometer.width:       8
 !datestamp format--see the strftime(3) manual page for details
 xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
-
-xclock*background: #181512
-xclock*majorColor: #9a875f
-xclock*minorColor: #9a875f
-xclock*minuteColor: #9a875f
-xclock*hourColor: #9a875f
-xclock*secondColor: #9a875f
