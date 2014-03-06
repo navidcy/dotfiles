@@ -19,7 +19,8 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 cd /tmp &&\
     wget http://susanoganders.dk/termsyn-1.8.7.tar.gz &&\
     tar xvfz termsyn-*.tar.gz &&\
-    sudo cp termsyn-*/*.pcf /usr/share/fonts/ &&\
+    sudo mkdir -p /usr/share/fonts/local
+    sudo cp termsyn-*/*.pcf /usr/share/fonts/local/ &&\
     sudo fc-cache -f &&\
-    sudo mkfontscale /usr/share/fonts/
-    sudo mkfontdir /usr/share/fonts/
+    sudo mkfontscale /usr/share/fonts/local/
+    sudo mkfontdir /usr/share/fonts/local/
