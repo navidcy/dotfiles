@@ -63,9 +63,6 @@ dunst &
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
 #eval `gnome-keyring-daemon`  # SSH/GPG agent
 
-#owncloud &
-#dropbox start &
-
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
 
@@ -84,6 +81,9 @@ xbindkeys
 # Setup two monitors at iddqd
 HOSTNAME=`hostname`
 if [[ "$HOSTNAME" == 'iddqd' ]]; then
+    owncloud &
+    dropbox start &
+
     xrandr --output DVI-D-0 --primary
     xrandr --output DP-1 --auto --left-of DVI-D-0
 fi
