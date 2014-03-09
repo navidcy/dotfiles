@@ -88,6 +88,8 @@ if [[ "$HOSTNAME" == 'iddqd' ]]; then
     xrandr --output DP-1 --auto --left-of DVI-D-0
 fi
 
+redshift -l 56.09:10.12 &
+
 # Start screensaver daemon
 /usr/bin/xscreensaver -no-splash &
 
