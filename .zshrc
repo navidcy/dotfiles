@@ -70,8 +70,12 @@ alias lla='ls -lA'
 alias l='ls -CF'
 
 # enable color support of ls and also add handy aliases
-alias ls='ls --color=auto'
-#alias ls='ls -G'
+ARCH=$(uname)
+if [[ "$ARCH" != 'Darwin' ]]; then
+    alias ls='ls --color=auto'
+else
+    alias ls='ls -G'
+fi
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
