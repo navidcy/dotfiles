@@ -84,6 +84,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec dmenu_run -nb \#222222 -nf \#888888 -sb \#333333 -sf \#ffffff
 
 # change focus
+bindsym $mod+g focus left
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
