@@ -50,7 +50,7 @@ hi ModeMsg              color: #afafaf; background: #222222; "CmdLine when Not i
 hi MoreMsg              color: #afafaf; background: #222222;
 hi NonText              color: lightblue; min-height: 16px; padding-left: 2px;
 hi Question             color: #ffffff; background: #222222; font-weight: bold;
-hi Search               font-size: inherit; padding: 0; color: #222222; background-color: yellow; padding: 0;
+"hi Search               font-size: inherit; padding: 0; color: #222222; background-color: yellow; padding: 0;
 hi Function             color: lightgreen; background: #222222;
 hi Number               color: tan; background: #222222
 hi String               color: #222222; background: #afafaf;
