@@ -1,5 +1,7 @@
 source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+ARCH=$(uname)
+
 autoload -U compinit promptinit colors
 compinit
 promptinit
@@ -31,7 +33,9 @@ bindkey '^R' history-incremental-search-backward
 bindkey "^j" history-beginning-search-backward
 bindkey "^k" history-beginning-search-forward
 
-function open() { xdg-open $1 &> /dev/null &disown; }
+if [[ "$ARCH" != 'Darwin' ]]; then
+    function open() { xdg-open $1 &> /dev/null &disown; }
+fi
 function lt() { ls -ltrsa "$@" | tail; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
@@ -70,7 +74,6 @@ alias lla='ls -lA'
 alias l='ls -CF'
 
 # enable color support of ls and also add handy aliases
-ARCH=$(uname)
 if [[ "$ARCH" != 'Darwin' ]]; then
     alias ls='ls --color=auto'
 else
