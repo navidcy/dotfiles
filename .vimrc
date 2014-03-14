@@ -36,6 +36,9 @@ Bundle 'tpope/vim-surround'
 " git wrapper
 Bundle 'tpope/vim-fugitive'
 
+" dispatch.vim for :Make
+Bundle 'tpope/vim-dispatch'
+
 " browse buffers (vim.org/scripts), \be, \bs, \bv
 Bundle 'bufexplorer.zip'
 
@@ -47,7 +50,7 @@ Bundle 'ervandew/supertab'
 
 " Ack is a grep replacement. Debian pkg: ack-grep. Run from Vim:
 " usage: :Ack [options] {pattern} [{directory}]
-Bundle 'mileszs/ack.vim'
+"Bundle 'mileszs/ack.vim'
 
 " Calendar
 Bundle 'itchyny/calendar.vim'
