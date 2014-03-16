@@ -36,7 +36,7 @@ hi ErrorMsg             color: #ffffff; background: red; font-weight: bold;
 
 "Hint section
 "hi Hint                 font-family: Sans; font-size: 10px; font-weight: bold; color: #f6e9e9; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding 0px 1px 0px 1px;
-hi Hint               	font-family: Sans; font-size: 10px; font-weight: bold; color: white; background-color: rgba(0, 0, 0, 0.5); border: solid 1px LightGray;
+hi Hint               	font-family: Sans; font-size: 12px; font-weight: bold; color: white; background-color: rgba(0, 0, 0, 0.5); border: solid 1px LightGray;
 hi Hint::after          content: attr(number);
 hi HintActive           background: blue; color: #f6e9e9;
 hi HintElem             background-color: #222222; color: #f6e9e9;
