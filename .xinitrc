@@ -1,5 +1,7 @@
 #!/bin/bash
 
+HOSTNAME=`hostname`
+
 # Disable beeps
 xset -b
 
@@ -10,7 +12,11 @@ xsetroot -cursor_name left_ptr &
 #xsetroot -solid '#222222' &
 #hsetroot -cover ~/wallpapers/blue-gradient.jpg
 #hsetroot -tile ~/wallpapers/solarized-pattern.png
-hsetroot -cover ~/wallpapers/octahedron-bg-gimp.png
+if [[ "$HOSTNAME" == 'iddqd' ]]; then
+    hsetroot -fill ~/wallpapers/octahedron-bg-gimp-double.png
+else
+    hsetroot -cover ~/wallpapers/octahedron-bg-gimp.png
+fi
 
 # Hide mouse on inactivity
 unclutter -grab -noevents -root &
@@ -80,7 +86,6 @@ setxkbmap -option ctrl:nocaps
 xbindkeys
 
 # Setup two monitors at iddqd
-HOSTNAME=`hostname`
 if [[ "$HOSTNAME" == 'iddqd' ]]; then
     owncloud &
     dropbox start &
