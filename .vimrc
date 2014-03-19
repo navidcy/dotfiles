@@ -91,7 +91,7 @@ set laststatus=2    " always show the statusline
 set list            " enable rendering of invisible characters
 set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
 set number          " set linenumbering ON as default
-set relativenumber  " set relative linenumbering ON as default
+"set relativenumber  " set relative linenumbering ON as default
 set pastetoggle=<F2> " toggle paste mode
 set ruler           " Enable bottom ruler
 set scrolloff=3     " show context above-below cursorline
