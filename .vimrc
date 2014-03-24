@@ -1,6 +1,10 @@
 set nocompatible    " Disable vi-compatibility
 filetype off
 
+" terminal colors
+set t_Co=16
+"set t_Co=256
+
 set rtp+=~/.vim/bundle/vundle " use Vundle plugin manager
 call vundle#rc()
 
@@ -36,6 +40,9 @@ Bundle 'tpope/vim-surround'
 " git wrapper
 Bundle 'tpope/vim-fugitive'
 
+" dispatch.vim for :Make
+Bundle 'tpope/vim-dispatch'
+
 " browse buffers (vim.org/scripts), \be, \bs, \bv
 Bundle 'bufexplorer.zip'
 
@@ -47,18 +54,15 @@ Bundle 'ervandew/supertab'
 
 " Ack is a grep replacement. Debian pkg: ack-grep. Run from Vim:
 " usage: :Ack [options] {pattern} [{directory}]
-Bundle 'mileszs/ack.vim'
+"Bundle 'mileszs/ack.vim'
 
 " Calendar
-Bundle 'itchyny/calendar.vim'
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
+"Bundle 'itchyny/calendar.vim'
+"let g:calendar_google_calendar = 1
+"let g:calendar_google_task = 1
 
 filetype plugin indent on
-
-" terminal colors
-"set t_Co=16
-set t_Co=256
+filetype plugin on
 
 " Enable syntax highligting
 syntax on
@@ -80,6 +84,7 @@ set autoread        " reload files when changed on disk
 set backspace=2     " fix broken backspace in some setups
 set backupcopy=yes  " see :help crontab
 "set clipboard=unnamed " yank and paste with the system clipboard
+set cursorline      " highlight current line
 set encoding=utf-8  " Necessary to show unicode glyphs
 set expandtab       " convert tab char to spaces
 set ignorecase      " case-insensitive search
@@ -88,7 +93,7 @@ set laststatus=2    " always show the statusline
 set list            " enable rendering of invisible characters
 set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
 set number          " set linenumbering ON as default
-set relativenumber  " set relative linenumbering ON as default
+"set relativenumber  " set relative linenumbering ON as default
 set pastetoggle=<F2> " toggle paste mode
 set ruler           " Enable bottom ruler
 set scrolloff=3     " show context above-below cursorline
@@ -96,7 +101,7 @@ set shiftwidth=4    " width for autoindents
 "set showcmd
 set smartcase       " case-sensitive search if any caps
 set softtabstop=4   " makes the tab key indent by four spaces 
-set tabstop=8       " a tab is 4 characters wide
+set tabstop=4       " a tab is 4 characters wide
 set wildmenu        " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
@@ -145,50 +150,6 @@ highlight NonText ctermfg=10 guifg=DarkGray
 highlight SpecialKey ctermfg=10 guifg=DarkGray
 "highlight NonText ctermfg=0 guifg=DarkGray
 "highlight SpecialKey ctermfg=0 guifg=DarkGray
-
-" Colors
-hi Comment      ctermfg=12
-hi Constant     ctermfg=15 
-hi Identifier   ctermfg=4
-hi Statement    ctermfg=2
-hi PreProc      ctermfg=6
-hi Type         ctermfg=1
-hi Special      ctermfg=3
-hi Underlined   ctermfg=7
-hi Ignore       ctermfg=9
-hi Error        ctermfg=11
-hi Todo         ctermfg=1
-hi Normal ctermfg=none ctermbg=none
-hi NonText ctermfg=0 ctermbg=none
-hi Directory	ctermfg=12
-
-hi VertSplit	ctermfg=black
-hi StatusLine	ctermfg=green
-hi StatusLineNC	ctermfg=0 
-
-hi Folded ctermbg=0 ctermfg=8
-
-hi Pmenu ctermfg=10 ctermbg=0
-hi PmenuSel ctermfg=0 ctermbg=14
-hi LineNr ctermfg=0 ctermbg=none
-hi CursorLine ctermfg=none ctermbg=none cterm=none
-hi CursorLineNr ctermfg=none ctermbg=0 
-hi CursorColumn ctermfg=none ctermbg=0
-
-" Syntax checker colors
-hi SignColumn ctermbg=none
-hi SyntasticErrorSign ctermfg=1 ctermbg=none
-hi SyntasticWarningSign ctermfg=3 ctermbg=none
-hi SyntasticStyleErrorSign ctermfg=1 ctermbg=none
-hi SyntasticStyleWarningSign ctermfg=3 ctermbg=none
-hi SyntasticErrorLine ctermfg=none ctermbg=none
-hi SyntasticWarningLine ctermfg=none ctermbg=none
-hi SyntasticStyleErrorLine ctermfg=none ctermbg=none
-hi SyntasticStyleWarningLine ctermfg=none ctermbg=none
-hi SpellBad ctermfg=0 ctermbg=3
-hi SpellCap ctermfg=0 ctermbg=1
-
-hi ColorColumn ctermbg=0
 
 
 """ Keyboard shortcuts
