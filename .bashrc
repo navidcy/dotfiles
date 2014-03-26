@@ -98,6 +98,8 @@ if [ `hostname` == "master" ] ||
    [ `hostname` == "node04" ] ||
    [ `hostname` == "node05" ] ; then
 
+  export PATH=~/code/julia:$PATH
+
   # PGI compiler
   PGI=/opt/pgi; export PG
   PATH=/opt/pgi/linux86-64/11.9/bin:$PATH; export PATH
