@@ -10,16 +10,15 @@ then
 
     tmux send-keys -t $SESSION 'mutt' C-m   # process in first pane
     tmux split-window -h -p 60 -t $SESSION  # horizontal split
-    tmux split-window -v -p 10 -t $SESSION  # bottom right
-    tmux send-keys -t $SESSION 'htop' C-m   
+    #tmux split-window -v -p 10 -t $SESSION  # bottom right
+    #tmux send-keys -t $SESSION 'htop' C-m   
     tmux select-pane -t $SESSION:1.1        # select first pane
-    tmux split-window -v -p 50 -t $SESSION  # create a pane below first pane
+    tmux split-window -v -p 60 -t $SESSION  # create a pane below first pane
     tmux send-keys -t $SESSION 'ncmpcpp' C-m  # process in second pane
-    tmux split-window -v -p 50 -t $SESSION  # create a pane below second pane
-    tmux send-keys -t $SESSION 'irc.sh' C-m  # process in third pane
-    #tmux select-pane -t $SESSION:1.4        # select fourth pane
-    #tmux split-window -v -p 15 -t $SESSION  # split right pane into two
-    #tmux send-keys -t $SESSION 'uu' C-m     # start update
+    tmux split-window -v -p 66 -t $SESSION  # create a pane below second pane
+    tmux send-keys -t $SESSION 'htop' C-m   # process in third pane
+    tmux split-window -v -p 70 -t $SESSION  # create a pane below second pane
+    tmux send-keys -t $SESSION 'irc.sh' C-m  # process in fourth pane
     tmux select-pane -t $SESSION:1.1        # select first pane
 fi
 tmux attach -t $SESSION
