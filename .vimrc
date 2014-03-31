@@ -202,3 +202,8 @@ imap <Down> <Nop>
 
 " Update ctags
 nmap <leader>t :!ctags -R --verbose --langmap=c++:.cu,c++:.cuh .<CR>
+" useful tags commands:
+" :tag or :ta <function> Go to definition of the function
+" :ts or :tselect Show the list of tags
+" When the cursor is on a function call, press <Ctrl-[> to go to its definition.
+" Press <Ctrl-t> to go back
