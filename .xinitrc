@@ -101,7 +101,7 @@ fi
 # Start screensaver daemon
 /usr/bin/xscreensaver -no-splash &
 
-xwrits &
+xwrits breaktime=0:20 typetime=5:00 +mouse +lock &
 
 exec i3
 #exec herbstluftwm --locked
