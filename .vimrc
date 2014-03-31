@@ -207,3 +207,5 @@ nmap <leader>t :!ctags -R --verbose --langmap=c++:.cu,c++:.cuh .<CR>
 " :ts or :tselect Show the list of tags
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
+" Use the Ctrl-P plugin to search the tags
+nmap <leader>p :CtrlPTag<CR>
