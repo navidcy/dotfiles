@@ -61,6 +61,9 @@ Bundle 'ervandew/supertab'
 "let g:calendar_google_calendar = 1
 "let g:calendar_google_task = 1
 
+" ctags list (:TlistOpen)
+Bundle 'taglist.vim'
+
 filetype plugin indent on
 filetype plugin on
 
@@ -196,3 +199,6 @@ imap <Left> <Nop>
 imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
+
+" Update ctags
+nmap <leader>t :!ctags -R --verbose --langmap=c++:.cu,c++:.cuh .<CR>
