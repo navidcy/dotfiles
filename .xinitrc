@@ -102,7 +102,6 @@ fi
 /usr/bin/xscreensaver -no-splash &
 
 # Typing breaks (optionally add +lock)
-xwrits breaktime=0:20 typetime=5:00 +clock +breakclock +mouse &
 xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
 
 exec i3
