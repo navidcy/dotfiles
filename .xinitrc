@@ -68,7 +68,7 @@ dunst &
 #pidgin &                     # if you're using pidgin. You can really put any programs here.
 #gnome-power-manager &        # for laptops and stuff
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
-#eval `gnome-keyring-daemon`  # SSH/GPG agent
+eval `gnome-keyring-daemon`   # SSH/GPG agent
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
