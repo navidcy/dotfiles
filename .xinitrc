@@ -76,7 +76,7 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3
 # Automatically suspend system after 20 mins of inactivity
 #xautolock -time 20 -locker "sudo pm-suspend" &
 # Automatically lock the screen after 10 mins of inactivity
-xautolock -time 10 -locker "i3lock -c 1d1f21" &
+xautolock -time 10 -locker "i3lock -c 1d1f21 && sleep 30; sudo pm-suspend" &
 
 # Read .Xmodmap for modified keys
 setxkbmap -option ctrl:nocaps
@@ -99,7 +99,7 @@ if [[ "$HOSTNAME" != 'phony' ]]; then
 fi
 
 # Start screensaver daemon
-/usr/bin/xscreensaver -no-splash &
+#/usr/bin/xscreensaver -no-splash &
 
 # Typing breaks (optionally add +lock)
 xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &

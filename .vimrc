@@ -56,6 +56,9 @@ Bundle 'ervandew/supertab'
 " usage: :Ack [options] {pattern} [{directory}]
 "Bundle 'mileszs/ack.vim'
 
+" Rainbow parantheses
+Bundle 'kien/rainbow_parentheses.vim'
+
 " Calendar
 "Bundle 'itchyny/calendar.vim'
 "let g:calendar_google_calendar = 1
@@ -136,6 +139,12 @@ endif
 " Powerline symbols, fancy needs a patched/edited font
 let g:Powerline_symbols = 'unicode'
 "let g:Powerline_symbols = 'fancy'
+
+" Rainbow parantheses always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " Dictionary word completion using Ctrl-x Ctrl-k
 " File from wordlist- (debian) or word- (arch) package
