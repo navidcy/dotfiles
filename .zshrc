@@ -44,6 +44,7 @@ function fname() { find . -iname "*$@*"; }
 #[[ -z "$TMUX" ]] && exec tmux
 
 alias svim='sudoedit'
+alias e='emacs -nw'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
