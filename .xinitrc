@@ -85,10 +85,12 @@ setxkbmap -option ctrl:nocaps
 # Read .xbindkeysrc for special key-bindings
 xbindkeys
 
+# cloud clients
+owncloud &
+dropbox start &
+
 # Setup two monitors at iddqd
 if [[ "$HOSTNAME" == 'iddqd' ]]; then
-    owncloud &
-    dropbox start &
 
     xrandr --output DVI-D-0 --primary
     xrandr --output DP-1 --auto --left-of DVI-D-0
