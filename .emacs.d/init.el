@@ -42,6 +42,7 @@
      org-mode               ; emacs mode for org
      flycheck               ; on the fly syntax check
      auto-complete          ; complete as you type with overlays
+     auto-complete-c-headers; complete as you type with overlays
      zencoding-mode         ; http://www.emacswiki.org/emacs/ZenCoding
      color-theme            ; nice looking emacs
      color-theme-solarized)) ; check out color-theme-solarized
@@ -108,6 +109,23 @@
 (global-hl-line-mode)   ; highlight current line
 (global-linum-mode 1)   ; add line numbers on the left
 
+;; add org shortcuts
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)      ; open agenda
+(setq org-log-done t)
+(setq org-agenda-files (list "~/owncloud/todo.org"
+                             ;"another file"
+                             ))
+
+;; control which languages are enabled for execution in org-mode with C-c C-c
+;; see http://orgmode.org/org.html#Languages
+(require 'ob-C)
+(require 'ob-gnuplot)
+(require 'ob-octave)
+(require 'ob-latex)
+(require 'ob-python)
+(require 'ob-sh)
+
 ;; avoid compiz manager rendering bugs
 (add-to-list 'default-frame-alist '(alpha . 100))
 
@@ -135,54 +153,6 @@
 ;; content to reflect what's on-disk.
 (global-auto-revert-mode 1)
 
-;; M-x shell is a nice shell interface to use, let's make it colorful.  If
-;; you need a terminal emulator rather than just a shell, consider M-x term
-;; instead.
-;(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-;(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; If you do use M-x term, you will notice there's line mode that acts like
-;; emacs buffers, and there's the default char mode that will send your
-;; input char-by-char, so that curses application see each of your key
-;; strokes.
-;;
-;; The default way to toggle between them is C-c C-j and C-c C-k, let's
-;; better use just one key to do the same.
-;(require 'term)
-;(define-key term-raw-map  (kbd "C-'") 'term-line-mode)
-;(define-key term-mode-map (kbd "C-'") 'term-char-mode)
-
-;; Have C-y act as usual in term-mode, to avoid C-' C-y C-'
-;; Well the real default would be C-c C-j C-y C-c C-k.
-;(define-key term-raw-map  (kbd "C-y") 'term-paste)
-
-;; use ido for minibuffer completion
-;(require 'ido)
-;(ido-mode t)
-;(setq ido-save-directory-list-file "~/.emacs.d/.ido.last")
-;(setq ido-enable-flex-matching t)
-;(setq ido-use-filename-at-point 'guess)
-;(setq ido-show-dot-for-dired t)
-
-;; default key to switch buffer is C-x b, but that's not easy enough
-;;
-;; when you do that, to kill emacs either close its frame from the window
-;; manager or do M-x kill-emacs.  Don't need a nice shortcut for a once a
-;; week (or day) action.
-;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-;(global-set-key (kbd "C-x C-c") 'ido-switch-buffer)
-;(global-set-key (kbd "C-x B") 'ibuffer)
-
-;; C-x C-j opens dired with the cursor right on the file you're editing
-;(require 'dired-x)
-
-;; full screen
-;(defun fullscreen ()
-;  (interactive)
-;  (set-frame-parameter nil 'fullscreen
-;                       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
-;(global-set-key [f11] 'fullscreen)
-
 ;; Syntax rules
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -191,11 +161,88 @@
 ;; Setup modes for files
 (setq auto-mode-alist
       (append
-       '(("\\.c" . c-mode)
-	 ("\\.cpp" . c-mode)
-	 ("\\.h" . c-mode)
-	 ("\\.cuh" . cuda-mode)
-	 ("\\.cu" . cuda-mode)
-	 ("\\.m" . matlab-mode))
-       auto-mode-alist)
+        '(("\\.c" . c-mode)
+          ("\\.cpp" . c-mode)
+          ("\\.h" . c-mode)
+          ("\\.cuh" . cuda-mode)
+          ("\\.cu" . cuda-mode)
+          ("\\.m" . matlab-mode))
+        auto-mode-alist)
       )
+
+;; y or n instead of yes or no
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+
+;; mail client setup
+(require 'mu4e)
+(require 'smtpmail)
+
+;; main account
+(setq mu4e-maildir (expand-file-name "~/Mail"))
+(setq mu4e-sent-folder "/riseup/Sent Items"
+      mu4e-drafts-folder "/riseup/Drafts"
+      mu4e-trash-folder "/riseup/Trash"
+      user-mail-address "andersd@riseup.net"
+      message-signature=file "~/.signature"
+      smtpmail-default-smtp-server "mail.riseup.net"
+      smtpmail-local-domain "riseup.net"
+      smtpmail-smtp-server "mail.riseup.net"
+      ;smtpmail-stream-type starttls
+      smtpmail-smtp-service 587)
+
+(defvar my-mu4e-account-alist
+  '(("riseup"
+     (mu4e-sent-folder "/riseup/Sent Items")
+     (mu4e-drafts-folder "/riseup/Drafts")
+     (mu4e-trash-folder "/riseup/Trash")
+     (user-mail-address "andersd@riseup.net")
+     (message-signature-file "~/.signature")
+     (smtpmail-default-smtp-server "mail.riseup.net")
+     (smtpmail-local-domain "riseup.net")
+     (smtpmail-smtp-server "mail.riseup.net")
+     ;(smtpmail-stream-type starttls)
+     (smtpmail-smtp-service 587))
+    ("geomail"
+     (mu4e-sent-folder "/geomail/Sent Items")
+     (mu4e-drafts-folder "/geomail/Drafts")
+     (mu4e-trash-folder "/geomail/Trash")
+     (user-mail-address "anders.damsgaard@geo.au.dk")
+     (message-signature-file "~/.signature")
+     (smtpmail-default-smtp-server "asmtp.au.dk")
+     (smtpmail-local-domain "au.dk")
+     (smtpmail-smtp-server "asmtp.au.dk")
+     ;(smtpmail-stream-type starttls)
+     (smtpmail-smtp-service 587))))
+
+;; don't save message to Sent Messages, GMail/IMAP will take care of this
+;(setq mu4e-sent-messages-behavior 'delete)
+
+;; setup some handy shortcuts
+(setq mu4e-maildir-shortcuts
+      '(("/riseup/INBOX" . ?i)
+        ("/geomail/INBOX" . ?g)
+        ("/riseup/Sent Items" . ?s)
+        ("/riseup/Trash" . ?t)))
+
+;; allow for updating mail using 'U' in the main view:
+(setq mu4e-get-mail-command "offlineimap")
+
+;; enable inline images
+(setq mu4e-view-show-images t)
+;; use imagemagick, if available
+(when (fboundp 'imagemagick-register-types)
+  (imagemagick-register-types))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(send-mail-function (quote smtpmail-send-it)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
