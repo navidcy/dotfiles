@@ -76,6 +76,17 @@
 (evil-mode 1)
 (require 'powerline)
 (powerline-default-theme)
+;(powerline-vim-theme)
+(setq powerline-color1 "#073642")
+(setq powerline-color2 "#002b36")
+(set-face-attribute 'mode-line nil
+                    :foreground "#fdf6e3"
+                    :background "#2aa198"
+                    :inverse-video nil
+                    :box nil)
+(set-face-attribute 'mode-line-inactive nil
+                    :inverse-video nil
+                    :box nil)
 
 ;; on to the visual settings
 (setq inhibit-splash-screen t)  ; no splash screen, thanks
