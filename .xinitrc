@@ -87,7 +87,6 @@ xbindkeys
 
 # cloud clients
 owncloud &
-dropbox start &
 
 # Setup two monitors at iddqd
 if [[ "$HOSTNAME" == 'iddqd' ]]; then
