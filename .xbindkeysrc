@@ -1,10 +1,8 @@
-#"xbacklight -dec 5"
-"xbacklight -dec 10"
-    XF86MonBrightnessDown
+#"xbacklight -dec 10"
+#    XF86MonBrightnessDown
 
-#"xbacklight -inc 5"
-"xbacklight -inc 10"
-    XF86MonBrightnessUp
+#"xbacklight -inc 10"
+#    XF86MonBrightnessUp
 
 "/home/adc/bin/display-switcher.sh"
     XF86LaunchA
@@ -18,31 +16,26 @@
 "/home/adc/bin/kbd_backlight.sh up"
     XF86KbdBrightnessUp
 
-"mpc prev"
-    XF86AudioPrev
+#"mpc prev"
+#    XF86AudioPrev
 
-"mpc toggle"
-    XF86AudioPlay
+#"mpc toggle"
+#    XF86AudioPlay
 
-"mpc next"
-    XF86AudioNext
+#"mpc next"
+#    XF86AudioNext
     
 #"keyboard-layout-switch.sh"
 #    Mod1+Mod4 + l
 
-"amixer set Master toggle"
-    XF86AudioMute
+#"amixer set Master toggle"
+#    XF86AudioMute
 
-#"pactl set-sink-volume 0 -- -5%"
-#"amixer set Master playback 2-"
-"amixer set Master 5%-"
-    XF86AudioLowerVolume
+#"amixer set Master 5%-"
+#    XF86AudioLowerVolume
 
-#"pactl set-sink-volume 0 -- +5%"
-#"amixer set Master playback 2+"
-"amixer set Master 5%+"
-    XF86AudioRaiseVolume
-    #m:0x0 + c:123
+#"amixer set Master 5%+"
+#    XF86AudioRaiseVolume
 
 ## Mouse Buttons
 #"xvkbd -xsendevent -text "\[XF86Back]""
