@@ -95,7 +95,7 @@ if [[ "$HOSTNAME" == 'iddqd' ]]; then
     xrandr --output DP-1 --auto --left-of DVI-D-0
 fi
 
-if [[ "$HOSTNAME" != 'phony' ]]; then
+if [[ "$HOSTNAME" == 'flaptop' ]]; then
     redshift -l 56.09:10.12 &
 fi
 
