@@ -234,6 +234,11 @@
 (when (fboundp 'imagemagick-register-types)
   (imagemagick-register-types))
 
+;; update interval
+(setq
+  mu4e-get-mail-command "offlineimap"   ;; or fetchmail, or ...
+  mu4e-update-interval 300)             ;; update every 5 minutes
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
