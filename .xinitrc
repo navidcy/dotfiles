@@ -69,7 +69,7 @@ dunst &
 #pidgin &                     # if you're using pidgin. You can really put any programs here.
 #gnome-power-manager &        # for laptops and stuff
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
-eval `gnome-keyring-daemon --start` # manage keys
+#eval `gnome-keyring-daemon --start --components=secrets` # possible components: gpg,pkcs11,secrets,ssh
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
@@ -78,7 +78,7 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3
 #xautolock -time 20 -locker "sudo pm-suspend" &
 # Automatically lock the screen after 10 mins of inactivity
 #xautolock -time 10 -locker "i3lock -c 1d1f21 && sleep 30; sudo pm-suspend" &
-xautolock -time 10 -locker /bin/xlock &
+xautolock -time 10 -locker $HOME/bin/xlock &
 
 # Read .Xmodmap for modified keys
 setxkbmap -option ctrl:nocaps
