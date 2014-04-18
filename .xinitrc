@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 HOSTNAME=`hostname`
 
@@ -12,14 +12,15 @@ xsetroot -cursor_name left_ptr &
 #xsetroot -solid '#222222' &
 #hsetroot -cover ~/wallpapers/blue-gradient.jpg
 #hsetroot -tile ~/wallpapers/solarized-pattern.png
-if [[ "$HOSTNAME" == 'iddqd' ]]; then
+if [ "$HOSTNAME" = "iddqd" ]
+then
     hsetroot -fill ~/wallpapers/octahedron-bg-gimp-double.png
 else
     hsetroot -cover ~/wallpapers/octahedron-bg-gimp.png
 fi
 
-# Hide mouse on inactivity
-unclutter -grab -noevents -root &
+# Hide mouse on inactivity. unclutter messes up i3lock
+#unclutter -grab -noevents -root &
 
 # Add shadows
 #compton &
@@ -68,7 +69,7 @@ dunst &
 #pidgin &                     # if you're using pidgin. You can really put any programs here.
 #gnome-power-manager &        # for laptops and stuff
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
-eval `gnome-keyring-daemon`   # SSH/GPG agent
+eval `gnome-keyring-daemon --start` # manage keys
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
@@ -76,7 +77,8 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3
 # Automatically suspend system after 20 mins of inactivity
 #xautolock -time 20 -locker "sudo pm-suspend" &
 # Automatically lock the screen after 10 mins of inactivity
-xautolock -time 10 -locker "i3lock -c 1d1f21 && sleep 30; sudo pm-suspend" &
+#xautolock -time 10 -locker "i3lock -c 1d1f21 && sleep 30; sudo pm-suspend" &
+xautolock -time 10 -locker /bin/xlock &
 
 # Read .Xmodmap for modified keys
 setxkbmap -option ctrl:nocaps
@@ -89,13 +91,15 @@ xbindkeys
 owncloud &
 
 # Setup two monitors at iddqd
-if [[ "$HOSTNAME" == 'iddqd' ]]; then
+if [ "$HOSTNAME" = "iddqd" ]
+then
 
     xrandr --output DVI-D-0 --primary
     xrandr --output DP-1 --auto --left-of DVI-D-0
 fi
 
-if [[ "$HOSTNAME" == 'flaptop' ]]; then
+if [ "$HOSTNAME" != "phony" ]
+then
     redshift -l 56.09:10.12 &
 fi
 
