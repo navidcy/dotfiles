@@ -34,7 +34,7 @@
      evil-surround          ; like Tim Pope's surround plugin
      helm                   ; Emacs incremental and narrowing framework
      popup                  ; visual popup interface library
-     doxymacs               ; doxygen integration
+     ;doxymacs               ; doxygen integration
      powerline              ; powerline for emacs
      rainbow-delimiters     ; color nested parantheses
      magit                  ; emacs mode for git
