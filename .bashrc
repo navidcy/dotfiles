@@ -133,6 +133,11 @@ fi
 export PATH=${PATH}:/home/adc/code/lmgc90/LMGC90v2/src/LMGC90v2_dev/addons
 
 # OpenFOAM from unofficial Ubuntu repositories
-if [ -f /opt/openfoam222/etc/bashrc ]; then
-    . /opt/openfoam222/etc/bashrc
+#if [ -f /opt/openfoam222/etc/bashrc ]; then
+#    . /opt/openfoam222/etc/bashrc
+#fi
+
+# Manual OpenFOAM installation
+if [ -f $HOME/OpenFOAM/OpenFOAM-2.1.x/etc/bashrc ]; then
+    source $HOME/OpenFOAM/OpenFOAM-2.1.x/etc/bashrc
 fi
