@@ -116,7 +116,26 @@ export PATH=$HOME/bin:$PATH
 #    . /opt/openfoam222/etc/bashrc
 #fi
 
-# Manual OpenFOAM installation
-export FOAM_INST_DIR=$HOME/OpenFOAM
-foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
-[ -f $foamDotFile ] && . $foamDotFile
+HOSTNAME=$(hostname)
+if [[ "$HOSTNAME" == "iddqd" ]]; then
+    # Manual OpenFOAM installation
+    export FOAM_INST_DIR=$HOME/OpenFOAM
+    foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
+    [ -f $foamDotFile ] && . $foamDotFile
+
+    # CFDEM vars
+    export CFDEM_VERSION=PUBLIC
+    export CFDEM_PROJECT_DIR=$HOME/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
+    export CFDEM_SRC_DIR=$CFDEM_PROJECT_DIR/src
+    export CFDEM_SOLVER_DIR=$CFDEM_PROJECT_DIR/applications/solvers
+    export CFDEM_DOC_DIR=$CFDEM_PROJECT_DIR/doc
+    export CFDEM_UT_DIR=$CFDEM_PROJECT_DIR/applications/utilities
+    export CFDEM_TUT_DIR=$CFDEM_PROJECT_DIR/tutorials
+    export CFDEM_PROJECT_USER_DIR=$HOME/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
+    export CFDEM_bashrc=$CFDEM_SRC_DIR/lagrangian/cfdemParticle/etc/bashrc
+    export CFDEM_LIGGGHTS_SRC_DIR=$HOME/LIGGGHTS/LIGGGHTS-PUBLIC/src
+    export CFDEM_LIGGGHTS_MAKEFILE_NAME=fedora_fpic
+    export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
+    export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
+    . $CFDEM_bashrc
+fi
