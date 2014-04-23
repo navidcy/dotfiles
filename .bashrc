@@ -138,6 +138,6 @@ export PATH=${PATH}:/home/adc/code/lmgc90/LMGC90v2/src/LMGC90v2_dev/addons
 #fi
 
 # Manual OpenFOAM installation
-if [ -f $HOME/OpenFOAM/OpenFOAM-2.1.x/etc/bashrc ]; then
-    source $HOME/OpenFOAM/OpenFOAM-2.1.x/etc/bashrc
-fi
+export FOAM_INST_DIR=$HOME/OpenFOAM
+foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
+[ -f $foamDotFile ] && . $foamDotFile
