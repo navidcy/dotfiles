@@ -120,8 +120,6 @@ if [ `hostname` == "master" ] ||
   export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:$PYTHONPATH
 fi
 
-#source /home/adc/OpenFOAM/OpenFOAM-2.1.1/etc/bashrc
-
 # LMGC90
 if [ -z ${PYTHONPATH} ]; then
   export PYTHONPATH=/home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
@@ -132,17 +130,18 @@ else
 fi
 export PATH=${PATH}:/home/adc/code/lmgc90/LMGC90v2/src/LMGC90v2_dev/addons
 
-# OpenFOAM from unofficial Ubuntu repositories
-#if [ -f /opt/openfoam222/etc/bashrc ]; then
-#    . /opt/openfoam222/etc/bashrc
-#fi
-
 HOSTNAME=$(hostname)
 if [[ "$HOSTNAME" == "iddqd" ]]; then
+
+    # OpenFOAM from unofficial Ubuntu repositories
+    if [ -f /opt/openfoam222/etc/bashrc ]; then
+        . /opt/openfoam222/etc/bashrc
+    fi
+
     # Manual OpenFOAM installation
-    export FOAM_INST_DIR=$HOME/OpenFOAM
-    foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
-    [ -f $foamDotFile ] && . $foamDotFile
+    #export FOAM_INST_DIR=$HOME/OpenFOAM
+    #foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
+    #[ -f $foamDotFile ] && . $foamDotFile
 
     # CFDEM vars
     export CFDEM_VERSION=PUBLIC
@@ -159,4 +158,7 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
     export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
     . $CFDEM_bashrc
+
+    alias lpp="python $CFDEM_LPP_DIR/lpp.py"
+    alias pizza="python $CFDEM_LPP_DIR/pizza.py"
 fi

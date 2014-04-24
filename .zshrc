@@ -111,16 +111,18 @@ export XDG_CONFIG_HOME="/home/adc/.config"
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
-# OpenFOAM from unofficial Ubuntu repositories
-#if [ -f /opt/openfoam222/etc/bashrc ]; then
-#    . /opt/openfoam222/etc/bashrc
-#fi
-
 HOSTNAME=$(hostname)
 if [[ "$HOSTNAME" == "iddqd" ]]; then
+
+    # OpenFOAM from unofficial Ubuntu repositories
+    #if [ -f /opt/openfoam222/etc/bashrc ]; then
+    #    . /opt/openfoam222/etc/bashrc
+    #fi
+
     # Manual OpenFOAM installation
     export FOAM_INST_DIR=$HOME/OpenFOAM
-    foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
+    #foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
+    foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.2.x/etc/bashrc
     [ -f $foamDotFile ] && . $foamDotFile
 
     # CFDEM vars
@@ -138,4 +140,7 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
     export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
     . $CFDEM_bashrc
+
+    alias lpp="python $CFDEM_LPP_DIR/lpp.py"
+    alias pizza="python $CFDEM_LPP_DIR/pizza.py"
 fi
