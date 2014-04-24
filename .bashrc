@@ -134,14 +134,15 @@ HOSTNAME=$(hostname)
 if [[ "$HOSTNAME" == "iddqd" ]]; then
 
     # OpenFOAM from unofficial Ubuntu repositories
-    if [ -f /opt/openfoam222/etc/bashrc ]; then
-        . /opt/openfoam222/etc/bashrc
-    fi
+    #if [ -f /opt/openfoam222/etc/bashrc ]; then
+    #    . /opt/openfoam222/etc/bashrc
+    #fi
 
     # Manual OpenFOAM installation
-    #export FOAM_INST_DIR=$HOME/OpenFOAM
+    export FOAM_INST_DIR=$HOME/OpenFOAM
     #foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
-    #[ -f $foamDotFile ] && . $foamDotFile
+    foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.2.x/etc/bashrc
+    [ -f $foamDotFile ] && . $foamDotFile
 
     # CFDEM vars
     export CFDEM_VERSION=PUBLIC
