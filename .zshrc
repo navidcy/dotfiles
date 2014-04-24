@@ -138,7 +138,8 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     export CFDEM_LIGGGHTS_SRC_DIR=$HOME/LIGGGHTS/LIGGGHTS-PUBLIC/src
     export CFDEM_LIGGGHTS_MAKEFILE_NAME=fedora_fpic
     export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
-    export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
+    #export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
+    export CFDEM_PIZZA_DIR=$CFDEM_LPP_DIR
     . $CFDEM_bashrc
 
     alias lpp="python $CFDEM_LPP_DIR/lpp.py"
