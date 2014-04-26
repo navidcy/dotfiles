@@ -102,7 +102,7 @@
 
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
-  (set-face-font 'default "Monaco-13")      ; os x
+  (set-face-font 'default "Monaco-11")      ; os x
   (set-face-font 'default "termsynu"))      ; other
   ;(set-face-font 'default "Monospace-10"))
 
