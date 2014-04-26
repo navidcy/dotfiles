@@ -34,7 +34,7 @@
      evil-surround          ; like Tim Pope's surround plugin
      helm                   ; Emacs incremental and narrowing framework
      popup                  ; visual popup interface library
-     doxymacs               ; doxygen integration
+     ;doxymacs               ; doxygen integration
      powerline              ; powerline for emacs
      rainbow-delimiters     ; color nested parantheses
      magit                  ; emacs mode for git
@@ -55,11 +55,11 @@
 ;(when (el-get-executable-find "cvs")
   ;(add-to-list 'my:el-get-packages 'emacs-goodies-el)) ; the debian addons for emacs
 
-(when (el-get-executable-find "svn")
-  (loop for p in '(psvn    		; M-x svn-status
-                    yasnippet		; powerful snippet mode
-                    )
-        do (add-to-list 'my:el-get-packages p)))
+;(when (el-get-executable-find "svn")
+;  (loop for p in '(psvn    		; M-x svn-status
+;                    yasnippet		; powerful snippet mode
+;                    )
+;        do (add-to-list 'my:el-get-packages p)))
 
 (setq my:el-get-packages
       (append
@@ -233,6 +233,11 @@
 ;; use imagemagick, if available
 (when (fboundp 'imagemagick-register-types)
   (imagemagick-register-types))
+
+;; update interval
+(setq
+  mu4e-get-mail-command "offlineimap"   ;; or fetchmail, or ...
+  mu4e-update-interval 300)             ;; update every 5 minutes
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -10,7 +10,8 @@ if [[ "$HOSTNAME" == 'flaptop' ]]; then
     killall ssh
 fi
 mpc stop
-xscreensaver-command --lock
+#i3lock -c 1d1f21
+$HOME/bin/xlock
 
 if [[ "$HOSTNAME" == 'flaptop' ]]; then
     sudo pm-suspend-hybrid

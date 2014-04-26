@@ -70,6 +70,15 @@ bindsym $mod+b exec firefox
 bindsym $mod+c exec emacs
 bindsym $mod+t exec tor-browser.sh
 
+# volume control with pulseaudio
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
+
+# volume control with alsamixer
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle && killall -SIGUSR1 i3status
+
 # mpd control
 bindsym $mod+Shift+p exec mpc toggle
 bindsym $mod+Shift+n exec mpc next
