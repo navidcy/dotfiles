@@ -67,6 +67,12 @@ Bundle 'kien/rainbow_parentheses.vim'
 " ctags list (:TlistOpen)
 Bundle 'taglist.vim'
 
+" vim-OrgMode
+Bundle 'jceb/vim-orgmode'
+
+" increment dates and times with Ctrl-a and Ctrl-x
+Bundle 'tpope/vim-speeddating'
+
 filetype plugin indent on
 filetype plugin on
 
