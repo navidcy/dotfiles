@@ -23,7 +23,8 @@
 ;; now either el-get is `require'd already, or have been `load'ed by the
 ;; el-get installer.
 
-;; set local recipes
+;; add some necessary paths when emacs isn't started from shell
+(setq exec-path (append exec-path '("$HOME/bin" "/usr/local/bin")))
 
 ;; now set our own packages
 (setq
