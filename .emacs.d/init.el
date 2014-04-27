@@ -70,6 +70,10 @@
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
 
+;; recent files with C-x C-f
+(require 'recentf)
+(recentf-mode 1)
+
 ;; color theme
 (load-theme 'solarized-dark t)
 
