@@ -58,6 +58,7 @@ alias zshreload="source ~/.zshrc"
 
 alias m="make"
 alias mc="make clean"
+alias me="make edit"
 
 #alias rm='rm -i'
 alias rmi='rm -i'
