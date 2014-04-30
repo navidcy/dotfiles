@@ -88,7 +88,8 @@
   "s" 'flyspell-mode
   "S" 'ispell
   "n" 'linum-mode
-  "w" 'whitespace-mode)
+  "w" 'whitespace-mode
+  "m" 'mu4e)
 (require 'powerline)
 (powerline-default-theme)
 ;(powerline-vim-theme)
