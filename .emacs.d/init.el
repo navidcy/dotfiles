@@ -105,11 +105,6 @@
   ;; on mac, there's always a menu bar drown, don't have it empty
   (menu-bar-mode -1))
 
-;; choose your own fonts, in a system dependant way
-(if (string-match "apple-darwin" system-configuration)
-  (set-face-font 'default "Monaco-11")      ; os x
-  (set-face-font 'default "termsynu"))      ; other
-  ;(set-face-font 'default "Monospace-10"))
 
 (global-hl-line-mode)   ; highlight current line
 (global-linum-mode 1)   ; add line numbers on the left
@@ -238,6 +233,9 @@
 ;; use imagemagick, if available
 (when (fboundp 'imagemagick-register-types)
   (imagemagick-register-types))
+(setq mu4e-view-prefer-html t)
+(setq mu4e-html2text-command "html2text -utf8 -width 72") ; debian pkg html2text
+
 
 ;; update interval
 (setq
@@ -255,4 +253,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "termsyn")))))
+;; choose your own fonts, in a system dependant way
+(if (string-match "apple-darwin" system-configuration)
+  (set-face-font 'default "Monaco-11"))     ; os x
+  ;(set-face-font 'default "termsynu"))      ; other
+  ;(set-face-font 'default "Monospace-10"))
