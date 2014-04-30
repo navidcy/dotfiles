@@ -80,6 +80,15 @@
 ;; customized Vim-like behavior
 (require 'evil)
 (evil-mode 1)
+(global-evil-leader-mode) ;; enable evil-leader in every evil buffer
+(evil-leader/set-key
+  "e" 'find-file
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer
+  "s" 'flyspell-mode
+  "S" 'ispell
+  "n" 'linum-mode
+  "w" 'whitespace-mode)
 (require 'powerline)
 (powerline-default-theme)
 ;(powerline-vim-theme)
@@ -107,7 +116,8 @@
 
 
 (global-hl-line-mode)   ; highlight current line
-(global-linum-mode 1)   ; add line numbers on the left
+;(global-linum-mode 1)   ; add line numbers on the left
+(global-linum-mode)   ; add line numbers on the left
 
 ;; add org shortcuts
 (define-key global-map "\C-cl" 'org-store-link)
