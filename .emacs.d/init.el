@@ -137,6 +137,38 @@
 (require 'ob-python)
 (require 'ob-sh)
 
+;; LaTeX templates, referenced with #+LaTeX_class: classname
+(require 'org-latex)
+(add-to-list 'org-export-latex-classes
+             '("myarticle"
+"\\documentclass[a4paper]{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage{lmodern}
+\\usepackage[T1]{fontenc}
+\\newcommand\\foo{bar}
+               [NO-DEFAULT-PACKAGES]
+               [NO-PACKAGES]
+               [EXTRA]"
+            ("\\section{%s" . "\\section*{%s}")
+            ("\\subsection{%s" . "\\subsection*{%s}")
+            ("\\paragraph{%s" . "\\paragraph*{%s}")
+            ("\\subparagraph{%s" . "\\subparagraph*{%s}")))
+(add-to-list 'org-export-latex-classes
+             '("mybeaemer"
+"\\documentclass[presentation]{beamer}
+\\usepackage[utf8]{inputenc}
+\\usepackage{lmodern}
+\\usepackage[T1]{fontenc}
+               [NO-DEFAULT-PACKAGES]
+               [NO-PACKAGES]
+               [EXTRA]
+               [BEAMER-HEADER-EXTRA]"
+org-beamer-sectioning))
+
+(setq reftex-default-bibliography '("~/owncloud/articles/adc-articles/BIBnew.bib"))
+
+;(setq org-latex-pdf-process (quote ("texi2dvi --pdf --clean --verbose --batch %f" "bibtex %b" "texi2dvi --pdf --clean --verbose --batch %f" "texi2dvi --pdf --clean --verbose --batch %f")))
+
 ;; avoid compiz manager rendering bugs
 (add-to-list 'default-frame-alist '(alpha . 100))
 
