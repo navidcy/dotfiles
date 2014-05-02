@@ -166,7 +166,15 @@
 
 (setq reftex-default-bibliography '("/home/adc/owncloud/articles/adc-articles/BIBnew.bib"))
 
-(setq org-latex-pdf-process (list "latexmk -pdf -bibtex %f"))
+;; automatic LaTeX make, sometimes causes problems with references
+;(setq org-latex-pdf-process (list "latexmk -pdf -bibtex %f"))
+
+;; explicit call
+(setq org-latex-pdf-process
+      '("pdflatex -interaction nonstopmode -output-directory %o %f"
+        "bibtex %b"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"))
 
 ;; render special characters using UTF-8 character set
 (setq org-pretty-entities t)
