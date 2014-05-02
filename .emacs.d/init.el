@@ -139,6 +139,11 @@
 
 (require 'ox-latex)
 (require 'ox-beamer)
+(require 'ox-odt)
+(require 'ox-man)
+(require 'ox-ascii)
+(require 'ox-md)
+(require 'ox-icalendar)
 
 ;; LaTeX templates, referenced with #+LaTeX_class: classname
 (add-to-list 'org-latex-classes
