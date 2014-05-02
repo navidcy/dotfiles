@@ -137,15 +137,25 @@
 (require 'ob-python)
 (require 'ob-sh)
 
+(require 'ox-latex)
+(require 'ox-beamer)
+
 ;; LaTeX templates, referenced with #+LaTeX_class: classname
-(require 'org-latex)
-;(add-to-list 'org-export-latex-classes
+(add-to-list 'org-latex-classes
+             '("beamer"
+               "\\documentclass\[presentation\]\{beamer\}"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+;(add-to-list 'org-latex-classes
 ;             '("myarticle"
-;"\\documentclass[a4paper]{article}
-;\\usepackage[utf8]{inputenc}
-;\\usepackage{lmodern}
-;\\usepackage[T1]{fontenc}
-;\\newcommand\\foo{bar}
+;"\\documentclass\[a4paper\]\{article\}
+;\\usepackage\[AUTO\]\{inputenc\}
+;\\usepackage\{lmodern\}
+;\\usepackage\[T1\]{fontenc\}
+;\\usepackage\{hyperref\}
+;\\usepackage\{graphicx\}
+;\\usepackage\{natbib\}
 ;               [NO-DEFAULT-PACKAGES]
 ;               [NO-PACKAGES]
 ;               [EXTRA]"
@@ -153,22 +163,10 @@
 ;            ("\\subsection{%s" . "\\subsection*{%s}")
 ;            ("\\paragraph{%s" . "\\paragraph*{%s}")
 ;            ("\\subparagraph{%s" . "\\subparagraph*{%s}")))
-;(add-to-list 'org-export-latex-classes
-;             '("mybeaemer"
-;"\\documentclass[presentation]{beamer}
-;\\usepackage[utf8]{inputenc}
-;\\usepackage{lmodern}
-;\\usepackage[T1]{fontenc}
-;               [NO-DEFAULT-PACKAGES]
-;               [NO-PACKAGES]
-;               [EXTRA]
-;               [BEAMER-HEADER-EXTRA]"
-;org-beamer-sectioning))
-(setq reftex-default-bibliography '("~/owncloud/articles/adc-articles/BIBnew.bib"))
 
-;(setq org-latex-to-pdf-process (list "latexmk -pdf -bibtex %f"))
-;(setq org-latex-to-pdf-process (list "latexmk -pdf -bibtex %s"))
-;(setq org-latex-pdf-process (quote ("texi2dvi --pdf --clean --verbose --batch %f" "bibtex %b" "texi2dvi --pdf --clean --verbose --batch %f" "texi2dvi --pdf --clean --verbose --batch %f")))
+(setq reftex-default-bibliography '("/home/adc/owncloud/articles/adc-articles/BIBnew.bib"))
+
+(setq org-latex-pdf-process (list "latexmk -pdf -bibtex %f"))
 
 ;; render special characters using UTF-8 character set
 (setq org-pretty-entities t)
