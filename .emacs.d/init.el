@@ -269,6 +269,7 @@
 (setq mu4e-maildir-shortcuts
       '(("/riseup/INBOX" . ?i)
         ("/geomail/INBOX" . ?g)
+        ("/geomail/archive" . ?a)
         ("/riseup/Sent Items" . ?s)
         ("/riseup/Trash" . ?t)))
 
