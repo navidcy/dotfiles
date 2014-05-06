@@ -95,7 +95,8 @@
   "S" 'ispell
   "n" 'linum-mode
   "w" 'whitespace-mode
-  "m" 'mu4e)
+  "m" 'mu4e,
+  "p" 'org-latex-export-to-pdf)
 (require 'powerline)
 (powerline-default-theme)
 ;(powerline-vim-theme)
