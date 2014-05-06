@@ -36,6 +36,8 @@
      helm                   ; Emacs incremental and narrowing framework
      popup                  ; visual popup interface library
      ;doxymacs               ; doxygen integration
+     auctex                 ; advanced LaTeX mode
+     reftex                 ; BiBTeX references
      powerline              ; powerline for emacs
      rainbow-delimiters     ; color nested parantheses
      magit                  ; emacs mode for git
@@ -173,7 +175,33 @@
 ;            ("\\paragraph{%s" . "\\paragraph*{%s}")
 ;            ("\\subparagraph{%s" . "\\subparagraph*{%s}")))
 
+
+;; reftex for BiBTeX references
+;; Create label with C-c (, reference label with C-c )
+;; Reference citation with C-c [ t (for citet) or C-c [ p (for citep)
+;(setq reftex-plug-into AUCTeX t)
 (setq reftex-default-bibliography '("/home/adc/owncloud/articles/adc-articles/BIBnew.bib"))
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
+(add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
+(add-hook 'org-mode-hook 'turn-on-reftex)   ; with Org mode
+(setq reftex-cite-format 'natbib)
+
+;; Enable reftex in org mode
+;(defun org-mode-reftex-setup ()
+;  (load-library "reftex")
+;  (and (buffer-file-name) (file-exists-p (buffer-file-name))
+;       (progn
+;         ; enable auto-revert-mode to update reftex when bibtex file changes
+;         (global-auto-revert-mode t)
+;         (reftex-parse-all)
+;         ; add a custom cite format to insert link
+;         (reftex-set-cite-format "** [[papers:%l][%l]]: %t \n"
+;                                 )))
+;  (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
+;)
+;(add-hook 'org-mode-hook 'org-mode-reftex-setup)
+;(setq org-link-abbrev-alist
+;      '(("papers" . "/home/adc/owncloud/articles/adc-articles/BIBnew.bib")))
 
 ;; automatic LaTeX make, sometimes causes problems with references
 ;(setq org-latex-pdf-process (list "latexmk -pdf -bibtex %f"))
