@@ -70,6 +70,10 @@
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
 
+;; text lines limit to 80 characters
+(setq fill-column 80)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 ;; recent files with C-x C-f
 (require 'recentf)
 (recentf-mode 1)
