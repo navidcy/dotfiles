@@ -70,6 +70,7 @@ dunst &
 #gnome-power-manager &        # for laptops and stuff
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
 #eval `gnome-keyring-daemon --start --components=secrets` # possible components: gpg,pkcs11,secrets,ssh
+eval `gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh`
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
@@ -111,6 +112,7 @@ xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
 
 exec i3
 #exec herbstluftwm --locked
+#exec gnome-session
 
 #sxhkd &
 #exec bspwm
