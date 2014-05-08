@@ -96,7 +96,10 @@
   "n" 'linum-mode
   "w" 'whitespace-mode
   "m" 'mu4e
-  "p" 'org-latex-export-to-pdf)
+  "p" 'org-latex-export-to-pdf
+  "c" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
+  "t" (lambda () (interactive)(find-file "~/owncloud/todo.org")))
+
 (require 'powerline)
 (powerline-default-theme)
 ;(powerline-vim-theme)
