@@ -164,3 +164,5 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     alias lpp="python $CFDEM_LPP_DIR/lpp.py"
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
 fi
+
+[ -f $HOME/code/julia ] && export PATH=$HOME/code/julia:$PATH
