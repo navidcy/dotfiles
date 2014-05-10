@@ -125,7 +125,9 @@
 (require 'ob-latex)
 (require 'ob-python)
 (require 'ob-sh)
+;(require 'ob-julia)
 
+;; org export modes
 (require 'ox-latex)
 (require 'ox-beamer)
 (require 'ox-odt)
@@ -197,6 +199,11 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq c-default-style "linux" c-basic-offset 4)
+
+(add-hook 'julia-mode-hook
+          (lambda ()
+            (setq default-tab-width 4)
+            (setq julia-basic-offset 4)))
 
 ;; Setup modes for files
 (setq auto-mode-alist
@@ -316,3 +323,7 @@
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
   (set-face-font 'default "Monaco-11"))     ; os x
+
+;; auto-indent with C-j. If auto-indent also is desired for return, use:
+;(define-key global-map (kbd "RET") 'newline-and-indent)
+(define-key global-map (kbd "RET") 'reindent-then-newline-and-indent)
