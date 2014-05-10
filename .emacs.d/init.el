@@ -1,14 +1,3 @@
-;; emacs kicker --- kick start emacs setup
-;; Copyright (C) 2010 Dimitri Fontaine
-;;
-;; Author: Dimitri Fontaine <dim@tapoueh.org>
-;; URL: https://github.com/dimitri/emacs-kicker
-;; Created: 2011-04-15
-;; Keywords: emacs setup el-get kick-start starter-kit
-;; Licence: WTFPL, grab your copy here: http://sam.zoy.org/wtfpl/
-;;
-;; This file is NOT part of GNU Emacs.
-
 (require 'cl) ;common lisp goodies, loop
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -25,6 +14,10 @@
 
 ;; add some necessary paths when emacs isn't started from shell
 (setq exec-path (append exec-path '("$HOME/bin" "/usr/local/bin")))
+
+;; add julia mode from github repo
+(add-to-list 'load-path "~/code/julia/contrib")
+(require 'julia-mode)
 
 ;; now set our own packages
 (setq
@@ -49,20 +42,6 @@
      zencoding-mode         ; http://www.emacswiki.org/emacs/ZenCoding
      color-theme            ; nice looking emacs
      color-theme-solarized)) ; check out color-theme-solarized
-
-;;
-;; Some recipes require extra tools to be installed
-;;
-;; Note: el-get-install requires git, so we know we have at least that.
-;;
-;(when (el-get-executable-find "cvs")
-  ;(add-to-list 'my:el-get-packages 'emacs-goodies-el)) ; the debian addons for emacs
-
-;(when (el-get-executable-find "svn")
-;  (loop for p in '(psvn    		; M-x svn-status
-;                    yasnippet		; powerful snippet mode
-;                    )
-;        do (add-to-list 'my:el-get-packages p)))
 
 (setq my:el-get-packages
       (append
@@ -162,29 +141,13 @@
                ("\\section\{%s\}" . "\\section*\{%s\}")
                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
-;(add-to-list 'org-latex-classes
-;             '("myarticle"
-;"\\documentclass\[a4paper\]\{article\}
-;\\usepackage\[AUTO\]\{inputenc\}
-;\\usepackage\{lmodern\}
-;\\usepackage\[T1\]{fontenc\}
-;\\usepackage\{hyperref\}
-;\\usepackage\{graphicx\}
-;\\usepackage\{natbib\}
-;               [NO-DEFAULT-PACKAGES]
-;               [NO-PACKAGES]
-;               [EXTRA]"
-;            ("\\section{%s" . "\\section*{%s}")
-;            ("\\subsection{%s" . "\\subsection*{%s}")
-;            ("\\paragraph{%s" . "\\paragraph*{%s}")
-;            ("\\subparagraph{%s" . "\\subparagraph*{%s}")))
-
 
 ;; reftex for BiBTeX references
 ;; Create label with C-c (, reference label with C-c )
 ;; Reference citation with C-c [ t (for citet) or C-c [ p (for citep)
 ;(setq reftex-plug-into AUCTeX t)
-(setq reftex-default-bibliography '("/home/adc/owncloud/articles/adc-articles/BIBnew.bib"))
+(setq reftex-default-bibliography
+      '("$HOME/owncloud/articles/adc-articles/BIBnew.bib"))
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
 (add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
 (add-hook 'org-mode-hook 'turn-on-reftex)   ; with Org mode
@@ -328,6 +291,7 @@
 
 ;; enable inline images
 (setq mu4e-view-show-images t)
+
 ;; use imagemagick, if available
 (when (fboundp 'imagemagick-register-types)
   (imagemagick-register-types))
@@ -340,20 +304,15 @@
   mu4e-get-mail-command "offlineimap"   ;; or fetchmail, or ...
   mu4e-update-interval 300)             ;; update every 5 minutes
 
+;; font config
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "termsyn")))))
+ '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground
+                         "#839496" :inverse-video nil :box nil :strike-through
+                         nil :overline nil :underline nil :slant normal :weight
+                         normal :height 128 :width normal :foundry "unknown"
+                         :family "termsyn")))))
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
   (set-face-font 'default "Monaco-11"))     ; os x
-  ;(set-face-font 'default "termsynu"))      ; other
-  ;(set-face-font 'default "Monospace-10"))
