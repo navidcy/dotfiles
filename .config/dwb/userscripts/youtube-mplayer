@@ -1,0 +1,7 @@
+#!/bin/bash
+# dwb: Control y
+tmpdir=~/tmp
+tmpfile=youtube.mp4
+mkdir -p $tmpdir
+youtube-dl --output $tmpdir/$tmpfile $DWB_URI >> $tmpdir/youtube-dl.log 2>&1
+mplayer $tmpdir/$tmpfile
