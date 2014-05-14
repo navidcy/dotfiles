@@ -3,5 +3,5 @@
 tmpdir=~/tmp
 tmpfile=youtube.mp4
 mkdir -p $tmpdir
-youtube-dl --output $tmpdir/$tmpfile $DWB_URI >> $tmpdir/youtube-dl.log 2>&1
-mplayer $tmpdir/$tmpfile
+youtube-dl --output $tmpdir/$tmpfile $DWB_URI > $tmpdir/youtube-dl.log 2>&1
+mplayer $tmpdir/$tmpfile >> $tmpdir/youtube-dl.log 2>&1
