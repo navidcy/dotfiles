@@ -66,7 +66,8 @@ bindsym $mod+Shift+Return exec i3-sensible-terminal
 
 # other application launchers
 #bindsym $mod+b exec uzbl-browser
-bindsym $mod+b exec firefox
+#bindsym $mod+b exec firefox
+bindsym $mod+b exec dwb
 bindsym $mod+c exec emacs
 bindsym $mod+t exec tor-browser.sh
 
@@ -244,6 +245,6 @@ bar {
 }
 
 # auto-start programs
-#exec --no-startup-id urxvt -e tmux-utility.sh
-#exec --no-startup-id nm-applet
-exec --no-startup-id wicd-client --tray
+#exec --no-startup-id wicd-client --tray
+exec --no-startup-id nm-applet
+exec --no-startup-id i3-msg 'workspace 2; exec emacs; workspace 3; exec dwb; workspace 1; exec urxvt -e tmux-utility.sh'
