@@ -2,3 +2,5 @@ startpage https://startpage.com/do/search?query=_dwb_search_submit_
 wikipedia https://en.wikipedia.org/w/index.php?search=_dwb_search_submit_&title=Special:Search
 duckduckgo https://duckduckgo.com/?q=_dwb_search_submit_
 debian http://packages.debian.org/search?keywords=_dwb_search_submit_&searchon=names&suite=stable&section=all
+scholar http://scholar.google.dk/scholar?hl=da&q=_dwb_search_submit_
+sb http://statsbiblioteket.dk/?query=_dwb_search_submit_
