@@ -7,7 +7,7 @@
 # Define compilers and the common compiler flags
 CC=gcc
 CXX=g++
-CFLAGS="-g -O2 -Wall -Wextra -lm"
+CFLAGS="-g -Wall -Wextra -lm"
 
 fullfilename=$(basename $1)
 extension="${fullfilename##*.}"
