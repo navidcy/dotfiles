@@ -7,7 +7,7 @@
 # Define compilers and the common compiler flags
 CC=gcc
 CXX=g++
-CFLAGS="-g -Wall -Wextra -lm"
+CFLAGS="-g -Wall -Wextra "
 
 fullfilename=$(basename $1)
 extension="${fullfilename##*.}"
@@ -20,21 +20,20 @@ tmpname=/tmp/$filename
 function compile {
     if [ -e $tmpname ]; then
         if [[ $2 -nt $tmpname ]]; then
-            #echo $1 $2 -o $tmpname $CFLAGS
-            $1 $2 -o $tmpname $CFLAGS
+            $1 $2 -o $tmpname $CFLAGS $3 $4 $5 $6 $7 $8 $9
         fi
     else
-        $1 $2 -o $tmpname $CFLAGS
+        $1 $2 -o $tmpname $CFLAGS $3 $4 $5 $6 $7 $8 $9
     fi
 }
 
 # Compile source to file in /tmp
 if [ "$extension" == "c" ]; then
-    compile $CC $1
+    compile $CC $1 $2 $3 $4 $5 $6 $7 $8 $9
 fi
 
 if [ "$extension" == "cpp" ]; then
-    compile $CXX $1
+    compile $CXX $1 $2 $3 $4 $5 $6 $7 $8 $9
 fi
 
 $tmpname
