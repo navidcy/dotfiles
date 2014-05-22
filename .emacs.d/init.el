@@ -305,11 +305,29 @@
 (setq mu4e-view-prefer-html t)
 (setq mu4e-html2text-command "html2text -utf8 -width 72") ; debian pkg html2text
 
-
 ;; update interval
 (setq
   mu4e-get-mail-command "offlineimap"   ;; or fetchmail, or ...
   mu4e-update-interval 300)             ;; update every 5 minutes
+
+
+;; manage mu4e attachments with dired. Start dired with M-x dired
+;; Find file and attach with C-c Return C-a
+(require 'gnus-dired)
+;; make the `gnus-dired-mail-buffers' function also work on
+;; message-mode derived modes, such as mu4e-compose-mode
+(defun gnus-dired-mail-buffers ()
+  "Return a list of active message buffers."
+  (let (buffers)
+    (save-current-buffer
+      (dolist (buffer (buffer-list t))
+   (set-buffer buffer)
+   (when (and (derived-mode-p 'message-mode)
+       (null message-sent-message-via))
+     (push (buffer-name buffer) buffers))))
+    (nreverse buffers)))
+(setq gnus-dired-mail-mode 'mu4e-user-agent)
+(add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
 
 ;; font config
 (custom-set-variables
@@ -327,3 +345,4 @@
 ;; auto-indent with C-j. If auto-indent also is desired for return, use:
 ;(define-key global-map (kbd "RET") 'newline-and-indent)
 (define-key global-map (kbd "RET") 'reindent-then-newline-and-indent)
+(put 'dired-find-alternate-file 'disabled nil)
