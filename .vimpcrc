@@ -45,4 +45,7 @@ set windows library,playlist
 highlight status blackbg
 highlight tab blackbg
 
+" Case insensitive search
+set ignorecase
+
 echo Config File Complete
