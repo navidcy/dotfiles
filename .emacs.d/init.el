@@ -38,10 +38,12 @@
      magit                  ; emacs mode for git
      markdown-mode          ; emacs mode for markdown
      org-mode               ; emacs mode for org
+     python-mode            ; ipython interpreter with C-c !
      flycheck               ; on the fly syntax check
      auto-complete          ; complete as you type with overlays
      auto-complete-c-headers; complete as you type with overlays
      zencoding-mode         ; http://www.emacswiki.org/emacs/ZenCoding
+     fill-column-indicator  ; indicate column 80
      color-theme            ; nice looking emacs
      color-theme-solarized)) ; check out color-theme-solarized
 
@@ -53,9 +55,24 @@
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
 
+;; interactively do things
+(require 'ido)
+(ido-mode t)
+
+;; turn on auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode t)
+
 ;; text lines limit to 80 characters
 (setq fill-column 80)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
+(setq-default fci-rule-column 80)
+(setq fci-rule-width 1) ;; width in px
+;(setq fci-rule-color "gray") ;; color
+(define-globalized-minor-mode
+  global-fci-mode fci-mode (lambda() (fci-mode 1)))
+(global-fci-mode t)
 
 ;; recent files with C-x C-f
 (require 'recentf)
@@ -95,7 +112,7 @@
                     :inverse-video nil
                     :box nil)
 
-;; on to the visual settings
+;; visual settings
 (setq inhibit-splash-screen t)  ; no splash screen, thanks
 (line-number-mode 1)            ; have line numbers and
 (column-number-mode 1)          ; column numbers in the mode line
@@ -105,6 +122,9 @@
 (unless (string-match "apple-darwin" system-configuration)
   ;; on mac, there's always a menu bar drown, don't have it empty
   (menu-bar-mode -1))
+
+;; reduce colors in whitespace-mode
+(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
 
 
 (global-hl-line-mode)   ; highlight current line
@@ -222,6 +242,8 @@
 ;; y or n instead of yes or no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; auto-insert/close bracket pairs
+(electric-pair-mode 1)
 
 ;; mail client setup
 (require 'mu4e)
