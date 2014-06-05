@@ -15,6 +15,8 @@
 ;; add some necessary paths when emacs isn't started from shell
 (setq exec-path (append exec-path '("$HOME/bin" "/usr/local/bin")))
 
+(setq evil-want-C-u-scroll t)  ;; enable half-screen page up using C-u
+
 ;; add julia mode from github repo
 (add-to-list 'load-path "~/code/julia/contrib")
 (require 'julia-mode)
@@ -63,7 +65,6 @@
 (load-theme 'solarized-dark t)
 
 ;; customized Vim-like behavior
-(setq evil-want-C-u-scroll t)  ;; enable half-screen page up using C-u
 (require 'evil)
 (evil-mode 1)
 (global-evil-leader-mode) ;; enable evil-leader in every evil buffer
