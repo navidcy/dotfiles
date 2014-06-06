@@ -224,11 +224,14 @@
 (setq x-select-enable-clipboard t)
 
 ; Navigate windows
-(global-set-key (kbd "C-x h") 'windmode-left)
-(global-set-key (kbd "C-x j") 'windmode-down)
-(global-set-key (kbd "C-x k") 'windmode-up)
-(global-set-key (kbd "C-x l") 'windmode-right)
+(global-set-key (kbd "C-x h") 'windmove-left)
+(global-set-key (kbd "C-x j") 'windmove-down)
+(global-set-key (kbd "C-x k") 'windmove-up)
+(global-set-key (kbd "C-x l") 'windmove-right)
 (global-set-key (kbd "C-x C-x") 'other-window)
+(require 'window-number)
+(window-number-mode 1)
+(global-set-key (kbd "C-x o") 'window-number-switch)
 (setq windmove-wrap-around t)
 
 ; winner-mode provides C-<left> to get back to previous window layout
