@@ -50,6 +50,7 @@
      auto-complete          ; complete as you type with overlays
      auto-complete-c-headers; complete as you type with overlays
      zencoding-mode         ; http://www.emacswiki.org/emacs/ZenCoding
+     window-number          ; choose window with number using C-x o
      fill-column-indicator  ; indicate column 80
      color-theme            ; nice looking emacs
      color-theme-solarized)) ; check out color-theme-solarized
