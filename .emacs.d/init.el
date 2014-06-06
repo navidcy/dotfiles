@@ -222,8 +222,12 @@
 ;; Use the clipboard, pretty please, so that copy/paste "works"
 (setq x-select-enable-clipboard t)
 
-;; Navigate windows with M-<arrows>
-(windmove-default-keybindings 'meta)
+; Navigate windows
+(global-set-key (kbd "C-x h") 'windmode-left)
+(global-set-key (kbd "C-x j") 'windmode-down)
+(global-set-key (kbd "C-x k") 'windmode-up)
+(global-set-key (kbd "C-x l") 'windmode-right)
+(global-set-key (kbd "C-x C-x") 'other-window)
 (setq windmove-wrap-around t)
 
 ; winner-mode provides C-<left> to get back to previous window layout
