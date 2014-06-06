@@ -76,7 +76,7 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq-default fci-rule-column 80)
 (setq fci-rule-width 1) ;; width in px
-;(setq fci-rule-color "gray") ;; color
+(setq fci-rule-color "#073642") ;; color
 (define-globalized-minor-mode
   global-fci-mode fci-mode (lambda() (fci-mode 1)))
 (global-fci-mode t)
