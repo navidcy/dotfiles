@@ -90,6 +90,9 @@
 ;; color theme
 (load-theme 'solarized-dark t)
 
+;; rainbow delimiters in programming modes
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 ;; customized Vim-like behavior
 (require 'evil)
 (evil-mode 1)
