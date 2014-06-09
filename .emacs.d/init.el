@@ -108,7 +108,8 @@
   "w" 'whitespace-mode
   "m" 'mu4e
   "p" 'org-latex-export-to-pdf
-  "c" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
+  "c" 'compile
+  "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
   "t" (lambda () (interactive)(find-file "~/owncloud/todo.org")))
 
 ;; install with MELPA:
