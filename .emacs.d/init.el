@@ -80,7 +80,7 @@
 (setq fci-rule-color "#073642") ;; color
 (define-globalized-minor-mode
   global-fci-mode fci-mode (lambda() (fci-mode 1)))
-(global-fci-mode t)
+;(global-fci-mode t)
 
 ;; recent files with C-x C-f
 (require 'recentf)
