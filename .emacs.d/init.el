@@ -112,6 +112,11 @@
   "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
   "t" (lambda () (interactive)(find-file "~/owncloud/todo.org")))
 
+;; equivalent to vim scrolloff
+(setq scroll-margin 3)
+;(setq scroll-step 1)
+(setq scroll-conservatively 10000)
+
 ;; install with MELPA:
 ;; M-x package-refresh-contents
 ;; M-x package-install RET evil-tabs
