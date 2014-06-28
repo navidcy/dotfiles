@@ -401,3 +401,6 @@
 ;(define-key global-map (kbd "RET") 'newline-and-indent)
 (define-key global-map (kbd "RET") 'reindent-then-newline-and-indent)
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; do not apply background color in terminal
+(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
