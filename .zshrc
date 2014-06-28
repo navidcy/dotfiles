@@ -45,6 +45,7 @@ function fname() { find . -iname "*$@*"; }
 
 alias svim='sudoedit'
 alias e='emacs -nw'
+alias v='vim'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
