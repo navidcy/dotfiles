@@ -54,7 +54,7 @@ alias gp='git push'
 alias gpu='git pull'
 alias gcgp='git commit && git push'
 alias gcagp='git commit -a && git push'
-alias c='clear && tmux clear-history'
+alias clear='clear && tmux clear-history'
 
 alias zshreload="source ~/.zshrc"
 
