@@ -109,6 +109,7 @@
   "m" 'mu4e
   "p" 'org-latex-export-to-pdf
   "c" 'compile
+  "g" 'magit-commit
   "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
   "t" (lambda () (interactive)(find-file "~/owncloud/todo.org")))
 
