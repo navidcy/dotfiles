@@ -73,6 +73,9 @@ Bundle 'jceb/vim-orgmode'
 " increment dates and times with Ctrl-a and Ctrl-x
 Bundle 'tpope/vim-speeddating'
 
+" support for Julia
+Bundle 'JuliaLang/julia-vim'
+
 filetype plugin indent on
 filetype plugin on
 
