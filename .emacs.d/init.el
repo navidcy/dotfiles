@@ -110,6 +110,8 @@
   "p" 'org-latex-export-to-pdf
   "c" 'compile
   "g" 'magit-commit
+  "w" 'color-theme-solarized-light
+  "d" 'color-theme-solarized-dark
   "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
   "t" (lambda () (interactive)(find-file "~/owncloud/todo.org")))
 
@@ -387,13 +389,18 @@
 
 ;; font config
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
- '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground
-                         "#839496" :inverse-video nil :box nil :strike-through
-                         nil :overline nil :underline nil :slant normal :weight
-                         normal :height 128 :width normal :foundry "unknown"
-                         :family "termsyn")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "termsyn")))))
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
   (set-face-font 'default "Monaco-11"))     ; os x
@@ -404,4 +411,4 @@
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; do not apply background color in terminal
-(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+
