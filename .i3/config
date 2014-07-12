@@ -70,6 +70,7 @@ bindsym $mod+b exec firefox
 #bindsym $mod+b exec dwb
 bindsym $mod+c exec emacs
 bindsym $mod+t exec tor-browser.sh
+bindsym $mod+z exec zathura
 
 # volume control with pulseaudio
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
