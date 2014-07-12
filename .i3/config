@@ -86,6 +86,9 @@ bindsym $mod+Shift+n exec mpc next
 bindsym $mod+Shift+b exec mpc prev
 bindsym $mod+Shift+s exec mpc stop
 
+# Light X colors
+bindsym $mod+Shift+w exec --no-startup-id /home/adc/bin/solarized-light.sh
+
 # screen lock
 bindsym $mod+z exec /home/adc/bin/zzz
 
