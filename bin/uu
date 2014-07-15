@@ -7,9 +7,9 @@ if [[ "$UNAMESTR" == 'Linux' ]]; then
         sudo apt-get autoremove && \
         sudo apt-get clean
 elif [[ "$UNAMESTR" == 'Darwin' ]]; then
-    brew update && \
-        brew upgrade && \
-        brew cleanup
+    brew update -v && \
+        brew upgrade -v && \
+        brew cleanup -v
 else
     echo "Platform not supported"
     exit 1
