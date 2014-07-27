@@ -215,6 +215,10 @@ nmap <leader>d :NERDTreeToggle<CR>
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
 
+" vimproc
+nmap <leader>e :VimProcBang 
+nmap <leader>E :VimProcRead 
+
 " Resize with <C-h>, <C-j>, <C-k> and <C-l>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
