@@ -74,10 +74,10 @@ NeoBundle 'jceb/vim-orgmode'
 " increment dates and times with Ctrl-a and Ctrl-x
 NeoBundle 'tpope/vim-speeddating'
 
-call neobundle#end()
-
 " support for Julia
-Bundle 'JuliaLang/julia-vim'
+NeoBundle 'JuliaLang/julia-vim'
+
+call neobundle#end()
 
 filetype plugin indent on
 
