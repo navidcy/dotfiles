@@ -16,7 +16,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Install and update with :NeoBundleInstall(!), see :h NeoBundle
 
 " let NeoBundle manage Vundle. Required!
-NeoBundle 'gmarik/vundle'
+NeoBundle 'Shougo/neobundle.vim'
 
 " more functional statusline
 "NeoBundle 'Lokaltog/vim-powerline'
