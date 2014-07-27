@@ -20,7 +20,7 @@ then
     tmux split-window -v -p 75 -t $SESSION  # create a pane below second pane
     #tmux send-keys -t $SESSION 'irc.sh' C-m  # process in fourth pane
     #tmux send-keys -t $SESSION 'ncmpcpp' C-m  # process in fourth pane
-    tmux send-keys -t $SESSION 'vimpc' C-m  # process in fourth pane
+    tmux send-keys -t $SESSION 'mpd && vimpc' C-m  # process in fourth pane
     tmux select-pane -t $SESSION:1.1        # select first pane
 fi
 tmux attach -t $SESSION

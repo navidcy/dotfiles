@@ -76,6 +76,9 @@ NeoBundle 'tpope/vim-speeddating'
 
 call neobundle#end()
 
+" support for Julia
+Bundle 'JuliaLang/julia-vim'
+
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup, this will prompt you to
