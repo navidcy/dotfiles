@@ -77,6 +77,16 @@ NeoBundle 'tpope/vim-speeddating'
 " support for Julia
 NeoBundle 'JuliaLang/julia-vim'
 
+" vimproc for asynchronous processes
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'wimdows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \   },
+            \ }
+
 call neobundle#end()
 
 filetype plugin indent on
