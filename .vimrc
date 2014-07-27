@@ -218,6 +218,7 @@ nmap <leader>l :set list!<CR>
 " vimproc
 nmap <leader>e :VimProcBang 
 nmap <leader>E :VimProcRead 
+nmap <leader>c :VimProcBang make -k
 
 " Resize with <C-h>, <C-j>, <C-k> and <C-l>
 map <C-h> <C-w>h
