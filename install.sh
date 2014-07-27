@@ -12,8 +12,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/phallus/fonts ~/code/phallus-fonts &&
     cd ~/code/phallus-fonts && ./install
 
+mkdir -p ~/.vim/bundle
+
 # Install Vundle
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+#git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+# Install NeoBundle
+git clone https://github,com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # Install font
 cd /tmp &&\
