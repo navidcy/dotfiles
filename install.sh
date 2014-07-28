@@ -18,7 +18,7 @@ mkdir -p ~/.vim/bundle
 #git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # Install NeoBundle
-git clone https://github,com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # Install font
 cd /tmp &&\
