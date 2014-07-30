@@ -25,8 +25,8 @@
 (setq evil-want-C-u-scroll t)  ;; enable half-screen page up using C-u
 
 ;; add julia mode from github repo
-(add-to-list 'load-path "~/code/julia/contrib")
-(require 'julia-mode)
+;(add-to-list 'load-path "~/code/julia/contrib")
+;(require 'julia-mode)
 
 ;; now set our own packages
 (setq
