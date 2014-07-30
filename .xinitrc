@@ -72,7 +72,8 @@ fi
 #gnome-power-manager &        # for laptops and stuff
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
 #eval `gnome-keyring-daemon --start --components=secrets` # possible components: gpg,pkcs11,secrets,ssh
-eval `gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh`
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export GPG_AGENT_INFO SSH_AUTH_SOCK
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
