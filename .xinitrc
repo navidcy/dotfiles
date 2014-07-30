@@ -93,6 +93,7 @@ xbindkeys
 
 # cloud clients
 owncloud &
+seafile-applet &
 
 # Setup two monitors at iddqd
 if [ "$HOSTNAME" = "iddqd" ]

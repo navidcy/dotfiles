@@ -1,83 +1,99 @@
-set nocompatible    " Disable vi-compatibility
 filetype off
 
 " terminal colors
 set t_Co=16
 "set t_Co=256
 
-set rtp+=~/.vim/bundle/vundle " use Vundle plugin manager
-call vundle#rc()
+if has('vim_starting')
+    set nocompatible    " Disable vi-compatibility
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-""" Vundle plugins 
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+""" NeoBundle plugins 
 " By default fom github.
-" Install and update with :BundleInstall(!), see :h vundle
+" Install and update with :NeoBundleInstall(!), see :h NeoBundle
 
-" let Vundle manage Vundle. Required!
-Bundle 'gmarik/vundle'
+" let NeoBundle manage Vundle. Required!
+NeoBundle 'Shougo/neobundle.vim'
 
 " more functional statusline
-"Bundle 'Lokaltog/vim-powerline'
-Bundle 'bling/vim-airline'
-
-" successor to vim-powerline
-"Bundle 'Lokaltog/powerline'
+"NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundle 'Lokaltog/powerline'
+NeoBundle 'bling/vim-airline'
 
 " file system browser
-Bundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
 
 " syntax checking plugin
-Bundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 
 " fuzzy file, buffer, and tag finder
-Bundle 'kien/ctrlp.vim'
+NeoBundle 'kien/ctrlp.vim'
 
 " solarized colorscheme
-Bundle 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " modify surrounding characters in pairs
-Bundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-surround'
 
 " git wrapper
-Bundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
 
 " dispatch.vim for :Make
-Bundle 'tpope/vim-dispatch'
+NeoBundle 'tpope/vim-dispatch'
 
 " browse buffers (vim.org/scripts), \be, \bs, \bv
-Bundle 'bufexplorer.zip'
+NeoBundle 'bufexplorer.zip'
 
 " Vim-LaTeX suite
-Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
 " Use <Tab> to autocomplete in insert mode
-Bundle 'ervandew/supertab'
+NeoBundle 'ervandew/supertab'
 
 " Ack is a grep replacement. Debian pkg: ack-grep. Run from Vim:
 " usage: :Ack [options] {pattern} [{directory}]
-"Bundle 'mileszs/ack.vim'
+"NeoBundle 'mileszs/ack.vim'
 
 " Rainbow parantheses
-Bundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'kien/rainbow_parentheses.vim'
 
 " Calendar
-"Bundle 'itchyny/calendar.vim'
+"NeoBundle 'itchyny/calendar.vim'
 "let g:calendar_google_calendar = 1
 "let g:calendar_google_task = 1
 
 " ctags list (:TlistOpen)
-Bundle 'taglist.vim'
+NeoBundle 'taglist.vim'
 
 " vim-OrgMode
-Bundle 'jceb/vim-orgmode'
+NeoBundle 'jceb/vim-orgmode'
 
 " increment dates and times with Ctrl-a and Ctrl-x
-Bundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-speeddating'
 
 " support for Julia
-Bundle 'JuliaLang/julia-vim'
+NeoBundle 'JuliaLang/julia-vim'
+
+" vimproc for asynchronous processes
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'wimdows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \   },
+            \ }
+
+call neobundle#end()
 
 filetype plugin indent on
-filetype plugin on
+
+" If there are uninstalled bundles found on startup, this will prompt you to
+" install them
+NeoBundleCheck
 
 " Enable syntax highligting
 syntax on
@@ -198,6 +214,11 @@ nmap <leader>d :NERDTreeToggle<CR>
 
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
+
+" vimproc
+nmap <leader>e :VimProcBang 
+nmap <leader>E :VimProcRead 
+nmap <leader>c :VimProcBang make -k
 
 " Resize with <C-h>, <C-j>, <C-k> and <C-l>
 map <C-h> <C-w>h
