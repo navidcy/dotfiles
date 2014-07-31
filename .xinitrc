@@ -92,12 +92,13 @@ setxkbmap -option ctrl:nocaps
 xbindkeys
 
 # cloud clients
-owncloud &
+if [ "$HOSTNAME" = "iddqd" ]; then
+    owncloud &
+fi
 seafile-applet &
 
 # Setup two monitors at iddqd
-if [ "$HOSTNAME" = "iddqd" ]
-then
+if [ "$HOSTNAME" = "iddqd" ]; then
 
     xrandr --output DVI-D-0 --primary
     xrandr --output DP-1 --auto --left-of DVI-D-0
