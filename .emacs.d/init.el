@@ -25,8 +25,8 @@
 (setq evil-want-C-u-scroll t)  ;; enable half-screen page up using C-u
 
 ;; add julia mode from github repo
-(add-to-list 'load-path "~/code/julia/contrib")
-(require 'julia-mode)
+;(add-to-list 'load-path "~/code/julia/contrib")
+;(require 'julia-mode)
 
 ;; now set our own packages
 (setq
@@ -80,7 +80,7 @@
 (setq fci-rule-color "#073642") ;; color
 (define-globalized-minor-mode
   global-fci-mode fci-mode (lambda() (fci-mode 1)))
-;(global-fci-mode t)
+(global-fci-mode t)
 
 ;; recent files with C-x C-f
 (require 'recentf)
