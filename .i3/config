@@ -89,7 +89,7 @@ bindsym $mod+Shift+s exec mpc stop
 
 # Light X colors
 bindsym $mod+Shift+w exec --no-startup-id /home/adc/bin/solarized-light.sh
-bindsym $mod+Shift+d exec --no-startup-id /home/adc/bin/solarized-light.sh
+bindsym $mod+Shift+d exec --no-startup-id /home/adc/bin/solarized.sh
 
 # screen lock
 bindsym $mod+z exec /home/adc/bin/zzz
@@ -249,13 +249,13 @@ bar {
         urgent_workspace    #dc322f #dc322f #fdf6e3
         
         # solarized light
-        background #fdf6e3
-        statusline #657b83
-        separator  #586e75
-        focused_workspace   #b58900 #b58900 #002b36
-        active_workspace    #586e75 #586e75 #002b36
-        inactive_workspace  #fdf6e3 #fdf6e3 #839496
-        urgent_workspace    #dc322f #dc322f #fdf6e3
+        #background #fdf6e3
+        #statusline #657b83
+        #separator  #586e75
+        #focused_workspace   #b58900 #b58900 #002b36
+        #active_workspace    #586e75 #586e75 #002b36
+        #inactive_workspace  #fdf6e3 #fdf6e3 #839496
+        #urgent_workspace    #dc322f #dc322f #fdf6e3
     }
 }
 
