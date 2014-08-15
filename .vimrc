@@ -80,6 +80,9 @@ NeoBundle 'JuliaLang/julia-vim'
 " SnipMate
 NeoBundle 'msanders/snipmate.vim'
 
+" vim motion on speed
+NeoBundle 'Lokaltog/vim-easymotion'
+
 " vimproc for asynchronous processes
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
