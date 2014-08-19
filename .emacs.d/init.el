@@ -215,6 +215,7 @@
         "pdflatex -interaction nonstopmode -output-directory %o %f"))
 
 ;; render special characters using UTF-8 character set
+;; Toggle with C-c C-x \
 (setq org-pretty-entities t)
 
 ;; avoid compiz manager rendering bugs
