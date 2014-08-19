@@ -204,7 +204,7 @@ nmap ZX :w<CR>
 nmap <leader>r :source $MYVIMRC<CR>
 
 " Shortcut to switch background color
-nmap <leader>t :ToggleBG<CR>
+nmap <leader>w :ToggleBG<CR>
 
 " Explore buffers
 nmap <leader>b :BufExplorer<CR>
