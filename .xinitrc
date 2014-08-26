@@ -27,8 +27,8 @@ fi
 
 # Keyboard layout
 #setxkbmap dk
-#setxkbmap us -option ctrl:nocaps
-setxkbmap us
+setxkbmap us -option ctrl:nocaps
+#setxkbmap us
 #setxkbmap dvorak -option ctrl:nocaps
 
 # Set display color profile
