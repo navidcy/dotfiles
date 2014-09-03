@@ -167,12 +167,20 @@ fi
 
 PENGUINCUDA=/public/apps/cuda/6.0
 if [ -d $PENGUINCUDA ]; then
+
     # CUDA environment variables
     export PATH=$PENGUINCUDA/bin:$PATH
     export LD_LIBRARY_PATH=$PENGUINCUDA/lib64:$PENGUINCUDA/lib:$LD_LIBRARY_PATH
+
+    # cmake
     export PATH=/public/apps/cmake/2.8.11.2/bin:$PATH
+
+    # python
     export PATH=/public/apps/python/2.7.4/bin:$PATH
     export LD_LIBRARY_PATH=/public/apps/python/2.7.4/lib:$LD_LIBRARY_PATH
+
+    # numpy
+    export PYTHONPATH=/public/apps/numpy/1.7.1/python.2.7.4/lib:$PYTHONPATH
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
