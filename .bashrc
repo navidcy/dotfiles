@@ -165,4 +165,13 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
 fi
 
+PENGUINCUDA=/public/apps/cuda/6.0
+if [ -d $PENGUINCUDA ]; then
+    # CUDA environment variables
+    export PATH=$PENGUINCUDA/bin:$PATH
+    export LD_LIBRARY_PATH=$PENGUINCUDA/lib64:$PENGUINCUDA/lib:$LD_LIBRARY_PATH
+fi
+
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
+
+
