@@ -179,8 +179,9 @@ if [ -d $PENGUINCUDA ]; then
     export PATH=/public/apps/python/2.7.4/bin:$PATH
     export LD_LIBRARY_PATH=/public/apps/python/2.7.4/lib:$LD_LIBRARY_PATH
 
-    # numpy
+    # numpy, matplotlib
     export PYTHONPATH=/public/apps/numpy/1.7.1/python.2.7.4/lib/python2.7/site-packages:$PYTHONPATH
+    export PYTHONPATH=/public/apps/matplotlib/1.2.1/python.2.7.4/lib/python2.7/site-packages:$PYTHONPATH
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
