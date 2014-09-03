@@ -172,6 +172,7 @@ if [ -d $PENGUINCUDA ]; then
     export LD_LIBRARY_PATH=$PENGUINCUDA/lib64:$PENGUINCUDA/lib:$LD_LIBRARY_PATH
     export PATH=/public/apps/cmake/2.8.11.2/bin:$PATH
     export PATH=/public/apps/python/2.7.4/bin:$PATH
+    export LD_LIBRARY_PATH=/public/apps/python/2.7.4/lib:$LD_LIBRARY_PATH
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
