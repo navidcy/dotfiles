@@ -151,3 +151,5 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
+
+[ -f $HOME/.locale ] && $HOME/.locale
