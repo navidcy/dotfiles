@@ -15,7 +15,7 @@ set hintchars=hjklasdfgyuiopqwertnmzxcvb
 "set hintchars=hutenosa
 
 " Define appearance of hints (CSS)
-highlight Hint font-size:200%;color:black;background-color:yellow;padding:2px;
+highlight Hint font-size:100%;color:black;background-color:yellow;padding:2px;
 
 """ Default search engine
 " Manage search engines with `:dialog searchengine`
