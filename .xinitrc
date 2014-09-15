@@ -27,8 +27,8 @@ fi
 
 # Keyboard layout
 #setxkbmap dk
-#setxkbmap us -option ctrl:nocaps
-setxkbmap us
+setxkbmap us -option ctrl:nocaps
+#setxkbmap us
 #setxkbmap dvorak -option ctrl:nocaps
 
 # Set display color profile
@@ -64,9 +64,9 @@ dunst &
 # Bluetooth applet
 #blueman-applet &
 
-if [ "$HOSTNAME" = "iddqd" ]; then
-    gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
-fi
+#if [ "$HOSTNAME" == "iddqd" ]; then
+    #gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
+#fi
 #nm-applet &                  # assuming you're using Network Manager
 #pidgin &                     # if you're using pidgin. You can really put any programs here.
 #gnome-power-manager &        # for laptops and stuff
@@ -113,7 +113,9 @@ fi
 #/usr/bin/xscreensaver -no-splash &
 
 # Typing breaks (optionally add +lock)
-xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
+#xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
+xset dpms 300 600 900
+
 
 exec i3
 #exec herbstluftwm --locked

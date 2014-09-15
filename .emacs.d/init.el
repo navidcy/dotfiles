@@ -215,6 +215,7 @@
         "pdflatex -interaction nonstopmode -output-directory %o %f"))
 
 ;; render special characters using UTF-8 character set
+;; Toggle with C-c C-x \
 (setq org-pretty-entities t)
 
 ;; avoid compiz manager rendering bugs
@@ -394,6 +395,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
+ '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "zathura %s"))))
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

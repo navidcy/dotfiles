@@ -77,6 +77,12 @@ NeoBundle 'tpope/vim-speeddating'
 " support for Julia
 NeoBundle 'JuliaLang/julia-vim'
 
+" SnipMate
+NeoBundle 'msanders/snipmate.vim'
+
+" vim motion on speed
+NeoBundle 'Lokaltog/vim-easymotion'
+
 " vimproc for asynchronous processes
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
@@ -198,7 +204,10 @@ nmap ZX :w<CR>
 nmap <leader>r :source $MYVIMRC<CR>
 
 " Shortcut to switch background color
-nmap <leader>b :ToggleBG<CR>
+nmap <leader>w :ToggleBG<CR>
+
+" Explore buffers
+nmap <leader>b :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>

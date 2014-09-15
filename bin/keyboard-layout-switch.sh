@@ -8,14 +8,15 @@ LANG1="us"
 LANG2="dk"
 
 # make the caps lock key a ctrl key
-OPTS="-option ctrl:nocaps,altwin:swap_lalt_lwin"
+#OPTS="-option ctrl:nocaps,altwin:swap_lalt_lwin"
+OPTS="-option ctrl:nocaps"
 
 # write the file if it doesn't exist
 if [ ! -f $LAYOUTFILE ]; then
     echo 'echo "us" > $LAYOUTFILE'
     echo "us" > $LAYOUTFILE
-    setxkbmap $LANG1
-    xmodmap ~/.Xmodmap $OPTS
+    setxkbmap $LANG1 $OPTS
+    xmodmap ~/.Xmodmap
     exit
 fi
 
@@ -24,10 +25,10 @@ CURRLANG="`cat $LAYOUTFILE`"
 
 if [ "$CURRLANG" == "$LANG1" ]; then
     echo $LANG2 > $LAYOUTFILE
-    setxkbmap $LANG2
-    xmodmap ~/.Xmodmap $OPTS
+    setxkbmap $LANG2 $OPTS
+    xmodmap ~/.Xmodmap
 else
     echo $LANG1 > $LAYOUTFILE
-    setxkbmap $LANG1
-    xmodmap ~/.Xmodmap $OPTS
+    setxkbmap $LANG1 $OPTS
+    xmodmap ~/.Xmodmap
 fi
