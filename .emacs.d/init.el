@@ -108,6 +108,7 @@
   "w" 'whitespace-mode
   "m" 'mu4e
   "p" 'org-latex-export-to-pdf
+  "P" 'org-beamer-export-to-pdf
   "c" 'compile
   "g" 'magit-commit
   "w" 'color-theme-solarized-light
