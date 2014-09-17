@@ -32,7 +32,8 @@ set mbox_type=Maildir
 # Send mail settings
 folder-hook riseup 'set \
         from=andersd@riseup.net\
-        smtp_url = "smtps://$my_riseup_user@mail.riseup.net:587"\
+        smtp_authenticators = "login"\
+        smtp_url = "smtps://$my_riseup_user@mail.riseup.net:465"\
         smtp_pass = $my_riseup_pass'
 
 folder-hook geomail 'set \
