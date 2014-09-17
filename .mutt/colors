@@ -19,7 +19,7 @@ color indicator		brightdefault		default
 color message		yellow		default
 #color status		white		black
 color status		white		default
-color error		yellow		red
+color error		black		red
 color attachment	magenta		default
 color signature		red		default
 color markers		red		yellow
