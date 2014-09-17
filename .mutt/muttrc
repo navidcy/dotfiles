@@ -21,13 +21,17 @@ set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
 # Remove temporary password file
 set my_del=`rm -f ~/.sec/.tmp`
 
-# IMAP: offlineimap
+# Riseup: offlineimap
 set folder = "~/Mail"
 source ~/.mutt/mailboxes
+set mbox_type=Maildir
 set spoolfile = "+riseup/INBOX"
 set record = "+riseup/Sent\ Items"
 set postponed = "+riseup/Drafts"
-set mbox_type=Maildir
+
+# Geomail: IMAP
+set spoolfile=imaps://imap.au.dk:993/INBOX
+set folder=imaps://imap.au.dk:993/
 
 # Send mail settings
 folder-hook riseup 'set \
@@ -41,6 +45,22 @@ folder-hook geomail 'set \
         smtp_authenticators = "login"\
         smtp_url = "smtp://$my_nfit_user@asmtp.au.dk:587"\
         smtp_pass = $my_nfit_pass'
+
+account-hook . 'unset imap_user imap_pass'
+account-hook imaps://imap.au.dk:993 'set \
+        imap_user = $my_nfit_user\
+        imap_pass = $my_nfit_pass\
+        imap_authenticators = "login"\
+        smtp_authenticators = "login"\
+        smtp_url = "smtp://$my_nfit_user@asmtp.au.dk:587"\
+        smtp_pass = $my_nfit_pass'
+ folder-hook imap.au.dk 'set \
+     folder = imaps://imap.au.dk:993/\
+     spoolfile = "+INBOX"\
+     record = "+Sent"\
+     postponed = "+Drafts"\
+     from = $my_nfit_email\
+     realname = $my_realname'
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
@@ -94,7 +114,7 @@ set net_inc=5
 set pager_index_lines=5
 
 # Mail check interval
-set timeout = 15
+set timeout = 60
 set mail_check = 5    # how often (in seconds) mutt should look for new mail (default = 5 sec)
 
 set alias_file=~/.mutt/aliases  # Save aliases here
@@ -121,8 +141,8 @@ bind index <space>  collapse-thread
 macro index M "T.*\n;WN" "Mark all messages as read"
 
 # Macros to change between inboxes
-macro index \\1 "<change-folder>=riseup/INBOX/<enter>"
-macro index \\2 "<change-folder>=geomail/INBOX/<enter>"
+macro index \\1 "<change-folder>~/Mail/riseup/INBOX/<enter>"
+macro index \\2 "<change-folder>imaps://imap.au.dk:993/<enter>"
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
