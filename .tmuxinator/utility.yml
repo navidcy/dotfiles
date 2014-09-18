@@ -20,16 +20,20 @@ pre: mpd
 # tmux_command: byobu
 
 windows:
-  - sys:
-      layout: main-vertical
-      panes:
-          - zsh
-          - htop
   - utility:
       layout: main-vertical
       panes:
           - mutt
-          - rainbowstream --image-on-term
           - ~/bin/irc.sh
-          - vimpc
           - zsh
+  - sys:
+      layout: main-vertical
+      panes:
+          - htop
+          - zsh
+  - twitter: rainbowstream --image-on-term
+  - audio:
+      layout: main-vertical
+      panes:
+          - vimpc
+          - alsamixer
