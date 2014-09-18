@@ -11,7 +11,7 @@ set my_tmp_secret = `gpg -o ~/.sec/.tmp -d ~/.sec/pass.gpg`
 # NFIT credentials
 set my_nfit_user = "ad\\adc"
 set my_nfit_pass = `awk '/NFIT/ {print $2}' ~/.sec/.tmp`
-set my_nfit_email = "adc@geo.au.dk"
+set my_nfit_email = "anders.damsgaard@geo.au.dk"
 
 # Riseup credentials
 set my_riseup_user = "andersd"
@@ -31,11 +31,11 @@ set mbox_type=Maildir
 
 # Send mail settings
 folder-hook riseup 'set \
-        from=andersd@riseup.net\
+        from=$my_riseup_email\
         sendmail = "/usr/bin/msmtp -a riseup"'
 
 folder-hook geomail 'set \
-        from=andersd@riseup.net\
+        from=$my_nfit_email\
         sendmail = "/usr/bin/msmtp -a geomail"'
 
 # Cache files
