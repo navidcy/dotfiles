@@ -191,6 +191,8 @@ let g:airline_symbols.linenr = ''
 
 " use airline decorations for tab line
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 
 " Rainbow parantheses always on
 au VimEnter * RainbowParenthesesToggle
