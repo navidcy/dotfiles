@@ -193,6 +193,8 @@ let g:airline_symbols.linenr = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#buffer_min_count = 2
 
 " Rainbow parantheses always on
 au VimEnter * RainbowParenthesesToggle
