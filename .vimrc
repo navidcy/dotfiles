@@ -189,6 +189,9 @@ let g:airline_symbols.linenr = ''
 "let g:Powerline_symbols = 'unicode'
 "let g:Powerline_symbols = 'fancy'
 
+" use airline decorations for tab line
+let g:airline#extensions#tabline#enabled = 1
+
 " Rainbow parantheses always on
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
