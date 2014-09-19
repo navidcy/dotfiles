@@ -39,6 +39,7 @@ fi
 function lt() { ls -ltrsa "$@" | tail; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
+function say() { echo "$@" | festival --tts; }
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
