@@ -177,3 +177,5 @@ fi
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
 
 [ -f $HOME/.locale ] && $HOME/.locale
+
+source ~/.tmuxinator/tmuxinator.zsh

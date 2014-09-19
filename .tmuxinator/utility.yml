@@ -31,7 +31,7 @@ windows:
       panes:
           - htop
           - zsh
-  - twitter: rainbowstream --image-on-term
+  - twitter: rainbowstream #--image-on-term
   - audio:
       layout: main-vertical
       panes:
