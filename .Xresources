@@ -33,6 +33,8 @@ urxvt*internalBorder:   2
 
 URxvt.meta8:            true
 URxvt.intensityStyles:  false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 !URxvt.keysym.C-1: command:\033]710;xft:DejaVu Sans Mono for Powerline:size=7\007\033]711;xft:DejaVu Sans Mono Bold for Powerline:size=7\007
 !URxvt.keysym.C-2: command:\033]710;xft:DejaVu Sans Mono for Powerline:size=7.5\007\033]711;xft:DejaVu Sans Mono Bold for Powerline:size=7.5\007
