@@ -32,8 +32,9 @@ NeoBundle 'scrooloose/syntastic'
 " fuzzy file, buffer, and tag finder
 NeoBundle 'kien/ctrlp.vim'
 
-" solarized colorscheme
-NeoBundle 'altercation/vim-colors-solarized'
+" colorschemes
+"NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 " modify surrounding characters in pairs
 NeoBundle 'tpope/vim-surround'
@@ -107,8 +108,9 @@ syntax on
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 set background=dark " adjust colors for better contrast
 "colorscheme desert
-colorscheme solarized
-call togglebg#map("<F3>")
+"colorscheme solarized
+colorscheme tomorrow
+"call togglebg#map("<F3>")
 "let g:airline_theme = 'ubaryd'
 let g:airline_theme = 'solarized'
 
