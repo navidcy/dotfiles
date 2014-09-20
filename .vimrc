@@ -1,8 +1,8 @@
 filetype off
 
 " terminal colors
-set t_Co=16
-"set t_Co=256
+"set t_Co=16
+set t_Co=256
 
 if has('vim_starting')
     set nocompatible    " Disable vi-compatibility
@@ -33,7 +33,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'kien/ctrlp.vim'
 
 " colorschemes
-"NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 " modify surrounding characters in pairs
@@ -108,11 +108,12 @@ syntax on
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 set background=dark " adjust colors for better contrast
 "colorscheme desert
-"colorscheme solarized
-colorscheme tomorrow
+colorscheme solarized
+"colorscheme Tomorrow-Night-Eighties
 "call togglebg#map("<F3>")
 "let g:airline_theme = 'ubaryd'
 let g:airline_theme = 'solarized'
+"let g:airline_theme = 'tomorrow'
 
 " hilight column 80
 set textwidth=80
