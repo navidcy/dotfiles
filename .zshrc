@@ -8,7 +8,7 @@ promptinit
 colors
 
 PROMPT="
-%{$fg[red]%} »  %{$reset_color%}"
+%{$fg[red]%} » %{$reset_color%}"
 RPROMPT="%B%{$fg[cyan]%}%~%{$reset_color%} %n@%m"
 
 setopt AUTO_CD
