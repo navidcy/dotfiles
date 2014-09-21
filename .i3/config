@@ -22,7 +22,8 @@ set $mod Mod4
 # chose an xft font, such as:
 #font xft:DejaVu Sans Mono 10
 #font xft:LucidaTypewriter 7
-font -*-termsynu-medium-r-*-*-13-*-*-*-*-*-*-*
+#font -*-termsynu-medium-r-*-*-13-*-*-*-*-*-*-*
+font xft:PragmataPro 8
 #font -*-nu-*-*-*-*-*-*-*-*-*-*-*-*
 #font -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
