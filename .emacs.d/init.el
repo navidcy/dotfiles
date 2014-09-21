@@ -25,8 +25,8 @@
 (setq evil-want-C-u-scroll t)  ;; enable half-screen page up using C-u
 
 ;; add julia mode from github repo
-(add-to-list 'load-path "~/code/julia/contrib")
-(require 'julia-mode)
+;(add-to-list 'load-path "~/code/julia/contrib")
+;(require 'julia-mode)
 
 ;; now set our own packages
 (setq
@@ -108,12 +108,13 @@
   "w" 'whitespace-mode
   "m" 'mu4e
   "p" 'org-latex-export-to-pdf
+  "P" 'org-beamer-export-to-pdf
   "c" 'compile
   "g" 'magit-commit
   "w" 'color-theme-solarized-light
   "d" 'color-theme-solarized-dark
   "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
-  "t" (lambda () (interactive)(find-file "~/owncloud/todo.org")))
+  "t" (lambda () (interactive)(find-file "~/doc/todo.org")))
 
 ;; equivalent to vim scrolloff
 (setq scroll-margin 3)
@@ -215,6 +216,7 @@
         "pdflatex -interaction nonstopmode -output-directory %o %f"))
 
 ;; render special characters using UTF-8 character set
+;; Toggle with C-c C-x \
 (setq org-pretty-entities t)
 
 ;; avoid compiz manager rendering bugs
@@ -394,6 +396,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
+ '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "zathura %s"))))
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

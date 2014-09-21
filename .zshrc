@@ -8,7 +8,7 @@ promptinit
 colors
 
 PROMPT="
-%{$fg[red]%} »  %{$reset_color%}"
+%{$fg[red]%} » %{$reset_color%}"
 RPROMPT="%B%{$fg[cyan]%}%~%{$reset_color%} %n@%m"
 
 setopt AUTO_CD
@@ -39,6 +39,8 @@ fi
 function lt() { ls -ltrsa "$@" | tail; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
+function say() { echo "$@" | festival --tts; }
+function sayfile() { festival --tts $@; }
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
@@ -151,3 +153,7 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
+
+[ -f $HOME/.locale ] && $HOME/.locale
+
+source ~/.tmuxinator/tmuxinator.zsh

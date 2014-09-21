@@ -42,8 +42,10 @@ set windows library,playlist
 "play 1
 
 " Color the statusline and tabs
-highlight status blackbg
-highlight tab blackbg
+"highlight status blackbg
+"highlight tab blackbg
+highlight status default
+highlight tab default
 
 " Case insensitive search
 set ignorecase

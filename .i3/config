@@ -10,7 +10,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $alt Mod1
+#set $mod Mod1
+#set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -21,7 +22,8 @@ set $alt Mod1
 # chose an xft font, such as:
 #font xft:DejaVu Sans Mono 10
 #font xft:LucidaTypewriter 7
-font -*-termsynu-medium-r-*-*-13-*-*-*-*-*-*-*
+#font -*-termsynu-medium-r-*-*-13-*-*-*-*-*-*-*
+font xft:PragmataPro 8
 #font -*-nu-*-*-*-*-*-*-*-*-*-*-*-*
 #font -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
@@ -71,6 +73,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+c exec emacs
 bindsym $mod+t exec tor-browser.sh
 bindsym $mod+p exec zathura
+bindsym $mod+Mod1+l exec --no-startup-id ~/bin/keyboard-layout-switch.sh && notify-send `cat ~/.kbd-layout`
 
 # volume control with pulseaudio
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
@@ -80,6 +83,9 @@ bindsym $mod+p exec zathura
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+ unmute && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%- unmute && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle && killall -SIGUSR1 i3status
+bindsym $mod+Shift+i exec --no-startup-id amixer set Master 3%+ unmute && killall -SIGUSR1 i3status
+bindsym $mod+Shift+o exec --no-startup-id amixer set Master 3%- unmute && killall -SIGUSR1 i3status
+bindsym $mod+Shift+m exec --no-startup-id amixer set Master toggle && killall -SIGUSR1 i3status
 
 # mpd control
 bindsym $mod+Shift+p exec mpc toggle
@@ -89,7 +95,7 @@ bindsym $mod+Shift+s exec mpc stop
 
 # Light X colors
 bindsym $mod+Shift+w exec --no-startup-id /home/adc/bin/solarized-light.sh
-bindsym $mod+Shift+d exec --no-startup-id /home/adc/bin/solarized-light.sh
+bindsym $mod+Shift+d exec --no-startup-id /home/adc/bin/solarized-dark.sh
 
 # screen lock
 bindsym $mod+z exec /home/adc/bin/zzz
@@ -239,6 +245,7 @@ bar {
         #inactive_workspace #333333 #222222 #888888
         #urgent_workspace   #2f343a #900000 #ffffff
         
+        # solarized dark
         background #002b36
         statusline #657b83
         separator  #586e75
@@ -246,10 +253,20 @@ bar {
         active_workspace    #586e75 #586e75 #002b36
         inactive_workspace  #073642 #002b36 #839496
         urgent_workspace    #dc322f #dc322f #fdf6e3
+        
+        # solarized light
+        #background #fdf6e3
+        #statusline #657b83
+        #separator  #586e75
+        #focused_workspace   #b58900 #b58900 #002b36
+        #active_workspace    #586e75 #586e75 #002b36
+        #inactive_workspace  #fdf6e3 #fdf6e3 #839496
+        #urgent_workspace    #dc322f #dc322f #fdf6e3
     }
 }
 
 # auto-start programs
 #exec --no-startup-id wicd-client --tray
 exec --no-startup-id nm-applet
-exec --no-startup-id i3-msg 'workspace 2; exec emacs; workspace 3; exec firefox; workspace 1; exec urxvt -e tmux-utility.sh'
+#exec --no-startup-id i3-msg 'workspace 2; exec emacs; workspace 3; exec firefox; workspace 1; exec urxvt -e tmux-utility.sh'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec urxvt -e tmuxinator utility'

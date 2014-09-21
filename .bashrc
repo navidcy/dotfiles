@@ -165,4 +165,17 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
 fi
 
+PENGUINCUDA=/public/apps/cuda/6.0
+if [ -d $PENGUINCUDA ]; then
+    module load cmake/2.8.11.2
+    module load cuda/6.0
+    module load python/2.7.4
+    module load numpy/1.7.1/python.2.7.4
+    module load matplotlib/1.7.1/python.2.7.4
+fi
+
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
+
+[ -f $HOME/.locale ] && $HOME/.locale
+
+source ~/.tmuxinator/tmuxinator.zsh

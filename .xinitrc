@@ -27,8 +27,8 @@ fi
 
 # Keyboard layout
 #setxkbmap dk
-#setxkbmap us -option ctrl:nocaps
-setxkbmap us
+setxkbmap us -option ctrl:nocaps
+#setxkbmap us
 #setxkbmap dvorak -option ctrl:nocaps
 
 # Set display color profile
@@ -64,15 +64,16 @@ dunst &
 # Bluetooth applet
 #blueman-applet &
 
-if [ "$HOSTNAME" = "iddqd" ]; then
-    gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
-fi
+#if [ "$HOSTNAME" == "iddqd" ]; then
+    #gnome-settings-daemon &      # handles themes, starts gnome-screensaver. You may have to use gconf to disable it setting the background.
+#fi
 #nm-applet &                  # assuming you're using Network Manager
 #pidgin &                     # if you're using pidgin. You can really put any programs here.
 #gnome-power-manager &        # for laptops and stuff
 #gnome-volume-manager &       # for mounting CDs, USB sticks, and such
 #eval `gnome-keyring-daemon --start --components=secrets` # possible components: gpg,pkcs11,secrets,ssh
-eval `gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh`
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export GPG_AGENT_INFO SSH_AUTH_SOCK
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
@@ -91,11 +92,13 @@ setxkbmap -option ctrl:nocaps
 xbindkeys
 
 # cloud clients
-owncloud &
+if [ "$HOSTNAME" = "iddqd" ]; then
+    owncloud &
+fi
+seafile-applet &
 
 # Setup two monitors at iddqd
-if [ "$HOSTNAME" = "iddqd" ]
-then
+if [ "$HOSTNAME" = "iddqd" ]; then
 
     xrandr --output DVI-D-0 --primary
     xrandr --output DP-1 --auto --left-of DVI-D-0
@@ -110,7 +113,9 @@ fi
 #/usr/bin/xscreensaver -no-splash &
 
 # Typing breaks (optionally add +lock)
-xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
+#xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
+xset dpms 300 600 900
+
 
 exec i3
 #exec herbstluftwm --locked
