@@ -16,7 +16,7 @@ color quoted5		default		default
 #color indicator		white		default
 #color indicator		blue		default
 #color indicator		black		gray
-color indicator		default		black
+color indicator		white		black
 #color message		yellow		black
 color message		yellow		default
 #color status		white		black
