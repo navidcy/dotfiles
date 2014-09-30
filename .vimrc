@@ -229,6 +229,9 @@ highlight SpecialKey ctermfg=10 guifg=DarkGray
 " Save with ZX
 nmap ZX :w<CR>
 
+" use , instead of \ as leader
+let mapleader=","
+
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
 
