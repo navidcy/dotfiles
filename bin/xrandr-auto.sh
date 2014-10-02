@@ -11,8 +11,6 @@ do
     EXTSCRSTATUS=$(xrandr -q | grep "^$EXTSCR connected")
     #PROJSTATUS=$(xrandr -q | grep "$EXTSCR connected")
 
-    echo $EXTSCRSTATUS
-
     # Enable external display if connected
     if [ -n "$EXTSCRSTATUS" ]; then  # if string is not empty
         xrandr --output $EXTSCR --auto --output $LAPTOPSCR --off
