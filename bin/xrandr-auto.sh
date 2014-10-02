@@ -12,12 +12,14 @@ function ActivateEXT {
     #echo "Switching to EXTSCR"
     xrandr --output $EXTSCR --auto --output $LAPTOPSCR --off
     MONITOR=$EXTSCR
+    notify-send "Activating $EXTSCR"
 }
 function DeactivateEXT {
     #echo "Switching to $LAPTOPSCR"
     #xrandr --output $EXTSCR --off --output $LAPTOPSCR --auto
     xrandr --auto
     MONITOR=$LAPTOPSCR
+    notify-send "Activating $LAPTOPSCR"
 }
 
 # functions to check if EXT is connected and in use
