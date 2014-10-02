@@ -4,20 +4,41 @@ LAPTOPSCR=eDP1
 EXTSCR=DP1
 #PROJECTOR=
 
+# default monitor is LVDS1
+MONITOR=$LAPTOPSCR
+
+# functions to switch from LVDS1 to VGA and vice versa
+function ActivateEXT {
+    #echo "Switching to EXTSCR"
+    xrandr --output $EXTSCR --auto --output $LAPTOPSCR --off
+    MONITOR=$EXTSCR
+}
+function DeactivateEXT {
+    #echo "Switching to $LAPTOPSCR"
+    #xrandr --output $EXTSCR --off --output $LAPTOPSCR --auto
+    xrandr --auto
+    MONITOR=$LAPTOPSCR
+}
+
+# functions to check if EXT is connected and in use
+function EXTActive {
+    [ $MONITOR = "$EXTSCR" ]
+}
+function EXTConnected {
+    ! xrandr | grep "^$EXTSCR" | grep disconnected
+}
 
 while true
 do
-
-    EXTSCRSTATUS=$(xrandr -q | grep "^$EXTSCR connected")
-    #PROJSTATUS=$(xrandr -q | grep "$EXTSCR connected")
-
-    # Enable external display if connected
-    if [ -n "$EXTSCRSTATUS" ]; then  # if string is not empty
-        xrandr --output $EXTSCR --auto --output $LAPTOPSCR --off
-    else
-        xrandr --auto
+    if ! EXTActive && EXTConnected
+    then
+        ActivateEXT
     fi
 
-    sleep 5
+    if EXTActive && ! EXTConnected
+    then
+        DeactivateEXT
+    fi
 
+    sleep 5s
 done
