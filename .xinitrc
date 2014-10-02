@@ -116,6 +116,9 @@ fi
 #xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
 xset dpms 300 600 900
 
+# Automatic display configuration script
+nohup bash ~/code/dotfiles/bin/xrandr-auto.sh &
+
 
 exec i3
 #exec herbstluftwm --locked
