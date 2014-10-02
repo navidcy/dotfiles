@@ -94,8 +94,11 @@ bindsym $mod+Shift+b exec mpc prev
 bindsym $mod+Shift+s exec mpc stop
 
 # Light X colors
-bindsym $mod+Shift+w exec --no-startup-id /home/adc/bin/solarized-light.sh
-bindsym $mod+Shift+d exec --no-startup-id /home/adc/bin/solarized-dark.sh
+#bindsym $mod+Shift+w exec --no-startup-id /home/adc/bin/solarized-light.sh
+#bindsym $mod+Shift+d exec --no-startup-id /home/adc/bin/solarized-dark.sh
+
+# configura displays
+bindsym $mod+Shift+d exec --no-startup-id bash /home/adc/code/dotfiles/bin/xrandr-auto.sh
 
 # screen lock
 bindsym $mod+z exec /home/adc/bin/zzz
@@ -269,4 +272,5 @@ bar {
 #exec --no-startup-id wicd-client --tray
 exec --no-startup-id nm-applet
 #exec --no-startup-id i3-msg 'workspace 2; exec emacs; workspace 3; exec firefox; workspace 1; exec urxvt -e tmux-utility.sh'
-exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec urxvt -e tmuxinator utility'
+#exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec urxvt -e tmuxinator utility'
+exec --no-startup-id i3-msg 'workspace 1; exec urxvt -e tmuxinator utility'
