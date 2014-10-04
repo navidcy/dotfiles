@@ -95,7 +95,7 @@ xbindkeys
 if [ "$HOSTNAME" = "iddqd" ]; then
     owncloud &
 fi
-seafile-applet &
+#seafile-applet &
 
 # Setup two monitors at iddqd
 if [ "$HOSTNAME" = "iddqd" ]; then
