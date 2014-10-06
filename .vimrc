@@ -49,7 +49,8 @@ NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'bufexplorer.zip'
 
 " Vim-LaTeX suite
-NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+"NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " Use <Tab> to autocomplete in insert mode
 NeoBundle 'ervandew/supertab'
@@ -110,7 +111,7 @@ set background=dark " adjust colors for better contrast
 "colorscheme desert
 colorscheme solarized
 "colorscheme Tomorrow-Night-Eighties
-"call togglebg#map("<F3>")
+call togglebg#map("<F3>")
 "let g:airline_theme = 'ubaryd'
 let g:airline_theme = 'solarized'
 "let g:airline_theme = 'tomorrow'
@@ -227,6 +228,9 @@ highlight SpecialKey ctermfg=10 guifg=DarkGray
 
 " Save with ZX
 nmap ZX :w<CR>
+
+" use , instead of \ as leader
+let mapleader=","
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
