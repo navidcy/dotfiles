@@ -82,6 +82,8 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias lla='ls -lA'
 alias l='ls -CF'
+alias ipython-prof='ipython -m cProfile'
+alias python-prof='python -m cProfile'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
@@ -150,6 +152,10 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
 
     alias lpp="python $CFDEM_LPP_DIR/lpp.py"
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
+
+    # PETSc
+
+    
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
