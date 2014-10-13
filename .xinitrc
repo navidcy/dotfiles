@@ -92,9 +92,7 @@ setxkbmap -option ctrl:nocaps
 xbindkeys
 
 # cloud clients
-if [ "$HOSTNAME" = "iddqd" ]; then
-    owncloud &
-fi
+owncloud &
 #seafile-applet &
 
 # Setup two monitors at iddqd
@@ -119,6 +117,9 @@ xset dpms 300 600 900
 # Automatic display configuration script
 nohup bash ~/code/dotfiles/bin/xrandr-auto.sh &
 
+if [ "$HOSTNAME" == "flaptop" ]; then
+    xrandr --dpi 135
+fi
 
 exec i3
 #exec herbstluftwm --locked
