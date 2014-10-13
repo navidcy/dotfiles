@@ -17,6 +17,7 @@ if [ ! -f $LAYOUTFILE ]; then
     echo "us" > $LAYOUTFILE
     setxkbmap $LANG1 $OPTS
     xmodmap ~/.Xmodmap
+    notify-send $LANG1
     exit
 fi
 
@@ -26,9 +27,11 @@ CURRLANG="`cat $LAYOUTFILE`"
 if [ "$CURRLANG" == "$LANG1" ]; then
     echo $LANG2 > $LAYOUTFILE
     setxkbmap $LANG2 $OPTS
+    notify-send $LANG2
     xmodmap ~/.Xmodmap
 else
     echo $LANG1 > $LAYOUTFILE
     setxkbmap $LANG1 $OPTS
+    notify-send $LANG1
     xmodmap ~/.Xmodmap
 fi

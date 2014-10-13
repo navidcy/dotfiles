@@ -95,7 +95,7 @@ xbindkeys
 if [ "$HOSTNAME" = "iddqd" ]; then
     owncloud &
 fi
-seafile-applet &
+#seafile-applet &
 
 # Setup two monitors at iddqd
 if [ "$HOSTNAME" = "iddqd" ]; then
@@ -115,6 +115,9 @@ fi
 # Typing breaks (optionally add +lock)
 #xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
 xset dpms 300 600 900
+
+# Automatic display configuration script
+nohup bash ~/code/dotfiles/bin/xrandr-auto.sh &
 
 
 exec i3

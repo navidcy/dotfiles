@@ -142,6 +142,7 @@ set shiftwidth=4    " width for autoindents
 "set showcmd
 set smartcase       " case-sensitive search if any caps
 set softtabstop=4   " makes the tab key indent by four spaces 
+set splitright      " new vertical splits on the right side
 set tabstop=4       " a tab is 4 characters wide
 set wildmenu        " show a navigable menu for tab completion
 set wildmode=longest,list,full
