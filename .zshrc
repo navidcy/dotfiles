@@ -83,8 +83,8 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias lla='ls -lA'
 alias l='ls -CF'
-alias ipython-prof='ipython -m cProfile'
-alias python-prof='python -m cProfile'
+alias ipython-prof='ipython -m cProfile -s time'
+alias python-prof='python -m cProfile -s time'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
