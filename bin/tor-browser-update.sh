@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Gets latest Tor Browser Bundle (TBB) development version for Linux x86_64,
+# stop on error
+set -e
+
+# Gets latest Tor Browser Bundle (TBB) stable version for Linux x86_64,
 # downloads it, verifies it, and extracts it.
 # The scripts downloads the files using "torify", if available.
 
@@ -16,7 +19,7 @@ TORFOLDER=~/tor
 # Remote folder containing the TBB archives
 UNAMESTR=`uname`
 if [[ "$UNAMESTR" == 'Linux' ]]; then
-    DIR="https://www.torproject.org/dist/torbrowser/3.5/"
+    DIR="https://www.torproject.org/dist/torbrowser/4.0/"
 elif [[ "$UNAMESTR" == 'Darwin' ]]; then
     DIR="https://www.torproject.org/dist/torbrowser/osx/"
 else
@@ -34,15 +37,15 @@ else
 fi
 
 # Find latest TBB version
-echo "Determining latest Tor Browser Bundle development version"
+echo "Determining latest Tor Browser Bundle stable version"
 TMPFILENAME=/tmp/tordownloadpage.html
 $DOWNLOADCMD https://www.torproject.org/projects/torbrowser.html.en#downloads -O $TMPFILENAME && \
-LATESTTBB=`grep '_en-US.tar.xz">64-bit' $TMPFILENAME | sed 's/.*tor-browser/tor-browser/' | sed 's/tar.xz.*/tar.xz/'` && \
-echo "Latest Tor Browser Bundle dev. version is $LATESTTBB"
-rm $TMPFILENAME
+LATESTTBB=`grep '_en-US.tar.xz">64-bit' $TMPFILENAME | head -n 1 | sed 's/.*tor-browser/tor-browser/' | sed 's/tar.xz.*/tar.xz/'` && \
+echo "Latest Tor Browser Bundle stable version is $LATESTTBB"
+#rm $TMPFILENAME
 
 # Check if the TBB version is already downloaded
-if [ -e $TORFOLDER/$LATESTTBB ]; then
+if [ -e "$TORFOLDER/$LATESTTBB" ]; then
     echo "The installed TBB version is up to date."
     exit
 fi
