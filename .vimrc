@@ -262,11 +262,11 @@ nmap <leader>e :VimProcBang
 nmap <leader>E :VimProcRead 
 nmap <leader>c :VimProcBang make -k
 
-" Resize with <C-h>, <C-j>, <C-k> and <C-l>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Switch split focus with <C-h>, <C-j>, <C-k> and <C-l>
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
 
 " Use home row keys as Esc
 inoremap jk <Esc>
