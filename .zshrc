@@ -134,7 +134,7 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     export FOAM_INST_DIR=$HOME/OpenFOAM
     #foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
     foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.2.x/etc/bashrc
-    [ -f $foamDotFile ] && . $foamDotFile
+    #[ -f $foamDotFile ] && . $foamDotFile
 
     # CFDEM vars
     export CFDEM_VERSION=PUBLIC
@@ -151,7 +151,7 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
     #export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
     export CFDEM_PIZZA_DIR=$CFDEM_LPP_DIR
-    . $CFDEM_bashrc
+    #. $CFDEM_bashrc
 
     alias lpp="python $CFDEM_LPP_DIR/lpp.py"
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
