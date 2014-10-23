@@ -60,6 +60,7 @@ alias gpu='git pull'
 alias gcgp='git commit && git push'
 alias gcagp='git commit -a && git push'
 alias clear='clear && tmux clear-history'
+alias ct='ctags -R .'
 
 alias zshreload="source ~/.zshrc"
 

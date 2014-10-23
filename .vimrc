@@ -281,8 +281,11 @@ imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
 
+" check current folder and all parent folders for tags files
+set tags=tags;/
+
 " Update ctags
-nmap <leader>t :!ctags -R --verbose --langmap=c++:.cu,c++:.cuh .<CR>
+nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " useful tags commands:
 " :tag or :ta <function> Go to definition of the function
 " :ts or :tselect Show the list of tags
