@@ -49,6 +49,7 @@ function sayfile() { festival --tts $@; }
 alias svim='sudoedit'
 alias e='emacs -nw'
 alias v='vim'
+alias vi='vim -u NONE'
 alias gs='git status'
 alias gl='git log --oneline'
 alias ga='git add'
@@ -85,6 +86,7 @@ alias lla='ls -lA'
 alias l='ls -CF'
 alias ipython-prof='ipython -m cProfile -s time'
 alias python-prof='python -m cProfile -s time'
+alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
