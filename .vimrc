@@ -247,6 +247,9 @@ nmap <Leader>w :w<CR>
 " Quit
 nmap <Leader>q :q<CR>
 
+" Save and quit
+nmap <Leader>x :x<CR>
+
 " Explore buffers
 nmap <leader>b :BufExplorer<CR>
 
