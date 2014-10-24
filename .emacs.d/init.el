@@ -98,6 +98,7 @@
 (require 'evil)
 (evil-mode 1)
 (global-evil-leader-mode) ;; enable evil-leader in every evil buffer
+(evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "e" 'find-file
   "b" 'switch-to-buffer

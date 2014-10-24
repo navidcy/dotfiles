@@ -79,7 +79,7 @@ NeoBundle 'tpope/vim-speeddating'
 " support for Julia
 NeoBundle 'JuliaLang/julia-vim'
 
-" SnipMate
+" SnipMate for boilerplate code
 NeoBundle 'msanders/snipmate.vim'
 
 " vim motion on speed
@@ -232,12 +232,20 @@ nmap ZX :w<CR>
 
 " use , instead of \ as leader
 let mapleader=","
+" use space instead of \ as leader
+let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
 
 " Shortcut to switch background color
-nmap <leader>w :ToggleBG<CR>
+"nmap <leader>w :ToggleBG<CR>
+
+" Save file
+nmap <Leader>w :w<CR>
+
+" Quit
+nmap <Leader>q :q<CR>
 
 " Explore buffers
 nmap <leader>b :BufExplorer<CR>
