@@ -270,6 +270,12 @@ nmap <leader>e :VimProcBang
 nmap <leader>E :VimProcRead 
 nmap <leader>c :VimProcBang make -k
 
+" Switch split focus with leader+hjkl
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
+
 " Switch split focus with <C-h>, <C-j>, <C-k> and <C-l>
 "map <C-h> <C-w>h
 "map <C-j> <C-w>j
