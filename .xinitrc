@@ -14,7 +14,8 @@ xsetroot -cursor_name left_ptr &
 #hsetroot -tile ~/wallpapers/solarized-pattern.png
 if [ "$HOSTNAME" = "iddqd" ]
 then
-    hsetroot -fill ~/wallpapers/octahedron-bg-gimp-double.png
+    #hsetroot -fill ~/wallpapers/octahedron-bg-gimp-double.png # dual screen
+    hsetroot -fill ~/wallpapers/octahedron-bg-gimp.png # single screen
 else
     hsetroot -cover ~/wallpapers/octahedron-bg-gimp.png
 fi
@@ -92,9 +93,7 @@ setxkbmap -option ctrl:nocaps
 xbindkeys
 
 # cloud clients
-if [ "$HOSTNAME" = "iddqd" ]; then
-    owncloud &
-fi
+owncloud &
 #seafile-applet &
 
 # Setup two monitors at iddqd
@@ -119,6 +118,9 @@ xset dpms 300 600 900
 # Automatic display configuration script
 nohup bash ~/code/dotfiles/bin/xrandr-auto.sh &
 
+if [ "$HOSTNAME" == "flaptop" ]; then
+    xrandr --dpi 135
+fi
 
 exec i3
 #exec herbstluftwm --locked

@@ -79,7 +79,7 @@ NeoBundle 'tpope/vim-speeddating'
 " support for Julia
 NeoBundle 'JuliaLang/julia-vim'
 
-" SnipMate
+" SnipMate for boilerplate code
 NeoBundle 'msanders/snipmate.vim'
 
 " vim motion on speed
@@ -142,6 +142,7 @@ set shiftwidth=4    " width for autoindents
 "set showcmd
 set smartcase       " case-sensitive search if any caps
 set softtabstop=4   " makes the tab key indent by four spaces 
+set splitright      " new vertical splits on the right side
 set tabstop=4       " a tab is 4 characters wide
 set wildmenu        " show a navigable menu for tab completion
 set wildmode=longest,list,full
@@ -231,12 +232,23 @@ nmap ZX :w<CR>
 
 " use , instead of \ as leader
 let mapleader=","
+" use space instead of \ as leader
+let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
 
 " Shortcut to switch background color
-nmap <leader>w :ToggleBG<CR>
+"nmap <leader>w :ToggleBG<CR>
+
+" Save file
+nmap <Leader>w :w<CR>
+
+" Quit
+nmap <Leader>q :q<CR>
+
+" Save and quit
+nmap <Leader>x :x<CR>
 
 " Explore buffers
 nmap <leader>b :BufExplorer<CR>
@@ -261,11 +273,17 @@ nmap <leader>e :VimProcBang
 nmap <leader>E :VimProcRead 
 nmap <leader>c :VimProcBang make -k
 
-" Resize with <C-h>, <C-j>, <C-k> and <C-l>
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Switch split focus with leader+hjkl
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
+
+" Switch split focus with <C-h>, <C-j>, <C-k> and <C-l>
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
 
 " Use home row keys as Esc
 inoremap jk <Esc>
@@ -280,8 +298,11 @@ imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
 
+" check current folder and all parent folders for tags files
+set tags=tags;/
+
 " Update ctags
-nmap <leader>t :!ctags -R --verbose --langmap=c++:.cu,c++:.cuh .<CR>
+nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " useful tags commands:
 " :tag or :ta <function> Go to definition of the function
 " :ts or :tselect Show the list of tags

@@ -37,6 +37,7 @@ if [[ "$ARCH" != 'Darwin' ]]; then
     function open() { xdg-open $1 &> /dev/null &disown; }
 fi
 function lt() { ls -ltrsa "$@" | tail; }
+function lT() { ls -ltrsa "$@" | head; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
 function say() { echo "$@" | festival --tts; }
@@ -48,6 +49,7 @@ function sayfile() { festival --tts $@; }
 alias svim='sudoedit'
 alias e='emacs -nw'
 alias v='vim'
+alias vi='vim -u NONE'
 alias gs='git status'
 alias gl='git log --oneline'
 alias ga='git add'
@@ -58,6 +60,7 @@ alias gpu='git pull'
 alias gcgp='git commit && git push'
 alias gcagp='git commit -a && git push'
 alias clear='clear && tmux clear-history'
+alias ct='ctags -R .'
 
 alias zshreload="source ~/.zshrc"
 
@@ -82,6 +85,9 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias lla='ls -lA'
 alias l='ls -CF'
+alias ipython-prof='ipython -m cProfile -s time'
+alias python-prof='python -m cProfile -s time'
+alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
@@ -129,7 +135,7 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     export FOAM_INST_DIR=$HOME/OpenFOAM
     #foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
     foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.2.x/etc/bashrc
-    [ -f $foamDotFile ] && . $foamDotFile
+    #[ -f $foamDotFile ] && . $foamDotFile
 
     # CFDEM vars
     export CFDEM_VERSION=PUBLIC
@@ -146,10 +152,14 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
     export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
     #export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
     export CFDEM_PIZZA_DIR=$CFDEM_LPP_DIR
-    . $CFDEM_bashrc
+    #. $CFDEM_bashrc
 
     alias lpp="python $CFDEM_LPP_DIR/lpp.py"
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
+
+    # PETSc
+
+    
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH

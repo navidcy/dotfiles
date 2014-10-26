@@ -19,4 +19,4 @@ root: ~/articles/own/2-org
 # tmux_command: byobu
 
 windows:
-  - editor: emacs article2.org & && zathura article2.pdf
+  - editor: zathura article2.pdf & ; emacs article2.org &
