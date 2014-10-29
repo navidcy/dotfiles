@@ -57,7 +57,7 @@ NeoBundle 'ervandew/supertab'
 
 " Ack is a grep replacement. Debian pkg: ack-grep. Run from Vim:
 " usage: :Ack [options] {pattern} [{directory}]
-"NeoBundle 'mileszs/ack.vim'
+NeoBundle 'mileszs/ack.vim'
 
 " Rainbow parantheses
 NeoBundle 'kien/rainbow_parentheses.vim'
@@ -237,6 +237,7 @@ let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
+nmap <leader>C :e $MYVIMRC<CR>
 
 " Shortcut to switch background color
 "nmap <leader>w :ToggleBG<CR>
@@ -252,6 +253,7 @@ nmap <Leader>x :x<CR>
 
 " Explore buffers
 nmap <leader>b :BufExplorer<CR>
+nmap <leader>v :bnext<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -267,6 +269,10 @@ nmap <leader>d :NERDTreeToggle<CR>
 
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
+
+nmap <leader>T :e ~/doc/todo.org<CR>
+nmap <leader>% :vsplit 
+nmap <leader>" :split 
 
 " vimproc
 nmap <leader>e :VimProcBang 
@@ -310,3 +316,6 @@ nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
 nmap <leader>p :CtrlPTag<CR>
+
+" Launch Ack
+nmap <leader>a :Ack 
