@@ -115,8 +115,8 @@
   "g" 'magit-commit
   ;"w" 'color-theme-solarized-light
   ;"d" 'color-theme-solarized-dark
-  "w" 'write
-  "q" 'quit
+  "w" 'evil-write
+  "q" 'evil-quit
   "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
   "t" (lambda () (interactive)(find-file "~/doc/todo.org")))
 
