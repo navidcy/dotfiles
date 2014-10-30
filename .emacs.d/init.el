@@ -107,14 +107,16 @@
   "s" 'flyspell-mode
   "S" 'ispell
   "n" 'linum-mode
-  "w" 'whitespace-mode
+  ;"w" 'whitespace-mode
   "m" 'mu4e
   "p" 'org-latex-export-to-pdf
   "P" 'org-beamer-export-to-pdf
   "c" 'compile
   "g" 'magit-commit
-  "w" 'color-theme-solarized-light
-  "d" 'color-theme-solarized-dark
+  ;"w" 'color-theme-solarized-light
+  ;"d" 'color-theme-solarized-dark
+  "w" 'write
+  "q" 'quit
   "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
   "t" (lambda () (interactive)(find-file "~/doc/todo.org")))
 
