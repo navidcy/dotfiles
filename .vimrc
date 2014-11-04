@@ -253,7 +253,6 @@ nmap <Leader>x :x<CR>
 
 " Explore buffers
 nmap <leader>b :BufExplorer<CR>
-nmap <leader>v :bnext<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -315,7 +314,8 @@ nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
-nmap <leader>p :CtrlPTag<CR>
+nmap <leader>P :CtrlPTag<CR>
+nmap <leader>p :CtrlPBuffer<CR>
 
 " Launch Ack
 nmap <leader>a :Ack 
