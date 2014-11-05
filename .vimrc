@@ -316,6 +316,7 @@ nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " Use the Ctrl-P plugin to search the tags
 nmap <leader>P :CtrlPTag<CR>
 nmap <leader>p :CtrlPBuffer<CR>
+nmap <leader>o :CtrlPMRUFiles<CR>
 
 " Launch Ack
 nmap <leader>a :Ack 
