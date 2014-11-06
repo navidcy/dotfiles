@@ -49,6 +49,7 @@ function sayfile() { festival --tts $@; }
 alias svim='sudoedit'
 alias e='emacs -nw'
 alias v='vim'
+alias f='fg'
 alias vi='vim -u NONE'
 alias gs='git status'
 alias gl='git log --oneline'
