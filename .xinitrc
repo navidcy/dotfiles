@@ -15,7 +15,8 @@ xsetroot -cursor_name left_ptr &
 if [ "$HOSTNAME" = "iddqd" ]
 then
     #hsetroot -fill ~/wallpapers/octahedron-bg-gimp-double.png # dual screen
-    hsetroot -fill ~/wallpapers/octahedron-bg-gimp.png # single screen
+    #hsetroot -fill ~/wallpapers/octahedron-bg-gimp.png # single screen
+    hsetroot -fill ~/wallpapers/fall.jpg # single screen
 else
     hsetroot -cover ~/wallpapers/octahedron-bg-gimp.png
 fi
