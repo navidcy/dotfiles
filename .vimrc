@@ -30,7 +30,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 
 " fuzzy file, buffer, and tag finder
-NeoBundle 'kien/ctrlp.vim'
+"NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 " colorschemes
 NeoBundle 'altercation/vim-colors-solarized'
