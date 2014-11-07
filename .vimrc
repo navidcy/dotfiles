@@ -279,6 +279,8 @@ nmap <leader>e :VimProcBang
 nmap <leader>E :VimProcRead 
 nmap <leader>c :VimProcBang make -k
 
+nmap <leader>g :Gcommit<CR>
+
 " Switch split focus with leader+hjkl
 nmap <leader>h <C-w>h
 nmap <leader>j <C-w>j
