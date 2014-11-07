@@ -139,6 +139,6 @@ xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 !xclock*update:      1
 xclock*analog:      true
 xclock*background:  #002b36
-xclock*Foreground:  #fdf6e3
+xclock*Foreground:  #657b83
 
 
