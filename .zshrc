@@ -1,4 +1,5 @@
 source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/code/zsh-git-prompt/zshrc.sh
 
 ARCH=$(uname)
 
@@ -9,7 +10,10 @@ colors
 
 PROMPT="
 %{$fg[red]%} » %{$reset_color%}"
-RPROMPT="%B%{$fg[cyan]%}%~%{$reset_color%} %n@%m"
+#PROMPT='%B%m%~%b$(git_super_status) %# '
+#PROMPT='
+#%b$(git_super_status) %{$fg[red]%}»%{$reset_color%} '
+RPROMPT='%B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
 
 setopt AUTO_CD
 setopt CORRECT
@@ -49,6 +53,7 @@ function sayfile() { festival --tts $@; }
 alias svim='sudoedit'
 alias e='emacs -nw'
 alias v='vim'
+alias f='fg'
 alias vi='vim -u NONE'
 alias gs='git status'
 alias gl='git log --oneline'

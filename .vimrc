@@ -30,7 +30,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 
 " fuzzy file, buffer, and tag finder
-NeoBundle 'kien/ctrlp.vim'
+"NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 " colorschemes
 NeoBundle 'altercation/vim-colors-solarized'
@@ -57,7 +58,7 @@ NeoBundle 'ervandew/supertab'
 
 " Ack is a grep replacement. Debian pkg: ack-grep. Run from Vim:
 " usage: :Ack [options] {pattern} [{directory}]
-"NeoBundle 'mileszs/ack.vim'
+NeoBundle 'mileszs/ack.vim'
 
 " Rainbow parantheses
 NeoBundle 'kien/rainbow_parentheses.vim'
@@ -237,6 +238,7 @@ let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
+nmap <leader>C :e $MYVIMRC<CR>
 
 " Shortcut to switch background color
 "nmap <leader>w :ToggleBG<CR>
@@ -268,10 +270,16 @@ nmap <leader>d :NERDTreeToggle<CR>
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
 
+nmap <leader>T :e ~/doc/todo.org<CR>
+nmap <leader>% :vsplit 
+nmap <leader>" :split 
+
 " vimproc
 nmap <leader>e :VimProcBang 
 nmap <leader>E :VimProcRead 
 nmap <leader>c :VimProcBang make -k
+
+nmap <leader>g :Gcommit<CR>
 
 " Switch split focus with leader+hjkl
 nmap <leader>h <C-w>h
@@ -309,4 +317,9 @@ nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
-nmap <leader>p :CtrlPTag<CR>
+nmap <leader>P :CtrlPTag<CR>
+nmap <leader>p :CtrlPBuffer<CR>
+nmap <leader>o :CtrlPMRUFiles<CR>
+
+" Launch Ack
+nmap <leader>a :Ack 

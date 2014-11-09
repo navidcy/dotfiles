@@ -52,8 +52,8 @@
      zencoding-mode         ; http://www.emacswiki.org/emacs/ZenCoding
      window-number          ; choose window with number using C-x o
      fill-column-indicator  ; indicate column 80
-     color-theme            ; nice looking emacs
-     color-theme-solarized)) ; check out color-theme-solarized
+     color-theme-solarized  ; check out color-theme-solarized
+     color-theme))          ; nice looking emacs
 
 (setq my:el-get-packages
       (append
@@ -90,6 +90,7 @@
 
 ;; color theme
 (load-theme 'solarized-dark t)
+(setq solarized-termcolor 256)
 
 ;; rainbow delimiters in programming modes
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -106,14 +107,16 @@
   "s" 'flyspell-mode
   "S" 'ispell
   "n" 'linum-mode
-  "w" 'whitespace-mode
+  ;"w" 'whitespace-mode
   "m" 'mu4e
   "p" 'org-latex-export-to-pdf
   "P" 'org-beamer-export-to-pdf
   "c" 'compile
   "g" 'magit-commit
-  "w" 'color-theme-solarized-light
-  "d" 'color-theme-solarized-dark
+  ;"w" 'color-theme-solarized-light
+  ;"d" 'color-theme-solarized-dark
+  "w" 'evil-write
+  "q" 'evil-quit
   "i" (lambda () (interactive)(find-file "~/.emacs.d/init.el"))
   "t" (lambda () (interactive)(find-file "~/doc/todo.org")))
 
@@ -400,11 +403,8 @@
  '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "zathura %s"))))
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "termsyn")))))
+ ;'(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "termsyn")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 86 :width normal :foundry "unknown" :family "PragmataPro")))))
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
   (set-face-font 'default "Monaco-11"))     ; os x

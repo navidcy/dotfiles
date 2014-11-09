@@ -4,9 +4,10 @@
 mkdir -p ./.vim/bundle
 ./create_symlinks.sh
 
-# Clone zsh syntax highlighting
+# Clone zsh syntax highlighting and git prompt
 mkdir -p $HOME/code && cd $HOME/code && \
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/olivierverdier/zsh-git-prompt.git
 
 # Install fonts
 git clone https://github.com/phallus/fonts ~/code/phallus-fonts &&
@@ -19,6 +20,7 @@ mkdir -p ~/.vim/bundle
 
 # Install NeoBundle
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
 
 # Install font
 cd /tmp &&\
