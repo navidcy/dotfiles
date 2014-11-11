@@ -267,7 +267,7 @@ nmap <leader>s :set spell!<CR>
 nmap <leader>n :set number!<CR>
 
 " toggle relative line numbering
-nmap <leader>m :set relativenumber!<CR>
+nmap <leader>N :set relativenumber!<CR>
 
 " NERD Tree short cut
 nmap <leader>d :NERDTreeToggle<CR>
@@ -343,39 +343,57 @@ nmap <leader>a :Ack
 augroup filetypedetect_rst
     au!
     " Headings
-    au FileType rst nnoremap <leader>h1 ^yypv$r=o<cr><esc>
-    au FileType rst inoremap <leader>h1 <esc>^yypv$r=o<cr>
-    au FileType rst nnoremap <leader>h2 ^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    au FileType rst inoremap <leader>h2 <esc>^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkki
-    au FileType rst nnoremap <leader>h3 ^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    au FileType rst inoremap <leader>h3 <esc>^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkki
-    au FileType rst nnoremap <leader>h4 ^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    au FileType rst inoremap <leader>h4 <esc>^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkki
-    au FileType rst nnoremap <leader>h5 ^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    au FileType rst inoremap <leader>h5 <esc>^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkki
+    " Use <C-e>s1 to <C-e>s4 in insert mode
+    " Use <C-e>hs to view document sections
+    " Use <C-e>cc to insert table of contents
+    "au FileType rst nnoremap <leader>h1 ^yypv$r=o<cr><esc>
+    "au FileType rst inoremap <leader>h1 <esc>^yypv$r=o<cr>
+    "au FileType rst nnoremap <leader>h2 ^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h2 <esc>^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkki
+    "au FileType rst nnoremap <leader>h3 ^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h3 <esc>^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkki
+    "au FileType rst nnoremap <leader>h4 ^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h4 <esc>^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkki
+    "au FileType rst nnoremap <leader>h5 ^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h5 <esc>^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkki
+
+    " On list lines, press <C-e>ee to toggle state
+
     """Make Link (ml)
+    " Use <C-e>ck to make a link
     " Highlight a word or phrase and it creates a link and opens a split so
     " you can edit the url separately. Once you are done editing the link,
     " simply close that split.
     au FileType rst vnoremap <leader>ml yi`<esc>gvvlli`_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. _<esc>pA: http://TODO<esc>vb
+
     """Make footnote (ml)
     au FileType rst iabbrev mfn [#]_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. [#] TODO
+    " Enable spelling by default
     au FileType rst set spell
+
     "Create image
     au FileType rst iabbrev iii .. image:: TODO.png<cr> :scale: 100<cr>:align: center<cr><esc>kkkeel
+
     "Create figure
     "au FileType rst iabbrev iif .. figure:: TODO.png<cr> :scale: 100<cr>:align: center<cr>:alt: TODO<cr><cr><cr>Some brief description<esc>kkkeel
+
     "Create note
     au FileType rst iabbrev nnn .. note::
+
     "Start or end bold text inline
-    au FileType rst inoremap <leader>bb **
+    "au FileType rst inoremap <leader>bb **
+
     "Start or end italicized text inline
-    au FileType rst inoremap <leader>ii *
+    "au FileType rst inoremap <leader>ii *
+
     "Start or end preformatted text inline
-    au FileType rst inoremap <leader>pf ``
+    "au FileType rst inoremap <leader>pf ``
+
     " Fold settings
     "au FileType rst set foldmethod=marker
+    "
     " Admonitions
     au FileType rst iabbrev adw .. warning::
     au FileType rst iabbrev adn .. note::
+
 augroup END
