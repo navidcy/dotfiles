@@ -86,6 +86,11 @@ NeoBundle 'msanders/snipmate.vim'
 " vim motion on speed
 NeoBundle 'Lokaltog/vim-easymotion'
 
+" Take notes in rst
+NeoBundle 'Rykka/clickable.vim'
+NeoBundle 'Rykka/riv.vim'
+NeoBundle 'Rykka/InstantRst'
+
 " vimproc for asynchronous processes
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
