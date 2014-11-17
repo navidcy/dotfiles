@@ -96,6 +96,8 @@ NeoBundle 'Rykka/InstantRst'
 " next bookmark: mn
 " previous bookmark: mn
 " list of all bookmarks: ma
+" clear all bookmarks in current buffer: mc
+" clear all bookmarks in all buffers: mx
 NeoBundle 'MattesGroeger/vim-bookmarks'
 
 " vimproc for asynchronous processes
@@ -128,6 +130,10 @@ call togglebg#map("<F3>")
 "let g:airline_theme = 'ubaryd'
 let g:airline_theme = 'solarized'
 "let g:airline_theme = 'tomorrow'
+highlight Search     cterm=NONE  ctermfg=black ctermbg=2
+highlight MatchParen cterm=NONE  ctermfg=255   ctermbg=199
+highlight SpecialKey ctermfg=250 ctermbg=NONE  cterm=NONE
+highlight NonText    ctermfg=250 ctermbg=NONE
 
 " hilight column 80
 set textwidth=80
@@ -404,3 +410,8 @@ augroup filetypedetect_rst
     au FileType rst iabbrev adn .. note::
 
 augroup END
+
+" adjust signcolumn appearance
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+highlight clear SignColumn
