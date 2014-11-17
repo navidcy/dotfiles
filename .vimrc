@@ -91,6 +91,13 @@ NeoBundle 'Rykka/clickable.vim'
 NeoBundle 'Rykka/riv.vim'
 NeoBundle 'Rykka/InstantRst'
 
+" add/remove bookmark: mm
+" add/edit/remove annotation: mi
+" next bookmark: mn
+" previous bookmark: mn
+" list of all bookmarks: ma
+NeoBundle 'MattesGroeger/vim-bookmarks'
+
 " vimproc for asynchronous processes
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
