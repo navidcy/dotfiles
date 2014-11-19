@@ -256,7 +256,6 @@ let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
-nmap <leader>C :e $MYVIMRC<CR>
 
 " Shortcut to switch background color
 "nmap <leader>w :ToggleBG<CR>
@@ -288,9 +287,13 @@ nmap <leader>d :NERDTreeToggle<CR>
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
 
-nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>% :vsplit 
 nmap <leader>" :split 
+
+" shortcuts to commonly used files
+nmap <leader>C :e $MYVIMRC<CR>
+nmap <leader>T :e ~/doc/todo.org<CR>
+nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 
 " vimproc
 nmap <leader>e :VimProcBang 
