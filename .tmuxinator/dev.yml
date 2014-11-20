@@ -31,6 +31,8 @@ windows:
           - cd python && ipython -i -c 'import sphere'
           - cd python
           - cd python
+  - log: cd python
+
   - grendel:
       layout: even-horizontal
       panes:
