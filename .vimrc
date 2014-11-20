@@ -250,7 +250,7 @@ highlight SpecialKey ctermfg=10 guifg=DarkGray
 nmap ZX :w<CR>
 
 " use , instead of \ as leader
-let mapleader=","
+"let mapleader=","
 " use space instead of \ as leader
 let mapleader="\<Space>"
 
@@ -270,7 +270,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>x :x<CR>
 
 " Explore buffers
-nmap <leader>b :BufExplorer<CR>
+nmap <leader>B :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -287,6 +287,7 @@ nmap <leader>d :NERDTreeToggle<CR>
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
 
+nmap <leader>e :e 
 nmap <leader>% :vsplit 
 nmap <leader>" :split 
 
@@ -296,7 +297,6 @@ nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 
 " vimproc
-nmap <leader>e :VimProcBang 
 nmap <leader>E :VimProcRead 
 nmap <leader>c :VimProcBang make -k
 
@@ -348,9 +348,9 @@ nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
-nmap <leader>P :CtrlPTag<CR>
-nmap <leader>p :CtrlPBuffer<CR>
-nmap <leader>o :CtrlPMRUFiles<CR>
+nmap <leader>t :CtrlPTag<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>m :CtrlPMRUFiles<CR>
 
 " Launch Ack
 nmap <leader>a :Ack 
