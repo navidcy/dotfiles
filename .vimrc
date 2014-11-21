@@ -86,6 +86,20 @@ NeoBundle 'msanders/snipmate.vim'
 " vim motion on speed
 NeoBundle 'Lokaltog/vim-easymotion'
 
+" Take notes in rst
+NeoBundle 'Rykka/clickable.vim'
+NeoBundle 'Rykka/riv.vim'
+NeoBundle 'Rykka/InstantRst'
+
+" add/remove bookmark: mm
+" add/edit/remove annotation: mi
+" next bookmark: mn
+" previous bookmark: mn
+" list of all bookmarks: ma
+" clear all bookmarks in current buffer: mc
+" clear all bookmarks in all buffers: mx
+NeoBundle 'MattesGroeger/vim-bookmarks'
+
 " vimproc for asynchronous processes
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
@@ -116,6 +130,10 @@ call togglebg#map("<F3>")
 "let g:airline_theme = 'ubaryd'
 let g:airline_theme = 'solarized'
 "let g:airline_theme = 'tomorrow'
+highlight Search     cterm=NONE  ctermfg=black ctermbg=2
+highlight MatchParen cterm=NONE  ctermfg=255   ctermbg=199
+highlight SpecialKey ctermfg=250 ctermbg=NONE  cterm=NONE
+highlight NonText    ctermfg=250 ctermbg=NONE
 
 " hilight column 80
 set textwidth=80
@@ -232,13 +250,12 @@ highlight SpecialKey ctermfg=10 guifg=DarkGray
 nmap ZX :w<CR>
 
 " use , instead of \ as leader
-let mapleader=","
+"let mapleader=","
 " use space instead of \ as leader
 let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
-nmap <leader>C :e $MYVIMRC<CR>
 
 " Shortcut to switch background color
 "nmap <leader>w :ToggleBG<CR>
@@ -253,7 +270,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>x :x<CR>
 
 " Explore buffers
-nmap <leader>b :BufExplorer<CR>
+nmap <leader>B :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -262,7 +279,7 @@ nmap <leader>s :set spell!<CR>
 nmap <leader>n :set number!<CR>
 
 " toggle relative line numbering
-nmap <leader>m :set relativenumber!<CR>
+nmap <leader>N :set relativenumber!<CR>
 
 " NERD Tree short cut
 nmap <leader>d :NERDTreeToggle<CR>
@@ -270,14 +287,19 @@ nmap <leader>d :NERDTreeToggle<CR>
 " Toggle TAB and EOL symbols
 nmap <leader>l :set list!<CR>
 
-nmap <leader>T :e ~/doc/todo.org<CR>
+nmap <leader>e :e 
 nmap <leader>% :vsplit 
 nmap <leader>" :split 
 
+" shortcuts to commonly used files
+nmap <leader>C :e $MYVIMRC<CR>
+nmap <leader>T :e ~/doc/todo.org<CR>
+nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
+
 " vimproc
-nmap <leader>e :VimProcBang 
 nmap <leader>E :VimProcRead 
-nmap <leader>c :VimProcBang make -k
+
+nmap <leader>m :Make<CR>
 
 nmap <leader>g :Gcommit<CR>
 
@@ -286,6 +308,16 @@ nmap <leader>h <C-w>h
 nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
+
+" Toggle fold
+nmap <leader>f za
+" Toggle all folds
+nmap <leader>F zA
+" zc: close a fold
+" zo: open a fold
+" za: toggle a fold
+" zM: close all folds
+" zR: open all folds
 
 " Switch split focus with <C-h>, <C-j>, <C-k> and <C-l>
 "map <C-h> <C-w>h
@@ -310,16 +342,80 @@ imap <Down> <Nop>
 set tags=tags;/
 
 " Update ctags
-nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
+nmap <leader>c :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " useful tags commands:
 " :tag or :ta <function> Go to definition of the function
 " :ts or :tselect Show the list of tags
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
-nmap <leader>P :CtrlPTag<CR>
-nmap <leader>p :CtrlPBuffer<CR>
+nmap <leader>t :CtrlPTag<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>o :CtrlPMRUFiles<CR>
 
 " Launch Ack
 nmap <leader>a :Ack 
+
+" reStructuredText bindings
+augroup filetypedetect_rst
+    au!
+    " Headings
+    " Use <C-e>s1 to <C-e>s4 in insert mode
+    " Use <C-e>hs to view document sections
+    " Use <C-e>cc to insert table of contents
+    "au FileType rst nnoremap <leader>h1 ^yypv$r=o<cr><esc>
+    "au FileType rst inoremap <leader>h1 <esc>^yypv$r=o<cr>
+    "au FileType rst nnoremap <leader>h2 ^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h2 <esc>^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkki
+    "au FileType rst nnoremap <leader>h3 ^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h3 <esc>^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkki
+    "au FileType rst nnoremap <leader>h4 ^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h4 <esc>^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkki
+    "au FileType rst nnoremap <leader>h5 ^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkk
+    "au FileType rst inoremap <leader>h5 <esc>^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkki
+
+    " On list lines, press <C-e>ee to toggle state
+
+    """Make Link (ml)
+    " Use <C-e>ck to make a link
+    " Highlight a word or phrase and it creates a link and opens a split so
+    " you can edit the url separately. Once you are done editing the link,
+    " simply close that split.
+    au FileType rst vnoremap <leader>ml yi`<esc>gvvlli`_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. _<esc>pA: http://TODO<esc>vb
+
+    """Make footnote (ml)
+    au FileType rst iabbrev mfn [#]_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. [#] TODO
+    " Enable spelling by default
+    au FileType rst set spell
+
+    "Create image
+    au FileType rst iabbrev iii .. image:: TODO.png<cr> :scale: 100<cr>:align: center<cr><esc>kkkeel
+
+    "Create figure
+    "au FileType rst iabbrev iif .. figure:: TODO.png<cr> :scale: 100<cr>:align: center<cr>:alt: TODO<cr><cr><cr>Some brief description<esc>kkkeel
+
+    "Create note
+    au FileType rst iabbrev nnn .. note::
+
+    "Start or end bold text inline
+    "au FileType rst inoremap <leader>bb **
+
+    "Start or end italicized text inline
+    "au FileType rst inoremap <leader>ii *
+
+    "Start or end preformatted text inline
+    "au FileType rst inoremap <leader>pf ``
+
+    " Fold settings
+    "au FileType rst set foldmethod=marker
+    "
+    " Admonitions
+    au FileType rst iabbrev adw .. warning::
+    au FileType rst iabbrev adn .. note::
+
+augroup END
+
+" adjust signcolumn appearance
+let g:syntastic_error_symbol = 'e'
+let g:syntastic_warning_symbol = 'w'
+highlight clear SignColumn

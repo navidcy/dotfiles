@@ -9,9 +9,13 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Super as modifier
 set $mod Mod4
+set $alt Mod1
+
+# Alt as modifier
 #set $mod Mod1
-#set $alt Mod1
+#set $alt Control
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -73,7 +77,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+c exec emacs
 bindsym $mod+t exec tor-browser.sh
 bindsym $mod+p exec zathura
-bindsym $mod+Mod1+l exec --no-startup-id ~/bin/keyboard-layout-switch.sh && notify-send `cat ~/.kbd-layout`
+bindsym $mod+$alt+l exec --no-startup-id ~/bin/keyboard-layout-switch.sh && notify-send `cat ~/.kbd-layout`
 
 # volume control with pulseaudio
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
