@@ -298,7 +298,8 @@ nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 
 " vimproc
 nmap <leader>E :VimProcRead 
-nmap <leader>c :VimProcBang make -k
+
+nmap <leader>m :Make<CR>
 
 nmap <leader>g :Gcommit<CR>
 
@@ -350,7 +351,7 @@ nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " Use the Ctrl-P plugin to search the tags
 nmap <leader>t :CtrlPTag<CR>
 nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>m :CtrlPMRUFiles<CR>
+nmap <leader>o :CtrlPMRUFiles<CR>
 
 " Launch Ack
 nmap <leader>a :Ack 
