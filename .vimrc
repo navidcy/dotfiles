@@ -342,7 +342,7 @@ imap <Down> <Nop>
 set tags=tags;/
 
 " Update ctags
-nmap <leader>t :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
+nmap <leader>c :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " useful tags commands:
 " :tag or :ta <function> Go to definition of the function
 " :ts or :tselect Show the list of tags
