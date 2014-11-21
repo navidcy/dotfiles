@@ -416,6 +416,6 @@ augroup filetypedetect_rst
 augroup END
 
 " adjust signcolumn appearance
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_error_symbol = 'e'
+let g:syntastic_warning_symbol = 'w'
 highlight clear SignColumn
