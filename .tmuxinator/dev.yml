@@ -28,7 +28,7 @@ windows:
   - run:
       layout: main-vertical
       panes:
-          - cd python && ipython -i -c 'import sphere'
+          - cd python && ipython -i -c 'import numpy; import sphere'
           - cd python
           - cd python
   - log: cd python

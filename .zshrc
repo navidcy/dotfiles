@@ -46,6 +46,7 @@ function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
 function say() { echo "$@" | festival --tts; }
 function sayfile() { festival --tts $@; }
+function tnew { tmux new-session -As `basename $PWD` }
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
