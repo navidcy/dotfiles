@@ -38,3 +38,8 @@ for F in `ls bin/`; do
   echo "Symlink: $SOURCE -> $TARGET"
   ln -s $SOURCE $TARGET
 done
+
+# .xinitrc doesn't work with XQuartz
+if [[ "$UNAMESTR" == 'Darwin' ]]; then
+    rm ~/.xinitrc
+fi
