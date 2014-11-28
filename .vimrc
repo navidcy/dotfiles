@@ -301,6 +301,9 @@ nmap <leader>E :VimProcRead
 
 nmap <leader>m :Make<CR>
 
+" spawn interactive process
+nmap <leader>S :Start 
+
 nmap <leader>g :Gcommit<CR>
 
 " Switch split focus with leader+hjkl

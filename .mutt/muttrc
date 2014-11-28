@@ -24,7 +24,8 @@ set my_del=`rm -f ~/.sec/.tmp`
 # IMAP: offlineimap
 set folder = "~/Mail"
 source ~/.mutt/mailboxes
-set spoolfile = "+riseup/INBOX"
+#set spoolfile = "+riseup/INBOX"
+set spoolfile = "+riseup"
 set record = "+riseup/Sent\ Items"
 set postponed = "+riseup/Drafts"
 set mbox_type=Maildir

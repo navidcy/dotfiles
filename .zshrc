@@ -46,6 +46,7 @@ function lT() { ls -ltrsa "$@" | head; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
 function sayfile() { festival --tts $@; }
+function tnew { tmux new-session -As `basename $PWD` }
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
@@ -66,6 +67,7 @@ alias gcgp='git commit && git push'
 alias gcagp='git commit -a && git push'
 alias clear='clear && tmux clear-history'
 alias ct='ctags -R .'
+alias findgrep='find . | grep -i '
 
 alias zshreload="source ~/.zshrc"
 
