@@ -1,10 +1,12 @@
 #!/bin/sh
 
 if [[ "$(ifconfig | grep 10.17.8)" ]]; then
-    echo "On geo lan, connecting directly..."
+    echo "On geo lan. Mounting sshfs and connecting directly..."
+    ./sshfs-iddqd.sh
     ssh -v iddqd.nfit.au.dk -t 'bin/tmux-dev.sh'
 elif [[ "$(ifconfig | grep 10.17.2)" ]]; then
-    echo "On geo VPN, connecting directly..."
+    echo "On geo VPN. Mounting sshfs and connecting directly..."
+    ./sshfs-iddqd.sh
     ssh -v iddqd.nfit.au.dk -t 'bin/tmux-dev.sh'
 else
     echo "Outside geo lan, connecting through fresh-horse..."
