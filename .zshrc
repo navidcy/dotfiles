@@ -1,5 +1,7 @@
 source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/code/zsh-git-prompt/zshrc.sh
+GIT_PROMPT_EXECUTABLE='haskell'
+ZSH_THEME_GIT_PROMPT_CACHE=true
 
 ARCH=$(uname)
 
