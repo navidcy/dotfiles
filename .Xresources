@@ -108,6 +108,7 @@ xpdf*foreground: black
 xpdf*background: white
 xpdf*matteColor: gray
 xpdf*urlCommand: /usr/bin/firefox %s
+xpdf*viKeys: true
 
 ! xscreensaver ---------------------------------------------------------------
 !font settings
