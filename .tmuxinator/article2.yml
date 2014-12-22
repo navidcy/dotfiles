@@ -1,7 +1,8 @@
 # ~/.tmuxinator/article2.yml
 
 name: article2
-root: ~/articles/own/2-org
+#root: ~/articles/own/2-org
+root: ~/articles/own/2
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,4 +20,4 @@ root: ~/articles/own/2-org
 # tmux_command: byobu
 
 windows:
-  - editor: zathura article2.pdf & ; emacs article2.org &
+    - editor: make view &>/dev/null & ; make edit

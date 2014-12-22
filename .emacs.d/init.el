@@ -38,7 +38,7 @@
      helm                   ; Emacs incremental and narrowing framework
      popup                  ; visual popup interface library
      ;doxymacs               ; doxygen integration
-     auctex                 ; advanced LaTeX mode
+     ;auctex                 ; advanced LaTeX mode
      reftex                 ; BiBTeX references
      powerline              ; powerline for emacs
      rainbow-delimiters     ; color nested parantheses
@@ -108,7 +108,7 @@
   "S" 'ispell
   "n" 'linum-mode
   ;"w" 'whitespace-mode
-  "m" 'mu4e
+  ;"m" 'mu4e
   "p" 'org-latex-export-to-pdf
   "P" 'org-beamer-export-to-pdf
   "c" 'compile
@@ -286,7 +286,7 @@
 (electric-pair-mode 1)
 
 ;; mail client setup
-(require 'mu4e)
+;(require 'mu4e)
 (require 'smtpmail)
 
 ;; main account
@@ -400,7 +400,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
- '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "zathura %s"))))
+ ;'(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "zathura %s"))))
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
  ;'(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 128 :width normal :foundry "unknown" :family "termsyn")))))
