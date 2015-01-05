@@ -270,7 +270,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>x :x<CR>
 
 " Explore buffers
-nmap <leader>P :BufExplorer<CR>
+nmap <leader>p :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -353,7 +353,7 @@ nmap <leader>c :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
 nmap <leader>t :CtrlPTag<CR>
-nmap <leader>p :CtrlPBuffer<CR>
+nmap <leader>P :CtrlPBuffer<CR>
 nmap <leader>o :CtrlPMRUFiles<CR>
 
 " Launch Ack
