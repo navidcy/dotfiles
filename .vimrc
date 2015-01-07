@@ -314,6 +314,7 @@ nmap <leader>l <C-w>l
 " Commit all changes
 "nmap <leader>g :Gcommit<CR>
 nmap <leader>g :!git commit -a -v<CR>
+nmap <leader>G :!git commit -a -v && git push<CR>
 
 " Toggle fold
 nmap <leader>f za
