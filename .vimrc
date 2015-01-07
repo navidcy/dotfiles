@@ -304,13 +304,16 @@ nmap <leader>m :Make<CR>
 " spawn interactive process
 nmap <leader>S :Start 
 
-nmap <leader>g :Gcommit<CR>
 
 " Switch split focus with leader+hjkl
 nmap <leader>h <C-w>h
 nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
+
+" Commit all changes
+"nmap <leader>g :Gcommit<CR>
+nmap <leader>g :!git commit -a -v<CR>
 
 " Toggle fold
 nmap <leader>f za
