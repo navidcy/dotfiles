@@ -298,6 +298,7 @@ nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 
 " vimproc
 nmap <leader>E :VimProcRead 
+nmap <leader>! :VimProcBang 
 
 nmap <leader>m :Make<CR>
 
