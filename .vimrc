@@ -296,14 +296,11 @@ nmap <leader>C :e $MYVIMRC<CR>
 nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 
-" vimproc
-nmap <leader>E :VimProcRead 
-nmap <leader>! :VimProcBang 
-
+" job execution
 nmap <leader>m :Make<CR>
-
-" spawn interactive process
-nmap <leader>S :Start 
+nmap <leader>E :VimProcRead 
+nmap <leader>! :Start 
+nmap <leader>S :Start! 
 
 
 " Switch split focus with leader+hjkl
