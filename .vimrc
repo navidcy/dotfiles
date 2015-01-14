@@ -299,8 +299,7 @@ nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 " job execution
 nmap <leader>m :Make<CR>
 nmap <leader>E :VimProcRead 
-nmap <leader>! :Start 
-nmap <leader>S :Start! 
+nmap <leader>! :Start! 
 
 
 " Switch split focus with leader+hjkl
