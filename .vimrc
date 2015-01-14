@@ -310,8 +310,8 @@ nmap <leader>l <C-w>l
 
 " Commit all changes
 "nmap <leader>g :Gcommit<CR>
-nmap <leader>g :!git commit -a -v<CR>
-nmap <leader>G :!git commit -a -v && git push<CR>
+nmap <leader>g :Start git commit -a -v<CR>
+nmap <leader>G :Start git commit -a -v && git push<CR>
 
 " Toggle fold
 nmap <leader>f za
@@ -346,7 +346,7 @@ imap <Down> <Nop>
 set tags=tags;/
 
 " Update ctags
-nmap <leader>c :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
+nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " useful tags commands:
 " :tag or :ta <function> Go to definition of the function
 " :ts or :tselect Show the list of tags
