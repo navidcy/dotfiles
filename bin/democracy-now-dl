@@ -46,7 +46,8 @@ wget --quiet --output-document="$OUTNAME$SUFFIX" "$BASEURL$DATE$SUFFIX"
 if [ $? == 0 ]; then
     echo "Saved as $OUTNAME$SUFFIX"
 else
-    echo "Download failed."
+    rm $OUTNAME$SUFFIX
+    echo "Error: Download failed."
     echo "Try downloading the episode from yesterday by invoking:"
     echo "  $0 -y"
     exit 1
