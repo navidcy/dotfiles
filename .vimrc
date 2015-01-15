@@ -296,14 +296,10 @@ nmap <leader>C :e $MYVIMRC<CR>
 nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 
-" vimproc
-nmap <leader>E :VimProcRead 
-nmap <leader>! :VimProcBang 
-
+" job execution
 nmap <leader>m :Make<CR>
-
-" spawn interactive process
-nmap <leader>S :Start 
+nmap <leader>E :VimProcRead 
+nmap <leader>! :Start! 
 
 
 " Switch split focus with leader+hjkl
@@ -314,8 +310,8 @@ nmap <leader>l <C-w>l
 
 " Commit all changes
 "nmap <leader>g :Gcommit<CR>
-nmap <leader>g :!git commit -a -v<CR>
-nmap <leader>G :!git commit -a -v && git push<CR>
+nmap <leader>g :Start git commit -a -v<CR>
+nmap <leader>G :Start git commit -a -v && git push<CR>
 
 " Toggle fold
 nmap <leader>f za
@@ -350,7 +346,7 @@ imap <Down> <Nop>
 set tags=tags;/
 
 " Update ctags
-nmap <leader>c :!ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
+nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 " useful tags commands:
 " :tag or :ta <function> Go to definition of the function
 " :ts or :tselect Show the list of tags
