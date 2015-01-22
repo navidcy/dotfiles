@@ -295,6 +295,7 @@ nmap <leader>" :split
 nmap <leader>C :e $MYVIMRC<CR>
 nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
+nmap <leader>A :e ~/articles/articles.rst<CR>
 
 " job execution
 nmap <leader>m :Make<CR>
