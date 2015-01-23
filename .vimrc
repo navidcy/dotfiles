@@ -270,7 +270,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>x :x<CR>
 
 " Explore buffers
-nmap <leader>p :BufExplorer<CR>
+nmap <leader>P :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -296,6 +296,9 @@ nmap <leader>C :e $MYVIMRC<CR>
 nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 nmap <leader>A :e ~/articles/articles.rst<CR>
+
+" insert date and time
+nmap <leader>D :read !date<CR>
 
 " job execution
 nmap <leader>m :Make<CR>
@@ -355,7 +358,7 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
 nmap <leader>t :CtrlPTag<CR>
-nmap <leader>P :CtrlPBuffer<CR>
+nmap <leader>p :CtrlPBuffer<CR>
 nmap <leader>o :CtrlPMRUFiles<CR>
 
 " Launch Ack
