@@ -321,6 +321,8 @@ nmap <leader>G :Start git commit -a -v && git push<CR>
 nmap <leader>f za
 " Toggle all folds
 nmap <leader>F zA
+nmap <leader>Fa zR
+nmap <leader>FA zM
 " zc: close a fold
 " zo: open a fold
 " za: toggle a fold

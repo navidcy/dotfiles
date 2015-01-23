@@ -7,6 +7,7 @@ if [[ "$UNAMESTR" == 'Linux' ]]; then
         sudo apt-get autoremove && \
         sudo apt-get clean
 elif [[ "$UNAMESTR" == 'Darwin' ]]; then
+    echo "Fetching updates..."
     brew update && \
         brew upgrade && \
         brew cleanup
