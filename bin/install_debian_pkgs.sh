@@ -7,6 +7,6 @@ apt-get install vim tmux git zsh i3 exuberant-ctags haskell-platform \
     xautolock pass urlview elinks redshift libnotify-bin owncloud-client \
     hsetroot xbacklight i3lock scrot imagemagick mpc htop \
     rxvt-unicode-256color texlive cmake sshfs paraview python-numpy \
-    python-scipy python-matplotlib ipython
+    python-scipy python-matplotlib ipython mplayer
 
 sudo gem install tmuxinator
