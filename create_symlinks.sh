@@ -26,6 +26,7 @@ for F in .colors .config/uzbl .config/awesome .config/dwb .config/bspwm .config/
   ln -s $SOURCE $TARGET
 done
 
+mkdir -p ~/bin
 # Home folder bin directory
 for F in `ls bin/`; do
   SOURCE=$PWD/bin/$F
