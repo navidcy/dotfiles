@@ -98,14 +98,14 @@ bindsym $mod+Shift+b exec mpc prev
 bindsym $mod+Shift+s exec mpc stop
 
 # Light X colors
-#bindsym $mod+Shift+w exec --no-startup-id /home/adc/bin/solarized-light.sh
-#bindsym $mod+Shift+d exec --no-startup-id /home/adc/bin/solarized-dark.sh
+#bindsym $mod+Shift+w exec --no-startup-id /home/ad/bin/solarized-light.sh
+#bindsym $mod+Shift+d exec --no-startup-id /home/ad/bin/solarized-dark.sh
 
 # configura displays
-bindsym $mod+Shift+d exec --no-startup-id bash /home/adc/code/dotfiles/bin/xrandr-auto.sh
+bindsym $mod+Shift+d exec --no-startup-id bash /home/ad/code/dotfiles/bin/xrandr-auto.sh
 
 # screen lock
-bindsym $mod+z exec /home/adc/bin/zzz
+bindsym $mod+z exec /home/ad/bin/zzz
 
 # kill focused window
 bindsym $mod+Shift+q kill
