@@ -3,10 +3,10 @@ Xcursor.theme: Vanilla-DMZ-AA
 Xcursor.size:  22
 
 ! terminal colors ------------------------------------------------------------
-!#include "/home/adc/.colors/solarized"
+!#include "/home/ad/.colors/solarized"
 #include "/home/ad/.colors/solarized"
 !#include "/home/ad/.colors/solarized_light"
-!#include "/home/adc/.colors/erosionedit"
+!#include "/home/ad/.colors/erosionedit"
 
 ! fonts ----------------------------------------------------------------------
 Xft*dpi:        96

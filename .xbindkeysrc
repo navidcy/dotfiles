@@ -4,16 +4,16 @@
 "xbacklight -inc 10"
     XF86MonBrightnessUp
 
-"/home/adc/bin/display-switcher.sh"
+"/home/ad/bin/display-switcher.sh"
     XF86LaunchA
 
-"/home/adc/bin/display-ext.sh"
+"/home/ad/bin/display-ext.sh"
     XF86LaunchB
 
-"/home/adc/bin/kbd_backlight.sh down"
+"/home/ad/bin/kbd_backlight.sh down"
     XF86KbdBrightnessDown
 
-"/home/adc/bin/kbd_backlight.sh up"
+"/home/ad/bin/kbd_backlight.sh up"
     XF86KbdBrightnessUp
 
 #"mpc prev"
