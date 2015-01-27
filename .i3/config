@@ -234,8 +234,8 @@ bindsym $mod+r mode "resize"
 bar {
     status_command    i3status --config ~/.i3/status
     #status_command    conky -c ~/.i3/conkyrc
-    #position          top
-    position          bottom
+    position          top
+    #position          bottom
     mode              dock
     #mode              hide
     workspace_buttons yes
