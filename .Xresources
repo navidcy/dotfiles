@@ -28,7 +28,7 @@ urxvt*cursorUnderline:  0
 urxvt*cursorColor:      #FF00FF
 urxvt*fading:           0
 !urxvt*fadeColor:        #000000
-urxvt*cursorBlink:      true
+urxvt*cursorBlink:      false
 urxvt*scrollBar:        false
 urxvt*depth:            24
 urxvt*internalBorder:   2
