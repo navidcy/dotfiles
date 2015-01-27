@@ -6,9 +6,9 @@
 
 HOSTNAME=`hostname`
 
-if [[ "$HOSTNAME" == 'flaptop' ]]; then
-    killall ssh
-fi
+#if [[ "$HOSTNAME" == 'flaptop' ]]; then
+    #killall ssh
+#fi
 mpc stop
 #i3lock -c 1d1f21
 $HOME/bin/xlock

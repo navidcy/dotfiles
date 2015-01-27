@@ -27,7 +27,7 @@ set $alt Mod1
 #font xft:DejaVu Sans Mono 10
 #font xft:LucidaTypewriter 7
 #font -*-termsynu-medium-r-*-*-13-*-*-*-*-*-*-*
-font xft:PragmataPro 8
+font xft:PragmataPro 9
 #font -*-nu-*-*-*-*-*-*-*-*-*-*-*-*
 #font -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
@@ -91,6 +91,10 @@ bindsym $mod+Shift+i exec --no-startup-id amixer set Master 3%+ unmute && killal
 bindsym $mod+Shift+o exec --no-startup-id amixer set Master 3%- unmute && killall -SIGUSR1 i3status
 bindsym $mod+Shift+m exec --no-startup-id amixer set Master toggle && killall -SIGUSR1 i3status
 
+# keyboard backlight
+bindsym XF86KbdBrightnessDown exec --no-startup-id /home/ad/bin/kbd_backlight.sh down
+bindsym XF86KbdBrightnessUp exec --no-startup-id /home/ad/bin/kbd_backlight.sh up
+
 # mpd control
 bindsym $mod+Shift+p exec mpc toggle
 bindsym $mod+Shift+n exec mpc next
@@ -106,6 +110,7 @@ bindsym $mod+Shift+d exec --no-startup-id bash /home/ad/code/dotfiles/bin/xrandr
 
 # screen lock
 bindsym $mod+z exec /home/ad/bin/zzz
+bindsym $mod+x exec /home/ad/bin/xlock
 
 # kill focused window
 bindsym $mod+Shift+q kill

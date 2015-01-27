@@ -12,14 +12,15 @@ xsetroot -cursor_name left_ptr &
 #xsetroot -solid '#222222' &
 #hsetroot -cover ~/wallpapers/blue-gradient.jpg
 #hsetroot -tile ~/wallpapers/solarized-pattern.png
-if [ "$HOSTNAME" = "iddqd" ]
-then
+hsetroot -fill ~/wallpapers/fall.jpg # single screen
+#if [ "$HOSTNAME" = "iddqd" ]
+#then
     #hsetroot -fill ~/wallpapers/octahedron-bg-gimp-double.png # dual screen
     #hsetroot -fill ~/wallpapers/octahedron-bg-gimp.png # single screen
-    hsetroot -fill ~/wallpapers/fall.jpg # single screen
-else
-    hsetroot -cover ~/wallpapers/octahedron-bg-gimp.png
-fi
+    #hsetroot -fill ~/wallpapers/fall.jpg # single screen
+#else
+    #hsetroot -cover ~/wallpapers/octahedron-bg-gimp.png
+#fi
 
 # Hide mouse on inactivity. unclutter messes up i3lock
 #unclutter -grab -noevents -root &
