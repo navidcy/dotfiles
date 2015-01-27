@@ -26,7 +26,7 @@ hsetroot -fill ~/wallpapers/fall.jpg # single screen
 #unclutter -grab -noevents -root &
 
 # Add shadows
-#compton &
+compton &
 
 # Keyboard layout
 #setxkbmap dk
