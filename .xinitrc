@@ -120,9 +120,9 @@ xset dpms 300 600 900
 # Automatic display configuration script
 nohup bash ~/code/dotfiles/bin/xrandr-auto.sh &
 
-if [ "$HOSTNAME" == "flaptop" ]; then
-    xrandr --dpi 135
-fi
+#if [ "$HOSTNAME" == "flaptop" ]; then
+    #xrandr --dpi 135
+#fi
 
 exec i3
 #exec herbstluftwm --locked

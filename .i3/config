@@ -107,6 +107,7 @@ bindsym $mod+Shift+s exec --no-startup-id mpc stop
 
 # configura displays
 bindsym $mod+Shift+d exec --no-startup-id bash /home/ad/code/dotfiles/bin/xrandr-auto.sh
+bindsym $mod+Shift+a exec --no-startup-id xrandr --auto
 
 # screen lock
 bindsym $mod+z exec /home/ad/bin/zzz
