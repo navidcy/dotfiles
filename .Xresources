@@ -3,10 +3,11 @@ Xcursor.theme: Vanilla-DMZ-AA
 Xcursor.size:  22
 
 ! terminal colors ------------------------------------------------------------
+! see https://ciembor.github.io/4bit
 !#include "/home/ad/.colors/solarized"
-#include "/home/ad/.colors/solarized"
 !#include "/home/ad/.colors/solarized_light"
 !#include "/home/ad/.colors/erosionedit"
+#include "/home/ad/.colors/solarized"
 
 ! fonts ----------------------------------------------------------------------
 Xft*dpi:        96
@@ -89,6 +90,11 @@ urxvt*boldfont: xft:PragmataPro:size=9:style=Bold
 ! shading: 0-99 darkens, 101-200 lightens
 !urxvt*transparent: true
 !urxvt*shading: 10
+!urxvt*transparent: true
+!urxvt*shading:     80
+!urxvt*blurRadius:  5
+!urxvt*fading:      30
+
 
 ! xterm ----------------------------------------------------------------------
 xterm*background: black

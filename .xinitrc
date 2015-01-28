@@ -12,7 +12,8 @@ xsetroot -cursor_name left_ptr &
 #xsetroot -solid '#222222' &
 #hsetroot -cover ~/wallpapers/blue-gradient.jpg
 #hsetroot -tile ~/wallpapers/solarized-pattern.png
-hsetroot -fill ~/wallpapers/fall.jpg # single screen
+#hsetroot -fill ~/wallpapers/fall.jpg # single screen
+$HOME/bin/wallpaper.sh
 #if [ "$HOSTNAME" = "iddqd" ]
 #then
     #hsetroot -fill ~/wallpapers/octahedron-bg-gimp-double.png # dual screen
