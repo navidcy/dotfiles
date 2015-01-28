@@ -19,8 +19,8 @@ highlight Hint font-size:100%;color:black;background-color:yellow;padding:2px;
 
 """ Default search engine
 " Manage search engines with `:dialog searchengine`
-"set defsearch=startpage
-set defsearch=duckduckgo
+set defsearch=startpage
+"set defsearch=duckduckgo
 
 """ General options
 set complete=slS
