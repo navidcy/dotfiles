@@ -312,6 +312,9 @@ nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
 
+" equal split size
+nmap <leader>= <C-w>=
+
 " Commit all changes
 "nmap <leader>g :Gcommit<CR>
 nmap <leader>g :Start git commit -a -v<CR>
