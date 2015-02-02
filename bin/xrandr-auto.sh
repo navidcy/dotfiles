@@ -11,7 +11,7 @@ MONITOR=$LAPTOPSCR
 function ActivateEXT {
     #echo "Switching to EXTSCR"
     xrandr --output $EXTSCR --auto --output $LAPTOPSCR --off
-    ./wallpaper.sh
+    wallpaper.sh
     MONITOR=$EXTSCR
     #notify-send "Activating $EXTSCR"
 }
@@ -19,7 +19,7 @@ function DeactivateEXT {
     #echo "Switching to $LAPTOPSCR"
     #xrandr --output $EXTSCR --off --output $LAPTOPSCR --auto
     xrandr --auto
-    ./wallpaper.sh
+    wallpaper.sh
     MONITOR=$LAPTOPSCR
     #notify-send "Activating $LAPTOPSCR"
 }
