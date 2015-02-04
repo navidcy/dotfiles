@@ -27,7 +27,7 @@ $HOME/bin/wallpaper.sh
 #unclutter -grab -noevents -root &
 
 # Add shadows
-#compton &
+compton &
 
 # Keyboard layout
 #setxkbmap dk
