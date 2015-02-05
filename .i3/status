@@ -16,7 +16,7 @@ order += "ethernet eth0"
 order += "volume master"
 order += "battery 0"
 order += "load"
-order += "cpu_usage"
+#order += "cpu_usage"
 order += "time"
 
 wireless wlan1 {
@@ -55,7 +55,7 @@ time {
 }
 
 load {
-        format = "%1min"
+        format = "%1min %5min"
 }
 
 cpu_usage {

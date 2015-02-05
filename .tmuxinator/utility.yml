@@ -26,14 +26,14 @@ windows:
           - mutt
           - ~/bin/irc.sh
           - zsh
-  - sys:
-      layout: main-vertical
-      panes:
-          - htop
-          - zsh
-  - twitter: rainbowstream #--image-on-term
-  - audio:
-      layout: main-vertical
-      panes:
-          - vimpc
-          - alsamixer
+#  - sys:
+#      layout: main-vertical
+#      panes:
+#          - htop
+#          - zsh
+#  - twitter: rainbowstream #--image-on-term
+#  - audio:
+#      layout: main-vertical
+#      panes:
+#          - vimpc
+#          - alsamixer
