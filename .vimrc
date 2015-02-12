@@ -40,8 +40,11 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 " modify surrounding characters in pairs
 NeoBundle 'tpope/vim-surround'
 
-" git wrapper
+" git wrapper. Reset changes with :Gread, stage changes with :Gwrite
 NeoBundle 'tpope/vim-fugitive'
+
+" Show which line changed since last git commit
+NeoBundle 'airblade/vim-gitgutter'
 
 " dispatch.vim for :Make
 NeoBundle 'tpope/vim-dispatch'
@@ -109,9 +112,17 @@ NeoBundle 'Shougo/vimproc.vim', {
             \     'unix' : 'make -f make_unix.mak',
             \   },
             \ }
+" Unite for search, uses ag (Debian package silversearch-ag)
+NeoBundle 'Shougo/unite.vim'
 
 " insert unicode characters with latex code
 NeoBundle 'joom/latex-unicoder.vim'
+
+" search for text in files
+NeoBundle 'rking/ag.vim'
+
+" Align things in columns (select, type Return then Space)
+NeoBundle 'junegunn/vim-easy-align'
 
 call neobundle#end()
 
@@ -370,7 +381,7 @@ nmap <leader>p :CtrlPBuffer<CR>
 nmap <leader>o :CtrlPMRUFiles<CR>
 
 " Launch Ack
-nmap <leader>a :Ack 
+"nmap <leader>a :Ack 
 
 " reStructuredText bindings
 augroup filetypedetect_rst
@@ -444,3 +455,22 @@ nnoremap <C-l> :call unicoder#start(0)<CR>
 inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
 vnoremap <C-l> :<C-u>call unicoder#selection()<CR>
 
+" Search
+let g:unite_source_history_yank_enable = 1
+try
+    let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+    call unite#filters#matcher_default#use(['matcher_fuzzy'])
+catch
+endtry
+" search a file in the filetree
+nnoremap <leader>a :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
+" reset not it is <C-l> normally
+:nnoremap <leader>R <Plug>(unite_restart)
+
+" search for text in many files
+nmap <leader>A :Ag <c-r>=expand("<cword>")<cr><cr>
+" search for text in project files
+nnoremap <space>/ :Ag 
+
+" align things into columns interactively
+vnoremap <silent> <Enter> :EasyAlign<cr>
