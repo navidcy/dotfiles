@@ -4,12 +4,12 @@
 if [[ "$(ip addr | grep 10.17.8)" ]]; then
     echo "On geo lan. Mounting sshfs and connecting directly..."
     sshfs-iddqd.sh
-    autossh adc@iddqd.nfit.au.dk -t 'bin/tmux-dev.sh'
+    ssh adc@iddqd.nfit.au.dk -t 'bin/tmux-dev.sh'
 elif [[ "$(ip addr | grep 10.17.2)" ]]; then
     echo "On geo VPN. Mounting sshfs and connecting directly..."
     sshfs-iddqd.sh
-    autossh adc@iddqd.nfit.au.dk -t 'bin/tmux-dev.sh'
+    ssh adc@iddqd.nfit.au.dk -t 'bin/tmux-dev.sh'
 else
     echo "Outside geo lan, connecting through fresh-horse..."
-    autossh adc@fh.cs.au.dk -t 'ssh iddqd.nfit.au.dk -t "bin/tmux-dev.sh"'
+    ssh adc@fh.cs.au.dk -t 'ssh iddqd.nfit.au.dk -t "bin/tmux-dev.sh"'
 fi
