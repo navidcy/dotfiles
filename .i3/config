@@ -67,7 +67,7 @@ new_window 1pixel
 # solarized black
 # color class            border  backgr. text    indicator
 client.focused           #232323 #6a6a6a #fdf6e3 #268bd2
-client.focused_inactive  #6a6a6a #2d2d2d #839496 #073642
+client.focused_inactive  #3d3d3d #3d3d3d #839496 #073642
 client.unfocused         #232323 #232323 #839496 #073642
 client.urgent            #002b36 #dc322f #fdf6e3 #002b36
 
