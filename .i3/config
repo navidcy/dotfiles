@@ -58,9 +58,17 @@ new_window 1pixel
 #client.unfocused        #333333 #222222 #888888 #222222
 #client.urgent           #181512 #900000 #ffffff #900000
 
-client.focused           #002b36 #586e75 #fdf6e3 #268bd2
-client.focused_inactive  #002b36 #073642 #839496 #073642
-client.unfocused         #002b36 #073642 #839496 #073642
+# solarized dark
+#client.focused           #002b36 #586e75 #fdf6e3 #268bd2
+#client.focused_inactive  #002b36 #073642 #839496 #073642
+#client.unfocused         #002b36 #073642 #839496 #073642
+#client.urgent            #002b36 #dc322f #fdf6e3 #002b36
+
+# solarized black
+# color class            border  backgr. text    indicator
+client.focused           #232323 #6a6a6a #fdf6e3 #268bd2
+client.focused_inactive  #6a6a6a #2d2d2d #839496 #073642
+client.unfocused         #232323 #232323 #839496 #073642
 client.urgent            #002b36 #dc322f #fdf6e3 #002b36
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -262,12 +270,21 @@ bar {
         #urgent_workspace   #2f343a #900000 #ffffff
         
         # solarized dark
-        background #002b36
+        #background #002b36
+        #statusline #657b83
+        #separator  #586e75
+        #focused_workspace   #b58900 #b58900 #002b36
+        #active_workspace    #586e75 #586e75 #002b36
+        #inactive_workspace  #073642 #002b36 #839496
+        #urgent_workspace    #dc322f #dc322f #fdf6e3
+        
+        # solarized black
+        background #232323
         statusline #657b83
         separator  #586e75
-        focused_workspace   #b58900 #b58900 #002b36
+        focused_workspace   #6a6a6a #6a6a6a #002b36
         active_workspace    #586e75 #586e75 #002b36
-        inactive_workspace  #073642 #002b36 #839496
+        inactive_workspace  #2d2d2d #232323 #839496
         urgent_workspace    #dc322f #dc322f #fdf6e3
         
         # solarized light

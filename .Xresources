@@ -7,7 +7,8 @@ Xcursor.size:  22
 !#include "/home/ad/.colors/solarized"
 !#include "/home/ad/.colors/solarized_light"
 !#include "/home/ad/.colors/erosionedit"
-#include "/home/ad/.colors/solarized"
+!#include "/home/ad/.colors/solarized"
+#include "/home/ad/.colors/solarized_black"
 
 ! fonts ----------------------------------------------------------------------
 Xft*dpi:        96
@@ -91,7 +92,7 @@ urxvt*boldfont: xft:PragmataPro:size=9:style=Bold
 !urxvt*transparent: true
 !urxvt*shading: 10
 !urxvt*transparent: true
-!urxvt*shading:     80
+!urxvt*shading:     20
 !urxvt*blurRadius:  5
 !urxvt*fading:      30
 

@@ -141,6 +141,7 @@ set background=dark " adjust colors for better contrast
 colorscheme solarized
 "colorscheme Tomorrow-Night-Eighties
 call togglebg#map("<F3>")
+"let g:solarized_termtrans = 1
 "let g:airline_theme = 'ubaryd'
 let g:airline_theme = 'solarized'
 "let g:airline_theme = 'tomorrow'
