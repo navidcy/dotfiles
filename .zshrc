@@ -1,7 +1,7 @@
 source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/code/zsh-git-prompt/zshrc.sh
 
-if command -v cabal 2>/dev/null; then
+if command -v cabal &>/dev/null; then
     GIT_PROMPT_EXECUTABLE='haskell'
 fi
 ZSH_THEME_GIT_PROMPT_CACHE=true
