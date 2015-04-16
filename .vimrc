@@ -124,6 +124,9 @@ NeoBundle 'rking/ag.vim'
 " Align things in columns (select, type Return then Space)
 NeoBundle 'junegunn/vim-easy-align'
 
+" open file manager (gof) or tmux pane (got) at current dir
+NeoBundle 'justinmk/vim-gtfo'
+
 call neobundle#end()
 
 filetype plugin indent on
