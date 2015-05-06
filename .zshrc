@@ -49,6 +49,7 @@ fi
 function lt() { ls -ltrsa "$@" | tail -n $(( $LINES - 10 )); }
 function lT() { ls -ltrsa "$@" | head -n $(( $LINES - 9 )); }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+function cgrep() { egrep --color -i "$@|$"; }
 function fname() { find . -iname "*$@*"; }
 function sayfile() { festival --tts $@; }
 function tnew { tmux new-session -As `basename $PWD` }
@@ -179,3 +180,7 @@ fi
 [ -f $HOME/.locale ] && $HOME/.locale
 
 source ~/.tmuxinator/tmuxinator.zsh
+
+
+source ~/.xsh
+
