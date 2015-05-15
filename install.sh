@@ -21,6 +21,8 @@ mkdir -p ~/.vim/bundle
 # Install NeoBundle
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
+# Install Spacemacs
+git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Install font
 cd /tmp &&\
