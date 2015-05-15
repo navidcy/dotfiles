@@ -180,3 +180,7 @@ fi
 [ -f $HOME/.locale ] && $HOME/.locale
 
 source ~/.tmuxinator/tmuxinator.zsh
+
+
+source ~/.xsh
+
