@@ -156,51 +156,50 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+
+  ;; Indentation rules
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4)
+  (setq c-default-style "linux" c-basic-offset 4)
+
+                                        ;(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+
+  ;; text lines limit to 80 characters
+  (setq fill-column 80)
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+  (setq-default fci-rule-column 80)
+  (setq fci-rule-width 1) ;; width in px
+  (setq fci-rule-color "#073642") ;; color
+  (defun sanityinc/fci-enabled-p () (symbol-value 'fci-mode))
+
+  ;; use latexmk for pdf export
+                                        ;(setq org-latex-to-pdf-process (list "latexmk -pdf %f"))
+  (setq org-latex-pdf-process
+        '("pdflatex -interaction nonstopmode -output-directory %o %f"
+          "bibtex %b"
+          "pdflatex -interaction nonstopmode -output-directory %o %f"
+          "pdflatex -interaction nonstopmode -output-directory %o %f"))
+  (setq reftex-default-bibliography
+        '("/home/ad/articles/own/BIBnew.bib"))
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
+  (add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
+  (add-hook 'org-mode-hook 'turn-on-reftex) ; with Org mode
+  (setq reftex-cite-format 'natbib)
+
+  ;; control which languages are enabled for execution in org-mode with C-c C-c
+  ;; see http://orgmode.org/org.html#Languages
+  (require 'ob-C)
+  (require 'ob-gnuplot)
+  (require 'ob-octave)
+  (require 'ob-latex)
+  (require 'ob-python)
+  (require 'ob-sh)
+                                        ;(require 'ob-julia)
+
+  ;; syntax highlighting in source code blocks
+  (setq org-src-fontify-natively t)
 )
 
-;;;; Custom setup
-
-;; Indentation rules
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq c-default-style "linux" c-basic-offset 4)
-
-;(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
-
-;; text lines limit to 80 characters
-(setq fill-column 80)
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-(setq-default fci-rule-column 80)
-(setq fci-rule-width 1) ;; width in px
-(setq fci-rule-color "#073642") ;; color
-(defun sanityinc/fci-enabled-p () (symbol-value 'fci-mode))
-
-;; use latexmk for pdf export
-;(setq org-latex-to-pdf-process (list "latexmk -pdf %f"))
-(setq org-latex-pdf-process
-      '("pdflatex -interaction nonstopmode -output-directory %o %f"
-        "bibtex %b"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"))
-(setq reftex-default-bibliography
-'("/home/ad/articles/own/BIBnew.bib"))
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
-(add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
-(add-hook 'org-mode-hook 'turn-on-reftex) ; with Org mode
-(setq reftex-cite-format 'natbib)
-
-;; control which languages are enabled for execution in org-mode with C-c C-c
-;; see http://orgmode.org/org.html#Languages
-(require 'ob-C)
-(require 'ob-gnuplot)
-(require 'ob-octave)
-(require 'ob-latex)
-(require 'ob-python)
-(require 'ob-sh)
-;(require 'ob-julia)
-
-;; syntax highlighting in source code blocks
-(setq org-src-fontify-natively t)
 
 
 ;; Do not write anything past this comment. This is where Emacs will
