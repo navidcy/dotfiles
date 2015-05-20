@@ -162,7 +162,7 @@ layers configuration."
   (setq-default tab-width 4)
   (setq c-default-style "linux" c-basic-offset 4)
 
-                                        ;(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+  (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
 
   ;; text lines limit to 80 characters
   (setq fill-column 80)
