@@ -181,6 +181,6 @@ fi
 
 source ~/.tmuxinator/tmuxinator.zsh
 
-
-source ~/.xsh
-
+if [[ "$HOSTNAME" == "flaptop" ]]; then
+    source ~/.xsh
+fi
