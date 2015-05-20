@@ -90,9 +90,9 @@ NeoBundle 'msanders/snipmate.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 
 " Take notes in rst
-NeoBundle 'Rykka/clickable.vim'
+"NeoBundle 'Rykka/clickable.vim'
 NeoBundle 'Rykka/riv.vim'
-NeoBundle 'Rykka/InstantRst'
+"NeoBundle 'Rykka/InstantRst'
 
 " add/remove bookmark: mm
 " add/edit/remove annotation: mi
