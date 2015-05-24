@@ -15,6 +15,9 @@ git clone https://github.com/phallus/fonts ~/code/phallus-fonts &&
 
 mkdir -p ~/.vim/bundle
 
+cd ~/bin && curl -OL https://raw.github.com/richo/battery/master/bin/battery &&\
+    chmod +x ~/bin/battery
+
 # Install Vundle
 #git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
@@ -25,11 +28,11 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Install font
-cd /tmp &&\
-    wget http://susanoganders.dk/termsyn-1.8.7.tar.gz &&\
-    tar xvfz termsyn-*.tar.gz &&\
-    sudo mkdir -p /usr/share/fonts/local
-    sudo cp termsyn-*/*.pcf /usr/share/fonts/local/ &&\
-    sudo fc-cache -f &&\
-    sudo mkfontscale /usr/share/fonts/local/
-    sudo mkfontdir /usr/share/fonts/local/
+#cd /tmp &&\
+#    wget http://susanoganders.dk/termsyn-1.8.7.tar.gz &&\
+#    tar xvfz termsyn-*.tar.gz &&\
+#    sudo mkdir -p /usr/share/fonts/local
+#    sudo cp termsyn-*/*.pcf /usr/share/fonts/local/ &&\
+#    sudo fc-cache -f &&\
+#    sudo mkfontscale /usr/share/fonts/local/
+#    sudo mkfontdir /usr/share/fonts/local/
