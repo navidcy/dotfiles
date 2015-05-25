@@ -9,7 +9,7 @@ if [[ "$UNAMESTR" == 'Linux' ]]; then
 elif [[ "$UNAMESTR" == 'Darwin' ]]; then
     echo "Fetching updates..."
     brew update && \
-        brew upgrade && \
+        brew upgrade --all && \
         brew cleanup
 else
     echo "Platform not supported"
