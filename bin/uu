@@ -11,6 +11,7 @@ elif [[ "$UNAMESTR" == 'Darwin' ]]; then
     brew update && \
         brew upgrade --all && \
         brew cleanup
+    conda update --all
 else
     echo "Platform not supported"
     exit 1
