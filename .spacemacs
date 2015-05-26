@@ -198,6 +198,9 @@ layers configuration."
 
   ;; syntax highlighting in source code blocks
   (setq org-src-fontify-natively t)
+
+  ;; use python from anaconda
+  (setq python-shell-virtualenv-path "~/anaconda/bin")
 )
 
 
