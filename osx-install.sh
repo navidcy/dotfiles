@@ -57,6 +57,7 @@ casks=( "adobe-creative-cloud" \
     "menumeters"\
     "osxfuse"\
     "paraview"\
+    "photoscan"\
     "skim"\
     "skype"\
     "sshfs"\
