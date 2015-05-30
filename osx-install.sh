@@ -64,6 +64,7 @@ casks=( "adobe-creative-cloud" \
     "steam"\
     "sshfs"\
     "torbrowser"\
+    "virtualbox"\
     "vlc"\
     "xquartz" )
 
