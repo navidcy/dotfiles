@@ -42,6 +42,7 @@ brew install caskroom/cask/brew-cask
 casks=( "adobe-creative-cloud" \
     "adobe-reader"\
     "amethyst"\
+    "battle-net"\
     "caffeine"\
     "disk-inventory-x"\
     "firefox"\
@@ -60,6 +61,7 @@ casks=( "adobe-creative-cloud" \
     "photoscan"\
     "skim"\
     "skype"\
+    "steam"\
     "sshfs"\
     "torbrowser"\
     "vlc"\
