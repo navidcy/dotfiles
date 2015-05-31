@@ -3,7 +3,7 @@
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew tap railwaycat/emacsport
+brew tap railwaycat/emacsmacport
 
 # from `brew list`
 brews=( "autoconf"\
