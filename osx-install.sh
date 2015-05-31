@@ -58,9 +58,9 @@ casks=( "adobe-creative-cloud" \
     "libreoffice"\
     "mactex"\
     "menumeters"\
+    "minecraft"\
     "osxfuse"\
     "paraview"\
-    "photoscan"\
     "skim"\
     "skype"\
     "steam"\

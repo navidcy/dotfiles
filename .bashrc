@@ -183,5 +183,5 @@ source ~/.tmuxinator/tmuxinator.zsh
 
 if [[ "$HOSTNAME" == "flaptop" ]]; then
     #source ~/.xsh
-    export PATH=~/anaconda/bin:$PATH
+    export PATH=~/miniconda3/bin:$PATH
 fi
