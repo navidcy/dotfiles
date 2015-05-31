@@ -3,6 +3,8 @@
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+brew tap railwaycat/emacsport
+
 # from `brew list`
 brews=( "autoconf"\
     "automake"\
@@ -31,7 +33,7 @@ brews=( "autoconf"\
     "youtube-dl"\
     "zsh" )
 
-for brew in $brews; do
+for brew in "${brews[@]}"; do
     brew install $brew
 done
 
@@ -68,6 +70,7 @@ casks=( "adobe-creative-cloud" \
     "vlc"\
     "xquartz" )
 
-for cask in $casks; do
+for cask in "${casks[@]}"; do
+    echo $cask
     brew cask install $cask
 done
