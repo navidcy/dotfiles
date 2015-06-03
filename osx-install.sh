@@ -47,6 +47,7 @@ casks=( "adobe-creative-cloud" \
     "battle-net"\
     "caffeine"\
     "disk-inventory-x"\
+    "duet"\
     "firefox"\
     "flux"\
     "google-chrome"\
@@ -63,9 +64,11 @@ casks=( "adobe-creative-cloud" \
     "paraview"\
     "skim"\
     "skype"\
+    "sizzlingkeys"\
     "steam"\
     "sshfs"\
     "torbrowser"\
+    "transmission"\
     "virtualbox"\
     "vlc"\
     "xquartz" )
