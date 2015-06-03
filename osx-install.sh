@@ -64,7 +64,6 @@ casks=( "adobe-creative-cloud" \
     "paraview"\
     "skim"\
     "skype"\
-    "sizzlingkeys"\
     "steam"\
     "sshfs"\
     "torbrowser"\
