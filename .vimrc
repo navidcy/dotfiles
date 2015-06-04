@@ -89,6 +89,9 @@ NeoBundle 'msanders/snipmate.vim'
 " vim motion on speed
 NeoBundle 'Lokaltog/vim-easymotion'
 
+" navigate between vim and tmux panes seamlessly
+NeoBundle 'christoomey/vim-tmux-navigator'
+
 " Take notes in rst
 "NeoBundle 'Rykka/clickable.vim'
 "NeoBundle 'Rykka/riv.vim'
@@ -385,7 +388,16 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 " Use the Ctrl-P plugin to search the tags
 nmap <leader>t :CtrlPTag<CR>
 nmap <leader>p :CtrlPBuffer<CR>
-nmap <leader>o :CtrlPMRUFiles<CR>
+nmap <leader>O :CtrlPMRUFiles<CR>
+nmap <leader>o :CtrlP<CR>
+
+" Copy and paste to system clipboard with <Space>p and <Space>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 " Launch Ack
 "nmap <leader>a :Ack 

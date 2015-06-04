@@ -25,7 +25,9 @@ brews=( "autoconf"\
     "pcre"\
     "pkg-config"\
     "pwgen"\
+    "reattach-to-user-namespace"\
     "tmux"\
+    "the_silver_searcher"\
     "tree"\
     "vim"\
     "watch"\
