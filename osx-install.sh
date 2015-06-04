@@ -64,6 +64,7 @@ casks=( "adobe-creative-cloud" \
     "minecraft"\
     "osxfuse"\
     "paraview"\
+    "smoothmouse"\
     "skim"\
     "skype"\
     "steam"\
