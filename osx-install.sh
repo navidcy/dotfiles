@@ -17,6 +17,7 @@ brews=( "autoconf"\
     "gnu-getopt"\
     "gnupg"\
     "htop-osx"\
+    "libav"\
     "libevent"\
     "lua"\
     "nmap"\
