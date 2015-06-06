@@ -36,3 +36,6 @@ git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
 #    sudo fc-cache -f &&\
 #    sudo mkfontscale /usr/share/fonts/local/
 #    sudo mkfontdir /usr/share/fonts/local/
+
+# Install tmuxinator
+sudo gem install tmuxinator
