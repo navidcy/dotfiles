@@ -286,6 +286,7 @@ nmap <leader>r :source $MYVIMRC<CR>
 
 " Save file
 nmap <Leader>w :w<CR>
+nmap <Leader>fs :w<CR>
 
 " Quit
 nmap <Leader>q :q<CR>
