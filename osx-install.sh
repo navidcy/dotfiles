@@ -46,6 +46,7 @@ brew install caskroom/cask/brew-cask
 # from `brew cask list`
 casks=( "adobe-creative-cloud" \
     "adobe-reader"\
+    "alfred"\
     "amethyst"\
     "battle-net"\
     "caffeine"\
