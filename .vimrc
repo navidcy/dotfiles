@@ -405,13 +405,13 @@ else
                 \ }
 endif
 
-" Copy and paste to system clipboard with <Space>p and <Space>y
+" Copy and paste to system clipboard with <Space>v and <Space>y
 vmap <Leader>y "+y
 vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+nmap <Leader>v "+p
+nmap <Leader>V "+P
+vmap <Leader>v "+p
+vmap <Leader>V "+P
 
 " Launch Ack
 "nmap <leader>a :Ack 
