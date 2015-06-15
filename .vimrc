@@ -294,6 +294,9 @@ nmap <Leader>q :q<CR>
 " Save and quit
 nmap <Leader>x :x<CR>
 
+" Jump to previous buffer
+nmap <leader><tab> <C-^>
+
 " Explore buffers
 nmap <leader>P :BufExplorer<CR>
 
