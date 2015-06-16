@@ -171,6 +171,7 @@ set backupcopy=yes  " see :help crontab
 set cursorline      " highlight current line
 set encoding=utf-8  " Necessary to show unicode glyphs
 set expandtab       " convert tab char to spaces
+set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
 set incsearch       " search as you type
 set laststatus=2    " always show the statusline
