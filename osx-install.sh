@@ -6,7 +6,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap railwaycat/emacsmacport
 
 # from `brew list`
-brews=( "autoconf"\
+brews=( "asciinema"\
+    "autoconf"\
     "automake"\
     "brew-cask"\
     "cmake"\
