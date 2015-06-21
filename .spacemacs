@@ -14,7 +14,7 @@
    '(
      ;; --------------------------------------------------------
      ;; Example of useful layers you may want to use right away
-     ;; Uncomment a layer name and press C-c C-c to install it
+     ;; Uncomment a layer name and press SPC f e R to install it
      ;; --------------------------------------------------------
      auto-completion
      better-defaults
@@ -31,6 +31,7 @@
      lua
      shell-scripts
      yasnippet
+     osx
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()

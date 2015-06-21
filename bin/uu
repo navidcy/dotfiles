@@ -16,3 +16,9 @@ else
     echo "Platform not supported"
     exit 1
 fi
+
+# Spacemacs
+if [ -d "~/.emacs.d" ]; then
+    git pull --rebase
+    git submodule sync; git submodule update
+fi
