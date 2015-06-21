@@ -18,8 +18,6 @@ else
 fi
 
 # Spacemacs
-if [ -d "~/.emacs.d" ]; then
-    cd ~/.emacs.d && \
-    git pull --rebase && \
-    git submodule sync; git submodule update
-fi
+cd ~/.emacs.d && \
+git pull --rebase && \
+git submodule sync; git submodule update
