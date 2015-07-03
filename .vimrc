@@ -133,6 +133,11 @@ NeoBundle 'junegunn/vim-easy-align'
 " open file manager (gof) or tmux pane (got) at current dir
 NeoBundle 'justinmk/vim-gtfo'
 
+" <C-y>,
+" http://www.vim.org/scripts/script.php?script_id=2981
+" http://emmet.io
+NeoBundle 'mattn/emmet-vim'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -552,3 +557,8 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+" Enable emmet in all modes
+let g:user_emmet_mode='n'
+let g:user_emmet_mode='inv'
+let g:user_emmet_mode='a'
