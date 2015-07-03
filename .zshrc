@@ -194,7 +194,7 @@ fi
 
 source ~/.tmuxinator/tmuxinator.zsh
 
-if [[ $(echo $HOSTNAME | grep flaptop) ]]; then
+if [ $(echo $HOSTNAME | grep flaptop) ]; then
     #source ~/.xsh
     export PATH=~/miniconda3/bin:$PATH
 fi
