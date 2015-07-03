@@ -18,13 +18,13 @@
      ;; --------------------------------------------------------
      auto-completion
      better-defaults
-     (git :variables
-      git-enable-github-support t
-      git-gutter-use-fringe t)
+     git
+     github
+     diff-hl
      markdown
      org
      syntax-checking
-     auctex
+     latex
      python
      c-c++
      html
@@ -157,6 +157,11 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+
+  ;; Scroll compile window
+  ;(setq compilation-scroll-output t)
+  ;; Scroll compile window until first error
+  (setq compilation-scroll-output 'first-error)
 
   ;; Indentation rules
   (setq-default indent-tabs-mode nil)
