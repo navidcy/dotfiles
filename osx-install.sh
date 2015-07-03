@@ -22,6 +22,7 @@ brews=( "asciinema"\
     "libevent"\
     "lua"\
     "nmap"\
+    "homebrew/science/octave"\
     "openssl"\
     "pass"\
     "pcre"\
