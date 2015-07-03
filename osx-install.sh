@@ -9,7 +9,7 @@ brew tap railwaycat/emacsmacport
 brews=( "asciinema"\
     "autoconf"\
     "automake"\
-    "brew-cask"\
+    "caskroom/cask/brew-cask"\
     "cmake"\
     "emacs-mac"\
     "gdbm"\
@@ -40,9 +40,6 @@ brews=( "asciinema"\
 for brew in "${brews[@]}"; do
     brew install $brew
 done
-
-# install homebrew-cask
-brew install caskroom/cask/brew-cask
 
 # from `brew cask list`
 casks=( "adobe-creative-cloud" \
