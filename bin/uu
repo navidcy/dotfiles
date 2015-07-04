@@ -18,6 +18,7 @@ else
 fi
 
 # Spacemacs
+#git pull --rebase && \
 cd ~/.emacs.d && \
-git pull && \ #--rebase && \
+git pull && \
 git submodule sync; git submodule update
