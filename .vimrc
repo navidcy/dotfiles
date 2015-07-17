@@ -335,7 +335,7 @@ nmap <leader>A :e ~/articles/articles.rst<CR>
 nmap <leader>D :read !date<CR>
 
 " job execution
-nmap <leader>m :Make<CR>
+nmap <leader>m :Make 
 nmap <leader>E :VimProcRead 
 nmap <leader>! :Start! 
 
