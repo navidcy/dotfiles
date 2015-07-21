@@ -31,6 +31,7 @@ brews=( "asciinema"\
     "reattach-to-user-namespace"\
     "tmux"\
     "the_silver_searcher"\
+    "tig"\
     "tree"\
     "vim"\
     "watch"\
