@@ -106,6 +106,9 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 " clear all bookmarks in all buffers: mx
 NeoBundle 'MattesGroeger/vim-bookmarks'
 
+" QC, QX, QV to copy, cut and paste from system clipboard
+NeoBundle 'NLKNguyen/copy-cut-paste.vim'
+
 " Python mode
 NeoBundle 'klen/python-mode'
 
@@ -450,15 +453,15 @@ augroup filetypedetect_rst
     " Highlight a word or phrase and it creates a link and opens a split so
     " you can edit the url separately. Once you are done editing the link,
     " simply close that split.
-    au FileType rst vnoremap <leader>ml yi`<esc>gvvlli`_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. _<esc>pA: http://TODO<esc>vb
+    "au FileType rst vnoremap <leader>ml yi`<esc>gvvlli`_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. _<esc>pA: http://TODO<esc>vb
 
     """Make footnote (ml)
-    au FileType rst iabbrev mfn [#]_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. [#] TODO
+    "au FileType rst iabbrev mfn [#]_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. [#] TODO
     " Enable spelling by default
-    au FileType rst set spell
+    "au FileType rst set spell
 
     "Create image
-    au FileType rst iabbrev iii .. image:: TODO.png<cr> :scale: 100<cr>:align: center<cr><esc>kkkeel
+    "au FileType rst iabbrev iii .. image:: TODO.png<cr> :scale: 100<cr>:align: center<cr><esc>kkkeel
 
     "Create figure
     "au FileType rst iabbrev iif .. figure:: TODO.png<cr> :scale: 100<cr>:align: center<cr>:alt: TODO<cr><cr><cr>Some brief description<esc>kkkeel
