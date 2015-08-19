@@ -307,7 +307,7 @@ nmap <Leader>x :x<CR>
 nmap <leader><tab> <C-^>
 
 " Explore buffers
-nmap <leader>P :BufExplorer<CR>
+nmap <leader>b :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -550,7 +550,7 @@ let g:pymode_virtualenv = 1
 
 " Enable breakpoints plugin
 let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_breakpoint_bind = '<leader>B'
 
 " syntax highlighting
 let g:pymode_syntax = 1

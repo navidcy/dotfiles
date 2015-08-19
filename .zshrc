@@ -202,13 +202,13 @@ if [ $(echo $HOSTNAME | grep flaptop) ]; then
 fi
 
 # Added by termtile (https://github.com/apaszke/termtile)
-alias ul='osascript ~/.termtile/tile.scpt up left'
-alias ur='osascript ~/.termtile/tile.scpt up right'
-alias dl='osascript ~/.termtile/tile.scpt down left'
-alias dr='osascript ~/.termtile/tile.scpt down right'
-alias ll='osascript ~/.termtile/tile.scpt left'
-alias rr='osascript ~/.termtile/tile.scpt right'
-alias up='osascript ~/.termtile/tile.scpt up'
-alias down='osascript ~/.termtile/tile.scpt down'
+alias kl='osascript ~/.termtile/tile.scpt up left'
+alias kh='osascript ~/.termtile/tile.scpt up right'
+alias jh='osascript ~/.termtile/tile.scpt down left'
+alias jl='osascript ~/.termtile/tile.scpt down right'
+alias hh='osascript ~/.termtile/tile.scpt left'
+alias ll='osascript ~/.termtile/tile.scpt right'
+alias kk='osascript ~/.termtile/tile.scpt up'
+alias jj='osascript ~/.termtile/tile.scpt down'
 alias big='osascript ~/.termtile/resize.scpt '
 alias cen='osascript ~/.termtile/center.scpt '
