@@ -103,11 +103,11 @@ alias python-prof='python -m cProfile -s time'
 alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 
 # enable color support of ls and also add handy aliases
-if [[ "$ARCH" != 'Darwin' ]]; then
-    alias ls='ls --color=auto'
-else
-    alias ls='ls -G'
-fi
+#if [[ "$ARCH" != 'Darwin' ]]; then
+    #alias ls='ls --color=auto'
+#else
+    #alias ls='ls -G'
+#fi
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
