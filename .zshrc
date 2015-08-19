@@ -94,20 +94,21 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias ']'='open'
-alias ls='ls -alFh'
+#alias ll='ls -alFh'
+alias l='ls -alFh'
 alias la='ls -A'
 alias lla='ls -lA'
-alias l='ls -CF'
+#alias l='ls -CF'
 alias ipython-prof='ipython -m cProfile -s time'
 alias python-prof='python -m cProfile -s time'
 alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 
 # enable color support of ls and also add handy aliases
-#if [[ "$ARCH" != 'Darwin' ]]; then
-    #alias ls='ls --color=auto'
-#else
-    #alias ls='ls -G'
-#fi
+if [[ "$ARCH" != 'Darwin' ]]; then
+    alias ls='ls --color=auto'
+else
+    alias ls='ls -G'
+fi
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
