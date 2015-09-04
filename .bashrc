@@ -187,7 +187,7 @@ if [[ "$HOSTNAME" == "flaptop" ]]; then
     export PATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
 fi
 
-if [[ "`hostname`" == "icme-gpu1" ]]; then¬
-    source ~/bin/icme-gpu1-modules.sh¬
-    export PYTHONPATH=/usr/lib64/python2.6/site-packages:$PYTHONPATH¬
-fi¬
+if [[ "`hostname`" == "icme-gpu1" ]]; then
+    source ~/bin/icme-gpu1-modules.sh
+    export PYTHONPATH=/usr/lib64/python2.6/site-packages:$PYTHONPATH
+fi
