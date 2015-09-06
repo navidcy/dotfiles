@@ -183,7 +183,7 @@ source ~/.tmuxinator/tmuxinator.zsh
 
 if [[ "$HOSTNAME" == "flaptop" ]]; then
     #source ~/.xsh
-    export PATH=~/miniconda3/bin:$PATH
+    #export PATH=~/miniconda3/bin:$PATH
     export PATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
 fi
 
