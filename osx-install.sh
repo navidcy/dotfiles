@@ -34,6 +34,7 @@ brews=( "asciinema"\
     "tig"\
     "tree"\
     "vim"\
+    "vtk"\
     "watch"\
     "wget"\
     "youtube-dl"\
@@ -67,6 +68,7 @@ casks=( "adobe-creative-cloud" \
     "minecraft"\
     "osxfuse"\
     "paraview"\
+    "processing"\
     "smoothmouse"\
     "skim"\
     "skype"\
