@@ -32,6 +32,8 @@ brews=( "asciinema"\
     "tmux"\
     "the_silver_searcher"\
     "tig"\
+    "tor"\
+    "torsocks"\
     "tree"\
     "vim"\
     "vtk"\
