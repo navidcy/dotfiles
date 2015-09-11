@@ -192,6 +192,23 @@ layers configuration."
   (add-hook 'org-mode-hook 'turn-on-reftex) ; with Org mode
   (setq reftex-cite-format 'natbib)
 
+  ;; set pdf viewer on OSX and Linux
+  (cond
+   ((string-equal system-type "darwin")
+    (progn (setq TeX-view-program-selection '((output-pdf "Skim")))))
+   ((string-equal system-type "gnu/linux")
+    (progn (setq TeX-view-program-selection '((output-pdf "Okular"))))))
+
+  ;; enable PDF-LaTeX synchronization
+  ;; press SPC m v to highlight line in PDF
+  ;; press shift cmd and click in PDF to show line in sourcecode
+  (setq TeX-source-correlate-mode t)
+  (setq TeX-source-correlate-start-server t)
+  (setq TeX-source-correlate-method 'synctex)
+  (setq TeX-view-program-list
+        '(("Okular" "okular --unique %o#src:%n%b")
+          ("Skim" "displayline -b -g %n %o %b")))
+
   ;; control which languages are enabled for execution in org-mode with C-c C-c
   ;; see http://orgmode.org/org.html#Languages
   (require 'ob-C)
