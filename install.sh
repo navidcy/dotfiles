@@ -39,3 +39,6 @@ git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Install tmuxinator
 sudo gem install tmuxinator
+
+# Install Python GDB configuration
+wget -P ~ git.io/.gdbinit

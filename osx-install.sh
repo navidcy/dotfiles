@@ -7,6 +7,7 @@ brew tap railwaycat/emacsmacport
 
 # from `brew list`
 brews=( "asciinema"\
+    "aspell"\
     "autoconf"\
     "automake"\
     "caskroom/cask/brew-cask"\
@@ -47,8 +48,7 @@ for brew in "${brews[@]}"; do
 done
 
 # from `brew cask list`
-casks=( "adobe-creative-cloud" \
-    "adobe-reader"\
+casks=("adobe-reader"\
     "alfred"\
     "amethyst"\
     "android-studio"\

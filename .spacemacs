@@ -223,7 +223,7 @@ layers configuration."
   (setq org-src-fontify-natively t)
 
   ;; use python from anaconda
-  (setq python-shell-virtualenv-path "~/anaconda/bin")
+  ;(setq python-shell-virtualenv-path "~/anaconda/bin")
 )
 
 
