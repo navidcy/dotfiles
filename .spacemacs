@@ -228,6 +228,8 @@ layers configuration."
   ;; always show battery info
   (spacemacs/mode-line-battery-info-toggle)
 
+  ;; always show line numbers
+  (spacemacs/toggle-line-numbers)
 )
 
 
