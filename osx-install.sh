@@ -53,7 +53,6 @@ casks=("adobe-reader"\
     "amethyst"\
     "android-studio"\
     "battle-net"\
-    "caffeine"\
     "disk-inventory-x"\
     "duet"\
     "firefox"\
