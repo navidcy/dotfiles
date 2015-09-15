@@ -224,8 +224,11 @@ layers configuration."
 
   ;; use python from anaconda
   ;(setq python-shell-virtualenv-path "~/anaconda/bin")
-)
 
+  ;; always show battery info
+  (spacemacs/mode-line-battery-info-toggle)
+
+)
 
 
 ;; Do not write anything past this comment. This is where Emacs will
