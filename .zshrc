@@ -101,7 +101,7 @@ alias lla='ls -lA'
 #alias l='ls -CF'
 alias ipython-prof='ipython -m cProfile -s time'
 alias python-prof='python -m cProfile -s time'
-alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
+alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
