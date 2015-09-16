@@ -140,6 +140,10 @@ NeoBundle 'justinmk/vim-gtfo'
 " http://emmet.io
 NeoBundle 'mattn/emmet-vim'
 
+" javascript plugins
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
+
 call neobundle#end()
 
 filetype plugin indent on
