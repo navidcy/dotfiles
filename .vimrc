@@ -144,6 +144,9 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 
+" spacemacs keybinds
+"NeoBundle 'jimmay5469/vim-spacemacs'
+
 call neobundle#end()
 
 filetype plugin indent on
