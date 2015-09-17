@@ -22,3 +22,6 @@ fi
 cd ~/.emacs.d && \
 git pull && \
 git submodule sync; git submodule update
+
+# pip packages
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U
