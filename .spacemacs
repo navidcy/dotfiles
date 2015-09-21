@@ -29,6 +29,7 @@
      c-c++
      html
      lua
+     shell
      shell-scripts
      yasnippet
      osx
