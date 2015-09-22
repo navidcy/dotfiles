@@ -37,7 +37,7 @@ brews=( "asciinema"\
     "torsocks"\
     "tree"\
     "vim"\
-    "vtk"\
+    "vtk --with-tcl --with-qt --with-python --with-matplotlib --with-examples"\
     "watch"\
     "wget"\
     "youtube-dl"\
@@ -85,3 +85,5 @@ for cask in "${casks[@]}"; do
     echo $cask
     brew cask install $cask
 done
+
+
