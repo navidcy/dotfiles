@@ -230,7 +230,7 @@ layers configuration."
   (spacemacs/mode-line-battery-info-toggle)
 
   ;; always show line numbers
-  (spacemacs/toggle-line-numbers)
+  ;(spacemacs/toggle-line-numbers)
 )
 
 
