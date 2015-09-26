@@ -13,6 +13,7 @@ brews=( "asciinema"\
     "caskroom/cask/brew-cask"\
     "cmake"\
     "emacs-mac"\
+    "ffmpeg"\
     "gdbm"\
     "gettext"\
     "git"\
