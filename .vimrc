@@ -297,7 +297,7 @@ let mapleader="\<Space>"
 nmap <leader>r :source $MYVIMRC<CR>
 
 " Shortcut to switch background color
-"nmap <leader>w :ToggleBG<CR>
+nmap <leader>W :ToggleBG<CR>
 
 " Save file
 nmap <Leader>w :w<CR>

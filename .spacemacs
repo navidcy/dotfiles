@@ -20,7 +20,7 @@
      better-defaults
      git
      github
-     diff-hl
+     ;diff-hl
      markdown
      org
      syntax-checking
@@ -31,9 +31,10 @@
      lua
      shell
      shell-scripts
-     yasnippet
+     ;yasnippet
      osx
      tmux
+     themes-megapack
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -70,11 +71,11 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   ;dotspacemacs-themes '(solarized-dark
-                         ;solarized-light
-                         ;leuven
-                         ;monokai
-                         ;zenburn)
+   dotspacemacs-themes '(solarized-dark
+                         solarized-light
+                         leuven
+                         monokai
+                         zenburn)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -170,7 +171,8 @@ layers configuration."
   (setq-default tab-width 4)
   (setq c-default-style "linux" c-basic-offset 4)
 
-  ;(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
+  ;; disable background color in terminal
+  (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
 
   ;; text lines limit to 80 characters
   (setq fill-column 80)
