@@ -12,7 +12,7 @@ brews=( "asciinema"\
     "automake"\
     "caskroom/cask/brew-cask"\
     "cmake"\
-    "emacs-mac"\
+    "emacs-mac --with-spacemacs-icon"\
     "ffmpeg"\
     "gdbm"\
     "gettext"\
