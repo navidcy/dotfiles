@@ -74,6 +74,7 @@ alias gcagp='git commit -a -v && git push'
 alias clear='clear && tmux clear-history'
 alias ct='ctags -R .'
 alias findgrep='find . | grep -i '
+alias lsgrep='ls -la | grep -in '
 
 alias zshreload="source ~/.zshrc"
 

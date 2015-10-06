@@ -86,7 +86,7 @@ before layers configuration."
    ;                            :width normal
    ;                            :powerline-scale 1.1)
    dotspacemacs-default-font '("PragmataPro"
-                               :size 12
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)

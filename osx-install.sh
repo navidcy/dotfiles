@@ -82,9 +82,11 @@ casks=("adobe-reader"\
     "vlc"\
     "xquartz" )
 
-for cask in "${casks[@]}"; do
-    echo $cask
-    brew cask install $cask
-done
-
-
+read -p "Do you want to install brew casks? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    for cask in "${casks[@]}"; do
+        echo $cask
+        brew cask install $cask
+    done
+fi
