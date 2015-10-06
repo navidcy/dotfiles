@@ -230,7 +230,8 @@ layers configuration."
   ;(setq python-shell-virtualenv-path "~/anaconda/bin")
 
   ;; always show battery info
-  (spacemacs/mode-line-battery-info-toggle)
+  ;(spacemacs/mode-line-battery-info-toggle)
+  (spacemacs/toggle-mode-line-battery)
 
   ;; always show line numbers
   ;(spacemacs/toggle-line-numbers)
