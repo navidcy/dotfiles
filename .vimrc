@@ -147,6 +147,9 @@ NeoBundle 'kchmck/vim-coffee-script'
 " spacemacs keybinds
 "NeoBundle 'jimmay5469/vim-spacemacs'
 
+" Support mixed php and html
+NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
+
 call neobundle#end()
 
 filetype plugin indent on
