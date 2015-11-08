@@ -20,9 +20,11 @@ brews=( "asciinema"\
     "gnu-getopt"\
     "gnupg"\
     "htop-osx"\
+    "imagemagick"\
     "libav"\
     "libevent"\
     "lua"\
+    "--HEAD neovim/neovim/neovim"\
     "nmap"\
     "homebrew/science/octave"\
     "openssl"\
