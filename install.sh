@@ -14,6 +14,7 @@ git clone https://github.com/phallus/fonts ~/code/phallus-fonts &&
     cd ~/code/phallus-fonts && ./install
 
 mkdir -p ~/.vim/bundle
+mkdir -p ~/.config/nvim/bundle
 
 cd ~/bin && curl -OL https://raw.github.com/richo/battery/master/bin/battery &&\
     chmod +x ~/bin/battery
@@ -23,6 +24,7 @@ cd ~/bin && curl -OL https://raw.github.com/richo/battery/master/bin/battery &&\
 
 # Install NeoBundle
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim
 
 # Install Spacemacs
 git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d

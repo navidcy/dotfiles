@@ -145,7 +145,7 @@ for dir in $pathdirs; do
 done
 
 export EDITOR="vim"
-export XDG_CONFIG_HOME="/home/ad/.config"
+#export XDG_CONFIG_HOME="/home/ad/.config"
 
 # Environment variables
 export PATH=/usr/local/bin:$PATH
