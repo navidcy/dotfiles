@@ -99,3 +99,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     git clone https://github.com/tomislav/osx-terminal.app-colors-solarized \
         ~/code/dotfiles/osx-terminal.app-colors-solarized
 fi
+
+read -p "Do you want to create symlinks in the home folder? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
+    ln -s ~/iCloud/articles ~/articles
+    ln -s ~/iCloud/src ~/src
+    ln -s ~/iCloud/doc ~/doc
+    ln -s ~/iCloud/uni ~/uni
+    ln -s ~/iCloud/videos ~/videos
+fi
