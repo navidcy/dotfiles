@@ -1,8 +1,8 @@
 # ~/.tmuxinator/cosmo.yml
 
 name: cosmo
-#root: ~/src/cosmo/
-root: ~/Sites/cosmo/
+root: ~/src/cosmo/
+#root: ~/Sites/cosmo/
 
 # Optional tmux socket
 # socket_name: foo
