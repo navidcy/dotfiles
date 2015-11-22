@@ -110,3 +110,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -s ~/iCloud/uni ~/uni
     ln -s ~/iCloud/videos ~/videos
 fi
+
+mkdir -p ~/tmp
