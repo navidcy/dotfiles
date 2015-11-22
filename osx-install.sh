@@ -92,3 +92,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         brew cask install $cask
     done
 fi
+
+read -p "Do you want to clone terminal.app themes? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    git clone https://github.com/tomislav/osx-terminal.app-colors-solarized \
+        ~/code/dotfiles/osx-terminal.app-colors-solarized
+fi
