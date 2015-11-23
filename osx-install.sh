@@ -10,6 +10,7 @@ brews=( "asciinema"\
     "aspell"\
     "autoconf"\
     "automake"\
+    "autossh"\
     "caskroom/cask/brew-cask"\
     "cmake"\
     "emacs-mac --with-spacemacs-icon"\
@@ -107,6 +108,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -s ~/iCloud/articles ~/articles
     ln -s ~/iCloud/src ~/src
     ln -s ~/iCloud/doc ~/doc
+    ln -s ~/doc/.password-store ~/.password-store
     ln -s ~/iCloud/uni ~/uni
     ln -s ~/iCloud/videos ~/videos
 fi
