@@ -191,3 +191,8 @@ if [[ "`hostname`" == "icme-gpu1" ]]; then
     source ~/bin/icme-gpu1-modules.sh
     export PYTHONPATH=/usr/lib64/python2.6/site-packages:$PYTHONPATH
 fi
+
+if [ $(echo $HOSTNAME | grep cosmo) ]; then
+    export PATH=/usr/local/MATLAB/R2015a/bin:$PATH
+fi
+
