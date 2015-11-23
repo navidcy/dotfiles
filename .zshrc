@@ -202,6 +202,10 @@ if [ $(echo $HOSTNAME | grep flaptop) ]; then
     export PATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
 fi
 
+if [ $(echo $HOSTNAME | grep cosmo) ]; then
+    export PATH=/usr/local/MATLAB/R2015a/bin:$PATH
+fi
+
 # Added by termtile (https://github.com/apaszke/termtile)
 alias kl='osascript ~/.termtile/tile.scpt up left'
 alias kh='osascript ~/.termtile/tile.scpt up right'
