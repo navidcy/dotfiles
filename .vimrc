@@ -150,6 +150,12 @@ NeoBundle 'kchmck/vim-coffee-script'
 " Support mixed php and html
 NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
 
+" Line up text (req for vim-markdown)
+NeoBundle 'godlygeek/tabular'
+
+" Markdown support
+NeoBundle 'plasticboy/vim-markdown'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -574,3 +580,11 @@ let g:pymode_folding = 0
 let g:user_emmet_mode='n'
 let g:user_emmet_mode='inv'
 let g:user_emmet_mode='a'
+
+
+" vim-markdown configuration
+" navigate headers with ]] and [[
+" format a table with :TableFormat
+" create a navigation table with :Toc, :Toch, :Tocv
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_math=1
