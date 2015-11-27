@@ -32,6 +32,6 @@ windows:
   - editor: vim index.php
   - server: bash ~/bin/cosmo-ssh
   - git: tig
-  - backup: make && watch -n 60 rsync -rav ~/Sites/cosmo/ ~/src/cosmo-backup/
+  - backup: make && watch -n 60 rsync -rav ~/code/cosmo/ ~/src/cosmo-backup/
   #- /tmp: cd /tmp && ls -lahG cosmo_*
   - utility:
