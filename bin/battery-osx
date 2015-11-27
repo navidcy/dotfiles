@@ -1,0 +1,7 @@
+#!/bin/bash -e
+pmset -g batt | tail -n 1 |\
+    awk '{ print $2 $3 $4 }' |\
+    sed 's/;/ /g' |\
+    sed 's/(no//' |\
+    sed 's/ discharging//' |\
+    sed 's/ charging/ ☇/'
