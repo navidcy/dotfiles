@@ -99,6 +99,8 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     git clone https://github.com/tomislav/osx-terminal.app-colors-solarized \
         ~/code/dotfiles/osx-terminal.app-colors-solarized
+    wget https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors
+    wget https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors
 fi
 
 read -p "Do you want to create symlinks in the home folder? [y/n]" -n 1 -r
