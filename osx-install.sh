@@ -62,14 +62,11 @@ casks=("adobe-reader"\
     "firefox"\
     "flux"\
     "google-chrome"\
-    "google-drive"\
-    "google-hangouts"\
     "inkscape"\
-    "iterm2"\
+    "julia"\
     "karabiner"\
     "libreoffice"\
     "mactex"\
-    "menumeters"\
     "minecraft"\
     "osxfuse"\
     "paraview"\
