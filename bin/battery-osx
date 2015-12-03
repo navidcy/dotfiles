@@ -6,4 +6,5 @@ pmset -g batt | tail -n 1 |\
     sed 's/ discharging//' |\
     sed 's/ charged//' |\
     sed 's/ 0:00//' |\
-    sed 's/ charging/ ☇/'
+    sed 's/ charging/ ☇/' |\
+    sed "s/drawingfrom'AC//"

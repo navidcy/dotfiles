@@ -1,2 +1,2 @@
 #!/bin/sh
-ssh adc@iddqd.nfit.au.dk
+ssh adc@iddqd.st.client.au.dk
