@@ -13,5 +13,5 @@ if [[ "$(ifconfig | grep 10.17.8)" ]]; then
 #    ssh adc@iddqd.nfit.au.dk -t 'bin/tmux-dev.sh'
 else
     echo "Outside geo lan, connecting through fresh-horse..."
-    ssh adc@fh.cs.au.dk -t 'ssh st.client.nfit.au.dk -t "bin/tmux-dev.sh"'
+    ssh adc@fh.cs.au.dk -t 'ssh iddqd.st.client.au.dk -t "bin/tmux-dev.sh"'
 fi
