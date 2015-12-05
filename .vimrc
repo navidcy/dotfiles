@@ -216,8 +216,10 @@ set wildmode=longest,list,full
 
 " enable basic mouse behavior
 set mouse=a
-if exists('$TMUX')    " support resizing in tmux
-  set ttymouse=xterm2
+if !has('nvim')
+    if exists('$TMUX')    " support resizing in tmux
+        set ttymouse=xterm2
+    endif
 endif
 
 " fix cursor in tmux
