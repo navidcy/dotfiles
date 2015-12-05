@@ -16,7 +16,7 @@ for F in .bashrc .vimrc .inputrc .tmux.conf .xpdfrc .signature .Xresources \
 done
 
 # Home folder dotfolders
-for F in .colors .config/uzbl .config/nvim .config/awesome .config/dwb .config/bspwm .config/sxhkd .config/luakit .config/openbox .config/zathura .tmuxinator .i3 .mutt .ncmpcpp .vim .vimperrator .w3m wallpapers; do
+for F in .colors .config/uzbl .config/awesome .config/dwb .config/bspwm .config/sxhkd .config/luakit .config/openbox .config/zathura .tmuxinator .i3 .mutt .ncmpcpp .vim .vimperrator .w3m wallpapers; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
@@ -46,3 +46,10 @@ done
 if [[ "$UNAMESTR" == 'Darwin' ]]; then
     rm ~/.xinitrc
 fi
+
+# Neovim configuration symlinks
+cd $HOME
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+cd -
