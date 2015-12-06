@@ -370,6 +370,12 @@ if has('nvim')
     " escape from terminal mode
     tnoremap <leader>e <C-\><C-n>
 
+    " navigate away from terminals
+    tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
+
     " launch terminal in current window
     nmap <leader>t :terminal<CR>
 endif
