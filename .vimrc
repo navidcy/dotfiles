@@ -124,7 +124,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/unite.vim'
 
 " insert unicode characters with latex code
-NeoBundle 'joom/latex-unicoder.vim'
+"NeoBundle 'joom/latex-unicoder.vim'
 
 " search for text in files
 NeoBundle 'rking/ag.vim'
@@ -380,6 +380,12 @@ endif
 "nnoremap <C-k> <C-w>k
 "nnoremap <C-l> <C-w>l
 
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
+
 " equal split size
 nmap <leader>= <C-w>=
 
@@ -465,12 +471,12 @@ let g:syntastic_warning_symbol = 'w'
 highlight clear SignColumn
 
 " LaTeX unicode symbols
-let g:unicoder_cancel_normal = 1
-let g:unicoder_cancel_insert = 1
-let g:unicoder_cancel_visual = 1
-nnoremap <C-l> :call unicoder#start(0)<CR>
-inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
-vnoremap <C-l> :<C-u>call unicoder#selection()<CR>
+"let g:unicoder_cancel_normal = 1
+"let g:unicoder_cancel_insert = 1
+"let g:unicoder_cancel_visual = 1
+"nnoremap <C-l> :call unicoder#start(0)<CR>
+"inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
+"vnoremap <C-l> :<C-u>call unicoder#selection()<CR>
 
 " Search
 let g:unite_source_history_yank_enable = 1
