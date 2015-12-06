@@ -192,7 +192,7 @@ set backspace=2     " fix broken backspace in some setups
 set backupcopy=yes  " see :help crontab
 "set clipboard=unnamed " yank and paste with the system clipboard
 set cursorline      " highlight current line
-set encoding=utf-8  " Necessary to show unicode glyphs
+"set encoding=utf-8  " Necessary to show unicode glyphs
 set expandtab       " convert tab char to spaces
 set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
@@ -366,6 +366,20 @@ nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
 
+if has('nvim')
+    " escape from terminal mode
+    tnoremap <leader>e <C-\><C-n>
+
+    " launch terminal in current window
+    nmap <leader>t :terminal<CR>
+endif
+
+" Switch split focus with Alt+{h,j,k,l}
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l
+
 " equal split size
 nmap <leader>= <C-w>=
 
@@ -416,7 +430,7 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
-nmap <leader>t :CtrlPTag<CR>
+nmap <leader>P :CtrlPTag<CR>
 nmap <leader>p :CtrlPBuffer<CR>
 nmap <leader>O :CtrlPMRUFiles<CR>
 nmap <leader>o :CtrlP<CR>
@@ -444,65 +458,6 @@ vmap <Leader>V "+P
 
 " Launch Ack
 "nmap <leader>a :Ack 
-
-" reStructuredText bindings
-augroup filetypedetect_rst
-    au!
-    " Headings
-    " Use <C-e>s1 to <C-e>s4 in insert mode
-    " Use <C-e>hs to view document sections
-    " Use <C-e>cc to insert table of contents
-    "au FileType rst nnoremap <leader>h1 ^yypv$r=o<cr><esc>
-    "au FileType rst inoremap <leader>h1 <esc>^yypv$r=o<cr>
-    "au FileType rst nnoremap <leader>h2 ^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    "au FileType rst inoremap <leader>h2 <esc>^yypv$r-o<cr><cr><cr><cr><cr><cr><esc>kkkki
-    "au FileType rst nnoremap <leader>h3 ^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    "au FileType rst inoremap <leader>h3 <esc>^yypv$r+o<cr><cr><cr><cr><cr><cr><esc>kkkki
-    "au FileType rst nnoremap <leader>h4 ^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    "au FileType rst inoremap <leader>h4 <esc>^yypv$r~o<cr><cr><cr><cr><cr><cr><esc>kkkki
-    "au FileType rst nnoremap <leader>h5 ^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkk
-    "au FileType rst inoremap <leader>h5 <esc>^yypv$r*o<cr><cr><cr><cr><cr><cr><esc>kkkki
-
-    " On list lines, press <C-e>ee to toggle state
-
-    """Make Link (ml)
-    " Use <C-e>ck to make a link
-    " Highlight a word or phrase and it creates a link and opens a split so
-    " you can edit the url separately. Once you are done editing the link,
-    " simply close that split.
-    "au FileType rst vnoremap <leader>ml yi`<esc>gvvlli`_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. _<esc>pA: http://TODO<esc>vb
-
-    """Make footnote (ml)
-    "au FileType rst iabbrev mfn [#]_<esc>:vsplit<cr><C-W>l:$<cr>o<cr>.. [#] TODO
-    " Enable spelling by default
-    "au FileType rst set spell
-
-    "Create image
-    "au FileType rst iabbrev iii .. image:: TODO.png<cr> :scale: 100<cr>:align: center<cr><esc>kkkeel
-
-    "Create figure
-    "au FileType rst iabbrev iif .. figure:: TODO.png<cr> :scale: 100<cr>:align: center<cr>:alt: TODO<cr><cr><cr>Some brief description<esc>kkkeel
-
-    "Create note
-    au FileType rst iabbrev nnn .. note::
-
-    "Start or end bold text inline
-    "au FileType rst inoremap <leader>bb **
-
-    "Start or end italicized text inline
-    "au FileType rst inoremap <leader>ii *
-
-    "Start or end preformatted text inline
-    "au FileType rst inoremap <leader>pf ``
-
-    " Fold settings
-    "au FileType rst set foldmethod=marker
-    "
-    " Admonitions
-    au FileType rst iabbrev adw .. warning::
-    au FileType rst iabbrev adn .. note::
-
-augroup END
 
 " adjust signcolumn appearance
 let g:syntastic_error_symbol = 'e'
