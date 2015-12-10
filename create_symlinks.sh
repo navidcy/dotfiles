@@ -3,7 +3,8 @@
 # Home folder dotfiles
 for F in .bashrc .vimrc .inputrc .tmux.conf .xpdfrc .signature .Xresources \
     .Xmodmap .xinitrc .xprofile .zshrc .conkyrc .xbindkeysrc .gitconfig \
-    .vimperatorrc .vimpcrc .compton.conf .locale .ctags .spacemacs; do
+    .vimperatorrc .vimpcrc .compton.conf .locale .ctags .spacemacs \
+    .juliarc.jl; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
