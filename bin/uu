@@ -28,7 +28,7 @@ pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U
 
 # neovim
 if [[ "$UNAMESTR" == 'Darwin' ]]; then
-    read -p "Do you want to force a neovim upgrade? [y/n]" -n 1 -r
+    read -p "Do you want to force a neovim upgrade? [y/N] " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         brew reinstall --HEAD neovim
