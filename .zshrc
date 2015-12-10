@@ -59,9 +59,11 @@ function tnew { tmux new-session -As `basename $PWD` }
 
 alias svim='sudoedit'
 alias e='emacs -nw'
-alias v='vim'
+#alias v='vim'
+alias v='nvim'
 alias f='fg'
-alias vi='vim -u NONE'
+#alias vi='vim -u NONE'
+alias vi='nvim -u NONE'
 alias gs='git status'
 alias gl='git log --oneline'
 alias ga='git add'
