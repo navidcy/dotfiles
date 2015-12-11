@@ -156,6 +156,9 @@ NeoBundle 'godlygeek/tabular'
 " Markdown support
 NeoBundle 'plasticboy/vim-markdown'
 
+" Startup screen
+NeoBundle 'mhinz/vim-startify'
+
 call neobundle#end()
 
 filetype plugin indent on
