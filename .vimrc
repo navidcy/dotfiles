@@ -471,6 +471,7 @@ nmap <Leader>V "+P
 vmap <Leader>v "+p
 vmap <Leader>V "+P
 
+
 " Launch Ack
 "nmap <leader>a :Ack 
 
@@ -560,3 +561,28 @@ let g:user_emmet_mode='a'
 " create a navigation table with :Toc, :Toch, :Tocv
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
+
+nmap <leader>S :Startify<cr>
+let g:startify_custom_header =
+            \ map(split(system('fortune -s | cowthink'), '\n'), '"   ".v:val') 
+            \ + ['','']
+"let g:startify_custom_header =
+            "\ map(split(system('figlet -f smslant neovim@flaptop'), '\n'), '"   ".v:val') 
+            "\ + ['','']
+
+
+"let g:startify_custom_header = [
+            "\ '                                 ________  __ __        ',
+            "\ '            __                  /\_____  \/\ \\ \       ',
+            "\ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
+            "\ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
+            "\ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
+            "\ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
+            "\ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
+            "\ '',
+            "\ '',
+            "\ ]
+
+" Split divider appearance
+set fillchars=vert:│,fold:-
+hi! VertSplit ctermfg=10 ctermbg=NONE term=NONE
