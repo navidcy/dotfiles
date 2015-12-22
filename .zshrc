@@ -220,3 +220,6 @@ alias jj='osascript ~/.termtile/tile.scpt down'
 alias big='osascript ~/.termtile/resize.scpt '
 alias cen='osascript ~/.termtile/center.scpt '
 alias sha256sum='shasum -a 256'
+
+
+. /Users/ad/torch/install/bin/torch-activate
