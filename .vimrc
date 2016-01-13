@@ -33,8 +33,9 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'kien/ctrlp.vim'
 
 " colorschemes
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
+"NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'chriskempson/vim-tomorrow-theme'
+"NeoBundle 'tomasr/molokai'
 
 " modify surrounding characters in pairs
 NeoBundle 'tpope/vim-surround'
@@ -159,6 +160,9 @@ NeoBundle 'plasticboy/vim-markdown'
 " Startup screen
 NeoBundle 'mhinz/vim-startify'
 
+" Show color table with :XtermColorTable
+NeoBundle 'guns/xterm-color-table.vim'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -172,14 +176,17 @@ syntax on
 
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 set background=dark " adjust colors for better contrast
-"colorscheme desert
-colorscheme solarized
+colorscheme desert
+"colorscheme solarized
 "colorscheme Tomorrow-Night-Eighties
-call togglebg#map("<F3>")
+"call togglebg#map("<F3>")
 "let g:solarized_termtrans = 1
 "let g:airline_theme = 'ubaryd'
-let g:airline_theme = 'solarized'
+"let g:airline_theme = 'solarized'
 "let g:airline_theme = 'tomorrow'
+"let g:airline_theme = 'wombat'
+"let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'bubblegum'
 highlight Search     cterm=NONE  ctermfg=black ctermbg=2
 highlight MatchParen cterm=NONE  ctermfg=255   ctermbg=199
 highlight SpecialKey ctermfg=250 ctermbg=NONE  cterm=NONE
@@ -188,6 +195,9 @@ highlight NonText    ctermfg=250 ctermbg=NONE
 " hilight column 80
 set textwidth=80
 set colorcolumn=+1
+highlight ColorColumn ctermbg=237
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
 
 set autoindent
 set autoread        " reload files when changed on disk
