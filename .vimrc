@@ -181,12 +181,12 @@ colorscheme desert
 "colorscheme Tomorrow-Night-Eighties
 "call togglebg#map("<F3>")
 "let g:solarized_termtrans = 1
-"let g:airline_theme = 'ubaryd'
+let g:airline_theme = 'ubaryd'
 "let g:airline_theme = 'solarized'
 "let g:airline_theme = 'tomorrow'
 "let g:airline_theme = 'wombat'
 "let g:airline_theme = 'powerlineish'
-let g:airline_theme = 'bubblegum'
+"let g:airline_theme = 'bubblegum'
 highlight Search     cterm=NONE  ctermfg=black ctermbg=2
 highlight MatchParen cterm=NONE  ctermfg=255   ctermbg=199
 highlight SpecialKey ctermfg=250 ctermbg=NONE  cterm=NONE
