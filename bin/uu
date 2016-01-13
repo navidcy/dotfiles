@@ -33,4 +33,11 @@ if [[ "$UNAMESTR" == 'Darwin' ]]; then
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         brew reinstall --HEAD neovim
     fi
+
+    read -p "Do you want to update KWM? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/code/kwm && git pull && make ; cd -
+    fi
+
 fi
