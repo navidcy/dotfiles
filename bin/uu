@@ -1,5 +1,23 @@
 #!/bin/bash
 UNAMESTR=`uname`
+
+if [[ "$UNAMESTR" == 'Darwin' ]]; then
+    echo "## OSX-specific packages"
+    read -p "Do you want to force a neovim upgrade? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        brew reinstall --HEAD neovim
+    fi
+
+    #read -p "Do you want to update KWM? [y/N] " -n 1 -r
+    #echo
+    #if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Updating kwm"
+        cd ~/code/kwm && git pull && make ; cd -
+    #fi
+fi
+
+echo "## Updating package manager lists and installed packages"
 if [[ "$UNAMESTR" == 'Linux' ]]; then
     sudo apt-get update && \
         sudo apt-get upgrade && \
@@ -17,27 +35,13 @@ else
     exit 1
 fi
 
-# Spacemacs
+echo "## Updating spacemacs"
 #git pull --rebase && \
 cd ~/.emacs.d && \
 git pull && \
 git submodule sync; git submodule update
 
-# pip packages
+echo "## Updating pip"
+pip install --upgrade pip
+echo "## Updating pip packages"
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U
-
-# neovim
-if [[ "$UNAMESTR" == 'Darwin' ]]; then
-    read -p "Do you want to force a neovim upgrade? [y/N] " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        brew reinstall --HEAD neovim
-    fi
-
-    read -p "Do you want to update KWM? [y/N] " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        cd ~/code/kwm && git pull && make ; cd -
-    fi
-
-fi
