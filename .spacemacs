@@ -72,9 +72,9 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    ;; see theme gallery at http://themegallery.robdor.com
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(spacemacs-dark
+                         solarized-dark
                          solarized-light
-                         spacemacs-dark
                          spacemacs-light
                          leuven
                          )
