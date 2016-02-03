@@ -57,8 +57,17 @@ function tnew { tmux new-session -As `basename $PWD` }
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
 
+# Start emacs daemon if it is not running, then attach client
+function e () {
+    if [[ $(pgrep emacs --daemon) ]]; then
+        echo starting emacs daemon
+        emacs --daemon > ~/.emacs-daemon.log 2>&1
+    fi
+    emacsclient -t
+}
+
 alias svim='sudoedit'
-alias e='emacs -nw'
+#alias e='emacs -nw'
 #alias v='vim'
 alias v='nvim'
 alias f='fg'
