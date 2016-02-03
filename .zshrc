@@ -80,6 +80,7 @@ alias findgrep='find . | grep -i '
 alias lsgrep='ls -la | grep -in '
 
 alias zshreload="source ~/.zshrc"
+alias dotfiles-update="cd ~/code/dotfiles && git pull && zshreload && cd -"
 
 alias m="make"
 alias mc="make clean"
