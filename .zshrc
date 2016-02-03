@@ -226,4 +226,6 @@ alias sha256sum='shasum -a 256'
 
 #. /Users/ad/torch/install/bin/torch-activate
 
-source ~/.bash_profile
+if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+fi
