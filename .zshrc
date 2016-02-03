@@ -61,7 +61,9 @@ function tnew { tmux new-session -As `basename $PWD` }
 function e () {
     if [[ $(pgrep emacs --daemon) ]]; then
         echo starting emacs daemon
-        emacs --daemon > ~/.emacs-daemon.log 2>&1
+        emacsdaemonlog=~/.emacs-daemon.log
+        [ -f ~/.emacs-daemon.log ] && rm $emacsdaemonlog # delete old logfile
+        emacs --daemon > $emacsdaemonlog 2>&1
     fi
     emacsclient -t
 }
@@ -235,6 +237,4 @@ alias sha256sum='shasum -a 256'
 
 #. /Users/ad/torch/install/bin/torch-activate
 
-if [ -f ~/.bash_profile ]; then
-    source ~/.bash_profile
-fi
+[ -f ~/.bash_profile ] && source ~/.bash_profile
