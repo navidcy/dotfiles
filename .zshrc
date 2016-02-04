@@ -59,7 +59,7 @@ function tnew { tmux new-session -As `basename $PWD` }
 
 # Start emacs daemon if it is not running, then attach client
 function e () {
-    if [[ $(pgrep emacs --daemon) ]]; then
+    if [[ ! $(pgrep emacs --daemon) ]]; then
         echo starting emacs daemon
         emacsdaemonlog=~/.emacs-daemon.log
         [ -f ~/.emacs-daemon.log ] && rm $emacsdaemonlog # delete old logfile
