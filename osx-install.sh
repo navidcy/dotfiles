@@ -82,11 +82,11 @@ casks=("adobe-reader"\
     "vlc"\
     "xquartz" )
 
-read -p "Do you want to install brew casks? [y/n]" -n 1 -r
+read -p "Do you want to install brew casks? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     for cask in "${casks[@]}"; do
-        read -p "Do you want to install $cask? [y/n]" -n 1 -r
+        read -p "Do you want to install $cask? [y/n] " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             brew cask install $cask
@@ -94,7 +94,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     done
 fi
 
-read -p "Do you want to clone terminal.app themes? [y/n]" -n 1 -r
+read -p "Do you want to clone terminal.app themes? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     git clone https://github.com/tomislav/osx-terminal.app-colors-solarized \
@@ -103,7 +103,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     wget https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors
 fi
 
-read -p "Do you want to create symlinks in the home folder? [y/n]" -n 1 -r
+read -p "Do you want to create symlinks in the home folder? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
