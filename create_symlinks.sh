@@ -17,7 +17,9 @@ for F in .bashrc .vimrc .inputrc .tmux.conf .xpdfrc .signature .Xresources \
 done
 
 # Home folder dotfolders
-for F in .colors .config/uzbl .config/awesome .config/dwb .config/bspwm .config/sxhkd .config/luakit .config/openbox .config/zathura .tmuxinator .i3 .mutt .ncmpcpp .vim .vimperrator .w3m wallpapers; do
+for F in .colors .config/uzbl .config/awesome .config/dwb .config/bspwm \
+    .config/sxhkd .config/luakit .config/openbox .config/zathura .tmuxinator \
+    .i3 .mutt .ncmpcpp .vim .vimperrator .w3m wallpapers .kwm; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
