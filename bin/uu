@@ -44,4 +44,4 @@ git submodule sync; git submodule update
 echo "## Updating pip"
 pip install --upgrade pip
 echo "## Updating pip packages"
-pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo -H pip install -U
