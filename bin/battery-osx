@@ -1,5 +1,5 @@
 #!/bin/bash -e
-pmset -g batt | tail -n 1 |\
+pmset -g batt | head -n 2 | tail -n 1 |\
     awk '{ print $2 $3 $4 }' |\
     sed 's/;/ /g' |\
     sed 's/(no//' |\
@@ -10,4 +10,5 @@ pmset -g batt | tail -n 1 |\
     sed 's/ACattached/☇/' |\
     sed 's/finishingcharge/☇/' |\
     sed 's/ $//' |\
-    sed "s/drawingfrom'AC//"
+    sed "s/drawingfrom'AC//" |\
+    sed 's/failure.*/batt fail/'
