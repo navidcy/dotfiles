@@ -22,6 +22,7 @@ NeoBundle 'Shougo/neobundle.vim'
 "NeoBundle 'Lokaltog/vim-powerline'
 "NeoBundle 'Lokaltog/powerline'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 
 " file system browser
 NeoBundle 'scrooloose/nerdtree'
