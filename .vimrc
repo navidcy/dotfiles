@@ -207,6 +207,7 @@ set backupcopy=yes  " see :help crontab
 set cursorline      " highlight current line
 "set encoding=utf-8  " Necessary to show unicode glyphs
 set expandtab       " convert tab char to spaces
+set formatoptions=aw2qt " automatically reflow paragraphs to line width upon change
 set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
 set incsearch       " search as you type
