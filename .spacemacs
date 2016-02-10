@@ -236,7 +236,13 @@ layers configuration."
   (spacemacs/toggle-mode-line-battery)
 
   ;; always show line numbers
-  ;(spacemacs/toggle-line-numbers)
+  (spacemacs/toggle-line-numbers)
+
+
+  ;; always open spacemacs buffer, also with emacsclient
+  (setq initial-buffer-choice
+        (lamda ()
+               (get-buffer "*spacemacs*")))
 )
 
 
