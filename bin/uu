@@ -35,6 +35,10 @@ else
     exit 1
 fi
 
+echo "## Updating dotfiles"
+cd ~/code/dotfiles && \
+    git pull; cd -
+
 echo "## Updating spacemacs"
 #git pull --rebase && \
 cd ~/.emacs.d && \
