@@ -1,6 +1,6 @@
 # This is a sample config for Kwm
 # The commands listed here can be of
-# two types. 
+# two types.
 #
 # Commands prefixed with 'kwmc' will call
 # local functions corresponding to the
@@ -10,9 +10,16 @@
 # 'sys' and then the requested command
 # e.g 'sys mvim' would open macvim
 
+# Read file and execute commands as
+# if they were written inside kwmrc.
+#
+# include filename
+#
+# e.g: bind-commands in a separate file called 'binds'
+# include binds
+
 # Set default values for screen padding
 kwmc config padding top 40
-#kwmc config padding top 20
 kwmc config padding bottom 20
 kwmc config padding left 20
 kwmc config padding right 20
@@ -131,7 +138,11 @@ kwmc bind prefix-p window -t parent
 kwmc bind prefix-w window -t float
 
 # Mark Window
-kwmc bind cmd+alt-m window -t mark
+kwmc bind cmd+alt+ctrl-m mark -w focused
+kwmc bind cmd+alt+ctrl-h mark -w west wrap
+kwmc bind cmd+alt+ctrl-l mark -w east wrap
+kwmc bind cmd+alt+ctrl-j mark -w south wrap
+kwmc bind cmd+alt+ctrl-k mark -w north wrap
 
 # Give Focus To Window
 kwmc bind cmd+alt-h window -f west
@@ -176,13 +187,13 @@ kwmc bind prefix+shift-x space -g decrease horizontal
 kwmc bind prefix+shift-y space -g decrease vertical
 
 # Increase Screen Padding
-kwmc bind prefix-leftarrow space -p increase left
-kwmc bind prefix-rightarrow space -p increase right
-kwmc bind prefix-uparrow space -p increase top
-kwmc bind prefix-downarrow space -p increase bottom
+kwmc bind prefix-left space -p increase left
+kwmc bind prefix-right space -p increase right
+kwmc bind prefix-up space -p increase top
+kwmc bind prefix-down space -p increase bottom
 
 # Decrease Screen Padding
-kwmc bind prefix+shift-leftarrow space -p decrease left
-kwmc bind prefix+shift-rightarrow space -p decrease right
-kwmc bind prefix+shift-uparrow space -p decrease top
-kwmc bind prefix+shift-downarrow space -p decrease bottom
+kwmc bind prefix+shift-left space -p decrease left
+kwmc bind prefix+shift-right space -p decrease right
+kwmc bind prefix+shift-up space -p decrease top
+kwmc bind prefix+shift-down space -p decrease bottom
