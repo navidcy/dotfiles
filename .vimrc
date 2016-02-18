@@ -362,7 +362,8 @@ nmap <leader>" :split
 
 " shortcuts to commonly used files
 nmap <leader>C :e $MYVIMRC<CR>
-nmap <leader>T :e ~/doc/todo.org<CR>
+"nmap <leader>T :e ~/doc/todo.org<CR>
+nmap <leader>T :e ~/doc/todo.md<CR>
 nmap <leader>B :e ~/articles/own/BIBnew.bib<CR>
 nmap <leader>A :e ~/articles/articles.rst<CR>
 
