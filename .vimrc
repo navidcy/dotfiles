@@ -382,6 +382,10 @@ nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
 
+" toggle x mark in checklist fields
+nmap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>
+
+" neovim-specific mappings
 if has('nvim')
     " escape from terminal mode
     tnoremap <leader>e <C-\><C-n>
