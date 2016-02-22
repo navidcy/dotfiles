@@ -114,6 +114,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -s ~/doc/.password-store ~/.password-store
     ln -s ~/iCloud/uni ~/uni
     ln -s ~/iCloud/videos ~/videos
+    ln -s ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/ ~/iawriter
 fi
 
 mkdir -p ~/tmp
