@@ -4,6 +4,7 @@ set my_realname = "Anders Damsgaard"
 # Password file (e.g. pass.txt) should be in the form:
 # NFIT password
 # Gmail password
+# UCSD password
 # Encrypt it using `gpg -o ~/.sec/pass.gpg -e pass.txt`.
 # Delete the plaintext pass.txt afterwards, e.g. `shred pass.txt && rm pass.txt`.
 set my_tmp_secret = `gpg -o ~/.sec/.tmp -d ~/.sec/pass.gpg`
@@ -17,6 +18,11 @@ set my_nfit_email = "anders.damsgaard@geo.au.dk"
 set my_riseup_user = "andersd"
 set my_riseup_email = "andersd@riseup.net"
 set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
+
+# UCSD credentials
+set my_riseup_user = "adamsgaard"
+set my_riseup_email = "adamsgaard@ucsd.edu"
+set my_riseup_pass = `awk '/UCSD/ {print $2}' ~/.sec/.tmp`
 
 # Remove temporary password file
 set my_del=`rm -f ~/.sec/.tmp`
@@ -38,6 +44,10 @@ folder-hook riseup 'set \
 folder-hook geomail 'set \
         from=$my_nfit_email\
         sendmail = "/usr/bin/msmtp -a geomail"'
+
+folder-hook ucsd 'set \
+        from=$my_ucsd_email\
+        sendmail = "/usr/bin/msmtp -a ucsd"'
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
@@ -120,6 +130,7 @@ macro index M "T.*\n;WN" "Mark all messages as read"
 # Macros to change between inboxes
 macro index \\1 "<change-folder>=riseup/INBOX/<enter>" "Go to Riseup inbox"
 macro index \\2 "<change-folder>=geomail/INBOX/<enter>" "Go to Geomail inbox"
+macro index \\3 "<change-folder>=ucsd/INBOX/<enter>" "Go to UCSD inbox"
 
 macro index A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
 macro pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
