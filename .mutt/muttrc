@@ -24,6 +24,9 @@ set my_riseup_email = "andersd@riseup.net"
 set my_riseup_email = "adamsgaard@ucsd.edu"
 #set my_riseup_pass = `awk '/UCSD/ {print $2}' ~/.sec/.tmp`
 
+# Gmail credentials
+set my_gmail_email = "andersdc@gmail.com"
+
 # Remove temporary password file
 #set my_del=`rm -f ~/.sec/.tmp`
 
@@ -48,6 +51,10 @@ folder-hook geomail 'set \
 folder-hook ucsd 'set \
         from=$my_ucsd_email\
         sendmail = "msmtp -a ucsd"'
+
+folder-hook gmail 'set \
+        from=$my_gmail_email\
+        sendmail = "msmtp -a gmail"'
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
@@ -138,6 +145,9 @@ macro pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliase
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+
+# View and select urls
+macro pager U "|urlview<enter>" "call urlview to open links"
 
 # Get mutt to display its version on startup.
 push <show-version>
