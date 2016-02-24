@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# add to crontab with:
+# */3 *  * * *  ~/bin/mailcheck.sh
+
 # Check every ten seconds if the process identified as $1 is still running. 
 # After 5 checks (~60 seconds), kill it. Return non-zero to 
 # indicate something was killed.
