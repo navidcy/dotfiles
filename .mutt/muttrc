@@ -7,25 +7,25 @@ set my_realname = "Anders Damsgaard"
 # UCSD password
 # Encrypt it using `gpg -o ~/.sec/pass.gpg -e pass.txt`.
 # Delete the plaintext pass.txt afterwards, e.g. `shred pass.txt && rm pass.txt`.
-set my_tmp_secret = `gpg -o ~/.sec/.tmp -d ~/.sec/pass.gpg`
+#set my_tmp_secret = `gpg -o ~/.sec/.tmp -d ~/.sec/pass.gpg`
 
 # NFIT credentials
-set my_nfit_user = "ad\\adc"
-set my_nfit_pass = `awk '/NFIT/ {print $2}' ~/.sec/.tmp`
-set my_nfit_email = "anders.damsgaard@geo.au.dk"
+#set my_nfit_user = "ad\\adc"
+#set my_nfit_pass = `awk '/NFIT/ {print $2}' ~/.sec/.tmp`
+#set my_nfit_email = "anders.damsgaard@geo.au.dk"
 
 # Riseup credentials
-set my_riseup_user = "andersd"
-set my_riseup_email = "andersd@riseup.net"
-set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
+#set my_riseup_user = "andersd"
+#set my_riseup_email = "andersd@riseup.net"
+#set my_riseup_pass = `awk '/Riseup/ {print $2}' ~/.sec/.tmp`
 
 # UCSD credentials
-set my_riseup_user = "adamsgaard"
-set my_riseup_email = "adamsgaard@ucsd.edu"
-set my_riseup_pass = `awk '/UCSD/ {print $2}' ~/.sec/.tmp`
+#set my_riseup_user = "adamsgaard"
+#set my_riseup_email = "adamsgaard@ucsd.edu"
+#set my_riseup_pass = `awk '/UCSD/ {print $2}' ~/.sec/.tmp`
 
 # Remove temporary password file
-set my_del=`rm -f ~/.sec/.tmp`
+#set my_del=`rm -f ~/.sec/.tmp`
 
 # IMAP: offlineimap
 set folder = "~/Mail"
