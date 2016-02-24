@@ -30,6 +30,26 @@ if ps $pid &>/dev/null; then
     exit 1
 fi
 
+# count new mail for every maildir
+maildirnew="$HOME/Mail/*/INBOX/new/"
+new="$(find $maildirnew -type f | wc -l | sed 's/ //g')"
+mailboxes="$(find $maildirnew -type f | sed 's/.*Mail\///' | sed 's/\/INBOX.*//')"
+if [ $new -gt 0 ]; then
+
+    UNAMESTR=`uname`
+    announcement="New mail: $new\nIn $mailboxes"
+    if [[ "$UNAMESTR" == 'Darwin' ]]; then
+        osascript -e "display notification \"$announcement\" with title \"offlineimap\""
+
+        # Linux
+    elif [[ "$UNAMESTR" == 'Linux' ]]; then
+        export DISPLAY=:0; export XAUTHORITY=~/.Xauthority
+        notify-send "$announcement"
+    fi
+fi
+
+
+
 #/usr/local/bin/offlineimap -o -u quiet & monitor $!
 
 # sync INBOXes only
