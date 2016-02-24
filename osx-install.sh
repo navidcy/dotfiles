@@ -31,6 +31,7 @@ brews=( \
     "mutt"\
     "--HEAD neovim/neovim/neovim"\
     "nmap"\
+    "notmuch"\
     "homebrew/science/octave"\
     "offlineimap"\
     "openssl"\
