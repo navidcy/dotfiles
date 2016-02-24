@@ -30,4 +30,7 @@ if ps $pid &>/dev/null; then
     exit 1
 fi
 
-offlineimap -o -u quiet & monitor $!
+#/usr/local/bin/offlineimap -o -u quiet & monitor $!
+
+# sync INBOXes only
+/usr/local/bin/offlineimap -qf INBOX -o -u quiet & monitor $!
