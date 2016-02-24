@@ -184,7 +184,7 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 type = Gmail
 remoteuser = andersdc@gmail.com
-remotepass = get_keychain_pass(account="andersdc@gmail.com", server="imap.gmail.com")
+remotepasseval = get_keychain_pass(account="andersdc@gmail.com", server="imap.gmail.com")
 realdelete = no
 nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
     'sent':    '[Gmail]/Sent Mail',

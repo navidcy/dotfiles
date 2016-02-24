@@ -138,6 +138,7 @@ macro index M "T.*\n;WN" "Mark all messages as read"
 macro index \\1 "<change-folder>=riseup/INBOX/<enter>" "Go to Riseup inbox"
 macro index \\2 "<change-folder>=geomail/INBOX/<enter>" "Go to Geomail inbox"
 macro index \\3 "<change-folder>=ucsd/INBOX/<enter>" "Go to UCSD inbox"
+macro index \\4 "<change-folder>=gmail/INBOX/<enter>" "Go to Gmail inbox"
 
 macro index A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
 macro pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
