@@ -4,7 +4,7 @@
 for F in .bashrc .vimrc .inputrc .tmux.conf .xpdfrc .signature .Xresources \
     .Xmodmap .xinitrc .xprofile .zshrc .conkyrc .xbindkeysrc .gitconfig \
     .vimperatorrc .vimpcrc .compton.conf .locale .ctags .spacemacs \
-    .juliarc.jl .mailcap .offlineimaprc .msmtprc; do
+    .juliarc.jl .mailcap .offlineimaprc .msmtprc .notmuch-config; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
