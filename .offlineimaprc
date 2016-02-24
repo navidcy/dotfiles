@@ -31,6 +31,7 @@ localrepository = riseup-local
 remoterepository = riseup-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 status_backend = sqlite
+postsynchook = notmuch new
 
 # Minutes between syncs
 #autorefresh = 5
@@ -74,6 +75,7 @@ localrepository = geomail-local
 remoterepository = geomail-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 status_backend = sqlite
+postsynchook = notmuch new
 
 # Minutes between syncs
 #autorefresh = 5
@@ -117,6 +119,7 @@ localrepository = ucsd-local
 remoterepository = ucsd-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 status_backend = sqlite
+postsynchook = notmuch new
 
 # Minutes between syncs
 #autorefresh = 5
@@ -161,6 +164,7 @@ localrepository = gmail-local
 remoterepository = gmail-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 status_backend = sqlite
+postsynchook = notmuch new
 
 # Minutes between syncs
 #autorefresh = 5
