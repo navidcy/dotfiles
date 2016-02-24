@@ -112,7 +112,7 @@ source ~/.mutt/colors  # Define colours.
 
 auto_view text/html
 # HTML is the last option.
-alternative_order text/enriched text/plain text/html
+alternative_order text/plain text/enriched text/html
 
 # abook address book
 set query_command= "abook --mutt-query '%s'"

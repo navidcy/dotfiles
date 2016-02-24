@@ -47,6 +47,7 @@ brews=( \
     "tree"\
     "vim"\
     "vtk --with-tcl --with-qt --with-python --with-matplotlib --with-examples"\
+    "w3m"\
     "watch"\
     "wget"\
     "youtube-dl"\
