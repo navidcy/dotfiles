@@ -14,6 +14,7 @@ brews=( \
     "automake"\
     "autossh"\
     "caskroom/cask/brew-cask"\
+    "catimg"\
     "cmake"\
     "emacs-mac --with-spacemacs-icon"\
     "ffmpeg"\
