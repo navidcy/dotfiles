@@ -42,18 +42,22 @@ set mbox_type=Maildir
 # Send mail settings
 folder-hook riseup 'set \
         from=$my_riseup_email\
+        record=+riseup/Sent\
         sendmail = "msmtp -a riseup"'
 
 folder-hook geomail 'set \
         from=$my_nfit_email\
+        record=+riseup/Sent\
         sendmail = "msmtp -a geomail"'
 
 folder-hook ucsd 'set \
         from=$my_ucsd_email\
+        record=+ucsd/Sent\ Items\
         sendmail = "msmtp -a ucsd"'
 
 folder-hook gmail 'set \
         from=$my_gmail_email\
+        record=+gmail/Sent\ Mail\
         sendmail = "msmtp -a gmail"'
 
 # Cache files
