@@ -1,9 +1,12 @@
 #!/usr/bin/python
 import re
 import subprocess
+import getpass
+import os
 
 
-user='adamsgaard'
+user = getpass.getuser()
+home = os.getenv('HOME')
 
 def get_keychain_pass(account=None, server=None):
     params = {
@@ -11,7 +14,7 @@ def get_keychain_pass(account=None, server=None):
         'command': 'find-internet-password',
         'account': account,
         'server': server,
-        'keychain': '/Users/' + user + '/Library/Keychains/login.keychain',
+        'keychain': home + '/Library/Keychains/login.keychain',
     }
     command = "sudo -u " + user + " %(security)s -v %(command)s -g -a %(account)s -s %(server)s %(keychain)s" % params
     output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
