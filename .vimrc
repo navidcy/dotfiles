@@ -332,6 +332,9 @@ nmap <Leader>fs :w<CR>
 " Quit
 nmap <Leader>q :q<CR>
 
+" Close buffer
+nmap <leader>Q :bd<CR>
+
 " Save and quit
 nmap <Leader>x :x<CR>
 
