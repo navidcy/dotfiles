@@ -164,6 +164,10 @@ NeoBundle 'mhinz/vim-startify'
 " Show color table with :XtermColorTable
 NeoBundle 'guns/xterm-color-table.vim'
 
+" Auto-complete mutt aliases according to ~/.mutt/aliases
+"NeoBundle 'guanqun/vim-mutt-aliases-plugin'
+NeoBundle 'vim-scripts/mutt-aliases'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -174,6 +178,9 @@ NeoBundleCheck
 
 " Enable syntax highligting
 syntax on
+
+" specify mutt aliases path, autocomplete aliases with @@ in insert mode
+let g:mutt_aliases_file = '~/.mutt/aliases'
 
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
 set background=dark " adjust colors for better contrast
