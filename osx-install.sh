@@ -5,6 +5,10 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew tap railwaycat/emacsmacport
 
+# launch and monitor services with `brew services list`, `brew services start 
+# offlineimap`, etc.
+brew tap gapple/services
+
 # from `brew list`
 brews=( \
     "abook"\
