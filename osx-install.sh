@@ -7,6 +7,7 @@ brew tap railwaycat/emacsmacport
 
 # launch and monitor services with `brew services list`, `brew services start 
 # offlineimap`, etc.
+# If "Operation not permitted" errors are encountered, try outside tmux
 brew tap gapple/services
 
 # from `brew list`
