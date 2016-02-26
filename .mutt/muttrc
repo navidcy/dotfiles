@@ -82,7 +82,7 @@ set meta_key=yes
 set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
 set edit_headers      # edit the message headers.
 set fast_reply        # skip initial prompts when replying
-set editor="vim +8 -c 'set ft=mail noautoindent'"
+set editor="vim +8 -c 'set ft=mail noautoindent spell spelllang=en,da'"
 set nomark_old        # Don't mark unread new msgs as old.
 set nosmart_wrap      # Don't want smart wrapping.
 set nomarkers         # Don't want any wrap markers.
