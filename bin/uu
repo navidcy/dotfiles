@@ -12,8 +12,8 @@ if [[ "$UNAMESTR" == 'Darwin' ]]; then
     #read -p "Do you want to update KWM? [y/N] " -n 1 -r
     #echo
     #if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "Updating kwm"
-        cd ~/code/kwm && git pull && make ; cd -
+    #echo "Updating kwm"
+        #cd ~/code/kwm && git pull && make ; cd -
     #fi
 fi
 

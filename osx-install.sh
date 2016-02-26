@@ -38,6 +38,7 @@ brews=( \
     "--HEAD neovim/neovim/neovim"\
     "nmap"\
     "notmuch"\
+    "homebrew/binary/kwm"\
     "homebrew/science/octave"\
     "offlineimap"\
     "openssl"\
