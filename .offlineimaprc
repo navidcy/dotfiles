@@ -53,7 +53,7 @@ remoteuser = andersd
 remotepasseval = get_keychain_pass(account="andersd", server="mail.riseup.net")
 ssl = yes
 cert_fingerprint = bf27ee9ea504355fc9e933e7b624082329ea1003
-folderfilter = lambda folder: folder not in ['Drafts']
+#folderfilter = lambda folder: folder not in ['Drafts']
 
 # Instead of closing the connection once a sync is complete, offlineimap will
 # send empty data to the server to hold the connection open. A value of 60
@@ -215,3 +215,34 @@ cert_fingerprint = 71dfbe124d89ed9218f539a82d4127fbb4bc9997
 
 
 
+[Account icloud]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = icloud-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = icloud-remote
+# Status cache. Default is plain, which eventually becomes huge and slow.
+status_backend = sqlite
+postsynchook = notmuch new
+
+# Minutes between syncs
+#autorefresh = 5
+# Number of quick-syncs between autorefreshes. Quick-syncs do not update if the
+# only changes were to IMAP flags
+#quick = 10
+
+[Repository icloud-local]
+# Currently, offlineimap only supports maildir and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/Mail/icloud
+
+[Repository icloud-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = IMAP
+remotehost = imap.mail.me.com
+remoteuser = a.damsgaard
+remotepasseval = get_keychain_pass(account="a.damsgaard", server="imap.mail.me.com")
+auth_mechanisms = PLAIN
+ssl = yes
+cert_fingerprint = 653087783af6e38b439b275bacba12777bdee9d1
+#folderfilter = lambda folder: folder not in ['Drafts']
