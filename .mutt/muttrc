@@ -17,6 +17,7 @@ folder-hook geomail 'set \
         realname="Anders Damsgaard"\
         record=+geomail/Sent\
         postponed=+geomail/Drafts\
+        signature=~/.signature\
         sendmail = "msmtp -a geomail"'
 
 folder-hook ucsd 'set \
@@ -24,6 +25,7 @@ folder-hook ucsd 'set \
         realname="Anders Damsgaard"\
         record=+ucsd/Sent\ Items\
         postponed=+ucsd/Drafts\
+        signature=~/.signature\
         sendmail = "msmtp -a ucsd"'
 
 folder-hook gmail 'set \
@@ -47,7 +49,6 @@ set certificate_file=~/.mutt/certificates
 set sort=threads
 set sort_aux = reverse-last-date-received
 
-set signature=~/.signature
 set charset=utf-8
 set config_charset=utf-8
 set noallow_8bit
