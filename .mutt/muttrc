@@ -129,9 +129,7 @@ auto_view text/html
 # HTML is the last option.
 alternative_order text/plain text/enriched text/html
 
-# abook address book
-set query_command= "abook --mutt-query '%s'"
-macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+# show e
 
 # vi-like movement
 bind attach,index gg first-entry
@@ -161,8 +159,10 @@ macro index \ 4 "<sync-mailbox><change-folder>=gmail/INBOX/<enter>" "Go to Gmail
 macro index \ $ "<sync-mailbox><change-folder>=gmail/[Gmail].Sent\ Mail/<enter>" "Go to Gmail sent"
 macro index \ c "<sync-mailbox><change-folder>=geomail/INBOX.cryolist/<enter>" "Go to cryolist"
 
-macro index A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
-macro pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
+# abook address book
+set query_command= "abook --mutt-query '%s'"
+macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+macro index,pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
