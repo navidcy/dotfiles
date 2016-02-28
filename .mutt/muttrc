@@ -58,7 +58,8 @@ set assumed_charset="iso-8859-1"
 set meta_key=yes
 set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
 set edit_headers      # edit the message headers.
-set fast_reply        # skip initial prompts when replying
+set fast_reply=yes    # skip initial prompts when replying
+set include=yes       # include original mail in reply
 set editor="vim +8 -c 'set ft=mail noautoindent spell spelllang=en_us,da'"
 set nomark_old        # Don't mark unread new msgs as old.
 set nosmart_wrap      # Don't want smart wrapping.
@@ -69,6 +70,7 @@ set nostrict_threads  # Lets have some fuzzy threading.
 set fcc_clear         # Keep fcc's clear of signatues and encryption.
 set nopipe_decode     # Don't decode messages when piping.
 set text_flowed       # label messages as format-flowed
+set sleep_time=0      # speed up IMAP folders switch
 
 set ispell="aspell -e -c"
 set tilde            # Fill out messages with '~'.
@@ -138,8 +140,6 @@ macro index \ 4 "<sync-mailbox><change-folder>=gmail/INBOX/<enter>" "Go to Gmail
 macro index \ $ "<sync-mailbox><change-folder>=gmail/[Gmail].Sent\ Mail/<enter>" "Go to Gmail sent"
 macro index \ c "<sync-mailbox><change-folder>=geomail/INBOX.cryolist/<enter>" "Go to cryolist"
 
-# speed up folders switch
-set sleep_time = 0
 
 # mutt-sidebar
 #set sidebar_visible = yes
