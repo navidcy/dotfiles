@@ -33,6 +33,9 @@ folder-hook gmail 'set \
         postponed=+gmail/[Gmail].Drafts\
         sendmail = "msmtp -a gmail"'
 
+# ignore own e-mail addresses from group-reply
+alternates adamsgaard@ucsd.edu|adamsgaard@mail.ucsd.edu|andersd@risuep.net|andersdc@gmail.com|adc@geo.au.dk|anders.damsgaard@geo.au.dk
+
 # Cache files
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
