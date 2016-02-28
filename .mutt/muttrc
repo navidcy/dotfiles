@@ -129,7 +129,10 @@ auto_view text/html
 # HTML is the last option.
 alternative_order text/plain text/enriched text/html
 
-# show e
+# show email in browser
+#macro attach V "<pipe-entry>cat >~/.cache/mutt/mail.html && open 
+#~/.cache/mutt/mail.html<enter>"
+macro attach V "<pipe-entry>cat >~/.cache/mutt_mail.html && open ~/.cache/mutt_mail.html && rm ~/.cache/mutt_mail.html<enter>"
 
 # vi-like movement
 bind attach,index gg first-entry
