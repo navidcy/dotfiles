@@ -133,14 +133,20 @@ alternative_order text/plain text/enriched text/html
 set query_command= "abook --mutt-query '%s'"
 macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
 
-bind index gg       first-entry
-bind index G        last-entry
+# vi-like movement
+bind attach,index gg first-entry
+bind attach,index G last-entry
+bind pager gg top
+bind pager G bottom
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
 
 bind index R        group-reply
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
 
 macro index M "T.*\n;WN" "Mark all messages as read"
+
 
 # Macros to change between inboxes (e.g. SPACE 1), use noop editor to accept 
 # IMAP folders with spaces
