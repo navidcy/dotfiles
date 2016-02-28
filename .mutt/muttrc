@@ -89,7 +89,10 @@ set timeout = 15
 set mail_check = 5    # how often (in seconds) mutt should look for new mail (default = 5 sec)
 
 set alias_file=~/.mutt/aliases  # Save aliases here
+set sort_alias = alias  # sort alias list when displayed in mutt
+set reverse_alias = yes # sort in reverse order
 source ~/.mutt/aliases  # Load in my aliases.
+
 source ~/.sec/gpg.rc   # Use GPG
 source ~/.mutt/colors  # Define colours.
 #source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
@@ -130,6 +133,14 @@ macro index \ \# "<sync-mailbox><change-folder>=ucsd/Sent Items/<enter>" "Go to 
 macro index \ 4 "<sync-mailbox><change-folder>=gmail/INBOX/<enter>" "Go to Gmail inbox"
 macro index \ $ "<sync-mailbox><change-folder>=gmail/[Gmail].Sent\ Mail/<enter>" "Go to Gmail sent"
 macro index \ c "<sync-mailbox><change-folder>=geomail/INBOX.cryolist/<enter>" "Go to cryolist"
+
+# speed up folders switch
+set sleep_time = 0
+
+# mutt-sidebar
+#set sidebar_visible = yes
+#macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+#macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
 # abook address book
 set query_command= "abook --mutt-query '%s'"
