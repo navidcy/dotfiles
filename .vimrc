@@ -330,11 +330,11 @@ let mapleader="\<Space>"
 nmap <leader>r :source $MYVIMRC<CR>
 
 " Shortcut to switch background color
-nmap <leader>W :ToggleBG<CR>
+"nmap <leader>W :ToggleBG<CR>
 
 " Save file
 nmap <Leader>w :w<CR>
-nmap <Leader>fs :w<CR>
+"nmap <Leader>fs :w<CR>
 
 " Quit
 nmap <Leader>q :q<CR>
@@ -431,7 +431,7 @@ nmap <leader>g :Start git commit -a -v<CR>
 nmap <leader>G :Start git commit -a -v && git push<CR>
 
 " Toggle fold
-nmap <leader>f za
+"nmap <leader>f za
 " Toggle all folds
 nmap <leader>F zA
 nmap <leader>Fa zR
@@ -440,7 +440,7 @@ nmap <leader>FA zM
 " zo: open a fold
 " za: toggle a fold
 " zM: close all folds
-" zR: open all folds
+" zR: open all fol
 
 " Switch split focus with <C-h>, <C-j>, <C-k> and <C-l>
 "map <C-h> <C-w>h
@@ -450,6 +450,22 @@ nmap <leader>FA zM
 
 " Use home row keys as Esc
 inoremap jk <Esc>
+
+"
+" <Leader>f{char} to move to {char}
+map  <leader>f <Plug>(easymotion-bd-f)
+nmap <leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap <leader>s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <leader>L <Plug>(easymotion-bd-jk)
+nmap <leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <leader>W <Plug>(easymotion-bd-w)
+nmap <leader>W <Plug>(easymotion-overwin-w)
 
 " Disable arrow keys
 map <Left> <Nop>
