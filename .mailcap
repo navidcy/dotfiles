@@ -18,3 +18,4 @@ application/pdf; ~/.mutt/view_attachment.sh %s pdf
 application/octet-stream; ~/.mutt/view_attachment.sh %s "-"
 
 video/mp4; ~/.mutt/view_attachment.sh %s "-"
+video/avi; ~/.mutt/view_attachment.sh %s "-"
