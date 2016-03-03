@@ -16,3 +16,5 @@ application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # Unidentified files
 application/octet-stream; ~/.mutt/view_attachment.sh %s "-"
+
+video/mp4; ~/.mutt/view_attachment.sh %s "-"
