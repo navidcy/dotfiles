@@ -167,7 +167,7 @@ macro index L "<enter-command>unset wait_key<enter><shell-escape>read -p 'notmuc
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
 # show recipient instead of sender in "Sent" folder view
-set date_format='%b %d %I:%M'
+set date_format='%b %d %k:%M'
 set my_index_format_pre='set index_format="%3C %Z %D %-20.20'
 set my_index_format_post=' (%4.4c) %?M?<%M> ?%s"'
 folder-hook .*[sS]ent.* "$my_index_format_pre"t"$my_index_format_post"
