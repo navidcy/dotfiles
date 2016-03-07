@@ -88,7 +88,9 @@ bindsym $mod+v exec gvim
 #bindsym $mod+t exec tor-browser.sh
 bindsym $mod+t exec torbrowser-launcher
 bindsym $mod+p exec zathura
-bindsym $mod+$alt+l exec --no-startup-id ~/bin/keyboard-layout-switch.sh && notify-send `cat ~/.kbd-layout`
+#bindsym $mod+$alt+l exec --no-startup-id ~/bin/keyboard-layout-switch.sh && 
+#notify-send `cat ~/.kbd-layout`
+bindsym $alt+Shift+l exec --no-startup-id ~/bin/keyboard-layout-switch.sh && notify-send `cat ~/.kbd-layout`
 bindsym $mod+n exec nautilus
 bindsym $mod+g exec gnome-control-center
 
