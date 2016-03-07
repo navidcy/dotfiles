@@ -92,8 +92,8 @@ urxvt*boldfont: xft:PragmataPro:size=11:style=Bold
 ! shading: 0-99 darkens, 101-200 lightens
 !urxvt*transparent: true
 !urxvt*shading: 10
-!urxvt*transparent: true
-!urxvt*shading:     20
+urxvt*transparent: true
+urxvt*shading:     20
 !urxvt*blurRadius:  5
 !urxvt*fading:      30
 
