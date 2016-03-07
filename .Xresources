@@ -8,7 +8,8 @@ Xcursor.size:  22
 !#include "/home/ad/.colors/solarized_light"
 !#include "/home/ad/.colors/erosionedit"
 !#include "/home/ad/.colors/solarized"
-#include "/home/ad/.colors/solarized_black"
+!#include "/home/ad/.colors/solarized_black"
+#include "/home/ad/.colors/TomorrowNight"
 
 ! fonts ----------------------------------------------------------------------
 Xft*dpi:        96
@@ -67,8 +68,8 @@ URxvt.keysym.C-0: command:\033]710;xft:PragmataPro:size=20\007\033]711;xft:Pragm
 !URxvt.letterSpace: -1
 
 ! looks good with PragmataPro
-!URxvt.letterSpace: -2
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
+!URxvt.letterSpace: -1
 
 !urxvt*font: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
 !urxvt*boldFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
