@@ -13,7 +13,7 @@ accounts = riseup,geomail,ucsd,gmail
 ui = ttyui
 pythonfile=~/.mutt/offlineimap.py
 # Controls how many accounts may be synced simultaneously
-maxsyncaccounts = 2
+maxsyncaccounts = 4
 
 [mbnames]
 # Generate a muttrc fragment containing the mailboxes offlineimap syncs
