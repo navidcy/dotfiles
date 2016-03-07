@@ -10,7 +10,7 @@ user = getpass.getuser()
 home = os.getenv('HOME')
 
 
-def get_keychain_pass_osx(account=None, server=None):
+def get_keychain_pass(account=None, server=None):
     if sys.platform == 'darwin':
         command = 'sudo -u ' + user + \
             ' /usr/bin/security -v find-internet-password -g -a ' + account +\
@@ -21,3 +21,9 @@ def get_keychain_pass_osx(account=None, server=None):
                    if l.startswith('password: ')][0]
 
         return re.match(r'password: "(.*)"', outtext).group(1)
+
+    elif sys.platform == 'linux2':
+        pass
+
+    else:
+        raise Exception('Platform "' + sys.platform + '" not supported.')
