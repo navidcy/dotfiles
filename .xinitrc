@@ -96,7 +96,7 @@ setxkbmap -option ctrl:nocaps
 xbindkeys
 
 # cloud clients
-owncloud &
+#owncloud &
 #seafile-applet &
 
 # Setup two monitors at iddqd
