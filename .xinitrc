@@ -108,7 +108,8 @@ fi
 
 if [ "$HOSTNAME" != "phony" ]
 then
-    redshift -l 56.09:10.12 &
+    #redshift -l 56.09:10.12 &  # Aarhus
+    redshift -l 32.84:-117.26 &
 fi
 
 # Start screensaver daemon
