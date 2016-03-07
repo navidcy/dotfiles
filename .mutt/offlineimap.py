@@ -28,7 +28,7 @@ def get_keychain_pass(account=None, server=None):
 
         attrs = {'server': server, 'protocol': 'http'}
         items = gkey.find_items_sync(gkey.ITEM_NETWORK_PASSWORD, attrs)
-        return (items[0].attributes['user'], items[0].secret)
+        return (items[0].attributes['user'], items[0].secret)[1]
 
     else:
         raise Exception('Platform "' + sys.platform + '" not supported.')
