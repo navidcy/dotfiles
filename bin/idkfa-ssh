@@ -1,4 +1,4 @@
 #!/bin/sh
 #ssh ad@172.16.154.22
-#ssh ad@idkfa.ucsd.edu
-ssh ad@132.239.153.219
+#ssh ad@132.239.153.219
+ssh ad@idkfa.ucsd.edu
