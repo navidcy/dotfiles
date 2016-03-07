@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-apt-get update
+sudo apt-get update
 
-apt-get install vim tmux git zsh i3 exuberant-ctags haskell-platform \
+sudo apt-get install vim tmux git zsh i3 exuberant-ctags haskell-platform \
     build-essential ruby mutt offlineimap msmtp autossh tor xbindkeys \
     xautolock pass urlview elinks redshift libnotify-bin \
     hsetroot xbacklight i3lock scrot imagemagick mpc htop \
