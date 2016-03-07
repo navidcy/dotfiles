@@ -21,7 +21,7 @@ color indicator		yellow		black
 #color message		yellow		black
 color message		yellow		default
 #color status		white		black
-color status		white		default
+color status		default		default
 color error		black		red
 color attachment	magenta		default
 color signature		red		default
