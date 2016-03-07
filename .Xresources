@@ -84,8 +84,8 @@ URxvt.letterSpace: -1
 !urxvt*boldfont: -*-termsynu-bold-r-*-*-13-*-*-*-*-*-*-*
 !urxvt*font: xft:DejaVu Sans Mono for Powerline:size=8
 !urxvt*boldfont: xft:DejaVu Sans Mono for Powerline:size=8
-urxvt*font: xft:PragmataPro:size=10
-urxvt*boldfont: xft:PragmataPro:size=10:style=Bold
+urxvt*font: xft:PragmataPro:size=11
+urxvt*boldfont: xft:PragmataPro:size=11:style=Bold
 !urxvt*boldfont: xft:DejaVu Sans Mono Bold for Powerline:size=8
 
 ! shading: 0-99 darkens, 101-200 lightens
