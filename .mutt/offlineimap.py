@@ -46,3 +46,8 @@ def set_keychain_pass(protocol, server, user, password):
     gkey.item_create_sync(gkey.get_default_keyring_sync(),
                           gkey.ITEM_NETWORK_PASSWORD,
                           name, attrs, password, True)
+
+if __name__ == '__main__':
+    account = sys.argv[1]
+    server = sys.argv[2]
+    print(get_keychain_pass(account=account, server=server))
