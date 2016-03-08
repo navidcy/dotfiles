@@ -27,7 +27,7 @@ set $alt Mod1
 #font xft:DejaVu Sans Mono 10
 #font xft:LucidaTypewriter 7
 #font -*-termsynu-medium-r-*-*-13-*-*-*-*-*-*-*
-font xft:PragmataPro 9
+font xft:PragmataPro 10
 #font -*-nu-*-*-*-*-*-*-*-*-*-*-*-*
 #font -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
@@ -266,13 +266,13 @@ bar {
         # colorclass <border> <backgr.> <text>
 
         # default
-        #background #111111
-        #statusline #ffffff
-        #separator  #333333
-        #focused_workspace  #4c7899 #285577 #ffffff
-        #active_workspace   #333333 #5f676a #ffffff
-        #inactive_workspace #333333 #222222 #888888
-        #urgent_workspace   #2f343a #900000 #ffffff
+        background #111111
+        statusline #ffffff
+        separator  #333333
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
         
         # solarized dark
         #background #002b36
@@ -284,13 +284,13 @@ bar {
         #urgent_workspace    #dc322f #dc322f #fdf6e3
         
         # solarized black
-        background #232323
-        statusline #657b83
-        separator  #586e75
-        focused_workspace   #6a6a6a #6a6a6a #002b36
-        active_workspace    #586e75 #586e75 #002b36
-        inactive_workspace  #2d2d2d #232323 #839496
-        urgent_workspace    #dc322f #dc322f #fdf6e3
+        #background #232323
+        #statusline #657b83
+        #separator  #586e75
+        #focused_workspace   #6a6a6a #6a6a6a #002b36
+        #active_workspace    #586e75 #586e75 #002b36
+        #inactive_workspace  #2d2d2d #232323 #839496
+        #urgent_workspace    #dc322f #dc322f #fdf6e3
         
         # solarized light
         #background #fdf6e3
