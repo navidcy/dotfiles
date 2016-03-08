@@ -2,7 +2,7 @@
 
 name: utility
 root: ~/
-pre: mpd
+pre: bash ~/bin/export_x_info.sh && mpd
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,12 +20,23 @@ pre: mpd
 # tmux_command: byobu
 
 windows:
-  - utility:
-      layout: main-vertical
+  - m&m:
+      layout: even-vertical
       panes:
           - mutt
-          - ~/bin/irc.sh
-          - zsh
+          - ncmpcpp
+  - sphere:
+      layout: even-vertical
+      panes:
+          - cd ~/code/sphere/ && watch -n 10 nvidia-smi
+          - cd ~/code/sphere/python && ipython -i -c "import sphere"
+          - cd ~/code/sphere/python
+  - dotfiles:
+      layout: even-vertical
+      panes:
+          - cd ~/code/dotfiles
+          - cd ~/code/dotfiles
+
 #  - sys:
 #      layout: main-vertical
 #      panes:
