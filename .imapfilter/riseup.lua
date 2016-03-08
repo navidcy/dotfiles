@@ -55,7 +55,7 @@ mailboxes, folders = account:list_subscribed()
 --------------------
 -- Spam filtering --
 --------------------
-all = account.INBOX:select_all()
+--[[all = account.INBOX:select_all()
 spam = Set {}
 unsure = Set {}
 for _, msg in ipairs(all) do
@@ -70,6 +70,7 @@ for _, msg in ipairs(all) do
 end
 spam:move_messages(account['Junk'])
 unsure:copy_messages(account['Junk/unsure'])
+]] --
 
 
 -- Debian announcements list --
