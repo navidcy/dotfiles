@@ -38,8 +38,6 @@ mailboxes, folders = account:list_all()
 mailboxes, folders = account:list_subscribed()
 
 
-
-
 -------------------
 -- Mailbox rules --
 -------------------
@@ -52,6 +50,26 @@ mailboxes, folders = account:list_subscribed()
 
 -- Get newly arrived, unread messages
 --results = account.INBOX:is_new()
+
+
+--------------------
+-- Spam filtering --
+--------------------
+all = account.INBOX:select_all()
+spam = Set {}
+unsure = Set {}
+for _, msg in ipairs(all) do
+    mbox, uid = unpack(msg)
+    text = mbox[uid]:fetch_message()
+    flag = pipe_to('bogofilter', text)
+    if (flag == 0) then
+        table.insert(spam, msg)
+    elseif (flag == 2) then
+        table.insert(unsure, msg)
+    end
+end
+account['INBOX']:move_messages(account['Junk'], spam)
+account['INBOX']:copy_messages(account['Junk/unsure'], unsure)
 
 
 -- Debian announcements list --

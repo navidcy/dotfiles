@@ -173,5 +173,14 @@ set my_index_format_post=' (%4.4c) %?M?<%M> ?%s"'
 folder-hook .*[sS]ent.* "$my_index_format_pre"t"$my_index_format_post"
 folder-hook ! .*[sS]ent.* "$my_index_format_pre"F"$my_index_format_post"
 
+# mark as spam
+macro index,pager S "<enter-command>unset wait_key<enter>\
+<pipe-entry>bogofilter -l -s<enter>\
+<enter-command>set wait_key<enter>\
+<save-message>=Junk<enter>" "mark as spam"
+macro index,pager H "<enter-command>unset wait_key<enter>\
+<pipe-entry>bogofilter -l -n<enter>\
+<enter-command>set wait_key<enter>J" "mark as ham (non-spam)"
+
 # Get mutt to display its version on startup.
 push <show-version>
