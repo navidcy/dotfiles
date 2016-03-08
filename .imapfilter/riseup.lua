@@ -68,8 +68,8 @@ for _, msg in ipairs(all) do
         table.insert(unsure, msg)
     end
 end
-account['INBOX']:move_messages(account['Junk'], spam)
-account['INBOX']:copy_messages(account['Junk/unsure'], unsure)
+spam:move_messages(account['Junk'])
+unsure:copy_messages(account['Junk/unsure'])
 
 
 -- Debian announcements list --
