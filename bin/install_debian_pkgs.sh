@@ -8,6 +8,7 @@ sudo apt-get install vim tmux git zsh i3 exuberant-ctags haskell-platform \
     hsetroot xbacklight i3lock scrot imagemagick mpd ncmpcpp mpc htop \
     rxvt-unicode-256color texlive cmake sshfs paraview python-numpy \
     python-scipy python-matplotlib ipython mplayer zathura okular python-pip \
-    dunst latexmk texlive-full screenfetch i3blocks torbrowser-launcher vim-nox
+    dunst latexmk texlive-full screenfetch i3blocks torbrowser-launcher \
+    vim-nox w3m
 
 sudo gem install tmuxinator
