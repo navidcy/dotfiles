@@ -30,7 +30,7 @@ windows:
       panes:
           - cd ~/code/sphere/ && watch -n 10 nvidia-smi
           - cd ~/code/sphere/python && ipython -i -c "import sphere"
-          - cd ~/code/sphere/python
+          - cd ~/code/sphere/python && git log --oneline
   - dotfiles:
       layout: even-vertical
       panes:
