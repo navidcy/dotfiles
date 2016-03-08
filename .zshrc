@@ -240,3 +240,4 @@ alias sha256sum='shasum -a 256'
 #. /Users/ad/torch/install/bin/torch-activate
 
 [ -f ~/.bash_profile ] && source ~/.bash_profile
+[ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH

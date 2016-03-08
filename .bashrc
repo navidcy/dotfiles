@@ -196,3 +196,4 @@ if [ $(echo $HOSTNAME | grep cosmo) ]; then
     export PATH=/usr/local/MATLAB/R2015a/bin:$PATH
 fi
 
+[ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH
