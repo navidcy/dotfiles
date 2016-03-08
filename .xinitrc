@@ -109,7 +109,7 @@ fi
 if [ "$HOSTNAME" != "phony" ]
 then
     #redshift -l 56.09:10.12 &  # Aarhus
-    redshift -l 32.84:-117.26 &
+    redshift -l 32.84:-117.26 &  # San Diego
 fi
 
 # Start screensaver daemon
