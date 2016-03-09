@@ -120,6 +120,7 @@ alias lla='ls -lA'
 alias ipython-prof='ipython -m cProfile -s time'
 alias python-prof='python -m cProfile -s time'
 alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U'
+alias denmark-date='TZ=Europe/Copenhagen date'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
