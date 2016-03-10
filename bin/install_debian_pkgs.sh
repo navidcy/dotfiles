@@ -12,3 +12,6 @@ sudo apt-get install vim tmux git zsh i3 exuberant-ctags haskell-platform \
     vim-nox w3m imapfilter bogofilter tig ntp
 
 sudo gem install tmuxinator
+
+# set zathura as default pdf viewer
+xdg-mime default zathura.desktop application/pdf
