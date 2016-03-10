@@ -92,7 +92,6 @@ fi
 
 # if the type is empty then try to figure it out.
 if [ -z $type ]; then
-    echo type is empty
     file  $1
     type=`file -bi $1 | cut -d"/" -f2 | sed 's/;.*$//'`
 fi
