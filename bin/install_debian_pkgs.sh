@@ -9,6 +9,6 @@ sudo apt-get install vim tmux git zsh i3 exuberant-ctags haskell-platform \
     rxvt-unicode-256color texlive cmake sshfs paraview python-numpy \
     python-scipy python-matplotlib ipython mplayer zathura okular python-pip \
     dunst latexmk texlive-full screenfetch i3blocks torbrowser-launcher \
-    vim-nox w3m imapfilter bogofilter tig
+    vim-nox w3m imapfilter bogofilter tig ntp
 
 sudo gem install tmuxinator
