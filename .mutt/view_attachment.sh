@@ -119,9 +119,16 @@ fi
 
 # If there's no 'open with' then we can let preview do it's thing.
 # Otherwise we've been told what to use.  So do an open -a.
+if [ `uname | grep -i Darwin` ]; then
+    opencmd=open
+else
+    opencmd=xdg-open
+fi
 
 if [ -z $open_with ]; then
-    open $newfile
+    echo $opencmd $newfile
+    $opencmd $newfile
 else
-    open -a "$open_with" $newfile
+    echo $opencmd -a "$open_with" $newfile
+    $opencmd -a "$open_with" $newfile
 fi
