@@ -13,5 +13,11 @@ sudo apt-get install vim tmux git zsh i3 exuberant-ctags haskell-platform \
 
 sudo gem install tmuxinator
 
+# configure xdg-open with `mimeopen -d <file>`
 # set zathura as default pdf viewer
 xdg-mime default zathura.desktop application/pdf
+xdg-mime default files.desktop inode/directory   # nautilus
+xdg-mime default eog.desktop image/jpeg
+xdg-mime default eog.desktop image/png
+xdg-mime default eog.desktop image/gif
+xdg-mime default eog.desktop image/bmp
