@@ -81,7 +81,7 @@ bindsym $mod+Shift+Return exec i3-sensible-terminal
 # other application launchers
 #bindsym $mod+b exec uzbl-browser
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec chromium
+#bindsym $mod+Shift+b exec chromium
 #bindsym $mod+b exec dwb
 bindsym $mod+c exec emacs
 bindsym $mod+v exec gvim
@@ -113,7 +113,7 @@ bindsym XF86KbdBrightnessUp exec --no-startup-id /home/ad/bin/kbd_backlight.sh u
 # mpd control
 bindsym $mod+Shift+p exec --no-startup-id mpc toggle && killall -SIGUSR1 i3status
 bindsym $mod+Shift+n exec --no-startup-id mpc next && killall -SIGUSR1 i3status
-#bindsym $mod+Shift+b exec --no-startup-id mpc prev && killall -SIGUSR1 i3status
+bindsym $mod+Shift+b exec --no-startup-id mpc prev && killall -SIGUSR1 i3status
 bindsym $mod+Shift+s exec --no-startup-id mpc stop && killall -SIGUSR1 i3status
 
 # Light X colors
