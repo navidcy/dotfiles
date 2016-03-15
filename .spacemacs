@@ -158,7 +158,7 @@ before layers configuration."
   (define-key global-map (kbd "RET") 'reindent-then-newline-and-indent)
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
@@ -241,7 +241,7 @@ layers configuration."
 
   ;; always open spacemacs buffer, also with emacsclient
   (setq initial-buffer-choice
-        (lamda ()
+        (lambda ()
                (get-buffer "*spacemacs*")))
 )
 
