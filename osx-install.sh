@@ -33,6 +33,7 @@ brews=( \
     "libav"\
     "libevent"\
     "lua"\
+    "mobile-shell"\
     "msmtp"\
     "mutt"\
     "--HEAD neovim/neovim/neovim"\
