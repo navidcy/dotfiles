@@ -113,6 +113,8 @@ NeoBundle 'NLKNguyen/copy-cut-paste.vim'
 " Python mode
 NeoBundle 'klen/python-mode'
 
+NeoBundle 'fatih/vim-go'
+
 " vimproc for asynchronous processes
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
