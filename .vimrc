@@ -170,6 +170,8 @@ NeoBundle 'guns/xterm-color-table.vim'
 "NeoBundle 'guanqun/vim-mutt-aliases-plugin'
 NeoBundle 'vim-scripts/mutt-aliases'
 
+NeoBundle 'majutsushi/tagbar'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -409,7 +411,7 @@ if has('nvim')
     tnoremap <C-l> <C-\><C-n><C-w>l
 
     " launch terminal in current window
-    nmap <leader>t :terminal<CR>
+    nmap <leader><CR> :terminal<CR>
 endif
 
 " Switch split focus with Alt+{h,j,k,l}
@@ -478,6 +480,9 @@ imap <Left> <Nop>
 imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
+
+" show/hide tagbar
+nmap <leader>t :TagbarToggle<CR>
 
 " check current folder and all parent folders for tags files
 set tags=tags;/
