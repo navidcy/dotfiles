@@ -30,7 +30,7 @@ windows:
       layout: even-vertical
       panes:
           - cd ~/code/sphere/ && watch -n 10 nvidia-smi
-          - cd ~/code/sphere/python && ipython -i -c "import sphere"
+          - cd ~/code/sphere/python && ipython -i -c "import sphere, numpy"
           #- cd ~/code/sphere/python && git log --oneline
           - cd ~/code/sphere/python && tig
   - iddqd:
