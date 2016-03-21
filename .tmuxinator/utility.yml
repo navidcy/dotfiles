@@ -24,7 +24,8 @@ windows:
       layout: even-vertical
       panes:
           - mutt
-          - ncmpcpp
+          - vimpc
+            #- ncmpcpp
   - sphere:
       layout: even-vertical
       panes:
@@ -32,6 +33,9 @@ windows:
           - cd ~/code/sphere/python && ipython -i -c "import sphere"
           #- cd ~/code/sphere/python && git log --oneline
           - cd ~/code/sphere/python && tig
+  - iddqd:
+      panes:
+          - bash ~/bin/iddqd-ssh
   - dotfiles:
       layout: even-vertical
       panes:
