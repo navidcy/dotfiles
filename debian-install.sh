@@ -10,6 +10,7 @@ sudo apt-get install \
     dunst \
     elinks \
     exuberant-ctags \
+    ffmpeg \
     git \
     haskell-platform \
     hsetroot \
