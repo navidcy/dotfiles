@@ -21,6 +21,7 @@ brews=( \
     "caskroom/cask/brew-cask"\
     "catimg"\
     "cmake"\
+    "ctags-exuberant"\
     "emacs-mac --with-spacemacs-icon"\
     "ffmpeg"\
     "gdbm"\
