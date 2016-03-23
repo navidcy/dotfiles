@@ -91,6 +91,7 @@ alias clear='clear && tmux clear-history'
 alias ct='ctags -R .'
 alias findgrep='find . | grep -i '
 alias lsgrep='ls -la | grep -in '
+alias fixdisplay='export DISPLAY=:0'
 
 alias zshreload="source ~/.zshrc"
 alias dotfiles-update="cd ~/code/dotfiles && git pull ; zshreload ; cd -"
