@@ -172,6 +172,9 @@ NeoBundle 'vim-scripts/mutt-aliases'
 
 NeoBundle 'majutsushi/tagbar'
 
+" Control mpd by CtrlP
+NeoBundle 'lucidstack/ctrlp-mpc.vim'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -636,3 +639,7 @@ let g:startify_custom_header =
 " Split divider appearance
 set fillchars=vert:│,fold:-
 hi! VertSplit ctermfg=10 ctermbg=NONE term=NONE
+
+" Control mpd by CtrlP
+let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir', 'tmux', 'mpc']
+nnoremap <leader>M :CtrlPMpc<cr>
