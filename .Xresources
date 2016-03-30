@@ -97,6 +97,10 @@ urxvt*shading:     20
 !urxvt*blurRadius:  5
 !urxvt*fading:      30
 
+! open links with the default web browser with the left mouse button
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
 
 ! xterm ----------------------------------------------------------------------
 xterm*background: black
