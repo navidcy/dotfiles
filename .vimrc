@@ -460,8 +460,10 @@ inoremap jk <Esc>
 
 "
 " <Leader>f{char} to move to {char}
-map  <leader>f <Plug>(easymotion-bd-f)
-nmap <leader>f <Plug>(easymotion-overwin-f)
+"map  <leader>f <Plug>(easymotion-bd-f)
+"nmap <leader>f <Plug>(easymotion-overwin-f)
+map  <leader><leader> <Plug>(easymotion-bd-f)
+nmap <leader><leader> <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
 nmap <leader>s <Plug>(easymotion-overwin-f2)
