@@ -30,6 +30,8 @@ sudo apt-get install \
     msmtp-gnome \
     mutt \
     ncmpcpp \
+    notmuch \
+    notmuch-mutt \
     ntp \
     offlineimap \
     okular \
