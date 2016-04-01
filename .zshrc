@@ -95,6 +95,7 @@ alias fixdisplay='export DISPLAY=:0'
 
 alias zshreload="source ~/.zshrc"
 alias dotfiles-update="cd ~/code/dotfiles && git pull ; zshreload ; cd -"
+alias dotfiles-commit="cd ~/code/dotfiles && git commit -a -v && git push ; cd -"
 
 alias m="make"
 alias mc="make clean"
