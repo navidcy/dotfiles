@@ -458,7 +458,9 @@ nmap <leader>FA zM
 " Use home row keys as Esc
 inoremap jk <Esc>
 
-"
+
+map <leader>E <Plug>(easymotion-prefix)
+
 " <Leader>f{char} to move to {char}
 "map  <leader>f <Plug>(easymotion-bd-f)
 "nmap <leader>f <Plug>(easymotion-overwin-f)
