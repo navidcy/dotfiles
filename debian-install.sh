@@ -23,6 +23,7 @@ sudo apt-get install \
     ipython \
     latexmk \
     libnotify-bin \
+    locate \
     mpc \
     mpd \
     mplayer \
