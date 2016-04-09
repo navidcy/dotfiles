@@ -31,6 +31,7 @@ brews=( \
     "gnupg"\
     "htop-osx"\
     "imagemagick"\
+    "imapfilter"\
     "libav"\
     "libevent"\
     "lua"\
