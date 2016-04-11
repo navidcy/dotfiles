@@ -36,6 +36,7 @@ brews=( \
     "libevent"\
     "lua"\
     "mobile-shell"\
+    "mpd"\
     "msmtp"\
     "mutt"\
     "--HEAD neovim/neovim/neovim"\
@@ -58,6 +59,7 @@ brews=( \
     "tree"\
     "urlview"\
     "vim"\
+    "vimpc"\
     "vtk --with-tcl --with-qt --with-python --with-matplotlib --with-examples"\
     "w3m"\
     "watch"\
