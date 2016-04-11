@@ -36,6 +36,7 @@ brews=( \
     "libevent"\
     "lua"\
     "mobile-shell"\
+    "mpc"\
     "mpd"\
     "msmtp"\
     "mutt"\
