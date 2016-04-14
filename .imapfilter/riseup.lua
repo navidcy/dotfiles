@@ -51,11 +51,11 @@ mailboxes, folders = account:list_subscribed()
 -- Get newly arrived, unread messages
 --results = account.INBOX:is_new()
 
-
 --------------------
 -- Spam filtering --
 --------------------
---[[all = account.INBOX:select_all()
+--all = account.INBOX:select_all()
+all = account.INBOX:is_new()
 spam = Set {}
 unsure = Set {}
 for _, msg in ipairs(all) do
@@ -69,8 +69,8 @@ for _, msg in ipairs(all) do
     end
 end
 spam:move_messages(account['Junk'])
-unsure:copy_messages(account['Junk/unsure'])
-]] --
+--unsure:copy_messages(account['Junk/unsure'])
+unsure:move_messages(account['Junk/unsure'])
 
 
 -- Debian announcements list --
