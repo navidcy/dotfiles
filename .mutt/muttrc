@@ -128,6 +128,8 @@ macro index M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages as rea
 # IMAP folders with spaces
 bind editor <space> noop
 macro index \ 1 "<change-folder>=riseup/INBOX/<enter>" "Go to Riseup inbox"
+macro index \ u "<change-folder>=riseup/Junk.unsure/<enter>" "Go to Riseup/Junk.unsure"
+macro index \ j "<change-folder>=riseup/Junk/<enter>" "Go to Riseup/Junk"
 macro index \ ! "<change-folder>=riseup/Sent/<enter>" "Go to Riseup sent"
 macro index \ 2 "<change-folder>=geomail/INBOX/<enter>" "Go to Geomail inbox"
 macro index \ @ "<change-folder>=geomail/Sent/<enter>" "Go to Geomail sent"
@@ -197,14 +199,15 @@ set my_index_format_post=' (%4.4c) %?M?<%M> ?%s"'
 folder-hook .*[sS]ent.* "$my_index_format_pre"t"$my_index_format_post"
 folder-hook ! .*[sS]ent.* "$my_index_format_pre"F"$my_index_format_post"
 
-# mark as spam
+# mark as spam (S) or ham (H)
 macro index,pager S "<enter-command>unset wait_key<enter>\
 <pipe-entry>bogofilter -l -s<enter>\
 <enter-command>set wait_key<enter>\
 <save-message>=Junk<enter>" "mark as spam"
 macro index,pager H "<enter-command>unset wait_key<enter>\
 <pipe-entry>bogofilter -l -n<enter>\
-<enter-command>set wait_key<enter>J" "mark as ham (non-spam)"
+<enter-command>set wait_key<enter>\
+<save-message>=riseup/INBOX<enter>" "mark as ham (non-spam)"
 
 # Get mutt to display its version on startup.
 push <show-version>

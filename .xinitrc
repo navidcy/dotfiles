@@ -78,6 +78,7 @@ dunst &
 #eval `gnome-keyring-daemon --start --components=secrets` # possible components: gpg,pkcs11,secrets,ssh
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 export GPG_AGENT_INFO SSH_AUTH_SOCK
+#eval $(ssh-agent)
 
 # Enable tap-to-click on touchpad
 synclient TapButton1=1 TapButton2=2 TapButton3=3
@@ -116,7 +117,7 @@ fi
 #/usr/bin/xscreensaver -no-splash &
 
 # Typing breaks (optionally add +lock)
-#xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
+xwrits breaktime=5:00 typetime=55:00 +clock +breakclock +mouse &
 xset dpms 300 600 900
 
 # Automatic display configuration script

@@ -25,7 +25,6 @@ windows:
       panes:
           - mutt
           - vimpc
-            #- ncmpcpp
   - sphere:
       layout: even-vertical
       panes:

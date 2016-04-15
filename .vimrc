@@ -467,8 +467,8 @@ map <leader>E <Plug>(easymotion-prefix)
 map  <leader><leader> <Plug>(easymotion-bd-f)
 nmap <leader><leader> <Plug>(easymotion-overwin-f)
 
-" s{char}{char} to move to {char}{char}
-nmap <leader>s <Plug>(easymotion-overwin-f2)
+" s{char}{char} to move to {char}{char} (conflicts with spell)
+"nmap <leader>s <Plug>(easymotion-overwin-f2)
 
 " Move to line
 map <leader>L <Plug>(easymotion-bd-jk)
