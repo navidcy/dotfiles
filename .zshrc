@@ -81,12 +81,12 @@ alias gs='git status'
 alias gl='git log --oneline'
 alias ga='git add'
 alias gd='git diff --'
-alias gc='git commit -v'
-alias gca='git commit -a -v'
+alias gc='git commit -v -S'
+alias gca='git commit -a -v -S'
 alias gp='git push'
 alias gpu='git pull'
-alias gcgp='git commit -v && git push'
-alias gcagp='git commit -a -v && git push'
+alias gcgp='git commit -v -S && git push'
+alias gcagp='git commit -a -v -S && git push'
 alias clear='clear && tmux clear-history'
 alias ct='ctags -R .'
 alias findgrep='find . | grep -i '
@@ -95,7 +95,7 @@ alias fixdisplay='export DISPLAY=:0'
 
 alias zshreload="source ~/.zshrc"
 alias dotfiles-update="cd ~/code/dotfiles && git pull ; zshreload ; cd -"
-alias dotfiles-commit="cd ~/code/dotfiles && git commit -a -v ; git push ; cd -"
+alias dotfiles-commit="cd ~/code/dotfiles && git commit -a -S -v ; git push ; cd -"
 
 alias m="make"
 alias mc="make clean"
