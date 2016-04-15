@@ -1,6 +1,7 @@
 [user]
 	email = anders.damsgaard@geo.au.dk
 	name = Anders Damsgaard
+	signkey = AC6517CA
 [color]
 	ui = auto
 [push]

@@ -44,3 +44,6 @@ sudo gem install tmuxinator
 
 # Install Python GDB configuration
 wget -P ~ git.io/.gdbinit
+
+# Set GPG signing key for git commits
+git config --global user.signkey AC6517CA
