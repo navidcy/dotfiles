@@ -155,7 +155,7 @@ set query_command= "abook --mutt-query '%s'"
 #sender address to abook"
 macro index,pager A "!$EDITOR ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "Edit aliases file and reload it"
 macro pager a "<create-alias><enter>" "create an alias from the message sender"
-macro index Y "<next-unread-mailbox><enter>" "create an alias from the message sender"
+macro index Y "<next-unread-mailbox>" "go to next mailbox with unread mails"
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
