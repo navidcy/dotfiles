@@ -190,8 +190,8 @@ syntax on
 let g:mutt_aliases_file = '~/.mutt/aliases'
 
 " Select non-default syntax colorscheme. Found in /usr/share/vim/vim72/colors/
-set background=dark " adjust colors for better contrast
-colorscheme desert
+"set background=dark " adjust colors for better contrast
+"colorscheme desert
 "colorscheme solarized
 "colorscheme Tomorrow-Night-Eighties
 "call togglebg#map("<F3>")
