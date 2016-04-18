@@ -1,5 +1,5 @@
 #!/bin/bash
-mpdcolor="#666699"
+mpdcolor="#81a2be"
 
 i3status --config ~/.i3/status | (read line && echo $line && read line && echo $line && while :
 do
