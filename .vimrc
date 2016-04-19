@@ -642,7 +642,7 @@ let g:startify_custom_header =
 
 " Split divider appearance
 set fillchars=vert:│,fold:-
-hi! VertSplit ctermfg=10 ctermbg=NONE term=NONE
+hi! VertSplit ctermfg=15 ctermbg=NONE term=NONE
 
 " Control mpd by CtrlP
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir', 'tmux', 'mpc']
