@@ -17,9 +17,9 @@ do
     fi
 
     dat="["\
-"{\"full_text\":\"${kbdlayout}\"},"\
+"{\"full_text\":\"${dat}\",\"color\":\"${mpdcolor}\"},"\
 "{\"full_text\":\"M: ${newmails}\",\"color\":\"${mailcolor}\"},"\
-"{\"full_text\":\"${dat}\",\"color\":\"${mpdcolor}\"},"
+"{\"full_text\":\"${kbdlayout}\"},"
 
     #dat="[{\"name\":\"mpd\",\"full_text\":\"asdf\"},"
     echo "${line/[/$dat}" || exit 1
