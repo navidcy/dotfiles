@@ -10,8 +10,8 @@
 accounts = riseup,geomail,ucsd,gmail
 # Suppress nothing but errors
 #ui = quiet
-#ui = ttyui
-ui = blinkenlights
+ui = ttyui
+#ui = blinkenlights
 pythonfile=~/.mutt/offlineimap.py
 # Controls how many accounts may be synced simultaneously
 maxsyncaccounts = 4
