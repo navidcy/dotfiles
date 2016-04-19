@@ -157,8 +157,8 @@ macro pager a "<create-alias><enter>" "create an alias from the message sender"
 macro index Y "<next-unread-mailbox>" "go to next mailbox with unread mails"
 
 # Sync email
-macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+macro index O "<shell-escape>offlineimap -u blinkenlights<enter>" "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -u blinkenlights -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 # View and select urls
 macro pager U "<pipe-entry>urlview<enter>" "call urlview to open links"
