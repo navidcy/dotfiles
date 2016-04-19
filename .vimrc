@@ -210,7 +210,8 @@ highlight NonText    ctermfg=250 ctermbg=NONE
 " hilight column 80
 set textwidth=80
 set colorcolumn=+1
-highlight ColorColumn ctermbg=237
+"highlight ColorColumn ctermbg=237
+highlight ColorColumn ctermbg=15
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 
@@ -643,6 +644,7 @@ let g:startify_custom_header =
 " Split divider appearance
 set fillchars=vert:│,fold:-
 hi! VertSplit ctermfg=15 ctermbg=NONE term=NONE
+"hi! VertSplit ctermfg=237 ctermbg=NONE term=NONE
 
 " Control mpd by CtrlP
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir', 'tmux', 'mpc']
