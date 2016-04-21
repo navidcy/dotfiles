@@ -337,6 +337,9 @@ let mapleader="\<Space>"
 " Shortcut to reload .vimrc
 nmap <leader>r :source $MYVIMRC<CR>
 
+" List errors in split
+nmap <leader>E :Errors<CR>
+
 " Shortcut to switch background color
 "nmap <leader>W :ToggleBG<CR>
 
