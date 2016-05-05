@@ -3,7 +3,7 @@
 if [ $# -lt 1 ]; then
     echo -e "Usage: $0 [amount] [currency1] [currency2]\n"
     echo "If currency1 and currency2 and are not defined they default to USD and DKK, respectively."
-    echo -e "Currency strings are not case-insensitive. The amount defaults to 1.\n"
+    echo -e "Currency strings are not case sensitive. The amount defaults to 1.\n"
     echo "Example 1: $0 USD GBP"
     echo "Example 2: $0 42"
     echo "Example 3: $0 GBP EUR 14"
