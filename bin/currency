@@ -23,7 +23,7 @@ CONVERTER="http://www.google.com/finance/converter?a=$A&from=$FROM&to=$TO"
 #echo $CONVERTER
 
 RESULT=`wget -nv -O - "$CONVERTER" 2>&1 | \
-    sed -n -e 's/.*<span class=bld>\(.*\)<\/span>.*/\1/p'`
+    LC_ALL=C sed -n -e 's/.*<span class=bld>\(.*\)<\/span>.*/\1/p'`
 
 #echo "Result: $A $FROM = $RESULT"
 echo $RESULT
