@@ -101,6 +101,8 @@ alias m="make"
 alias mc="make clean"
 alias me="make edit"
 
+alias 2048='2048 bluered'
+
 #alias rm='rm -i'
 alias rmi='rm -i'
 #alias mv='mv -i'
