@@ -7,6 +7,7 @@ sudo apt-get install \
     bogofilter \
     build-essential \
     cmake \
+    curl \
     dunst \
     elinks \
     exuberant-ctags \
