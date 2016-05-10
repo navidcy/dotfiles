@@ -58,6 +58,7 @@ sudo apt-get install \
     vim \
     vim-nox \
     w3m \
+    wordnet \
     xautolock \
     xbacklight \
     xbindkeys \
