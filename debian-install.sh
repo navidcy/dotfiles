@@ -8,6 +8,9 @@ sudo apt-get install \
     build-essential \
     cmake \
     curl \
+    dict \
+    dict-gcide \
+    dictd \
     dunst \
     elinks \
     exuberant-ctags \
