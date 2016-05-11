@@ -43,7 +43,7 @@ git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
 sudo gem install tmuxinator
 
 # Install Python GDB configuration
-wget -P ~ git.io/.gdbinit
+curl -OL git.io/.gdbinit
 
 # Set GPG signing key for git commits
 git config --global user.signkey AC6517CA
