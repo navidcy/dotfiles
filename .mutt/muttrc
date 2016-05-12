@@ -160,8 +160,12 @@ macro pager a "<create-alias>" "create an alias from the message sender"
 macro index Y "<next-unread-mailbox>" "go to next mailbox with unread mails"
 
 # Sync email
-macro index O "<shell-escape>offlineimap -u blinkenlights<enter>" "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -u blinkenlights -qf INBOX<enter>" "run offlineimap to sync inboxes"
+#macro index O "<shell-escape>offlineimap -u blinkenlights<enter>" "run 
+#offlineimap to sync all mail"
+#macro index o "<shell-escape>offlineimap -u blinkenlights -qf INBOX<enter>" 
+#"run offlineimap to sync inboxes"
+macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inboxes"
 macro index K "<shell-escape>killall offlineimap<enter>" "kill all offlineimap processes"
 
 macro index U "<limit>all\n" "show all messages (undo limit)"
