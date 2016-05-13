@@ -9,6 +9,7 @@ brew tap railwaycat/emacsmacport
 # offlineimap`, etc.
 # If "Operation not permitted" errors are encountered, try outside tmux
 brew tap gapple/services
+brew tap homebrew/games
 
 # from `brew list`
 brews=( \
@@ -18,6 +19,7 @@ brews=( \
     "autoconf"\
     "automake"\
     "autossh"\
+    "c2048"\
     "caskroom/cask/brew-cask"\
     "catimg"\
     "cmake"\
