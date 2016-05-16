@@ -1,9 +1,13 @@
 #!/bin/bash
 
 #USER=ircuser
-USER=adc
-HOST=susanoganders.dk
-PORT=12344
+#USER=adc
+USER=ad
+#HOST=susanoganders.dk
+HOST=adamsgaard.dk
+#PORT=12344
+PORT=22
+#POSTCMD=\'bin/tmux-irc.sh\'
 POSTCMD=\'bin/tmux-irc.sh\'
 
 UNAMESTR=`uname`

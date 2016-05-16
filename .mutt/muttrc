@@ -166,7 +166,7 @@ macro index Y "<next-unread-mailbox>" "go to next mailbox with unread mails"
 #"run offlineimap to sync inboxes"
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inboxes"
-macro index K "<shell-escape>killall offlineimap<enter>" "kill all offlineimap processes"
+macro index K "<shell-escape>kill -9 $(ps aux|grep offlineimap|grep python|awk ' {print $2} ')<enter>" "kill all offlineimap processes"
 
 macro index U "<limit>all\n" "show all messages (undo limit)"
 
