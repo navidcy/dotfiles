@@ -62,6 +62,9 @@ sudo apt-get install \
     vim \
     vim-nox \
     w3m \
+    weechat \
+    weechat-plugins \
+    weechat-scripts \
     wordnet \
     xautolock \
     xbacklight \
