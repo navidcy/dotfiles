@@ -20,7 +20,7 @@ done
 for F in .colors .config/uzbl .config/awesome .config/dwb .config/bspwm \
     .config/sxhkd .config/luakit .config/openbox .config/zathura .tmuxinator \
     .i3 .mutt .ncmpcpp .vim .vimperrator .w3m wallpapers .kwm .mpd \
-    .imapfilter; do
+    .imapfilter .weechat; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 
