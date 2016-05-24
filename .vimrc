@@ -652,3 +652,6 @@ hi! VertSplit ctermfg=238 ctermbg=NONE term=NONE
 " Control mpd by CtrlP
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir', 'tmux', 'mpc']
 nnoremap <leader>M :CtrlPMpc<cr>
+
+" use improved encryption method by default
+set cm=blowfish
