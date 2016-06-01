@@ -1,20 +1,26 @@
 #!/bin/sh
-newmails=$(find ~/Mail/*/INBOX/new -type f | wc -l | sed 's/ *//')
+newmails=$(find ~/Mail/*/INBOX/new -type f)
+numbernewmails=$(echo $newmails | wc -w | sed 's/ *//')
 mailcolor="#859900"
 debug=false
 offlineimap=/usr/local/bin/offlineimap
 
-if [ "$newmails" -gt 0 ]; then
+if [ "$numbernewmails" -gt 0 ]; then
     mailcolor="#cb4b16"
 fi
 
-echo "M: ${newmails} | color=${mailcolor}"
+echo "M: ${numbernewmails} | color=${mailcolor}"
 
 # everything below in drop down menu
 echo "---"
 
-mailboxes="$(find ~/Mail/*/INBOX/new -type f | sed 's/.*Mail\///' | sed 's/\/INBOX.*//')"
+mailboxes="$(echo $newmails | sed 's/.*Mail\///' | sed 's/\/INBOX.*//')"
 echo $mailboxes
+
+echo "---"
+
+from="$(cat $newmails | grep 'From: ' | sed 's/From: //' | sed 's/>/>\\n/')"
+echo $from
 
 echo "---"
 
