@@ -104,6 +104,7 @@ casks=("adobe-reader"\
     "transmission"\
     "virtualbox"\
     "vlc"\
+    "w3m"\
     "xquartz" )
 
 read -p "Do you want to install brew casks? [y/n] " -n 1 -r
