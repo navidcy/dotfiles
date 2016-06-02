@@ -55,6 +55,7 @@ function cgrep() { egrep --color -i "$@|$"; }
 function fname() { find . -iname "*$@*"; }
 function sayfile() { festival --tts $@; }
 function tnew { tmux new-session -As `basename $PWD` }
+function w3mtor { torify w3m http://3g2upl4pq6kufc4m.onion/html/ }
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
