@@ -18,10 +18,11 @@ color quoted5		default		default
 #color indicator		black		gray
 #color indicator		white		black
 #color indicator		yellow		black
-color indicator		yellow		color237
+color indicator		yellow		color236
 #color message		yellow		black
 color message		yellow		default
-color status		white		color238
+#color status		white		black
+color status		color250		color237
 #color status		default		default
 color error		black		red
 color attachment	magenta		default
