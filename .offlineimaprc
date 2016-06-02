@@ -32,7 +32,9 @@ localrepository = riseup-local
 remoterepository = riseup-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 status_backend = sqlite
-presynchook = imapfilter -c ~/.imapfilter/riseup.lua
+#presynchook = imapfilter -c ~/.imapfilter/riseup.lua
+#presynchook = imapfilter -t /usr/local/etc/openssl/cert.pem -c ~/.imapfilter/riseup.lua
+presynchook = imapfilter -t ~/.mutt/cert.pem -c ~/.imapfilter/riseup.lua
 postsynchook = notmuch new
 
 # Minutes between syncs
