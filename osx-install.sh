@@ -26,6 +26,7 @@ brews=( \
     "ctags-exuberant"\
     "emacs-mac --with-spacemacs-icon"\
     "ffmpeg"\
+    "fortune"\
     "gdbm"\
     "gettext"\
     "git"\
