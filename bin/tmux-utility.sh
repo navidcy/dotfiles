@@ -14,13 +14,16 @@ then
     tmux split-window -h -t $SESSION
     tmux send-keys -t $SESSION 'fortune' C-m
 
-    tmux split-window -h -t $SESSION
+    tmux select-pane -t $SESSION:1.1
+    tmux split-window -v -t $SESSION
     tmux send-keys -t $SESSION 'vimpc' C-m
 
-    tmux split-window -h -t $SESSION
+    tmux select-pane -t $SESSION:1.3
+    tmux split-window -v -t $SESSION
     tmux send-keys -t $SESSION 'mosh ad@idkfa.ucsd.edu' C-m
 
-    tmux select-layout tiled
+    #tmux select-layout tiled
+    tmux select-pane -t $SESSION:1.1
 
     #tmux send-keys -t $SESSION 'irc.sh' C-m   # process in first pane
     #tmux split-window -h -p 65 -t $SESSION  # horizontal split
