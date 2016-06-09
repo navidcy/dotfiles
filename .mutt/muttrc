@@ -188,7 +188,7 @@ folder-hook ! .*[sS]ent.* "$my_index_format_pre"F"$my_index_format_post"
 macro index,pager S "<enter-command>unset wait_key<enter>\
 <pipe-entry>bogofilter -l -s<enter>\
 <enter-command>set wait_key<enter>\
-<save-message>=Spam<enter>" "mark as spam"
+<save-message>=riseup/Spam<enter>" "mark as spam"
 macro index,pager H "<enter-command>unset wait_key<enter>\
 <pipe-entry>bogofilter -l -n<enter>\
 <enter-command>set wait_key<enter>\
