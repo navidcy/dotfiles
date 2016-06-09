@@ -130,8 +130,8 @@ macro index M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages as rea
 # IMAP folders with spaces
 bind editor <space> noop
 macro index \ 1 "<change-folder>=riseup/INBOX/<enter>" "Go to Riseup inbox"
-macro index \ u "<change-folder>=riseup/Junk.unsure/<enter>" "Go to Riseup/Junk.unsure"
-macro index \ j "<change-folder>=riseup/Junk/<enter>" "Go to Riseup/Junk"
+macro index \ u "<change-folder>=riseup/Spam.unsure/<enter>" "Go to Riseup/Spam.unsure"
+macro index \ j "<change-folder>=riseup/Spam/<enter>" "Go to Riseup/Spam"
 macro index \ ! "<change-folder>=riseup/Sent/<enter>" "Go to Riseup sent"
 macro index \ 2 "<change-folder>=geomail/INBOX/<enter>" "Go to Geomail inbox"
 macro index \ @ "<change-folder>=geomail/Sent/<enter>" "Go to Geomail sent"
@@ -188,7 +188,7 @@ folder-hook ! .*[sS]ent.* "$my_index_format_pre"F"$my_index_format_post"
 macro index,pager S "<enter-command>unset wait_key<enter>\
 <pipe-entry>bogofilter -l -s<enter>\
 <enter-command>set wait_key<enter>\
-<save-message>=Junk<enter>" "mark as spam"
+<save-message>=Spam<enter>" "mark as spam"
 macro index,pager H "<enter-command>unset wait_key<enter>\
 <pipe-entry>bogofilter -l -n<enter>\
 <enter-command>set wait_key<enter>\
