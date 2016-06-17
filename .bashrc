@@ -58,7 +58,11 @@ alias vi='vim -u NONE'
 alias play='mpg123 --title -C'
 # Set bash title for certain terminals
 #echo -n -e "\033]0;`hostname`\007"
-alias open='xdg-open'
+ARCH=$(uname)
+if [[ "$ARCH" != 'Darwin' ]]; then
+    function open() { xdg-open $1 &> /dev/null &disown; }
+    function say() { echo "$@" | festival --tts; }
+fi
 
 # Dircolors
 export CLICOLOR=1
@@ -197,3 +201,4 @@ if [ $(echo $HOSTNAME | grep cosmo) ]; then
 fi
 
 [ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH
+[ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
