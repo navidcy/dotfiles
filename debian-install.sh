@@ -42,6 +42,7 @@ sudo apt-get install \
     okular \
     paraview \
     pass \
+    python-ipdb \
     python-matplotlib \
     python-numpy \
     python-pip \
