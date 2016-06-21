@@ -130,9 +130,9 @@ function define() { curl --silent dict://dict.org/d:$1 }
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -F'
 else
-    alias ls='ls -G'
+    alias ls='ls -G -F'
 fi
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
