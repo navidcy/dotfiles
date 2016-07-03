@@ -50,4 +50,7 @@ highlight tab default
 " Case insensitive search
 set ignorecase
 
+" Show albums in library by default
+set expand-artists
+
 echo Config File Complete
