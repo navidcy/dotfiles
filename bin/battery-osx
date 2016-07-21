@@ -11,6 +11,7 @@ pmset -g batt | head -n 2 | tail -n 1 |\
     sed 's/finishingcharge/☇/' |\
     sed 's/ $//' |\
     sed "s/drawingfrom'AC//" |\
+    sed "s/from'ACPower'//" |\
     sed 's/failure.*/batt fail/'
 
 # El Capitan and prior
