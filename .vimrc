@@ -223,7 +223,8 @@ set backupcopy=yes  " see :help crontab
 set cursorline      " highlight current line
 "set encoding=utf-8  " Necessary to show unicode glyphs
 set expandtab       " convert tab char to spaces
-set formatoptions=aw2qt " automatically reflow paragraphs to line width upon change
+set formatoptions=alw2qt " automatically reflow paragraphs to line width upon change
+set lbr             " break lines between words
 set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
 set incsearch       " search as you type
@@ -438,8 +439,8 @@ nmap <leader>= <C-w>=
 
 " Commit all changes
 "nmap <leader>g :Gcommit<CR>
-nmap <leader>g :Start git commit -a -v<CR>
-nmap <leader>G :Start git commit -a -v && git push<CR>
+nmap <leader>g :Start git commit -a -v -S<CR>
+nmap <leader>G :Start git commit -a -v -S && git push<CR>
 
 " Toggle fold
 "nmap <leader>f za
@@ -655,3 +656,6 @@ nnoremap <leader>M :CtrlPMpc<cr>
 
 " use improved encryption method by default
 set cm=blowfish
+
+" toggle autoformatting of text
+nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
