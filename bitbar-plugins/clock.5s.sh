@@ -1,2 +1,2 @@
 #!/bin/bash
-date +'%H:%m:%S'
+date +'%H:%M:%S'
