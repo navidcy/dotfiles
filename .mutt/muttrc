@@ -124,7 +124,7 @@ bind index,pager R  group-reply
 bind index <tab>    sync-mailbox
 
 macro index M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages as read"
-
+macro index \ f "l~F<enter>" "Show only flagged messages"
 
 # Macros to change between inboxes (e.g. SPACE 1), use noop editor to accept 
 # IMAP folders with spaces
