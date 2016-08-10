@@ -110,7 +110,7 @@ alternative_order text/plain text/enriched text/html
 # files: ';<enter>'
 
 # show email in browser
-macro attach V "<pipe-entry>cat >~/.cache/mutt_mail.html && open ~/.cache/mutt_mail.html && rm ~/.cache/mutt_mail.html<enter>" "show attachment in browser"
+macro attach V "<pipe-entry>cat >~/.mutt_mail.html && open ~/.mutt_mail.html<enter>" "show attachment in browser"
 
 # vi-like movement
 bind attach,index gg first-entry
