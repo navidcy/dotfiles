@@ -110,7 +110,7 @@ alternative_order text/plain text/enriched text/html
 # files: ';<enter>'
 
 # show email in browser
-macro attach V "<pipe-entry>cat >~/.cache/mutt_mail.html && open ~/.cache/mutt_mail.html && rm ~/.cache/mutt_mail.html<enter>" "show attachment in browser"
+macro attach V "<pipe-entry>cat >~/.mutt_mail.html && open ~/.mutt_mail.html<enter>" "show attachment in browser"
 
 # vi-like movement
 bind attach,index gg first-entry
@@ -124,7 +124,7 @@ bind index,pager R  group-reply
 bind index <tab>    sync-mailbox
 
 macro index M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages as read"
-
+macro index \ f "l~F<enter>" "Show only flagged messages"
 
 # Macros to change between inboxes (e.g. SPACE 1), use noop editor to accept 
 # IMAP folders with spaces
