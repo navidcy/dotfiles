@@ -144,8 +144,8 @@ macro index \ c "<change-folder>=geomail/INBOX.cryolist/<enter>" "Go to cryolist
 
 # mutt-sidebar
 set sidebar_visible = no
-macro index \ s '<enter-command>toggle sidebar_visible<enter><refresh>'
-macro pager \ s '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro index \ S '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager \ S '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
 bind index,pager \CO sidebar-open
