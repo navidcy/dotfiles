@@ -150,5 +150,5 @@ cpanm Digest::SHA\
     Mail::Box\
     Mail::Header\
     mail::Box::Maildir\
-    String::Shellquote\
+    String::ShellQuote\
     Term::ReadLine::Gnu
