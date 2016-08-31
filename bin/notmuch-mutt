@@ -48,9 +48,12 @@ sub search($$$) {
     }
 
     empty_maildir($maildir);
+    #system("notmuch search --output=files $dup_option $query"
+    #. " | sed -e 's: :\\\\ :g'"
+    #. " | xargs -r -I searchoutput ln -s searchoutput $maildir/cur/");
     system("notmuch search --output=files $dup_option $query"
 	   . " | sed -e 's: :\\\\ :g'"
-	   . " | xargs -r -I searchoutput ln -s searchoutput $maildir/cur/");
+	   . " | xargs -I searchoutput ln -s searchoutput $maildir/cur/");
 }
 
 sub prompt($$) {
