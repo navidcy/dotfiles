@@ -143,3 +143,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 mkdir -p ~/tmp
+
+# notmuch-mutt requirements
+brew install cpanminus
+cpanm Digest::SHA\
+    Mail::Box\
+    Mail::Header\
+    mail::Box::Maildir\
+    String::Shellquote\
+    Term::ReadLine::Gnu
