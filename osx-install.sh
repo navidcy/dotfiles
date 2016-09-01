@@ -149,6 +149,6 @@ brew install cpanminus
 cpanm Digest::SHA\
     Mail::Box\
     Mail::Header\
-    mail::Box::Maildir\
+    Mail::Box::Maildir\
     String::ShellQuote\
     Term::ReadLine::Gnu
