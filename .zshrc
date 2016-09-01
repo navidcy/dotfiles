@@ -249,3 +249,5 @@ alias sha256sum='shasum -a 256'
 [ -f ~/.bash_profile ] && source ~/.bash_profile
 [ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
+
+export GPG_TTY=`tty`

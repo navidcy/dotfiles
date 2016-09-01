@@ -202,3 +202,5 @@ fi
 
 [ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
+
+export GPG_TTY=`tty`
