@@ -1,7 +1,7 @@
 #!/bin/bash
-youtbe-dl \
+youtube-dl \
         --format bestaudio \
         --extract-audio \
         --audio-quality 0 \
-        --audio-format best \
+        --audio-format mp3 \
         $1
