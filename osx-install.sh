@@ -33,6 +33,7 @@ brews=( \
     "gnu-getopt"\
     "gnupg"\
     "htop-osx"\
+    "id3v2"\
     "imagemagick"\
     "imapfilter"\
     "libav"\
