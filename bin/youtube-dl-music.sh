@@ -33,8 +33,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     read -p "artist: " artist
     read -p "album: " album
     read -p "song: " song
+    read -p "track [e.g. 01]: " track
 
-    id3v2 --artist "$artist" --album "$album" --song "$song" "$filename"
+    id3v2 --artist "$artist" --album "$album" --song "$song" --track "$track" \
+        "$filename"
 fi
 
 read -p "move to music folder? [y/N] " -n 1 -r
