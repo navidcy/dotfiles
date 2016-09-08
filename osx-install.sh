@@ -25,6 +25,7 @@ brews=( \
     "cmake"\
     "ctags-exuberant"\
     "emacs-mac --with-spacemacs-icon"\
+    "exiftool"\
     "ffmpeg"\
     "fortune"\
     "gdbm"\
