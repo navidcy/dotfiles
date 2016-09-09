@@ -25,6 +25,7 @@ brews=( \
     "cmake"\
     "ctags-exuberant"\
     "emacs-mac --with-spacemacs-icon"\
+    "exiftool"\
     "ffmpeg"\
     "fortune"\
     "gdbm"\
@@ -33,6 +34,7 @@ brews=( \
     "gnu-getopt"\
     "gnupg"\
     "htop-osx"\
+    "id3v2"\
     "imagemagick"\
     "imapfilter"\
     "libav"\
