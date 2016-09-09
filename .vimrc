@@ -537,6 +537,17 @@ vmap <Leader>V "+P
 " Launch Ack
 "nmap <leader>a :Ack 
 
+" syntastic configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['python']
+
 " adjust signcolumn appearance
 let g:syntastic_error_symbol = 'e'
 let g:syntastic_warning_symbol = 'w'
@@ -583,7 +594,7 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 
 " Documentation
 let g:pymode_doc = 1
@@ -593,7 +604,7 @@ let g:pymode_doc_key = 'K'
 let g:pymode_lint = 0
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
-let g:pymode_lint_write = 1
+let g:pymode_lint_write = 0
 
 " Support virtualenv
 let g:pymode_virtualenv = 1
@@ -603,8 +614,8 @@ let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>B'
 
 " syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
+let g:pymode_syntax = 0
+let g:pymode_syntax_all = 0
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
