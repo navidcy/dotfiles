@@ -1,0 +1,78 @@
+#!/bin/bash
+set -e
+set -u
+
+read -p "torify? [Y/n] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Nn]$ ]]; then
+    prefix=""
+else
+    prefix="torify"
+fi
+
+outputdir=$TMPDIR/ytdl-playlist
+mkdir -p $outputdir
+cd $outputdir
+
+$prefix youtube-dl \
+    --format bestaudio \
+    --extract-audio \
+    --audio-quality 0 \
+    --audio-format mp3 \
+    $1
+
+read -p "add metadata? [y/N] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+
+    artist="Unknown Artist"
+    album="Unknown Album"
+    track=1
+
+    # Loop over files with spaces
+    SAVEIFS=$IFS
+    IFS=$(echo -en "\n\b")
+    for f in *.mp3; do
+
+        echo "$f"
+
+        read -p "artist [$artist]: " input
+        artist="${input:-$artist}"
+
+        read -p "album [$album]: " input
+        album="${input:-$album}"
+
+        read -p "song: " song
+
+        read -p "track [$track]: " input
+        track="${input:-$track}"
+
+        id3v2 --artist "$artist" --album "$album" \
+            --song "$song" --track "$track" \
+            "$f"
+        (( track += 1 ))
+    done
+    # Revert default behavior
+    IFS=$SAVEIFS
+
+    read -p "move to music folder? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+
+        if [[ "$(uname)" == 'Darwin' ]]; then
+            musicroot="$HOME/Music/iTunes/iTunes Media/Music/"
+        else
+            musicroot="$HOME/music/"
+        fi
+
+        outdir="$musicroot/$artist/$album"
+        mkdir -p "$outdir"
+        mv *.mp3 "$outdir"
+
+        echo "updating mpd"
+        mpc update > /dev/null
+
+        rmdir $outputdir
+        cd -
+    fi
+fi
