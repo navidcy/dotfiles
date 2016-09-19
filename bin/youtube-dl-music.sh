@@ -37,22 +37,22 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     id3v2 --artist "$artist" --album "$album" --song "$song" --track "$track" \
         "$filename"
-fi
 
-read -p "move to music folder? [y/N] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+    read -p "move to music folder? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
 
-    if [[ "$(uname)" == 'Darwin' ]]; then
-        musicroot="$HOME/Music/iTunes/iTunes Media/Music/"
-    else
-        musicroot="$HOME/music/"
+        if [[ "$(uname)" == 'Darwin' ]]; then
+            musicroot="$HOME/Music/iTunes/iTunes Media/Music/"
+        else
+            musicroot="$HOME/music/"
+        fi
+
+        outdir="$musicroot/$artist/$album"
+        mkdir -p "$outdir"
+        mv "$filename" "$outdir/$song.mp3"
+
+        echo "updating mpd"
+        mpc update > /dev/null
     fi
-
-    outdir="$musicroot/$artist/$album"
-    mkdir -p "$outdir"
-    mv "$filename" "$outdir/$song.mp3"
-
-    echo "updating mpd"
-    mpc update > /dev/null
 fi
