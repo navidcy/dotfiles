@@ -176,6 +176,9 @@ NeoBundle 'majutsushi/tagbar'
 " Control mpd by CtrlP
 NeoBundle 'lucidstack/ctrlp-mpc.vim'
 
+" Show indentation levels with thin vertical lines
+NeoBundle 'Yggdroot/indentLine'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -678,6 +681,13 @@ nnoremap <leader>M :CtrlPMpc<cr>
 
 " use improved encryption method by default
 "set cm=blowfish
+
+" Indent guides color and character┆│¦⦙
+let g:indentLine_char = '¦'
+" Vim
+let g:indentLine_color_term = 238
+"GVim
+let g:indentLine_color_gui = '#3A3A3A'
 
 " toggle autoformatting of text
 nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
