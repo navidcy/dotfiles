@@ -2,7 +2,7 @@ filetype off
 
 " terminal colors
 "set t_Co=16
-set t_Co=256
+"set t_Co=256
 
 if has('vim_starting')
     set nocompatible    " Disable vi-compatibility
@@ -37,6 +37,7 @@ NeoBundle 'kien/ctrlp.vim'
 "NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'chriskempson/vim-tomorrow-theme'
 "NeoBundle 'tomasr/molokai'
+NeoBundle 'jacoborus/tender'
 
 " modify surrounding characters in pairs
 NeoBundle 'tpope/vim-surround'
@@ -196,7 +197,17 @@ let g:mutt_aliases_file = '~/.mutt/aliases'
 "colorscheme Tomorrow-Night-Eighties
 "call togglebg#map("<F3>")
 "let g:solarized_termtrans = 1
-let g:airline_theme = 'ubaryd'
+
+" If you have vim >=8.0 or Neovim >= 0.1.5
+"if (has("termguicolors"))
+    "set termguicolors
+"endif
+"" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme tender
+let g:airline_theme = 'tender'
+
+"let g:airline_theme = 'ubaryd'
 "let g:airline_theme = 'solarized'
 "let g:airline_theme = 'tomorrow'
 "let g:airline_theme = 'wombat'
@@ -666,7 +677,7 @@ let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir', 'tmux', 'mpc']
 nnoremap <leader>M :CtrlPMpc<cr>
 
 " use improved encryption method by default
-set cm=blowfish
+"set cm=blowfish
 
 " toggle autoformatting of text
 nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
