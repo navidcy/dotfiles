@@ -56,6 +56,8 @@ function fname() { find . -iname "*$@*"; }
 function sayfile() { festival --tts $@; }
 function tnew { tmux new-session -As `basename $PWD` }
 function w3mtor { torify w3m http://3g2upl4pq6kufc4m.onion/ }
+#function weather { curl wttr.in/SanDiego; }
+function weather { curl wttr.in; }
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
@@ -243,6 +245,8 @@ alias big='osascript ~/.termtile/resize.scpt '
 alias cen='osascript ~/.termtile/center.scpt '
 alias sha256sum='shasum -a 256'
 
+# calendar aliases
+alias cala="gcalcli agenda"
 
 #. /Users/ad/torch/install/bin/torch-activate
 
