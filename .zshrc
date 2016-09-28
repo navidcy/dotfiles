@@ -57,7 +57,7 @@ function sayfile() { festival --tts $@; }
 function tnew { tmux new-session -As `basename $PWD` }
 function w3mtor { torify w3m http://3g2upl4pq6kufc4m.onion/ }
 #function weather { curl wttr.in/SanDiego; }
-function weather { curl wttr.in; }
+function weather { curl wttr.in/?m; }
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
