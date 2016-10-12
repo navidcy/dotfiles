@@ -41,11 +41,11 @@ echo "## Updating dotfiles"
 cd ~/code/dotfiles && \
     git pull; cd -
 
-echo "## Updating spacemacs"
-#git pull --rebase && \
-cd ~/.emacs.d && \
-git pull && \
-git submodule sync; git submodule update
+#echo "## Updating spacemacs"
+##git pull --rebase && \
+#cd ~/.emacs.d && \
+#git pull && \
+#git submodule sync; git submodule update
 
 echo "## Updating pip"
 sudo -H pip install --upgrade pip
