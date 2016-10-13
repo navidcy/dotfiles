@@ -3,7 +3,8 @@
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew tap railwaycat/emacsmacport
+#brew tap railwaycat/emacsmacport
+brew tap d12frosted/emacs-plus
 
 # launch and monitor services with `brew services list`, `brew services start 
 # offlineimap`, etc.
@@ -24,7 +25,7 @@ brews=( \
     "catimg"\
     "cmake"\
     "ctags-exuberant"\
-    "emacs-mac --with-spacemacs-icon"\
+    "emacs-plus"\
     "exiftool"\
     "ffmpeg"\
     "fortune"\
@@ -75,7 +76,11 @@ brews=( \
 
 for brew in "${brews[@]}"; do
     brew install $brew
+    if [[ "$brew" == "emacs-plus" ]]; then
+        brew linkapps emacs-plus
+    fi
 done
+
 
 # from `brew cask list`
 casks=("adobe-reader"\
