@@ -41,13 +41,13 @@ echo "## Updating dotfiles"
 cd ~/code/dotfiles && \
     git pull; cd -
 
-echo "## Updating spacemacs"
-#git pull --rebase && \
-cd ~/.emacs.d && \
-git pull && \
-git submodule sync; git submodule update
+#echo "## Updating spacemacs"
+##git pull --rebase && \
+#cd ~/.emacs.d && \
+#git pull && \
+#git submodule sync; git submodule update
 
 echo "## Updating pip"
-sudo -H pip install --upgrade pip
+pip install --upgrade pip
 echo "## Updating pip packages"
-pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo -H pip install -U
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
