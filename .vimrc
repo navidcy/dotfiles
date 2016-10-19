@@ -365,6 +365,9 @@ nmap <Leader>w :w<CR>
 " Quit
 nmap <Leader>q :q<CR>
 
+" Native (fast) buffer switching
+nnoremap ,b :ls<CR>:buffer<Space>
+
 " Close buffer
 nmap <leader>Q :bd<CR>
 
