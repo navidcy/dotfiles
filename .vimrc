@@ -365,6 +365,9 @@ nmap <Leader>w :w<CR>
 " Quit
 nmap <Leader>q :q<CR>
 
+" Native (fast) buffer switching
+nnoremap ,b :ls<CR>:buffer<Space>
+
 " Close buffer
 nmap <leader>Q :bd<CR>
 
@@ -477,6 +480,9 @@ nmap <leader>FA zM
 " Use home row keys as Esc
 inoremap jk <Esc>
 
+" Improve navigation on wrapped lines
+nnoremap j gj
+nnoremap k gk
 
 map <leader>E <Plug>(easymotion-prefix)
 
