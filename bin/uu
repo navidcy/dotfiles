@@ -29,7 +29,7 @@ elif [[ "$UNAMESTR" == 'Darwin' ]]; then
     echo "Fetching updates..."
     brew analytics off
     brew update && \
-        brew upgrade --all && \
+        brew upgrade && \
         brew cleanup
     #conda update --all
 else
