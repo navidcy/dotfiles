@@ -57,6 +57,7 @@ brews=( \
     "pcre"\
     "pkg-config"\
     "pwgen"\
+    "qrencode"\
     "reattach-to-user-namespace"\
     "tmux"\
     "the_silver_searcher"\
