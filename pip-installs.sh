@@ -5,6 +5,7 @@ set -e
 # pip packages
 pips=( \
     "gcalcli"\
+    "grepg"\
     )
 
 for pip in "${pip[@]}"; do

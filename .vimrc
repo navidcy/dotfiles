@@ -179,6 +179,9 @@ NeoBundle 'lucidstack/ctrlp-mpc.vim'
 " Show indentation levels with thin vertical lines
 NeoBundle 'Yggdroot/indentLine'
 
+" Show command documentation in a scratch buffer, usage ":G <query"
+NeoBundle 'evidanary/grepg.vim'
+
 call neobundle#end()
 
 filetype plugin indent on
