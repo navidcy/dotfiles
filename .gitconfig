@@ -1,0 +1,8 @@
+[user]
+	email = adc@geo.au.dk
+	name = Anders Damsgaard Christensen
+	signkey = AC6517CA
+[color]
+	ui = auto
+[push]
+	default = simple

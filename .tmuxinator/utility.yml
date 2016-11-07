@@ -1,0 +1,54 @@
+# ~/.tmuxinator/utility.yml
+
+name: utility
+root: ~/
+pre: bash ~/bin/export_x_info.sh && mpd
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - m&m:
+      layout: even-vertical
+      panes:
+          - mutt
+          - vimpc
+  - sphere:
+      layout: even-vertical
+      panes:
+          - cd ~/code/sphere/ && watch -n 10 nvidia-smi
+          - cd ~/code/sphere/python && ipython -i -c "import sphere, numpy"
+          #- cd ~/code/sphere/python && git log --oneline
+          - cd ~/code/sphere/python && tig
+  - iddqd:
+      panes:
+          - bash ~/bin/iddqd-ssh
+  - dotfiles:
+      layout: even-vertical
+      panes:
+          - cd ~/code/dotfiles
+          - cd ~/code/dotfiles
+
+#  - sys:
+#      layout: main-vertical
+#      panes:
+#          - htop
+#          - zsh
+#  - twitter: rainbowstream #--image-on-term
+#  - audio:
+#      layout: main-vertical
+#      panes:
+#          - vimpc
+#          - alsamixer

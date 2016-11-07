@@ -1,0 +1,68 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+        color_good = "#859900"
+        color_bad = "#dc322f"
+        color_degraded = "#cb4b16"
+}
+
+#order += "ipv6"
+#order += "disk /"
+order += "run_watch DHCP"
+#order += "run_watch VPN"
+order += "wireless wlan1"
+order += "ethernet eth0"
+order += "volume master"
+order += "battery 0"
+order += "load"
+#order += "cpu_usage"
+order += "time"
+
+wireless wlan1 {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
+ethernet eth0 {
+        # if you use %speed, i3status requires root privileges
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+volume master {
+        format = "V: %volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPN {
+        #pidfile = "/var/run/vpnc/pid"
+        pidfile = "/var/run/vpnc/defaultroute"
+}
+
+time {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+        format = "%1min %5min"
+}
+
+cpu_usage {
+        #color = "#00FF00"
+        format= "%usage"
+}
+
+disk "/" {
+        format = "%free (or: %percentage_used used, %percentage_used_of_avail used of avail, %percentage_free free, %percentage_avail avail)"
+}

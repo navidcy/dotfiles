@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Screen locking and power suspending script.
+# The laptop should be locked and suspended, while the desktop should only be
+# locked.
+
+HOSTNAME=`hostname`
+
+#if [[ "$HOSTNAME" == 'flaptop' ]]; then
+    #killall ssh
+#fi
+mpc stop
+#i3lock -c 1d1f21
+$HOME/bin/xlock
+
+if [[ "$HOSTNAME" == 'flaptop' ]]; then
+    sudo pm-suspend-hybrid
+fi

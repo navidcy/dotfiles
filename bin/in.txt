@@ -1,0 +1,10 @@
+@article{mahadevan2012flow,
+  title={Flow-induced channelization in a porous medium},
+  author={Mahadevan, Amala and Orpe, AV and Kudrolli, A and Mahadevan, L},
+  journal={EPL (Europhysics Letters)},
+  volume={98},
+  number={5},
+  pages={58003},
+  year={2012},
+  publisher={IOP Publishing}
+}

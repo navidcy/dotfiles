@@ -1,0 +1,2 @@
+#!/bin/sh
+acpi | sed 's/Battery//; s/0://; s/Discharging//; s/Full, //; s/remaining//; s/  , //; s/Charging, /+/; s/ until charged/ /; s/, / /; s/Unknown //; s/ $//;'

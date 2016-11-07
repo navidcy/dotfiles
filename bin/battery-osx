@@ -1,0 +1,30 @@
+#!/bin/bash -e
+pmset -g batt | head -n 2 | tail -n 1 |\
+    awk '{ print $3 $4 $5 }' |\
+    sed 's/;/ /g' |\
+    sed 's/(no//' |\
+    sed 's/ discharging//' |\
+    sed 's/ charged//' |\
+    sed 's/ 0:00//' |\
+    sed 's/ charging/ ☇/' |\
+    sed 's/ACattached/☇/' |\
+    sed 's/finishingcharge/☇/' |\
+    sed 's/ $//' |\
+    sed "s/drawingfrom'AC//" |\
+    sed "s/from'ACPower'//" |\
+    sed 's/failure.*/batt fail/'
+
+# El Capitan and prior
+#pmset -g batt | head -n 2 | tail -n 1 |\
+#    awk '{ print $2 $3 $4 }' |\
+#    sed 's/;/ /g' |\
+#    sed 's/(no//' |\
+#    sed 's/ discharging//' |\
+#    sed 's/ charged//' |\
+#    sed 's/ 0:00//' |\
+#    sed 's/ charging/ ☇/' |\
+#    sed 's/ACattached/☇/' |\
+#    sed 's/finishingcharge/☇/' |\
+#    sed 's/ $//' |\
+#    sed "s/drawingfrom'AC//" |\
+#    sed 's/failure.*/batt fail/'

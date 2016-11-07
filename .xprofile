@@ -1,0 +1,4 @@
+#!/bin/sh
+[ -f $HOME/.locale ] && $HOME/.locale
+#export TERMINAL=xterm
+export TERMINAL=urxvt

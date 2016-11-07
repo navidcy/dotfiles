@@ -1,0 +1,4 @@
+#!/bin/sh
+pass Uni/xsede-adc-adamsgaard@ucsd.edu -c
+echo "Paste password from clipboard."
+ssh adc@login.xsede.org -t 'gsissh comet.sdsc.xsede.org'
