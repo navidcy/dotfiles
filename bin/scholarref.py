@@ -1,7 +1,32 @@
 #!/usr/bin/env python
-# encoding: utf-8
 """
-derived from doi2bib.py by Andrew Ning on April 4, 2013
+scholarref.py:
+
+This script searches an online database and returns a full BibTeX reference to
+the command line for the publication most closely matching the query.
+
+Usage:
+    ./scholarref.py <query>
+
+Example:
+    ./scholarref.py water flow in glaciers
+    @incollection{Hooke,
+        doi = {10.1017/cbo9780511614231.012},
+        publisher = {Cambridge University Press ({CUP})},
+        pages = {197--251},
+        author = {Roger LeB. Hooke},
+        title = {Water flow in and under glaciers: geomorphic implications},
+        booktitle = {Principles of Glacier Mechanics}
+    }
+
+Requirements are the `requests` Python library which can be installed with `pip
+install requests`.
+
+If you use Vim as your text editor, you can directly insert the output into the
+current document with the following binding:
+    nmap <leader>r :read !scholarref.py
+
+Written by Anders Damsgaard, derived from doi2bib.py by Andrew Ning.
 """
 
 import requests
