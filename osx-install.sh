@@ -38,7 +38,6 @@ brews=( \
     "id3v2"\
     "imagemagick"\
     "imapfilter"\
-    "libav"\
     "libevent"\
     "lua"\
     "mobile-shell"\
