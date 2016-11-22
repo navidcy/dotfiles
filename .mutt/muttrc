@@ -131,6 +131,7 @@ macro index \ f "l~F<enter>" "Show only flagged messages"
 bind editor <space> noop
 macro index \ 1 "<change-folder>=riseup/INBOX/<enter>" "Go to Riseup inbox"
 macro index \ u "<change-folder>=riseup/Spam.unsure/<enter>" "Go to Riseup/Spam.unsure"
+macro index \ a "<change-folder>=riseup/academic-alerts/<enter>" "Go to Riseup/academic-alerts"
 macro index \ s "<change-folder>=riseup/Spam/<enter>" "Go to Riseup/Spam"
 macro index \ ! "<change-folder>=riseup/Sent/<enter>" "Go to Riseup sent"
 macro index \ 2 "<change-folder>=geomail/INBOX/<enter>" "Go to Geomail inbox"
