@@ -122,6 +122,7 @@ bind attach,index,pager \CU previous-page
 
 bind index,pager R  group-reply
 bind index <tab>    sync-mailbox
+bind index B search-opposite
 
 macro index M "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "Mark all messages as read"
 macro index \ f "l~F<enter>" "Show only flagged messages"
