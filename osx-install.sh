@@ -71,6 +71,7 @@ brews=( \
     "w3m"\
     "watch"\
     "wget"\
+    "wireshark --with-lua --with-qt5"\
     "youtube-dl"\
     "zsh" )
 
