@@ -162,6 +162,14 @@ mailbox = 'vtk-users'
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
 results:move_messages(account[mailbox])
 
+-- Paraview list
+addr = 'paraview@paraview.org'
+mailbox = 'vtk-users'
+--account:create_mailbox(mailbox)
+--account:subscribe_mailbox(mailbox)
+results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
+results:move_messages(account[mailbox])
+
 
 -- Delete old DMI byvejr alerts --
 results = account.INBOX:contain_subject('Byvejr: ') * account.INBOX:is_older(1)
