@@ -128,6 +128,7 @@ alias ipython-prof='ipython -m cProfile -s time'
 alias python-prof='python -m cProfile -s time'
 alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U'
 alias denmark-date='TZ=Europe/Copenhagen date'
+alias date-denmark='TZ=Europe/Copenhagen date'
 function define() { curl --silent dict://dict.org/d:$1 }
 
 # enable color support of ls and also add handy aliases
