@@ -1,5 +1,6 @@
 #!/bin/sh
-mount=~/idkfa
+#mount=~/idkfa
+mount=/Volumes/idkfa
 mkdir -p $mount
 #ssh ad@132.239.153.219
 sshfs ad@idkfa.ucsd.edu:/home/ad/ $mount
