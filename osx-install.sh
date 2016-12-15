@@ -43,6 +43,7 @@ brews=( \
     "mobile-shell"\
     "mpc"\
     "mpd"\
+    "mpv"\
     "msmtp"\
     "mutt"\
     "--HEAD neovim/neovim/neovim"\

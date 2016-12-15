@@ -36,7 +36,7 @@ echo $mailboxes
 
 echo "---"
 
-from="$(cat $newmails | grep -m 1 '^From: ' | sed 's/From: //')"
+from="$(cat $newmails | grep '^From: ' | sed 's/From: //')"
 printf "$from\n"
 
 echo "---"
