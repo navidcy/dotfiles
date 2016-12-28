@@ -74,7 +74,10 @@ brews=( \
     "wget"\
     "wireshark --with-lua --with-qt5"\
     "youtube-dl"\
-    "zsh" )
+    "zsh"\
+    "scons"\  # for dcp2icc
+    "lcms"\  # for dcp2icc
+    )
 
 for brew in "${brews[@]}"; do
     brew install $brew
