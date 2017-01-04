@@ -111,10 +111,10 @@ bindsym XF86KbdBrightnessDown exec --no-startup-id /home/ad/bin/kbd_backlight.sh
 bindsym XF86KbdBrightnessUp exec --no-startup-id /home/ad/bin/kbd_backlight.sh up
 
 # mpd control
-bindsym $mod+Shift+p exec --no-startup-id mpc toggle && killall -SIGUSR1 i3status
-bindsym $mod+Shift+n exec --no-startup-id mpc next && killall -SIGUSR1 i3status
-bindsym $mod+Shift+b exec --no-startup-id mpc prev && killall -SIGUSR1 i3status
-bindsym $mod+Shift+s exec --no-startup-id mpc stop && killall -SIGUSR1 i3status
+bindsym $mod+Shift+p exec --no-startup-id mpc -h bigquake.ucsd.edu toggle && killall -SIGUSR1 i3status
+bindsym $mod+Shift+n exec --no-startup-id mpc -h bigquake.ucsd.edu next && killall -SIGUSR1 i3status
+bindsym $mod+Shift+b exec --no-startup-id mpc -h bigquake.ucsd.edu prev && killall -SIGUSR1 i3status
+bindsym $mod+Shift+s exec --no-startup-id mpc -h bigquake.ucsd.edu stop && killall -SIGUSR1 i3status
 
 # Light X colors
 #bindsym $mod+Shift+w exec --no-startup-id /home/ad/bin/solarized-light.sh
