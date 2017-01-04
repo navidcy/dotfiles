@@ -69,4 +69,4 @@ bibtex = bibtex.strip()
 if bibtex.find('<!DOCTYPE html>') != -1:
     sys.stderr.write('Entry not found\n')
 else:
-    print(bibtex)
+    print(bibtex.encode('utf-8'))
