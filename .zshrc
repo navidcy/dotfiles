@@ -256,3 +256,5 @@ alias cala="gcalcli agenda"
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
 
 export GPG_TTY=`tty`
+
+. $HOME/torch/install/bin/torch-activate
