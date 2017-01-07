@@ -257,4 +257,5 @@ alias cala="gcalcli agenda"
 
 export GPG_TTY=`tty`
 
+export GOPATH=$HOME/src/golang
 . $HOME/torch/install/bin/torch-activate
