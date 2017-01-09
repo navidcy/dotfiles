@@ -16,14 +16,16 @@ promptinit
 colors
 
 # check for background jobs
-local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$reset_color%}%{$fg[red]%}z%{$reset_color%}.)"
+local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$reset_color%}%{$fg[red]%}z %{$reset_color%}.)"
+local return_status="%{$fg[red]%}%(?..!)%{$reset_color%}"
+local prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
 
 PROMPT="
-${bg_jobs}%{$fg[red]%} » %{$reset_color%}"
+${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
 #PROMPT='%B%m%~%b$(git_super_status) %# '
 #PROMPT='
 #%b$(git_super_status) %{$fg[red]%}»%{$reset_color%} '
-RPROMPT='%B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
+RPROMPT='${return_status} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
 
 setopt AUTO_CD
 setopt CORRECT
