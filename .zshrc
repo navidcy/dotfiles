@@ -254,13 +254,10 @@ alias sha256sum='shasum -a 256'
 # calendar aliases
 alias cala="gcalcli agenda"
 
-#. /Users/ad/torch/install/bin/torch-activate
-
 [ -f ~/.bash_profile ] && source ~/.bash_profile
 [ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
+[ -f ~/torch ] && source ~/torch/install/bin/torch-activate
+export GOPATH=$HOME/src/golang
 
 export GPG_TTY=`tty`
-
-export GOPATH=$HOME/src/golang
-. $HOME/torch/install/bin/torch-activate
