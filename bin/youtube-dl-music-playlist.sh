@@ -34,7 +34,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     IFS=$(echo -en "\n\b")
     for f in *.mp3; do
 
-        echo "$f"
+        echo -e "\033[0;31m$f\033[0m"
 
         read -p "artist [$artist]: " input
         artist="${input:-$artist}"
