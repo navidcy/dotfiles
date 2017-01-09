@@ -166,9 +166,22 @@ macro index Y "<next-unread-mailbox>" "go to next mailbox with unread mails"
 #offlineimap to sync all mail"
 #macro index o "<shell-escape>offlineimap -u blinkenlights -qf INBOX<enter>" 
 #"run offlineimap to sync inboxes"
-macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inboxes"
-macro index K "<shell-escape>kill -9 $(ps aux|grep offlineimap|grep python|awk ' {print $2} ')<enter>" "kill all offlineimap processes"
+
+macro index,pager S "<enter-command>unset wait_key<enter>\
+<pipe-entry>bogofilter -l -s<enter>\
+<enter-command>set wait_key<enter>\
+<save-message>=riseup/Spam<enter>" "mark as spam"
+
+macro index O "<enter-command>unset wait_key<enter>\
+<shell-escape>offlineimap<enter>\
+<enter-command>set wait_key<enter>" "run offlineimap to sync all mail"
+
+macro index o "<enter-command>unset wait_key<enter>\
+<shell-escape>offlineimap -qf INBOX<enter>\
+<enter-command>set wait_key<enter>" "run offlineimap to sync inboxes"
+
+macro index K "<enter-command>unset wait_key<enter>\
+          <shell-escape>kill -9 $(ps aux|grep offlineimap|grep python|awk ' {print $2} ')<enter>" "kill all offlineimap processes"
 
 macro index U "<limit>all\n" "show all messages (undo limit)"
 
