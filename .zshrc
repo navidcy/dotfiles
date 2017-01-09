@@ -15,8 +15,11 @@ compinit
 promptinit
 colors
 
+# check for background jobs
+local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$reset_color%}%{$fg[red]%}z%{$reset_color%}.)"
+
 PROMPT="
-%{$fg[red]%} » %{$reset_color%}"
+${bg_jobs}%{$fg[red]%} » %{$reset_color%}"
 #PROMPT='%B%m%~%b$(git_super_status) %# '
 #PROMPT='
 #%b$(git_super_status) %{$fg[red]%}»%{$reset_color%} '
