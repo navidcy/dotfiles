@@ -56,7 +56,7 @@ NeoBundle 'bufexplorer.zip'
 
 " Vim-LaTeX suite
 "NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+"NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " Use <Tab> to autocomplete in insert mode
 NeoBundle 'ervandew/supertab'
@@ -176,7 +176,8 @@ NeoBundle 'majutsushi/tagbar'
 " Control mpd by CtrlP
 NeoBundle 'lucidstack/ctrlp-mpc.vim'
 
-" Show indentation levels with thin vertical lines
+" Show indentation levels with thin vertical lines. This plugin enables the 
+" conceal feature in Vim >= 7.3.
 NeoBundle 'Yggdroot/indentLine'
 
 " Show command documentation in a scratch buffer, usage ":G <query"
@@ -694,14 +695,22 @@ nnoremap <leader>M :CtrlPMpc<cr>
 "set cm=blowfish
 
 " Indent guides color and character┆│¦⦙
-let g:indentLine_char = '¦'
+let g:indentLine_char = '┆'
 " Vim
-let g:indentLine_color_term = 238
+"let g:indentLine_color_term = 238
 "GVim
-let g:indentLine_color_gui = '#3A3A3A'
+"let g:indentLine_color_gui = '#3A3A3A'
 
 " toggle autoformatting of text
 nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
 
 " enable spell checking by default for certain file types
 autocmd FileType tex,md,rst,mail setlocal spell
+"
+" customize what is concealed in LaTeX documents:
+" a = conceal accents/ligatures
+" d = conceal delimiters
+" g = conceal Greek
+" m = conceal math symbols
+" s = conceal superscripts/subscripts
+let g:tex_conceal="agm"
