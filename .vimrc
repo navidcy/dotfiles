@@ -702,3 +702,6 @@ let g:indentLine_color_gui = '#3A3A3A'
 
 " toggle autoformatting of text
 nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
+
+" enable spell checking by default for certain file types
+autocmd FileType tex,md,rst,mail setlocal spell
