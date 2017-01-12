@@ -183,6 +183,10 @@ NeoBundle 'Yggdroot/indentLine'
 " Show command documentation in a scratch buffer, usage ":G <query"
 NeoBundle 'evidanary/grepg.vim'
 
+" cycle through yank history with <leader>p and <leader>P after pasting,
+" see history with :Yanks
+NeoBundle 'maxbrunsfeld/vim-yankstack'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -382,7 +386,7 @@ nmap <Leader>x :x<CR>
 nmap <leader><tab> <C-^>
 
 " Explore buffers
-nmap <leader>b :BufExplorer<CR>
+"nmap <leader>b :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -533,8 +537,8 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
-nmap <leader>P :CtrlPTag<CR>
-nmap <leader>p :CtrlPBuffer<CR>
+"nmap <leader>P :CtrlPTag<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>O :CtrlPMRUFiles<CR>
 nmap <leader>o :CtrlP<CR>
 
@@ -603,6 +607,11 @@ nnoremap <leader>a :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
 nmap <leader>A :Ag <c-r>=expand("<cword>")<cr><cr>
 " search for text in project files
 nnoremap <space>/ :Ag 
+
+" Cycle through yank history
+let g:yankstack_map_keys = 0
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " align things into columns interactively
 vnoremap <silent> <Enter> :EasyAlign<cr>
