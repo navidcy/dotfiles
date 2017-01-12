@@ -39,11 +39,18 @@ nhits = 1
 
 # Use crossref metadata search (beta) to get the DOI
 params = {'q': query, 'rows': str(nhits)}
-r = requests.get('http://search.labs.crossref.org/dois', params=params)
+doi_search_url = 'http://search.labs.crossref.org/dois'
+r = requests.get(doi_search_url, params=params)
 
 dois = []
-for j in r.json():
-    dois.append(j['doi'].split('dx.doi.org/')[1])
+try:
+    for j in r.json():
+        dois.append(j['doi'].split('dx.doi.org/')[1])
+except Exception as e:
+    print('Error: ' + str(e))
+    print('Maybe DOI service at ' + doi_search_url + ' is unavailable?')
+    print('Server response: ' + str(r))
+    sys.exit(1)
 
 # get the DOI of the first result
 doi = dois[0]
