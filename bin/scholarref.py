@@ -39,7 +39,7 @@ nhits = 1
 
 # Use crossref metadata search (beta) to get the DOI
 params = {'q': query, 'rows': str(nhits)}
-doi_search_url = 'http://search.labs.crossref.org/dois'
+doi_search_url = 'http://search.crossref.org/dois'
 r = requests.get(doi_search_url, params=params)
 
 dois = []
