@@ -714,7 +714,7 @@ let g:indentLine_char = '┆'
 nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
 
 " enable spell checking by default for certain file types
-autocmd FileType tex,md,rst,mail setlocal spell
+autocmd FileType tex,md,rst,mail :setlocal spell spelllang=en_us
 "
 " customize what is concealed in LaTeX documents:
 " a = conceal accents/ligatures
