@@ -62,8 +62,6 @@ set fast_reply=yes    # skip initial prompts when replying
 set include=yes       # include original mail in reply
 set editor="vim +8 -c 'set ft=mail noautoindent spell spelllang=en_us,da'"
 set nomark_old        # Don't mark unread new msgs as old.
-set nosmart_wrap      # Don't want smart wrapping.
-set nomarkers         # Don't want any wrap markers.
 set mime_forward      # Forward message as MIME attachments.
 set pager_context=3   # Display 3 lines of context in pager.
 set nostrict_threads  # Lets have some fuzzy threading.
@@ -78,6 +76,9 @@ set read_inc=100     # Read counter ticks every 100 msgs.
 set write_inc=100    # Write counter ticks every 100 msgs.
 set noconfirmappend  # Just append, don't hassle me.
 set pager_stop=yes   # Stop at end of mail instead of displaying next mail
+set smart_wrap=yes   # wrap long lines at a word boundary
+set markers=yes      # show + symbol at the start of wrapped lines
+#set wrap=-1         # wrap lines 1 character from right boundary
 
 # What we consider to be a quote.
 set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"

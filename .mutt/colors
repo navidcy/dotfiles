@@ -27,7 +27,7 @@ color status		color250		color237
 color error		black		red
 color attachment	magenta		default
 color signature		red		default
-color markers		red		yellow
+color markers		color250		color237
 #color tilde		yellow		black
 color tilde		blue		default
 color search		white		red
