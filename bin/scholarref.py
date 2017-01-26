@@ -71,6 +71,37 @@ bibtex = bibtex.replace('\t', '    ')
 bibtex = bibtex.replace('_', '', 1)  # strip _ from cite key
 bibtex = re.sub('.*url.*\n', '', bibtex)  # remove url field
 bibtex = re.sub('.*month.*\n', '', bibtex)  # remove month field
+
+# appreviate journal names
+bibtex = bibtex.replace('Journal', 'J.')
+#bibtex = bibtex.replace('of ', '')
+#bibtex = bibtex.replace('and ', '')
+#bibtex = bibtex.replace('the ', '')
+bibtex = bibtex.replace('Geophysical', 'Geophys.')
+bibtex = bibtex.replace('Research', 'Res.')
+bibtex = bibtex.replace('Letters', 'Lett.')
+bibtex = bibtex.replace('Mechanics', 'Mech.')
+bibtex = bibtex.replace('Glaciology', 'Glaciol.')
+bibtex = bibtex.replace('Proceedings', 'Proc.')
+bibtex = bibtex.replace('Royal', 'R.')
+bibtex = bibtex.replace('Society', 'Soc.')
+bibtex = bibtex.replace('Annals', 'Ann.')
+bibtex = bibtex.replace('Resources', 'Resour.')
+bibtex = bibtex.replace('Surface', 'Surf.')
+bibtex = bibtex.replace('Processes', 'Proc.')
+bibtex = bibtex.replace('National', 'Nat.')
+bibtex = bibtex.replace('Computers', 'Comput.')
+bibtex = bibtex.replace('Geotechnics', 'Geotech.')
+bibtex = bibtex.replace('Academy', 'Acad.')
+bibtex = bibtex.replace('Sciences', 'Sci.')
+bibtex = bibtex.replace('Review', 'Rev.')
+bibtex = bibtex.replace('Quaternary', 'Quat.')
+bibtex = bibtex.replace('Physical', 'Phys.')
+bibtex = bibtex.replace('Planetary', 'Planet.')
+bibtex = bibtex.replace('Quarterly', 'Q.')
+bibtex = bibtex.replace('Geological', 'Geol.')
+
+
 bibtex = bibtex.strip()
 
 if bibtex.find('<!DOCTYPE html>') != -1:
