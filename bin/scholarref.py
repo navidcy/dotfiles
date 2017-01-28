@@ -33,6 +33,7 @@ import requests
 import sys
 import re
 
+verbose = False
 
 query = ' '.join(sys.argv[1:])
 nhits = 1
@@ -54,6 +55,8 @@ except Exception as e:
 
 # get the DOI of the first result
 doi = dois[0]
+if verbose:
+    print('Received DOI from ' + doi_search_url)
 
 # fix escaped chars
 doi = doi.replace('\\', '')
@@ -62,6 +65,8 @@ doi = doi.replace('\\', '')
 # use REST API (see http://crosscite.org/cn/)
 headers = {'Accept': 'application/x-bibtex'}
 r = requests.post('http://dx.doi.org/' + doi, headers=headers)
+if verbose:
+    print('Received bibtex entry from dx.doi.org')
 
 # extract bibtex
 r.encoding = 'utf-8'
