@@ -77,7 +77,7 @@ set write_inc=100    # Write counter ticks every 100 msgs.
 set noconfirmappend  # Just append, don't hassle me.
 set pager_stop=yes   # Stop at end of mail instead of displaying next mail
 set smart_wrap=yes   # wrap long lines at a word boundary
-set markers=yes      # show + symbol at the start of wrapped lines
+set markers=no       # show + symbol at the start of wrapped lines
 #set wrap=-1         # wrap lines 1 character from right boundary
 
 # What we consider to be a quote.
