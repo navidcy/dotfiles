@@ -182,7 +182,7 @@ macro index o "<enter-command>unset wait_key<enter>\
 <enter-command>set wait_key<enter>" "run offlineimap to sync inboxes"
 
 macro index K "<enter-command>unset wait_key<enter>\
-          <shell-escape>kill -9 $(ps aux|grep offlineimap|grep python|awk ' {print $2} ')<enter>" "kill all offlineimap processes"
+<shell-escape>kill -9 $(ps aux|grep offlineimap|grep python|awk ' {print $2} ')<enter>" "kill all offlineimap processes"
 
 macro index U "<limit>all\n" "show all messages (undo limit)"
 
