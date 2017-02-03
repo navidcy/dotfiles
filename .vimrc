@@ -28,7 +28,9 @@ NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'scrooloose/nerdtree'
 
 " syntax checking plugin
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
+" asynchronous syntax checking
+NeoBundle 'w0rp/ale'
 
 " fuzzy file, buffer, and tag finder
 NeoBundle 'kien/ctrlp.vim'
@@ -57,6 +59,9 @@ NeoBundle 'bufexplorer.zip'
 " Vim-LaTeX suite
 "NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 "NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+
+" autocompletion (C-space)
+NeoBundle 'davidhalter/jedi-vim'
 
 " Use <Tab> to autocomplete in insert mode
 NeoBundle 'ervandew/supertab'
@@ -470,16 +475,16 @@ nmap <leader>g :Start git commit -a -v -S<CR>
 nmap <leader>G :Start git commit -a -v -S && git push<CR>
 
 " Toggle fold
-"nmap <leader>f za
+nmap <leader>f za
 " Toggle all folds
 nmap <leader>F zA
-nmap <leader>Fa zR
-nmap <leader>FA zM
+"nmap <leader>Fa zR
+"nmap <leader>FA zM
 " zc: close a fold
 " zo: open a fold
 " za: toggle a fold
 " zM: close all folds
-" zR: open all fol
+" zR: open all folds
 
 " Switch split focus with <C-h>, <C-j>, <C-k> and <C-l>
 "map <C-h> <C-w>h
@@ -568,20 +573,20 @@ vmap <Leader>V "+P
 "nmap <leader>a :Ack 
 
 " syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['python']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['python']
 
 " adjust signcolumn appearance
-let g:syntastic_error_symbol = 'e'
-let g:syntastic_warning_symbol = 'w'
-highlight clear SignColumn
+"let g:syntastic_error_symbol = 'e'
+"let g:syntastic_warning_symbol = 'w'
+"highlight clear SignColumn
 
 " LaTeX unicode symbols
 "let g:unicoder_cancel_normal = 1
@@ -629,33 +634,33 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
+"let g:pymode_rope = 1
 
 " Documentation
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
+"let g:pymode_doc = 1
+"let g:pymode_doc_key = 'K'
 
 "Linting
-let g:pymode_lint = 0
-let g:pymode_lint_checker = "pyflakes,pep8"
+"let g:pymode_lint = 0
+"let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
-let g:pymode_lint_write = 0
+"let g:pymode_lint_write = 0
 
 " Support virtualenv
-let g:pymode_virtualenv = 1
+"let g:pymode_virtualenv = 1
 
 " Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>B'
+"let g:pymode_breakpoint = 1
+"let g:pymode_breakpoint_bind = '<leader>B'
 
 " syntax highlighting
-let g:pymode_syntax = 0
-let g:pymode_syntax_all = 0
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
+"let g:pymode_syntax = 0
+"let g:pymode_syntax_all = 0
+"let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+"let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
-let g:pymode_folding = 0
+"let g:pymode_folding = 0
 
 " Enable emmet in all modes
 let g:user_emmet_mode='n'
@@ -711,7 +716,7 @@ let g:indentLine_char = '┆'
 "let g:indentLine_color_gui = '#3A3A3A'
 
 " toggle autoformatting of text
-nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
+"nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
 
 " enable spell checking by default for certain file types
 autocmd FileType tex,md,rst,mail :setlocal spell spelllang=en_us
