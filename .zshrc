@@ -16,8 +16,8 @@ promptinit
 colors
 
 # check for background jobs
-local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$reset_color%}%{$fg[red]%}z %{$reset_color%}.)"
-local return_status="%{$fg[red]%}%(?..!)%{$reset_color%}"
+local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$fg[blue]%}bg %{$reset_color%}.)"
+local return_status="%(?..%{$fg[red]%}%?%{$reset_color%})"
 local prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
 
 PROMPT="
