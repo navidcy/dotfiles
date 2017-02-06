@@ -105,6 +105,7 @@ bibtex = bibtex.replace('Physical', 'Phys.')
 bibtex = bibtex.replace('Planetary', 'Planet.')
 bibtex = bibtex.replace('Quarterly', 'Q.')
 bibtex = bibtex.replace('Geological', 'Geol.')
+bibtex = bibtex.replace('Applied', 'Appl.')
 
 
 bibtex = bibtex.strip()
