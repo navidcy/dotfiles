@@ -5,6 +5,8 @@ echo "starting $SESSION tmux session"
 tmux has-session -t $SESSION
 if [ $? != 0 ]
 then
+    mpd ~/.mpd/mpd.conf
+
     # Create new session, name it, name the window, detach
     tmux new-session -s $SESSION -n misc -d
 
