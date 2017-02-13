@@ -1,7 +1,7 @@
 [user]
-	email = adc@geo.au.dk
-	name = Anders Damsgaard Christensen
-	signkey = AC6517CA
+	email = andersd@riseup.net
+	name = Anders Damsgaard
+	signkey = 56A56CA2
 [color]
 	ui = auto
 [push]
