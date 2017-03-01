@@ -21,6 +21,12 @@ fi
 if [[ $mailboxes == *"gmail"* ]]; then
     accounts="${accounts}g"
 fi
+if [[ $mailboxes == *"princeton"* ]]; then
+    accounts="${accounts}p"
+fi
+if [[ $mailboxes == *"noaa"* ]]; then
+    accounts="${accounts}n"
+fi
 
 if [ "$numbernewmails" -gt 0 ]; then
     mailcolor="#cb4b16"
