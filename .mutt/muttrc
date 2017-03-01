@@ -43,9 +43,16 @@ folder-hook princeton 'set \
         signature=~/.signature\
         sendmail = "msmtp -a princeton"'
 
+folder-hook noaa 'set \
+        from="Anders Damsgaard <anders.damsgaard@noaa.gov> "\
+        realname="Anders Damsgaard"\
+        record=+noaa/[Gmail].Sent\ Mail\
+        postponed=+noaa/[Gmail].Drafts\
+        sendmail = "msmtp -a noaa"'
+
 
 # ignore own e-mail addresses from group-reply
-alternates adamsgaard@ucsd.edu|adamsgaard@mail.ucsd.edu|andersd@risuep.net|andersdc@gmail.com|adc@geo.au.dk|anders.damsgaard@geo.au.dk|andersd@princeton.edu
+alternates adamsgaard@ucsd.edu|adamsgaard@mail.ucsd.edu|andersd@risuep.net|andersdc@gmail.com|adc@geo.au.dk|anders.damsgaard@geo.au.dk|andersd@princeton.edu|anders.damsgaard@noaa.gov
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
@@ -154,6 +161,8 @@ macro index \ $ "<change-folder>=gmail/[Gmail].Sent\ Mail/<enter>" "Go to Gmail 
 macro index \ c "<change-folder>=geomail/INBOX.cryolist/<enter>" "Go to cryolist"
 macro index \ 5 "<change-folder>=princeton/INBOX/<enter>" "Go to Princeton inbox"
 macro index \ % "<change-folder>=princeton/Sent Items/<enter>" "Go to Princeton sent"
+macro index \ 6 "<change-folder>=noaa/INBOX/<enter>" "Go to NOAA inbox"
+macro index \ ^ "<change-folder>=noaa/[Gmail].Sent\ Mail/<enter>" "Go to NOAA sent"
 
 
 # mutt-sidebar

@@ -7,7 +7,7 @@
 [general]
 # List of accounts to be synced, separated by a comma.
 #accounts = riseup,geomail
-accounts = riseup,geomail,ucsd,gmail
+accounts = riseup,geomail,ucsd,gmail,princeton,noaa
 # Suppress nothing but errors
 #ui = quiet
 ui = ttyui
@@ -298,4 +298,65 @@ cert_fingerprint = 0855b2039ba7540c2f53f186bfc34fde80468fad
 # connection open, set this to true. This setting has no effect if autorefresh
 # is not set.
 #holdconnectionopen = yes
+
+[Account noaa]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = noaa-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = noaa-remote
+# Status cache. Default is plain, which eventually becomes huge and slow.
+status_backend = sqlite
+postsynchook = notmuch new
+
+# Minutes between syncs
+#autorefresh = 5
+# Number of quick-syncs between autorefreshes. Quick-syncs do not update if the
+# only changes were to IMAP flags
+#quick = 10
+
+[Repository noaa-local]
+# Currently, offlineimap only supports maildir and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/Mail/noaa
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+    'sent':    '[Gmail]/Sent Mail',
+    'flagged': '[Gmail]/Starred',
+    'trash':   '[Gmail]/Trash',
+    'archive': '[Gmail]/All Mail',
+    }.get(folder, folder)
+
+[Repository noaa-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = Gmail
+remoteuser = anders.damsgaard@noaa.gov
+remotepasseval = get_keychain_pass(account="anders.damsgaard@noaa.gov", server="imap.gmail.com")
+auth_mechanisms = LOGIN
+realdelete = no
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+    'sent':    '[Gmail]/Sent Mail',
+    'flagged': '[Gmail]/Starred',
+    'trash':   '[Gmail]/Trash',
+    'archive': '[Gmail]/All Mail',
+    }.get(folder, folder)
+#cert_fingerprint = c1a3bb1a8617af4a28ee2e0cd494533c3cd70bf8
+#cert_fingerprint = fc0a6ba4bf46851bcea02c6a438de63f6811165b,5f9f9598bf27cce4a97762336a753b8c07878564,f0b04600b419486538ace149e3615c7d94953c87
+ssl=true
+# install openssl from homebrew
+sslcacertfile=/usr/local/etc/openssl/cert.pem
+
+#folderfilter = lambda folder: folder not in ['Kalender','Kontaktpersoner','Slettet post','NFIT-Import-adc-2012-09-11-04:18']
+
+# Instead of closing the connection once a sync is complete, offlineimap will
+# send empty data to the server to hold the connection open. A value of 60
+# attempts to hold the connection for a minute between syncs (both quick and
+# autorefresh).This setting has no effect if autorefresh and holdconnectionopen
+# are not both set.
+#keepalive = 60
+# OfflineIMAP normally closes IMAP server connections between refreshes if
+# the global option autorefresh is specified.  If you wish it to keep the
+# connection open, set this to true. This setting has no effect if autorefresh
+# is not set.
+#holdconnectionopen = yes
+
 
