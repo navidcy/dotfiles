@@ -18,7 +18,7 @@ then
     tmux send-keys -t $SESSION 'fortune' C-m
 
     tmux select-pane -t $SESSION:1.1
-    tmux split-window -v -t $SESSION
+    tmux split-window -p 33 -v -t $SESSION
     tmux send-keys -t $SESSION 'vimpc' C-m
 
     tmux select-pane -t $SESSION:1.3
