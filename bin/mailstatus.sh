@@ -1,5 +1,9 @@
 #!/bin/bash
-newmails=$(find ~/Mail/*/INBOX/new -type f)
+maildir=~/Mail
+if [ ! -d $maildir ]; then
+    exit 0
+fi
+newmails=$(find $maildir/*/INBOX/new -type f)
 numbernewmails=$(echo $newmails | wc -w | sed 's/ *//')
 mailboxes="$(echo $newmails | tr ' ' '\n' | sed 's/.*Mail\///' | sed 's/\/INBOX.*//')"
 
