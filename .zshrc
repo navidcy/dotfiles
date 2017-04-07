@@ -148,6 +148,11 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+if [ -f /usr/local/Modules/default/init/zsh ]; then
+    source /usr/local/Modules/default/init/zsh && \
+    module load git vim python paraview
+fi
+
 # use Ctrl-Z as fg
 fancy-ctrl-z () {
     if [[ $#BUFFER -eq 0 ]]; then
