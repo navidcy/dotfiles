@@ -223,6 +223,7 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
+[ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
 
 [ -f $HOME/.locale ] && $HOME/.locale
 
