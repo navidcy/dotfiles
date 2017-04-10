@@ -150,7 +150,8 @@ alias egrep='egrep --color=auto'
 
 if [ -f /usr/local/Modules/default/init/zsh ]; then
     source /usr/local/Modules/default/init/zsh && \
-    module load git vim python paraview
+    #module load git vim #python paraview ncview matlab ifort
+    module load git vim paraview matlab ifort python/2.7.1
 fi
 
 # use Ctrl-Z as fg
