@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Create symlinks
 mkdir -p ./.vim/bundle
