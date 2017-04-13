@@ -230,6 +230,10 @@ fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
 [ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
+if [ -d $HOME/local/python ]; then
+    export PYTHONPATH=$HOME/local/python:$PYTHONPATH
+    export PATH=$HOME/local/python:$PATH
+fi
 
 [ -f $HOME/.locale ] && $HOME/.locale
 
