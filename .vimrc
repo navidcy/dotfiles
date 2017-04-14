@@ -256,8 +256,8 @@ set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
 set incsearch       " search as you type
 set laststatus=2    " always show the statusline
-set list            " enable rendering of invisible characters
-set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
+"set list            " enable rendering of invisible characters
+"set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
 set number          " set linenumbering ON as default
 set relativenumber  " set relative linenumbering ON as default
 set pastetoggle=<F2> " toggle paste mode
@@ -697,7 +697,7 @@ let g:startify_custom_header =
             "\ ]
 
 " Split divider appearance
-set fillchars=vert:│,fold:-
+"set fillchars=vert:│,fold:-
 "hi! VertSplit ctermfg=15 ctermbg=NONE term=NONE
 hi! VertSplit ctermfg=238 ctermbg=NONE term=NONE
 
@@ -709,7 +709,7 @@ nnoremap <leader>M :CtrlPMpc<cr>
 "set cm=blowfish
 
 " Indent guides color and character┆│¦⦙
-let g:indentLine_char = '┆'
+"let g:indentLine_char = '┆'
 " Vim
 "let g:indentLine_color_term = 238
 "GVim

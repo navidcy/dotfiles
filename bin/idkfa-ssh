@@ -1,6 +1,12 @@
-#!/bin/sh
-#ssh ad@172.16.154.22
-#ssh ad@132.239.153.219
-#ssh ad@idkfa.ucsd.edu
-tmux rename-window idkfa
-mosh ad@idkfa.ucsd.edu
+#!/bin/bash
+set -e
+remotecommand='tmux attach -dt utility'
+host=idkfa.ucsd.edu
+user=ad
+if [ "$1" = "-s" ]; then
+    ssh $user@$host -t $remotecommand
+elif [ "$1" = "-a" ]; then
+    autossh $user@$host
+else
+    mosh $user@$host -- $remotecommand
+fi

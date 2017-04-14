@@ -148,6 +148,12 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+if [ -f /usr/local/Modules/default/init/zsh ]; then
+    source /usr/local/Modules/default/init/zsh && \
+    #module load git vim #python paraview ncview matlab ifort
+    module load git vim paraview matlab ifort python/2.7.1
+fi
+
 # use Ctrl-Z as fg
 fancy-ctrl-z () {
     if [[ $#BUFFER -eq 0 ]]; then
@@ -223,6 +229,11 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
+[ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
+if [ -d $HOME/local/python ]; then
+    export PYTHONPATH=$HOME/local/python:$PYTHONPATH
+    export PATH=$HOME/local/python:$PATH
+fi
 
 [ -f $HOME/.locale ] && $HOME/.locale
 
