@@ -31,7 +31,7 @@ localrepository = riseup-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = riseup-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
+#status_backend = sqlite
 #presynchook = imapfilter -c ~/.imapfilter/riseup.lua
 #presynchook = imapfilter -t /usr/local/etc/openssl/cert.pem -c ~/.imapfilter/riseup.lua
 presynchook = imapfilter -t ~/.mutt/cert.pem -c ~/.imapfilter/riseup.lua
@@ -78,7 +78,7 @@ localrepository = geomail-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = geomail-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
+#status_backend = sqlite
 postsynchook = notmuch new
 
 # Minutes between syncs
@@ -122,7 +122,7 @@ localrepository = ucsd-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = ucsd-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
+#status_backend = sqlite
 postsynchook = notmuch new
 
 # Minutes between syncs
@@ -167,7 +167,7 @@ localrepository = gmail-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = gmail-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
+#status_backend = sqlite
 postsynchook = notmuch new
 
 # Minutes between syncs
@@ -229,7 +229,7 @@ localrepository = icloud-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = icloud-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
+#status_backend = sqlite
 postsynchook = notmuch new
 
 # Minutes between syncs
@@ -262,7 +262,7 @@ localrepository = princeton-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = princeton-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
+#status_backend = sqlite
 postsynchook = notmuch new
 
 # Minutes between syncs
@@ -305,7 +305,7 @@ localrepository = noaa-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = noaa-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
-status_backend = sqlite
+#status_backend = sqlite
 postsynchook = notmuch new
 
 # Minutes between syncs
