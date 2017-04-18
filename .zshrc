@@ -188,7 +188,11 @@ export EDITOR="vim"
 # Environment variables
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
-[ -d $HOME/.linuxbrew/bin ] && export PATH=$HOME/.linuxbrew/bin:$PATH
+if [ -d $HOME/.linuxbrew ]; then
+    export PATH=$HOME/.linuxbrew/bin:$PATH
+    export MANPATH=$HOME/.linuxbrew/share/man:$MANPATH
+    export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
+fi
 
 HOSTNAME=$(hostname)
 if [[ "$HOSTNAME" == "iddqd" ]]; then
