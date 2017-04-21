@@ -229,6 +229,7 @@ let g:airline_theme = 'tender'
 "let g:airline_theme = 'wombat'
 "let g:airline_theme = 'powerlineish'
 "let g:airline_theme = 'bubblegum'
+highlight Normal     cterm=NONE  ctermfg=NONE  ctermbg=NONE
 highlight Search     cterm=NONE  ctermfg=black ctermbg=2
 highlight MatchParen cterm=NONE  ctermfg=255   ctermbg=199
 highlight SpecialKey ctermfg=250 ctermbg=NONE  cterm=NONE
