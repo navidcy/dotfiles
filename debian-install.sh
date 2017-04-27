@@ -70,9 +70,9 @@ sudo apt-get install \
     xautolock \
     xbacklight \
     xbindkeys \
-    youtube-dl
+    youtube-dl \
     zathura \
-    zsh \
+    zsh
 
 
 sudo gem install tmuxinator
