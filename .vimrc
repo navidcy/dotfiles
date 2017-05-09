@@ -54,7 +54,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-dispatch'
 
 " browse buffers (vim.org/scripts), \be, \bs, \bv
-NeoBundle 'bufexplorer.zip'
+"NeoBundle 'bufexplorer.zip'
 
 " Vim-LaTeX suite
 "NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
