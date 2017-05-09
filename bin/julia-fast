@@ -1,2 +1,3 @@
 #!/bin/bash
-julia --procs auto --optimize=3 --math-mode=fast $@
+#julia --procs auto --optimize=3 --math-mode=fast $@
+julia --procs 1 --optimize=3 --math-mode=fast $@
