@@ -22,7 +22,12 @@ if [ $TO == $FROM ]; then echo "Nothing to do!"; exit 2; fi
 CONVERTER="http://www.google.com/finance/converter?a=$A&from=$FROM&to=$TO"
 #echo $CONVERTER
 
-RESULT=`wget -nv -O - "$CONVERTER" 2>&1 | \
+GETCMD="wget --no-verbose"
+if command -v torify >/dev/null 2>/dev/null; then
+    GETCMD="torify $GETCMD"
+fi
+
+RESULT=`$GETCMD -O - "$CONVERTER" 2>&1 | \
     LC_ALL=C sed -n -e 's/.*<span class=bld>\(.*\)<\/span>.*/\1/p'`
 
 #echo "Result: $A $FROM = $RESULT"
