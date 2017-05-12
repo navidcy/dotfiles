@@ -9,6 +9,9 @@ if [ "$1" = "-s" ]; then
 elif [ "$1" = "-a" ]; then
     autossh -i ~/.ssh/google-cloud-ssh-key $user@$host
 else
+    if [[ "$1" = "notmux" ]]; then
+        remotecommand=""
+    fi
     mosh --ssh="ssh -i ~/.ssh/google-cloud-ssh-key" $user@$host \
         -- $remotecommand
 fi
