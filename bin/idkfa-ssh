@@ -8,5 +8,8 @@ if [ "$1" = "-s" ]; then
 elif [ "$1" = "-a" ]; then
     autossh $user@$host
 else
+    if [ "$1" = "notmux" ]; then
+        remotecommand=""
+    fi
     mosh $user@$host -- $remotecommand
 fi
