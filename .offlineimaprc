@@ -7,7 +7,7 @@
 [general]
 # List of accounts to be synced, separated by a comma.
 #accounts = riseup,geomail
-accounts = riseup,geomail,ucsd,gmail,princeton,noaa
+accounts = riseup,geomail,gmail,princeton,noaa
 # Suppress nothing but errors
 #ui = quiet
 ui = ttyui
