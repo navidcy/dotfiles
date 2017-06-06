@@ -52,7 +52,7 @@ folder-hook noaa 'set \
 
 
 # ignore own e-mail addresses from group-reply
-alternates adamsgaard@ucsd.edu|adamsgaard@mail.ucsd.edu|andersd@risuep.net|andersdc@gmail.com|adc@geo.au.dk|anders.damsgaard@geo.au.dk|andersd@princeton.edu|anders.damsgaard@noaa.gov
+alternates adamsgaard@ucsd.edu|adamsgaard@mail.ucsd.edu|andersd@risuep.net|andersdc@gmail.com|adc@geo.au.dk|anders.damsgaard@geo.au.dk|andersd@princeton.edu|andersd@exchange.Princeton.EDU|anders.damsgaard@noaa.gov
 
 # Cache files
 set header_cache=~/.mutt/cache/headers
