@@ -15,7 +15,8 @@ then
     tmux send-keys -t $SESSION 'mutt' C-m
 
     tmux split-window -h -t $SESSION
-    tmux send-keys -t $SESSION 'fortune' C-m
+    #tmux send-keys -t $SESSION 'fortune' C-m
+    tmux send-keys -t $SESSION 'bin/todo.sh' C-m
 
     tmux select-pane -t $SESSION:1.1
     tmux split-window -p 33 -v -t $SESSION
