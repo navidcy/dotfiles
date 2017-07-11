@@ -27,6 +27,22 @@ then
     #tmux send-keys -t $SESSION 'mosh ad@idkfa.ucsd.edu' C-m
     tmux send-keys -t $SESSION 'bin/google-cloud-lamps-instance1-ssh.sh' C-m
 
+    # optionally load additional windows
+    if [ "$1" = "seaice" ]; then
+        tmux new-window -t $SESSION -n SeaIce
+        tmux select-pane -t $SESSION:2.1
+        tmux send-keys -t $SESSION 'cd ~/code/SeaIce && vim' C-m
+        tmux split-window -p 33 -h -t $SESSION
+        tmux send-keys -t $SESSION 'cd ~/code/SeaIce && julia' C-m
+
+        tmux new-window -t $SESSION -n SeaIce-exp
+        tmux select-pane -t $SESSION:3.1
+        tmux send-keys -t $SESSION 'cd ~/code/SeaIce-experiments' C-m
+        tmux split-window -p 33 -h -t $SESSION
+        tmux send-keys -t $SESSION \
+            'cd ~/code/SeaIce-experiments && ~/bin/seaice-status.sh' C-m
+    fi
+
     #tmux select-layout tiled
     tmux select-pane -t $SESSION:1.1
 
