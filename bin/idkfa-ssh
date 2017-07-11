@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-remotecommand='tmux attach -dt utility'
+remotecommand='tmux attach'
 host=idkfa.ucsd.edu
 user=ad
 if [ "$1" = "-s" ]; then

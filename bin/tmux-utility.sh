@@ -41,6 +41,11 @@ then
         tmux split-window -p 33 -h -t $SESSION
         tmux send-keys -t $SESSION \
             'cd ~/code/SeaIce-experiments && ~/bin/seaice-status.sh' C-m
+
+        tmux new-window -t $SESSION -n idkfa
+        tmux select-pane -t $SESSION:4.1
+        tmux send-keys -t $SESSION \
+            'sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && cd ~/bin/idkfa-ssh' C-m
     fi
 
     #tmux select-layout tiled
