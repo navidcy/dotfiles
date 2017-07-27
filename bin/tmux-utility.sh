@@ -45,7 +45,7 @@ then
         tmux new-window -t $SESSION -n idkfa
         tmux select-pane -t $SESSION:4.1
         tmux send-keys -t $SESSION \
-            'sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && cd ~/bin/idkfa-ssh' C-m
+            'sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && ~/bin/idkfa-ssh' C-m
     fi
 
     #tmux select-layout tiled
