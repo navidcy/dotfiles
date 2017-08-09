@@ -1,3 +1,5 @@
+""""" PLUGIN SOURCES """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -97,3 +99,20 @@ Plug 'vim-scripts/mutt-aliases' " auto-complete aliases from ~/.mutt/aliases
 
 " Initialize plugin system
 call plug#end()
+
+
+""""" PLUGIN SETTINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Rainbow parantheses always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" vim-markdown configuration
+" navigate headers with ]] and [[
+" format a table with :TableFormat
+" create a navigation table with :Toc, :Toch, :Tocv
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_math=1
+
