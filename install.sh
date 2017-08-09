@@ -24,11 +24,17 @@ cd ~/bin && curl -OL https://raw.github.com/richo/battery/master/bin/battery &&\
 #git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # Install NeoBundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim
+#git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+#git clone https://github.com/Shougo/neobundle.vim ~/.config/nvim/bundle/neobundle.vim
+
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install Spacemacs
-git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
+#git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Install font
 #cd /tmp &&\
@@ -41,10 +47,10 @@ git clone --recursive http://github.com/syl20bnr/spacemacs ~/.emacs.d
 #    sudo mkfontdir /usr/share/fonts/local/
 
 # Install tmuxinator
-sudo gem install tmuxinator
+#sudo gem install tmuxinator
 
 # Install Python GDB configuration
 curl -OL git.io/.gdbinit
 
 # Set GPG signing key for git commits
-git config --global user.signkey AC6517CA
+git config --global user.signkey 56A56CA2
