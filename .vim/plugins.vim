@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jacoborus/tender'   " color scheme
-Plug 'kien/rainbow_parantheses.vim'  " colorcode paranthesis pairs
+Plug 'kien/rainbow_parentheses.vim'  " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'  " startup screen
 Plug 'guns/xterm-color-table.vim' " show color table with :XtermColorTable
 Plug 'Yggdroot/indentLine' " show indent levels with thin vertical lines
