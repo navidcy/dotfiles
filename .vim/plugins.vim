@@ -64,7 +64,7 @@ Plug 'airblade/vim-gitgutter'  " show line changes since last git commit
 
 
 """""" Processes """"""
-"Plug 'tpope/vim-dispatch'  " for :Make
+Plug 'tpope/vim-dispatch'  " for :Make
 
 
 """""" File types """"""
