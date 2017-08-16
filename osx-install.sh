@@ -61,6 +61,7 @@ brews=( \
     "reattach-to-user-namespace"\
     "tmux"\
     "the_silver_searcher"\
+    "translate-shell"\
     "tig"\
     "tor"\
     "torsocks"\
