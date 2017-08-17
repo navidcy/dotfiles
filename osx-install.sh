@@ -114,6 +114,7 @@ casks=("adobe-reader"\
     "skype"\
     "steam"\
     "sshfs"\
+    "terminal-notifier"\
     "torbrowser"\
     "transmission"\
     "virtualbox"\
