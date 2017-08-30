@@ -19,7 +19,7 @@ nmap <leader>E :Errors<CR>
 
 " Save file
 nmap <Leader>w :w<CR>
-"nmap <Leader>fs :w<CR>
+nmap <Leader>W :w !sudo tee > /dev/null %<CR>:e!<CR>
 
 " Quit
 nmap <Leader>q :q<CR>
@@ -161,8 +161,8 @@ map <leader>L <Plug>(easymotion-bd-jk)
 nmap <leader>L <Plug>(easymotion-overwin-line)
 
 " Move to word
-map  <leader>W <Plug>(easymotion-bd-w)
-nmap <leader>W <Plug>(easymotion-overwin-w)
+"map  <leader>W <Plug>(easymotion-bd-w)
+"nmap <leader>W <Plug>(easymotion-overwin-w)
 
 " Disable arrow keys
 map <Left> <Nop>
