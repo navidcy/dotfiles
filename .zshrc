@@ -78,7 +78,7 @@ function e () {
     emacsclient -t
 }
 
-alias svim='sudoedit'
+alias svim='sudo -e'
 #alias e='emacs -nw'
 #alias v='vim'
 alias v='nvim'
