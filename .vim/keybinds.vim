@@ -85,6 +85,10 @@ nmap <leader>l <C-w>l
 " toggle x mark in checklist fields
 nmap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR>
 
+" toggle view of completed items in todo (using vim-foldsearch)
+nmap <leader>u :Fp ^- \[ \]<CR>
+nmap <leader>U :Fe<CR>
+
 " neovim-specific mappings
 if has('nvim')
     " escape from terminal mode

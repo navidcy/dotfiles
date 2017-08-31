@@ -16,7 +16,7 @@ Plug 'kien/rainbow_parentheses.vim'  " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'  " startup screen
 Plug 'guns/xterm-color-table.vim' " show color table with :XtermColorTable
 Plug 'Yggdroot/indentLine' " show indent levels with thin vertical lines
-
+Plug 'embear/vim-foldsearch' " hide/show lines matching a patter
 
 """""" File system """""""
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
