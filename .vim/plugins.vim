@@ -32,7 +32,6 @@ Plug 'w0rp/ale'  " asynchronous syntax check
 
 """""" Buffer motion """"""
 Plug 'Lokaltog/vim-easymotion'
-Plug 'reedes/vim-wheel'
 Plug 'christoomey/vim-tmux-navigator'
 
 " add/remove bookmark: mm
@@ -119,7 +118,3 @@ au Syntax * RainbowParenthesesLoadBraces
 " create a navigation table with :Toc, :Toch, :Tocv
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
-
-" scroll file without moving cursor position on screen
-let g:wheel#map#up   = '<C-K>'
-let g:wheel#map#down = '<C-J>'
