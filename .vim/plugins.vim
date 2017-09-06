@@ -18,6 +18,7 @@ Plug 'guns/xterm-color-table.vim' " show color table with :XtermColorTable
 Plug 'Yggdroot/indentLine' " show indent levels with thin vertical lines
 Plug 'embear/vim-foldsearch' " hide/show lines matching a patter
 
+
 """""" File system """""""
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
@@ -31,6 +32,7 @@ Plug 'w0rp/ale'  " asynchronous syntax check
 
 """""" Buffer motion """"""
 Plug 'Lokaltog/vim-easymotion'
+Plug 'reedes/vim-wheel'
 Plug 'christoomey/vim-tmux-navigator'
 
 " add/remove bookmark: mm
@@ -118,3 +120,6 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
 
+" scroll file without moving cursor position on screen
+let g:wheel#map#up   = '<C-K>'
+let g:wheel#map#down = '<C-J>'

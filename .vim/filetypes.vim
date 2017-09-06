@@ -4,7 +4,7 @@ autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
 
 " enable spell and settings for text writing by default for certain file types
-autocmd FileType tex,latex,md,rst,mail
+autocmd FileType tex,latex,md,markdown,mkd,rst,mail
             \   call pencil#init({'wrap': 'soft', 'textwidth': 80, 'conceallevel': 3})
             \ | call litecorrect#init()
             \ | setl spell spl=en_us
