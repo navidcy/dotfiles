@@ -47,6 +47,8 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-speeddating'  " increment dates and times with C-a and C-x
 Plug 'junegunn/vim-easy-align'  " align in columns (select > return > space)
+Plug 'reedes/vim-pencil'
+Plug 'reedes/vim-litecorrect'
 
 " cycle through yank history with <leader>p and <leader>P after pasting,
 " see history with :Yanks

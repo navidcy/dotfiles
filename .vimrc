@@ -64,12 +64,8 @@ endif
 " File from wordlist- (debian) or word- (arch) package
 set dictionary+=/usr/share/dict/words
 
-" Define other file types
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.cuh setlocal ft=cuda
-
 source ~/.vim/keybinds.vim
+source ~/.vim/filetypes.vim
 
 " check current folder and all parent folders for tags files
 set tags=tags;/
@@ -80,13 +76,3 @@ let g:mutt_aliases_file = '~/.mutt/aliases'
 " toggle autoformatting of text
 "nnoremap <leader>f :exe 'set fo'.(&fo=~'a'?'-':'+').'=a'<CR>
 
-" enable spell checking by default for certain file types
-autocmd FileType tex,md,rst,mail :setlocal spell spelllang=en_us
-"
-" customize what is concealed in LaTeX documents:
-" a = conceal accents/ligatures
-" d = conceal delimiters
-" g = conceal Greek
-" m = conceal math symbols
-" s = conceal superscripts/subscripts
-let g:tex_conceal="agm"
