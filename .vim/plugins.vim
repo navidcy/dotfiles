@@ -25,6 +25,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'lucidstack/ctrlp-mpc.vim' " Control mpd by CtrlP
 Plug 'justinmk/vim-gtfo' " open file manager (gof)/tmux pane (got) @ current dir
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 
 """""" Syntax checking """"""

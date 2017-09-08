@@ -161,8 +161,8 @@ nmap <leader><leader> <Plug>(easymotion-overwin-f)
 "nmap <leader>s <Plug>(easymotion-overwin-f2)
 
 " Move to line
-map <leader>L <Plug>(easymotion-bd-jk)
-nmap <leader>L <Plug>(easymotion-overwin-line)
+"map <leader>L <Plug>(easymotion-bd-jk)
+"nmap <leader>L <Plug>(easymotion-overwin-line)
 
 " Move to word
 "map  <leader>W <Plug>(easymotion-bd-w)
@@ -179,7 +179,7 @@ imap <Up> <Nop>
 imap <Down> <Nop>
 
 " show/hide tagbar
-nmap <leader>t :TagbarToggle<CR>
+"nmap <leader>t :TagbarToggle<CR>
 
 " Update ctags
 nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
@@ -190,9 +190,17 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
 "nmap <leader>P :CtrlPTag<CR>
-nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>O :CtrlPMRUFiles<CR>
-nmap <leader>o :CtrlP<CR>
+"nmap <leader>b :CtrlPBuffer<CR>
+"nmap <leader>O :CtrlPMRUFiles<CR>
+"nmap <leader>o :CtrlP<CR>
+
+" using fzf.vim
+nmap <leader>b :Buffers<CR>
+nmap <leader>O :History<CR>
+nmap <leader>o :Files<CR>
+nmap <leader>l :Lines<CR>
+nmap <leader>L :BLines<CR>
+nmap <leader>t :Tags<CR>
 
 " use git or silver searcher (ag) for CtrlP autocompletion
 let g:ctrlp_use_caching = 0
