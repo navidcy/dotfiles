@@ -299,4 +299,5 @@ export GOPATH=$HOME/src/golang
 
 export GPG_TTY=`tty`
 
+# trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
