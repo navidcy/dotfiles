@@ -167,3 +167,6 @@ cpanm Digest::SHA\
     Mail::Box::Maildir\
     String::ShellQuote\
     Term::ReadLine::Gnu
+
+# install fzf shell extensions
+/usr/local/opt/fzf/install

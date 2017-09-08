@@ -298,3 +298,5 @@ alias cala="gcalcli agenda"
 export GOPATH=$HOME/src/golang
 
 export GPG_TTY=`tty`
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -204,3 +204,5 @@ fi
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
 
 export GPG_TTY=`tty`
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
