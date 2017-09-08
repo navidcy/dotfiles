@@ -29,6 +29,7 @@ brews=( \
     "exiftool"\
     "ffmpeg"\
     "fortune"\
+    "fzf"\
     "gdbm"\
     "gettext"\
     "git"\
