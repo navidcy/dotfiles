@@ -24,6 +24,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'lucidstack/ctrlp-mpc.vim' " Control mpd by CtrlP
 Plug 'justinmk/vim-gtfo' " open file manager (gof)/tmux pane (got) @ current dir
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
 """""" Syntax checking """"""
