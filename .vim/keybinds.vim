@@ -144,6 +144,7 @@ nmap <leader>F zA
 
 " Use home row keys as Esc
 inoremap jk <Esc>
+inoremap lkj <Esc>:write<CR>
 
 " Improve navigation on wrapped lines
 "nnoremap j gj
