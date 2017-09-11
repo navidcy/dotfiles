@@ -16,7 +16,7 @@ then
 
     tmux split-window -h -t $SESSION
     #tmux send-keys -t $SESSION 'fortune' C-m
-    tmux send-keys -t $SESSION 'bin/todo.sh' C-m
+    tmux send-keys -t $SESSION '~/bin/todo.sh' C-m
 
     tmux select-pane -t $SESSION:1.1
     tmux split-window -p 33 -v -t $SESSION
@@ -25,7 +25,7 @@ then
     tmux select-pane -t $SESSION:1.3
     tmux split-window -v -t $SESSION
     #tmux send-keys -t $SESSION 'mosh ad@idkfa.ucsd.edu' C-m
-    tmux send-keys -t $SESSION 'bin/google-cloud-lamps-instance1-ssh.sh' C-m
+    tmux send-keys -t $SESSION '~/bin/google-cloud-lamps-instance1-ssh.sh' C-m
 
     # optionally load additional windows
     if [ "$1" = "seaice" ]; then
