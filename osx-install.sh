@@ -60,6 +60,7 @@ brews=( \
     "pwgen"\
     "qrencode"\
     "reattach-to-user-namespace"\
+    "ripgrep"\
     "tmux"\
     "the_silver_searcher"\
     "translate-shell"\
