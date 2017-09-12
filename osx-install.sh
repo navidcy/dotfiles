@@ -35,6 +35,7 @@ brews=( \
     "git"\
     "gnu-getopt"\
     "gnupg"\
+    "homebrew/science/paraview"\
     "htop-osx"\
     "id3v2"\
     "imagemagick"\
@@ -109,7 +110,6 @@ casks=("adobe-reader"\
     "mactex"\
     "minecraft"\
     "osxfuse"\
-    "paraview"\
     "processing"\
     "smoothmouse"\
     "skim"\
