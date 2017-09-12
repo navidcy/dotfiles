@@ -11,6 +11,7 @@ autocmd FileType tex,latex,md,markdown,mkd,rst,mail
             \ | setl fdo+=search
             \ | setl nocursorcolumn
             \ | setl list
+            \ | setl formatoptions=alw2qt " automatically reflow paragraphs
             "\ | setl spell spl=en_us noru nonu nornu
             "\ | let b:dispatch = 'sh /usr/local/bin/preview %:p'
 "
