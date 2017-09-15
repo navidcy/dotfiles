@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 """""" Appearance """"""
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'drzel/vim-line-no-indicator'
 Plug 'jacoborus/tender'   " color scheme
 Plug 'kien/rainbow_parentheses.vim'  " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'  " startup screen

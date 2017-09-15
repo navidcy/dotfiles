@@ -62,6 +62,11 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#buffer_min_count = 2
 
+" minimal line indicator
+let g:airline_section_y = '%{LineNoIndicator()}'
+let g:airline_section_z = '%2c'  " column number
+"let g:airline_section_z = '%{LineNoIndicator()} %2c'
+
 " Invisible character colors
 " chose ctermfg=10 if Tab and EOL characters should be brighter
 " chose ctermfg=0 if Tab and EOL characters should be darker
