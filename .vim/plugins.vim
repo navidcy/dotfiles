@@ -13,7 +13,7 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'jacoborus/tender'   " color scheme
-Plug 'kien/rainbow_parentheses.vim'  " colorcode paranthesis pairs
+Plug 'luochen1990/rainbow'  " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'  " startup screen
 Plug 'guns/xterm-color-table.vim' " show color table with :XtermColorTable
 Plug 'Yggdroot/indentLine' " show indent levels with thin vertical lines
@@ -109,11 +109,7 @@ call plug#end()
 
 """"" PLUGIN SETTINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Rainbow parantheses always on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1  " toggle with :RainbowToggle
 
 " vim-markdown configuration
 " navigate headers with ]] and [[
