@@ -27,6 +27,8 @@ Plug 'lucidstack/ctrlp-mpc.vim' " Control mpd by CtrlP
 Plug 'justinmk/vim-gtfo' " open file manager (gof)/tmux pane (got) @ current dir
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'  " ctags overview :TagBarToggle
+Plug 'ludovicchabant/vim-gutentags'  " automatic tag generation
 
 
 """""" Syntax checking """"""
@@ -76,7 +78,6 @@ Plug 'tpope/vim-dispatch'  " for :Make
 """""" File types """"""
 " General
 Plug 'msanders/snipmate.vim'  " boilerplate code
-Plug 'majutsushi/tagbar'  " ctags overview :TagBarToggle
 
 " Go
 Plug 'fatih/vim-go'
