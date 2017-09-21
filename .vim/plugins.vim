@@ -89,8 +89,9 @@ Plug 'JuliaLang/julia-vim'
 " Python
 Plug 'klen/python-mode'
 
-" HTML/PHP
+" HTML/PHP/JS
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'pangloss/vim-javascript'
 
 " Markdown
 Plug 'godlygeek/tabular' " line up text (req for vim-markdown)
