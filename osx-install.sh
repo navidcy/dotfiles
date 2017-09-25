@@ -62,6 +62,7 @@ brews=( \
     "qrencode"\
     "reattach-to-user-namespace"\
     "ripgrep"\
+    "surfraw"\
     "tmux"\
     "the_silver_searcher"\
     "translate-shell"\
