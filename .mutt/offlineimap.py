@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 import re
 import subprocess
 import getpass
@@ -7,10 +7,8 @@ import sys
 if sys.platform == 'linux2':
     import gnomekeyring as gkey
 
-
 user = getpass.getuser()
 home = os.getenv('HOME')
-
 
 def get_keychain_pass(account=None, server=None):
     if sys.platform == 'darwin':
@@ -48,6 +46,9 @@ def set_keychain_pass(protocol, server, user, password):
                           name, attrs, password, True)
 
 if __name__ == '__main__':
-    account = sys.argv[1]
-    server = sys.argv[2]
-    print(get_keychain_pass(account=account, server=server))
+    if sys.argv[1] == 'create':
+        set_keychain_pass(sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
+    else:
+        account = sys.argv[1]
+        server = sys.argv[2]
+        print(get_keychain_pass(account=account, server=server))

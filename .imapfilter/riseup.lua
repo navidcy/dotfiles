@@ -23,7 +23,8 @@ end
 -- Accounts --
 --------------
 
-status, pass = pipe_from("python ~/.mutt/offlineimap.py andersd mail.riseup.net")
+--status, pass = pipe_from("python ~/.mutt/offlineimap.py andersd mail.riseup.net")
+status, pass = pipe_from("python ~/.mutt/offlineimap-password-store.py andersd@riseup.net")
 account = IMAP {
     server = 'mail.riseup.net',
     username = 'andersd',
