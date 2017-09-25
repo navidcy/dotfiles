@@ -54,7 +54,9 @@ if [[ "$ARCH" != 'Darwin' ]]; then
     function say() { echo "$@" | festival --tts; }
 fi
 function lt() { ls -ltrsa "$@" | tail -n $(( $LINES - 10 )); }
-function lT() { ls -ltrsa "$@" | head -n $(( $LINES - 9 )); }
+function lT() { ls -ltsa "$@" | tail -n $(( $LINES - 10 )); }
+function lz() { ls -laShr "$@" | tail -n $(( $LINES - 10 )); }
+function lZ() { ls -laSh "$@" | tail -n $(( $LINES - 10 )); }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function cgrep() { egrep --color -i "$@|$"; }
 function fname() { find . -iname "*$@*"; }
