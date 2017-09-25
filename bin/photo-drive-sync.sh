@@ -1,8 +1,7 @@
 #!/bin/bash
 
 diskA=/Volumes/ANDERS
-diskB=/Volumes/SUSAN
-#diskC=/Volumes/misc
+diskB=/Volumes/backup
 
 echo "Copying from local drive to first external drive ($diskA)"
 
@@ -13,7 +12,7 @@ rsync -rav --progress ~/iCloud/Lightroom-exports $diskA/Anders\ flaptop/
 
 # Capture One
 echo "Copying Capture One files to first external drive ($diskA)"
-rsync -rav --progress ~/Pictures/Capture\ One\ Catalog.cocatalog $diskA/Anders\ flaptop/
+rsync -rav --progress --delete ~/Pictures/Capture\ One\ Catalog.cocatalog $diskA/Anders\ flaptop/
 rsync -rav --progress ~/Pictures/CaptureOne\ exports $diskA/Anders\ flaptop/
 
 # Photos.app
@@ -39,11 +38,3 @@ if [ -d $diskB ]; then
         diskutil eject $diskB
     fi
 fi
-
-#if [ -d $diskC ]; then
-#    read -p "Unmount external drive $diskC? [y/N] " -n 1 -r
-#    echo
-#    if [[ $REPLY =~ ^[Yy]$ ]]; then
-#        diskutil eject $diskC
-#    fi
-#fi
