@@ -156,6 +156,7 @@ function transfer() {
     fi
     cat $tmpfile
     rm -f $tmpfile
+    echo ""
 } 
 
 
