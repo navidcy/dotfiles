@@ -2,3 +2,8 @@
 --exclude=build
 --exclude=dist
 --exclude=output
+
+--langdef=julia
+--langmap=julia:.jl
+--regex-julia=/^[ \t]*(function|macro|abstract type|primitive type|struct|mutable struct|typealias)[ \t]+([^ \t({[]+).*$/\2/f,function/
+--regex-julia=/^[ \t]*(([^@#$ \t({[]+)|\(([^@#$ \t({[]+)\)|\((\$)\))[ \t]*(\{.*\})?[ \t]*\([^#]*\)[ \t]*=([^=].*$|$)/\2\3\4/f,function/

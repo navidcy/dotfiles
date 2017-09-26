@@ -11,15 +11,12 @@ let mapleader="\<Space>"
 " Shortcut to reload .vimrc
 nmap <leader>R :source $MYVIMRC<CR>
 
-" List errors in split
-nmap <leader>E :Errors<CR>
-
 " Shortcut to switch background color
 "nmap <leader>W :ToggleBG<CR>
 
 " Save file
 nmap <Leader>w :w<CR>
-"nmap <Leader>fs :w<CR>
+nmap <Leader>W :w !sudo tee > /dev/null %<CR>:e!<CR>
 
 " Quit
 nmap <Leader>q :q<CR>
@@ -85,6 +82,10 @@ nmap <leader>l <C-w>l
 " toggle x mark in checklist fields
 nmap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR>
 
+" toggle view of completed items in todo (using vim-foldsearch)
+nmap <leader>u :Fp ^- \[ \]<CR>
+nmap <leader>U :Fe<CR>
+
 " neovim-specific mappings
 if has('nvim')
     " escape from terminal mode
@@ -140,6 +141,7 @@ nmap <leader>F zA
 
 " Use home row keys as Esc
 inoremap jk <Esc>
+inoremap lkj <Esc>:write<CR>
 
 " Improve navigation on wrapped lines
 "nnoremap j gj
@@ -157,12 +159,12 @@ nmap <leader><leader> <Plug>(easymotion-overwin-f)
 "nmap <leader>s <Plug>(easymotion-overwin-f2)
 
 " Move to line
-map <leader>L <Plug>(easymotion-bd-jk)
-nmap <leader>L <Plug>(easymotion-overwin-line)
+"map <leader>L <Plug>(easymotion-bd-jk)
+"nmap <leader>L <Plug>(easymotion-overwin-line)
 
 " Move to word
-map  <leader>W <Plug>(easymotion-bd-w)
-nmap <leader>W <Plug>(easymotion-overwin-w)
+"map  <leader>W <Plug>(easymotion-bd-w)
+"nmap <leader>W <Plug>(easymotion-overwin-w)
 
 " Disable arrow keys
 map <Left> <Nop>
@@ -175,7 +177,7 @@ imap <Up> <Nop>
 imap <Down> <Nop>
 
 " show/hide tagbar
-nmap <leader>t :TagbarToggle<CR>
+"nmap <leader>t :TagbarToggle<CR>
 
 " Update ctags
 nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
@@ -186,9 +188,17 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
 "nmap <leader>P :CtrlPTag<CR>
-nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>O :CtrlPMRUFiles<CR>
-nmap <leader>o :CtrlP<CR>
+"nmap <leader>b :CtrlPBuffer<CR>
+"nmap <leader>O :CtrlPMRUFiles<CR>
+"nmap <leader>o :CtrlP<CR>
+
+" using fzf.vim
+nmap <leader>b :Buffers<CR>
+nmap <leader>O :History<CR>
+nmap <leader>o :Files<CR>
+nmap <leader>l :Lines<CR>
+nmap <leader>L :BLines<CR>
+nmap <leader>t :Tags<CR>
 
 " use git or silver searcher (ag) for CtrlP autocompletion
 let g:ctrlp_use_caching = 0

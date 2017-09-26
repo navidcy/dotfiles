@@ -29,11 +29,13 @@ brews=( \
     "exiftool"\
     "ffmpeg"\
     "fortune"\
+    "fzf"\
     "gdbm"\
     "gettext"\
     "git"\
     "gnu-getopt"\
     "gnupg"\
+    "homebrew/science/paraview"\
     "htop-osx"\
     "id3v2"\
     "imagemagick"\
@@ -59,6 +61,8 @@ brews=( \
     "pwgen"\
     "qrencode"\
     "reattach-to-user-namespace"\
+    "ripgrep"\
+    "surfraw"\
     "tmux"\
     "the_silver_searcher"\
     "translate-shell"\
@@ -107,7 +111,6 @@ casks=("adobe-reader"\
     "mactex"\
     "minecraft"\
     "osxfuse"\
-    "paraview"\
     "processing"\
     "smoothmouse"\
     "skim"\
@@ -166,3 +169,6 @@ cpanm Digest::SHA\
     Mail::Box::Maildir\
     String::ShellQuote\
     Term::ReadLine::Gnu
+
+# install fzf shell extensions
+/usr/local/opt/fzf/install

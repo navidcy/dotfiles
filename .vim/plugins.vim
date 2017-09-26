@@ -11,11 +11,13 @@ call plug#begin('~/.vim/plugged')
 """""" Appearance """"""
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'drzel/vim-line-no-indicator'
 Plug 'jacoborus/tender'   " color scheme
-Plug 'kien/rainbow_parentheses.vim'  " colorcode paranthesis pairs
+Plug 'luochen1990/rainbow'  " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'  " startup screen
 Plug 'guns/xterm-color-table.vim' " show color table with :XtermColorTable
 Plug 'Yggdroot/indentLine' " show indent levels with thin vertical lines
+Plug 'embear/vim-foldsearch' " hide/show lines matching a patter
 
 
 """""" File system """""""
@@ -23,6 +25,10 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'lucidstack/ctrlp-mpc.vim' " Control mpd by CtrlP
 Plug 'justinmk/vim-gtfo' " open file manager (gof)/tmux pane (got) @ current dir
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'  " ctags overview :TagBarToggle
+Plug 'ludovicchabant/vim-gutentags'  " automatic tag generation
 
 
 """""" Syntax checking """"""
@@ -47,6 +53,8 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-speeddating'  " increment dates and times with C-a and C-x
 Plug 'junegunn/vim-easy-align'  " align in columns (select > return > space)
+Plug 'reedes/vim-pencil'
+Plug 'reedes/vim-litecorrect'
 
 " cycle through yank history with <leader>p and <leader>P after pasting,
 " see history with :Yanks
@@ -70,7 +78,6 @@ Plug 'tpope/vim-dispatch'  " for :Make
 """""" File types """"""
 " General
 Plug 'msanders/snipmate.vim'  " boilerplate code
-Plug 'majutsushi/tagbar'  " ctags overview :TagBarToggle
 
 " Go
 Plug 'fatih/vim-go'
@@ -82,8 +89,9 @@ Plug 'JuliaLang/julia-vim'
 " Python
 Plug 'klen/python-mode'
 
-" HTML/PHP
+" HTML/PHP/JS
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'pangloss/vim-javascript'
 
 " Markdown
 Plug 'godlygeek/tabular' " line up text (req for vim-markdown)
@@ -103,11 +111,7 @@ call plug#end()
 
 """"" PLUGIN SETTINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Rainbow parantheses always on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1  " toggle with :RainbowToggle
 
 " vim-markdown configuration
 " navigate headers with ]] and [[
@@ -115,4 +119,3 @@ au Syntax * RainbowParenthesesLoadBraces
 " create a navigation table with :Toc, :Toch, :Tocv
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
-

@@ -21,7 +21,8 @@ mkdir -p ~/.ipython/profile_default
 for F in .colors .config/uzbl .config/awesome .config/dwb .config/bspwm \
     .config/sxhkd .config/luakit .config/openbox .config/zathura .tmuxinator \
     .i3 .mutt .ncmpcpp .vim .vimperrator .w3m wallpapers .kwm .mpd \
-    .imapfilter .weechat .ipython/profile_default/ipython_config.py; do
+    .imapfilter .weechat .ipython/profile_default/ipython_config.py \
+    .config/surfraw; do
   SOURCE=$PWD/$F
   TARGET=~/$F
 

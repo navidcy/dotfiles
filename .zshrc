@@ -54,7 +54,9 @@ if [[ "$ARCH" != 'Darwin' ]]; then
     function say() { echo "$@" | festival --tts; }
 fi
 function lt() { ls -ltrsa "$@" | tail -n $(( $LINES - 10 )); }
-function lT() { ls -ltrsa "$@" | head -n $(( $LINES - 9 )); }
+function lT() { ls -ltsa "$@" | tail -n $(( $LINES - 10 )); }
+function lz() { ls -laShr "$@" | tail -n $(( $LINES - 10 )); }
+function lZ() { ls -laSh "$@" | tail -n $(( $LINES - 10 )); }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 function cgrep() { egrep --color -i "$@|$"; }
 function fname() { find . -iname "*$@*"; }
@@ -78,7 +80,7 @@ function e () {
     emacsclient -t
 }
 
-alias svim='sudoedit'
+alias svim='sudo -e'
 #alias e='emacs -nw'
 #alias v='vim'
 alias v='nvim'
@@ -139,6 +141,23 @@ alias date-denmark='denmark-date'
 alias date-eastern='eastern-date'
 alias date-pacific='pacific-date'
 function define() { curl --silent dict://dict.org/d:$1 }
+
+# use transfer.sh to share files over the net
+function transfer() {
+    if [ $# -eq 0 ]; then
+        echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+        return 1
+    fi
+    tmpfile=$( mktemp -t transferXXX )
+    if tty -s; then
+        basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
+        curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile
+    else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile
+    fi
+    cat $tmpfile
+    rm -f $tmpfile
+} 
+
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
@@ -281,3 +300,6 @@ alias cala="gcalcli agenda"
 export GOPATH=$HOME/src/golang
 
 export GPG_TTY=`tty`
+
+# trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

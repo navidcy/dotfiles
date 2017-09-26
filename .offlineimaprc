@@ -12,7 +12,8 @@ accounts = riseup,geomail,gmail,princeton,noaa
 #ui = quiet
 ui = ttyui
 #ui = blinkenlights
-pythonfile=~/.mutt/offlineimap.py
+#pythonfile=~/.mutt/offlineimap.py
+pythonfile=~/.mutt/offlineimap-password-store.py
 # Controls how many accounts may be synced simultaneously
 maxsyncaccounts = 10
 
@@ -54,7 +55,8 @@ localfolders = ~/Mail/riseup
 type = IMAP
 remotehost = mail.riseup.net
 remoteuser = andersd
-remotepasseval = get_keychain_pass(account="andersd", server="mail.riseup.net")
+#remotepasseval = get_keychain_pass(account="andersd", server="mail.riseup.net")
+remotepasseval = get_pass("andersd@riseup.net")
 ssl = yes
 cert_fingerprint = 86a010ddba262196d7f6f1f47ae03032f9031c32
 #folderfilter = lambda folder: folder not in ['Drafts']
@@ -98,7 +100,8 @@ localfolders = ~/Mail/geomail
 type = IMAP
 remotehost = imap.au.dk
 remoteuser = au217756
-remotepasseval = get_keychain_pass(account="au217756", server="imap.au.dk")
+#remotepasseval = get_keychain_pass(account="au217756", server="imap.au.dk")
+remotepasseval = get_pass("anders.damsgaard@geo.au.dk")
 ssl = yes
 cert_fingerprint = ae2c89d80632be3ec8a149225199e3cdcc88311f
 folderfilter = lambda folder: not re.search('NFIT-Import|geo07kej|Suggested Contacts|Noter|Opgaver|Journal|Slettet post|archive|Kalender|Kontaktpersoner|RSS Feeds', folder)
@@ -192,7 +195,8 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 type = Gmail
 remoteuser = andersdc@gmail.com
-remotepasseval = get_keychain_pass(account="andersdc@gmail.com", server="imap.gmail.com")
+#remotepasseval = get_keychain_pass(account="andersdc@gmail.com", server="imap.gmail.com")
+remotepasseval = get_pass("andersdc@gmail.com")
 auth_mechanisms = LOGIN
 realdelete = no
 nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
@@ -282,7 +286,7 @@ localfolders = ~/Mail/princeton
 type = IMAP
 remotehost = exchangeimap.princeton.edu
 remoteuser = andersd
-remotepasseval = get_keychain_pass(account="andersd", server="exchangeimap.princeton.edu")
+remotepasseval = get_pass("andersd@princeton.edu")
 ssl = yes
 cert_fingerprint = 0855b2039ba7540c2f53f186bfc34fde80468fad
 #folderfilter = lambda folder: folder not in ['Kalender','Kontaktpersoner','Slettet post','NFIT-Import-adc-2012-09-11-04:18']
@@ -330,7 +334,7 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 type = Gmail
 remoteuser = anders.damsgaard@noaa.gov
-remotepasseval = get_keychain_pass(account="anders.damsgaard@noaa.gov", server="imap.gmail.com")
+remotepasseval = get_pass("anders.damsgaard@noaa.gov")
 auth_mechanisms = LOGIN
 realdelete = no
 nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
