@@ -1,7 +1,3 @@
-#!/bin/bash
-
-# install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #brew tap railwaycat/emacsmacport
 brew tap d12frosted/emacs-plus
@@ -91,51 +87,6 @@ for brew in "${brews[@]}"; do
     fi
 done
 
-
-# from `brew cask list`
-casks=("adobe-reader"\
-    "alfred"\
-    "amethyst"\
-    "android-studio"\
-    "battle-net"\
-    "bitbar"\
-    "disk-inventory-x"\
-    "duet"\
-    "firefox"\
-    "flux"\
-    "google-chrome"\
-    "inkscape"\
-    "julia"\
-    "karabiner"\
-    "libreoffice"\
-    "mactex"\
-    "minecraft"\
-    "osxfuse"\
-    "processing"\
-    "smoothmouse"\
-    "skim"\
-    "skype"\
-    "steam"\
-    "sshfs"\
-    "terminal-notifier"\
-    "torbrowser"\
-    "transmission"\
-    "virtualbox"\
-    "vlc"\
-    "w3m"\
-    "xquartz" )
-
-read -p "Do you want to install brew casks? [y/n] " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    for cask in "${casks[@]}"; do
-        read -p "Do you want to install $cask? [y/n] " -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            brew cask install $cask
-        fi
-    done
-fi
 
 read -p "Do you want to clone terminal.app themes? [y/n] " -n 1 -r
 echo

@@ -1,14 +1,13 @@
 #!/bin/bash
-set -e
-
+[[ ! "$(type -P pip)" ]] && echo "Pip needs to be installed." && exit 1
 
 # pip packages
-pips=( \
-    "bs4"\
-    "gcalcli"\
-    "grepg"\
-    "requests"\
-    )
+pips=(
+    bs4
+    gcalcli
+    grepg
+    requests
+)
 
 for pip in "${pip[@]}"; do
     pip install $pip
