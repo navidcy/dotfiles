@@ -52,6 +52,7 @@ brews=(
     qrencode
     reattach-to-user-namespace
     ripgrep
+    sshfs
     surfraw
     tmux
     translate-shell

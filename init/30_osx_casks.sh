@@ -8,6 +8,8 @@
 
 # from `brew cask list`
 casks=(
+    adobe-acrobat-pro
+    adobe-creative-cloud
     alfred
     battle-net
     bitbar
