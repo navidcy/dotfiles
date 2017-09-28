@@ -8,7 +8,6 @@
 
 # from `brew cask list`
 casks=(
-    adobe-reader
     alfred
     battle-net
     bitbar
@@ -19,16 +18,12 @@ casks=(
     mactex
     osxfuse
     processing
-    smoothmouse
     skim
     skype
     steam
-    sshfs
-    terminal-notifier
     torbrowser
     transmission
     vlc
-    w3m
     xquartz
 )
 
