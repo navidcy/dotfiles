@@ -2,7 +2,8 @@
 [[ "$(uname)" != "Linux" ]] && return 1
 [[ "$(cat /etc/issue 2> /dev/null)" =~ Debian ]] || return 1
 
-set -e
+read -p "Do you want to install APT packages? [y/n] " -n 1 -r
+[[ "$REPLY" == [Nn]* ]] && return 1
 
 apt_packages=(
     autossh
