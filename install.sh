@@ -2,6 +2,6 @@
 
 # Run initialization scripts
 for s in init/*.sh; do
-    echo "\n### $s ###########################"
+    echo -e "\n### $s ###########################"
     source $s
 done
