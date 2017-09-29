@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # OSX-stuff only
-[[ "$(uname)" != "Darwin" ]] && return 1
+[[ "$(uname)" != "Darwin" ]] && return 0
 
 ## Exit if, for some reason, Homebrew is not installed.
 [[ ! "$(type -P brew)" ]] && echo "Recipes need Homebrew to install." && return 1

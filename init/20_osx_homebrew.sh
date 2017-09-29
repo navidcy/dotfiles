@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # OSX-stuff only
-[[ "$(uname)" != "Darwin" ]] && return 1
+[[ "$(uname)" != "Darwin" ]] && return 0
 
 [[ "$(type -P brew)" ]] && echo "Homebrew already installed." && return 0
 

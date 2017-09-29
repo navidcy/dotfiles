@@ -59,7 +59,6 @@ apt_packages=(
     tig
     tmux
     tor
-    torbrowser-launcher
     urlview
     vim
     vim-nox
@@ -76,10 +75,10 @@ apt_packages=(
     zsh
 )
 
-for package in "${apt_packages[@]}"; do
-    sudo apt install -qq install "$package"
-done
-
+#for package in "${apt_packages[@]}"; do
+    #sudo apt -qq install "$package"
+#done
+sudo apt -qq install "${apt_packages[@]}"
 
 
 # configure xdg-open with `mimeopen -d <file>`
