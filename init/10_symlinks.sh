@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Create folders
 mkdir -p ~/bin
@@ -38,12 +38,12 @@ for f in links/*; do
   SOURCE=$PWD/$f
   TARGET=~/$(basename $f)
 
-  # Skip symlink generation if the link already exists
-  [ -L $TARGET ] && continue
-
   # Rename any original files or directories
   [ -f $TARGET ] && mv $TARGET ${TARGET}_bck
   [ -d $TARGET ] && mv $TARGET ${TARGET}_bck
+
+  # Remove old symlinks
+  [ -L $TARGET ] && rm $TARGET
 
   echo "Symlink: $SOURCE -> $TARGET"
   ln -s $SOURCE $TARGET

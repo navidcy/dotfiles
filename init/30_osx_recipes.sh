@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # OSX-stuff only
-[[ "$(uname)" != "Darwin" ]] && exit 1
+[[ "$(uname)" != "Darwin" ]] && return 1
 
 ## Exit if, for some reason, Homebrew is not installed.
-[[ ! "$(type -P brew)" ]] && echo "Recipes need Homebrew to install." && exit 1
+[[ ! "$(type -P brew)" ]] && echo "Recipes need Homebrew to install." && return 1
 
 # from `brew list`
 brews=(
@@ -78,7 +78,7 @@ done
 
 
 # notmuch-mutt requirements
-[[ ! "$(type -P cpanm)" ]] && echo "cpanm failed to install." && exit 1
+[[ ! "$(type -P cpanm)" ]] && echo "cpanm failed to install." && return 1
 cpanm Digest::SHA\
     Mail::Box\
     Mail::Header\

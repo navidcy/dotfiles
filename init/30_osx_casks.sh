@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # OSX-stuff only
-[[ "$(uname)" != "Darwin" ]] && exit 1
+[[ "$(uname)" != "Darwin" ]] && return 1
 
 # Exit if, for some reason, Homebrew is not installed.
 [[ ! "$(type -P brew)" ]] && echo "Homebrew failed to install." && return 1
@@ -12,6 +12,7 @@ casks=(
     adobe-creative-cloud
     alfred
     battle-net
+    bartender
     bitbar
     duet
     firefox

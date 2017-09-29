@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Clone zsh syntax highlighting and git prompt
 (mkdir -p $HOME/code && cd $HOME/code &&
 if [ ! -d zsh-syntax-highlighting ]; then

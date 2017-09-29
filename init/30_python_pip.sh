@@ -1,5 +1,5 @@
-#!/bin/bash
-[[ ! "$(type -P pip)" ]] && echo "Pip needs to be installed." && exit 1
+#!/usr/bin/env bash
+[[ ! "$(type -P pip)" ]] && echo "Pip needs to be installed." && return 1
 
 # pip packages
 pips=(
