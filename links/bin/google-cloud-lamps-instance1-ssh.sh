@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 remotecommand='tmux attach -dt 0'
-host=104.154.231.211
+host=adamsgaard.dk
 user=andersdc
 if [ "$1" = "-s" ]; then
     ssh $user@$host -t $remotecommand

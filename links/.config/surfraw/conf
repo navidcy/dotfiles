@@ -1,3 +1,3 @@
-SURFRAW_text_browser=/usr/local/bin/w3m
+SURFRAW_text_browser=w3m
 SURFRAW_graphical=no
 SURFRAW_graphical_browser=open
