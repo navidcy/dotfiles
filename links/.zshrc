@@ -27,7 +27,7 @@ ${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
 #%b$(git_super_status) %{$fg[red]%}»%{$reset_color%} '
 RPROMPT='${return_status} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
 
-setopt AUTO_CD
+unset AUTO_CD
 setopt CORRECT
 setopt completealiases
 setopt append_history
