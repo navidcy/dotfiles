@@ -215,7 +215,7 @@ macro index <F6> "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wai
 
 # show recipient instead of sender in "Sent" folder view
 set date_format='%b %d %k:%M'
-set index_format="%2C │ %Z [%D] %-30.30F (%<l?%4l&%4c>) %s"
+set index_format="%2C %Z [%D] %-22.22F (%?l?%4l&%4c?)  %s"
 
 # mark as spam (S) or ham (H)
 macro index,pager S "<enter-command>unset wait_key<enter>\

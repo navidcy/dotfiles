@@ -304,3 +304,5 @@ export GPG_TTY=`tty`
 
 # trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
