@@ -64,7 +64,16 @@ function sayfile() { festival --tts $@; }
 function tnew { tmux new-session -As `basename $PWD` }
 function w3mtor { torify w3m http://3g2upl4pq6kufc4m.onion/ }
 #function weather { curl wttr.in/SanDiego; }
-function weather { curl 'wttr.in/?m'; }
+#function weather { curl 'wttr.in/?m'; }
+function weather {
+    if type tmux >/dev/null 2>/dev/null; then  # assume tmux is used if installed
+        tmux new-window "curl 'wttr.in/?m';\
+            echo -e '\nPress <enter> to quit';\
+            read -n 1 -s";
+    else
+        curl 'wttr.in/?m';
+    fi
+}
 
 # Start tmux on shell login
 #[[ -z "$TMUX" ]] && exec tmux
@@ -251,10 +260,6 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
 
     alias lpp="python $CFDEM_LPP_DIR/lpp.py"
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
-
-    # PETSc
-
-    
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
