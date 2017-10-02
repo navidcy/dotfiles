@@ -62,7 +62,16 @@ function cgrep() { egrep --color -i "$@|$"; }
 function fname() { find . -iname "*$@*"; }
 function sayfile() { festival --tts $@; }
 function tnew { tmux new-session -As `basename $PWD` }
-function w3mtor { torify w3m http://3g2upl4pq6kufc4m.onion/ }
+function w3mtor { 
+    local url
+    if [ $# -eq 0 ]; then
+        url="https://check.torproject.org/"
+    else
+        url=$1
+    fi
+    torify w3m $url
+}
+function w3mddg { torify surfraw ddg $@ }
 #function weather { curl wttr.in/SanDiego; }
 function weather { curl 'wttr.in/?m'; }
 
