@@ -27,7 +27,7 @@ ${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
 #%b$(git_super_status) %{$fg[red]%}»%{$reset_color%} '
 RPROMPT='${return_status} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
 
-setopt AUTO_CD
+unset AUTO_CD
 setopt CORRECT
 setopt completealiases
 setopt append_history
@@ -260,10 +260,6 @@ if [[ "$HOSTNAME" == "iddqd" ]]; then
 
     alias lpp="python $CFDEM_LPP_DIR/lpp.py"
     alias pizza="python $CFDEM_LPP_DIR/pizza.py"
-
-    # PETSc
-
-    
 fi
 
 [ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
@@ -313,3 +309,5 @@ export GPG_TTY=`tty`
 
 # trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'

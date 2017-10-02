@@ -20,20 +20,16 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing)
-#hostname=flaptop
-#sudo scutil --set ComputerName "$(hostname)"
-#sudo scutil --set HostName "$(hostname)"
-#sudo scutil --set LocalHostName "$(hostname)"
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$(hostname)"
-
-# Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+# Set standby delay to 1 hour
+sudo pmset -a standbydelay $(echo "1*60*60"|bc)
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
-# Disable transparency in the menu bar and elsewhere on Yosemite
+# Use dark theme
+defaults write .GlobalPreferences AppleInterfaceStyle -string "Dark"
+
+# Disable transparency
 #defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Set highlight color to gray
@@ -43,16 +39,12 @@ defaults write NSGlobalDomain AppleHighlightColor -string "0.750000 0.750000 0.7
 # Set sidebar icon size to small
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
-# Always show scrollbars
+# Scrollbar preferences
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Disable the over-the-top focus ring animation
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
-
-# Disable smooth scrolling
-# (Uncomment if you’re on an older Mac that messes up the animation)
-#defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
@@ -106,7 +98,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 sudo systemsetup -setrestartfreeze on
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+#sudo systemsetup -setcomputersleep Off > /dev/null
 
 # Disable Notification Center and remove the menu bar icon
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
@@ -137,7 +129,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 ###############################################################################
 
 # Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
+#sudo pmset -a hibernatemode 0
 
 # Remove the sleep image file to save disk space
 #sudo rm /private/var/vm/sleepimage
@@ -154,12 +146,6 @@ sudo pmset -a hibernatemode 0
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Trackpad: map bottom right corner to right-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Enable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
@@ -180,7 +166,7 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Set a blazingly fast keyboard repeat rate (macOS defaults: 6 and 25)
+# Set keyboard repeat rate (macOS defaults: 6 and 25)
 defaults write NSGlobalDomain KeyRepeat -int 3
 defaults write NSGlobalDomain InitialKeyRepeat -int 30
 
@@ -216,8 +202,8 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
+# Keep shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool false
 
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
@@ -240,11 +226,14 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # For other paths, use `PfLo` and `file:///full/path/here/`
 #defaults write com.apple.finder NewWindowTarget -string "PfDe"
 #defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+
+# Set Home as the default location for new Finder windows
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
@@ -435,8 +424,11 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
 defaults write com.apple.dock wvous-tr-corner -int 4
 defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Start screen saver
-defaults write com.apple.dock wvous-bl-corner -int 5
+# Bottom left screen corner → Disable Screen Saver
+defaults write com.apple.dock wvous-br-corner -int 5
+defaults write com.apple.dock wvous-br-modifier -int 0
+# Bottom right screen corner → Start screen saver
+defaults write com.apple.dock wvous-bl-corner -int 6
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
@@ -465,6 +457,8 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Hide Safari’s bookmarks bar by default
 defaults write com.apple.Safari ShowFavoritesBar -bool false
+
+defaults write com.apple.safari ShowOverlayStatusBar -int 1
 
 # Hide Safari’s sidebar in Top Sites
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
@@ -609,51 +603,51 @@ sudo mdutil -E / > /dev/null
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a modified version of the Solarized Dark theme by default in Terminal.app
-osascript <<EOD
-
-tell application "Terminal"
-
-	local allOpenedWindows
-	local initialOpenedWindows
-	local windowID
-	set themeName to "Solarized Dark xterm-256color"
-
-	(* Store the IDs of all the open terminal windows. *)
-	set initialOpenedWindows to id of every window
-
-	(* Open the custom theme so that it gets added to the list
-	   of available terminal themes (note: this will open two
-	   additional terminal windows). *)
-	do shell script "open '$HOME/init/" & themeName & ".terminal'"
-
-	(* Wait a little bit to ensure that the custom theme is added. *)
-	delay 1
-
-	(* Set the custom theme as the default terminal theme. *)
-	set default settings to settings set themeName
-
-	(* Get the IDs of all the currently opened terminal windows. *)
-	set allOpenedWindows to id of every window
-
-	repeat with windowID in allOpenedWindows
-
-		(* Close the additional windows that were opened in order
-		   to add the custom theme to the list of terminal themes. *)
-		if initialOpenedWindows does not contain windowID then
-			close (every window whose id is windowID)
-
-		(* Change the theme for the initial opened terminal windows
-		   to remove the need to close them in order for the custom
-		   theme to be applied. *)
-		else
-			set current settings of tabs of (every window whose id is windowID) to settings set themeName
-		end if
-
-	end repeat
-
-end tell
-
-EOD
+#osascript <<EOD
+#
+#tell application "Terminal"
+#
+#	local allOpenedWindows
+#	local initialOpenedWindows
+#	local windowID
+#	set themeName to "Solarized Dark xterm-256color"
+#
+#	(* Store the IDs of all the open terminal windows. *)
+#	set initialOpenedWindows to id of every window
+#
+#	(* Open the custom theme so that it gets added to the list
+#	   of available terminal themes (note: this will open two
+#	   additional terminal windows). *)
+#	do shell script "open '$HOME/init/" & themeName & ".terminal'"
+#
+#	(* Wait a little bit to ensure that the custom theme is added. *)
+#	delay 1
+#
+#	(* Set the custom theme as the default terminal theme. *)
+#	set default settings to settings set themeName
+#
+#	(* Get the IDs of all the currently opened terminal windows. *)
+#	set allOpenedWindows to id of every window
+#
+#	repeat with windowID in allOpenedWindows
+#
+#		(* Close the additional windows that were opened in order
+#		   to add the custom theme to the list of terminal themes. *)
+#		if initialOpenedWindows does not contain windowID then
+#			close (every window whose id is windowID)
+#
+#		(* Change the theme for the initial opened terminal windows
+#		   to remove the need to close them in order for the custom
+#		   theme to be applied. *)
+#		else
+#			set current settings of tabs of (every window whose id is windowID) to settings set themeName
+#		end if
+#
+#	end repeat
+#
+#end tell
+#
+#EOD
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
@@ -902,6 +896,32 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 
 # Bypass the annoyingly slow t.co URL shortener
 defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
+defaults write com.tapbots.TweetbotMac showStatusItem -int 0
+
+###############################################################################
+# Reeder.app                                                                  #
+###############################################################################
+defaults write com.reederapp.rkit2.mac AppIconUnreadCount -int 2
+defaults write com.reederapp.rkit2.mac AppOrderUnreadItems -int 1
+defaults write com.reederapp.rkit2.mac OpenLinksInBackground -int 1
+defaults write com.reederapp.rkit2.mac PrivateBrowsing -int 1
+defaults write com.reederapp.rkit2.mac WebKitPrivateBrowsingEnabled -int 1
+defaults write com.reederapp.rkit2.mac ShareRKServiceAppNet -dict enabled -int 0
+defaults write com.reederapp.rkit2.mac ShareRKServiceBuffer -dict enabled -int 0
+defaults write com.reederapp.rkit2.mac ShareRKServiceDelicious -dict enabled -int 0
+defaults write com.reederapp.rkit2.mac ShareRKServiceEvernote -dict enabled -int 0
+defaults write com.reederapp.rkit2.mac ShareRKServiceFacebook -dict enabled -int 0
+defaults write com.reederapp.rkit2.mac ShareRKServiceInstapaper -dict enabled -int 0 "show-in-toolbar" -int 0
+defaults write com.reederapp.rkit2.mac ShareRKServiceMailLink -dict enabled -int 1 "show-in-toolbar" -int 1 to -string "me@brad.is"
+defaults write com.reederapp.rkit2.mac ShareRKServiceMarsEdit -dict enabled -int 0
+# defaults write com.reederapp.rkit2.mac ShareRKServiceMessage -dict enabled -int 1
+defaults write com.reederapp.rkit2.mac ShareRKServicePinboard -dict enabled -int 1 "show-in-toolbar" -int 1
+defaults write com.reederapp.rkit2.mac ShareRKServiceQuoteFMRead -dict enabled -int 0
+defaults write com.reederapp.rkit2.mac ShareRKServiceReadItLater -dict enabled -int 1 "show-in-toolbar" -int 1
+defaults write com.reederapp.rkit2.mac ShareRKServiceReadability -dict enabled -int 0
+# defaults write com.reederapp.rkit2.mac ShareRKServiceReadingList -dict enabled -int 1
+# defaults write com.reederapp.rkit2.mac ShareRKServiceSafari -dict enabled -int 1
+defaults write com.reederapp.rkit2.mac ShareRKServiceTwitter -dict enabled -int 0
 
 ###############################################################################
 # Kill affected applications                                                  #
@@ -920,6 +940,7 @@ for app in "Activity Monitor" \
 	"Messages" \
 	"Opera" \
 	"Photos" \
+	"Reeder" \
 	"Safari" \
 	"SizeUp" \
 	"Spectacle" \

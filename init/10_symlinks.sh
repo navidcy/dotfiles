@@ -5,6 +5,7 @@ mkdir -p ~/bin
 mkdir -p ~/.ipython/profile_default
 mkdir -p ~/.mutt/cache
 chmod 0700 ~/.mutt/cache
+mkdir -p ~/tmp
 
 # Symlink directories from iCloud drive to home
 if [ "$(uname)" = "Darwin" ]; then

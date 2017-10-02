@@ -35,7 +35,7 @@ brews=(
     imapfilter
     libevent
     lua
-    mobile-shell
+    mosh
     mpc
     mpd
     mpv
