@@ -51,6 +51,7 @@ brews=(
     pwgen
     qrencode
     reattach-to-user-namespace
+    rename
     ripgrep
     sshfs
     surfraw
