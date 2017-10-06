@@ -6,11 +6,13 @@ mkdir -p ~/.ipython/profile_default
 mkdir -p ~/.mutt/cache
 chmod 0700 ~/.mutt/cache
 mkdir -p ~/tmp
+mkdir -p ~/texmf/bibtex/bib/myfiles/
 
 # Symlink directories from iCloud drive to home
 if [ "$(uname)" = "Darwin" ]; then
     ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
     ln -s ~/iCloud/articles ~/articles
+    ln -s ~/iCloud/articles/own/BIBnew.bib ~/texmf/bibtex/bib/myfiles/BIB.bib
     ln -s ~/iCloud/src ~/src
     ln -s ~/iCloud/doc ~/doc
     ln -s ~/doc/.password-store ~/.password-store
