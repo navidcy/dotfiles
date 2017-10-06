@@ -59,7 +59,7 @@ nmap <leader>" :split
 nmap <leader>C :e $MYVIMRC<CR>
 "nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>T :e ~/doc/todo.md<CR>
-nmap <leader>B :e ~/texmf/bibtex/bib/myfiles/BIB.bib<CR>
+nmap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
 nmap <leader>A :e ~/articles/articles.rst<CR>
 
 nmap <leader>r :read !scholarref.py 
