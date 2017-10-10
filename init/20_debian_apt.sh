@@ -20,6 +20,7 @@ apt_packages=(
     ffmpeg
     git
     haskell-platform
+    highlight
     hsetroot
     htop
     i3
