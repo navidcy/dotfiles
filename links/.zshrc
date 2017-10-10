@@ -308,5 +308,7 @@ export GPG_TTY=`tty`
 
 # trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#export FZF_DEFAULT_OPTS="--preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
+export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} || coderay {} || rougify{}) 2> /dev/null || head -500 {}'"
 
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'

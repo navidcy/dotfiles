@@ -30,6 +30,7 @@ brews=(
     gnupg
     homebrew/science/paraview
     htop-osx
+    highlight
     id3v2
     imagemagick
     imapfilter
