@@ -87,7 +87,7 @@ Plug 'nsf/gocode'
 Plug 'JuliaLang/julia-vim'
 
 " Python
-Plug 'klen/python-mode'
+"Plug 'klen/python-mode'
 
 " HTML/PHP/JS
 Plug 'captbaritone/better-indent-support-for-php-with-html'

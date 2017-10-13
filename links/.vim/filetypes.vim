@@ -22,7 +22,3 @@ autocmd FileType tex,latex,md,markdown,mkd,rst,mail
 " m = conceal math symbols
 " s = conceal superscripts/subscripts
 let g:tex_conceal="agm"
-
-
-
-

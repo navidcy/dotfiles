@@ -58,7 +58,7 @@ remoteuser = andersd
 #remotepasseval = get_keychain_pass(account="andersd", server="mail.riseup.net")
 remotepasseval = get_pass("andersd@riseup.net")
 ssl = yes
-cert_fingerprint = 86a010ddba262196d7f6f1f47ae03032f9031c32
+cert_fingerprint = 92471a2f5f1082cc2752f308e0c5631a43f14af3
 #folderfilter = lambda folder: folder not in ['Drafts']
 
 # Instead of closing the connection once a sync is complete, offlineimap will
