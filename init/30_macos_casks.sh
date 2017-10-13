@@ -26,7 +26,9 @@ casks=(
     steam
     torbrowser
     transmission
+    vagrant
     vlc
+    virtualbox
     xquartz
 )
 
