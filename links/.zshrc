@@ -311,3 +311,5 @@ export GPG_TTY=`tty`
 export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -100'"
 
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
+
+[[ "$(type -p exa)" ]] && alias ls='exa'
