@@ -65,6 +65,7 @@ brews=(
     urlview
     vim
     vimpc
+    vitetris
     "vtk --with-tcl --with-qt --with-python --with-matplotlib --with-examples"
     w3m
     watch
