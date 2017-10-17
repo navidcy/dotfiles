@@ -8,64 +8,65 @@
 
 # from `brew list`
 brews=(
-    abook
-    asciinema
-    aspell
+    abook       # manage email aliases
+    aria2       # download with resume
+    asciinema   # save and upload recordings of terminal
+    aspell      # spell checking for vim
     autoconf
     automake
-    autossh
-    c2048
-    catimg
+    c2048       # start with `2048`
+    catimg      # convert image to ASCII in terminal
     cmake
-    cpanminus
+    cpanminus   # required for notmuch CPAN packages
     ctags-exuberant
-    exiftool
+    exiftool    # used to manage RAW metadata
     ffmpeg
     fortune
-    fzf
-    gdbm
-    gettext
+    fzf         # fuzzy file finder
     git
-    gnu-getopt
     gnupg
     homebrew/science/paraview
     htop-osx
-    highlight
-    id3v2
+    highlight   # used for syntax highligting in fzf
+    id3v2       # mp3 metadata management
     imagemagick
     imapfilter
-    libevent
     lua
-    mosh
-    mpc
-    mpd
-    mpv
-    msmtp
+    mosh        # persistent SSH
+    mpc         # command-line control over mpd
+    mpd         # music player daemon
+    mpv         # media player
+    msmtp       # used to deliver mails
     mutt
     nmap
     notmuch
+    nyancat
     offlineimap
     openssl
     pass
     pcre
     pkg-config
+    proxychains-ng  # torify alternative?
     pwgen
-    qrencode
-    reattach-to-user-namespace
-    rename
-    ripgrep
+    qrencode    # generate QR codes from command line
+    reattach-to-user-namespace  # needed for tmux
+    rename      # rename many files with convenient syntax
+    ripgrep     # a faster grep
+    ssh-copy-id # add public key to a remote's authorized_keys file
     sshfs
-    surfraw
+    subliminal  # search and download subtitles
+    surfraw     # cmd-line interface to search engines (`sr` alias)
+    thefuck     # correct cmd-line typos with fuck function
     tmux
-    translate-shell
-    tig
+    translate-shell  # provides `trans` interface to google translate
+    tig         # git history
     tor
     torsocks
     tree
     urlview
     vim
     vimpc
-    vitetris
+    vitetris    # command line tetris
     "vtk --with-tcl --with-qt --with-python --with-matplotlib --with-examples"
     w3m
     watch
