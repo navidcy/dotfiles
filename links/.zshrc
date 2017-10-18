@@ -312,6 +312,5 @@ export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} || coderay {} || ro
 
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
 
-eval "$(thefuck --alias)"
-
-[[ "$(type -p exa)" ]] && alias ls='exa'
+[ command -v thefuck &>/dev/null ] && eval "$(thefuck --alias)"
+[ "$(type -p exa)" ] && alias ls='exa'
