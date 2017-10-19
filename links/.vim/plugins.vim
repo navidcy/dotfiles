@@ -29,7 +29,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'  " ctags overview :TagBarToggle
 Plug 'ludovicchabant/vim-gutentags'  " automatic tag generation
-
+Plug 'mileszs/ack.vim'  " file search, using rg or ag (specified below)
 
 """""" Syntax checking """"""
 Plug 'w0rp/ale'  " asynchronous syntax check
@@ -119,3 +119,11 @@ let g:rainbow_active = 1  " toggle with :RainbowToggle
 " create a navigation table with :Toc, :Toch, :Tocv
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
+
+" Tell ack.vim to use rg (ripgrep) or ag (the Silver Searcher) instead
+if executable("rg")
+    let g:ackprg = 'rg --vimgrep --no-heading'
+elseif executable("ag")
+    let g:ackprg = 'ag --vimgrep'
+end
+

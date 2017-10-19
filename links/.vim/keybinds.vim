@@ -1,4 +1,8 @@
 """ Keyboard shortcuts
+"
+" Formatting options are prefixed by backslash
+nmap \A :set formatoptions+=a<CR>:echo "autowrap enabled"<CR>
+nmap \a :set formatoptions-=a<CR>:echo "autowrap disabled"<CR>
 
 " Save with ZX
 nmap ZX :w<CR>
@@ -22,7 +26,7 @@ nmap <Leader>W :w !sudo tee > /dev/null %<CR>:e!<CR>
 nmap <Leader>q :q<CR>
 
 " Native (fast) buffer switching
-nnoremap ,b :ls<CR>:buffer<Space>
+"nnoremap ,b :ls<CR>:buffer<Space>
 
 " Close buffer
 nmap <leader>Q :bd<CR>
@@ -60,7 +64,6 @@ nmap <leader>C :e $MYVIMRC<CR>
 "nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>T :e ~/doc/todo.md<CR>
 nmap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
-nmap <leader>A :e ~/articles/articles.rst<CR>
 
 nmap <leader>r :read !scholarref.py 
 
@@ -191,6 +194,19 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 "nmap <leader>b :CtrlPBuffer<CR>
 "nmap <leader>O :CtrlPMRUFiles<CR>
 "nmap <leader>o :CtrlP<CR>
+
+" file search
+if executable("rg")
+    command! -bang -nargs=* Rg
+                \ call fzf#vim#grep(
+                \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+                \   <bang>0 ? fzf#vim#with_preview('up:60%')
+                \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+                \   <bang>0)
+    nmap <Leader>a :Rg<CR>
+elseif executable("ag")
+    nmap <Leader>a :Ag<CR>
+end
 
 " using fzf.vim
 nmap <leader>b :Buffers<CR>
