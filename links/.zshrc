@@ -319,8 +319,17 @@ if _has fzf; then
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 
+    # use ripgrep if available
+    if _has rg; then
+        # --files: List files that would be searched but do not search
+        # --no-ignore: Do not respect .gitignore, etc...
+        # --hidden: Search hidden files and folders
+        # --follow: Follow symlinks
+        # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+        export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
     # use the_silver_searcher if available
-    if _has ag; then
+    elif _has ag; then
         export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f --nocolor -g ""'
     fi
 fi
