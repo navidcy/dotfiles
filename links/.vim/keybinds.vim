@@ -38,7 +38,7 @@ nmap <leader>Q :bd<CR>
 nmap <Leader>x :x<CR>
 
 " Jump to previous buffer
-nmap <leader><tab> <C-^>
+nmap <leader><tab> :e#<CR>
 
 " Explore buffers
 "nmap <leader>b :BufExplorer<CR>
@@ -196,6 +196,7 @@ elseif executable("ag")
 end
 
 " using fzf.vim
+nmap ; :Buffers<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>O :History<CR>
 nmap <leader>o :Files<CR>
