@@ -7,6 +7,9 @@ nmap \a :set formatoptions-=a<CR>:echo "autowrap disabled"<CR>
 " Save with ZX
 nmap ZX :w<CR>
 
+" toggle distraction-free editing
+nmap <leader>y :set nolist<CR>:Goyo<CR>
+
 " use , instead of \ as leader
 "let mapleader=","
 " use space instead of \ as leader
@@ -104,12 +107,6 @@ if has('nvim')
     nmap <leader><CR> :terminal<CR>
 endif
 
-" Switch split focus with Alt+{h,j,k,l}
-"nnoremap <C-h> <C-w>h
-"nnoremap <C-j> <C-w>j
-"nnoremap <C-k> <C-w>k
-"nnoremap <C-l> <C-w>l
-
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
 nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
@@ -135,12 +132,6 @@ nmap <leader>F zA
 " za: toggle a fold
 " zM: close all folds
 " zR: open all folds
-
-" Switch split focus with <C-h>, <C-j>, <C-k> and <C-l>
-"map <C-h> <C-w>h
-"map <C-j> <C-w>j
-"map <C-k> <C-w>k
-"map <C-l> <C-w>l
 
 " Use home row keys as Esc
 inoremap jk <Esc>
@@ -190,10 +181,6 @@ nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR
 " When the cursor is on a function call, press <Ctrl-[> to go to its definition.
 " Press <Ctrl-t> to go back
 " Use the Ctrl-P plugin to search the tags
-"nmap <leader>P :CtrlPTag<CR>
-"nmap <leader>b :CtrlPBuffer<CR>
-"nmap <leader>O :CtrlPMRUFiles<CR>
-"nmap <leader>o :CtrlP<CR>
 
 " file search
 if executable("rg")
@@ -216,19 +203,6 @@ nmap <leader>l :Lines<CR>
 nmap <leader>L :BLines<CR>
 nmap <leader>t :Tags<CR>
 
-" use git or silver searcher (ag) for CtrlP autocompletion
-let g:ctrlp_use_caching = 0
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    let g:ctrlp_prompt_mappings = {
-                \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-                \ }
-endif
-
 " Copy and paste to system clipboard with <Space>v and <Space>y
 vmap <Leader>y "+y
 vmap <Leader>d "+d
@@ -248,4 +222,3 @@ let g:startify_custom_header =
             \ map(split(system('fortune -s | cowthink'), '\n'), '"   ".v:val') 
             \ + ['','']
 
-nnoremap <leader>M :CtrlPMpc<cr>

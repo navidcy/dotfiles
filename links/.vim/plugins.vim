@@ -18,12 +18,11 @@ Plug 'mhinz/vim-startify'  " startup screen
 Plug 'guns/xterm-color-table.vim' " show color table with :XtermColorTable
 Plug 'Yggdroot/indentLine' " show indent levels with thin vertical lines
 Plug 'embear/vim-foldsearch' " hide/show lines matching a patter
-
+Plug 'junegunn/goyo.vim'  " distraction-free editing in prose mode
+Plug 'junegunn/limelight.vim'  " highlight current paragraph in goyo
 
 """""" File system """""""
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'kien/ctrlp.vim'
-Plug 'lucidstack/ctrlp-mpc.vim' " Control mpd by CtrlP
 Plug 'justinmk/vim-gtfo' " open file manager (gof)/tmux pane (got) @ current dir
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -127,3 +126,26 @@ let g:vim_markdown_math=1
 "    let g:ackprg = 'ag --vimgrep'
 "end
 
+
+function! s:goyo_enter()
+  silent !tmux set status off
+  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  set noshowmode
+  set noshowcmd
+  set nolist
+  set scrolloff=999
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  set showmode
+  set showcmd
+  set list
+  set scrolloff=3
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
