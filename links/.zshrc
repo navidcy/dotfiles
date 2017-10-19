@@ -1,10 +1,13 @@
 source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/code/zsh-git-prompt/zshrc.sh
 
-if command -v cabal &>/dev/null; then
-    if command -v stack &>/dev/null; then
-        GIT_PROMPT_EXECUTABLE='haskell'
-    fi
+# Returns whether the given command is executable or aliased.
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
+if _has cabal && _has stack; then
+    GIT_PROMPT_EXECUTABLE='haskell'
 fi
 ZSH_THEME_GIT_PROMPT_CACHE=true
 
@@ -270,8 +273,6 @@ fi
 
 [ -f $HOME/.locale ] && $HOME/.locale
 
-source ~/.tmuxinator/tmuxinator.zsh
-
 if [ $(echo $HOSTNAME | grep flaptop) ]; then
     #source ~/.xsh
     #export PATH=~/miniconda3/bin:$PATH
@@ -306,12 +307,25 @@ export GOPATH=$HOME/src/golang
 
 export GPG_TTY=`tty`
 
-# trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -100'"
+if _has fzf; then
+
+    # trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    export FZF_DEFAULT_OPTS="
+    --preview '(highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -100'
+    "
+
+    # fzf can be launched with ctrl-t or alt-c
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+
+    # use the_silver_searcher if available
+    if _has ag; then
+        export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f --nocolor -g ""'
+    fi
+fi
 
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
 
-eval "$(thefuck --alias)"
-
-[[ "$(type -p exa)" ]] && alias ls='exa'
+_has thefuck && eval "$(thefuck --alias)"
+_has exa && alias ls='exa'
