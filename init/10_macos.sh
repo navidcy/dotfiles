@@ -202,8 +202,8 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Keep shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool false
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
