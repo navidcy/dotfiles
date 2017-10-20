@@ -1,8 +1,13 @@
 #!/bin/bash
+
+# cmd-line args as message
 msg="$@"
+
+# use STDIN if no args are passed
 if [ $# -eq 0 ]; then
-    msg=`cat`
+    msg="$(cat)"
 fi
+
 to="Susan Louise Damsgaard Sonnesen"
 #to="Anders Damsgaard"
 
