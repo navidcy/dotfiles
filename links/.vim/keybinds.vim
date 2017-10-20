@@ -196,7 +196,7 @@ elseif executable("ag")
 end
 
 " using fzf.vim
-nmap ; :Buffers<CR>
+nmap , :Buffers<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>O :History<CR>
 nmap <leader>o :Files<CR>
