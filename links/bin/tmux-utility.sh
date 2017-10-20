@@ -6,7 +6,11 @@ tmux has-session -t $SESSION
 if [ $? != 0 ]
 then
     mpd ~/.mpd/mpd.conf
-    ssh-add
+    if [ "$(uname)" = "Darwin" ]; then
+        ssh-add -K
+    else
+        ssh-add
+    fi
 
     # Create new session, name it, name the window, detach
     tmux new-session -s $SESSION -n misc -d
