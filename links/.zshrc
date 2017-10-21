@@ -69,6 +69,14 @@ _editor_fuzzy_find() {
 zle -N _editor_fuzzy_find
 bindkey '^f' _editor_fuzzy_find
 
+# launch vim+fzf+rg with Ctrl-g
+_editor_fuzzy_grep() {
+    BUFFER="vim -c ':Rg'"
+    zle accept-line
+}
+zle -N _editor_fuzzy_grep
+bindkey '^g' _editor_fuzzy_grep
+
 if [[ "$ARCH" != 'Darwin' ]]; then
     function open() { xdg-open $1 &> /dev/null &disown; }
     function say() { echo "$@" | festival --tts; }
@@ -343,7 +351,8 @@ if _has fzf; then
         # --hidden: Search hidden files and folders
         # --follow: Follow symlinks
         # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-        export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+        #export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+        export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 
     # use the_silver_searcher if available
     elif _has ag; then
