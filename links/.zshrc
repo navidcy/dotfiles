@@ -54,7 +54,6 @@ bindkey "^k" history-beginning-search-forward
 
 # launch $EDITOR with Ctrl-e
 _editor() {
-    #$SHELL -c $EDITOR
     BUFFER="$EDITOR"
     zle accept-line
 }
@@ -351,7 +350,6 @@ if _has fzf; then
         # --hidden: Search hidden files and folders
         # --follow: Follow symlinks
         # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-        #export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
         export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 
     # use the_silver_searcher if available
