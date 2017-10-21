@@ -94,8 +94,8 @@ function e () {
 
 alias svim='sudo -e'
 #alias e='emacs -nw'
-#alias v='vim'
-alias v='nvim'
+alias v='vim'
+#alias v='nvim'
 alias f='fg'
 alias vi='vim -u NONE'
 #alias vi='nvim -u NONE'
