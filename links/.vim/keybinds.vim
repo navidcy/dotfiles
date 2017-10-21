@@ -7,9 +7,6 @@ nmap \a :set formatoptions-=a<CR>:echo "autowrap disabled"<CR>
 " Save with ZX
 nmap ZX :w<CR>
 
-" toggle distraction-free editing
-nmap <leader>y :set nolist<CR>:Goyo<CR>
-
 " use , instead of \ as leader
 "let mapleader=","
 " use space instead of \ as leader
@@ -17,6 +14,10 @@ let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
 nmap <leader>R :source $MYVIMRC<CR>
+
+" toggle distraction-free editing
+nmap <leader>y :set nolist<CR>:Goyo<CR>
+nmap <leader>Y :set nolist<CR>:Goyo!<CR>:source $MYVIMRC<CR>
 
 " Shortcut to switch background color
 "nmap <leader>W :ToggleBG<CR>
