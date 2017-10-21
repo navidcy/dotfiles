@@ -62,12 +62,12 @@ zle -N _editor
 bindkey '^e' _editor
 
 # launch vim+fzf with Ctrl-f
-_editor() {
+_editor_fuzzy_find() {
     BUFFER="vim -c ':FZF'"
     zle accept-line
 }
-zle -N _editor
-bindkey '^f' _editor
+zle -N _editor_fuzzy_find
+bindkey '^f' _editor_fuzzy_find
 
 if [[ "$ARCH" != 'Darwin' ]]; then
     function open() { xdg-open $1 &> /dev/null &disown; }
