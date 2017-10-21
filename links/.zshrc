@@ -52,6 +52,23 @@ bindkey '^R' history-incremental-search-backward
 bindkey "^j" history-beginning-search-backward
 bindkey "^k" history-beginning-search-forward
 
+# launch $EDITOR with Ctrl-e
+_editor() {
+    #$SHELL -c $EDITOR
+    BUFFER="$EDITOR"
+    zle accept-line
+}
+zle -N _editor
+bindkey '^e' _editor
+
+# launch vim+fzf with Ctrl-f
+_editor() {
+    BUFFER="vim -c ':FZF'"
+    zle accept-line
+}
+zle -N _editor
+bindkey '^f' _editor
+
 if [[ "$ARCH" != 'Darwin' ]]; then
     function open() { xdg-open $1 &> /dev/null &disown; }
     function say() { echo "$@" | festival --tts; }
