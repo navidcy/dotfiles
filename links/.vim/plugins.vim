@@ -47,7 +47,7 @@ Plug 'ervandew/supertab'     " complete with TAB in insert mode
 
 """""" Version control """"""
 Plug 'tpope/vim-fugitive'   " :Gread, :Gwrite
-Plug 'tpope/vim-rhubarb'    " enables :Gbrowse
+Plug 'tpope/vim-rhubarb'    " enables fugitive's :Gbrowse for Github
 Plug 'airblade/vim-gitgutter'  " show line changes since last git commit
 
 """""" Processes """"""
