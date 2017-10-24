@@ -103,10 +103,18 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
 " equal split size
 nmap <leader>= <C-w>=
 
-" Commit all changes
-"nmap <leader>g :Gcommit<CR>
-nmap <leader>g :Start git commit -a -v -S<CR>
-nmap <leader>G :Start git commit -a -v -S && git push<CR>
+" bindings to git cmd
+"nmap <leader>g :Start git commit -a -v -S<CR>
+"nmap <leader>G :Start git commit -a -v -S && git push<CR>
+
+" bindings to fugitive
+nmap <leader>ga :Gwrite<CR>
+nmap <leader>gm :Gmove 
+nmap <leader>gb :Gblame<CR>
+nmap <leader>gw :Gbrowse<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gcommit -v -S<CR>
+nmap <leader>gp :Git push<CR>
 
 " Use home row keys as Esc
 inoremap jk <Esc>
