@@ -33,6 +33,7 @@ Plug 'christoomey/vim-tmux-navigator'
 """""" Text editing """"""
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-speeddating'  " increment dates and times with C-a and C-x
+Plug 'tpope/vim-repeat.git'   " repeat plugin bindings with .
 Plug 'junegunn/vim-easy-align'  " align in columns (select > return > space)
 Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-litecorrect'
