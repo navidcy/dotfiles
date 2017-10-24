@@ -361,4 +361,4 @@ fi
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
 
 _has thefuck && eval "$(thefuck --alias)"
-_has exa && alias ls='exa'
+_has exa && alias ls='exa --git'
