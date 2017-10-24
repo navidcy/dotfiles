@@ -85,7 +85,7 @@ set fcc_clear         # Keep fcc's clear of signatues and encryption.
 set nopipe_decode     # Don't decode messages when piping.
 set text_flowed       # label messages as format-flowed
 set sleep_time=0      # speed up IMAP folders switch
-
+set help=no           # disable top help bar
 set ispell="aspell -e -c"
 set tilde            # Fill out messages with '~'.
 set read_inc=100     # Read counter ticks every 100 msgs.
