@@ -114,7 +114,7 @@ nmap <leader>gb :Gblame<CR>
 nmap <leader>gw :Gbrowse<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Gcommit -v -S<CR>
-nmap <leader>gp :Git push<CR>
+nmap <leader>gp :Gpush<CR>
 
 " Use home row keys as Esc
 inoremap jk <Esc>
