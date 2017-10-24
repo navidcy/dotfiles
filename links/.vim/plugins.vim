@@ -85,6 +85,8 @@ call plug#end()
 
 let g:rainbow_active = 1  " toggle with :RainbowToggle
 
+let g:foldsearch_disable_mappings = 1
+
 " vim-markdown configuration
 " navigate headers with ]] and [[
 " format a table with :TableFormat
