@@ -1,12 +1,7 @@
 """"" PLUGIN SOURCES """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-
-" install plugins with :PlugInstall
-" Make sure you use single quotes
 
 """""" Appearance """"""
 Plug 'itchyny/lightline.vim'  " lighter status line
@@ -31,20 +26,9 @@ Plug 'ludovicchabant/vim-gutentags'  " automatic tag generation
 """""" Syntax checking """"""
 Plug 'w0rp/ale'  " asynchronous syntax check
 
-
 """""" Buffer motion """"""
 Plug 'Lokaltog/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
-
-" add/remove bookmark: mm
-" add/edit/remove annotation: mi
-" next bookmark: mn
-" previous bookmark: mn
-" list of all bookmarks: ma
-" clear all bookmarks in current buffer: mc
-" clear all bookmarks in all buffers: mx
-Plug 'MattesGroeger/vim-bookmarks'
-
 
 """""" Text editing """"""
 Plug 'tpope/vim-surround'
@@ -57,20 +41,16 @@ Plug 'reedes/vim-litecorrect'
 " see history with :Yanks
 Plug 'maxbrunsfeld/vim-yankstack'
 
-
 """""" Autocomplete """"""
 Plug 'davidhalter/jedi-vim'  " (C-space)
 Plug 'ervandew/supertab'     " complete with TAB in insert mode
-
 
 """""" Version control """"""
 Plug 'tpope/vim-fugitive'   " :Gread, :Gwrite
 Plug 'airblade/vim-gitgutter'  " show line changes since last git commit
 
-
 """""" Processes """"""
 Plug 'tpope/vim-dispatch'  " for :Make
-
 
 """""" File types """"""
 " General
@@ -97,11 +77,6 @@ Plug 'plasticboy/vim-markdown'
 " Mail
 Plug 'vim-scripts/mutt-aliases' " auto-complete aliases from ~/.mutt/aliases
 
-
-""""" Unmanaged plugin (manually installed and updated) """"""
-"Plug '~/my-prototype-plugin'
-
-
 " Initialize plugin system
 call plug#end()
 
@@ -116,14 +91,6 @@ let g:rainbow_active = 1  " toggle with :RainbowToggle
 " create a navigation table with :Toc, :Toch, :Tocv
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
-
-" Tell ack.vim to use rg (ripgrep) or ag (the Silver Searcher) instead
-"if executable("rg")
-"    let g:ackprg = 'rg --vimgrep --no-heading'
-"elseif executable("ag")
-"    let g:ackprg = 'ag --vimgrep'
-"end
-
 
 function! s:goyo_enter()
   silent !tmux set status off

@@ -1,5 +1,5 @@
 """ Keyboard shortcuts
-"
+
 " Formatting options are prefixed by backslash
 nmap \A :set formatoptions+=a<CR>:echo "autowrap enabled"<CR>
 nmap \a :set formatoptions-=a<CR>:echo "autowrap disabled"<CR>
@@ -7,8 +7,6 @@ nmap \a :set formatoptions-=a<CR>:echo "autowrap disabled"<CR>
 " Save with ZX
 nmap ZX :w<CR>
 
-" use , instead of \ as leader
-"let mapleader=","
 " use space instead of \ as leader
 let mapleader="\<Space>"
 
@@ -19,18 +17,12 @@ nmap <leader>R :source $MYVIMRC<CR>
 nmap <leader>y :set nolist<CR>:Goyo<CR>
 nmap <leader>Y :set nolist<CR>:Goyo!<CR>:source $MYVIMRC<CR>
 
-" Shortcut to switch background color
-"nmap <leader>W :ToggleBG<CR>
-
 " Save file
 nmap <Leader>w :w<CR>
 nmap <Leader>W :w !sudo tee > /dev/null %<CR>:e!<CR>
 
 " Quit
 nmap <Leader>q :q<CR>
-
-" Native (fast) buffer switching
-"nnoremap ,b :ls<CR>:buffer<Space>
 
 " Close buffer
 nmap <leader>Q :bd<CR>
@@ -40,9 +32,6 @@ nmap <Leader>x :x<CR>
 
 " Jump to previous buffer
 nmap <leader><tab> :e#<CR>
-
-" Explore buffers
-"nmap <leader>b :BufExplorer<CR>
 
 " toggle spelling
 nmap <leader>s :set spell!<CR>
@@ -65,7 +54,6 @@ nmap <leader>" :split
 
 " shortcuts to commonly used files
 nmap <leader>C :e $MYVIMRC<CR>
-"nmap <leader>T :e ~/doc/todo.org<CR>
 nmap <leader>T :e ~/doc/todo.md<CR>
 nmap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
 
@@ -76,9 +64,7 @@ nmap <leader>D :read !date<CR>
 
 " job execution
 nmap <leader>m :Make 
-nmap <leader>E :VimProcRead 
 nmap <leader>! :Start! 
-
 
 " Switch split focus with leader+hjkl
 nmap <leader>h <C-w>h
@@ -103,10 +89,10 @@ if has('nvim')
     tnoremap <C-j> <C-\><C-n><C-w>j
     tnoremap <C-k> <C-\><C-n><C-w>k
     tnoremap <C-l> <C-\><C-n><C-w>l
-
-    " launch terminal in current window
-    nmap <leader><CR> :terminal<CR>
 endif
+
+" launch terminal in current window
+nmap <leader><CR> :terminal bash<CR>
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
@@ -122,18 +108,6 @@ nmap <leader>= <C-w>=
 nmap <leader>g :Start git commit -a -v -S<CR>
 nmap <leader>G :Start git commit -a -v -S && git push<CR>
 
-" Toggle fold
-nmap <leader>f za
-" Toggle all folds
-nmap <leader>F zA
-"nmap <leader>Fa zR
-"nmap <leader>FA zM
-" zc: close a fold
-" zo: open a fold
-" za: toggle a fold
-" zM: close all folds
-" zR: open all folds
-
 " Use home row keys as Esc
 inoremap jk <Esc>
 inoremap lkj <Esc>:write<CR>
@@ -145,21 +119,8 @@ inoremap lkj <Esc>:write<CR>
 map <leader>E <Plug>(easymotion-prefix)
 
 " <Leader>f{char} to move to {char}
-"map  <leader>f <Plug>(easymotion-bd-f)
-"nmap <leader>f <Plug>(easymotion-overwin-f)
 map  <leader><leader> <Plug>(easymotion-bd-f)
 nmap <leader><leader> <Plug>(easymotion-overwin-f)
-
-" s{char}{char} to move to {char}{char} (conflicts with spell)
-"nmap <leader>s <Plug>(easymotion-overwin-f2)
-
-" Move to line
-"map <leader>L <Plug>(easymotion-bd-jk)
-"nmap <leader>L <Plug>(easymotion-overwin-line)
-
-" Move to word
-"map  <leader>W <Plug>(easymotion-bd-w)
-"nmap <leader>W <Plug>(easymotion-overwin-w)
 
 " Disable arrow keys
 map <Left> <Nop>
@@ -171,17 +132,8 @@ imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
 
-" show/hide tagbar
-"nmap <leader>t :TagbarToggle<CR>
-
 " Update ctags
 nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
-" useful tags commands:
-" :tag or :ta <function> Go to definition of the function
-" :ts or :tselect Show the list of tags
-" When the cursor is on a function call, press <Ctrl-[> to go to its definition.
-" Press <Ctrl-t> to go back
-" Use the Ctrl-P plugin to search the tags
 
 " file search
 if executable("rg")
@@ -199,8 +151,8 @@ end
 " using fzf.vim
 nmap , :Buffers<CR>
 nmap <leader>b :Buffers<CR>
-nmap <leader>O :History<CR>
-nmap <leader>o :Files<CR>
+nmap <leader>F :History<CR>
+nmap <leader>f :Files<CR>
 nmap <leader>l :Lines<CR>
 nmap <leader>L :BLines<CR>
 nmap <leader>t :Tags<CR>

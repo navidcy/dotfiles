@@ -12,9 +12,7 @@ autocmd FileType tex,latex,md,markdown,mkd,rst,mail
             \ | setl nocursorcolumn
             \ | setl list
             \ | setl formatoptions=alw2qt " automatically reflow paragraphs
-            "\ | setl spell spl=en_us noru nonu nornu
-            "\ | let b:dispatch = 'sh /usr/local/bin/preview %:p'
-"
+
 " customize what is concealed in LaTeX documents:
 " a = conceal accents/ligatures
 " d = conceal delimiters
