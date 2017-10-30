@@ -19,6 +19,7 @@ casks=(
     julia
     karabiner
     mactex
+    magicavoxel
     osxfuse
     processing
     skim
