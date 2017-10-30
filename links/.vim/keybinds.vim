@@ -57,7 +57,7 @@ nmap <leader>C :e $MYVIMRC<CR>
 nmap <leader>T :e ~/doc/todo.md<CR>
 nmap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
 
-nmap <leader>r :ScholaRref 
+nmap <leader>r :ScholarRef 
 
 " insert date and time
 nmap <leader>D :read !date<CR>
