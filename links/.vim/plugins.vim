@@ -54,6 +54,9 @@ Plug 'airblade/vim-gitgutter'  " show line changes since last git commit
 """""" Processes """"""
 Plug 'tpope/vim-dispatch'  " for :Make
 
+"""""" My plugins """"""
+Plug 'anders-dc/vim-scholarref'
+
 """""" File types """"""
 " General
 Plug 'msanders/snipmate.vim'  " boilerplate code
