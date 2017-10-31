@@ -3,6 +3,9 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
+"""""" Misc """"""
+Plug 'tpope/vim-unimpaired' " nav. errors with ]q, newlines with ]spc
+
 """""" Appearance """"""
 Plug 'itchyny/lightline.vim'  " lighter status line
 Plug 'drzel/vim-line-no-indicator'
