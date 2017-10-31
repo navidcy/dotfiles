@@ -82,6 +82,9 @@ Plug 'plasticboy/vim-markdown'
 " Mail
 Plug 'vim-scripts/mutt-aliases' " auto-complete aliases from ~/.mutt/aliases
 
+" LaTeX
+Plug 'lervag/vimtex'
+
 " Initialize plugin system
 call plug#end()
 
