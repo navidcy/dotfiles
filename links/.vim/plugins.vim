@@ -54,9 +54,6 @@ Plug 'airblade/vim-gitgutter'  " show line changes since last git commit
 """""" Processes """"""
 Plug 'tpope/vim-dispatch'  " for :Make
 
-"""""" My plugins """"""
-Plug 'anders-dc/vim-scholarref'
-
 """""" File types """"""
 " General
 Plug 'msanders/snipmate.vim'  " boilerplate code
@@ -84,6 +81,7 @@ Plug 'vim-scripts/mutt-aliases' " auto-complete aliases from ~/.mutt/aliases
 
 " LaTeX
 Plug 'lervag/vimtex'
+Plug 'anders-dc/vim-scholarref'
 
 " Initialize plugin system
 call plug#end()
