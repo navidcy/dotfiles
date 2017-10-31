@@ -38,7 +38,7 @@ setopt share_history
 setopt hist_verify
 setopt hist_ignore_all_dups
 export HISTFILE="${HOME}"/.zsh-history
-export HISTSIZE=10000
+export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
