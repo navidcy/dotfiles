@@ -11,6 +11,7 @@ brews=(
     abook       # manage email aliases
     aria2       # download with resume
     asciinema   # save and upload recordings of terminal
+    asciinema2gif # convert asciinema recordings to gif
     aspell      # spell checking for vim
     autoconf
     automake
