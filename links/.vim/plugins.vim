@@ -83,6 +83,9 @@ Plug 'vim-scripts/mutt-aliases' " auto-complete aliases from ~/.mutt/aliases
 Plug 'lervag/vimtex'
 Plug 'anders-dc/vim-scholarref'
 
+" Vimscript
+Plug 'junegunn/vader.vim' " testing framework
+
 " Initialize plugin system
 call plug#end()
 
