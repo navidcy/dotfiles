@@ -5,6 +5,7 @@ mkdir -p ~/bin
 mkdir -p ~/.ipython/profile_default
 mkdir -p ~/.mutt/cache
 chmod 0700 ~/.mutt/cache
+[ -f ~/.mutt/aliases ] || touch ~/.mutt/aliases
 mkdir -p ~/tmp
 mkdir -p $(kpsexpand '$TEXMFHOME')/bibtex/bib/myfiles/
 
