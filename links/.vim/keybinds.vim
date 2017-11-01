@@ -16,6 +16,7 @@ nmap <leader>R :source $MYVIMRC<CR>
 " toggle distraction-free editing
 nmap <leader>y :set nolist<CR>:Goyo<CR>
 nmap <leader>Y :set nolist<CR>:Goyo!<CR>:source $MYVIMRC<CR>
+"nmap <leader>Y :set nolist<CR>:Goyo!<CR>:source $MYVIMRC<CR>
 
 " Save file
 nmap <Leader>w :w<CR>
