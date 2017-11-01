@@ -1,31 +1,5 @@
 #!/usr/bin/env bash
 
-# Create folders
-mkdir -p ~/bin
-mkdir -p ~/.ipython/profile_default
-mkdir -p ~/.mutt/cache
-chmod 0700 ~/.mutt/cache
-[ -f ~/.mutt/aliases ] || touch ~/.mutt/aliases
-mkdir -p ~/tmp
-mkdir -p $(kpsexpand '$TEXMFHOME')/bibtex/bib/myfiles/
-
-# Symlink directories from iCloud drive to home
-if [ "$(uname)" = "Darwin" ]; then
-    ln -shvf ~/Library/Mobile\ Documents/com\~apple\~CloudDocs \
-        ~/iCloud
-    ln -shvf ~/iCloud/articles ~/articles
-    ln -shvf ~/iCloud/articles/own/BIBnew.bib \
-        $(kpsexpand '$TEXMFHOME')/bibtex/bib/myfiles/BIB.bib
-    ln -shvf ~/iCloud/src ~/src
-    ln -shvf ~/iCloud/doc ~/doc
-    ln -shvf ~/doc/.password-store ~/.password-store
-    ln -shvf ~/iCloud/uni ~/uni
-    ln -shvf ~/iCloud/videos ~/videos
-    ln -shvf \
-        ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/ \
-        ~/iawriter
-fi
-
 shopt -s dotglob
 for f in links/*; do
 
@@ -55,3 +29,29 @@ for f in links/*; do
 
   ln -sv $SOURCE $TARGET
 done
+
+# Create folders and non-symlink files
+mkdir -p ~/.ipython/profile_default
+mkdir -p ~/.mutt/cache
+chmod 0700 ~/.mutt/cache
+[ -f ~/.mutt/aliases ] || touch ~/.mutt/aliases
+mkdir -p ~/tmp
+mkdir -p $(kpsexpand '$TEXMFHOME')/bibtex/bib/myfiles/
+
+# Symlink directories from iCloud drive to home
+if [ "$(uname)" = "Darwin" ]; then
+    ln -shvf ~/Library/Mobile\ Documents/com\~apple\~CloudDocs \
+        ~/iCloud
+    ln -shvf ~/iCloud/articles ~/articles
+    ln -shvf ~/iCloud/articles/own/BIBnew.bib \
+        $(kpsexpand '$TEXMFHOME')/bibtex/bib/myfiles/BIB.bib
+    ln -shvf ~/iCloud/src ~/src
+    ln -shvf ~/iCloud/doc ~/doc
+    ln -shvf ~/doc/.password-store ~/.password-store
+    ln -shvf ~/iCloud/uni ~/uni
+    ln -shvf ~/iCloud/videos ~/videos
+    ln -shvf \
+        ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/ \
+        ~/iawriter
+fi
+
