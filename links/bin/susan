@@ -11,5 +11,4 @@ fi
 to="Susan Louise Damsgaard Sonnesen"
 #to="Anders Damsgaard"
 
-echo "$msg"
 osascript -e 'tell application "Messages" to send "'"$msg"'" to buddy "'"$to"'"'
