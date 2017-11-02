@@ -22,6 +22,7 @@ casks=(
     magicavoxel
     osxfuse
     processing
+    signal
     skim
     skype
     steam
