@@ -6,6 +6,7 @@ pips=(
     bs4
     gcalcli
     grepg
+    haxor-news
     requests
 )
 
