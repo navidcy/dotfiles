@@ -30,7 +30,10 @@ sudo nvram SystemAudioVolume=" "
 defaults write .GlobalPreferences AppleInterfaceStyle -string "Dark"
 
 # Disable transparency
-#defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
+# Reduce motion animations
+defaults write com.apple.universalaccess reduceMotion -bool true
 
 # Set highlight color to gray
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
