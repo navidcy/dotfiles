@@ -246,6 +246,7 @@ export EDITOR="vim"
 
 # Environment variables
 export PATH=/usr/local/bin:$PATH
+[ -d /usr/local/sbin] && export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
 if [ -d $HOME/.linuxbrew ]; then
     export PATH=$HOME/.linuxbrew/bin:$PATH
