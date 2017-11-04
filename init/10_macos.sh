@@ -29,8 +29,8 @@ sudo nvram SystemAudioVolume=" "
 # Use dark theme
 defaults write .GlobalPreferences AppleInterfaceStyle -string "Dark"
 
-# Disable transparency
-defaults write com.apple.universalaccess reduceTransparency -bool true
+# (Do not) disable transparency
+defaults write com.apple.universalaccess reduceTransparency -bool false
 
 # Reduce motion animations
 defaults write com.apple.universalaccess reduceMotion -bool true
