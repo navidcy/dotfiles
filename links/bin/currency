@@ -26,7 +26,6 @@ GETCMD="wget --no-verbose"
 if command -v torify >/dev/null 2>/dev/null; then
     GETCMD="torify $GETCMD"
 fi
-echo $RESULT
 
 RESULT=`$GETCMD -O - "$CONVERTER" 2>&1 | \
     LC_ALL=C sed -n -e 's/.*<span class=bld>\(.*\)<\/span>.*/\1/p'`
