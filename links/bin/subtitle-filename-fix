@@ -1,0 +1,4 @@
+#!/bin/sh
+for f in *.en.srt; do
+    mv $f ${f/.en/}
+done
