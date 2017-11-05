@@ -2,22 +2,6 @@
 set -e
 UNAMESTR=`uname`
 
-if [[ "$UNAMESTR" == 'Darwin' ]]; then
-    echo "## OSX-specific packages"
-    read -p "Do you want to force a neovim upgrade? [y/N] " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        brew reinstall --HEAD neovim
-    fi
-
-    #read -p "Do you want to update KWM? [y/N] " -n 1 -r
-    #echo
-    #if [[ $REPLY =~ ^[Yy]$ ]]; then
-    #echo "Updating kwm"
-        #cd ~/code/kwm && git pull && make ; cd -
-    #fi
-fi
-
 echo "## Updating package manager lists and installed packages"
 if [[ "$UNAMESTR" == 'Linux' ]]; then
     sudo apt-get update && \
@@ -31,7 +15,6 @@ elif [[ "$UNAMESTR" == 'Darwin' ]]; then
     brew update && \
         brew upgrade && \
         brew cleanup
-    #conda update --all
 else
     echo "Platform not supported"
     exit 1
@@ -54,3 +37,13 @@ for PIP in pip pip2 pip3; do
     echo "## Updating $PIP packages"
     $PIP freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs $PIP install -U
 done
+
+if [[ ! "$(type -P conda)" ]]; then
+    echo "## Upgrading conda packages"
+    conda update --all
+fi
+
+if [[ ! "$(type -P julia)" ]]; then
+    echo "## Upgrading julia packages"
+    julia -e 'Pkg.update()'
+fi
