@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
-[[ ! "$(type -P pip)" ]] && echo "Pip needs to be installed." && return 1
 
 # pip packages
-pips=(
+pkgs=(
     bs4
     gcalcli
     grepg
     haxor-news
+    neovim
     requests
 )
 
-for pip in "${pip[@]}"; do
-    pip install $pip
-    if [ "$pip" == "gcalcli" ]; then gcalcli list; fi
+for PIP in pip pip2 pip3; do
+    if [[ "$(type -P $PIP)" ]]; then
+        echo "## Installing $PIP packages"
+        for pkg in "${pkgs[@]}"; do
+            $PIP install $pkg
+            [ "$pkg" == "gcalcli" ] && gcalcli list
+        done
+    else
+        echo "## $PIP not installed"
+    fi
 done
