@@ -40,6 +40,7 @@ brews=(
     msmtp       # used to deliver mails
     mutt
     nmap
+    neovim
     notmuch
     nyancat
     offlineimap
