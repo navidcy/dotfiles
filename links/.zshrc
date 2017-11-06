@@ -1,4 +1,5 @@
 #### GENERAL
+
 ARCH=$(uname)
 
 set -o noclobber  # prevent overwriting files with > (override with 1>)
@@ -16,6 +17,7 @@ _has() {
 
 
 #### ZSH PLUGINS
+
 source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/code/zsh-git-prompt/zshrc.sh
 
@@ -78,6 +80,7 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
 # launch $EDITOR with Ctrl-e
 _editor() {
     BUFFER="$EDITOR"
@@ -104,7 +107,7 @@ bindkey '^g' _editor_fuzzy_grep
 
 
 #### FUNCTIONS AND ALIASES
-#
+
 if [[ "$ARCH" != 'Darwin' ]]; then
     function open() { xdg-open $1 &> /dev/null &disown; }
     function say() { echo "$@" | festival --tts; }
