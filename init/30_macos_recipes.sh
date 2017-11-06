@@ -58,7 +58,6 @@ brews=(
     sshfs
     subliminal  # search and download subtitles
     surfraw     # cmd-line interface to search engines (`sr` alias)
-    thefuck     # correct cmd-line typos with fuck function
     the_silver_searcher  # ag
     tmux
     translate-shell  # provides `trans` interface to google translate

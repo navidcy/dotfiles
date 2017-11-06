@@ -9,24 +9,13 @@ export EDITOR="vim"
 
 # Returns whether the given command is executable or aliased.
 _has() {
-  return $( whence $1 >/dev/null )
+  return $( (( $+commands[$1] )) )
 }
 
 [ -f ~/.bash_profile ] && source ~/.bash_profile
 [ -f $HOME/.locale ] && $HOME/.locale
 
-
-#### ZSH PLUGINS
-
-source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/code/zsh-git-prompt/zshrc.sh
-
-if _has cabal && _has stack; then
-    GIT_PROMPT_EXECUTABLE='haskell'
-fi
-ZSH_THEME_GIT_PROMPT_CACHE=true
-
-autoload -U compinit promptinit colors
+autoload -Uz compinit promptinit colors
 compinit
 promptinit
 colors
@@ -207,7 +196,6 @@ alias date-eastern='eastern-date'
 alias date-pacific='pacific-date'
 alias sha256sum='shasum -a 256'
 alias cala="gcalcli agenda"
-_has thefuck && eval "$(thefuck --alias)"
 _has exa && alias ls='exa --git'
 
 # enable color support of ls and also add handy aliases
@@ -253,7 +241,7 @@ export GPG_TTY=`tty`
 
 [ -d $HOME/pism ] && export PATH=$HOME/pism/bin:$PATH
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
-[ -f ~/torch ] && source ~/torch/install/bin/torch-activate
+[ -d ~/torch/install/bin ] && export PATH=~/torch/install/bin:$PATH
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
 
 if _has fzf; then
@@ -288,3 +276,14 @@ if [ -f /usr/local/Modules/default/init/zsh ]; then
     #module load git vim #python paraview ncview matlab ifort
     module load git vim paraview ifort anaconda python/2.7.1
 fi
+
+#### ZSH PLUGINS
+
+[ -f ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+    source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f ~/code/zsh-git-prompt/zshrc.sh ] && source ~/code/zsh-git-prompt/zshrc.sh
+
+if _has cabal && _has stack; then
+    GIT_PROMPT_EXECUTABLE='haskell'
+fi
+ZSH_THEME_GIT_PROMPT_CACHE=true
