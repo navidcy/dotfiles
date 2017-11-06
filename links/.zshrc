@@ -1,22 +1,36 @@
-source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/code/zsh-git-prompt/zshrc.sh
+#### GENERAL
+ARCH=$(uname)
+
+set -o noclobber  # prevent overwriting files with > (override with 1>)
+set -o vi
+
+export EDITOR="vim"
 
 # Returns whether the given command is executable or aliased.
 _has() {
   return $( whence $1 >/dev/null )
 }
 
+[ -f ~/.bash_profile ] && source ~/.bash_profile
+[ -f $HOME/.locale ] && $HOME/.locale
+
+
+#### ZSH PLUGINS
+source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/code/zsh-git-prompt/zshrc.sh
+
 if _has cabal && _has stack; then
     GIT_PROMPT_EXECUTABLE='haskell'
 fi
 ZSH_THEME_GIT_PROMPT_CACHE=true
 
-ARCH=$(uname)
-
 autoload -U compinit promptinit colors
 compinit
 promptinit
 colors
+
+
+#### ZSH APPEARANCE
 
 # check for background jobs
 local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$fg[blue]%}bg %{$reset_color%}.)"
@@ -25,9 +39,6 @@ local prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
 
 PROMPT="
 ${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
-#PROMPT='%B%m%~%b$(git_super_status) %# '
-#PROMPT='
-#%b$(git_super_status) %{$fg[red]%}»%{$reset_color%} '
 RPROMPT='${return_status} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
 
 unset AUTO_CD
@@ -47,11 +58,26 @@ zstyle ':completion:*:*:*:*:hosts' list-colors '=*=30;41'
 zstyle ':completion:*:*:*:*:users' list-colors '=*=$color[green]=$color[red]'
 zstyle ':completion:*' menu select
 
+
+#### ZSH KEYBINDS
+
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey "^j" history-beginning-search-backward
 bindkey "^k" history-beginning-search-forward
 
+# use Ctrl-Z as fg
+fancy-ctrl-z () {
+    if [[ $#BUFFER -eq 0 ]]; then
+        BUFFER="fg"
+        zle accept-line
+    else
+        zle push-input
+        zle clear-screen
+    fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
 # launch $EDITOR with Ctrl-e
 _editor() {
     BUFFER="$EDITOR"
@@ -76,6 +102,9 @@ _editor_fuzzy_grep() {
 zle -N _editor_fuzzy_grep
 bindkey '^g' _editor_fuzzy_grep
 
+
+#### FUNCTIONS AND ALIASES
+#
 if [[ "$ARCH" != 'Darwin' ]]; then
     function open() { xdg-open $1 &> /dev/null &disown; }
     function say() { echo "$@" | festival --tts; }
@@ -99,11 +128,8 @@ function w3mtor {
     torify w3m $url
 }
 function w3mddg { torify surfraw ddg $@ }
-#function weather { curl wttr.in/SanDiego; }
 function weather { curl 'wttr.in/?m'; }
-
-# Start tmux on shell login
-#[[ -z "$TMUX" ]] && exec tmux
+function define { curl --silent dict://dict.org/d:$1 }
 
 # Start emacs daemon if it is not running, then attach client
 function e () {
@@ -115,6 +141,22 @@ function e () {
     fi
     emacsclient -t
 }
+
+function transfer() { # use transfer.sh to share files over the net
+    if [ $# -eq 0 ]; then
+        echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+        return 1
+    fi
+    tmpfile=$( mktemp -t transferXXX )
+    if tty -s; then
+        basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
+        curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile
+    else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile
+    fi
+    cat $tmpfile
+    rm -f $tmpfile
+    echo ""
+} 
 
 alias svim='sudo -e'
 #alias e='emacs -nw'
@@ -138,34 +180,19 @@ alias ct='ctags -R .'
 alias findgrep='find . | grep -i '
 alias lsgrep='ls -la | grep -in '
 alias fixdisplay='export DISPLAY=:0'
-
 alias zshreload="source ~/.zshrc"
 alias dotfiles-update="cd ~/code/dotfiles && git pull ; zshreload ; cd -"
 alias dotfiles-commit="cd ~/code/dotfiles && git commit -a -S -v ; git push ; cd -"
-
 alias m="make"
 alias mc="make clean"
 alias me="make edit"
-
 alias 2048='2048 bluered'
-
-#alias rm='rm -i'
-alias rmi='rm -i'
-#alias mv='mv -i'
 alias c='xsel -ib'
 alias h='history | tail'
-alias ch='chmod 755 '
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
 alias ']'='open'
-#alias ll='ls -alFh'
 alias l='ls -alFh'
 alias la='ls -A'
 alias lla='ls -lA'
-#alias l='ls -CF'
 alias ipython-prof='ipython -m cProfile -s time'
 alias python-prof='python -m cProfile -s time'
 alias pipupgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U'
@@ -175,25 +202,10 @@ alias pacific-date='TZ=US/Pacific date'
 alias date-denmark='denmark-date'
 alias date-eastern='eastern-date'
 alias date-pacific='pacific-date'
-function define() { curl --silent dict://dict.org/d:$1 }
-
-# use transfer.sh to share files over the net
-function transfer() {
-    if [ $# -eq 0 ]; then
-        echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
-        return 1
-    fi
-    tmpfile=$( mktemp -t transferXXX )
-    if tty -s; then
-        basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
-        curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile
-    else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile
-    fi
-    cat $tmpfile
-    rm -f $tmpfile
-    echo ""
-} 
-
+alias sha256sum='shasum -a 256'
+alias cala="gcalcli agenda"
+_has thefuck && eval "$(thefuck --alias)"
+_has exa && alias ls='exa --git'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
@@ -201,102 +213,27 @@ if [[ "$ARCH" != 'Darwin' ]]; then
 else
     alias ls='ls -G -F'
 fi
-#alias dir='dir --color=auto'
-#alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-if [ -f /usr/local/Modules/default/init/zsh ]; then
-    source /usr/local/Modules/default/init/zsh && \
-    #module load git vim #python paraview ncview matlab ifort
-    module load git vim paraview ifort anaconda python/2.7.1
-fi
 
-# use Ctrl-Z as fg
-fancy-ctrl-z () {
-    if [[ $#BUFFER -eq 0 ]]; then
-        BUFFER="fg"
-        zle accept-line
-    else
-        zle push-input
-        zle clear-screen
-    fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+#### PATH AND MACHINE SPECIFIC CONFIGS
 
-set -o noclobber
-set -o vi
-
-# MUTT BG fix
-COLORFGBG="default;default"
-
-pathdirs=(
-    ~/scripts
-)
-for dir in $pathdirs; do
-    if [ -d $dir ]; then
-        path+=$dir
-    fi
-done
-
-export EDITOR="vim"
-#export XDG_CONFIG_HOME="/home/ad/.config"
-
-# Environment variables
-export PATH=/usr/local/bin:$PATH
+[ -d /usr/local/bin ] && export PATH=/usr/local/bin:$PATH
 [ -d /usr/local/sbin ] && export PATH=/usr/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
+[ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
+[ -d $HOME/bin ] && export PATH=$PATH/bin:$PATH
 if [ -d $HOME/.linuxbrew ]; then
     export PATH=$HOME/.linuxbrew/bin:$PATH
     export MANPATH=$HOME/.linuxbrew/share/man:$MANPATH
     export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
 fi
 
-HOSTNAME=$(hostname)
-if [[ "$HOSTNAME" == "iddqd" ]]; then
-
-    # OpenFOAM from unofficial Ubuntu repositories
-    #if [ -f /opt/openfoam222/etc/bashrc ]; then
-    #    . /opt/openfoam222/etc/bashrc
-    #fi
-
-    # Manual OpenFOAM installation
-    export FOAM_INST_DIR=$HOME/OpenFOAM
-    #foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
-    foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.2.x/etc/bashrc
-    #[ -f $foamDotFile ] && . $foamDotFile
-
-    # CFDEM vars
-    export CFDEM_VERSION=PUBLIC
-    export CFDEM_PROJECT_DIR=$HOME/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
-    export CFDEM_SRC_DIR=$CFDEM_PROJECT_DIR/src
-    export CFDEM_SOLVER_DIR=$CFDEM_PROJECT_DIR/applications/solvers
-    export CFDEM_DOC_DIR=$CFDEM_PROJECT_DIR/doc
-    export CFDEM_UT_DIR=$CFDEM_PROJECT_DIR/applications/utilities
-    export CFDEM_TUT_DIR=$CFDEM_PROJECT_DIR/tutorials
-    export CFDEM_PROJECT_USER_DIR=$HOME/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
-    export CFDEM_bashrc=$CFDEM_SRC_DIR/lagrangian/cfdemParticle/etc/bashrc
-    export CFDEM_LIGGGHTS_SRC_DIR=$HOME/LIGGGHTS/LIGGGHTS-PUBLIC/src
-    export CFDEM_LIGGGHTS_MAKEFILE_NAME=fedora_fpic
-    export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
-    #export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
-    export CFDEM_PIZZA_DIR=$CFDEM_LPP_DIR
-    #. $CFDEM_bashrc
-
-    alias lpp="python $CFDEM_LPP_DIR/lpp.py"
-    alias pizza="python $CFDEM_LPP_DIR/pizza.py"
-fi
-
-[ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
-[ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
 if [ -d $HOME/local/python ]; then
     export PYTHONPATH=$HOME/local/python:$PYTHONPATH
     export PATH=$HOME/local/python:$PATH
 fi
-
-[ -f $HOME/.locale ] && $HOME/.locale
 
 if [ $(echo $HOSTNAME | grep flaptop) ]; then
     #source ~/.xsh
@@ -308,29 +245,13 @@ if [ $(echo $HOSTNAME | grep cosmo) ]; then
     export PATH=/usr/local/MATLAB/R2015a/bin:$PATH
 fi
 
-# Added by termtile (https://github.com/apaszke/termtile)
-alias kl='osascript ~/.termtile/tile.scpt up left'
-alias kh='osascript ~/.termtile/tile.scpt up right'
-alias jh='osascript ~/.termtile/tile.scpt down left'
-alias jl='osascript ~/.termtile/tile.scpt down right'
-alias hh='osascript ~/.termtile/tile.scpt left'
-alias ll='osascript ~/.termtile/tile.scpt right'
-alias kk='osascript ~/.termtile/tile.scpt up'
-alias jj='osascript ~/.termtile/tile.scpt down'
-alias big='osascript ~/.termtile/resize.scpt '
-alias cen='osascript ~/.termtile/center.scpt '
-alias sha256sum='shasum -a 256'
+export GOPATH=$HOME/src/golang
+export GPG_TTY=`tty`
 
-# calendar aliases
-alias cala="gcalcli agenda"
-
-[ -f ~/.bash_profile ] && source ~/.bash_profile
-[ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH
+[ -d $HOME/pism ] && export PATH=$HOME/pism/bin:$PATH
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
 [ -f ~/torch ] && source ~/torch/install/bin/torch-activate
-export GOPATH=$HOME/src/golang
-
-export GPG_TTY=`tty`
+[ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
 
 if _has fzf; then
 
@@ -350,7 +271,7 @@ if _has fzf; then
         # --no-ignore: Do not respect .gitignore, etc...
         # --hidden: Search hidden files and folders
         # --follow: Follow symlinks
-        # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+        # --glob: (in this case ignore everything in the .git/ folder)
         export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 
     # use the_silver_searcher if available
@@ -359,7 +280,8 @@ if _has fzf; then
     fi
 fi
 
-[ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
-
-_has thefuck && eval "$(thefuck --alias)"
-_has exa && alias ls='exa --git'
+if [ -f /usr/local/Modules/default/init/zsh ]; then
+    source /usr/local/Modules/default/init/zsh && \
+    #module load git vim #python paraview ncview matlab ifort
+    module load git vim paraview ifort anaconda python/2.7.1
+fi
