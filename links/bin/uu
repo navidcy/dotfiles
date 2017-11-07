@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 UNAMESTR=`uname`
 
 echo "## Updating package manager lists and installed packages"
@@ -30,12 +29,12 @@ cd ~/code/dotfiles && \
 #git pull && \
 #git submodule sync; git submodule update
 
-if [[ ! "$(type -P conda)" ]]; then
+if command -v conda >/dev/null 2>&1; then
     echo "## Upgrading conda packages"
     conda update --all
 fi
 
-if [[ ! "$(type -P julia)" ]]; then
+if command -v julia >/dev/null 2>&1; then
     echo "## Upgrading julia packages"
-    julia -e 'Pkg.update()'
+    julia --color=yes -e 'Pkg.update()'
 fi
