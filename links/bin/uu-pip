@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+echo "## Updating pip"
+for PIP in pip pip2 pip3; do
+    [[ ! "$(type -P $PIP)" ]] && continue
+    $PIP install --upgrade pip
+    echo "## Updating $PIP packages"
+    $PIP freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs $PIP install -U
+done
+

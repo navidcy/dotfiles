@@ -30,14 +30,6 @@ cd ~/code/dotfiles && \
 #git pull && \
 #git submodule sync; git submodule update
 
-echo "## Updating pip"
-for PIP in pip pip2 pip3; do
-    [[ ! "$(type -P $PIP)" ]] && continue
-    $PIP install --upgrade pip
-    echo "## Updating $PIP packages"
-    $PIP freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs $PIP install -U
-done
-
 if [[ ! "$(type -P conda)" ]]; then
     echo "## Upgrading conda packages"
     conda update --all
