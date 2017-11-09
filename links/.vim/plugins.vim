@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 """""" Misc """"""
 Plug 'tpope/vim-unimpaired' " nav. errors with ]q, newlines with ]spc
+Plug 'johngrib/vim-game-code-break' " :VimGameCodeBreak
 
 """""" Appearance """"""
 Plug 'itchyny/lightline.vim'  " lighter status line
