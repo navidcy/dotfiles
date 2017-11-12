@@ -6,10 +6,16 @@ pkgs=(
     gcalcli
     grepg
     haxor-news
+    jupyter
     neovim
+    numexpr
     pandas
+    Pillow
+    protobuf
+    psutil
     requests
     scikit-learn
+    sympy
     tensorflow
     virtualenv
 )
