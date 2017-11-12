@@ -27,6 +27,7 @@ brews=(
     git
     gnupg
     homebrew/science/paraview
+    homebrew/science/matplotlib
     htop-osx
     highlight   # used for syntax highligting in fzf
     id3v2       # mp3 metadata management
@@ -42,6 +43,7 @@ brews=(
     nmap
     neovim
     notmuch
+    numpy
     nyancat
     offlineimap
     openssl

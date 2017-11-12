@@ -7,7 +7,11 @@ pkgs=(
     grepg
     haxor-news
     neovim
+    pandas
     requests
+    scikit-learn
+    tensorflow
+    virtualenv
 )
 
 for PIP in pip pip2 pip3; do
@@ -21,3 +25,13 @@ for PIP in pip pip2 pip3; do
         echo "## $PIP not installed"
     fi
 done
+
+# tensorflow in virtualenv
+#if [[ "$(type -P python3)" ]]; then
+#    targetdir=~/code/tensorflow
+#    mkdir -p $targetdir
+#    [ -d $targetdir/lib ] || \
+#        virtualenv --system-site-packages -p python3 $targetdir
+#    source $targetdir/bin/activate
+#    pip3 install --upgrade tensorflow
+#fi
