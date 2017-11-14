@@ -1,66 +1,63 @@
 """"" PLUGIN SOURCES """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')   " Specify a directory for plugins
 
 """""" Misc """"""
-Plug 'tpope/vim-unimpaired' " nav. errors with ]q, newlines with ]spc
+Plug 'tpope/vim-unimpaired'         " nav. errors with ]q, newlines with ]spc
 Plug 'johngrib/vim-game-code-break' " :VimGameCodeBreak
 
 """""" Appearance """"""
-Plug 'itchyny/lightline.vim'  " lighter status line
-Plug 'drzel/vim-line-no-indicator'
-Plug 'jacoborus/tender'   " color scheme
-Plug 'luochen1990/rainbow'  " colorcode paranthesis pairs
-Plug 'mhinz/vim-startify'  " startup screen
-Plug 'guns/xterm-color-table.vim' " show color table with :XtermColorTable
-Plug 'Yggdroot/indentLine' " show indent levels with thin vertical lines
-Plug 'embear/vim-foldsearch' " hide/show lines matching a patter
-Plug 'junegunn/goyo.vim'  " distraction-free editing in prose mode
-Plug 'junegunn/limelight.vim'  " highlight current paragraph in goyo
+Plug 'itchyny/lightline.vim'        " lighter status line
+Plug 'drzel/vim-line-no-indicator'  " emphasize current line with bg color
+Plug 'jacoborus/tender'             " color scheme
+Plug 'luochen1990/rainbow'          " colorcode paranthesis pairs
+Plug 'mhinz/vim-startify'           " startup screen
+Plug 'guns/xterm-color-table.vim'   " show color table with :XtermColorTable
+Plug 'Yggdroot/indentLine'          " show indent levels with thin vertical lines
+Plug 'embear/vim-foldsearch'        " hide/show lines matching a pattern
+Plug 'junegunn/goyo.vim'            " distraction-free editing in prose mode
+Plug 'junegunn/limelight.vim'       " highlight current paragraph in goyo
 
 """""" File system """""""
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'justinmk/vim-gtfo' " open file manager (gof)/tmux pane (got) @ current dir
+Plug 'justinmk/vim-gtfo'            " open finder (gof)/tmux pane (got) at pwd
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'  " ctags overview :TagBarToggle
-Plug 'ludovicchabant/vim-gutentags'  " automatic tag generation
+Plug 'junegunn/fzf.vim'             " fzf commands from within vim
+Plug 'ludovicchabant/vim-gutentags' " automatic tag generation
 
 """""" Syntax checking """"""
-Plug 'w0rp/ale'  " asynchronous syntax check
+Plug 'w0rp/ale'                     " asynchronous syntax check
 
 """""" Buffer motion """"""
-Plug 'Lokaltog/vim-easymotion'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'Lokaltog/vim-easymotion'      " jump to char with <spc><spc>char
+Plug 'christoomey/vim-tmux-navigator' " seamless tmux pane/vim window navigation
+Plug 'junegunn/vim-slash'           " clear highlight when moving cursor
 
 """""" Text editing """"""
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-speeddating'   " increment dates and times with C-a and C-x
-Plug 'tpope/vim-repeat'        " repeat plugin bindings with .
-Plug 'junegunn/vim-easy-align' " align in columns (select > return > space)
-Plug 'reedes/vim-pencil'
-Plug 'reedes/vim-litecorrect'
+Plug 'tpope/vim-surround'           " modify surrounding symbols
+Plug 'tpope/vim-speeddating'        " increment dates and times with C-a and C-x
+Plug 'tpope/vim-repeat'             " repeat plugin bindings with .
+Plug 'junegunn/vim-easy-align'      " align in columns (select > return > space)
+Plug 'reedes/vim-litecorrect'       " autocorrect common typos
 
 " cycle through yank history with <leader>p and <leader>P after pasting,
 " see history with :Yanks
 Plug 'maxbrunsfeld/vim-yankstack'
 
 """""" Autocomplete """"""
-Plug 'davidhalter/jedi-vim'  " (C-space)
-Plug 'ervandew/supertab'     " complete with TAB in insert mode
+Plug 'ervandew/supertab'            " complete with TAB in insert mode
 
 """""" Version control """"""
-Plug 'tpope/vim-fugitive'   " :Gread, :Gwrite
-Plug 'tpope/vim-rhubarb'    " enables fugitive's :Gbrowse for Github
-Plug 'airblade/vim-gitgutter'  " show line changes since last git commit
+Plug 'tpope/vim-fugitive'           " :Gread, :Gwrite, etc.
+Plug 'tpope/vim-rhubarb'            " enables fugitive's :Gbrowse for Github
+Plug 'airblade/vim-gitgutter'       " show line changes since last git commit
 
 """""" Processes """"""
-Plug 'tpope/vim-dispatch'  " for :Make
+Plug 'tpope/vim-dispatch'           " for asynchronous :Make
 
 """""" File types """"""
 " General
-Plug 'msanders/snipmate.vim'  " boilerplate code
+Plug 'msanders/snipmate.vim'        " boilerplate code
 
 " Go
 Plug 'fatih/vim-go'
@@ -70,6 +67,7 @@ Plug 'nsf/gocode'
 Plug 'JuliaLang/julia-vim'
 
 " Python
+Plug 'davidhalter/jedi-vim'
 "Plug 'klen/python-mode'
 
 " HTML/PHP/JS
@@ -81,17 +79,16 @@ Plug 'godlygeek/tabular' " line up text (req for vim-markdown)
 Plug 'plasticboy/vim-markdown'
 
 " Mail
-Plug 'vim-scripts/mutt-aliases' " auto-complete aliases from ~/.mutt/aliases
+Plug 'vim-scripts/mutt-aliases'     " auto complete from ~/.mutt/aliases
 
 " LaTeX
 Plug 'lervag/vimtex'
-Plug 'anders-dc/vim-scholarref'
+Plug 'anders-dc/vim-scholarref'     " search bibtex refs from web
 
 " Vimscript
-Plug 'junegunn/vader.vim' " testing framework
+Plug 'junegunn/vader.vim'           " testing framework
 
-" Initialize plugin system
-call plug#end()
+call plug#end()                     " Initialize plugin system
 
 
 """"" PLUGIN SETTINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -106,6 +103,7 @@ let g:foldsearch_disable_mappings = 1
 " create a navigation table with :Toc, :Toch, :Tocv
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math=1
+let g:vim_markdown_conceal=0
 
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
