@@ -216,7 +216,7 @@ alias egrep='egrep --color=auto'
 [ -d /usr/local/bin ] && export PATH=/usr/local/bin:$PATH
 [ -d /usr/local/sbin ] && export PATH=/usr/local/sbin:$PATH
 [ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
-[ -d $HOME/bin ] && export PATH=$PATH/bin:$PATH
+[ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
 if [ -d $HOME/.linuxbrew ]; then
     export PATH=$HOME/.linuxbrew/bin:$PATH
     export MANPATH=$HOME/.linuxbrew/share/man:$MANPATH
