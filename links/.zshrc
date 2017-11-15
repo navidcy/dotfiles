@@ -279,6 +279,9 @@ if [ -f /usr/local/Modules/default/init/zsh ]; then
     module load git vim paraview ifort anaconda python/2.7.1
 fi
 
+[ -d ~/code/basilisk/src ] && export BASILISK=~/code/basilisk/src
+[ -d ~/code/basilisk/src ] && export PATH=~/code/basilisk/src:$PATH
+
 #### ZSH PLUGINS
 
 [ -f ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
