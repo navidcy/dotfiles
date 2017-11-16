@@ -53,5 +53,7 @@ if [ "$(uname)" = "Darwin" ]; then
     ln -shvf \
         ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/ \
         ~/iawriter
+    ln -shvf misc_code/firefox/userContent.css \
+        ~/Library/Application\ Support/Firefox/Profiles/
 fi
 
