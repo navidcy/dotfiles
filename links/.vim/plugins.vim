@@ -13,7 +13,6 @@ Plug 'jacoborus/tender'             " color scheme
 Plug 'luochen1990/rainbow'          " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'           " startup screen
 Plug 'guns/xterm-color-table.vim'   " show color table with :XtermColorTable
-Plug 'Yggdroot/indentLine'          " show indent levels with thin vertical lines
 Plug 'embear/vim-foldsearch'        " hide/show lines matching a pattern
 Plug 'junegunn/goyo.vim'            " distraction-free editing in prose mode
 Plug 'junegunn/limelight.vim'       " highlight current paragraph in goyo
