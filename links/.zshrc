@@ -222,6 +222,11 @@ if [ -d $HOME/.linuxbrew ]; then
     export MANPATH=$HOME/.linuxbrew/share/man:$MANPATH
     export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
 fi
+if [ -d /home/linuxbrew/.linuxbrew ]; then
+    export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+    export MANPATH=/home/linuxbrew/.linuxbrew/share/man:$MANPATH
+    export INFOPATH=/home/linuxbrew/.linuxbrew/share/info:$INFOPATH
+fi
 
 if [ -d $HOME/local/python ]; then
     export PYTHONPATH=$HOME/local/python:$PYTHONPATH
