@@ -7,22 +7,22 @@ source ~/.vim/plugins.vim
 " Enable syntax highligting
 syntax on
 
-set textwidth=80
 set autoindent
 set autoread        " reload files when changed on disk
 set backspace=2     " fix broken backspace in some setups
 set backupcopy=yes  " see :help crontab
 set cursorline      " highlight current line
 set expandtab       " convert tab char to spaces
-set lbr             " break lines between words
 set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
 set incsearch       " search as you type
 set laststatus=2    " always show the statusline
+set lbr             " break lines between words
 set list            " enable rendering of invisible characters
 set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
+set nojoinspaces    " disable double spaces after periods
 set nonumber        " disable linenumbering default
-set norelativenumber  " set relative linenumbering ON as default
+set norelativenumber " set relative linenumbering ON as default
 set pastetoggle=<F2> " toggle paste mode
 set ruler           " Enable bottom ruler
 set scrolloff=3     " show context above-below cursorline
@@ -31,6 +31,7 @@ set smartcase       " case-sensitive search if any caps
 set softtabstop=4   " makes the tab key indent by four spaces 
 set splitright      " new vertical splits on the right side
 set tabstop=4       " a tab is 4 characters wide
+set textwidth=80    " default line width in number of characters
 set wildmenu        " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
