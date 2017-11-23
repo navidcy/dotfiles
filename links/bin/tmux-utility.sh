@@ -19,40 +19,39 @@ then
     tmux send-keys -t $SESSION 'mutt' C-m
 
     tmux split-window -h -t $SESSION
-    #tmux send-keys -t $SESSION 'fortune' C-m
-    tmux send-keys -t $SESSION '~/bin/todo.sh' C-m
+    tmux send-keys -t $SESSION '~/bin/google-cloud-lamps-instance1-ssh.sh' C-m
 
     tmux select-pane -t $SESSION:1.1
     tmux split-window -p 33 -v -t $SESSION
-    tmux send-keys -t $SESSION 'vimpc' C-m
+    #tmux send-keys -t $SESSION 'fortune' C-m
+    tmux send-keys -t $SESSION '~/bin/todo.sh' C-m
 
-    tmux select-pane -t $SESSION:1.3
-    tmux split-window -v -t $SESSION
-    #tmux send-keys -t $SESSION 'mosh ad@idkfa.ucsd.edu' C-m
-    tmux send-keys -t $SESSION '~/bin/google-cloud-lamps-instance1-ssh.sh' C-m
+    tmux new-window -t $SESSION
+    tmux select-pane -t $SESSION:2.1
+    tmux send-keys -t $SESSION 'vimpc' C-m
 
     # optionally load additional windows
     if [ "$1" = "seaice" ]; then
-        tmux new-window -t $SESSION -n SeaIce
-        tmux select-pane -t $SESSION:2.1
-        tmux send-keys -t $SESSION 'cd ~/code/SeaIce && vim' C-m
+        tmux new-window -t $SESSION -n Granular
+        tmux select-pane -t $SESSION:3.1
+        tmux send-keys -t $SESSION 'cd ~/code/Granular && vim' C-m
         tmux split-window -p 33 -h -t $SESSION
-        tmux send-keys -t $SESSION 'cd ~/code/SeaIce && julia' C-m
+        tmux send-keys -t $SESSION 'cd ~/code/Granular && julia' C-m
 
         tmux new-window -t $SESSION -n SeaIce-exp
-        tmux select-pane -t $SESSION:3.1
+        tmux select-pane -t $SESSION:4.1
         tmux send-keys -t $SESSION 'cd ~/code/SeaIce-experiments' C-m
         tmux split-window -p 33 -h -t $SESSION
         tmux send-keys -t $SESSION \
             'cd ~/code/SeaIce-experiments && ~/bin/seaice-status.sh' C-m
 
         tmux new-window -t $SESSION -n idkfa
-        tmux select-pane -t $SESSION:4.1
+        tmux select-pane -t $SESSION:5.1
         tmux send-keys -t $SESSION \
             'sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && ~/bin/idkfa-ssh' C-m
 
         tmux new-window -t $SESSION -n james
-        tmux select-pane -t $SESSION:5.1
+        tmux select-pane -t $SESSION:6.1
         tmux send-keys -t $SESSION \
             'cd ~/articles/own/6-james/james-rev0 && git pull && make edit' C-m
     fi
