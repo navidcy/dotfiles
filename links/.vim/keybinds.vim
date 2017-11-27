@@ -1,9 +1,5 @@
 """ Keyboard shortcuts
 
-" Formatting options are prefixed by backslash
-nmap \A :set formatoptions+=a<CR>:echo "autowrap enabled"<CR>
-nmap \a :set formatoptions-=a<CR>:echo "autowrap disabled"<CR>
-
 " Save with ZX
 nmap ZX :w<CR>
 
@@ -134,7 +130,8 @@ map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 
 " <Leader><Leader>{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+nmap <leader><leader> <Plug>(easymotion-overwin-f2)
+nmap \ <Plug>(easymotion-overwin-f2)
 
 " Disable arrow keys
 map <Left> <Nop>
