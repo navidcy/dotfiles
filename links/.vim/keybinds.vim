@@ -125,11 +125,16 @@ inoremap lkj <Esc>:write<CR>
 "nnoremap j gj
 "nnoremap k gk
 
-map <leader>E <Plug>(easymotion-prefix)
+" easymotion bindings
+let g:EasyMotion_smartcase = 1  " case-insensitive
+let g:EasyMotion_do_mapping = 0 " disable default bindings
 
-" <Leader>f{char} to move to {char}
-map  <leader><leader> <Plug>(easymotion-bd-f)
-nmap <leader><leader> <Plug>(easymotion-overwin-f)
+map <leader>E <Plug>(easymotion-prefix)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+
+" <Leader><Leader>{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
 
 " Disable arrow keys
 map <Left> <Nop>

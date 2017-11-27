@@ -28,7 +28,7 @@ Plug 'ludovicchabant/vim-gutentags' " automatic tag generation
 Plug 'w0rp/ale'                     " asynchronous syntax check
 
 """""" Buffer motion """"""
-Plug 'Lokaltog/vim-easymotion'      " jump to char with <spc><spc>char
+Plug 'easymotion/vim-easymotion'    " jump to char with <spc><spc>char
 Plug 'christoomey/vim-tmux-navigator' " seamless tmux pane/vim window navigation
 Plug 'junegunn/vim-slash'           " clear highlight when moving cursor
 
