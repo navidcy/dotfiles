@@ -1,10 +1,8 @@
 source ~/.vim/plugins.vim
 
-set autoindent      " copy indent from current line when starting a new line
 set autoread        " reload files when changed on disk
 set backspace=2     " fix broken backspace in some setups
 set backupcopy=yes  " see :help crontab
-set cursorline      " highlight current line
 set expandtab       " use the appropriate number of spaces for <Tab>
 set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
@@ -14,10 +12,7 @@ set lbr             " break lines between words
 set list            " enable rendering of invisible characters
 set listchars=tab:▸\ ,eol:¬ " Use symbols for tab and end-of-line
 set nojoinspaces    " disable double spaces after periods
-set nonumber        " disable linenumbering default
-set norelativenumber " set relative linenumbering ON as default
 set pastetoggle=<F2> " toggle paste mode
-set ruler           " Enable bottom ruler
 set scrolloff=3     " show context above-below cursorline
 set shiftwidth=4    " width for autoindents
 set smartcase       " case-sensitive search if any caps
