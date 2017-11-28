@@ -1,4 +1,4 @@
-source ~/.vim/plugin/plugins.vim  " make sure that plugins are sourced first
+source ~/.vim/plugins.vim  " make sure that plugins are sourced first
 
 set autoread        " reload files when changed on disk
 set backspace=2     " fix broken backspace in some setups
