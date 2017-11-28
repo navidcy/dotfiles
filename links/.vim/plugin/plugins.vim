@@ -1,6 +1,6 @@
 """"" PLUGIN SOURCES """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('~/.vim/plugged')   " Specify a directory for plugins
+call plug#begin('~/.vim/vim-plugs')   " Specify a directory for plugins
 
 """""" Misc """"""
 Plug 'tpope/vim-unimpaired'         " nav. errors with ]q, newlines with ]spc
