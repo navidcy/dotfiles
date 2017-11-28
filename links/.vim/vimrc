@@ -1,9 +1,4 @@
-filetype plugin indent on
-
 source ~/.vim/plugins.vim
-
-" Enable syntax highligting
-syntax on
 
 set autoindent      " copy indent from current line when starting a new line
 set autoread        " reload files when changed on disk
