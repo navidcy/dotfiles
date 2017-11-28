@@ -76,17 +76,14 @@ nnoremap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR
 nnoremap <leader>u :Fp ^- \[ \]<CR>
 nnoremap <leader>U :Fe<CR>
 
-" neovim-specific mappings
-if has('nvim')
-    " escape from terminal mode
-    tnoremap <leader>e <C-\><C-n>
+" escape from terminal mode
+tnoremap <leader>e <C-\><C-n>
 
-    " navigate away from terminals
-    tnoremap <C-h> <C-\><C-n><C-w>h
-    tnoremap <C-j> <C-\><C-n><C-w>j
-    tnoremap <C-k> <C-\><C-n><C-w>k
-    tnoremap <C-l> <C-\><C-n><C-w>l
-endif
+" navigate away from terminals
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
 
 " launch terminal in current window
 nnoremap <leader><CR> :terminal bash<CR>
@@ -125,13 +122,13 @@ inoremap lkj <Esc>:write<CR>
 let g:EasyMotion_smartcase = 1  " case-insensitive
 let g:EasyMotion_do_mapping = 0 " disable default bindings
 
-noremap <leader>E <Plug>(easymotion-prefix)
-noremap <leader>j <Plug>(easymotion-j)
-noremap <leader>k <Plug>(easymotion-k)
+nmap <leader>E <Plug>(easymotion-prefix)
+nmap <leader>j <Plug>(easymotion-j)
+nmap <leader>k <Plug>(easymotion-k)
 
 " <Leader><Leader>{char}{char} to move to {char}{char}
-noremap <leader><leader> <Plug>(easymotion-overwin-f2)
-noremap \ <Plug>(easymotion-overwin-f2)
+nmap <leader><leader> <Plug>(easymotion-overwin-f2)
+nmap \ <Plug>(easymotion-overwin-f2)
 
 " Disable arrow keys
 noremap <Left> <Nop>
@@ -169,18 +166,18 @@ nnoremap <leader>L :BLines<CR>
 nnoremap <leader>t :Tags<CR>
 
 " Copy and paste to system clipboard with <Space>v and <Space>y
-vnoremap <Leader>y "+y
-vnoremap <Leader>d "+d
+xnoremap <Leader>y "+y
+xnoremap <Leader>d "+d
 nnoremap <Leader>v "+p
 nnoremap <Leader>V "+P
-vnoremap <Leader>v "+p
-vnoremap <Leader>V "+P
+xnoremap <Leader>v "+p
+xnoremap <Leader>V "+P
 
-nnoremap <leader>p <Plug>yankstack_substitute_older_paste
-nnoremap <leader>P <Plug>yankstack_substitute_newer_paste
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " align things into columns interactively
-vnoremap <silent> <Enter> :EasyAlign<cr>
+xnoremap <silent> <Enter> :EasyAlign<cr>
 
 nnoremap <leader>S :Startify<cr>
 let g:startify_custom_header =
