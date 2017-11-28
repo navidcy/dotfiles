@@ -6,6 +6,7 @@ pkgs=(
     gcalcli
     grepg
     haxor-news
+    howdoi
     jupyter
     neovim
     numexpr
