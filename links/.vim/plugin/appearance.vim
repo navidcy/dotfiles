@@ -27,3 +27,7 @@ augroup ColorSchemeCmds
 augroup end
 
 colorscheme tender
+
+" configure bottom status line
+"set statusline=""
+
