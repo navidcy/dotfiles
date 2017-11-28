@@ -1,80 +1,80 @@
 """ Keyboard shortcuts
 
 " Save with ZX
-nmap ZX :w<CR>
+nnoremap ZX :w<CR>
 
 " use space instead of \ as leader
 let mapleader="\<Space>"
 
 " Shortcut to reload .vimrc
-nmap <leader>R :source $MYVIMRC<CR>
+nnoremap <leader>R :source $MYVIMRC<CR>
 
 " toggle distraction-free editing
-nmap <leader>y :set nolist<CR>:Goyo<CR>
-nmap <leader>Y :set nolist<CR>:Goyo!<CR>:source $MYVIMRC<CR>
+nnoremap <leader>y :set nolist<CR>:Goyo<CR>
+nnoremap <leader>Y :set nolist<CR>:Goyo!<CR>:source $MYVIMRC<CR>
 "nmap <leader>Y :set nolist<CR>:Goyo!<CR>:source $MYVIMRC<CR>
 
 " Save file
-nmap <Leader>w :w<CR>
-nmap <Leader>W :w !sudo tee > /dev/null %<CR>:e!<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>W :w !sudo tee > /dev/null %<CR>:e!<CR>
 
 " Quit
-nmap <Leader>q :q<CR>
+nnoremap <Leader>q :q<CR>
 
 " Close buffer
-nmap <leader>Q :bd<CR>
+nnoremap <leader>Q :bd<CR>
 
 " Save and quit
-nmap <Leader>x :x<CR>
+nnoremap <Leader>x :x<CR>
 
 " Jump to previous buffer
-nmap <leader><tab> :e#<CR>
+nnoremap <leader><tab> :e#<CR>
 
 " toggle spelling
-nmap <leader>s :set spell!<CR>
+nnoremap <leader>s :set spell!<CR>
 
 " toggle line numbering
-nmap <leader>N :set number!<CR>
+nnoremap <leader>N :set number!<CR>
 
 " toggle relative line numbering
-nmap <leader>n :set relativenumber!<CR>
+nnoremap <leader>n :set relativenumber!<CR>
 
 " NERD Tree short cut
-nmap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
 
 " Toggle TAB and EOL symbols
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
 
-nmap <leader>e :e 
-nmap <leader>% :vsplit 
-nmap <leader>" :split 
+nnoremap <leader>e :e 
+nnoremap <leader>% :vsplit 
+nnoremap <leader>" :split 
 
 " shortcuts to commonly used files
-nmap <leader>C :e $MYVIMRC<CR>
-nmap <leader>T :e ~/doc/todo.md<CR>
-nmap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
+nnoremap <leader>C :e $MYVIMRC<CR>
+nnoremap <leader>T :e ~/doc/todo.md<CR>
+nnoremap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
 
-nmap <leader>r :ScholarRef 
+nnoremap <leader>r :ScholarRef 
 
 " insert date and time
-nmap <leader>D :read !date<CR>
+nnoremap <leader>D :read !date<CR>
 
 " job execution
-nmap <leader>m :Make 
-nmap <leader>! :Start! 
+nnoremap <leader>m :Make 
+nnoremap <leader>! :Start! 
 
 " Switch split focus with leader+hjkl
-nmap <leader>h <C-w>h
-nmap <leader>j <C-w>j
-nmap <leader>k <C-w>k
-nmap <leader>l <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 " toggle x mark in checklist fields
-nmap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR>
+nnoremap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR>
 
 " toggle view of completed items in todo (using vim-foldsearch)
-nmap <leader>u :Fp ^- \[ \]<CR>
-nmap <leader>U :Fe<CR>
+nnoremap <leader>u :Fp ^- \[ \]<CR>
+nnoremap <leader>U :Fe<CR>
 
 " neovim-specific mappings
 if has('nvim')
@@ -89,7 +89,7 @@ if has('nvim')
 endif
 
 " launch terminal in current window
-nmap <leader><CR> :terminal bash<CR>
+nnoremap <leader><CR> :terminal bash<CR>
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
@@ -98,20 +98,20 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
 
 " equal split size
-nmap <leader>= <C-w>=
+nnoremap <leader>= <C-w>=
 
 " bindings to git cmd
 "nmap <leader>g :Start git commit -a -v -S<CR>
 "nmap <leader>G :Start git commit -a -v -S && git push<CR>
 
 " bindings to fugitive
-nmap <leader>ga :Gwrite<CR>
-nmap <leader>gm :Gmove 
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gw :Gbrowse<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gc :Gcommit -v -S<CR>
-nmap <leader>gp :Gpush<CR>
+nnoremap <leader>ga :Gwrite<CR>
+nnoremap <leader>gm :Gmove 
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gw :Gbrowse<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit -v -S<CR>
+nnoremap <leader>gp :Gpush<CR>
 
 " Use home row keys as Esc
 inoremap jk <Esc>
@@ -125,26 +125,26 @@ inoremap lkj <Esc>:write<CR>
 let g:EasyMotion_smartcase = 1  " case-insensitive
 let g:EasyMotion_do_mapping = 0 " disable default bindings
 
-map <leader>E <Plug>(easymotion-prefix)
-map <leader>j <Plug>(easymotion-j)
-map <leader>k <Plug>(easymotion-k)
+noremap <leader>E <Plug>(easymotion-prefix)
+noremap <leader>j <Plug>(easymotion-j)
+noremap <leader>k <Plug>(easymotion-k)
 
 " <Leader><Leader>{char}{char} to move to {char}{char}
-nmap <leader><leader> <Plug>(easymotion-overwin-f2)
-nmap \ <Plug>(easymotion-overwin-f2)
+noremap <leader><leader> <Plug>(easymotion-overwin-f2)
+noremap \ <Plug>(easymotion-overwin-f2)
 
 " Disable arrow keys
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
-imap <Left> <Nop>
-imap <Right> <Nop>
-imap <Up> <Nop>
-imap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
 
 " Update ctags
-nmap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
+nnoremap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 
 " file search
 if executable("rg")
@@ -154,35 +154,35 @@ if executable("rg")
                 \   <bang>0 ? fzf#vim#with_preview('up:60%')
                 \           : fzf#vim#with_preview('right:50%:hidden', '?'),
                 \   <bang>0)
-    nmap <Leader>a :Rg<CR>
+    nnoremap <Leader>a :Rg<CR>
 elseif executable("ag")
-    nmap <Leader>a :Ag<CR>
+    nnoremap <Leader>a :Ag<CR>
 end
 
 " using fzf.vim
-nmap , :Buffers<CR>
-nmap <leader>b :Buffers<CR>
-nmap <leader>F :History<CR>
-nmap <leader>f :Files<CR>
-nmap <leader>l :Lines<CR>
-nmap <leader>L :BLines<CR>
-nmap <leader>t :Tags<CR>
+nnoremap , :Buffers<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>F :History<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>l :Lines<CR>
+nnoremap <leader>L :BLines<CR>
+nnoremap <leader>t :Tags<CR>
 
 " Copy and paste to system clipboard with <Space>v and <Space>y
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>v "+p
-nmap <Leader>V "+P
-vmap <Leader>v "+p
-vmap <Leader>V "+P
+vnoremap <Leader>y "+y
+vnoremap <Leader>d "+d
+nnoremap <Leader>v "+p
+nnoremap <Leader>V "+P
+vnoremap <Leader>v "+p
+vnoremap <Leader>V "+P
 
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+nnoremap <leader>p <Plug>yankstack_substitute_older_paste
+nnoremap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " align things into columns interactively
 vnoremap <silent> <Enter> :EasyAlign<cr>
 
-nmap <leader>S :Startify<cr>
+nnoremap <leader>S :Startify<cr>
 let g:startify_custom_header =
             \ map(split(system('fortune -s | cowthink'), '\n'), '"   ".v:val') 
             \ + ['','']

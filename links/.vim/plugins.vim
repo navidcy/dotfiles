@@ -109,7 +109,7 @@ let g:vim_markdown_conceal=0
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 if !exists('*s:goyo_enter')
-    function! s:goyo_enter()
+    function! s:goyo_enter() abort
         silent !tmux set status off
         silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
         set noshowmode
@@ -121,7 +121,7 @@ if !exists('*s:goyo_enter')
 end
 
 if !exists('*s:goyo_leave')
-    function! s:goyo_leave()
+    function! s:goyo_leave() abort
         silent !tmux set status on
         silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
         Limelight!
@@ -129,8 +129,10 @@ if !exists('*s:goyo_leave')
     endfunction
 end
 
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+augroup GoyoEvents
+    autocmd! User GoyoEnter nested call <SID>goyo_enter()
+    autocmd! User GoyoLeave nested call <SID>goyo_leave()
+augroup END
 
 " Lightline (theme set in appearance.vim)
 let g:lightline = {
@@ -175,10 +177,12 @@ function! LightlineLinterOK() abort
   return l:counts.total == 0 ? '✓ ' : ''
 endfunction
 
-autocmd User ALELint call s:MaybeUpdateLightline()
+augroup ALEcmds
+    autocmd User ALELint call s:MaybeUpdateLightline()
+augroup END
 
 " Update and show lightline but only if it's visible (e.g., not in Goyo)
-function! s:MaybeUpdateLightline()
+function! s:MaybeUpdateLightline() abort
   if exists('#lightline')
     call lightline#update()
   end
