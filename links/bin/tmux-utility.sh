@@ -43,7 +43,7 @@ then
         tmux send-keys -t $SESSION 'cd ~/code/SeaIce-experiments' C-m
         tmux split-window -p 33 -h -t $SESSION
         tmux send-keys -t $SESSION \
-            'cd ~/code/SeaIce-experiments && ~/bin/seaice-status.sh' C-m
+            'cd ~/code/SeaIce-experiments && ~/bin/granular-status.sh' C-m
 
         tmux new-window -t $SESSION -n idkfa
         tmux select-pane -t $SESSION:5.1
