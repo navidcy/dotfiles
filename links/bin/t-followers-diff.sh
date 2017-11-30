@@ -10,5 +10,6 @@ t followers | \
     sed 's/ */ /' | sed 's/ *//g' \
     > $tmpfile
 
+echo "> = unfollowed   < = new follower"
 diff $tmpfile{,-old}
-echo "$(wc -l $tmpfile | awk '{ print $1 }') < $(wc -l $tmpfile-old | awk '{ print $1 }') followers"
+echo "To $(wc -l $tmpfile | awk '{ print $1 }') from $(wc -l $tmpfile-old | awk '{ print $1 }') followers"
