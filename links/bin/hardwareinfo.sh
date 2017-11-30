@@ -1,4 +1,9 @@
 #!/bin/sh
+if [ "$(uname)" != "Linux" ]; then
+    echo "this script only works on linux"
+    exit 1
+fi
+
 c="sudo dmidecode -s"
 
 echo "# bios"
