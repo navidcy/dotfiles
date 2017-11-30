@@ -39,6 +39,9 @@ nnoremap <leader>N :set number!<CR>
 " toggle relative line numbering
 nnoremap <leader>n :set relativenumber!<CR>
 
+" toggle cursorline/column
+nnoremap <leader>c :set cursorline!<CR>:set cursorcolumn!<CR>
+
 " NERD Tree short cut
 nnoremap <leader>d :NERDTreeToggle<CR>
 
@@ -142,7 +145,7 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 
 " Update ctags
-nnoremap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
+"nnoremap <leader>c :Start ctags -R --python-kinds=-i --langmap=c++:.cu,c++:.cuh .<CR>
 
 " file search
 if executable("rg")
