@@ -5,6 +5,7 @@ call plug#begin('~/.vim/vim-plugs')   " Specify a directory for plugins
 """""" Misc """"""
 Plug 'tpope/vim-unimpaired'         " nav. errors with ]q, newlines with ]spc
 Plug 'johngrib/vim-game-code-break' " :VimGameCodeBreak
+Plug 'junegunn/vim-emoji'           " autocomplete :smiley: with C-x C-u
 
 """""" Appearance """"""
 Plug 'itchyny/lightline.vim'        " lighter status line
@@ -80,7 +81,7 @@ Plug 'godlygeek/tabular' " line up text (req for vim-markdown)
 Plug 'plasticboy/vim-markdown'
 
 " Mail
-Plug 'vim-scripts/mutt-aliases'     " auto complete from ~/.mutt/aliases
+"Plug 'vim-scripts/mutt-aliases'     " auto complete from ~/.mutt/aliases
 
 " LaTeX
 Plug 'lervag/vimtex'
