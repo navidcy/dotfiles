@@ -81,7 +81,7 @@ Plug 'godlygeek/tabular' " line up text (req for vim-markdown)
 Plug 'plasticboy/vim-markdown'
 
 " Mail
-Plug 'vim-scripts/mutt-aliases'     " auto complete from ~/.mutt/aliases
+Plug 'vim-scripts/mutt-aliases', { 'for': 'mail' } " complete ~/.mutt/aliases
 
 " LaTeX
 Plug 'lervag/vimtex'
