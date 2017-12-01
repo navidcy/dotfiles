@@ -5,4 +5,5 @@ augroup mail_typography
     setlocal fdo+=search
     setlocal list
     setlocal formatoptions=alw2qt " automatically reflow paragraphs
+    setlocal completefunc=Complete_Emails
 augroup END
