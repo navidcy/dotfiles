@@ -2,8 +2,6 @@ augroup gitcommit_typography
     setlocal spell spl=en_us
     setlocal completefunc=emoji#complete
 
-    " modify previous commit via git --amend
-    "nnoremap <buffer> <silent> cd :<C-U>Gcommit --amend --date="$(date)"<CR>
-    "
-    nnoremap <buffer> cd :<C-U>Gcommit --amend --date="$(date)"<CR>
+    " instead modify previous commit with <leader>cc
+    nnoremap <buffer> <silent> <leader>cc :<C-U>Gcommit --amend --date="$(date)"<CR>
 augroup END
