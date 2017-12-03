@@ -6,5 +6,7 @@ augroup gitcommit_typography
     setlocal list
     setlocal formatoptions=alw2qt " automatically reflow paragraphs
     setlocal completefunc=emoji#complete
+
+    " modify previous commit via git --amend
     nnoremap <buffer> <silent> cd :<C-U>Gcommit --amend --date="$(date)"<CR>
 augroup END
