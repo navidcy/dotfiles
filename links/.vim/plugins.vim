@@ -188,3 +188,6 @@ function! s:MaybeUpdateLightline() abort
     call lightline#update()
   end
 endfunction
+
+" run vim-emoji on entire document
+command! -range EmojiReplace <line1>,<line2>s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
