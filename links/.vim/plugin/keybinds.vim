@@ -190,3 +190,5 @@ let g:startify_custom_header =
             \ map(split(system('fortune -s | cowthink'), '\n'), '"   ".v:val') 
             \ + ['','']
 
+" lookup word under cursor, dismiss results with q
+nnoremap <leader>J :OnlineThesaurusCurrentWord<CR>

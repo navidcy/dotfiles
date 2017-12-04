@@ -192,3 +192,5 @@ endfunction
 
 " run vim-emoji on entire document
 command! -range EmojiReplace <line1>,<line2>s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
+
+let g:online_thesaurus_map_keys = 0
