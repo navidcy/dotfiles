@@ -79,14 +79,16 @@ nnoremap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR
 nnoremap <leader>u :Fp ^- \[ \]<CR>
 nnoremap <leader>U :Fe<CR>
 
-" escape from terminal mode
-tnoremap <leader>e <C-\><C-n>
+if exists(':tnoremap')
+    " escape from terminal mode
+    tnoremap <Esc> <C-\><C-n>
 
-" navigate away from terminals
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
+    " navigate away from terminals
+    tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
+end
 
 " launch terminal in current window
 nnoremap <leader><CR> :terminal bash<CR>
