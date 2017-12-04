@@ -41,6 +41,7 @@ Plug 'junegunn/vim-easy-align'      " align in columns (select > return > space)
 Plug 'reedes/vim-litecorrect'       " autocorrect common typos
 Plug 'reedes/vim-pencil'            " used for line wrapping in mails
 Plug 'szw/vim-dict'                 " query dict.org using :Dict
+Plug 'junegunn/vim-online-thesaurus' " query with :OnlineThesaurusCurrentWord
 
 " cycle through yank history with <leader>p and <leader>P after pasting,
 " see history with :Yanks
