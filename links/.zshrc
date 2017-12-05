@@ -293,6 +293,8 @@ fi
     source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/code/zsh-git-prompt/zshrc.sh ] && source ~/code/zsh-git-prompt/zshrc.sh
 
+[ -f ~/code/fzf-mpd/fzf-mpd.zsh ] && source ~/code/fzf-mpd/fzf-mpd.zsh
+
 if _has cabal && _has stack; then
     GIT_PROMPT_EXECUTABLE='haskell'
 fi
