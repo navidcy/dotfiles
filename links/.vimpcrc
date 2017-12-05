@@ -8,7 +8,7 @@ echo Parsing config file
 set window playlist
 
 " Set the windows to show at startup
-set windows library,playlist
+set windows playlist
 
 " Stop playing music when we quit
 "set stoponquit
