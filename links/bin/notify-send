@@ -1,6 +1,7 @@
 #!/bin/sh
 if [[ "$(uname)" == "Darwin" ]]; then
     echo "$@" | terminal-notifier -sound default
+    [ "$#" -gt "0" ] && say "$@"
 else
     /usr/bin/notify-send $@
 fi
