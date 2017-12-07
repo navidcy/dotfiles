@@ -10,6 +10,7 @@ apt_packages=(
     bogofilter
     build-essential
     cmake
+    colordiff
     curl
     dict
     dict-gcide

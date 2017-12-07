@@ -11,5 +11,5 @@ t followers | \
     > $tmpfile
 
 echo "> = unfollowed   < = new follower"
-diff $tmpfile{,-old}
+colordiff $tmpfile{-old,}
 echo "To $(wc -l $tmpfile | awk '{ print $1 }') from $(wc -l $tmpfile-old | awk '{ print $1 }') followers"

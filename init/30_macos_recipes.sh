@@ -18,6 +18,7 @@ brews=(
     c2048       # start with `2048`
     catimg      # convert image to ASCII in terminal
     cmake
+    colordiff   # diff with colorized output
     cpanminus   # required for notmuch CPAN packages
     ctags-exuberant
     exiftool    # used to manage RAW metadata
