@@ -8,6 +8,8 @@ output=${1%.*}.mp4
 
 # From media9 LaTeX package documentation.
 # Generates sufficient keyframes to allow for precise seeking within video.
+# The scale argument ensures that dimensions are divisible by 2, a requirement
+# for MP4 videos using H.264.
 ffmpeg -i $1 \
     -vf scale="trunc(iw/2)*2:trunc(ih/2)*2" \
     -c:v libx264 -profile:v high -pix_fmt yuv420p \

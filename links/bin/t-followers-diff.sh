@@ -10,6 +10,6 @@ t followers | \
     sed 's/ */ /' | sed 's/ *//g' \
     > $tmpfile
 
-echo "> = unfollowed   < = new follower"
-colordiff $tmpfile{-old,}
+echo "< unfollowed   > new follower"
+colordiff $tmpfile{-old,} | sed 's/ / https:\/\/twitter.com\//'
 echo "To $(wc -l $tmpfile | awk '{ print $1 }') from $(wc -l $tmpfile-old | awk '{ print $1 }') followers"
