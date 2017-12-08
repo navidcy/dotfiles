@@ -55,5 +55,8 @@ if [ "$(uname)" = "Darwin" ]; then
         ~/iawriter
     ln -shvf misc_code/firefox/userContent.css \
         ~/Library/Application\ Support/Firefox/Profiles/
+
+    # XQuartz.app doesn't work with .xinitrc
+    [ -L ~/.xinitrc ] && rm ~/.xinitrc
 fi
 

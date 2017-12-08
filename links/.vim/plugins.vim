@@ -5,6 +5,7 @@ call plug#begin('~/.vim/vim-plugs')   " Specify a directory for plugins
 """""" Misc """"""
 Plug 'tpope/vim-unimpaired'         " nav. errors with ]q, newlines with ]spc
 Plug 'johngrib/vim-game-code-break' " :VimGameCodeBreak
+Plug 'johngrib/vim-game-snake'      " :VimGameSnake
 Plug 'junegunn/vim-emoji'           " autocomplete :smiley: with C-x C-u
 
 """""" Appearance """"""
