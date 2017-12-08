@@ -192,6 +192,7 @@ macro index Y "<next-unread-mailbox>" "go to next mailbox with unread mails"
 macro index,pager S "<enter-command>unset wait_key<enter>\
 <pipe-entry>bogofilter -l -s<enter>\
 <enter-command>set wait_key<enter>\
+<bounce-message>me@rescam.org<enter>\
 <save-message>=riseup/Spam<enter>" "mark as spam"
 
 macro index O "<enter-command>unset wait_key<enter>\
