@@ -127,8 +127,8 @@ alternative_order text/plain text/enriched text/html
 # files: ';<enter>'
 
 # show email in browser
-#bind attach <return> view-mailcap
-macro attach <return> "<pipe-entry>cat >~/.mutt_mail.html && open ~/.mutt_mail.html<enter>" "show attachment in browser"
+bind attach <return> view-mailcap
+#macro attach <return> "<pipe-entry>cat >~/.mutt_mail.html && open ~/.mutt_mail.html<enter>" "show attachment in browser"
 
 # vi-like movement
 bind attach,index gg first-entry

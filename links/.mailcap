@@ -1,5 +1,6 @@
 # HTML
-text/html; open '%s' &; test=test -n "$DISPLAY"; needsterminal;
+#text/html; open '%s.html' &; test=test -n "$DISPLAY"; needsterminal;
+text/html; ~/.mutt/view_attachment.sh '%s' html &; test=test -n "$DISPLAY"; needsterminal;
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 
 # MS Word documents
