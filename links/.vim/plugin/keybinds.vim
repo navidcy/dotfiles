@@ -117,7 +117,6 @@ nnoremap <leader>gp :Gpush<CR>
 
 " Use home row keys as Esc
 inoremap jk <Esc>
-inoremap kj <Esc>
 inoremap lkj <Esc>:write<CR>
 
 " Improve navigation on wrapped lines
