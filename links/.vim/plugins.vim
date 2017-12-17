@@ -7,6 +7,7 @@ Plug 'tpope/vim-unimpaired'         " nav. errors with ]q, newlines with ]spc
 Plug 'johngrib/vim-game-code-break' " :VimGameCodeBreak
 Plug 'johngrib/vim-game-snake'      " :VimGameSnake
 Plug 'junegunn/vim-emoji'           " autocomplete :smiley: with C-x C-u
+Plug 'chrisbra/unicode.vim'         " autocomplete unicode with C-x C-z
 
 """""" Appearance """"""
 Plug 'itchyny/lightline.vim'        " lighter status line
