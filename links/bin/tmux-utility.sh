@@ -47,8 +47,8 @@ then
 
         tmux new-window -t $SESSION -n idkfa
         tmux select-pane -t $SESSION:5.1
-        tmux send-keys -t $SESSION \
-            'sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && ~/bin/idkfa-ssh' C-m
+        tmux send-keys -t $SESSION '~/bin/idkfa-ssh' C-m
+            #'sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && ~/bin/idkfa-ssh' C-m
 
         tmux new-window -t $SESSION -n james
         tmux select-pane -t $SESSION:6.1
