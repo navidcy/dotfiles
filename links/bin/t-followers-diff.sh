@@ -39,5 +39,10 @@ t followers | \
 
 #echo -e "${RED}< unfollowed   ${GREEN}> new follower${NC}"
 colordiff $tmpfile{-old,} | sed 's/ / https:\/\/twitter.com\//'
-echo -e -n "From ${RED}$(wc -l $tmpfile-old | awk '{ print $1 }')${NC} "
-echo -e "to ${GREEN}$(wc -l $tmpfile | awk '{ print $1 }')${NC} followers"
+nold="$(wc -l $tmpfile-old | awk '{ print $1 }')"
+nnew="$(wc -l $tmpfile | awk '{ print $1 }')"
+if [ "$nold" -eq "$nnew" ]; then
+    echo -e "No change in followers (${GREEN}$nnew${NC})"
+else
+    echo -e "From ${RED}$nold${NC} to ${GREEN}$nnew${NC} followers"
+fi
