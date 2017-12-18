@@ -15,6 +15,7 @@ brews=(
     aspell      # spell checking for vim
     autoconf
     automake
+    bench       # benchmark cmdline commands with multiple runs and stats
     c2048       # start with `2048`
     catimg      # convert image to ASCII in terminal
     cmake
