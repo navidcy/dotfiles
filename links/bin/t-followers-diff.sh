@@ -2,6 +2,29 @@
 
 # https://github.com/sferik/t
 
+# test if t is available and working correctly
+t help >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "t not working. Trying to (re)install ruby and gems"
+
+    rm -rf /usr/local/lib/ruby/gems/
+    brew uninstall ruby --ignore-dependencies
+    brew install ruby
+    brew link --overwrite ruby
+
+    command -v gem >/dev/null 2>&1 || \
+        { (>&2 echo "ERROR: gem command not available. Bye."); exit 1; }
+
+    gem update
+    gem install t
+
+    t help >/dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        (>&2 echo "ERROR: t still not working. Bye.")
+        exit 1
+    fi
+fi
+
 tmpfile=~/tmp/t-followers.txt
 mv $tmpfile{,-old}
 
