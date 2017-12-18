@@ -13,6 +13,7 @@ elif [[ "$UNAMESTR" == 'Darwin' ]]; then
     brew analytics off
     brew update && \
         brew upgrade && \
+        brew cask upgrade && \
         brew cleanup
 else
     echo "Platform not supported"
