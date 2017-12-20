@@ -83,6 +83,10 @@ if exists(':tnoremap')
     " escape from terminal mode
     tnoremap <Esc> <C-\><C-n>
 
+    " send escape to terminal
+    tnoremap <M-[> <Esc>
+    tnoremap <C-v><Esc> <Esc>
+
     " navigate away from terminals
     tnoremap <C-h> <C-\><C-n><C-w>h
     tnoremap <C-j> <C-\><C-n><C-w>j
@@ -91,7 +95,8 @@ if exists(':tnoremap')
 end
 
 " launch terminal in current window
-nnoremap <leader><CR> :terminal bash<CR>
+"nnoremap <leader><CR> :terminal bash<CR>
+nnoremap <leader><CR> :terminal<CR>
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
