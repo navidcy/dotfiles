@@ -19,6 +19,7 @@ Plug 'guns/xterm-color-table.vim'   " show color table with :XtermColorTable
 Plug 'embear/vim-foldsearch'        " hide/show lines matching a pattern
 Plug 'junegunn/goyo.vim'            " distraction-free editing in prose mode
 Plug 'junegunn/limelight.vim'       " highlight current paragraph in goyo
+Plug 'Yggdroot/indentLine'          " show indentation level with vertical lines
 
 """""" File system """""""
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -195,4 +196,8 @@ endfunction
 " run vim-emoji on entire document
 command! -range EmojiReplace <line1>,<line2>s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
 
+" disable default thesaurus bindings
 let g:online_thesaurus_map_keys = 0
+
+" select indentation character (:IndentLinesToggle) (¦┆│⎸▏)
+let g:indentLine_char = '┆'

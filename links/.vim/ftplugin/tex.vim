@@ -21,4 +21,5 @@ augroup latex_typography
     setlocal fdo+=search
     setlocal list
     setlocal formatoptions=alw2qt " automatically reflow paragraphs
+    IndentLinesDisable
 augroup END

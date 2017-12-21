@@ -6,4 +6,5 @@ augroup mail_typography
     setlocal list
     setlocal formatoptions=alw2qt " automatically reflow paragraphs
     setlocal completefunc=Complete_Emails
+    IndentLinesDisable
 augroup END
