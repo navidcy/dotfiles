@@ -88,6 +88,14 @@ _editor_fuzzy_find() {
 zle -N _editor_fuzzy_find
 bindkey '^f' _editor_fuzzy_find
 
+# launch vim+fzf for recent files with Ctrl-o
+_editor_fuzzy_history() {
+    BUFFER="vim -c ':History'"
+    zle accept-line
+}
+zle -N _editor_fuzzy_history
+bindkey '^o' _editor_fuzzy_history
+
 # launch vim+fzf+rg with Ctrl-g
 _editor_fuzzy_grep() {
     BUFFER="vim -c ':Rg'"
