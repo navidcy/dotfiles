@@ -200,4 +200,5 @@ command! -range EmojiReplace <line1>,<line2>s/:\([^:]\+\):/\=emoji#for(submatch(
 let g:online_thesaurus_map_keys = 0
 
 " select indentation character (:IndentLinesToggle) (¦┆│⎸▏)
-let g:indentLine_char = '┆'
+"let g:indentLine_char = '┆'
+let g:indentLine_char = '▏'
