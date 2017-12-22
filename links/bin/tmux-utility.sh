@@ -53,7 +53,7 @@ then
         tmux new-window -t $SESSION -n james
         tmux select-pane -t $SESSION:6.1
         tmux send-keys -t $SESSION \
-            'cd ~/articles/own/6-james/james-rev0 && git pull && make edit' C-m
+            'cd ~/articles/own/6-james/james-rev0 && git pull && make edit'
     fi
 
     #tmux select-layout tiled
