@@ -36,6 +36,7 @@ brews=(
     imagemagick
     imapfilter
     lua
+    mdp         # markdown presentations
     mosh        # persistent SSH
     mpc         # command-line control over mpd
     mpd         # music player daemon

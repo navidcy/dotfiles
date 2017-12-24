@@ -207,6 +207,7 @@ alias date-pacific='pacific-date'
 alias sha256sum='shasum -a 256'
 alias cala="gcalcli agenda"
 _has exa && alias ls='exa --git'
+alias youtube-dl='youtube-dl --format mp4'
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
