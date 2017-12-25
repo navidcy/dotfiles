@@ -9,6 +9,7 @@
 # from `brew list`
 brews=(
     abook       # manage email aliases
+    ansifilter  # convert terminal output to html
     aria2       # download with resume
     asciinema   # save and upload recordings of terminal
     asciinema2gif # convert asciinema recordings to gif
@@ -28,6 +29,7 @@ brews=(
     fzf         # fuzzy file finder
     git
     gnupg
+    gnuski      # skiing game
     homebrew/science/paraview
     homebrew/science/matplotlib
     htop-osx
