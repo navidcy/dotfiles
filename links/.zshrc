@@ -208,6 +208,8 @@ alias sha256sum='shasum -a 256'
 alias cala="gcalcli agenda"
 _has exa && alias ls='exa --git'
 alias youtube-dl='youtube-dl --format mp4'
+alias html="ansifilter -H -f"
+alias copyhtml="html | pbcopy"
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
