@@ -37,6 +37,7 @@ brews=(
     id3v2       # mp3 metadata management
     imagemagick
     imapfilter
+    jhead       # for gallery_shell (gallery.sh)
     lua
     mdp         # markdown presentations
     mosh        # persistent SSH

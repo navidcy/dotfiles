@@ -30,6 +30,7 @@ apt_packages=(
     imagemagick
     imapfilter
     ipython
+    jhead
     latexmk
     libnotify-bin
     locate
