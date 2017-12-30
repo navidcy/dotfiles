@@ -6,7 +6,7 @@ if [ $# -lt 1 ]; then
     echo -e "Currency strings are not case sensitive. The amount defaults to 1.\n"
     echo "Example 1: $0 USD GBP"
     echo "Example 2: $0 42"
-    echo "Example 3: $0 GBP EUR 14"
+    echo "Example 3: $0 14 GBP EUR"
     exit 0
 fi
 
@@ -15,20 +15,30 @@ toUpper() {
 }
 
 if [ -n "$1" ]; then A=$1; else A=1; fi
-if [ -n "$2" ]; then FROM=$(toUpper "$2"); else FROM=USD; fi
-if [ -n "$3" ]; then TO=$(toUpper "$3"); else TO=DKK; fi
+if [ -n "$2" ]; then FROM=$(echo "$2" | awk '{print toupper($0)}'); else FROM=USD; fi
+if [ -n "$3" ]; then TO=$(echo "$3" | awk '{print toupper($0)}'); else TO=DKK; fi
 if [ $TO == $FROM ]; then echo "Nothing to do!"; exit 2; fi
 
-CONVERTER="https://finance.google.com/finance/converter?a=$A&from=$FROM&to=$TO"
+#CONVERTER="https://finance.google.com/finance/converter?a=$A&from=$FROM&to=$TO"
+CONVERTER="http://free.currencyconverterapi.com/api/v3/convert?q=${FROM}_${TO}&compact=ultra"
 #echo $CONVERTER
 
 GETCMD="wget --no-verbose"
-if command -v torify >/dev/null 2>/dev/null; then
-    GETCMD="torify $GETCMD"
-fi
+#if command -v torify >/dev/null 2>/dev/null; then
+#    GETCMD="torify $GETCMD"
+#fi
 
-RESULT=`$GETCMD -O - "$CONVERTER" 2>&1 | \
-    LC_ALL=C sed -n -e 's/.*<span class=bld>\(.*\)<\/span>.*/\1/p'`
+# google finance
+#RESULT=`$GETCMD -O - "$CONVERTER" 2>&1 | \
+#    LC_ALL=C sed -n -e 's/.*<span class=bld>\(.*\)<\/span>.*/\1/p'`
+
+# currencyconverterapi.com
+RESULT=$($GETCMD -O - "$CONVERTER" 2>/dev/null | sed 's/.*://' | sed 's/\}$//')
 
 #echo "Result: $A $FROM = $RESULT"
-echo $RESULT
+
+# Google
+#echo $RESULT
+
+# currencyconverterapi
+echo $A $FROM = $(echo "${RESULT}*${A}" | bc -l) $TO
