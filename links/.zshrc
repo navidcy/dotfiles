@@ -132,6 +132,19 @@ function w3mtor {
 function w3mddg { torify surfraw ddg $@ }
 function weather { curl 'wttr.in/?m'; }
 function define { curl --silent dict://dict.org/d:$1 }
+function news { 
+    local url
+    if [ $# -eq 0 ]; then
+        url="https://text.npr.org"
+    elif [ "$1" = "npr" ]; then
+        url="https://text.npr.org"
+    elif [ "$1" = "cnn" ]; then
+        url="https://lite.cnn.io/en"
+    else
+        url=$1
+    fi
+    torify w3m $url
+}
 
 # Start emacs daemon if it is not running, then attach client
 function e () {
