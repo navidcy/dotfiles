@@ -223,6 +223,7 @@ _has exa && alias ls='exa --git'
 alias youtube-dl='youtube-dl --format mp4'
 alias html="ansifilter -H -f"
 alias copyhtml="html | pbcopy"
+alias w3m="w3m -B"
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
