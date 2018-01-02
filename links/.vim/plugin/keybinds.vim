@@ -53,7 +53,9 @@ nnoremap <leader>% :vsplit
 nnoremap <leader>" :split 
 
 " shortcuts to commonly used files
-nnoremap <leader>C :e $MYVIMRC<CR>
+nnoremap <leader>CC :e $MYVIMRC<CR>
+nnoremap <leader>CO :e ~/.vim/plugin/
+nnoremap <leader>CP :e ~/.vim/plugins.vim<CR>
 nnoremap <leader>T :e ~/doc/todo.md<CR>
 nnoremap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
 
