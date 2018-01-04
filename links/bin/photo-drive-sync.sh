@@ -1,6 +1,6 @@
 #!/bin/bash
 
-diskA=/Volumes/ANDERS
+diskA=/Volumes/SUSAN
 diskB=/Volumes/backup
 
 echo "Copying from local drive to first external drive ($diskA)"
