@@ -28,3 +28,7 @@ set dictionary+=/usr/share/dict/words
 
 " specify mutt aliases path, autocomplete aliases with @@ in insert mode
 let g:mutt_aliases_file = '~/.mutt/aliases'
+
+" split size for :Lex[plore] and :Hex[plore]. Percentage when positive, line/col
+" number when negative
+let g:netrw_winsize = 20

@@ -22,7 +22,6 @@ Plug 'junegunn/limelight.vim'       " highlight current paragraph in goyo
 Plug 'Yggdroot/indentLine'          " show indentation level with vertical lines
 
 """""" File system """""""
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'justinmk/vim-gtfo'            " open finder (gof)/tmux pane (got) at pwd
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'             " fzf commands from within vim

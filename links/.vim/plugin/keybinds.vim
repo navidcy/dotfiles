@@ -42,8 +42,9 @@ nnoremap <leader>n :set relativenumber!<CR>
 " toggle cursorline/column
 nnoremap <leader>c :set cursorline!<CR>:set cursorcolumn!<CR>
 
-" NERD Tree short cut
-nnoremap <leader>d :NERDTreeToggle<CR>
+" netrw
+nnoremap <leader>d :Lex<CR>
+nnoremap <leader>h :Hex<CR>
 
 " Toggle TAB and EOL symbols
 nnoremap <leader>l :set list!<CR>
@@ -55,6 +56,8 @@ nnoremap <leader>" :split
 " shortcuts to commonly used files
 nnoremap <leader>CC :e $MYVIMRC<CR>
 nnoremap <leader>CO :e ~/.vim/plugin/
+nnoremap <leader>CK :e ~/.vim/plugin/keybinds.vim<CR>
+nnoremap <leader>CA :e ~/.vim/plugin/appearance.vim<CR>
 nnoremap <leader>CP :e ~/.vim/plugins.vim<CR>
 nnoremap <leader>T :e ~/doc/todo.md<CR>
 nnoremap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
@@ -67,12 +70,6 @@ nnoremap <leader>D :read !date<CR>
 " job execution
 nnoremap <leader>m :Make 
 nnoremap <leader>! :Start! 
-
-" Switch split focus with leader+hjkl
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
 
 " toggle x mark in checklist fields
 nnoremap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR>
