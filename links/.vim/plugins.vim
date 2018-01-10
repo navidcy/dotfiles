@@ -101,6 +101,7 @@ call plug#end()                     " Initialize plugin system
 let g:rainbow_active = 1  " toggle with :RainbowToggle
 
 let g:foldsearch_disable_mappings = 1
+let g:gitgutter_map_keys = 0
 
 " vim-markdown configuration
 " navigate headers with ]] and [[
