@@ -6,4 +6,5 @@ augroup markdown_typography
     setlocal list
     setlocal formatoptions=alw2qt " automatically reflow paragraphs
     setlocal completefunc=emoji#complete
+    AdVIMsorEnable " detect weasel words, use of passive voice, word duplicates
 augroup END

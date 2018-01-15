@@ -29,6 +29,7 @@ Plug 'ludovicchabant/vim-gutentags' " automatic tag generation
 
 """""" Syntax checking """"""
 Plug 'w0rp/ale'                     " asynchronous syntax check
+Plug 'lukhio/adVIMsor', { 'on': 'AdVIMsorEnable' } " checks with :AdVIMsor*
 
 """""" Buffer motion """"""
 Plug 'easymotion/vim-easymotion'    " jump to char with <spc><spc>char
