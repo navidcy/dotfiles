@@ -40,7 +40,7 @@ nnoremap <leader>N :set number!<CR>
 nnoremap <leader>n :set relativenumber!<CR>
 
 " toggle cursorline/column
-nnoremap <leader>c :set cursorline!<CR>:set cursorcolumn!<CR>
+"nnoremap <leader>c :set cursorline!<CR>:set cursorcolumn!<CR>
 
 " netrw
 nnoremap <leader>d :Lex<CR>
@@ -68,8 +68,10 @@ nnoremap <leader>r :ScholarRef
 nnoremap <leader>D :read !date<CR>
 
 " job execution
-nnoremap <leader>m :Make 
+nnoremap <leader>m :Make<CR>
+nnoremap <leader>M :Make!<CR>
 nnoremap <leader>! :Start! 
+nnoremap <leader>c :Copen<CR>
 
 " toggle x mark in checklist fields
 nnoremap <leader>X :s/\[[x ]\]/\=submatch(0) == '[x]' ? '[ ]': '[x]'/<CR>:noh<CR>
