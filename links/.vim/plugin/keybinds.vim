@@ -6,8 +6,8 @@ nnoremap ZX :w<CR>
 " use space instead of \ as leader
 let mapleader="\<Space>"
 
-" Shortcut to reload .vimrc
-nnoremap <leader>R :source $MYVIMRC<CR>
+" Shortcut to reload .vimrc and ~/.vim/plugin/*.vim
+nnoremap <leader>R :source $MYVIMRC<CR>:runtime! plugin/*.vim<CR>:echo "Configuration reloaded"<CR>
 
 " toggle distraction-free editing
 nnoremap <leader>y :set nolist<CR>:Goyo<CR>
@@ -47,7 +47,7 @@ nnoremap <leader>d :Lex<CR>
 nnoremap <leader>h :Hex<CR>
 
 " Toggle TAB and EOL symbols
-nnoremap <leader>l :set list!<CR>
+"nnoremap <leader>l :set list!<CR>
 
 nnoremap <leader>e :e 
 nnoremap <leader>% :vsplit 
