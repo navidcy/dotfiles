@@ -1,7 +1,6 @@
 ! Xcursor --------------------------------------------------------------------
 Xcursor.theme: Vanilla-DMZ-AA
 Xcursor.size:  22
-
 ! terminal colors ------------------------------------------------------------
 ! see https://ciembor.github.io/4bit
 !#include "/home/ad/.colors/solarized"
@@ -9,7 +8,29 @@ Xcursor.size:  22
 !#include "/home/ad/.colors/erosionedit"
 !#include "/home/ad/.colors/solarized"
 !#include "/home/ad/.colors/solarized_black"
-#include "/home/Anders.Damsgaard/.colors/TomorrowNight"
+##include "/home/Anders.Damsgaard/.colors/TomorrowNight"
+
+!TomorrowNight
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #aeafad
+*color0:       #000000
+*color1:       #912226
+*color2:       #778900
+*color3:       #ae7b00
+*color4:       #1d2594
+*color5:       #682a9b
+*color6:       #2b6651
+*color7:       #929593
+*color8:       #666666
+*color9:       #cc6666
+*color10:      #b5bd68
+*color11:      #f0c674
+*color12:      #81a2be
+*color13:      #b294bb
+*color14:      #8abeb7
+*color15:      #ecebec
+
 
 ! fonts ----------------------------------------------------------------------
 Xft*dpi:        96
@@ -19,22 +40,22 @@ Xft*hinting:    true
 Xft*hintstyle:  hintslight
 
 ! urxvt ----------------------------------------------------------------------
-urxvt*perl-lib:         /usr/lib/urxvt/perl
-urxvt*perl-ext-common:  default,matcher
-urxvt*perl-matcher:     1
-urxvt*matcher-button:   1
-urxvt*urlLauncher:      /usr/bin/firefox
+URxvt*perl-lib:         /usr/lib/urxvt/perl
+URxvt*perl-ext-common:  default,matcher
+URxvt*perl-matcher:     1
+URxvt*matcher-button:   1
+URxvt*urlLauncher:      /usr/bin/firefox
 !URxvt*matcher.button: 1
 !URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-!urxvt*cursorUnderline: 1
-urxvt*cursorUnderline:  0
-urxvt*cursorColor:      #FF00FF
-urxvt*fading:           0
-!urxvt*fadeColor:        #000000
-urxvt*cursorBlink:      false
-urxvt*scrollBar:        false
-urxvt*depth:            24
-urxvt*internalBorder:   2
+!URxvt*cursorUnderline: 1
+URxvt*cursorUnderline:  0
+URxvt*cursorColor:      #FF00FF
+URxvt*fading:           0
+!URxvt*fadeColor:        #000000
+URxvt*cursorBlink:      false
+URxvt*scrollBar:        false
+URxvt*depth:            24
+URxvt*internalBorder:   2
 
 URxvt.meta8:            true
 URxvt.intensityStyles:  false
@@ -86,15 +107,15 @@ URxvt.letterSpace: 0
 !urxvt*boldfont: -*-termsynu-bold-r-*-*-13-*-*-*-*-*-*-*
 !urxvt*font: xft:DejaVu Sans Mono for Powerline:size=8
 !urxvt*boldfont: xft:DejaVu Sans Mono for Powerline:size=8
-urxvt*font: xft:PragmataPro:size=10
-urxvt*boldfont: xft:PragmataPro:size=10:style=Bold
+URxvt*font: xft:PragmataPro:size=13
+URxvt*boldFont: xft:PragmataPro:size=13:style=Bold
 !urxvt*boldfont: xft:DejaVu Sans Mono Bold for Powerline:size=8
 
 ! shading: 0-99 darkens, 101-200 lightens
 !urxvt*transparent: true
 !urxvt*shading: 10
-urxvt*transparent: true
-urxvt*shading:     20
+URxvt*transparent: true
+URxvt*shading:     20
 !urxvt*blurRadius:  5
 !urxvt*fading:      30
 
