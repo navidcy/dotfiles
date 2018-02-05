@@ -197,3 +197,9 @@ let g:startify_custom_header =
 
 " lookup word under cursor, dismiss results with q
 nnoremap <leader>J :OnlineThesaurusCurrentWord<CR>
+
+" ALE navigation
+nnoremap <silent> [W <Plug>(ale_first)
+nnoremap <silent> [w <Plug>(ale_previous)
+nnoremap <silent> ]w <Plug>(ale_next)
+nnoremap <silent> ]W <Plug>(ale_last)
