@@ -2,7 +2,7 @@
 
 #USER=ircuser
 #USER=adc
-USER=ad
+USER=andersdc
 #HOST=susanoganders.dk
 HOST=adamsgaard.dk
 #PORT=12344
