@@ -103,7 +103,7 @@ remoteuser = au217756
 #remotepasseval = get_keychain_pass(account="au217756", server="imap.au.dk")
 remotepasseval = get_pass("anders.damsgaard@geo.au.dk")
 ssl = yes
-cert_fingerprint = ae2c89d80632be3ec8a149225199e3cdcc88311f
+cert_fingerprint = 702e90054bdc1cc1c63e109e9bde434c654fc3bf
 folderfilter = lambda folder: not re.search('NFIT-Import|geo07kej|Suggested Contacts|Noter|Opgaver|Journal|Slettet post|archive|Kalender|Kontaktpersoner|RSS Feeds', folder)
 
 # Instead of closing the connection once a sync is complete, offlineimap will
