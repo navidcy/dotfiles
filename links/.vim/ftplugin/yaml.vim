@@ -1,7 +1,7 @@
 augroup yaml_config
 
     " Inspired by Ian Young's script
-    setlocal autoindent sw=2 et
+    setlocal autoindent shiftwidth=2 expandtab
     setlocal indentexpr=GetYamlIndent()
     setlocal indentkeys=o,O,*<Return>,!^F
 
