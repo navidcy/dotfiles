@@ -12,5 +12,7 @@ augroup fortran_config
         unlet! fortran_free_source
     endif
 
+    " automatically indent do loops, see :h ft-fortran-indent
+    let fortran_do_enddo=1
 
 augroup END
