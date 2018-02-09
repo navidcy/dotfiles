@@ -122,7 +122,7 @@ if !exists('*s:goyo_enter')
         set noshowcmd
         set nolist
         set scrolloff=999
-        Limelight
+        "Limelight
     endfunction
 end
 
