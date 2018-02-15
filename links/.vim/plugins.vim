@@ -20,6 +20,7 @@ Plug 'embear/vim-foldsearch'        " hide/show lines matching a pattern
 Plug 'junegunn/goyo.vim'            " distraction-free editing in prose mode
 Plug 'junegunn/limelight.vim'       " highlight current paragraph in goyo
 Plug 'Yggdroot/indentLine'          " show indentation level with vertical lines
+Plug 'vim-scripts/AnsiEsc.vim'      " show ANSI colors with :AnsiEsc
 
 """""" File system """""""
 Plug 'justinmk/vim-gtfo'            " open finder (gof)/tmux pane (got) at pwd
