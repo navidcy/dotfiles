@@ -53,6 +53,7 @@ brews=(
     nyancat
     offlineimap
     openssl
+    pandoc
     pass
     pcre
     pkg-config
