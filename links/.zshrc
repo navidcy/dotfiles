@@ -336,7 +336,7 @@ fi
 if [ -f /usr/local/Modules/default/init/zsh ]; then
     source /usr/local/Modules/default/init/zsh && \
     #module load git vim #python paraview ncview matlab ifort anaconda
-    module load git vim paraview ifort python/2.7.1
+    module load git python/2.7.1
 fi
 [ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
 [ -f /etc/pki/tls/certs/ca-bundle.crt ] && export CURL_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
