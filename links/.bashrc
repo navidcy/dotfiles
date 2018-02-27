@@ -206,3 +206,5 @@ fi
 export GPG_TTY=`tty`
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f $MODULESHOME/init/bash ] && source $MODULESHOME/init/bash

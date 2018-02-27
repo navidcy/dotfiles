@@ -43,3 +43,15 @@
 
 #"xvkbd -xsendevent -text "\[XF86Forward]""
 #m:0x0 + b:10
+
+"mpc --host $(cat $HOME/.flaptop-ip) next"
+  control+shift + n
+
+"mpc --host $(cat $HOME/.flaptop-ip) prev"
+  control+shift + b
+
+"mpc --host $(cat $HOME/.flaptop-ip) toggle"
+  control+shift + p
+
+"mpc --host $(cat $HOME/.flaptop-ip) stop"
+  control+shift + s
