@@ -208,3 +208,5 @@ export GPG_TTY=`tty`
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f $MODULESHOME/init/bash ] && source $MODULESHOME/init/bash
+
+[ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"

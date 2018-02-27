@@ -287,6 +287,7 @@ if [ -d $HOME/local/python ]; then
     export PYTHONPATH=$HOME/local/python:$PYTHONPATH
     export PATH=$HOME/local/python:$PATH
 fi
+[ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
 
 if [ $(echo $HOSTNAME | grep flaptop) ]; then
     #source ~/.xsh
