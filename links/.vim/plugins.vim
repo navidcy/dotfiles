@@ -105,6 +105,8 @@ let g:rainbow_active = 1  " toggle with :RainbowToggle
 let g:foldsearch_disable_mappings = 1
 let g:gitgutter_map_keys = 0
 
+let g:go_version_warning = 0
+
 " vim-markdown configuration
 " navigate headers with ]] and [[
 " format a table with :TableFormat
