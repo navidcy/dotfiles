@@ -283,11 +283,10 @@ if [ -d /home/linuxbrew/.linuxbrew ]; then
     export INFOPATH=/home/linuxbrew/.linuxbrew/share/info:$INFOPATH
 fi
 
-if [ -d $HOME/local/python ]; then
-    export PYTHONPATH=$HOME/local/python:$PYTHONPATH
-    export PATH=$HOME/local/python:$PATH
-fi
-[ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
+#if [ -d $HOME/local/python ]; then
+#    export PYTHONPATH=$HOME/local/python:$PYTHONPATH
+#    export PATH=$HOME/local/python:$PATH
+#fi
 
 if [ $(echo $HOSTNAME | grep flaptop) ]; then
     #source ~/.xsh
@@ -336,9 +335,10 @@ fi
 
 if [ -f /usr/local/Modules/default/init/zsh ]; then
     source /usr/local/Modules/default/init/zsh && \
-    #module load git vim #python paraview ncview matlab ifort
-    module load git vim paraview ifort anaconda python/2.7.1
+    #module load git vim #python paraview ncview matlab ifort anaconda
+    module load git vim paraview ifort python/2.7.1
 fi
+[ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
 
 [ -d ~/code/basilisk/src ] && export BASILISK=~/code/basilisk/src
 [ -d ~/code/basilisk/src ] && export PATH=~/code/basilisk/src:$PATH
