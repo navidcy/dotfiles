@@ -339,6 +339,7 @@ if [ -f /usr/local/Modules/default/init/zsh ]; then
     module load git vim paraview ifort python/2.7.1
 fi
 [ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
+[ -f /etc/pki/tls/certs/ca-bundle.crt ] && export CURL_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
 
 [ -d ~/code/basilisk/src ] && export BASILISK=~/code/basilisk/src
 [ -d ~/code/basilisk/src ] && export PATH=~/code/basilisk/src:$PATH
