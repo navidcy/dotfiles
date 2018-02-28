@@ -31,3 +31,8 @@ ffmpeg -i "$1" -vframes 1 -f image2 "${output%.*}.png"
 #    ${output%.*}-last.png
 
 echo $output
+
+if [ "$2" == "cleanup" ]; then
+    rm "${1%.*}.png"
+    rm "${1}"
+fi

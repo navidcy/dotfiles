@@ -45,6 +45,8 @@ if [ "$(uname)" = "Darwin" ]; then
     ln -shvf ~/iCloud/articles ~/articles
     ln -shvf ~/iCloud/articles/own/BIBnew.bib \
         $(kpsexpand '$TEXMFHOME')/bibtex/bib/myfiles/BIB.bib
+    ln -shvf ~/iCloud/articles/own/BIBnew.bib \
+        $(kpsexpand '$TEXMFHOME')/bibtex/bib/BIB.bib
     ln -shvf ~/iCloud/src ~/src
     ln -shvf ~/iCloud/doc ~/doc
     ln -shvf ~/doc/.password-store ~/.password-store
