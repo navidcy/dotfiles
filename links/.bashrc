@@ -210,4 +210,5 @@ export GPG_TTY=`tty`
 [ -f $MODULESHOME/init/bash ] && source $MODULESHOME/init/bash
 
 [ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
+[ -d /work/and/anaconda3/bin ] && export PATH="/work/and/anaconda3/bin:$PATH"
 [ -f /etc/pki/tls/certs/ca-bundle.crt ] && export CURL_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
