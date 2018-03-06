@@ -144,6 +144,19 @@ function forecast {
         echo $tmpfile
     fi
 }
+function forecastsky {
+    local tmpfile=`mktemp`.png
+    curl --location \
+        'http://www.cleardarksky.com/c/AAAP1_NJcsk.gif?c=468010'\
+        --output $tmpfile
+    if command -v open &>/dev/null; then
+        open $tmpfile
+    elif command -v xdg-open &>/dev/null; then
+        xdg-open $tmpfile
+    else
+        echo $tmpfile
+    fi
+}
 
 function define { curl --silent dict://dict.org/d:$1 }
 function news { 
