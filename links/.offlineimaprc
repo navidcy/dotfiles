@@ -288,7 +288,7 @@ remotehost = exchangeimap.princeton.edu
 remoteuser = andersd
 remotepasseval = get_pass("andersd@princeton.edu")
 ssl = yes
-cert_fingerprint = 3c9d89e7697369b94220a5918260fba8496ea98b
+cert_fingerprint = 0855b2039ba7540c2f53f186bfc34fde80468fad
 #folderfilter = lambda folder: folder not in ['Kalender','Kontaktpersoner','Slettet post','NFIT-Import-adc-2012-09-11-04:18']
 
 # Instead of closing the connection once a sync is complete, offlineimap will
