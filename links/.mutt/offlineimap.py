@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 import re
 import subprocess
 import getpass
@@ -52,3 +52,4 @@ if __name__ == '__main__':
         account = sys.argv[1]
         server = sys.argv[2]
         print(get_keychain_pass(account=account, server=server))
+

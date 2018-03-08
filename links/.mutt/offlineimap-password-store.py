@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 from subprocess import check_output
 
 def get_pass(account):
@@ -6,4 +6,7 @@ def get_pass(account):
 
 if __name__ == "__main__":
     import sys
-    print(get_pass(sys.argv[1]))
+    if sys.version_info[0] < 3:
+        print(get_pass(sys.argv[1]))
+    else:
+        print(get_pass(sys.argv[1]).decode("utf-8"))
