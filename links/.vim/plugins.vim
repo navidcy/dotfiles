@@ -117,6 +117,7 @@ let g:vim_markdown_conceal=0
 
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
+let g:goyo_width = 82
 if !exists('*s:goyo_enter')
     function! s:goyo_enter() abort
         silent !tmux set status off
