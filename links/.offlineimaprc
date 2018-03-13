@@ -7,7 +7,7 @@
 [general]
 # List of accounts to be synced, separated by a comma.
 #accounts = riseup,geomail
-accounts = riseup,geomail,gmail,princeton,noaa
+accounts = adamsgaard,riseup,geomail,gmail,princeton,noaa
 # Suppress nothing but errors
 #ui = quiet
 ui = ttyui
@@ -363,4 +363,22 @@ sslcacertfile=/usr/local/etc/openssl/cert.pem
 # is not set.
 #holdconnectionopen = yes
 
+
+[Account adamsgaard]
+localrepository = adamsgaard-local
+remoterepository = adamsgaard-remote
+presynchook = imapfilter -t ~/.mutt/cert.pem -c ~/.imapfilter/adamsgaard.lua
+postsynchook = notmuch new
+
+[Repository adamsgaard-local]
+type = Maildir
+localfolders = ~/Mail/adamsgaard
+
+[Repository adamsgaard-remote]
+type = IMAP
+remotehost = imap.fastmail.com
+remoteuser = anders@adamsgaard.dk
+remotepasseval = get_pass("anders@adamsgaard.dk-imap")
+ssl = yes
+sslcacertfile=/usr/local/etc/openssl/cert.pem
 
