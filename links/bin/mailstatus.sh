@@ -13,8 +13,8 @@ debug=false
 offlineimap=/usr/local/bin/offlineimap
 
 accounts=""
-if [[ $mailboxes == *"riseup"* ]]; then
-    accounts="${accounts}r"
+if [[ $mailboxes == *"adamsgaard"* ]]; then
+    accounts="${accounts}a"
 fi
 if [[ $mailboxes == *"princeton"* ]]; then
     accounts="${accounts}p"
@@ -26,10 +26,13 @@ if [[ $mailboxes == *"gmail"* ]]; then
     accounts="${accounts}g"
 fi
 if [[ $mailboxes == *"geomail"* ]]; then
-    accounts="${accounts}a"
+    accounts="${accounts}e"
 fi
 if [[ $mailboxes == *"ucsd"* ]]; then
     accounts="${accounts}u"
+fi
+if [[ $mailboxes == *"riseup"* ]]; then
+    accounts="${accounts}r"
 fi
 
 if [ "$numbernewmails" -gt 0 ]; then
