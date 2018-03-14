@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+#vmpath="Documents/Virtual Machines.localized/Debian 8.x 64-bit.vmwarevm/Debian 8.x 64-bit.vmx"
+vmpath="$HOME/VMware Fusion VMs/Debian 9.x 64-bit.vmwarevm/Debian 9.x 64-bit.vmx"
+#ip=172.16.106.42
+ip=192.168.44.134  # device ens33 from `ip addr` in VM
+sshfsmount=~/phony
+cmd="tmux"
+
+if [[ "$1" = "-h" ]]; then
+    echo "usage: $0 start|suspend|stop|status|notmux"
+elif [[ "$1" = "start" ]]; then
+    vmrun -T fusion start "$vmpath" nogui
+    vmrun list
+elif [[ "$1" = "suspend" ]]; then
+    vmrun -T fusion suspend "$vmpath"
+    vmrun list
+elif [[ "$1" = "stop" ]]; then
+    vmrun -T fusion stop "$vmpath"
+    vmrun list
+elif [[ "$1" = "status" ]]; then
+    vmrun list
+else
+    if [[ "$1" = "notmux" ]]; then
+        cmd=""
+    fi
+          
+    if [ "$(vmrun list | head -n 1 | awk '{ print $4 }')" -gt "0" ]; then
+        mkdir -p $sshfsmount
+        sshfs $ip:/home/ad $sshfsmount
+        ssh -Y $ip -t $cmd
+    else
+        echo "No VMs running"
+        exit 1
+    fi
+fi
