@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 #vmpath="Documents/Virtual Machines.localized/Debian 8.x 64-bit.vmwarevm/Debian 8.x 64-bit.vmx"
 vmpath="$HOME/VMware Fusion VMs/Debian 9.x 64-bit.vmwarevm/Debian 9.x 64-bit.vmx"
 #ip=172.16.106.42
@@ -8,7 +7,7 @@ sshfsmount=~/phony
 cmd="tmux"
 
 if [[ "$1" = "-h" ]]; then
-    echo "usage: $0 [start|suspend|stop|status|notmux]"
+    echo "usage: $0 [start|suspend|stop|status|copysshkey|notmux]"
     echo "If no arguments are passed this script will connect to the VM via ssh"
 elif [[ "$1" = "start" ]]; then
     vmrun -T fusion start "$vmpath" nogui
@@ -21,6 +20,8 @@ elif [[ "$1" = "stop" ]]; then
     vmrun list
 elif [[ "$1" = "status" ]]; then
     vmrun list
+elif [[ "$1" = "copysshkey" ]]; then
+    ssh-copy-id -i ~/.ssh/id_rsa.pub $ip
 else
     if [[ "$1" = "notmux" ]]; then
         cmd=""
