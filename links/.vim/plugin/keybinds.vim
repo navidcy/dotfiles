@@ -199,7 +199,7 @@ let g:startify_custom_header =
 nnoremap <leader>J :OnlineThesaurusCurrentWord<CR>
 
 " ALE navigation
-nnoremap <silent> [W <Plug>(ale_first)
-nnoremap <silent> [w <Plug>(ale_previous)
-nnoremap <silent> ]w <Plug>(ale_next)
-nnoremap <silent> ]W <Plug>(ale_last)
+nnoremap <silent> [W :ALEFirst<cr>
+nnoremap <silent> [w :ALEPreviousWrap<cr>
+nnoremap <silent> ]w :ALENextWrap<cr>
+nnoremap <silent> ]W :ALELast<cr>
