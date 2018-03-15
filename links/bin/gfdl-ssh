@@ -1,0 +1,6 @@
+#!/bin/bash
+# for tput commands: see `man 5 terminfo`
+echo "$(tput setaf 1)## Make sure to connect to Princeton VPN (Connect\ Tunnel.app) first ##$(tput sgr0)"
+pass -c Uni/noaa-rsa-pin
+echo "$(tput setaf 2)# Paste passphrase from clipboard (Cmd-v) + 6 RSA fob digits$(tput sgr0)"
+ssh Anders.Damsgaard@ssh-rsa.gfdl.noaa.gov

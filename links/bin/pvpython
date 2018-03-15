@@ -1,0 +1,12 @@
+#!/bin/sh
+#orig_dir=$(pwd)
+#set -e
+#cd /Applications/Paraview-5.4.0.app/Contents/bin
+#./pvpython $orig_dir/$@
+
+pvpath=/Applications/Paraview-5.4.0.app
+
+#export \
+    #PYTHONPATH=$pvpath/Contents/Python:$pvpath/Contents/Python/vtk:$pvpath/Libraries:$PYTHONPATH
+
+$pvpath/Contents/bin/pvpython $@

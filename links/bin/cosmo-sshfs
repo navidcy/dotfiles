@@ -1,0 +1,3 @@
+#!/bin/sh
+ssh -f adc@fh.cs.au.dk -L 2222:cosmo-server.au.dk:22 -N
+sshfs -p 2222 adc@localhost:/home/adc/ /Users/ad/cosmo-server

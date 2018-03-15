@@ -1,0 +1,6 @@
+#!/bin/sh
+# for tput commands: see `man 5 terminfo`
+echo "$(tput setaf 1)## Make sure to connect to Princeton VPN (Connect\ Tunnel.app) first ##$(tput sgr0)"
+pass -c Uni/princeton-netID-andersd
+echo "$(tput setaf 2)# Paste passphrase from clipboard (Cmd-v)$(tput sgr0)"
+ssh andersd@tiger.princeton.edu

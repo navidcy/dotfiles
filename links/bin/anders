@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# cmd-line args as message
+msg="$@"
+
+# use STDIN if no args are passed
+if [ $# -eq 0 ]; then
+    msg="$(cat)"
+fi
+
+#to="Susan Louise Damsgaard Sonnesen"
+to="Anders Damsgaard"
+
+osascript -e 'tell application "Messages" to send "'"$msg"'" to buddy "'"$to"'"'

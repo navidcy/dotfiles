@@ -1,0 +1,2 @@
+#!/bin/sh
+fusermount -u /Users/ad/cosmo-server

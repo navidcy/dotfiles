@@ -1,0 +1,2 @@
+#!/bin/sh
+~/src/asciicast2gif/asciicast2gif $@

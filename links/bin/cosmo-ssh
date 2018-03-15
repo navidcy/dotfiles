@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#if [[ "$(ip addr | grep 10.17.8)" ]]; then
+if [[ "$(ifconfig | grep 10.17)" ]]; then
+    echo "On geo lan. Connecting directly..."
+    #ssh -X adc@cosmo-server.au.dk
+    ssh adc@cosmo-server.au.dk
+else
+    echo "Outside geo lan, connecting through fresh-horse..."
+    #autossh -X adc@fh.cs.au.dk -t 'autossh -X cosmo-server.au.dk'
+    autossh -M 1234 adc@fh.cs.au.dk -t 'ssh cosmo-server.au.dk -t "./console.sh"'
+fi

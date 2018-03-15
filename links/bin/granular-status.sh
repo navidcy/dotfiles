@@ -1,0 +1,1 @@
+/Users/ad/code/Granular/granular-status.sh
