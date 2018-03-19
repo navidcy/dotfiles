@@ -11,8 +11,13 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+_has() {
+  return $( type -v $1 &> /dev/null )
+}
+[ -f ~/.bash_profile ] && source ~/.bash_profile
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -67,148 +72,6 @@ fi
 # Dircolors
 export CLICOLOR=1
 
-# Add path to my own custom executables:
-export PATH=$HOME/bin:$PATH
-
-#export GNUTERM='X11'
-
 export HISTTIMEFORMAT='%F %T '
-
 export EDITOR=vim
-
-if [ `hostname` == "adc-stationary" ]; then
-  # CUDA 4.2 (installed with apt-get)
-  #export PATH=/usr/bin:$PATH
-  #export LD_LIBRARY_PATH=/usr/lib64:/usr/lib:$LD_LIBRARY_PATH
-
-  # CUDA 5.0 (installed with `sudo sh cuda_5.0.35_linux_64_ubuntu11.10-1.run -override`)
-  export PATH=/usr/local/cuda-5.0/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/usr/local/cuda-5.0/lib:$LD_LIBRARY_PATH
-
-  # ESyS-Particle
-  export PATH=/usr/local/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-  export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
-  export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:$PYTHONPATH
-
-  #source $HOME/OpenFOAM/OpenFOAM-2.1.x/etc/bashrc
-
-  # Julia
-  #export PATH=/Users/adc/install/julia:$PATH
-fi
-
-if [ `hostname` == "master" ] || 
-   [ `hostname` == "node02" ] ||
-   [ `hostname` == "node03" ] ||
-   [ `hostname` == "node04" ] ||
-   [ `hostname` == "node05" ] ; then
-
-  export PATH=~/code/julia:$PATH
-
-  # PGI compiler
-  PGI=/opt/pgi; export PG
-  PATH=/opt/pgi/linux86-64/11.9/bin:$PATH; export PATH
-  MANPATH=$MANPATH:/opt/pgi/linux86-64/11.9/man; export MANPATH
-  LM_LICENSE_FILE=$LM_LICENSE_FILE:/opt/pgi/license.dat;export LM_LICENSE_FILE
-  
-  # Maui scheduler
-  export PATH=$PATH:/usr/local/maui/bin:/usr/local/maui/sbin
-
-  # CUDA environment variables
-  export PATH=/usr/local/cuda/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib:$LD_LIBRARY_PATH 
-
-  # ESyS-Particle
-  export PATH=/usr/local/bin/:$PATH
-  export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
-  export LIBRARY_PATH=/usr/local/lib/:$LIBRARY_PATH
-  export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:$PYTHONPATH
-fi
-
-# LMGC90
-if [ -z ${PYTHONPATH} ]; then
-  export PYTHONPATH=/home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
-  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2/lib
-else
-  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2
-  export PYTHONPATH=${PYTHONPATH}://home/adc/code/lmgc90/LMGC90v2/builds/Lmgc90_v2/lib
-fi
-export PATH=${PATH}:/home/adc/code/lmgc90/LMGC90v2/src/LMGC90v2_dev/addons
-
-HOSTNAME=$(hostname)
-if [[ "$HOSTNAME" == "iddqd" ]]; then
-
-    # OpenFOAM from unofficial Ubuntu repositories
-    #if [ -f /opt/openfoam222/etc/bashrc ]; then
-    #    . /opt/openfoam222/etc/bashrc
-    #fi
-
-    # Manual OpenFOAM installation
-    export FOAM_INST_DIR=$HOME/OpenFOAM
-    #foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.1.x/etc/bashrc
-    foamDotFile=$FOAM_INST_DIR/OpenFOAM-2.2.x/etc/bashrc
-    [ -f $foamDotFile ] && . $foamDotFile
-
-    # CFDEM vars
-    export CFDEM_VERSION=PUBLIC
-    export CFDEM_PROJECT_DIR=$HOME/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
-    export CFDEM_SRC_DIR=$CFDEM_PROJECT_DIR/src
-    export CFDEM_SOLVER_DIR=$CFDEM_PROJECT_DIR/applications/solvers
-    export CFDEM_DOC_DIR=$CFDEM_PROJECT_DIR/doc
-    export CFDEM_UT_DIR=$CFDEM_PROJECT_DIR/applications/utilities
-    export CFDEM_TUT_DIR=$CFDEM_PROJECT_DIR/tutorials
-    export CFDEM_PROJECT_USER_DIR=$HOME/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
-    export CFDEM_bashrc=$CFDEM_SRC_DIR/lagrangian/cfdemParticle/etc/bashrc
-    export CFDEM_LIGGGHTS_SRC_DIR=$HOME/LIGGGHTS/LIGGGHTS-PUBLIC/src
-    export CFDEM_LIGGGHTS_MAKEFILE_NAME=fedora_fpic
-    export CFDEM_LPP_DIR=$HOME/LIGGGHTS/mylpp/src
-    #export CFDEM_PIZZA_DIR=$HOME/LIGGGHTS/PIZZA/gran_pizza_17Aug10/src
-    export CFDEM_PIZZA_DIR=$CFDEM_LPP_DIR
-    . $CFDEM_bashrc
-
-    alias lpp="python $CFDEM_LPP_DIR/lpp.py"
-    alias pizza="python $CFDEM_LPP_DIR/pizza.py"
-fi
-
-PENGUINCUDA=/public/apps/cuda/6.0
-if [ -d $PENGUINCUDA ]; then
-    module load cmake/2.8.11.2
-    module load cuda/6.0
-    module load python/2.7.4
-    module load numpy/1.7.1/python.2.7.4
-    module load matplotlib/1.7.1/python.2.7.4
-fi
-
-[ -f $HOME/code/julia/julia ] && export PATH=$HOME/code/julia:$PATH
-
-[ -f $HOME/.locale ] && $HOME/.locale
-
-source ~/.tmuxinator/tmuxinator.zsh
-
-if [[ "$HOSTNAME" == "flaptop" ]]; then
-    #source ~/.xsh
-    #export PATH=~/miniconda3/bin:$PATH
-    export PATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
-fi
-
-if [[ "`hostname`" == "icme-gpu1" ]]; then
-    source ~/bin/icme-gpu1-modules.sh
-    export PYTHONPATH=/usr/lib64/python2.6/site-packages:$PYTHONPATH
-fi
-
-if [ $(echo $HOSTNAME | grep cosmo) ]; then
-    export PATH=/usr/local/MATLAB/R2015a/bin:$PATH
-fi
-
-[ -d /home/ad/pism ] && export PATH=/home/ad/pism/bin:$PATH
-[ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
-
 export GPG_TTY=`tty`
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-[ -f $MODULESHOME/init/bash ] && source $MODULESHOME/init/bash
-
-[ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
-[ -d /work/and/anaconda3/bin ] && export PATH="/work/and/anaconda3/bin:$PATH"
-[ -f /etc/pki/tls/certs/ca-bundle.crt ] && export CURL_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
