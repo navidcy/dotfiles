@@ -15,10 +15,11 @@ augroup latex_options
     NoMatchParen " disable paranthesis matching for faster performance
 
     " use latexmk as make program for continuous compilation
-    setlocal makeprg=latexmk\ -pdf\ %
+    "setlocal makeprg=latexmk\ -pdf\ %
+    setlocal makeprg=latexmk\ -lualatex\ %
 
     " or run in tmux pane: 
-    nnoremap <leader>p :!tmux new-window -n "latexmk" "latexmk -pdf -pvc %";tmux select-window -l<cr><cr>
+    nnoremap <leader>p :!tmux new-window -a -n "latexmk" "latexmk -pdf -pvc %" \; select-window -l<cr><cr>
 
 augroup END
 
