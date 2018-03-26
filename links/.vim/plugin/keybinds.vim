@@ -203,3 +203,19 @@ nnoremap <silent> [W :ALEFirst<cr>
 nnoremap <silent> [w :ALEPreviousWrap<cr>
 nnoremap <silent> ]w :ALENextWrap<cr>
 nnoremap <silent> ]W :ALELast<cr>
+
+" Add completion bindings (cycle with C-n, C-p), see :h ins-completion
+" <C-x><C-l>: while line
+" <C-x><C-n>: keywords in current file
+" <C-x><C-i>: keywords in current and included files
+" <C-x><C-k>: keywords in dictionary (:set dictionary)
+" <C-x><C-t>: keywords in thesaurus (not functional)
+" <C-x><C-]>: tags
+" <C-x><C-f>: file names
+" <C-x><C-d>: definitions or macros
+" <C-x><C-v>: vim command-line
+" <C-x><C-v>: omni completion
+" <C-x>s:     spelling suggestions
+" Other:
+" <C-x><C-u>: emoji
+" <C-x><C-z>: unicode
