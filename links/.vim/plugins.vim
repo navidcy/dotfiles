@@ -89,7 +89,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-scripts/mutt-aliases', { 'for': 'mail' } " complete ~/.mutt/aliases
 
 " LaTeX
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 Plug 'anders-dc/vim-scholarref'     " search bibtex refs from web
 
 " Vimscript
