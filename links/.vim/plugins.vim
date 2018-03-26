@@ -22,7 +22,6 @@ Plug 'Yggdroot/indentLine'          " show indentation level with vertical lines
 Plug 'vim-scripts/AnsiEsc.vim'      " show ANSI colors with :AnsiEsc
 
 """""" File system """""""
-Plug 'justinmk/vim-gtfo'            " open finder (gof)/tmux pane (got) at pwd
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'             " fzf commands from within vim
 Plug 'ludovicchabant/vim-gutentags' " automatic tag generation
@@ -38,7 +37,6 @@ Plug 'junegunn/vim-slash'           " clear highlight when moving cursor
 
 """""" Text editing """"""
 Plug 'tpope/vim-surround'           " modify surrounding symbols
-Plug 'tpope/vim-speeddating'        " increment dates and times with C-a and C-x
 Plug 'tpope/vim-repeat'             " repeat plugin bindings with .
 Plug 'junegunn/vim-easy-align'      " align in columns (select > return > space)
 Plug 'reedes/vim-litecorrect'       " autocorrect common typos
@@ -51,7 +49,6 @@ Plug 'junegunn/vim-online-thesaurus' " query with :OnlineThesaurusCurrentWord
 Plug 'maxbrunsfeld/vim-yankstack'
 
 """""" Autocomplete """"""
-"Plug 'ervandew/supertab'            " complete with TAB in insert mode
 Plug 'honza/vim-snippets'           " snippets are separate from ultisnips
 Plug 'SirVer/ultisnips'             " complete boilerplate code
 
@@ -64,8 +61,6 @@ Plug 'airblade/vim-gitgutter'       " show line changes since last git commit
 Plug 'tpope/vim-dispatch'           " for asynchronous :Make
 
 """""" File types """"""
-" General
-"Plug 'msanders/snipmate.vim'        " boilerplate code
 
 " Go
 Plug 'fatih/vim-go'
@@ -87,7 +82,7 @@ Plug 'godlygeek/tabular' " line up text (req for vim-markdown)
 Plug 'plasticboy/vim-markdown'
 
 " Mail
-Plug 'vim-scripts/mutt-aliases', { 'for': 'mail' } " complete ~/.mutt/aliases
+Plug 'vim-scripts/mutt-aliases', { 'for': 'mail' } " complete aliases w C-x C-u
 
 " LaTeX
 Plug 'lervag/vimtex'
