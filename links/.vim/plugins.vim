@@ -10,7 +10,7 @@ Plug 'junegunn/vim-emoji'           " autocomplete :smiley: with C-x C-u
 Plug 'chrisbra/unicode.vim'         " autocomplete unicode with C-x C-z
 
 """""" Appearance """"""
-Plug 'itchyny/lightline.vim'        " lighter status line
+"Plug 'itchyny/lightline.vim'        " lighter status line
 Plug 'drzel/vim-line-no-indicator'  " emphasize current line with bg color
 Plug 'jacoborus/tender'             " color scheme
 Plug 'luochen1990/rainbow'          " colorcode paranthesis pairs
@@ -53,7 +53,6 @@ Plug 'maxbrunsfeld/vim-yankstack'
 
 """""" Autocomplete """"""
 "Plug 'ervandew/supertab'            " complete with TAB in insert mode
-"Plug 'Valloric/YouCompleteMe'       " tab complete menu
 Plug 'honza/vim-snippets'           " snippets are separate from ultisnips
 Plug 'SirVer/ultisnips'             " complete boilerplate code
 
@@ -110,11 +109,6 @@ let g:gitgutter_map_keys = 0
 
 let g:go_version_warning = 0
 
-" make YouCompleteMe compatible with UltiSnips (using supertab)
-"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-"let g:SuperTabDefaultCompletionType = '<C-n>'
-
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -157,7 +151,7 @@ augroup GoyoEvents
     autocmd! User GoyoLeave nested call <SID>goyo_leave()
 augroup END
 
-" Lightline (theme set in appearance.vim)
+" Lightline
 let g:lightline = {
 \ 'colorscheme': 'wombat',
 \ 'active': {

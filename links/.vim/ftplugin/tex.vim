@@ -21,6 +21,10 @@ augroup latex_options
     " or run in tmux pane: 
     nnoremap <leader>p :!tmux new-window -a -n "latexmk" "latexmk -pdf -pvc %" \; select-window -l<cr><cr>
 
+    " disable continuous and slow chktex linting
+    let g:ale_lint_on_text_changed = 'never'
+    let g:ale_lint_on_enter = 0
+
 augroup END
 
 augroup latex_typography

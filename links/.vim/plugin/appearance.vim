@@ -29,5 +29,73 @@ augroup end
 colorscheme tender
 
 " configure bottom status line
-"set statusline=""
 
+function! StatuslineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:all_non_errors == 0 ? '' : printf(' %d ◆ ', all_non_errors)
+endfunction
+"
+function! StatuslineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:all_errors == 0 ? '' : printf(' %d ✗ ', all_errors)
+endfunction
+
+function! StatuslineLinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? ' ✓ ' : ''
+endfunction
+
+"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+""              | | | | |  |   |      |  |     |    |
+""              | | | | |  |   |      |  |     |    +-- current column
+""              | | | | |  |   |      |  |     +-- current line
+""              | | | | |  |   |      |  +-- current % into file
+""              | | | | |  |   |      +-- current syntax
+""              | | | | |  |   +-- current fileformat
+""              | | | | |  +-- number of lines
+""              | | | | +-- preview flag in square brackets
+""              | | | +-- help flag in square brackets
+""              | | +-- readonly flag in square brackets
+""              | +-- rodified flag in square brackets
+""              +-- full path to file in the buffer
+
+" default:
+" set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
+
+" define 3 custom highlight groups for statusline coloring
+highlight User1 ctermfg=252 guifg=#d0d0d0 ctermbg=240 guibg=#585858
+highlight User2 ctermfg=247 guifg=#969696 ctermbg=240 guibg=#585858
+highlight User3 ctermbg=244 guibg=#808080 ctermfg=238 guifg=#444444
+highlight User4 ctermfg=252 guifg=#d0d0d0 ctermbg=238 guibg=#444444
+highlight User5 ctermfg=252 guifg=#d0d0d0 ctermbg=238 guibg=#444444
+highlight User6 ctermfg=238 guifg=#444444 ctermbg=203 guibg=#e5786d
+highlight User7 ctermfg=238 guifg=#444444 ctermbg=173 guibg=#e5786d
+
+" empty statusline and populate later
+set statusline=
+
+" left
+set statusline+=%1*           " set User1 color
+set statusline+=\ %t\         " tail of filename
+set statusline+=%4*           " set User4 color
+set statusline+=\ %h%w%m%r\   " flags for help file, preview, modified, R/O
+set statusline+=%#LineNr#     " set default background
+
+" center spacing
+set statusline+=%=            " add separation between left and right items
+
+" right
+set statusline+=%4*           " set background color
+set statusline+=%7*%{StatuslineLinterWarnings()}%4*   " ALE warnings
+set statusline+=%6*%{StatuslineLinterErrors()}%4*       " ALE errors
+set statusline+=%{StatuslineLinterOK()}           " ALE ok
+set statusline+=%2*           " set User2 color
+set statusline+=\ %{LineNoIndicator()}\  " show file position with single char
+set statusline+=%3*           " set User3 color
+set statusline+=\ %2l:%-2c\   " line and column view
