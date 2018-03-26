@@ -10,8 +10,7 @@ Plug 'junegunn/vim-emoji'           " autocomplete :smiley: with C-x C-u
 Plug 'chrisbra/unicode.vim'         " autocomplete unicode with C-x C-z
 
 """""" Appearance """"""
-"Plug 'itchyny/lightline.vim'        " lighter status line
-Plug 'drzel/vim-line-no-indicator'  " emphasize current line with bg color
+Plug 'drzel/vim-line-no-indicator'  " show current line with single character
 Plug 'jacoborus/tender'             " color scheme
 Plug 'luochen1990/rainbow'          " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'           " startup screen
@@ -150,60 +149,6 @@ augroup GoyoEvents
     autocmd! User GoyoEnter nested call <SID>goyo_enter()
     autocmd! User GoyoLeave nested call <SID>goyo_leave()
 augroup END
-
-" Lightline
-let g:lightline = {
-\ 'colorscheme': 'wombat',
-\ 'active': {
-\   'left': [['mode', 'paste'], ['filename', 'modified']],
-\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
-\ },
-\ 'component_expand': {
-\   'linter_warnings': 'LightlineLinterWarnings',
-\   'linter_errors': 'LightlineLinterErrors',
-\   'linter_ok': 'LightlineLinterOK'
-\ },
-\ 'component_type': {
-\   'readonly': 'error',
-\   'linter_warnings': 'warning',
-\   'linter_errors': 'error'
-\ },
-\ }
-
-" Use bar instead of percentage
-let g:lightline.component = { 'percent': '%{LineNoIndicator()}' }
-
-function! LightlineLinterWarnings() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d ◆', all_non_errors)
-endfunction
-
-function! LightlineLinterErrors() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d ✗', all_errors)
-endfunction
-
-function! LightlineLinterOK() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '✓ ' : ''
-endfunction
-
-augroup ALEcmds
-    autocmd User ALELint call s:MaybeUpdateLightline()
-augroup END
-
-" Update and show lightline but only if it's visible (e.g., not in Goyo)
-function! s:MaybeUpdateLightline() abort
-  if exists('#lightline')
-    call lightline#update()
-  end
-endfunction
 
 " run vim-emoji on entire document
 command! -range EmojiReplace <line1>,<line2>s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g

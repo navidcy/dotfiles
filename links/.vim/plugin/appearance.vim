@@ -28,8 +28,7 @@ augroup end
 
 colorscheme tender
 
-" configure bottom status line
-
+" statusline helper functions
 function! StatuslineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -51,6 +50,7 @@ function! StatuslineLinterOK() abort
   return l:counts.total == 0 ? ' ✓ ' : ''
 endfunction
 
+" configure bottom status line
 "set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 ""              | | | | |  |   |      |  |     |    |
 ""              | | | | |  |   |      |  |     |    +-- current column
