@@ -53,6 +53,9 @@ Plug 'maxbrunsfeld/vim-yankstack'
 
 """""" Autocomplete """"""
 Plug 'ervandew/supertab'            " complete with TAB in insert mode
+Plug 'honza/vim-snippets'           " snippets are separate from ultisnips
+Plug 'SirVer/ultisnips'             " complete boilerplate code
+Plug 'Valloric/YouCompleteMe'       " tab complete menu
 
 """""" Version control """"""
 Plug 'tpope/vim-fugitive'           " :Gread, :Gwrite, etc.
@@ -64,7 +67,7 @@ Plug 'tpope/vim-dispatch'           " for asynchronous :Make
 
 """""" File types """"""
 " General
-Plug 'msanders/snipmate.vim'        " boilerplate code
+"Plug 'msanders/snipmate.vim'        " boilerplate code
 
 " Go
 Plug 'fatih/vim-go'
@@ -89,7 +92,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-scripts/mutt-aliases', { 'for': 'mail' } " complete ~/.mutt/aliases
 
 " LaTeX
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 Plug 'anders-dc/vim-scholarref'     " search bibtex refs from web
 
 " Vimscript
@@ -106,6 +109,16 @@ let g:foldsearch_disable_mappings = 1
 let g:gitgutter_map_keys = 0
 
 let g:go_version_warning = 0
+
+" make YouCompleteMe compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " vim-markdown configuration
 " navigate headers with ]] and [[
