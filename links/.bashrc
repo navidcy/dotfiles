@@ -69,6 +69,8 @@ if [[ "$ARCH" != 'Darwin' ]]; then
     function say() { echo "$@" | festival --tts; }
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Dircolors
 export CLICOLOR=1
 

@@ -291,6 +291,8 @@ fi
 
 [ -f ~/code/fzf-mpd/fzf-mpd.zsh ] && source ~/code/fzf-mpd/fzf-mpd.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 if _has cabal && _has stack; then
     GIT_PROMPT_EXECUTABLE='haskell'
 fi

@@ -46,10 +46,6 @@ export GPG_TTY=`tty`
 
 if _has fzf; then
 
-    # trigger fzf completion by entering **<TAB> or <Pattern>**<TAB>
-    [ $(echo $SHELL | grep zsh) ] && [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-    [ $(echo $SHELL | grep bash) ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
     export FZF_DEFAULT_OPTS="
     --preview '(highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -100'
     "
