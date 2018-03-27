@@ -2,19 +2,17 @@
 
 call plug#begin('~/.vim/vim-plugs')   " Specify a directory for plugins
 
-"""""" Misc """"""
+""""" Misc """"""
 Plug 'tpope/vim-unimpaired'         " nav. errors with ]q, newlines with ]spc
-Plug 'johngrib/vim-game-code-break' " :VimGameCodeBreak
-Plug 'johngrib/vim-game-snake'      " :VimGameSnake
 Plug 'junegunn/vim-emoji'           " autocomplete :smiley: with C-x C-u
 Plug 'chrisbra/unicode.vim'         " autocomplete unicode with C-x C-z
+Plug 'tpope/vim-characterize'       " complete info of char under cursor with ga
 
-"""""" Appearance """"""
+""""" Appearance """"""
 Plug 'drzel/vim-line-no-indicator'  " show current line with single character
 Plug 'jacoborus/tender'             " color scheme
 Plug 'luochen1990/rainbow'          " colorcode paranthesis pairs
 Plug 'mhinz/vim-startify'           " startup screen
-Plug 'guns/xterm-color-table.vim'   " show color table with :XtermColorTable
 Plug 'embear/vim-foldsearch'        " hide/show lines matching a pattern
 Plug 'junegunn/goyo.vim'            " distraction-free editing in prose mode
 Plug 'junegunn/limelight.vim'       " highlight current paragraph in goyo
@@ -25,28 +23,26 @@ Plug 'vim-scripts/AnsiEsc.vim'      " show ANSI colors with :AnsiEsc
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'             " fzf commands from within vim
 Plug 'ludovicchabant/vim-gutentags' " automatic tag generation
+Plug 'tpope/vim-eunuch'             " :SudoWrite, :Rename, :Move, etc
 
 """""" Syntax checking """"""
 Plug 'w0rp/ale'                     " asynchronous syntax check
 Plug 'lukhio/adVIMsor', { 'on': 'AdVIMsorEnable' } " checks with :AdVIMsor*
 
 """""" Buffer motion """"""
-Plug 'easymotion/vim-easymotion'    " jump to char with <spc><spc>char
 Plug 'christoomey/vim-tmux-navigator' " seamless tmux pane/vim window navigation
 Plug 'junegunn/vim-slash'           " clear highlight when moving cursor
+Plug 'justinmk/vim-sneak'           " move cursor s{char}{char}, S{char}{char}
 
 """""" Text editing """"""
 Plug 'tpope/vim-surround'           " modify surrounding symbols
 Plug 'tpope/vim-repeat'             " repeat plugin bindings with .
+Plug 'tpope/vim-commentary'         " comment line with gcc, motion with gc
 Plug 'junegunn/vim-easy-align'      " align in columns (select > return > space)
 Plug 'reedes/vim-litecorrect'       " autocorrect common typos
 Plug 'reedes/vim-pencil'            " used for line wrapping in mails
 Plug 'szw/vim-dict'                 " query dict.org using :Dict
 Plug 'junegunn/vim-online-thesaurus' " query with :OnlineThesaurusCurrentWord
-
-" cycle through yank history with <leader>p and <leader>P after pasting,
-" see history with :Yanks
-Plug 'maxbrunsfeld/vim-yankstack'
 
 """""" Autocomplete """"""
 Plug 'honza/vim-snippets'           " snippets are separate from ultisnips
@@ -59,6 +55,7 @@ Plug 'airblade/vim-gitgutter'       " show line changes since last git commit
 
 """""" Processes """"""
 Plug 'tpope/vim-dispatch'           " for asynchronous :Make
+
 
 """""" File types """"""
 
@@ -102,6 +99,8 @@ let g:foldsearch_disable_mappings = 1
 let g:gitgutter_map_keys = 0
 
 let g:go_version_warning = 0
+
+let g:sneak#label = 1
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"

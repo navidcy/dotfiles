@@ -129,18 +129,6 @@ inoremap lkj <Esc>:write<CR>
 "nnoremap j gj
 "nnoremap k gk
 
-" easymotion bindings
-let g:EasyMotion_smartcase = 1  " case-insensitive
-let g:EasyMotion_do_mapping = 0 " disable default bindings
-
-nmap <leader>E <Plug>(easymotion-prefix)
-nmap <leader>j <Plug>(easymotion-j)
-nmap <leader>k <Plug>(easymotion-k)
-
-" <Leader><Leader>{char}{char} to move to {char}{char}
-nmap <leader><leader> <Plug>(easymotion-overwin-f2)
-nmap \ <Plug>(easymotion-overwin-f2)
-
 " Disable arrow keys
 noremap <Left> <Nop>
 noremap <Right> <Nop>
@@ -183,9 +171,6 @@ nnoremap <Leader>v "+p
 nnoremap <Leader>V "+P
 xnoremap <Leader>v "+p
 xnoremap <Leader>V "+P
-
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " align things into columns interactively
 xnoremap <silent> <Enter> :EasyAlign<cr>
