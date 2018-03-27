@@ -32,12 +32,13 @@ Plug 'lukhio/adVIMsor', { 'on': 'AdVIMsorEnable' } " checks with :AdVIMsor*
 """""" Buffer motion """"""
 Plug 'christoomey/vim-tmux-navigator' " seamless tmux pane/vim window navigation
 Plug 'junegunn/vim-slash'           " clear highlight when moving cursor
-Plug 'justinmk/vim-sneak'           " move cursor s{char}{char}, S{char}{char}
+Plug 'justinmk/vim-sneak'           " move cursor s{char}{char}, use cl for sub
 
 """""" Text editing """"""
 Plug 'tpope/vim-surround'           " modify surrounding symbols
 Plug 'tpope/vim-repeat'             " repeat plugin bindings with .
 Plug 'tpope/vim-commentary'         " comment line with gcc, motion with gc
+Plug 'tpope/vim-abolish'            " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'junegunn/vim-easy-align'      " align in columns (select > return > space)
 Plug 'reedes/vim-litecorrect'       " autocorrect common typos
 Plug 'reedes/vim-pencil'            " used for line wrapping in mails
