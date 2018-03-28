@@ -19,7 +19,7 @@ function! ColorSchemeTweaks() abort
     highlight SpecialKey ctermfg=10 guifg=DarkGray
     "
     "" Split divider appearance
-    hi! VertSplit ctermfg=238 ctermbg=NONE term=NONE
+    highlight! VertSplit ctermfg=238 ctermbg=NONE term=NONE
 endfunction
 
 augroup ColorSchemeCmds
