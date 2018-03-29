@@ -25,6 +25,8 @@ augroup latex_options
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
 
+    setlocal commentstring=%\ %s
+
 augroup END
 
 augroup latex_typography
