@@ -1,3 +1,9 @@
 set editing-mode vi
 set keymap vi
 #set convert-meta on
+
+# vi settings
+$if mode=vi
+    set keymap vi-insert
+    "jk": vi-movement-mode
+ $endif

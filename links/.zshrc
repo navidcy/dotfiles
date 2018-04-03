@@ -9,6 +9,7 @@ ARCH=$(uname)
 
 set -o noclobber  # prevent overwriting files with > (override with 1>)
 set -o vi
+bindkey jk vi-cmd-mode
 
 export EDITOR="vim"
 
