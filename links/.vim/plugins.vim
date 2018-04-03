@@ -107,6 +107,7 @@ let g:sneak#label = 1
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"  " default write path
 
 " vim-markdown configuration
 " navigate headers with ]] and [[
