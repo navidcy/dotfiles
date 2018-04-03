@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 #vmpath="Documents/Virtual Machines.localized/Debian 8.x 64-bit.vmwarevm/Debian 8.x 64-bit.vmx"
 vmpath="$HOME/VMware Fusion VMs/Debian 9.x 64-bit.vmwarevm/Debian 9.x 64-bit.vmx"
 #ip=172.16.106.42
@@ -9,30 +9,44 @@ cmd="tmux"
 if [[ "$1" = "-h" ]]; then
     echo "usage: $0 [start|suspend|stop|status|copysshkey|notmux]"
     echo "If no arguments are passed this script will connect to the VM via ssh"
+
 elif [[ "$1" = "start" ]]; then
     vmrun -T fusion start "$vmpath" nogui
     vmrun list
+
 elif [[ "$1" = "suspend" ]]; then
     vmrun -T fusion suspend "$vmpath"
     vmrun list
+
 elif [[ "$1" = "stop" ]]; then
     vmrun -T fusion stop "$vmpath"
     vmrun list
+
 elif [[ "$1" = "status" ]]; then
     vmrun list
+
 elif [[ "$1" = "copysshkey" ]]; then
     ssh-copy-id -i ~/.ssh/id_rsa.pub $ip
+
 else
     if [[ "$1" = "notmux" ]]; then
         cmd=""
     fi
           
     if [ "$(vmrun list | head -n 1 | awk '{ print $4 }')" -gt "0" ]; then
-        mkdir -p $sshfsmount
-        sshfs $ip:/home/ad $sshfsmount
-        ssh -Y $ip -t $cmd
-    else
-        echo "No VMs running"
-        exit 1
+        echo -n "Starting VM... "
+        vmrun -T fusion start "$vmpath" nogui
+        echo "done"
+        vmrun list
+    fi
+    mkdir -p $sshfsmount
+    sshfs $ip:/home/ad $sshfsmount
+    ssh -Y $ip -t $cmd
+
+    read -p "$(tput setaf 3)Suspend VM? [Y/n] $(tput sgr0)" -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Nn]$ ]]; then
+        vmrun -T fusion suspend "$vmpath"
+        vmrun list
     fi
 fi
