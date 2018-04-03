@@ -162,6 +162,7 @@ macro index \ u "<change-folder>=adamsgaard/Spam.unsure/<enter>" "Go to adamsgaa
 macro index \ a "<change-folder>=adamsgaard/academic-alerts/<enter>" "Go to adamsgaard/academic-alerts"
 macro index \ s "<change-folder>=adamsgaard/Spam/<enter>" "Go to adamsgaard/Spam"
 macro index \ ! "<change-folder>=adamsgaard/Sent/<enter>" "Go to adamsgaard/Sent"
+macro index \ g "<change-folder>=adamsgaard/geodatahub/<enter>" "Go to adamsgaard/GeoDataHub"
 macro index \ 5 "<change-folder>=geomail/INBOX/<enter>" "Go to Geomail inbox"
 macro index \ % "<change-folder>=geomail/Sent/<enter>" "Go to Geomail sent"
 macro index \ 6 "<change-folder>=ucsd/INBOX/<enter>" "Go to UCSD inbox"

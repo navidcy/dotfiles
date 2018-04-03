@@ -1,5 +1,9 @@
 #!/bin/bash
-newmails=$(find ~/Mail/*/INBOX/new -type f)
+maildir=~/Mail
+if [ ! -d $maildir ]; then
+    exit 0
+fi
+newmails=$(find $maildir/*/{INBOX,geodatahub}/new -type f)
 numbernewmails=$(echo $newmails | wc -w | sed 's/ *//')
 mailboxes="$(echo $newmails | tr ' ' '\n' | sed 's/.*Mail\///' | sed 's/\/INBOX.*//')"
 
@@ -10,7 +14,11 @@ offlineimap=/usr/local/bin/offlineimap
 
 accounts=""
 if [[ $mailboxes == *"adamsgaard"* ]]; then
-    accounts="${accounts}a"
+    if [[ $mailboxes == *"geodatahub"* ]]; then
+        accounts="${accounts}G"
+    else
+        accounts="${accounts}a"
+    fi
 fi
 if [[ $mailboxes == *"princeton"* ]]; then
     accounts="${accounts}p"
