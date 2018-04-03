@@ -167,8 +167,8 @@ nnoremap <leader>t :Tags<CR>
 " Copy and paste to system clipboard with <Space>v and <Space>y
 xnoremap <Leader>y "+y
 xnoremap <Leader>d "+d
-nnoremap <Leader>v "+p
-nnoremap <Leader>V "+P
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
 xnoremap <Leader>v "+p
 xnoremap <Leader>V "+P
 

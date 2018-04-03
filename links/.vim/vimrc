@@ -3,6 +3,8 @@ source ~/.vim/plugins.vim  " make sure that plugins are sourced first
 set autoread        " reload files when changed on disk
 set backspace=2     " fix broken backspace in some setups
 set backupcopy=yes  " see :help crontab
+set clipboard=unnamed " use system clipboard
+set dictionary+=/usr/share/dict/words " word completion using Ctrl-x Ctrl-k
 set expandtab       " use the appropriate number of spaces for <Tab>
 set hlsearch        " highlight search matches
 set ignorecase      " case-insensitive search
@@ -22,10 +24,6 @@ set textwidth=80    " default line width in number of characters
 set wildmenu        " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
-" Dictionary word completion using Ctrl-x Ctrl-k
-" File from wordlist- (debian) or word- (arch) package
-set dictionary+=/usr/share/dict/words
-
 " specify mutt aliases path, autocomplete aliases with @@ in insert mode
 let g:mutt_aliases_file = '~/.mutt/aliases'
 
@@ -33,7 +31,7 @@ let g:mutt_aliases_file = '~/.mutt/aliases'
 " number when negative
 let g:netrw_winsize = 20
 
-" Use faster :grep alternatives when available
+" use faster :grep alternatives when available
 if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
     set grepformat=%f:%l:%c:%m,%f:%l:%m
