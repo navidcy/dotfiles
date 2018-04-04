@@ -14,6 +14,13 @@ folder-hook adamsgaard 'set \
         postponed=+adamsgaard/Drafts\
         sendmail = "msmtp -a adamsgaard"'
 
+folder-hook geodatahub 'set \
+        from="Anders Damsgaard <anders@geodatahub.dk> "\
+        realname="Anders Damsgaard"\
+        record=+adamsgaard/Sent\
+        postponed=+adamsgaard/Drafts\
+        sendmail = "msmtp -a adamsgaard"'
+
 folder-hook riseup 'set \
         from="Anders Damsgaard <andersd@riseup.net> "\
         realname="Anders Damsgaard"\

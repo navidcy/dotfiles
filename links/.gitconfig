@@ -1,7 +1,9 @@
 [user]
-    email = andersd@riseup.net
+    email = anders@adamsgaard.dk
     name = Anders Damsgaard
-    signkey = 56A56CA2
+    #signkey = 56A56CA2
+    # gpg --list-secret-keys --keyid-format LONG
+    signkey = 5C959DF243CE4DD17A5B2610B790F4AD1BF858FE
 [color]
     ui = auto
 [push]
