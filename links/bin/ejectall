@@ -2,7 +2,8 @@
 for f in "/Volumes/"*; do
     if [ "$f" != "/Volumes/Macintosh HD" ]; then
         if [ "$f" != "/Volumes/MobileBackups" ]; then
-            diskutil eject $f;
+            diskutil eject $f | \
+                sed "s/Volume failed to eject/$(tput setaf 1)Volume failed to eject$(tput sgr0)/"
         fi
     fi
 done
