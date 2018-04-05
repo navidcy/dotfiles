@@ -281,6 +281,13 @@ if _has fzf; then
             sed -e 's/\(.*\)\.gpg/\1/'
         )
     }
+    # redefine git log alias
+    alias gl="git log --graph --oneline --decorate --all --color=always |
+        fzf --ansi +s --preview='git show --color=always {2}' \
+        --bind='pgdn:preview-page-down' \
+        --bind='pgup:preview-page-up' \
+        --bind='enter:execute:git show --color=always {2} | less -R' \
+        --bind='ctrl-x:execute:git checkout {2} .'"
 fi
 
 
