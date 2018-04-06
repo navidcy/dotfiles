@@ -65,7 +65,7 @@ nnoremap <leader>B :e `kpsexpand '$TEXMFHOME'`/bibtex/bib/myfiles/BIB.bib<CR>
 nnoremap <leader>r :ScholarRef 
 
 " insert date and time
-nnoremap <leader>D :read !date<CR>
+nnoremap <leader>D :read !date +"\%Y-\%m-\%d \%T \%Z (\%z UTC)"<CR>
 
 " job execution
 nnoremap <leader>m :Make<CR>
