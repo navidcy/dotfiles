@@ -5,7 +5,8 @@ if [ ! -d $maildir ]; then
 fi
 newmails=$(find $maildir/*/{INBOX,geodatahub}/new -type f)
 numbernewmails=$(echo $newmails | wc -w | sed 's/ *//')
-mailboxes="$(echo $newmails | tr ' ' '\n' | sed 's/.*Mail\///' | sed 's/\/INBOX.*//')"
+mailboxes="$(echo $newmails | tr ' ' '\n' | sed 's/.*Mail\///' |
+    sed 's/\/INBOX.*//' | sed 's/adamsgaard\/geodatahub.*/geodatahub/')"
 
 mailcolor="#859900"
 debug=false
@@ -14,11 +15,10 @@ offlineimap=/usr/local/bin/offlineimap
 
 accounts=""
 if [[ $mailboxes == *"adamsgaard"* ]]; then
-    if [[ $mailboxes == *"geodatahub"* ]]; then
-        accounts="${accounts}G"
-    else
-        accounts="${accounts}a"
-    fi
+    accounts="${accounts}a"
+fi
+if [[ $mailboxes == *"geodatahub"* ]]; then
+    accounts="${accounts}G"
 fi
 if [[ $mailboxes == *"princeton"* ]]; then
     accounts="${accounts}p"
