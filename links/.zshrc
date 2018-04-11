@@ -249,6 +249,7 @@ alias date-denmark='TZ=Europe/Copenhagen date'
 alias date-eastern='TZ=US/Eastern date'
 alias date-pacific='TZ=US/Pacific date'
 alias date-mountain='TZ=US/Mountain date'
+alias date-central='TZ=US/Central date'
 alias sha256sum='shasum -a 256'
 alias cala="gcalcli agenda"
 _has exa && alias ls='exa --git'
