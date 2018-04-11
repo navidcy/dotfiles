@@ -6,6 +6,7 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput;
 # MS Word documents
 #application/msword; ~/.mutt/view_attachment.sh %s "-" '/Applications/TextEdit.app'
 application/msword; ~/.mutt/view_attachment.sh %s "-"
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; ~/.mutt/view_attachment.sh %s "-"
 
 # Images
 image/jpg; ~/.mutt/view_attachment.sh %s jpg
