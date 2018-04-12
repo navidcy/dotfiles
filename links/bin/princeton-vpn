@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+pass -c Uni/princeton-netID-andersd
+open /Applications/Connect\ Tunnel.app
+
