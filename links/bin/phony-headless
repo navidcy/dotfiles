@@ -1,8 +1,7 @@
-#!/bin/bash -e
+#!/bin/bash
 #vmpath="Documents/Virtual Machines.localized/Debian 8.x 64-bit.vmwarevm/Debian 8.x 64-bit.vmx"
 vmpath="$HOME/VMware Fusion VMs/Debian 9.x 64-bit.vmwarevm/Debian 9.x 64-bit.vmx"
 #ip=172.16.106.42
-ip=192.168.44.134  # device ens33 from `ip addr` in VM
 sshfsmount=~/phony
 cmd="tmux"
 
@@ -33,20 +32,24 @@ else
         cmd=""
     fi
           
-    if [ "$(vmrun list | head -n 1 | awk '{ print $4 }')" -gt "0" ]; then
+    if [ "$(vmrun list | head -n 1 | awk '{ print $4 }')" -lt "1" ]; then
         echo -n "Starting VM... "
         vmrun -T fusion start "$vmpath" nogui
         echo "done"
         vmrun list
     fi
+    ip=192.168.44.135  # device ens33 from `ip addr` in VM
+    #ip=$(vmrun getGuestIPAddress "$vmpath")
+    echo "IP of VM: $ip"
+
     mkdir -p $sshfsmount
     sshfs $ip:/home/ad $sshfsmount
     ssh -Y $ip -t $cmd
 
-    read -p "$(tput setaf 3)Suspend VM? [Y/n] $(tput sgr0)" -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Nn]$ ]]; then
-        vmrun -T fusion suspend "$vmpath"
-        vmrun list
-    fi
+    #read -p "$(tput setaf 3)Suspend VM? [Y/n] $(tput sgr0)" -n 1 -r
+    #echo
+    #if [[ $REPLY =~ ^[Nn]$ ]]; then
+        #vmrun -T fusion suspend "$vmpath"
+        #vmrun list
+    #fi
 fi
