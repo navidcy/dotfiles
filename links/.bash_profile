@@ -37,6 +37,7 @@ if [ $(echo $HOSTNAME | grep cosmo) ]; then
 fi
 
 export GOPATH=$HOME/src/golang
+export PATH=$PATH:$GOPATH/bin
 export GPG_TTY=`tty`
 
 [ -d $HOME/pism ] && export PATH=$HOME/pism/bin:$PATH
