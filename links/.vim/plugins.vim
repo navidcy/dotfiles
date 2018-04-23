@@ -69,6 +69,7 @@ Plug 'JuliaLang/julia-vim'
 
 " Python
 Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
 "Plug 'klen/python-mode'
 
 " HTML/PHP/JS
