@@ -76,7 +76,7 @@ unsure:move_messages(account['Spam/unsure'])
 
 -- Debian announcements list --
 addr = 'debian-announce@lists.debian.org'
-mailbox = 'debian/debian-announce'
+mailbox = 'maillists/debian/debian-announce'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -84,7 +84,7 @@ results:move_messages(account[mailbox])
 
 -- Debian laptop list --
 addr = 'debian-laptop@lists.debian.org'
-mailbox = 'debian/debian-laptop'
+mailbox = 'maillists/debian/debian-laptop'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -92,7 +92,7 @@ results:move_messages(account[mailbox])
 
 -- Debian news list --
 addr = 'debian-news@lists.debian.org'
-mailbox = 'debian/debian-news'
+mailbox = 'maillists/debian/debian-news'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -100,7 +100,7 @@ results:move_messages(account[mailbox])
 
 -- Debian photo list --
 addr = 'debian-photo@lists.debian.org'
-mailbox = 'debian/debian-photo'
+mailbox = 'maillists/debian/debian-photo'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -108,7 +108,7 @@ results:move_messages(account[mailbox])
 
 -- Debian security list --
 addr = 'debian-security-announce@lists.debian.org'
-mailbox = 'debian/debian-security-announce'
+mailbox = 'maillists/debian/debian-security-announce'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -116,7 +116,7 @@ results:move_messages(account[mailbox])
 
 -- Debian security list --
 addr = 'debian-security@lists.debian.org'
-mailbox = 'debian/debian-security'
+mailbox = 'maillists/debian/debian-security'
 ----account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -124,7 +124,7 @@ results:move_messages(account[mailbox])
 
 -- Debian danish list --
 addr = 'debian-user-danish@lists.debian.org'
-mailbox = 'debian/debian-user-danish'
+mailbox = 'maillists/debian/debian-user-danish'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -132,7 +132,7 @@ results:move_messages(account[mailbox])
 
 -- Debian security announcements list --
 addr = 'debian-security-announce@lists.debian.org'
-mailbox = 'debian/debian-security'
+mailbox = 'maillists/debian/debian-security'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -140,7 +140,7 @@ results:move_messages(account[mailbox])
 
 -- Debian testing security announcements list --
 addr = 'debian-testing-security-announce@lists.debian.org'
-mailbox = 'debian/debian-security'
+mailbox = 'maillists/debian/debian-security'
 ----account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -148,7 +148,7 @@ results:move_messages(account[mailbox])
 
 -- Debian science list --
 addr = 'debian-science@lists.debian.org'
-mailbox = 'debian/debian-science'
+mailbox = 'maillists/debian/debian-science'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -156,7 +156,7 @@ results:move_messages(account[mailbox])
 
 -- VTK users list --
 addr = 'vtkusers@vtk.org'
-mailbox = 'vtk-users'
+mailbox = 'maillists/vtk-users'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
@@ -164,7 +164,7 @@ results:move_messages(account[mailbox])
 
 -- Paraview list
 addr = 'paraview@paraview.org'
-mailbox = 'vtk-users'
+mailbox = 'maillists/vtk-users'
 --account:create_mailbox(mailbox)
 --account:subscribe_mailbox(mailbox)
 results = account.INBOX:contain_to(addr) + account.INBOX:contain_cc(addr)
