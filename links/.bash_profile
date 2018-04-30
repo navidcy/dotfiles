@@ -3,6 +3,8 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+[ -f $HOME/.secret_env_vars ] && source $HOME/.secret_env_vars
+
 
 #### PATH AND MACHINE SPECIFIC CONFIGS
 
