@@ -15,7 +15,7 @@ $prefix youtube-dl \
     --extract-audio \
     --audio-quality 0 \
     --audio-format mp3 \
-    $1
+    "$1"
 
 read -p "add metadata? [y/N] " -n 1 -r
 echo
@@ -27,13 +27,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         --extract-audio \
         --audio-quality 0 \
         --audio-format mp3 \
-        $1)
-    filename=$(echo $filename | sed "s/\..*$/.mp3/")
+        "$1")
+    filename=$(echo "$filename" | sed "s/\..*$/.mp3/")
 
-    read -p "artist: " artist
-    read -p "album: " album
-    read -p "song: " song
-    read -p "track [e.g. 01]: " track
+    read -r -p "artist: " artist
+    read -r -p "album: " album
+    read -r -p "song: " song
+    read -r -p "track [e.g. 01]: " track
 
     id3v2 --artist "$artist" --album "$album" --song "$song" --track "$track" \
         "$filename"

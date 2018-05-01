@@ -64,6 +64,7 @@ brews=(
     reattach-to-user-namespace  # needed for tmux
     rename      # rename many files with convenient syntax
     ripgrep     # a faster grep
+    sc-im       # terminal-based spreadsheets
     shellcheck  # bash linter
     ssh-copy-id # add public key to a remote's authorized_keys file
     sshfs
@@ -90,7 +91,7 @@ brews=(
 )
 
 for brew in "${brews[@]}"; do
-    brew install $brew
+    brew install "$brew"
 done
 
 
