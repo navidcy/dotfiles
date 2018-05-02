@@ -28,19 +28,27 @@ augroup end
 
 colorscheme tender
 
+augroup AleAppearance
+    let g:ale_sign_error = '✖'
+    let g:ale_sign_warning = '⚠'
+
+    highlight ALEErrorSign ctermbg=0 ctermfg=203
+    highlight ALEWarningSign ctermbg=0 ctermfg=173
+augroup end
+
 " statusline helper functions
 function! StatuslineLinterWarnings() abort
     let l:counts = ale#statusline#Count(bufnr(''))
     let l:all_errors = l:counts.error + l:counts.style_error
     let l:all_non_errors = l:counts.total - l:all_errors
-    return l:all_non_errors == 0 ? '' : printf(' %d ◆ ', all_non_errors)
+    return l:all_non_errors == 0 ? '' : printf(' %d ⚠  ', all_non_errors)
 endfunction
 "
 function! StatuslineLinterErrors() abort
     let l:counts = ale#statusline#Count(bufnr(''))
     let l:all_errors = l:counts.error + l:counts.style_error
     let l:all_non_errors = l:counts.total - l:all_errors
-    return l:all_errors == 0 ? '' : printf(' %d ✗ ', all_errors)
+    return l:all_errors == 0 ? '' : printf(' %d ✖ ', all_errors)
 endfunction
 
 function! StatuslineLinterOK() abort
@@ -77,8 +85,8 @@ augroup StatuslineConfig
     " right
     set statusline+=%4*           " set background color
     set statusline+=%7*%{StatuslineLinterWarnings()}%4*   " ALE warnings
-    set statusline+=%6*%{StatuslineLinterErrors()}%4*       " ALE errors
-    set statusline+=%{StatuslineLinterOK()}           " ALE ok
+    set statusline+=%6*%{StatuslineLinterErrors()}%4*     " ALE errors
+    set statusline+=%{StatuslineLinterOK()}               " ALE ok
     set statusline+=%2*           " set User2 color
     set statusline+=\ %{LineNoIndicator()}\  " show file position with single char
     set statusline+=%3*           " set User3 color
