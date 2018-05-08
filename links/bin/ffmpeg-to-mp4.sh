@@ -30,7 +30,7 @@ ffmpeg -i "$1" -y -vframes 1 -f image2 "${output%.*}.png"
 #ffmpeg -i $1 -vf "select='eq(n,$lastframe_index)'" -vframes 1 -f image2 \
 #    ${output%.*}-last.png
 
-echo $output
+echo "$output"
 
 if [ "$2" == "cleanup" ]; then
     rm "${1%.*}.png"
