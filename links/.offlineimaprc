@@ -314,6 +314,7 @@ localrepository = noaa-local
 remoterepository = noaa-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 #status_backend = sqlite
+presynchook = imapfilter -t ~/.mutt/cert.pem -c ~/.imapfilter/noaa.lua
 postsynchook = notmuch new
 
 # Minutes between syncs
