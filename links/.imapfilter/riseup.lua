@@ -33,10 +33,10 @@ account = IMAP {
 }
 
 -- Get a list of the available mailboxes and folders
-mailboxes, folders = account:list_all()
+--mailboxes, folders = account:list_all()
 
 -- Get a list of the subscribed mailboxes and folders
-mailboxes, folders = account:list_subscribed()
+--mailboxes, folders = account:list_subscribed()
 
 
 -------------------
