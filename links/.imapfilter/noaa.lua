@@ -16,3 +16,6 @@ account = IMAP {
 -- Mark AOS emails as seen in NOAA account
 results = account.INBOX:is_unseen():match_to("oar.gfdl.forrestal@noaa.gov")
 results:mark_seen()
+
+results = account.INBOX:is_unseen():match_to("oar.gfdl.public_events@noaa.gov")
+results:mark_seen()
