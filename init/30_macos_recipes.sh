@@ -71,6 +71,7 @@ brews=(
     subliminal  # search and download subtitles
     surfraw     # cmd-line interface to search engines (`sr` alias)
     the_silver_searcher  # ag
+    task        # taskwarrior
     tmux
     translate-shell  # provides `trans` interface to google translate
     tig         # git history
