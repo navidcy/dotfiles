@@ -63,7 +63,7 @@ local prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
 
 PROMPT="
 ${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
-RPROMPT='${return_status} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m%{$fg[cyan]%}${EXECTIME}%{$reset_color%}'
+RPROMPT='${return_status}%{$fg[green]%}${EXECTIME}%{$reset_color%} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
 
 unset AUTO_CD
 setopt CORRECT
