@@ -29,6 +29,33 @@ colors
 
 #### ZSH APPEARANCE
 
+# show execution time of previous command if more than 1 sec
+function convertsecs() {
+    ((d=${1}/3600/24))
+    ((h=${1}/3600%24))
+    ((m=(${1}%3600)/60))
+    ((s=${1}%60))
+    if [ "$d" -gt "0" ]; then
+        printf " %dd%02dh%02dm%02ds" $d $h $m $s
+    elif [ "$h" -gt "0" ]; then
+        printf " %dh%02dm%02ds" $h $m $s
+    elif [ "$m" -gt "0" ]; then
+        printf " %dm%02ds" $m $s
+    elif [ "$s" -gt "0" ]; then
+        printf " %ds" $s
+    fi
+}
+function preexec() {
+    timer=${timer:-$SECONDS}
+}
+function precmd() {
+    if [ $timer ]; then
+        timer_show=$(convertsecs $(($SECONDS - $timer)))
+        export EXECTIME="${timer_show}"
+        unset timer
+    fi
+}
+
 # check for background jobs
 local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$fg[blue]%}bg %{$reset_color%}.)"
 local return_status="%(?..%{$fg[red]%}%?%{$reset_color%})"
@@ -36,7 +63,7 @@ local prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
 
 PROMPT="
 ${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
-RPROMPT='${return_status} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
+RPROMPT='${return_status} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m%{$fg[cyan]%}${EXECTIME}%{$reset_color%}'
 
 unset AUTO_CD
 setopt CORRECT
