@@ -1,17 +1,5 @@
 -- see `man imapfilter_config` for info
 
--------------
--- Options --
--------------
-options.timeout = 120
-options.subscribe = true
---options.namespace = false
---options.create = true
-
--- for debugging purposes
-options.info = true
-
-
 
 -- function to strip trailing newlines piped from ~/.mutt/offlineimap.py
 function trim(s)
