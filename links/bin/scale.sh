@@ -7,7 +7,7 @@ fi
 
 for f in "$@"; do
     if [[ "$f" != *% ]]; then
-        echo $f
-        convert $f -resize $1 scaled-$f
+        echo "$f"
+        convert "$f" -resize "$1" "scaled-$f"
     fi
 done
