@@ -30,8 +30,8 @@
 #
 [user]
 name=Anders Damsgaard
-primary_email=andersd@riseup.net
-other_email=adc@geo.au.dk;anders.damsgaard@geo.au.dk;adamsgaard@ucsd.edu;andersdc@gmail.com;a.damsgaard@icloud.com;andersd@stanford.edu
+primary_email=anders@adamsgaard.dk
+other_email=andersd@riseup.net;adc@geo.au.dk;anders.damsgaard@geo.au.dk;adamsgaard@ucsd.edu;andersdc@gmail.com;a.damsgaard@icloud.com;andersd@stanford.edu;andersd@princeton.edu;anders.damsgaard@noaa.gov;anders@geodatahub.dk;info@geodatahub.dk;support@geodatahub.dk
 
 # Configuration for "notmuch new"
 #
