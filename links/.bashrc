@@ -15,8 +15,9 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 
 _has() {
-  return $( type -v $1 &> /dev/null )
+  return $( type -v "$1" &> /dev/null )
 }
+# shellcheck source=/Users/ad/.bash_profile
 [ -f ~/.bash_profile ] && source ~/.bash_profile
 
 # check the window size after each command and, if necessary,
@@ -38,19 +39,19 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -65,10 +66,11 @@ alias play='mpg123 --title -C'
 #echo -n -e "\033]0;`hostname`\007"
 ARCH=$(uname)
 if [[ "$ARCH" != 'Darwin' ]]; then
-    function open() { xdg-open $1 &> /dev/null &disown; }
+    function open() { xdg-open "$1" &> /dev/null &disown; }
     function say() { echo "$@" | festival --tts; }
 fi
 
+# shellcheck source=/Users/ad/.fzf.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Dircolors
@@ -76,4 +78,5 @@ export CLICOLOR=1
 
 export HISTTIMEFORMAT='%F %T '
 export EDITOR=vim
-export GPG_TTY=`tty`
+GPG_TTY=$(tty)
+export GPG_TTY
