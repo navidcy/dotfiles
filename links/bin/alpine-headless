@@ -1,8 +1,8 @@
 #!/bin/bash
 #vmpath="Documents/Virtual Machines.localized/Debian 8.x 64-bit.vmwarevm/Debian 8.x 64-bit.vmx"
-vmpath="$HOME/VMware Fusion VMs/Debian 9.x 64-bit.vmwarevm/Debian 9.x 64-bit.vmx"
+vmpath="$HOME/VMware Fusion VMs/alpine-virt.vmwarevm/alpine-virt.vmx"
 #ip=172.16.106.42
-sshfsmount=~/phony
+sshfsmount=~/alpine
 cmd="tmux"
 
 if [[ "$1" = "-h" ]]; then
@@ -46,7 +46,7 @@ else
     #        hardware ethernet 00:0C:29:B6:22:3E;
     #        fixed-address  192.168.167.80;
     #    }
-    ip=192.168.167.80
+    ip=192.168.167.81
     #ip=$(vmrun getGuestIPAddress "$vmpath")
     echo "IP of VM: $ip"
 
