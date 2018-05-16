@@ -208,7 +208,7 @@ nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
     'trash':   '[Gmail]/Trash',
     'archive': '[Gmail]/All Mail',
     }.get(folder, folder)
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important', '[Gmail]/Spam']
 #cert_fingerprint = c1a3bb1a8617af4a28ee2e0cd494533c3cd70bf8
 #cert_fingerprint = fc0a6ba4bf46851bcea02c6a438de63f6811165b,5f9f9598bf27cce4a97762336a753b8c07878564,f0b04600b419486538ace149e3615c7d94953c87
 ssl=true
