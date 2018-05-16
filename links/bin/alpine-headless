@@ -3,7 +3,7 @@
 vmpath="$HOME/VMware Fusion VMs/alpine-virt.vmwarevm/alpine-virt.vmx"
 #ip=172.16.106.42
 sshfsmount=~/alpine
-cmd="tmux"
+cmd="hostname && pwd"
 
 if [[ "$1" = "-h" ]]; then
     echo "usage: $0 [start|suspend|stop|status|copysshkey|notmux]"
@@ -46,7 +46,10 @@ else
     #        hardware ethernet 00:0C:29:B6:22:3E;
     #        fixed-address  192.168.167.80;
     #    }
-    ip=192.168.167.81
+    # 3. Afterwards, restart vmnet DHCP with
+    #    sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --stop
+    #    sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --start
+    ip=192.168.44.100
     #ip=$(vmrun getGuestIPAddress "$vmpath")
     echo "IP of VM: $ip"
 
