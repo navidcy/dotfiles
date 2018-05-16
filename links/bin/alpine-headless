@@ -3,7 +3,22 @@
 vmpath="$HOME/VMware Fusion VMs/alpine-virt.vmwarevm/alpine-virt.vmx"
 #ip=172.16.106.42
 sshfsmount=~/alpine
-cmd="hostname && pwd"
+cmd="tmux"
+
+# 1. In vmware fusion gui app, configure network adapter to "Internet
+# Sharing: Share with my Mac". Copy the MAC address under "Advanced options"
+# 2. Insert an entry like the following to 
+# /Library/Preferences/VMware\ Fusion/vmnet8/dhcpd.conf :
+#    host Windows8x64 {
+#        hardware ethernet 00:0C:29:B6:22:3E;
+#        fixed-address  192.168.167.80;
+#    }
+# 3. Afterwards, restart vmnet DHCP with
+#    sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --stop
+#    sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --start
+ip=192.168.44.100
+#ip=$(vmrun getGuestIPAddress "$vmpath")
+echo "IP of VM: $ip"
 
 if [[ "$1" = "-h" ]]; then
     echo "usage: $0 [start|suspend|stop|status|copysshkey|notmux]"
@@ -38,29 +53,18 @@ else
         echo "done"
         vmrun list
     fi
-    # 1. In vmware fusion gui app, configure network adapter to "Internet
-    # Sharing: Share with my Mac". Copy the MAC address under "Advanced options"
-    # 2. Insert an entry like the following to 
-    # /Library/Preferences/VMware\ Fusion/vmnet8/dhcpd.conf :
-    #    host Windows8x64 {
-    #        hardware ethernet 00:0C:29:B6:22:3E;
-    #        fixed-address  192.168.167.80;
-    #    }
-    # 3. Afterwards, restart vmnet DHCP with
-    #    sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --stop
-    #    sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --start
-    ip=192.168.44.100
-    #ip=$(vmrun getGuestIPAddress "$vmpath")
-    echo "IP of VM: $ip"
 
     mkdir -p $sshfsmount
     sshfs $ip:/home/ad $sshfsmount
     ssh -Y $ip -t $cmd
 
-    #read -p "$(tput setaf 3)Suspend VM? [Y/n] $(tput sgr0)" -n 1 -r
-    #echo
-    #if [[ $REPLY =~ ^[Nn]$ ]]; then
-        #vmrun -T fusion suspend "$vmpath"
-        #vmrun list
-    #fi
+    read -p "$(tput setaf 3)Suspend VM? [Y/n] $(tput sgr0)" -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Nn]$ ]]; then
+        echo "Not suspending. Bye."
+    else
+        echo "Suspending VM..."
+        vmrun -T fusion suspend "$vmpath"
+        vmrun list
+    fi
 fi
