@@ -78,8 +78,8 @@ set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
 
 # sort threads by date
-set sort=threads
-set sort_aux = reverse-last-date-received
+set sort=reverse-threads
+set sort_aux = last-date-received
 
 set charset=utf-8
 set config_charset=utf-8
