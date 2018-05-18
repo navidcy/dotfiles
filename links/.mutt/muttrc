@@ -148,12 +148,12 @@ bind attach <return> view-mailcap
 #macro attach <return> "<pipe-entry>cat >~/.mutt_mail.html && open ~/.mutt_mail.html<enter>" "show attachment in browser"
 
 # vi-like movement
-bind attach,index gg first-entry
-bind attach,index G last-entry
+bind attach,index,browser gg first-entry
+bind attach,index,browser G last-entry
 bind pager gg top
 bind pager G bottom
-bind attach,index,pager \CD next-page
-bind attach,index,pager \CU previous-page
+bind attach,index,pager,browser \CD next-page
+bind attach,index,pager,browser \CU previous-page
 
 bind index,pager R  group-reply
 bind index <tab>    sync-mailbox
