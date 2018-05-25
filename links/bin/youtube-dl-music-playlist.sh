@@ -11,15 +11,15 @@ else
 fi
 
 outputdir=$TMPDIR/ytdl-playlist
-mkdir -p $outputdir
-cd $outputdir
+mkdir -p "$outputdir"
+cd "$outputdir"
 
 $prefix youtube-dl \
     --format bestaudio \
     --extract-audio \
     --audio-quality 0 \
     --audio-format mp3 \
-    $1
+    "$1"
 
 read -p "add metadata? [y/N] " -n 1 -r
 echo
@@ -36,16 +36,16 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
         echo -e "\033[0;31m$f\033[0m"
 
-        read -p "artist [$artist]: " input
-        artist="${input:-$artist}"
+        read -r -p "song: " song
 
-        read -p "album [$album]: " input
+        read -r -p "track [$track]: " input
+        track="${input:-$track}"
+
+        read -r -p "album [$album]: " input
         album="${input:-$album}"
 
-        read -p "song: " song
-
-        read -p "track [$track]: " input
-        track="${input:-$track}"
+        read -r -p "artist [$artist]: " input
+        artist="${input:-$artist}"
 
         id3v2 --artist "$artist" --album "$album" \
             --song "$song" --track "$track" \
@@ -67,12 +67,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
         outdir="$musicroot/$artist/$album"
         mkdir -p "$outdir"
-        mv *.mp3 "$outdir"
+        mv ./*.mp3 "$outdir"
 
         echo "updating mpd"
         mpc update > /dev/null
 
-        rmdir $outputdir
+        rmdir "$outputdir"
         cd -
     fi
 fi
