@@ -72,6 +72,7 @@ setopt append_history
 setopt share_history
 setopt hist_verify
 setopt hist_ignore_all_dups
+setopt interactivecomments  # allow in-line comments in zsh prompt
 export HISTFILE="${HOME}"/.zsh-history
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
