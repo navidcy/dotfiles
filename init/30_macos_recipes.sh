@@ -25,6 +25,7 @@ brews=(
     cpanminus   # required for notmuch CPAN packages
     ctags-exuberant
     exiftool    # used to manage RAW metadata
+    fdupes      # find duplicates with `fdupes -m .`, delete with `fdupes -dN .`
     ffmpeg
     fortune
     fzf         # fuzzy file finder
