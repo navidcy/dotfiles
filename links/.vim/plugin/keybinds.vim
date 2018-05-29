@@ -189,6 +189,10 @@ nnoremap <silent> [w :ALEPreviousWrap<cr>
 nnoremap <silent> ]w :ALENextWrap<cr>
 nnoremap <silent> ]W :ALELast<cr>
 
+" cycle through Wordy's writing dictionaries
+nnoremap <silent> ]d :NextWordy<cr>
+nnoremap <silent> [d :PrevWordy<cr>
+
 " Add completion bindings (cycle with C-n, C-p), see :h ins-completion
 " <C-x><C-l>: while line
 " <C-x><C-n>: keywords in current file
