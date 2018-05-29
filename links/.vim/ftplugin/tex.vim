@@ -38,4 +38,5 @@ augroup latex_typography
     setlocal formatoptions=alw2qt " automatically reflow paragraphs
     IndentLinesDisable
     AdVIMsorEnable " detect weasel words, use of passive voice, word duplicates
+    DittoOn
 augroup END

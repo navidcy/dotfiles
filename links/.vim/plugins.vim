@@ -16,8 +16,7 @@ Plug 'mhinz/vim-startify'           " startup screen
 Plug 'embear/vim-foldsearch'        " hide/show lines matching a pattern
 Plug 'junegunn/goyo.vim'            " distraction-free editing in prose mode
 Plug 'junegunn/limelight.vim'       " highlight current paragraph in goyo
-Plug 'Yggdroot/indentLine'          " show indentation level with vertical lines
-Plug 'vim-scripts/AnsiEsc.vim'      " show ANSI colors with :AnsiEsc
+Plug 'Yggdroot/indentLine'          " show indentation level with vertical lines Plug 'vim-scripts/AnsiEsc.vim'      " show ANSI colors with :AnsiEsc
 
 """""" File system """""""
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -42,8 +41,12 @@ Plug 'tpope/vim-abolish'            " :%Subvert/facilit{y,ies}/building{,s}/g
 Plug 'junegunn/vim-easy-align'      " align in columns (select > return > space)
 Plug 'reedes/vim-litecorrect'       " autocorrect common typos
 Plug 'reedes/vim-pencil'            " used for line wrapping in mails
+
+"""""" Writing """"""
 Plug 'szw/vim-dict'                 " query dict.org using :Dict
 Plug 'junegunn/vim-online-thesaurus' " query with :OnlineThesaurusCurrentWord
+Plug 'reedes/vim-wordy'             " better writing with :Wordy
+Plug 'dbmrq/vim-ditto'              " detect duplicates with :Ditto
 
 """""" Autocomplete """"""
 Plug 'honza/vim-snippets'           " snippets are separate from ultisnips

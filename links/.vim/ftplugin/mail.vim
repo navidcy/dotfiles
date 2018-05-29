@@ -8,4 +8,5 @@ augroup mail_typography
     setlocal completefunc=Complete_Emails
     IndentLinesDisable
     AdVIMsorEnable " detect weasel words, use of passive voice, word duplicates
+    DittoOn
 augroup END
