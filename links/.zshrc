@@ -42,7 +42,7 @@ bindkey '^N' down-line-or-search
 bindkey '^ ' autosuggest-accept   # accept suggestion with ctrl+space
 
 # use Ctrl-Z as fg
-_fzf_foreground() {
+_foreground() {
     if [[ $#BUFFER -eq 0 ]]; then
         BUFFER="fg"
         zle accept-line
@@ -51,8 +51,8 @@ _fzf_foreground() {
         zle clear-screen
     fi
 }
-zle -N _fzf_foreground
-bindkey '^Z' _fzf_foreground
+zle -N _foreground
+bindkey '^Z' _foreground
 
 # launch $EDITOR with Ctrl-e
 _editor() {
@@ -207,7 +207,7 @@ fi > /dev/null 2>&1
 
 # pass **<tab>
 _fzf_complete_pass() {
-    _fzf_complete '+m' "$@" < <(
+    _fzf_complete "--no-multi --preview-window=right:hidden" "$@" < <(
     pwdir=${PASSWORD_STORE_DIR-~/.password-store/}
     stringsize="${#pwdir}"
     find "$pwdir" -name "*.gpg" -print |
