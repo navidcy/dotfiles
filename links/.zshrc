@@ -1,8 +1,8 @@
 #### ZSH PERFORMANCE DEBUG (enable all)
-#setopt prompt_subst
-#zmodload zsh/datetime
-#PS4='+[$EPOCHREALTIME]%N:%i> '
-#set -x
+# setopt prompt_subst
+# zmodload zsh/datetime
+# PS4='+[$EPOCHREALTIME]%N:%i> '
+# set -x
 
 #### GENERAL
 ARCH=$(uname)
@@ -56,6 +56,23 @@ function precmd() {
     fi
 }
 
+function git_branch() {
+    branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
+    if [ -n "$branch_name" ]; then
+        echo -n "$branch_name$(git_modified) "
+    fi
+}
+
+function git_grep_modified_files() {
+    grep -e "^.M" -e "^M." -e "^A." -e "^D." -e "^.D"
+}
+
+function git_modified() {
+    if [ -n "$(git status --porcelain 2> /dev/null | git_grep_modified_files)" ]; then
+        echo -n "*"
+    fi
+}
+
 # check for background jobs
 local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$fg[blue]%}bg %{$reset_color%}.)"
 local return_status="%(?..%{$fg[red]%}%?%{$reset_color%})"
@@ -63,7 +80,13 @@ local prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
 
 PROMPT="
 ${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
-RPROMPT='${return_status}%{$fg[green]%}${EXECTIME}%{$reset_color%} %B%{$fg[cyan]%}%~%{$reset_color%} $(git_super_status) %n@%m'
+
+RPROMPT="${return_status}\
+${EXECTIME}\
+%{$fg[green]%}${EXECTIME}%{$reset_color%} \
+%B%{$fg[cyan]%}%~%{$reset_color%} \
+%{$fg[cyan]%}$(git_branch)\
+%{$reset_color%}%n@%m"
 
 unset AUTO_CD
 setopt CORRECT
@@ -73,9 +96,9 @@ setopt share_history
 setopt hist_verify
 setopt hist_ignore_all_dups
 setopt interactivecomments  # allow in-line comments in zsh prompt
-export HISTFILE="${HOME}"/.zsh-history
-export HISTSIZE=1000000
-export SAVEHIST=$HISTSIZE
+export HISTFILE=~/.zsh-history
+export HISTSIZE=$((2 ** 16))
+export SAVEHIST=$((2 ** 17))
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors 'reply=( "=(#b)(*$VAR)(?)*=00=$color[green]=$color[bg-green]" )'
@@ -94,7 +117,7 @@ bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
 
 # use Ctrl-Z as fg
-fancy-ctrl-z () {
+_fzf-foreground () {
     if [[ $#BUFFER -eq 0 ]]; then
         BUFFER="fg"
         zle accept-line
@@ -103,8 +126,8 @@ fancy-ctrl-z () {
         zle clear-screen
     fi
 }
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+zle -N _fzf-foreground
+bindkey '^Z' _fzf-foreground
 
 # launch $EDITOR with Ctrl-e
 _editor() {
@@ -200,7 +223,8 @@ function transfer() { # use transfer.sh to share files over the net
     if tty -s; then
         basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
         curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile
-    else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile
+    else
+        curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile
     fi
     cat $tmpfile
     rm -f $tmpfile
@@ -208,12 +232,9 @@ function transfer() { # use transfer.sh to share files over the net
 } 
 
 alias svim='sudo -e'
-#alias e='emacs -nw'
 alias v='vim'
-#alias v='nvim'
 alias f='fg'
 alias vi='vim -u NONE'
-#alias vi='nvim -u NONE'
 alias gs='git status | less'
 alias gl='git log --graph --oneline --decorate --all'
 alias ga='git add'
@@ -253,12 +274,10 @@ alias date-mountain='TZ=US/Mountain date'
 alias date-central='TZ=US/Central date'
 alias sha256sum='shasum -a 256'
 alias cala="gcalcli agenda"
-_has exa && alias ls='exa --git'
 alias youtube-dl='youtube-dl --format mp4'
 alias html="ansifilter -H -f"
-alias copyhtml="html | pbcopy"
 alias w3m="w3m -B"
-function cd(){ [[ "$1" == "..." ]] && builtin cd ../.. || builtin cd $@; }
+function cd() { [[ "$1" == "..." ]] && builtin cd ../.. || builtin cd $@; }
 
 # enable color support of ls and also add handy aliases
 if [[ "$ARCH" != 'Darwin' ]]; then
@@ -266,12 +285,57 @@ if [[ "$ARCH" != 'Darwin' ]]; then
 else
     alias ls='ls -G -F'
 fi
+function chpwd() { ls }
+
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+
+# open files with certain suffix in $EDITOR when calling their name
+for suffix in c cc cxx go h html jl js json md py rb rst vim yml
+do
+  alias -s $suffix=$EDITOR
+done
+
+for suffix in txt log
+do
+  alias -s $suffix=$PAGER
+done
+
+#### ZSH PLUGINS
+
+if [ -f ~/code/zplug/init.zsh ]; then
+
+    export ZPLUG_HOME=~/code/zplug
+    source $ZPLUG_HOME/init.zsh
+
+    zplug "zplug/zplug", hook-build:"zplug --self-manage"
+    zplug "junegunn/fzf", use:"shell/*.zsh"
+    zplug "zsh-users/zsh-autosuggestions"
+    zplug "zsh-users/zsh-completions", lazy:true
+    zplug "zsh-users/zsh-syntax-highlighting"
+    zplug "anders-dc/fzf-mpd"
+
+    if ! zplug check; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
+
+    zplug load
+else
+    echo "warning: init.zsh not found in ~/code/zplug"
+fi
+
+## Plugin options
+if _has cabal && _has stack; then
+    GIT_PROMPT_EXECUTABLE='haskell'
+fi
+ZSH_THEME_GIT_PROMPT_CACHE=true
 
 
 #### AUTOCOMPLETE
+
+bindkey '^ ' autosuggest-accept   # accept suggestion with ctrl+space
 
 if _has fzf; then
     # pass **<tab>
@@ -292,19 +356,3 @@ if _has fzf; then
         --bind='enter:execute:git show --color=always {2} | less -R' \
         --bind='ctrl-x:execute:git checkout {2} .'"
 fi
-
-
-#### ZSH PLUGINS
-
-[ -f ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
-    source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f ~/code/zsh-git-prompt/zshrc.sh ] && source ~/code/zsh-git-prompt/zshrc.sh
-
-[ -f ~/code/fzf-mpd/fzf-mpd.zsh ] && source ~/code/fzf-mpd/fzf-mpd.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if _has cabal && _has stack; then
-    GIT_PROMPT_EXECUTABLE='haskell'
-fi
-ZSH_THEME_GIT_PROMPT_CACHE=true
