@@ -1,8 +1,4 @@
 #### ZSH PERFORMANCE DEBUG (enable all)
-# setopt prompt_subst
-# zmodload zsh/datetime
-# PS4='+[$EPOCHREALTIME]%N:%i> '
-# set -x
 debug_startup=false
 [ "$debug_startup" = true ] && zmodload zsh/zprof
 
@@ -14,8 +10,7 @@ _has() {
   return $( (( $+commands[$1] )) )
 }
 
-[ -f ~/.bash_profile ] && source ~/.bash_profile
-[ -f $HOME/.locale ] && $HOME/.locale
+[ -f ~/.locale ] && . ~/.locale
 
 autoload -Uz compinit promptinit colors
 compinit -d
@@ -23,17 +18,17 @@ promptinit
 colors
 
 set -o noclobber  # prevent overwriting files with > (override with 1>)
-unset AUTO_CD
-setopt CORRECT
+unsetopt autocd
+setopt correct
 setopt completealiases
 setopt append_history
 setopt share_history
 setopt hist_verify
 setopt hist_ignore_all_dups
 setopt interactivecomments  # allow in-line comments in zsh prompt
-export HISTFILE=~/.zsh-history
-export HISTSIZE=$((2 ** 16))
-export SAVEHIST=$((2 ** 17))
+HISTFILE=~/.zsh-history
+HISTSIZE=$((2 ** 16))
+SAVEHIST=$((2 ** 17))
 
 
 #### ZSH APPEARANCE
@@ -65,6 +60,7 @@ function precmd() {
     fi
 }
 
+# show git information
 function git_branch() {
     branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
     if [ -n "$branch_name" ]; then
@@ -83,13 +79,19 @@ function git_modified() {
 }
 
 # check for background jobs
-local bg_jobs="%(1j.%{$fg[yellow]%}%j%{$fg[blue]%}bg %{$reset_color%}.)"
-local return_status="%(?..%{$fg[red]%}%?%{$reset_color%})"
-local prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
+bg_jobs="%(1j.%{$fg[yellow]%}%jbg %{$reset_color%}.)"
 
+# show return status of previous command
+return_status="%(?..%{$fg[red]%}%?%{$reset_color%})"
+
+# change prompt according to su
+prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
+
+# define left prompt format
 PROMPT="
 ${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
 
+# define right prompt format
 RPROMPT="${return_status}\
 ${EXECTIME}\
 %{$fg[green]%}${EXECTIME}%{$reset_color%} \
@@ -162,7 +164,7 @@ bindkey '^g' _editor_fuzzy_grep
 
 
 #### FUNCTIONS AND ALIASES
-source ~/.commands.sh
+. ~/.commands.sh
 
 # open files with certain suffix in $EDITOR when calling their name
 for suffix in c cc cxx go h html jl js json md py rb rst vim yml
@@ -179,7 +181,7 @@ done
 
 # zgen is faster than zplug
 if [ -f ~/code/zgen/zgen.zsh ]; then
-    source ~/code/zgen/zgen.zsh
+    . ~/code/zgen/zgen.zsh
 
     if ! zgen saved; then
 
@@ -218,5 +220,11 @@ if _has fzf; then
         --bind='enter:execute:git show --color=always {2} | less -R' \
         --bind='ctrl-x:execute:git checkout {2} .'"
 fi
+
+#### Extra options
+
+# show directory listing when changing dir
+function chpwd() { ls }
+
 
 [ "$debug_startup" = true ] && zprof || :

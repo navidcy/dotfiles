@@ -17,8 +17,6 @@ HISTFILESIZE=20000
 _has() {
   return $( type -v "$1" &> /dev/null )
 }
-# shellcheck source=/Users/ad/.bash_profile
-[ -f ~/.bash_profile ] && source ~/.bash_profile
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -26,6 +24,14 @@ shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+export CLICOLOR=1
+export HISTTIMEFORMAT='%F %T '
+export EDITOR=vim
+GPG_TTY=$(tty)
+export GPG_TTY
+
+. ~/.commands.sh
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -55,28 +61,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# Useful aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias vi='vim -u NONE'
-#alias ls='ls $LS_OPTIONS -hF'
-alias play='mpg123 --title -C'
-# Set bash title for certain terminals
-#echo -n -e "\033]0;`hostname`\007"
-ARCH=$(uname)
-if [[ "$ARCH" != 'Darwin' ]]; then
-    function open() { xdg-open "$1" &> /dev/null &disown; }
-    function say() { echo "$@" | festival --tts; }
-fi
-
 # shellcheck source=/Users/ad/.fzf.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Dircolors
-export CLICOLOR=1
-
-export HISTTIMEFORMAT='%F %T '
-export EDITOR=vim
-GPG_TTY=$(tty)
-export GPG_TTY
