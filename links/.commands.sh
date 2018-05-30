@@ -1,11 +1,122 @@
 #!/bin/bash
+
 #### FUNCTIONS AND ALIASES
 
+
+## cd
+
+alias cg='c "$(git rev-parse --show-toplevel)"'  # cd under git repo
+alias ch='cd "$(dirs -lp | sort -u | fzf)"'      # cd from history
+
+# change to directory under pwd
+c() {
+    local dir
+    dir=$(find "${1:-.}" -type d | grep -v '/\.' | fzf)
+
+    [ -n "$dir" ] && cd "$dir" || return
+}
+
+
+## ls
+
+if [[ "$(uname)" != 'Darwin' ]]; then
+    alias ls='ls --color=auto -F'
+else
+    alias ls='ls -G -F'
+fi
+alias l='ls -alFh'
+alias la='ls -A'
+alias lla='ls -lA'
+
+
+## Open files
 if [ "$(uname)" != 'Darwin' ]; then
     open() { xdg-open "$@" &> /dev/null &disown; }
     say() { echo "$@" | festival --tts; }
 fi
+
+
+## editor
+
+e() {
+    if [ ! "$(pgrep emacs --daemon)" ]; then
+        echo starting emacs daemon
+        emacsdaemonlog=~/.emacs-daemon.log
+        [ -f ~/.emacs-daemon.log ] && rm $emacsdaemonlog # delete old logfile
+        emacs --daemon > $emacsdaemonlog 2>&1
+    fi
+    emacsclient -t
+}
+
+alias vi='vim -u NONE'
+
+
+## dotfiles
+
+alias zshreload="source ~/.zshrc"
+alias dotfiles-update="cd ~/code/dotfiles && git pull ; zshreload ; cd -"
+alias dotfiles-commit="cd ~/code/dotfiles && git commit -a -S -v ; git push ; cd -"
+
+
+## python
+
+alias ipython-prof='ipython -m cProfile -s time'
+alias python-prof='python -m cProfile -s time'
+
+
+
+## make
+
+alias m="make"
+alias mc="make clean"
+alias me="make edit"
+
+
+## date
+
+alias date-denmark='TZ=Europe/Copenhagen date'
+alias date-eastern='TZ=US/Eastern date'
+alias date-pacific='TZ=US/Pacific date'
+alias date-mountain='TZ=US/Mountain date'
+alias date-central='TZ=US/Central date'
+
+
+## git
+
+alias gs='git status | less'
+alias gl='git log --graph --oneline --decorate --all'
+alias ga='git add'
+alias gd='git diff --'
+alias gch='git diff HEAD^..HEAD'
+alias gc='git commit --verbose --gpg-sign'
+alias gca='git commit --all --verbose --gpg-sign'
+alias gp='git push'
+alias gpu='git pull'
+alias gcgp='git commit --verbose --gpg-sign && git push'
+alias gcagp='git commit --all --verbose --gpg-sign && git push'
+
+# redefine git log alias
+alias gl="git log --graph --oneline --decorate --all --color=always |
+    fzf --ansi +s --preview='git show --color=always {2}' \
+    --bind='pgdn:preview-page-down' \
+    --bind='pgup:preview-page-up' \
+    --bind='enter:execute:git show --color=always {2} | less -R' \
+    --bind='ctrl-x:execute:git checkout {2} .'"
+
+
+## grep
+
+alias grep='grep --color=auto'
+
+
+## speech synthesis
+
 sayfile() { festival --tts "$@"; }
+
+
+## w3m
+
+alias w3m="w3m -B"
 w3mtor() { 
     local url
     if [ $# -eq 0 ]; then
@@ -15,9 +126,9 @@ w3mtor() {
     fi
     torify w3m "$url"
 }
+
 w3mddg() { torify surfraw ddg "$@"; }
-weather() { curl "wttr.in/?m"; }
-define() { curl --silent dict://dict.org/d:"$1"; }
+
 news() { 
     local url
     if [ $# -eq 0 ]; then
@@ -32,17 +143,12 @@ news() {
     torify w3m "$url"
 }
 
-# Start emacs daemon if it is not running, then attach client
-e() {
-    if [ ! "$(pgrep emacs --daemon)" ]; then
-        echo starting emacs daemon
-        emacsdaemonlog=~/.emacs-daemon.log
-        [ -f ~/.emacs-daemon.log ] && rm $emacsdaemonlog # delete old logfile
-        emacs --daemon > $emacsdaemonlog 2>&1
-    fi
-    emacsclient -t
-}
 
+## web services
+
+alias youtube-dl='youtube-dl --format mp4'
+weather() { curl "wttr.in/?m"; }
+define() { curl --silent dict://dict.org/d:"$1"; }
 transfer() { # use transfer.sh to share files over the net
     if [ $# -eq 0 ]; then
         echo -e "No arguments specified. Usage: transfer.sh <file>"
@@ -61,58 +167,3 @@ transfer() { # use transfer.sh to share files over the net
     rm -f "$tmpfile"
     echo ""
 } 
-
-alias svim='sudo -e'
-alias v='vim'
-alias f='fg'
-alias vi='vim -u NONE'
-alias gs='git status | less'
-alias gl='git log --graph --oneline --decorate --all'
-alias ga='git add'
-alias gd='git diff --'
-alias gch='git diff HEAD^..HEAD'
-alias gc='git commit --verbose --gpg-sign'
-alias gca='git commit --all --verbose --gpg-sign'
-alias gp='git push'
-alias gpu='git pull'
-alias gcgp='git commit --verbose --gpg-sign && git push'
-alias gcagp='git commit --all --verbose --gpg-sign && git push'
-alias clear='clear && tmux clear-history'
-alias ct='ctags -R .'
-alias findgrep='find . | grep -i '
-alias lsgrep='ls -la | grep -in '
-alias fixdisplay='export DISPLAY=:0'
-alias zshreload="source ~/.zshrc"
-alias dotfiles-update="cd ~/code/dotfiles && git pull ; zshreload ; cd -"
-alias dotfiles-commit="cd ~/code/dotfiles && git commit -a -S -v ; git push ; cd -"
-alias m="make"
-alias mc="make clean"
-alias me="make edit"
-alias 2048='2048 bluered'
-alias c='xsel -ib'
-alias h='history | tail'
-alias ']'='open'
-alias l='ls -alFh'
-alias la='ls -A'
-alias lla='ls -lA'
-alias ipython-prof='ipython -m cProfile -s time'
-alias python-prof='python -m cProfile -s time'
-alias date-denmark='TZ=Europe/Copenhagen date'
-alias date-eastern='TZ=US/Eastern date'
-alias date-pacific='TZ=US/Pacific date'
-alias date-mountain='TZ=US/Mountain date'
-alias date-central='TZ=US/Central date'
-alias sha256sum='shasum -a 256'
-alias cala="gcalcli agenda"
-alias youtube-dl='youtube-dl --format mp4'
-alias html="ansifilter -H -f"
-alias w3m="w3m -B"
-
-# enable color support of ls and also add handy aliases
-if [[ "$(uname)" != 'Darwin' ]]; then
-    alias ls='ls --color=auto -F'
-else
-    alias ls='ls -G -F'
-fi
-
-alias grep='grep --color=auto'

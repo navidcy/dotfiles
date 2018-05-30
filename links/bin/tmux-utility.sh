@@ -1,76 +1,70 @@
-#!/bin/sh
+#!/bin/bash
 SESSION=utility
 echo "starting $SESSION tmux session"
 
-tmux has-session -t $SESSION
-if [ $? != 0 ]
+if ! tmux has-session -t $SESSION
 then
     mpd ~/.mpd/mpd.conf
-    if [ "$(uname)" = "Darwin" ]; then
-        ssh-add -K
-    else
-        ssh-add
-    fi
 
     # Create new session, name it, name the window, detach
     tmux new-session -s $SESSION -n misc -d
 
-    tmux send-keys -t $SESSION 'echo $PWD' C-m
-    tmux send-keys -t $SESSION 'mutt' C-m
+    tmux send-keys -t $SESSION "echo $PWD" C-m
+    tmux send-keys -t $SESSION "mutt" C-m
 
     tmux split-window -h -t $SESSION
-    tmux send-keys -t $SESSION '~/bin/google-cloud-lamps-instance1-ssh.sh' C-m
+    tmux send-keys -t $SESSION "$HOME/bin/google-cloud-lamps-instance1-ssh.sh" C-m
 
     tmux select-pane -t $SESSION:1.1
     tmux split-window -p 33 -v -t $SESSION
-    #tmux send-keys -t $SESSION 'fortune' C-m
-    tmux send-keys -t $SESSION '~/bin/todo.sh' C-m
+    #tmux send-keys -t $SESSION "fortune" C-m
+    tmux send-keys -t $SESSION "$HOME/bin/todo.sh" C-m
 
     tmux new-window -t $SESSION
     tmux select-pane -t $SESSION:2.1
-    tmux send-keys -t $SESSION 'vimpc' C-m
+    tmux send-keys -t $SESSION "vimpc" C-m
 
     # optionally load additional windows
     if [ "$1" = "seaice" ]; then
         tmux new-window -t $SESSION -n Granular
         tmux select-pane -t $SESSION:3.1
-        tmux send-keys -t $SESSION 'cd ~/code/Granular && vim' C-m
+        tmux send-keys -t $SESSION "cd ~/code/Granular && vim" C-m
         tmux split-window -p 33 -h -t $SESSION
-        tmux send-keys -t $SESSION 'cd ~/code/Granular && julia' C-m
+        tmux send-keys -t $SESSION "cd ~/code/Granular && julia" C-m
 
         tmux new-window -t $SESSION -n SeaIce-exp
         tmux select-pane -t $SESSION:4.1
-        tmux send-keys -t $SESSION 'cd ~/code/SeaIce-experiments' C-m
+        tmux send-keys -t $SESSION "cd ~/code/SeaIce-experiments" C-m
         tmux split-window -p 33 -h -t $SESSION
         tmux send-keys -t $SESSION \
-            'cd ~/code/SeaIce-experiments && ~/bin/granular-status.sh' C-m
+            "cd ~/code/SeaIce-experiments && ~/bin/granular-status.sh" C-m
 
         tmux new-window -t $SESSION -n idkfa
         tmux select-pane -t $SESSION:5.1
-        tmux send-keys -t $SESSION '~/bin/idkfa-ssh' C-m
-            #'sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && ~/bin/idkfa-ssh' C-m
+        tmux send-keys -t $SESSION "$HOME/bin/idkfa-ssh" C-m
+            #"sshfs ad@idkfa.ucsd.edu:/home/ad ~/idkfa && ~/bin/idkfa-ssh" C-m
 
         tmux new-window -t $SESSION -n james
         tmux select-pane -t $SESSION:6.1
         tmux send-keys -t $SESSION \
-            'cd ~/articles/own/6-james/james-rev0 && git pull && make edit'
+            "cd ~/articles/own/6-james/james-rev0 && git pull && make edit"
     fi
 
     #tmux select-layout tiled
     tmux select-pane -t $SESSION:1.1
 
-    #tmux send-keys -t $SESSION 'irc.sh' C-m   # process in first pane
+    #tmux send-keys -t $SESSION "irc.sh" C-m   # process in first pane
     #tmux split-window -h -p 65 -t $SESSION  # horizontal split
     #tmux split-window -v -p 10 -t $SESSION  # bottom right
-    #tmux send-keys -t $SESSION 'htop' C-m  
+    #tmux send-keys -t $SESSION "htop" C-m  
     #tmux select-pane -t $SESSION:1.1        # select first pane
     #tmux split-window -v -p 60 -t $SESSION  # create a pane below first pane
     #tmux split-window -v -p 56 -t $SESSION  # create a pane below first pane
-    #tmux send-keys -t $SESSION 'htop' C-m   # process in third pane
+    #tmux send-keys -t $SESSION "htop" C-m   # process in third pane
     #tmux split-window -v -p 75 -t $SESSION  # create a pane below second pane
-    #tmux send-keys -t $SESSION 'irc.sh' C-m  # process in fourth pane
-    #tmux send-keys -t $SESSION 'ncmpcpp' C-m  # process in fourth pane
-    #tmux send-keys -t $SESSION 'mpd; vimpc' C-m  # process in fourth pane
+    #tmux send-keys -t $SESSION "irc.sh" C-m  # process in fourth pane
+    #tmux send-keys -t $SESSION "ncmpcpp" C-m  # process in fourth pane
+    #tmux send-keys -t $SESSION "mpd; vimpc" C-m  # process in fourth pane
     #tmux select-pane -t $SESSION:1.1        # select first pane
 fi
 tmux attach -t $SESSION

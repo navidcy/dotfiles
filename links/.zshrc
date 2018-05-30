@@ -41,7 +41,7 @@ bindkey '^N' down-line-or-search
 bindkey '^ ' autosuggest-accept   # accept suggestion with ctrl+space
 
 # use Ctrl-Z as fg
-_fzf-foreground () {
+_fzf_foreground() {
     if [[ $#BUFFER -eq 0 ]]; then
         BUFFER="fg"
         zle accept-line
@@ -50,8 +50,8 @@ _fzf-foreground () {
         zle clear-screen
     fi
 }
-zle -N _fzf-foreground
-bindkey '^Z' _fzf-foreground
+zle -N _fzf_foreground
+bindkey '^Z' _fzf_foreground
 
 # launch $EDITOR with Ctrl-e
 _editor() {
@@ -88,19 +88,19 @@ bindkey '^g' _editor_fuzzy_grep
 
 for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim yml
 do
-  alias -s $suffix=$EDITOR
+    alias -s $suffix=$EDITOR
 done
 
 for suffix in txt log
 do
-  alias -s $suffix=$PAGER
+    alias -s $suffix=$PAGER
 done
 
 
 #### ZSH APPEARANCE
 
 # show execution time of previous command if more than 1 sec
-function convertsecs() {
+convertsecs() {
     ((d=${1}/3600/24))
     ((h=${1}/3600%24))
     ((m=(${1}%3600)/60))
@@ -115,10 +115,10 @@ function convertsecs() {
         printf " %ds" $s
     fi
 }
-function preexec() {
+preexec() {
     timer=${timer:-$SECONDS}
 }
-function precmd() {
+precmd() {
     if [ $timer ]; then
         timer_show=$(convertsecs $(($SECONDS - $timer)))
         export EXECTIME="${timer_show}"
@@ -148,11 +148,11 @@ git_modified() {
 
 
 prompt_with_vimode() {
-  echo -ne '\n'
-  echo -n '%(1j.%{$fg[yellow]%}%jbg %{$reset_color%}.)'  # background jobs
-  echo -n "$1"  # strong for insert/normal mode
-  echo -n '%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}' # su or norm
-  echo -n '%{$reset_color%} '
+    echo -ne '\n'
+    echo -n '%(1j.%{$fg[yellow]%}%jbg %{$reset_color%}.)'  # background jobs
+    echo -n "$1"
+    echo -n '%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}' # su/norm
+    echo -n '%{$reset_color%} '
 }
 
 insert_mode=''
@@ -170,16 +170,17 @@ PROMPT=$(prompt_with_vimode $insert_mode)
 RPROMPT=$(rprompt)
 
 function zle-line-init zle-keymap-select {
-  PROMPT=$(prompt_with_vimode ${${KEYMAP/vicmd/$normal_mode}/(main|viins)/$insert_mode})
-  RPROMPT=$(rprompt)
-  zle reset-prompt
+    PROMPT=$(prompt_with_vimode \
+        ${${KEYMAP/vicmd/$normal_mode}/(main|viins)/$insert_mode})
+    RPROMPT=$(rprompt)
+    zle reset-prompt
 }
 
 zle -N zle-line-init
 zle -N zle-keymap-select
 
 
-# Plugins
+#### PLUGINS
 
 export ZPLUG_HOME=~/code/zplug
 source $ZPLUG_HOME/init.zsh
@@ -200,7 +201,7 @@ zplug load
 
 # start ssh-agent
 if [ -z "$SSH_AUTH_SOCK" ]; then
-  eval `ssh-agent` && ssh-add
+    eval `ssh-agent` && ssh-add
 fi > /dev/null 2>&1
 
 # pass **<tab>
@@ -213,13 +214,6 @@ _fzf_complete_pass() {
         sed -e 's/\(.*\)\.gpg/\1/'
     )
 }
-# redefine git log alias
-alias gl="git log --graph --oneline --decorate --all --color=always |
-    fzf --ansi +s --preview='git show --color=always {2}' \
-    --bind='pgdn:preview-page-down' \
-    --bind='pgup:preview-page-up' \
-    --bind='enter:execute:git show --color=always {2} | less -R' \
-    --bind='ctrl-x:execute:git checkout {2} .'"
 
 . ~/.commands.sh
 . ~/.locale

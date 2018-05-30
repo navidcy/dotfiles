@@ -4,6 +4,7 @@ export EDITOR="vim"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# shellcheck source=/dev/null
 [ -f ~/.secret_env_vars ] && . ~/.secret_env_vars
 
 
@@ -26,7 +27,8 @@ fi
 
 export GOPATH=~/src/golang
 export PATH=$PATH:$GOPATH/bin
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 [ -d ~/pism ] && export PATH=~/pism/bin:$PATH
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
@@ -59,6 +61,7 @@ if [ -x "$(command -v fzf)" ]; then
 fi
 
 if [ -f /usr/local/Modules/default/init/zsh ]; then
+    # shellcheck disable=SC1091
     . /usr/local/Modules/default/init/zsh && \
     #module load git vim #python paraview ncview matlab ifort anaconda
     module load git python/2.7.1
