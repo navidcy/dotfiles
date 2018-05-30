@@ -3,19 +3,19 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-[ -f $HOME/.secret_env_vars ] && source $HOME/.secret_env_vars
+[ -f ~/.secret_env_vars ] && . ~/.secret_env_vars
 
 
 #### PATH AND MACHINE SPECIFIC CONFIGS
 
 [ -d /usr/local/bin ] && export PATH=/usr/local/bin:$PATH
 [ -d /usr/local/sbin ] && export PATH=/usr/local/sbin:$PATH
-[ -d $HOME/local/bin ] && export PATH=$HOME/local/bin:$PATH
-[ -d $HOME/bin ] && export PATH=$HOME/bin:$PATH
-if [ -d $HOME/.linuxbrew ]; then
-    export PATH=$HOME/.linuxbrew/bin:$PATH
-    export MANPATH=$HOME/.linuxbrew/share/man:$MANPATH
-    export INFOPATH=$HOME/.linuxbrew/share/info:$INFOPATH
+[ -d ~/local/bin ] && export PATH=~/local/bin:$PATH
+[ -d ~/bin ] && export PATH=~/bin:$PATH
+if [ -d ~/.linuxbrew ]; then
+    export PATH=~/.linuxbrew/bin:$PATH
+    export MANPATH=~/.linuxbrew/share/man:$MANPATH
+    export INFOPATH=~/.linuxbrew/share/info:$INFOPATH
 fi
 if [ -d /home/linuxbrew/.linuxbrew ]; then
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
@@ -23,26 +23,11 @@ if [ -d /home/linuxbrew/.linuxbrew ]; then
     export INFOPATH=/home/linuxbrew/.linuxbrew/share/info:$INFOPATH
 fi
 
-#if [ -d $HOME/local/python ]; then
-#    export PYTHONPATH=$HOME/local/python:$PYTHONPATH
-#    export PATH=$HOME/local/python:$PATH
-#fi
-
-if [ $(echo $HOSTNAME | grep flaptop) ]; then
-    #source ~/.xsh
-    #export PATH=~/miniconda3/bin:$PATH
-    export PATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
-fi
-
-if [ $(echo $HOSTNAME | grep cosmo) ]; then
-    export PATH=/usr/local/MATLAB/R2015a/bin:$PATH
-fi
-
-export GOPATH=$HOME/src/golang
+export GOPATH=~/src/golang
 export PATH=$PATH:$GOPATH/bin
-export GPG_TTY=`tty`
+export GPG_TTY=$(tty)
 
-[ -d $HOME/pism ] && export PATH=$HOME/pism/bin:$PATH
+[ -d ~/pism ] && export PATH=~/pism/bin:$PATH
 [ -d ~/code/issm/trunk ] && export ISSM_DIR=~/code/issm/trunk
 [ -d ~/torch/install/bin ] && export PATH=~/torch/install/bin:$PATH
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
@@ -73,7 +58,7 @@ if [ -x "$(command -v fzf)" ]; then
 fi
 
 if [ -f /usr/local/Modules/default/init/zsh ]; then
-    source /usr/local/Modules/default/init/zsh && \
+    . /usr/local/Modules/default/init/zsh && \
     #module load git vim #python paraview ncview matlab ifort anaconda
     module load git python/2.7.1
     [ -d /net/and/anaconda3/bin ] && export PATH="/net/and/anaconda3/bin:$PATH"
