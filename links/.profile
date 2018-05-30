@@ -47,7 +47,7 @@ export GPG_TTY=`tty`
 [ -d ~/torch/install/bin ] && export PATH=~/torch/install/bin:$PATH
 [ -d ~/code/tensorflow ] && alias tensorflow='source ~/code/tensorflow/bin/activate'
 
-if _has fzf; then
+if [ -x "$(command -v fzf)" ]; then
 
     export FZF_DEFAULT_OPTS="
     --preview '(highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -100'
@@ -58,7 +58,7 @@ if _has fzf; then
     export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 
     # use ripgrep if available
-    if _has rg; then
+    if [ -x "$(command -v rg)" ]; then
         # --files: List files that would be searched but do not search
         # --no-ignore: Do not respect .gitignore, etc...
         # --hidden: Search hidden files and folders
@@ -67,7 +67,7 @@ if _has fzf; then
         export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 
     # use the_silver_searcher if available
-    elif _has ag; then
+    elif [ -x "$(command -v ag)" ]; then
         export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f --nocolor -g ""'
     fi
 fi
