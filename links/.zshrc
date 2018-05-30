@@ -160,7 +160,7 @@ insert_mode=''
 normal_mode='%{$fg[white]%}N'
 
 rprompt() {
-    echo -n "%(?..%{$fg[red]%}%?%{$reset_color%})"  # return status
+    echo -n "%(?..%{$fg[red]%}[%?]%{$reset_color%})"  # return status
     echo -n "%{$fg[green]%}${EXECTIME}%{$reset_color%} "  # runtime of prev cmd
     echo -n "%B%{$fg[cyan]%}%~%{$reset_color%} "  # pwd
     echo -n "%{$fg[cyan]%}$(git_branch)"  # git branch
