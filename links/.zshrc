@@ -5,8 +5,9 @@ debug_startup=false
 
 #### ZSH OPTIONS
 
+# man zshoptions
 setopt autopushd extendedglob hist_ignore_dups interactivecomments prompt_subst sh_word_split share_history
-unsetopt autocd beep notify nomatch banghist
+unsetopt autocd beep notify nomatch
 
 autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit select-bracketed select-quoted
 
