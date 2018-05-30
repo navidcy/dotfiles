@@ -7,12 +7,12 @@
 ## cd
 
 alias cg='c "$(git rev-parse --show-toplevel)"'  # cd under git repo
-alias ch='cd "$(dirs -lp | sort -u | fzf)"'      # cd from history
+alias ch='cd "$(dirs -lp | sort -u | fzf --preview-window=right:hidden )"' # cd from history
 
 # change to directory under pwd
 c() {
     local dir
-    dir=$(find "${1:-.}" -type d | grep -v '/\.' | fzf)
+    dir=$(find "${1:-.}" -type d | grep -v '/\.' | fzf --preview '')
 
     [ -n "$dir" ] && cd "$dir" || return
 }
