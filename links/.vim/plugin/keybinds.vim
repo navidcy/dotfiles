@@ -157,9 +157,9 @@ end
 
 " using fzf.vim
 nnoremap , :Buffers<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>F :History<CR>
+nnoremap <leader>o :History<CR>
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>F :GFiles<CR>
 nnoremap <leader>l :Lines<CR>
 nnoremap <leader>L :BLines<CR>
 nnoremap <leader>t :Tags<CR>
