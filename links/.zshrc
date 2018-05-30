@@ -1,121 +1,44 @@
-#### ZSH PERFORMANCE DEBUG (enable all)
+#### ZSH PERFORMANCE DEBUG
 debug_startup=false
 [ "$debug_startup" = true ] && zmodload zsh/zprof
 
-#### GENERAL
-export EDITOR="vim"
 
-# Returns whether the given command is executable or aliased.
-_has() {
-  return $( (( $+commands[$1] )) )
-}
+#### ZSH OPTIONS
 
-[ -f ~/.locale ] && . ~/.locale
+setopt autopushd extendedglob hist_ignore_dups interactivecomments prompt_subst sh_word_split share_history
+unsetopt autocd beep notify nomatch banghist
 
-autoload -Uz compinit promptinit colors
-compinit -d
-promptinit
-colors
+autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit select-bracketed select-quoted
 
-set -o noclobber  # prevent overwriting files with > (override with 1>)
-unsetopt autocd
-setopt correct
-setopt completealiases
-setopt append_history
-setopt share_history
-setopt hist_verify
-setopt hist_ignore_all_dups
-setopt interactivecomments  # allow in-line comments in zsh prompt
-HISTFILE=~/.zsh-history
+compinit
+add-zsh-hook chpwd chpwd_recent_dirs
+
+zstyle completion:*:*:cdr:*:* menu selection
+zstyle :chpwd:* recent-dirs-insert fallback
+zstyle :chpwd:* recent-dirs-pushd true
+
+zle -N select-bracketed
+zle -N select-quoted
+
+HISTFILE=~/.zhistory
 HISTSIZE=$((2 ** 16))
 SAVEHIST=$((2 ** 17))
 
 
-#### ZSH APPEARANCE
-
-# show execution time of previous command if more than 1 sec
-function convertsecs() {
-    ((d=${1}/3600/24))
-    ((h=${1}/3600%24))
-    ((m=(${1}%3600)/60))
-    ((s=${1}%60))
-    if [ "$d" -gt "0" ]; then
-        printf " %dd%02dh%02dm%02ds" $d $h $m $s
-    elif [ "$h" -gt "0" ]; then
-        printf " %dh%02dm%02ds" $h $m $s
-    elif [ "$m" -gt "0" ]; then
-        printf " %dm%02ds" $m $s
-    elif [ "$s" -gt "0" ]; then
-        printf " %ds" $s
-    fi
-}
-function preexec() {
-    timer=${timer:-$SECONDS}
-}
-function precmd() {
-    if [ $timer ]; then
-        timer_show=$(convertsecs $(($SECONDS - $timer)))
-        export EXECTIME="${timer_show}"
-        unset timer
-    fi
-}
-
-# show git information
-function git_branch() {
-    branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
-    if [ -n "$branch_name" ]; then
-        echo -n "$branch_name$(git_modified) "
-    fi
-}
-
-function git_grep_modified_files() {
-    grep -e "^.M" -e "^M." -e "^A." -e "^D." -e "^.D"
-}
-
-function git_modified() {
-    if [ -n "$(git status --porcelain 2> /dev/null | git_grep_modified_files)" ]; then
-        echo -n "*"
-    fi
-}
-
-# check for background jobs
-bg_jobs="%(1j.%{$fg[yellow]%}%jbg %{$reset_color%}.)"
-
-# show return status of previous command
-return_status="%(?..%{$fg[red]%}%?%{$reset_color%})"
-
-# change prompt according to su
-prompt_root="%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}"
-
-# define left prompt format
-PROMPT="
-${bg_jobs}%{$fg[red]%}${prompt_root} %{$reset_color%}"
-
-# define right prompt format
-RPROMPT="${return_status}\
-${EXECTIME}\
-%{$fg[green]%}${EXECTIME}%{$reset_color%} \
-%B%{$fg[cyan]%}%~%{$reset_color%} \
-%{$fg[cyan]%}$(git_branch)\
-%{$reset_color%}%n@%m"
-
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors 'reply=( "=(#b)(*$VAR)(?)*=00=$color[green]=$color[bg-green]" )'
-zstyle ':completion:*:*:*:*:hosts' list-colors '=*=30;41'
-zstyle ':completion:*:*:*:*:users' list-colors '=*=$color[green]=$color[red]'
-zstyle ':completion:*' menu select
-
-
-#### ZSH KEYBINDS
+#### BINDINGS
 
 set -o vi
 bindkey -v
 bindkey jk vi-cmd-mode
+bindkey -a ? fzf-history-widget
+bindkey -a k history-substring-search-up
+bindkey -a j history-substring-search-down
 bindkey '^R' history-incremental-search-backward
 bindkey "^j" history-beginning-search-backward
 bindkey "^k" history-beginning-search-forward
 bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
+bindkey '^ ' autosuggest-accept   # accept suggestion with ctrl+space
 
 # use Ctrl-Z as fg
 _fzf-foreground () {
@@ -163,11 +86,7 @@ zle -N _editor_fuzzy_grep
 bindkey '^g' _editor_fuzzy_grep
 
 
-#### FUNCTIONS AND ALIASES
-. ~/.commands.sh
-
-# open files with certain suffix in $EDITOR when calling their name
-for suffix in c cc cxx go h html jl js json md py rb rst vim yml
+for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim yml
 do
   alias -s $suffix=$EDITOR
 done
@@ -177,54 +96,135 @@ do
   alias -s $suffix=$PAGER
 done
 
-#### ZSH PLUGINS
 
-# zgen is faster than zplug
-if [ -f ~/code/zgen/zgen.zsh ]; then
-    . ~/code/zgen/zgen.zsh
+#### ZSH APPEARANCE
 
-    if ! zgen saved; then
-
-        echo "Creating a zgen save"
-
-        zgen load "junegunn/fzf"
-        zgen load "zsh-users/zsh-autosuggestions"
-        zgen load "zsh-users/zsh-completions"
-        zgen load "zsh-users/zsh-syntax-highlighting"
-
-        zgen save
+# show execution time of previous command if more than 1 sec
+function convertsecs() {
+    ((d=${1}/3600/24))
+    ((h=${1}/3600%24))
+    ((m=(${1}%3600)/60))
+    ((s=${1}%60))
+    if [ "$d" -gt "0" ]; then
+        printf " %dd%02dh%02dm%02ds" $d $h $m $s
+    elif [ "$h" -gt "0" ]; then
+        printf " %dh%02dm%02ds" $h $m $s
+    elif [ "$m" -gt "0" ]; then
+        printf " %dm%02ds" $m $s
+    elif [ "$s" -gt "0" ]; then
+        printf " %ds" $s
     fi
+}
+function preexec() {
+    timer=${timer:-$SECONDS}
+}
+function precmd() {
+    if [ $timer ]; then
+        timer_show=$(convertsecs $(($SECONDS - $timer)))
+        export EXECTIME="${timer_show}"
+        unset timer
+    fi
+}
+
+git_branch() {
+  branch_name=$(git symbolic-ref --short HEAD 2> /dev/null)
+
+  if [ -n "$branch_name" ]
+  then
+    echo "$branch_name$(git_modified) "
+  fi
+}
+
+git_grep_modified_files() {
+  grep -e "^.M" -e "^M." -e "^A." -e "^D." -e "^.D"
+}
+
+git_modified() {
+  if [ -n "$(git status --porcelain 2> /dev/null | git_grep_modified_files)" ]
+  then
+    echo "*"
+  fi
+}
+
+
+prompt_with_vimode() {
+  echo -ne '\n'
+  echo -n '%(1j.%{$fg[yellow]%}%jbg %{$reset_color%}.)'  # background jobs
+  echo -n "$1"  # strong for insert/normal mode
+  echo -n '%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}' # su or norm
+  echo -n '%{$reset_color%} '
+}
+
+insert_mode=''
+normal_mode='%{$fg[white]%}N'
+
+rprompt() {
+    echo -n "%(?..%{$fg[red]%}%?%{$reset_color%})"  # return status
+    echo -n "%{$fg[green]%}${EXECTIME}%{$reset_color%} "  # runtime of prev cmd
+    echo -n "%B%{$fg[cyan]%}%~%{$reset_color%} "  # pwd
+    echo -n "%{$fg[cyan]%}$(git_branch)"  # git branch
+    echo -n "%{$reset_color%}%n@%m"  # user and hostname
+}
+
+PROMPT=$(prompt_with_vimode $insert_mode)
+RPROMPT=$(rprompt)
+
+function zle-line-init zle-keymap-select {
+  PROMPT=$(prompt_with_vimode ${${KEYMAP/vicmd/$normal_mode}/(main|viins)/$insert_mode})
+  RPROMPT=$(rprompt)
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+
+# Plugins
+
+export ZPLUG_HOME=~/code/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug junegunn/fzf, use:shell/*.zsh
+zplug zsh-users/zsh-autosuggestions
+zplug zsh-users/zsh-completions, lazy:true
+zplug zsh-users/zsh-syntax-highlighting
+zplug zsh-users/zsh-history-substring-search
+
+if ! zplug check; then
+  zplug install
 fi
+zplug load
 
 
-#### AUTOCOMPLETE
+#### EXTRA COMMANDS
 
-bindkey '^ ' autosuggest-accept   # accept suggestion with ctrl+space
+# start ssh-agent
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval `ssh-agent` && ssh-add
+fi > /dev/null 2>&1
 
-if _has fzf; then
-    # pass **<tab>
-    _fzf_complete_pass() {
-        _fzf_complete '+m' "$@" < <(
-        pwdir=${PASSWORD_STORE_DIR-~/.password-store/}
-        stringsize="${#pwdir}"
-        find "$pwdir" -name "*.gpg" -print |
-            cut -c "$((stringsize + 1))"-  |
-            sed -e 's/\(.*\)\.gpg/\1/'
-        )
-    }
-    # redefine git log alias
-    alias gl="git log --graph --oneline --decorate --all --color=always |
-        fzf --ansi +s --preview='git show --color=always {2}' \
-        --bind='pgdn:preview-page-down' \
-        --bind='pgup:preview-page-up' \
-        --bind='enter:execute:git show --color=always {2} | less -R' \
-        --bind='ctrl-x:execute:git checkout {2} .'"
-fi
+# pass **<tab>
+_fzf_complete_pass() {
+    _fzf_complete '+m' "$@" < <(
+    pwdir=${PASSWORD_STORE_DIR-~/.password-store/}
+    stringsize="${#pwdir}"
+    find "$pwdir" -name "*.gpg" -print |
+        cut -c "$((stringsize + 1))"-  |
+        sed -e 's/\(.*\)\.gpg/\1/'
+    )
+}
+# redefine git log alias
+alias gl="git log --graph --oneline --decorate --all --color=always |
+    fzf --ansi +s --preview='git show --color=always {2}' \
+    --bind='pgdn:preview-page-down' \
+    --bind='pgup:preview-page-up' \
+    --bind='enter:execute:git show --color=always {2} | less -R' \
+    --bind='ctrl-x:execute:git checkout {2} .'"
 
-#### Extra options
+. ~/.commands.sh
+. ~/.locale
 
-# show directory listing when changing dir
-function chpwd() { ls }
+function chpwd { ls }
 
-
+# report startup diagnostics if requested
 [ "$debug_startup" = true ] && zprof || :

@@ -1,3 +1,4 @@
+export EDITOR="vim"
 #### LOCALE
 
 export LC_ALL=en_US.UTF-8
