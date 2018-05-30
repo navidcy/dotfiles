@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #### FUNCTIONS AND ALIASES
 
 
@@ -26,7 +27,6 @@ else
 fi
 alias l='ls -alFh'
 alias la='ls -A'
-alias lla='ls -lA'
 
 
 ## Open files
@@ -39,14 +39,24 @@ fi
 ## editor
 
 e() {
-    if [ ! "$(pgrep emacs --daemon)" ]; then
-        echo starting emacs daemon
-        emacsdaemonlog=~/.emacs-daemon.log
-        [ -f ~/.emacs-daemon.log ] && rm $emacsdaemonlog # delete old logfile
-        emacs --daemon > $emacsdaemonlog 2>&1
+    if [ $# -eq 0 ]; then
+        # open file under PWD
+        local file
+        file=$(find . -type f | grep -v '/\.' | fzf)
+        [ -n "$file" ] && $EDITOR "$file"
+    else
+        $EDITOR "$@"
     fi
-    emacsclient -t
 }
+
+# edit file anywhere in git repository
+eg() {
+    # open file under PWD
+    local file
+    file=$(find "$(git rev-parse --show-toplevel)" -type f | grep -v '/\.' | fzf)
+    [ -n "$file" ] && $EDITOR "$file"
+}
+
 
 alias vi='vim -u NONE'
 
