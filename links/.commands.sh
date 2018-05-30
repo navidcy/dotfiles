@@ -32,7 +32,6 @@ alias la='ls -A'
 ## Open files
 if [ "$(uname)" != 'Darwin' ]; then
     open() { xdg-open "$@" &> /dev/null &disown; }
-    say() { echo "$@" | festival --tts; }
 fi
 
 
@@ -121,7 +120,12 @@ alias grep='grep --color=auto'
 
 ## speech synthesis
 
-sayfile() { festival --tts "$@"; }
+if [ "$(uname)" != 'Darwin' ]; then
+    say() { echo "$@" | festival --tts; }
+    sayfile() { festival --tts "$@"; }
+else
+    sayfile() { say -f "$@"; }
+fi
 
 
 ## w3m
