@@ -212,7 +212,7 @@ _fzf_complete_pass() {
     stringsize="${#pwdir}"
     find "$pwdir" -name "*.gpg" -print |
         cut -c "$((stringsize + 1))"-  |
-        sed -e 's/\(.*\)\.gpg/\1/'
+        sed -e 's/\/\(.*\)\.gpg/\1/'
     )
 }
 
