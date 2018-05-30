@@ -37,7 +37,7 @@ export GPG_TTY
 
 if [ -x "$(command -v fzf)" ]; then
 
-    export FZF_DEFAULT_OPTS="
+    export FZF_DEFAULT_OPTS="--exit-0 --select-1
     --preview '(highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -100'
     "
 
