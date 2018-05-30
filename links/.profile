@@ -1,6 +1,4 @@
 export EDITOR="vim"
-#### LOCALE
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -27,6 +25,7 @@ fi
 
 export GOPATH=~/src/golang
 export PATH=$PATH:$GOPATH/bin
+
 GPG_TTY=$(tty)
 export GPG_TTY
 

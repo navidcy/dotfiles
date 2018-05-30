@@ -56,7 +56,6 @@ eg() {
     [ -n "$file" ] && $EDITOR "$file"
 }
 
-
 alias vi='vim -u NONE'
 
 
