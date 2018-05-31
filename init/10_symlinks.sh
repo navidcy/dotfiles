@@ -8,7 +8,6 @@ for f in links/*; do
   [ "$f" = ".." ] && continue
 
   # Skip shell scripts and markdown
-  [ "${f##*.}" = "sh" ] && continue
   [ "${f##*.}" = "md" ] && continue
 
   # Do not symlink these files/directories
