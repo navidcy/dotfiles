@@ -160,3 +160,6 @@ let g:online_thesaurus_map_keys = 0
 " select indentation character (:IndentLinesToggle) (¦┆│⎸▏)
 "let g:indentLine_char = '┆'
 let g:indentLine_char = '▏'
+
+" ignore .gitignore files from ctags
+let g:gutentags_file_list_command = 'rg --files'
