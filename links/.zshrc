@@ -229,7 +229,9 @@ _fzf_complete_pass() {
 . ~/.commands.sh
 . ~/.locale
 
-function chpwd { ls }
+if [[ -o interactive ]]; then
+    function chpwd { ls }
+fi
 
 # report startup diagnostics if requested
 [ "$debug_startup" = true ] && zprof || :
