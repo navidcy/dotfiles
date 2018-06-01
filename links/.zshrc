@@ -19,7 +19,7 @@ unsetopt hist_verify        # verify before executing cmd from history (e.g. !!)
 unsetopt notify             # report status of bg jobs immediately
 unsetopt nomatch            # show error if wildcards do not match any files
 
-autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit select-bracketed select-quoted
+autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit select-bracketed select-quoted zmv
 
 compinit
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -106,6 +106,12 @@ for suffix in txt log
 do
     alias -s $suffix=$PAGER
 done
+
+# remember -n flag for dry runs
+alias zmv='noglob zmv'
+alias zcp='noglob zmv -C'
+alias zln='noglob zmv -L'
+alias zsy='noglob zmv -Ls'
 
 
 #### ZSH APPEARANCE
