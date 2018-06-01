@@ -6,8 +6,18 @@ debug_startup=false
 #### ZSH OPTIONS
 
 # man zshoptions
-setopt autopushd extendedglob hist_ignore_dups interactivecomments prompt_subst sh_word_split share_history
-unsetopt autocd beep notify nomatch
+setopt append_history       # zsh sessions append their history to the hist file
+setopt autocd               # cd into directory if called by name
+setopt autopushd            # make cd push the old dir to the dir stack
+setopt extendedglob         # globs (. is file, / is dir) see `man zshexpn`
+setopt hist_ignore_dups     # ignore duplicate cmds in history
+setopt interactivecomments  # allow in-line comments in prompt
+setopt prompt_subst         # perform param exp, cmd subst, arith exp in prompt
+setopt share_history        # import new commands from the history file
+unsetopt beep               # beep on error
+unsetopt hist_verify        # verify before executing cmd from history (e.g. !!)
+unsetopt notify             # report status of bg jobs immediately
+unsetopt nomatch            # show error if wildcards do not match any files
 
 autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit select-bracketed select-quoted
 

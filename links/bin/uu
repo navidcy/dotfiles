@@ -1,14 +1,18 @@
-#!/bin/bash
-UNAMESTR=`uname`
+#!/usr/bin/env zsh
 
-echo "## Updating package manager lists and installed packages"
-if [[ "$UNAMESTR" == 'Linux' ]]; then
+announce() {
+    echo -e "\n$(tput setaf 3)# $@$(tput sgr0)"
+}
+
+announce "Updating package manager lists and installed packages"
+if [ "$(uname)" = "Linux" ]; then
     sudo apt-get update && \
         sudo apt-get upgrade && \
         sudo apt-get dist-upgrade && \
         sudo apt-get autoremove && \
         sudo apt-get clean
-elif [[ "$UNAMESTR" == 'Darwin' ]]; then
+
+elif [ "$(uname)" = "Darwin" ]; then
     echo "Fetching updates..."
     brew analytics off
     brew update && \
@@ -16,26 +20,31 @@ elif [[ "$UNAMESTR" == 'Darwin' ]]; then
         brew cask upgrade && \
         brew cleanup
 else
-    echo "Platform not supported"
+    (>&2 echo "Platform not supported")
     exit 1
 fi
 
-echo "## Updating dotfiles"
+announce "Updating dotfiles"
 cd ~/code/dotfiles && \
     git pull; cd -
 
-#echo "## Updating spacemacs"
+#announce "Updating spacemacs"
 ##git pull --rebase && \
 #cd ~/.emacs.d && \
 #git pull && \
 #git submodule sync; git submodule update
 
 if command -v conda >/dev/null 2>&1; then
-    echo "## Upgrading conda packages"
+    announce "Upgrading conda packages"
     conda update --all
 fi
 
 if command -v julia >/dev/null 2>&1; then
-    echo "## Upgrading julia packages"
+    announce "Upgrading julia packages"
     julia --color=yes -e 'Pkg.update()'
+fi
+
+if [ -d ~/code/zplug ]; then
+    announce "Upgrading zplug packages"
+    (zsh -c "source ~/.zshrc && zplug update")
 fi
