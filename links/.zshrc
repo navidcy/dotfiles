@@ -162,19 +162,21 @@ prompt_with_vimode() {
     echo -ne '\n'
     echo -n '%(1j.%{$fg[yellow]%}%jbg %{$reset_color%}.)'  # background jobs
     echo -n "$1"
-    echo -n '%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}' # su/norm
+    [ "$1" == "" ] &&  # show prompt symbol if no insert/normal mode is passed
+        echo -n '%(!.%{$fg_bold[red]%}#.%{$fg[green]%}$)%{$reset_color%}'
     echo -n '%{$reset_color%} '
 }
 
 insert_mode=''
-normal_mode='%{$fg[white]%}N'
+normal_mode='%{$fg_bold[white]%}N'  # white and bold N
 
 rprompt() {
     echo -n "%(?..%{$fg[red]%}[%?]%{$reset_color%})"  # return status
     echo -n "%{$fg[green]%}${EXECTIME}%{$reset_color%} "  # runtime of prev cmd
     echo -n "%B%{$fg[cyan]%}%~%{$reset_color%} "  # pwd
-    echo -n "%{$fg[cyan]%}$(git_branch)"  # git branch
-    echo -n "%{$reset_color%}%n@%m"  # user and hostname
+    echo -n "%{$fg[cyan]%}$(git_branch)%{$reset_color%}"  # git branch
+    [ "$USER" != "ad" ] && echo -n "%n@"  #username
+    echo -n "%m"  # hostname
 }
 
 PROMPT=$(prompt_with_vimode $insert_mode)
