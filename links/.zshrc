@@ -49,7 +49,8 @@ bindkey "^j" history-beginning-search-backward
 bindkey "^k" history-beginning-search-forward
 bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
-bindkey '^ ' autosuggest-accept   # accept suggestion with ctrl+space
+#bindkey '^ ' autosuggest-accept    # accept suggestion with ctrl+space
+bindkey '^ ' autosuggest-execute   # accept suggestion with ctrl+space
 
 # use Ctrl-Z as fg
 _foreground() {

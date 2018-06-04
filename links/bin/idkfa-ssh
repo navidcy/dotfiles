@@ -3,6 +3,7 @@ set -e
 remotecommand='tmux attach'
 host=idkfa.ucsd.edu
 user=ad
+tmux rename-window idkfa
 if [ "$1" = "-s" ]; then
     ssh -X $user@$host -t $remotecommand
 elif [ "$1" = "-a" ]; then
