@@ -244,3 +244,5 @@ fi
 
 # report startup diagnostics if requested
 [ "$debug_startup" = true ] && zprof || :
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

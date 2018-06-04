@@ -48,3 +48,8 @@ if [ -d ~/code/zplug ]; then
     announce "Upgrading zplug packages"
     (zsh -c "source ~/.zshrc && zplug update")
 fi
+
+if [ -d ~/.vim/vim-plugs ]; then
+    announce "Upgrading vim packages"
+    vim +PlugUpgrade +PlugUpdate +qall
+fi
