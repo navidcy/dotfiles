@@ -1,3 +1,6 @@
+# ATTENTION
+This repository has moved to [gitlab.com/admesg/dotfiles](https://gitlab.com/admesg/dotfiles).
+
 # dotfiles
 
 Configuration files for zsh, vim, tmux, X, etc. Licensed under GPL v. 3.
